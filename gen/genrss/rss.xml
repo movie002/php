@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>二手电影</title>
+	<atom:link href="http://movie002.com/rss.xml" rel="self" type="application/rss+xml" />
+	<link>http://movie002.com</link>
+	<description>让电影不再走来走去!</description>
+	<lastBuildDate>Thu, 28 Mar 2013 00:22:27 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://movie002.com</generator>
+		<item>
+		<title>《古惑仔：江湖新秩序》高清HD 迅雷下载</title>
+		<link>http://nuomifan.net/young-and-dangerousreloaded/</link>
+		<comments>http://nuomifan.net/young-and-dangerousreloaded/#comments</comments>
+		<pubDate>Thu, 28 Mar 2013 00:22:27 +0000</pubDate>
+		<dc:creator>糯米饭</dc:creator>
+				<category><![CDATA[剧情片]]></category>
+		<category><![CDATA[动作片]]></category>
+		<category><![CDATA[最新电影]]></category>
+		<category><![CDATA[犯罪片]]></category>
+		<category><![CDATA[古惑仔]]></category>
+		<category><![CDATA[古惑仔江湖新秩序]]></category>
+		<category><![CDATA[江湖新秩序]]></category>
+
+		<guid isPermaLink="false">http://nuomifan.net/?p=10066</guid>
+		<description><![CDATA[女主角胡然饰演马交大亨的女儿超婷，爱上男主角陈浩南。庄思敏饰演牧师的女儿，而曾拍摄《金瓶梅》的梁敏仪在在电影中饰演蒋天生女友Anna姐，与沈震轩演的o靓坤有激烈床戏。]]></description>
+		<wfw:commentRss>http://nuomifan.net/young-and-dangerousreloaded/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

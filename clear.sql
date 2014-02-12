@@ -1,0 +1,1 @@
+delete from link where pageid='' or pageid is null;delete from link2 where pageid='' or pageid is null;OPTIMIZE TABLE link;OPTIMIZE TABLE link2

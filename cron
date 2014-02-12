@@ -1,0 +1,2 @@
+15 0 * * * /srv/movie002/cron.sh
+00 15 * * * /srv/movie002/cron.sh

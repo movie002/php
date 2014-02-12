@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>%cat% 分类(二手电影)</title>
+	<meta name="keywords" content="%cat% 分页列表 第%num%页" />
+	<meta name="description" content="%cat% 类别的分页第%num%页。" />
+	%meta%		
+</head>
+
+<body>
+	<div id="wrapper" class="width_1">
+		<div id="header">
+			%head%
+		</div>
+		<!-- header -->
+		<div id="middle" class="width_2">
+			<div class="top_content">
+				<iframe allowtransparency="true" height="20px" src="http://dhblog.org/new.html" frameBorder="0" scrolling="no"></iframe>
+				<div style="float:right;position:relative">
+					<iframe id="iframe_say" allowtransparency="true" width="400px" height="20px" src="%home%dh_say.php" style="position:absolute;top:2px;right:50px;" frameBorder="0" scrolling="no" ></iframe>
+					<div style="width:40px;font-size:12px;position:absolute;top:0;right:0;float:right" onclick="iframe_say.window.location.reload();">下一条</div>
+				</div>				
+			</div>
+			<div id="title">
+				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> %catlink% %cat%</div>				
+			</div>		
+			<div id="content"  class="width_3 listcontent">
+				<ul class="f12px width_3">
+					%list_each%
+				</ul>		
+				<div class="page_navi">%pagenavi%</div>
+			</div>
+			<!-- content -->
+			<div id="sidebar" class="clearfix">
+				%side%
+			</div>
+		<!-- middle -->
+		<div id="footer">
+			%foot%
+		</div>
+	</div>
+	<!-- wrapper -->
+	<script type="text/javascript">
+	%list.js%
+	</script>
+	<script type="text/javascript">
+	%footjs%
+	</script>	
+</body>
+</html>
