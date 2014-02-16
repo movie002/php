@@ -12,12 +12,15 @@ header('Content-Type:text/html;charset= UTF-8');
 require("../config.php");
 require("../curl.php");
 require("common.php");
+require("../common.php");
 require("compressJS.class.php");
+require("movie.mtime.com.boxoffice.php");
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
+readerdirect();
 dh_gen_index();
 
 function dh_gen_index()

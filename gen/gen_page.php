@@ -130,7 +130,7 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 }
 
 		//循环数输出队列
-function  others($QUEUE)
+function others($QUEUE)
 {
 	global $DH_html_url;
 	$liout = '';

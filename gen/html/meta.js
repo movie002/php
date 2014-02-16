@@ -65,7 +65,7 @@ if(movie002_width=='1280')
 	style_need += ' .width_3{width: 775px;}';
 	style_need +=' #movie002_width_2{font-weight:700}';
 	style_need +=' #movie002_width_1{font-weight:normal}';
-	style_need +=' .gotop_btn{margin-left:518px';	
+	style_need +=' a.gotop_btn{margin-left:540px';	
 }
 if(style_need!=null)
 {

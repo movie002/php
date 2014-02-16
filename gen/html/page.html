@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
-	<title>《%title_key%》%pubyear%-在线下载资源链接-二手电影网</title>
+	<title>%cat%:《%title_key%%pubyear%》-在线下载资源链接-二手电影网</title>
 	<meta name="keywords" content="%keywords% %pubyear% 影视资源导航,预告片,下载链接,在线视频,影视资讯,影评" />
 	<meta name="description" content="%description% %pubyear% 的介绍（导演、剧情、演员、海报、剧照、影片状态）、预告、下载资源、在线视频、影视资讯、影评等完整电影信息的影视资源导航" />
 	%meta%
@@ -24,7 +24,7 @@
 			<div id="title">
 				<div class="browse">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <a href="%cathref%" title="查看 中的全部文章">%cat%</a> >> %title% %pubyear% %mstatus%</div>
 				<div class="titlecontent">
-					<h1>%title% %pubyear%</h1>
+					<h1>%title% %pubyear% <span style="font-size:14px;font-weight:normal">%way%</span></h1>
 					<h2>%aka%</h2>
 				</div>				
 			</div>
@@ -103,31 +103,11 @@
 						<div class="anchor"><a name="title_8" id="title_8">&nbsp;</a></div>
 					<!-- Duoshuo Comment BEGIN -->
 						<div class="ds-thread"></div>
-						<script type="text/javascript">
-						var duoshuoQuery = {short_name:"movie002"};
-						(function() {
-							var ds = document.createElement('script');
-							ds.type = 'text/javascript';ds.async = true;
-							ds.src = 'http://static.duoshuo.com/embed.js';
-							ds.charset = 'UTF-8';
-							(document.getElementsByTagName('head')[0] 
-							|| document.getElementsByTagName('body')[0]).appendChild(ds);
-						})();
-						</script>
 					<!-- Duoshuo Comment END -->					
 				</div>
 			</div>
 			<!-- content -->
 			<div id="sidebar" class="clearfix">
-				%weibo%
-				<script type="text/javascript">
-					var movie002_day =  getCookie("movie002_day");
-					if(movie002_day=='night')
-					{
-						var imgTags = document.getElementsByTagName('wb:livestream');
-						imgTags[0].setAttribute('color','CCCCCC,383838,B6AA7B,bbbbbb,383838,383838');
-					}
-				</script>
 				%side%
 			</div>
 			<div id="footer">
@@ -143,14 +123,25 @@
 	%footjs%
 	</script>
 	<script type="text/javascript">
-		var wumiiPermaLink = ""; //请用代码生成文章永久的链接
-		var wumiiTitle = ""; //请用代码生成文章标题
-		var wumiiTags = ""; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
-		var wumiiCategories = []; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
-		var wumiiSitePrefix = "http://movie002.com/";
-		var wumiiParams = "&num=4&mode=3&pf=JAVASCRIPT";
+		var movie002_day =  getCookie("movie002_day");
+		if(movie002_day=='night')
+		{
+			var imgTags = document.getElementsByTagName('wb:livestream');
+			imgTags[0].setAttribute('color','CCCCCC,383838,B6AA7B,bbbbbb,383838,383838');
+		}
 	</script>
 	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"movie002"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>	
 	<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=19224" ></script>
 	<script type="text/javascript" id="bdshell_js"></script>
 	<script type="text/javascript">

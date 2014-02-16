@@ -80,9 +80,9 @@ function dh_gen_share()
 	$DH_input_html  = $DH_html_path . 'side_each.html';
 	$DH_side_each = dh_file_get_contents($DH_input_html);
 	//广告
-	$DH_side_ad= str_replace("%title%",'广告',$DH_side_each);
-	$DH_side_ad= str_replace("%more%",'',$DH_side_ad);
-	$DH_side_ad= str_replace("%content%",'',$DH_side_ad);
+//	$DH_side_ad= str_replace("%title%",'广告',$DH_side_each);
+//	$DH_side_ad= str_replace("%more%",'',$DH_side_ad);
+//	$DH_side_ad= str_replace("%content%",'',$DH_side_ad);
 	
 	//热门电影
 	$DH_side_hotmovie= str_replace("%title%",'热门电影',$DH_side_each);
@@ -148,7 +148,7 @@ function dh_gen_share()
 	$DH_side_fl= str_replace("%content%",'',$DH_side_fl);	
 	
 //	$DH_side_content=$DH_side_ad.$DH_side_hotmovie.$DH_side_hottv.$DH_side_tongji.$DH_side_fl;	
-$DH_side_content=$DH_side_ad.$DH_side_hotmovie.$DH_side_hottv.$DH_side_tongji;	
+$DH_side_content=$DH_side_hotmovie.$DH_side_hottv.$DH_side_tongji;	
 
 	$DH_side= str_replace("%side_content%",$DH_side_content,$DH_side);
 	$DH_output_file = $DH_share_output_path. 'side.html';

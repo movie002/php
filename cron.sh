@@ -21,7 +21,7 @@ echo $(date) > $logfile
 ## 2.5 更新page的状态，资源数等
 /srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/getpage/updatestatus.php?d=2 -o /srv/movie002/log/updatestatus.log
 ## 2.5 得到票房信息
-/srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/reader/movie.mtime.com.boxoffice.php -o /srv/movie002/log/boxoffice.log
+##/srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/reader/movie.mtime.com.boxoffice.php -o /srv/movie002/log/boxoffice.log
 ## 2.5 得到演员信息
 /srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/reader/getcele/getcele.php -o /srv/movie002/log/getcele.log
 ##/srv/movie002/timeexc.sh  curl http://127.0.0.1/movie002/reader/getcele/getimgurl.php -o /srv/movie002/log/getimgurl.log
