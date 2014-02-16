@@ -91,16 +91,16 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%pubyear%",$pubyear,$DH_output_content_page);
 			
 			//提取标题
-			$title = $row['title'];
-			if($row['aka']!='')
-			{
-				$akas=preg_split("/[\/]+/", $row['aka']);
-				$title.=' '.$akas[0];
-				//echo $title."</br>\n";
-			}
+//			$title = $row['title'];
+//			if($row['aka']!='')
+//			{
+//				$akas=preg_split("/[\/]+/", $row['aka']);
+//				$title.=' '.$akas[0];
+//				//echo $title."</br>\n";
+//			}
 			$keywords = $row['title'];			
 			$keywords.=','.strtr($row['aka'],'/',',');
-			$DH_output_content_page = str_replace("%title_key%",$title,$DH_output_content_page);
+			$DH_output_content_page = str_replace("%title_key%",$row['title'],$DH_output_content_page);
 			$DH_output_content_page = str_replace("%keywords%",$keywords,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%description%",$keywords,$DH_output_content_page);
 			

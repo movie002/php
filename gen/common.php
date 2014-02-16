@@ -259,14 +259,14 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 		{
 			$showtext='[ << 展开(其余'.($num3-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num3-$num).'个) << ]';
-			$hidetext2='[ ↑↑ 隐藏(以上'.($num3-$num).'个) ↑↑ ]';		
+			$hidetext2='[ ∧ 隐藏(以上'.($num3-$num).'个) ∧ ]';		
 			$onlylinks.='<div class="showhide" id="onlylinks_t"  onclick="showhide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlylinks" style="display:none;" class="showhide_more">'.$onlylinks_more.'<div onclick="hide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\'title_4\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
 		if($num4 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num4-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num4-$num).'个) << ]';
-			$hidetext2='[ ↑↑ 隐藏(以上'.($num4-$num).'个) ↑↑ ]';		
+			$hidetext2='[ ∧ 隐藏(以上'.($num4-$num).'个) ∧ ]';		
 			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" class="showhide_more">'.$yingping_more.'<div onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_3\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
 		
