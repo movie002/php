@@ -30,6 +30,7 @@ function dh_gen_list()
 	$deep = '../../';
 	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);	
+	$DH_output_content = str_replace("%weibo%",'',$DH_output_content);	
 
 	if (!file_exists($DH_output_index_path))  
 		mkdir($DH_output_index_path,0777);
