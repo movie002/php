@@ -61,7 +61,7 @@ if(movie002_width==null)
 if(movie002_width=='1280')
 {
 	style_need += ' .width_1{width: 1080px;}';
-	style_need += ' .width_2{width: 1040px;}';
+	style_need += ' .width_2{width: 1050px;}';
 	style_need += ' .width_3{width: 775px;}';
 	style_need +=' #movie002_width_2{font-weight:700}';
 	style_need +=' #movie002_width_1{font-weight:normal}';

@@ -153,8 +153,18 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
 		
+		if(($num00+$num01+$num02) == 0)
+		{
+			$downloadlinks=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
+		}
+		
 		//echo $downloadlinks;
-		if($num1 > 0) $onlinelinks = $linkstop.$onlinelinks;
+		if($num1 > 0) 
+			$onlinelinks = $linkstop.$onlinelinks;
+		else
+		{
+			$onlinelinks=' <div style="color:#777"> 暂无在线资源,可以点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
+		}
 		if($num1 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num1-$num).'个) >> ]';
@@ -386,7 +396,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	preg_match('/<pc>(.*?)<\/pc>/s',$row['meta'],$match);
 	if(!empty($match[1]))
 	{	
-		$pubcompany.=' -- ['.$match[1].'出品]';
+		$pubcompany.='--['.$match[1].'出品]';
 	}	
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 

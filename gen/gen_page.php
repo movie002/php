@@ -86,7 +86,7 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			}
 			else
 			{
-				$pubyear ='('. date("Y",strtotime($row['pubdate'])).')';			
+				$pubyear =date("Y",strtotime($row['pubdate']));			
 			}
 			$DH_output_content_page = str_replace("%pubyear%",$pubyear,$DH_output_content_page);
 			
@@ -102,7 +102,7 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			$keywords.=','.strtr($row['aka'],'/',',');
 			$DH_output_content_page = str_replace("%title_key%",$row['title'],$DH_output_content_page);
 			$DH_output_content_page = str_replace("%keywords%",$keywords,$DH_output_content_page);
-			$DH_output_content_page = str_replace("%description%",$keywords,$DH_output_content_page);
+			$DH_output_content_page = str_replace("%id%",$row['id'],$DH_output_content_page);
 			
 			//新浪微博控件
 			$weibotitle=rawurlencode($row['title']).'|'.rawurlencode($row['title']);
@@ -119,7 +119,7 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			
 			$sqllinks = "select pageid,author,title,link,linktype,updatetime from link2 t where t.pageid = '".$row['id']."' order by updatetime desc";		
 			$DH_output_content_page = dh_replace_link2($sqllinks,$row,$DH_output_content_page);
-			$summary=$row['summary'].' <a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank"> [更多]</a>';
+			$summary=$row['summary'].' <a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank"> [更多内容到豆瓣]</a>';
 			$DH_output_content_page = str_replace("%summary%",$summary,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%home%",$DH_home_url,$DH_output_content_page);
 			$DH_output_file = output_page_path($path,$row['id']);
