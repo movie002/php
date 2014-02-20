@@ -89,4 +89,14 @@ function setupdatetime($change,$newdate,$authorid)
 		$result=dh_mysql_query($sql);		
 	}
 }
+
+function setupdatetime2($change,$newdate,$authorname)
+{
+	if($change)
+	{
+		$sql="update author set updatetime='$newdate' where author = '$authorname';";
+		echo $sql."</br>\n";
+		$result=dh_mysql_query($sql);		
+	}
+}
 ?>

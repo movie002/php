@@ -14,7 +14,7 @@ require("www.y80s.com.php");
 require("www.yyets.com.php");
 //require("www.a67.com.php");
 //require("www.7060.com.php");
-
+require("www.somag.net.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -23,7 +23,9 @@ $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
-reader();
+//reader();
+
+readrssfile1008();
 mysql_close($conn);
 
 class author
@@ -63,7 +65,6 @@ function reader()
 			readrssfile1005($author);
 			readrssfile1006($author);
 			readrssfile1007($author);
-			//readrssfile1008($author);
 			//readrssfile1009($author);			
 			readrssfile1011($author);
         }
