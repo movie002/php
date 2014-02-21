@@ -96,7 +96,7 @@ function readrssfile1008()
 				$lasttitle = str_replace('.',' ',$matchtitle[1]);
 				//$rssinfo->title = $match[2][$key2].'('.trim($match3[1][$key2]).')';
 				$rssinfo->title = "《".trim($lasttitle)."》".trim($titlemata).'('.trim($match3[1][$key2]).')';
-				print_r($rssinfo);
+				//print_r($rssinfo);
 				insertonlylink($rssinfo);
 			}
 		}
