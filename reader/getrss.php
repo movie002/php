@@ -34,7 +34,7 @@ function all()
 		while($row = mysql_fetch_array($results))
 		{
 			//打开rss地址，并读取，读取失败则中止
-			echo $row['name'].'的全部文章:'.$row['rssurl'].'</br>';
+			echo "\n".$row['name'].'的全部文章:'.$row['rssurl']."</br>\n";
 			$rssinfo->author=$row['name'];
 			$authorid=$row['id'];
 			$lastupdate=$row['updatetime'];			

@@ -2,6 +2,7 @@
 function readrssfile1008()
 {
 	$authorname='搜磁力链接';
+	$authorurl='http://www.somag.net';
 	
 	$url = array('http://www.somag.net/category/%E7%94%B5%E5%BD%B1/',
 				 'http://www.somag.net/category/%E7%BE%8E%E5%89%A7/',
@@ -29,7 +30,7 @@ function readrssfile1008()
 	{
 		$change = true;
 		$i=1;
-		while($change&&$i<6)
+		while($change&&$i<3)
 		{
 			$i++;
 			$trueurl = $eachurl.$i.'/';
@@ -40,7 +41,6 @@ function readrssfile1008()
 				echo 'fail to get file '.$trueurl."!</br>\n";	
 				$sql="update author set failtimes=failtimes+1 where author='$authorname';";
 				$result=dh_mysql_query($sql);
-				$i++;
 				continue;
 			}
 			$buff = iconvbuff($buff);
@@ -49,8 +49,11 @@ function readrssfile1008()
 			echo "crawl ".$trueurl." </br>\n";
 			//print_r($buff);	
 			preg_match_all('/<h2><a href="(.*?)" target="\_blank">(.*?)<\/a><\/h2>/s',$buff,$match);
-			print_r($match);
-			continue;
+			preg_match_all('/发布于 (.*?)\-/s',$buff,$match2);
+			preg_match_all('/大小(.*?)<\/div>/s',$buff,$match3);
+			//print_r($match);
+			//print_r($match2);
+			//print_r($match3);
 			if(empty($match[2]))
 			{
 				echo 'error no result!';
@@ -58,7 +61,7 @@ function readrssfile1008()
 			}
 			foreach ($match[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match[4][$key2]));
+				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match2[1][$key2]));
 				if($rssinfo->update > date("Y-m-d H:i:s",strtotime("+3 days")))
 				{
 					//将年份减1
@@ -73,24 +76,27 @@ function readrssfile1008()
 				}
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
-				$cat = trim($match[1][$key2]);
-				if($urlcat[$key]==='动漫')
-					if($cat!='电视动画'&&$cat!='剧场动画'&&$cat!='OVA'&&$cat!='新番连载')
-						continue;
-				$rssinfo->cat =trim($urlcat[$key]).','.trim($match[1][$key2]);
-				//$rssinfo->link =$author->rssurl.trim($match[2][$key2]);
-				$title = $match[3][$key2];
-				if($match[5][$key2]=='<img src="Images/magnet-icon-14w-14h.gif">')
+				$rssinfo->cat =trim($urlcat[$key]);
+				$rssinfo->link =$authorurl.trim($match[1][$key2]);
+				//为了减轻后续的压力，这里根据此网站的特点对标题进行处理
+				//取出最有可能是标题的地方
+				preg_match('/(.*?)(1080|720|3D|20|18|19|\[|US|\(|S0[1-9]E[0-9]{2}|E[0-9]{2})/s',$match[2][$key2],$matchtitle);
+				//print_r($matchtitle);
+				if(empty($matchtitle)||empty($matchtitle[1]))
+					continue;
+				//echo $match[2][$key2];
+				preg_match_all('/1080p|720p|S0[1-9]E[0-9]{2}|E[0-9]{2}|BluRay|HD/s',$match[2][$key2],$matchq);
+				$titlemata='';
+				if(!empty($matchq[0]))
+				foreach($matchq[0] as $key3=> $eachmatchq)
 				{
-					$rssinfo->cat .= ',磁力链接';
-					$rssinfo->title =$title;
+					$titlemata.='.'.$eachmatchq;
 				}
-				else
-				{
-					$rssinfo->cat .= ',电驴链接';
-					$rssinfo->title =$title.' ('.$match[5][$key2].')';
-				}
-				//print_r($rssinfo);
+				//print_r($matchq);
+				$lasttitle = str_replace('.',' ',$matchtitle[1]);
+				//$rssinfo->title = $match[2][$key2].'('.trim($match3[1][$key2]).')';
+				$rssinfo->title = "《".trim($lasttitle)."》".trim($titlemata).'('.trim($match3[1][$key2]).')';
+				print_r($rssinfo);
 				insertonlylink($rssinfo);
 			}
 		}
