@@ -4,17 +4,13 @@ require("../../common.php");
 require("../../curl.php");
 require("../../gen/common.php");
 
-require("henbt.com.php");
 require("www.bt5156.com.php");
-//require("www.7369dy.cc.php");
 require("www.gaoqing.tv.php");
 require("www.ed2000.com.php");
 require("www.piaohua.com.php");
-//require("www.y80s.com.php");
 require("www.yyets.com.php");
-//require("www.a67.com.php");
-//require("www.7060.com.php");
 require("www.somag.net.php");
+require("henbt.com.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -58,13 +54,10 @@ function reader()
 			$author->rss=$row['rss'];
 			print_r($author);
 			readrssfile1001($author);
-			//readrssfile1002($author);
 			readrssfile1003($author);
 			readrssfile1004($author);
 			readrssfile1005($author);
-			readrssfile1006($author);
-			readrssfile1007($author);
-			//readrssfile1009($author);			
+			readrssfile1007($author);		
 			readrssfile1011($author);
         }
 	}
