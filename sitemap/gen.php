@@ -25,6 +25,10 @@ $pagecount=2500;
 //向前多生成几页
 $pregen=3;
 
+if(isset($_REQUEST['pre']))
+{
+	$pregen = $_REQUEST['pre'];
+}
 
 //最大的id号
 $sql="select max(id) from page";

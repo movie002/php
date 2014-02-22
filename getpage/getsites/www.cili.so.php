@@ -52,9 +52,13 @@ function get_cili(&$resultlast,$pageid=-1)
 	print_r($match3);
 	if(empty($match0[1]))
 		return;
-			
+	
+	$i = 0;
 	foreach($match1[1] as $key=>$each)
 	{	
+		if($i>4)
+			break;
+		$i++;
 		//判断类型
 		$thistype=0;
 		if(strstr($match0[1][$key],"电影"))
