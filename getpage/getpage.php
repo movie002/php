@@ -13,6 +13,7 @@ require("getsites/m1905.php");
 require("getsites/v360.php");
 require("getsites/v2345.php");
 require("getsites/vbaidu.php");
+require("getsites/www.cili.so.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -84,6 +85,7 @@ function getpage()
 				get_v360($douban_result,$pageid);
 				get_v2345($douban_result,$pageid);
 				get_vbaidu($douban_result,$pageid);
+				get_cili($douban_result,$pageid);
 				continue;
 			}
 			
@@ -108,9 +110,11 @@ function getpage()
 				$sqlupdate = "update link set pageid = (select id from page where mediaid='".$douban_result->mediaid."') where link = '".$row['link']."'";
 				dh_mysql_query($sqlupdate);
 				
+				$douban_result->updatetime = $row['updatetime'];				
 				get_v360($douban_result);
 				get_v2345($douban_result);
 				get_vbaidu($douban_result);
+				get_cili($douban_result);
 				
 				//插入到cele表中
 				preg_match("/<c>(.*?)<\/c>/",$douban_result->meta,$match);

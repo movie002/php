@@ -179,10 +179,9 @@ function insertpagelink($douban_result,$updatetime,$mediaid)
 
 function update360link($resultlast,$author,$url,$title,$quality,$pageid=-1)
 {
-	$updatetime=date("Y-m-d  H:i:s");
 	if($pageid==-1)
 	{
-		$sql="insert into link(author,title,link,linkway,linkquality,updatetime) values('$author',\"$title\",'$url',4,$quality,'$updatetime')ON DUPLICATE KEY UPDATE title=\"$title\",linkquality=$quality,updatetime='$resultlast->updatetime'";
+		$sql="insert into link(author,title,link,linkway,linkquality,updatetime) values('$author',\"$title\",'$url',4,$quality,'$resultlast->updatetime')ON DUPLICATE KEY UPDATE title=\"$title\",linkquality=$quality,updatetime='$resultlast->updatetime'";
 		echo $sql."</br>\n";
 		$sqlresult=dh_mysql_query($sql);		
 		$sql="update link set pageid = (select id from page where mediaid='$resultlast->mediaid') where link = '$url' and pageid is NULL" ;
@@ -190,7 +189,26 @@ function update360link($resultlast,$author,$url,$title,$quality,$pageid=-1)
 	}
 	else
 	{
-		$sql="insert into link(pageid,author,title,link,linkway,linkquality,updatetime) values($pageid,'$author',\"$title\",'$url',4,$quality,'$updatetime')ON DUPLICATE KEY UPDATE title=\"$title\",updatetime='$resultlast->updatetime'";
+		$sql="insert into link(pageid,author,title,link,linkway,linkquality,updatetime) values($pageid,'$author',\"$title\",'$url',4,$quality,'$resultlast->updatetime')ON DUPLICATE KEY UPDATE title=\"$title\",updatetime='$resultlast->updatetime'";
+		echo $sql."</br>\n";
+		$sqlresult=dh_mysql_query($sql);		
+	}	
+}
+
+//从已知pageid或者mediaid插入link,不需要后续的处理
+function insertsiteslink($updatetime,$mediaid,$author,$title,$url,$way,$type,$quality,$onlinetype,$downtype,$property,$pageid=-1)
+{
+	if($pageid==-1)
+	{
+		$sql="insert into link(author,title,link,linkway,linktype,linkquality,linkonlinetype,linkdowntype,linkproperty,updatetime) values('$author',\"$title\",'$url',$way,$type,$quality,$onlinetype,$downtype,$property,'$updatetime')ON DUPLICATE KEY UPDATE author='$author',title=\"$title\",linkway=$way,linktype=$type,linkquality=$quality,linkonlinetype=$onlinetype,linkdowntype=$downtype,linkproperty=$property,updatetime='$updatetime'";
+		echo $sql."</br>\n";
+		$sqlresult=dh_mysql_query($sql);		
+		$sql="update link set pageid = (select id from page where mediaid='$mediaid') where link = '$url' and pageid is NULL" ;
+		$sqlresult=dh_mysql_query($sql);
+	}
+	else
+	{
+		$sql="insert into link(pageid,author,title,link,linkway,linktype,linkquality,linkonlinetype,linkdowntype,linkproperty,updatetime) values($pageid,'$author',\"$title\",'$url',$way,$type,$quality,$onlinetype,$downtype,$property,'$updatetime')ON DUPLICATE KEY UPDATE author='$author',title=\"$title\",linkway=$way,linktype=$type,linkquality=$quality,linkonlinetype=$onlinetype,linkdowntype=$downtype,linkproperty=$property,updatetime='$updatetime'";
 		echo $sql."</br>\n";
 		$sqlresult=dh_mysql_query($sql);		
 	}	

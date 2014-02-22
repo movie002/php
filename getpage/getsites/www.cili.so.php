@@ -14,86 +14,74 @@
 //#$douban_result->aka='名侦探柯南/铁甲奇侠/Iron Man';
 //$douban_result->type=1;
 //$douban_result->updatetime='2000-05-05 00:00:00';
-//get_v2345($douban_result);
+//get_cili($douban_result);
 //print_r($douban_result);
 //mysql_close($conn);
 
 //处理电影名  
-function get_v2345(&$resultlast,$pageid=-1)
+function get_cili(&$resultlast,$pageid=-1)
 { 
-	echo " \n begin to get from v2345:\n";	
+	echo " \n begin to get from cili.so:\n";	
 	$name = rawurlencode($resultlast->title);
 	
-	$buffer = get_file_curl('http://so.v.2345.com/search_'.$name);
+	$buffer = get_file_curl('http://www.cili.so/search.php?act=result&keyword='.$name);
 	//echo $buffer;
 
 	if(false==$buffer)
 	{
-		echo $resultlast->title."搜索失败 </br>\n";
-		return;
+		sleep(5);
+		$buffer = get_file_curl('http://www.cili.so/search.php?act=result&keyword='.$name);	
+		if(false==$buffer)
+		{
+			echo $resultlast->title."搜索失败 </br>\n";
+			return;
+		}
 	}
 	//判断类型和名字
 	$buffer = iconvbuff($buffer);
+	//print_r($buffer);
+	preg_match_all('/<a href="sort.*?">(.*?)<\/a>/s',$buffer,$match0);
+	preg_match_all('/<a href="show.*?.html" target="_blank">(.*?)<\/a>/s',$buffer,$match1);
+//	preg_match_all('/<a href="magnet:\?xt=urn:btih:(.*?)" target="_blank">/s',$buffer,$match2);
+	preg_match_all('/<td>([^>]+)<\/td>[^>]+<\/tr>/s',$buffer,$match3);
+	preg_match_all('/<a href="http:\/\/www.cili.so\/down.php\?date=(.*?)&amp;hash=(.*?)">/s',$buffer,$match2);
 	
-	preg_match('/<ul class="ul_picTxt clearfix" id="searchlist">(.*?)<\/ul>/s',$buffer,$match0);	
-	//print_r($match0);
+	print_r($match0);
+	print_r($match1);
+	print_r($match2);
+	print_r($match3);
 	if(empty($match0[1]))
 		return;
-	
-	preg_match_all('/<li>(.*?)<\/li>/s',$match0[1],$match1);	
-	//print_r($match1);
-	if(empty($match1[1]))
-		return;	
-		
+			
 	foreach($match1[1] as $key=>$each)
 	{	
-		preg_match('/<a href="([^>]+)" target="_blank" onclick="[^>]+" class="aVideoName" >([^>]+)<\/a>/s',$each,$match2);
-		//print_r($match2);
-		if(empty($match2[0]))
-			continue;
 		//判断类型
 		$thistype=0;
-		if(strstr($match2[1],"http://dianying.2345.com/"))
+		if(strstr($match0[1][$key],"电影"))
 			$thistype=1;
-		if(strstr($match2[1],"http://tv.2345.com/"))
+		if(strstr($match0[1][$key],"电视剧"))
 			$thistype=2;
-		if(strstr($match2[1],"http://v.2345.com/zongyi/"))
+		if(strstr($match0[1][$key],"综艺"))
 			$thistype=3;
-		if(strstr($match2[1],"http://dongman.2345.com/"))
+		if(strstr($match0[1][$key],"番号"))
+			$thistype=4;			
+		if(strstr($match0[1][$key],"动漫"))
 			$thistype=4;
-		if($resultlast->type!=0 && $thistype!=$resultlast->type)
-			continue;		
+			
+		if(strstr($match0[1][$key],"MV"))
+			continue;
+		if($thistype==0)
+			if($resultlast->type!=0 && $thistype!=$resultlast->type)
+				continue;		
 
-		$url=$match2[1];
-		$title=$match2[2];
+		$url=$match2[1][$key];
+		//$title=$match2[2][$key];
+		$updatetime = date("Y-m-d H:i:s",(int)$match2[1][$key]);
+		$title =preg_replace('/<span class="keyword">(.*?)<\/span>/s','{$1}',$match1[1][$key]);
+		$url='magnet:?xt=urn:btih:'.$match2[2][$key];
 		
-		//比较名字是否一致
-		if($title!=$resultlast->title)
-		{
-			$akas =explode('/',$resultlast->aka);
-			//print_r($akas);			
-			if (array_search($title,$akas)==false)
-				continue;
-		}
-		
-		
-		
-		preg_match('/<span class="sTxt"><em class="left">(.*?)<\/em><em class="right">(.*?)<\/em><\/span>/s',$each,$match3);
-		//print_r($match3);
-		if(empty($match3[0]))
-		{
-			preg_match('/<span class="sTxt"><em class="right">(.*?)<\/em><\/span>/s',$each,$match3);
-			print_r($match3);
-			if(empty($match3[0]))
-				continue;
-			else
-				$title .='('.$match3[1].')'; 
-		}
-		else
-			$title .='('.$match3[1].$match3[2].')'; 
-
-		update360link($resultlast,'2345影视',$url,$title,3,$pageid);
-		echo $url."--> v2345 -->".$title."\n";
+		insertsiteslink($updatetime,$resultlast->mediaid,'cili.so',$title,$url,5,3,4,0,4,1,$pageid);
+		echo $url."--> cili.so -->".$title." ".$url."\n";
 	}
 }
 ?>  

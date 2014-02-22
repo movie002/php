@@ -1,25 +1,25 @@
 <?php 
 /* 使用示例 */   
 
-//header('Content-Type:text/html;charset= UTF-8');
-//require("../../config.php");
-//require("../../curl.php");
-//require("../../common.php");
-//
-//$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-//mysql_select_db($dbname, $conn) or die('选择数据库失败');
-//dh_mysql_query("set names utf8;");
-//$douban_result = new MovieResult();
-//$douban_result->title='特殊身份';
-//#$douban_result->aka='名侦探柯南/铁甲奇侠/Iron Man';
-//$douban_result->type=1;
-//$douban_result->updatetime='2000-05-05 00:00:00';
-//get_v2345($douban_result);
-//print_r($douban_result);
-//mysql_close($conn);
+header('Content-Type:text/html;charset= UTF-8');
+require("../../config.php");
+require("../../curl.php");
+require("../../common.php");
+
+$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
+mysql_select_db($dbname, $conn) or die('选择数据库失败');
+dh_mysql_query("set names utf8;");
+$douban_result = new MovieResult();
+$douban_result->title='特殊身份';
+#$douban_result->aka='名侦探柯南/铁甲奇侠/Iron Man';
+$douban_result->type=1;
+$douban_result->updatetime='2000-05-05 00:00:00';
+get_v2345($douban_result);
+print_r($douban_result);
+mysql_close($conn);
 
 //处理电影名  
-function get_v2345(&$resultlast,$pageid=-1)
+function get_shousibaocai(&$resultlast,$pageid=-1)
 { 
 	echo " \n begin to get from v2345:\n";	
 	$name = rawurlencode($resultlast->title);
