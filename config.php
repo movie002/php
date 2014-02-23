@@ -85,7 +85,7 @@ function dh_get_catname($type,$country)
 		return '预告片';
 	}
 	global $movietype,$moviecountry;
-	$cat =$movietype[$type]. '(' .$moviecountry[$country].')';
+	$cat =$moviecountry[$country].$movietype[$type];
 	return $cat;
 }
 

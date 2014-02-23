@@ -13,10 +13,11 @@
 //$douban_result->title='特殊身份';
 //#$douban_result->aka='名侦探柯南/铁甲奇侠/Iron Man';
 //$douban_result->type=1;
-//$douban_result->updatetime='2000-05-05 00:00:00';
 //get_cili($douban_result);
 //print_r($douban_result);
 //mysql_close($conn);
+
+
 
 //处理电影名  
 function get_cili(&$resultlast,$pageid=-1)
@@ -80,7 +81,7 @@ function get_cili(&$resultlast,$pageid=-1)
 
 		$url=$match2[1][$key];
 		//$title=$match2[2][$key];
-		$updatetime = date("Y-m-d H:i:s",(int)$match2[1][$key]);
+		$updatetime = date("Y-m-d H:i:s",$match2[1][$key]);
 		$title =preg_replace('/<span class="keyword">(.*?)<\/span>/s','{$1}',$match1[1][$key]);
 		$url='magnet:?xt=urn:btih:'.$match2[2][$key];
 		
