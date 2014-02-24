@@ -398,7 +398,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	preg_match('/<pc>(.*?)<\/pc>/s',$row['meta'],$match);
 	if(!empty($match[1]))
 	{	
-		$pubcompany.='--['.$match[1].'出品]';
+		$pubcompany.='['.$match[1].'出品]';
 	}	
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 
@@ -439,7 +439,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 		
 	$DH_output_content_page = str_replace("%buyticket%",$buyticket,$DH_output_content_page);
 	
-	$DH_output_content_page = str_replace("%thisupdatetime%",' 最后更新: '.$updatetime,$DH_output_content_page);
+	$DH_output_content_page = str_replace("%thisupdatetime%",'最后更新:'.$updatetime,$DH_output_content_page);
 	return $DH_output_content_page;
 }
 
