@@ -341,6 +341,8 @@ function dh_replace_content($count,$row,$DH_output_content)
 	}	
 	foreach ($celeimg_array as $celeimg_each)
 	{
+		if(empty($celeimg_each[2]))
+			$imgeach='';
 		$celeimg_all.=	'<li style="width:'.$width.'; height:'.$height.'"><a href="http://movie.douban.com/celebrity/'.$celeimg_each[0].'/" target="_blank" rel="nofollow"><img style="width:'.$width.'; height:'.$height.'" data-src="http://img3.douban.com/img/celebrity/medium/'.$celeimg_each[2].'" alt="'.$celeimg_each[1].'的影人图片" width="'.$width.'" height="'.$height.'"/><span class="celeimg_title">'.$celeimg_each[3].'</span></a><div class="celeimg_name">'.$celeimg_each[1].'</div></li>';
 	}
 	$celeimg_all = '<div id="pageClass"><ul>'.$celeimg_all.'</ul></div>';		
