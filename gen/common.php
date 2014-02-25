@@ -505,7 +505,7 @@ function dh_replace_snapshot($type='middle',$row,$DH_output_content,$needcountry
 	}
 	else
 	{
-		$imgposter = '<imgdao link_src="'.$page_path.'" img_src="http://img3.douban.com/view/photo/thumb/public/p'.$simgurl.'.jpg" style="witdh:'.$width.';height:'.$height.'" src_width="'.$width.'" src_height="'.$height.'" alt="'.$row['title'].'的海报"><span></span></imgdao>';
+		$imgposter = '<imgdao link_src="'.$page_path.'" img_src="http://img3.douban.com/view/photo/thumb/public/p'.$simgurl.'.jpg" style="width:'.$width.';height:'.$height.'" src_width="'.$width.'" src_height="'.$height.'" alt="'.$row['title'].'的海报"><span></span></imgdao>';
 	}	
 	$DH_output_content_page = str_replace("%imgposter%",$imgposter,$DH_output_content_page);
 	

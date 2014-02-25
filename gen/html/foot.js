@@ -109,9 +109,13 @@ window.onload = function ()
 	showImgs();
 	document.getElementById('submittext').focus();
 };
+
 window.onscroll = function()
 {
-	var h =document.body.scrollTop,top = document.getElementById('goTopButton');
+	var h =document.body.scrollTop;
+	if(!h)
+		h=document.documentElement.scrollTop;
+	var top = document.getElementById('goTopButton');
 	if(h>0)
 	{
 		top.style.display = 'block';
