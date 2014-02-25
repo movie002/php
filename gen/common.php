@@ -342,8 +342,10 @@ function dh_replace_content($count,$row,$DH_output_content)
 	foreach ($celeimg_array as $celeimg_each)
 	{
 		if(empty($celeimg_each[2]))
-			$imgeach='';
-		$celeimg_all.=	'<li style="width:'.$width.'; height:'.$height.'"><a href="http://movie.douban.com/celebrity/'.$celeimg_each[0].'/" target="_blank" rel="nofollow"><img style="width:'.$width.'; height:'.$height.'" data-src="http://img3.douban.com/img/celebrity/medium/'.$celeimg_each[2].'" alt="'.$celeimg_each[1].'的影人图片" width="'.$width.'" height="'.$height.'"/><span class="celeimg_title">'.$celeimg_each[3].'</span></a><div class="celeimg_name">'.$celeimg_each[1].'</div></li>';
+			$imgeach='http://img3.douban.com/pics/celebrity-default-medium.gif';
+		else
+			$imgeach='http://img3.douban.com/img/celebrity/medium/'.$celeimg_each[2];
+		$celeimg_all.=	'<li style="width:'.$width.'; height:'.$height.'"><a href="http://movie.douban.com/celebrity/'.$celeimg_each[0].'/" target="_blank" rel="nofollow"><img style="width:'.$width.'; height:'.$height.'" data-src="'.$imgeach.'" alt="'.$celeimg_each[1].'的影人图片" width="'.$width.'" height="'.$height.'"/><span class="celeimg_title">'.$celeimg_each[3].'</span></a><div class="celeimg_name">'.$celeimg_each[1].'</div></li>';
 	}
 	$celeimg_all = '<div id="pageClass"><ul>'.$celeimg_all.'</ul></div>';		
 	//替换演员列表
@@ -499,9 +501,13 @@ function dh_replace_snapshot($type='middle',$row,$DH_output_content,$needcountry
 	$simgurl=$row['imgurl'];	
 	$imgposter='';
 	$page_path = output_page_path($DH_html_url,$row['id']);
-	if($simgurl!='' && $simgurl[0]=='s')
+	if($simgurl=='' || $simgurl[0]=='s')
 	{
-		$imgposter ='<a href="'.$page_path.'" target="_blank" title="'.$row['title'].'"><img style="width:'.$width.';height:'.$height.'" alt="'.$row['title'].'的海报" data-src="http://img3.douban.com/mpic/'.$simgurl.'" width="'.$width.'" height="'.$height.'"/></a>';
+		if($simgurl=='')
+			$simgurlneed='http://img3.douban.com/pics/movie-default-medium.gif';
+		else
+			$simgurlneed='http://img3.douban.com/mpic/'.$simgurl;
+		$imgposter ='<a href="'.$page_path.'" target="_blank" title="'.$row['title'].'"><img style="width:'.$width.';height:'.$height.'" alt="'.$row['title'].'的海报" data-src="'.$simgurlneed.'" width="'.$width.'" height="'.$height.'"/></a>';
 	}
 	else
 	{
