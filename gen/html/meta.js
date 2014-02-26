@@ -29,25 +29,25 @@ if(movie002_day==null)
 }
 if(movie002_day=='night')
 {
-	style_need +=' #wrapper{background:#383838;border:1px solid #B6AA7B}';
-	style_need +=' body{background:#383838;color:#B6AA7B}';
-	style_need +=' a{color:#B6AA7B;background:transparent}';
-	style_need +=' a:visited {color: #447FA8;}';	
-	style_need +=' .order{background:url(%home%images/logonight_8.gif) no-repeat;}';				
-	style_need +=' #service_list{background:#383838;}';
-	style_need +=' #global_nav{background:#383838;}';
-	style_need +=' #topics-wrapper{border:none;}';
-	style_need +=' .moviemeta,.celeimg_name,.colormeta{color:#999}';
-	style_need +=' .post-topic-area{color:#999}.post-topic-area:hover{color:#bbb}';
-	style_need +=' .moviedate{color:#D04230}';
-	style_need +=' .titlecontent , .entry a {color:#bbb}';			
-	style_need +=' #movie002_day_2{font-weight:700}';
-	style_need +=' #movie002_day_1{font-weight:normal}';
-	style_need +=' .searchinput,.searchinput:focus{background:#383838;color:#B6AA7B;}';			
+	style_need +='#wrapper{background:#383838;border:1px solid #B6AA7B}';
+	style_need +='body{background:#383838;color:#B6AA7B}';
+	style_need +='a{color:#B6AA7B;background:transparent}';
+	style_need +='a:visited {color:#447FA8;}';	
+	style_need +='.order{background:url(%home%images/logonight_8.gif) no-repeat;}';				
+	style_need +='#service_list{background:#383838;}';
+	style_need +='#global_nav{background:#383838;}';
+	style_need +='#topics-wrapper{border:none;}';
+	style_need +='.moviemeta,.celeimg_name,.colormeta{color:#999}';
+	style_need +='.post-topic-area{color:#999}.post-topic-area:hover{color:#bbb}';
+	style_need +='.moviedate{color:#D04230}';
+	style_need +='.titlecontent,.entry a {color:#bbb}';			
+	style_need +='#movie002_day_2{font-weight:700}';
+	style_need +='#movie002_day_1{font-weight:normal}';
+	style_need +='.searchinput,.searchinput:focus{background:#383838;color:#B6AA7B;}';			
 	
-	style_need +=' .topnav li a, .topnav li a:link, .topnav li a:visited{color:#B6AA7B;}';
-	style_need +=' .topnav li li a, .topnav li li a:link, .topnav li li a:visited,.topnav li a:hover,.topnav li a:active{background:#383838;}';
-	style_need +=' .topnav li a:hover,.topnav li li a:hover{background:#52686F;color:#fff}';
+	style_need +='.topnav li a, .topnav li a:link, .topnav li a:visited{color:#B6AA7B;}';
+	style_need +='.topnav li li a, .topnav li li a:link, .topnav li li a:visited,.topnav li a:hover,.topnav li a:active{background:#383838;}';
+	style_need +='.topnav li a:hover,.topnav li li a:hover{background:#52686F;color:#fff}';
 }
 
 var movie002_width =  getCookie("movie002_width");

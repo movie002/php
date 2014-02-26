@@ -47,10 +47,10 @@ function get_cili(&$resultlast,$pageid=-1)
 	preg_match_all('/<td>([^>]+)<\/td>[^>]+<\/tr>/s',$buffer,$match3);
 	preg_match_all('/<a href="http:\/\/www.cili.so\/down.php\?date=(.*?)&amp;hash=(.*?)">/s',$buffer,$match2);
 	
-	print_r($match0);
-	print_r($match1);
-	print_r($match2);
-	print_r($match3);
+	//print_r($match0);
+	//print_r($match1);
+	//print_r($match2);
+	//print_r($match3);
 	if(empty($match0[1]))
 		return;
 	
@@ -86,7 +86,7 @@ function get_cili(&$resultlast,$pageid=-1)
 		$url='magnet:?xt=urn:btih:'.$match2[2][$key];
 		
 		insertsiteslink($updatetime,$resultlast->mediaid,'cili.so',$title,$url,5,3,4,0,4,1,$pageid);
-		echo $url."--> cili.so -->".$title." ".$url."\n";
+		//echo $url."--> cili.so -->".$title." ".$url."\n";
 	}
 }
 ?>  

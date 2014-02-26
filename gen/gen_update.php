@@ -40,7 +40,7 @@ dh_save(1);
 
 function dh_gen_update($cycle)
 {
-	global $movietype,$DH_html_url,$DH_src_path,$DH_output_html_path;
+	global $movietype,$DH_html_url,$DH_src_path,$DH_output_html_path,$DH_home_url;
 	$updatenew='';
 	$upnew='<li><b>新资源</b> </li>';
 	$upold='<li><b>增加资源(无更高质量)</b></li>';
@@ -56,6 +56,7 @@ function dh_gen_update($cycle)
 		$DH_input_html  = $DH_src_path . 'author/update.html';
 		$DH_output_content = dh_file_get_contents("$DH_input_html");
 		$DH_output_content = str_replace("%date%",date('Y-m-d',time()),$DH_output_content);
+		$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 		$DH_output_content = setshare($DH_output_content,'');
 		
 		$listhtml='<li>&nbsp;<span class="lt2v0">ID</span><span class="lt45v2">资源名(点击查看)</span><span class="rt340v2">原资源数</span> <span class="rt260v2">现资源数</span><span class="rt140v2">原资源质量</span> <span class="rt60v2">现资源质量</span></li>';

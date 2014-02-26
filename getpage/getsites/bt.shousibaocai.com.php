@@ -21,7 +21,7 @@
 //处理电影名  
 function get_shousibaocai(&$resultlast,$pageid=-1)
 { 
-	echo " \n begin to get from cili.so:\n";	
+	echo " \n begin to get from shousibaocai:\n";	
 	$name = rawurlencode($resultlast->title);
 	
 	$buffer = get_file_curl('http://bt.shousibaocai.com/?s='.$name);
@@ -68,7 +68,7 @@ function get_shousibaocai(&$resultlast,$pageid=-1)
 		$title =trim($match0[1][$key]).'[热度:'.$match3[1][$key].'/速度:'.$match4[1][$key].']('.$match2[1][$key].')';
 		$url='magnet:?xt=urn:btih:'.$match5[1][$key];	
 		insertsiteslink($updatetime,$resultlast->mediaid,'shousibaocai',$title,$url,5,3,4,0,4,1,$pageid);
-		//echo $url."--> cili.so -->".$title." ==> ".$url."\n";
+		//echo $url."--> shousibaocai -->".$title." ==> ".$url."\n";
 	}
 }
 ?>  
