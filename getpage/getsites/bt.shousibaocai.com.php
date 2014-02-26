@@ -10,10 +10,10 @@
 //mysql_select_db($dbname, $conn) or die('选择数据库失败');
 //dh_mysql_query("set names utf8;");
 //$douban_result = new MovieResult();
-//$douban_result->title='特殊身份';
+//$douban_result->title='名侦探柯南';
 //#$douban_result->aka='名侦探柯南/铁甲奇侠/Iron Man';
 //$douban_result->type=1;
-//get_cili($douban_result);
+//get_shousibaocai($douban_result);
 //print_r($douban_result);
 //mysql_close($conn);
 
@@ -63,9 +63,11 @@ function get_shousibaocai(&$resultlast,$pageid=-1)
 		if($i>4)
 			break;
 		$i++;
-
+		$title = trim($match0[1][$key]);
+		if(!strstr($title,$resultlast->title))
+			continue;
 		$updatetime = date("Y-m-d H:i:s",strtotime($match1[1][$key]));
-		$title =trim($match0[1][$key]).'[热度:'.$match3[1][$key].'/速度:'.$match4[1][$key].']('.$match2[1][$key].')';
+		$title .='[热度:'.$match3[1][$key].'/速度:'.$match4[1][$key].']('.$match2[1][$key].')';
 		$url='magnet:?xt=urn:btih:'.$match5[1][$key];	
 		insertsiteslink($updatetime,$resultlast->mediaid,'shousibaocai',$title,$url,5,3,4,0,4,1,$pageid);
 		//echo $url."--> shousibaocai -->".$title." ==> ".$url."\n";
