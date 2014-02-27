@@ -192,7 +192,7 @@ function dh_gen_movie($DH_index_cat)
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">超清资源</li>';
 			$i++;
 			//最新影评+最新新闻
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_link2($DH_index_cat,$movietype_index)."\n</div>\n";;
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link2($DH_index_cat,$movietype_index)."\n</div>\n";;
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯影评</li>';
 		}
 		else
