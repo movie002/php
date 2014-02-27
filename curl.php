@@ -27,7 +27,7 @@ function get_file_curl($url)
 	$ch = curl_init();
 	$starttime = time();
 	//超时时间为10秒钟
-	$timeout = 10;
+	$timeout = 30;
 	
 //	curl_setopt($ch, CURLOPT_PROXY,"http://172.28.89.1:8080");
 	curl_setopt($ch, CURLOPT_URL, $url);
