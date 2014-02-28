@@ -10,7 +10,8 @@ require("www.ed2000.com.php");
 require("www.piaohua.com.php");
 require("www.yyets.com.php");
 require("www.somag.net.php");
-require("henbt.com.php");
+//require("henbt.com.php");
+require("www.bestxl.com.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -21,6 +22,7 @@ mysql_query("set names utf8;");
 
 reader();
 readrssfile1008();
+//readrssfile1002();
 mysql_close($conn);
 
 class author
@@ -58,7 +60,7 @@ function reader()
 			readrssfile1004($author);
 			readrssfile1005($author);
 			readrssfile1007($author);		
-			readrssfile1011($author);
+			//readrssfile1011($author);
         }
 	}
 }
