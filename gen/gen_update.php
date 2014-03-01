@@ -77,7 +77,7 @@ function dh_gen_update($cycle)
 					if($row['ziyuan']>$pagetmp['ziyuan'])
 					{
 						$pageurl=output_page_path($DH_html_url,$row['id']);
-						$tmp='<li>&nbsp;<span class="lt2v0">'.$row['id'].'</span> <span class="lt45v2"><a href="'.$pageurl.'">'.$row['title'].' ['.$movietype[$row['cattype']].']</a></span><span class="rt340v2">'.$pagetmp['ziyuan'].'</span> <span class="rt260v2">'.$row['ziyuan'].'</span><span class="rt140v2">'.$pagetmp['quality'].'</span> <span class="rt60v2">'.$row['quality'].'</span></li>';
+						$tmp='<li>&nbsp;<span class="lt2v0">'.$row['id'].'</span> <span class="lt45v2"><a href="'.$pageurl.'"> ['.$movietype[$row['cattype']].']'.$row['title'].'</a></span><span class="rt340v2">'.$pagetmp['ziyuan'].'</span> <span class="rt260v2">'.$row['ziyuan'].'</span><span class="rt140v2">'.$pagetmp['quality'].'</span> <span class="rt60v2">'.$row['quality'].'</span></li>';
 						
 						if($pagetmp['ziyuan']==0)
 						{
