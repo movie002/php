@@ -62,7 +62,7 @@ function get_yugaopian(&$resultlast,$pageid=-1)
 			continue;
 		$updatetime = date("Y-m-d H:i:s");
 		$url='http://www.yugaopian.com/movie/'.$match0[1][$key];	
-		insertsiteslink($updatetime,$resultlast->mediaid,'预告片世界',$title,$url,5,3,4,0,4,1,$pageid);
+		insertsiteslink($updatetime,$resultlast->mediaid,'预告片世界',$title,$url,2,3,4,0,0,1,$pageid);
 		//echo $url."--> shousibaocai -->".$title." ==> ".$url."\n";
 	}
 }
