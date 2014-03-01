@@ -94,7 +94,7 @@ function setupdatetime2($change,$newdate,$authorname)
 {
 	if($change)
 	{
-		$sql="update author set updatetime='$newdate' where author = '$authorname';";
+		$sql="update author set updatetime='$newdate' where name = '$authorname';";
 		echo $sql."</br>\n";
 		$result=dh_mysql_query($sql);		
 	}
