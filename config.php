@@ -13,7 +13,7 @@ $pagecount=15;
 
 $DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 $DH_input_path= '/srv/movie002/';
-$DH_home_url= 'http://movie002.com/';
+$DH_home_url= 'http://www.movie002.com/';
 
 //$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/movie/';
 //$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/movie002/';
