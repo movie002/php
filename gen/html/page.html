@@ -44,10 +44,12 @@
 									%imgposter%
 									<div class="imglist">
 										<div>上映时间:%pubdate% 片长:%time%</div>
-										<div>国家: %country% &nbsp;语言:%language% &nbsp;类型:%tags%</div>
-										<div><a href="#title_1" title="点击跳转至资源链接">资源：%num1%个</a> <a href="#title_3" title="点击跳转至预告片链接">预告片：%num2%个</a> <a href="#title_4" title="点击跳转至影评链接">影评：%num3%个</a> <a href="#title_5" title="点击跳转至资讯链接">资讯：%num4%个</a></div>
-										<div>在线购票: %buyticket%</div>
-										<div>%jhb%%jhblinks%</div>								
+										<div>国家:%country% &nbsp;语言:%language% &nbsp;类型:%tags%</div>
+										
+										<div>影片人物: %buyticket%</div>
+										
+										<div>资源情况: <a href="#title_3" title="点击跳转至预告片链接">预告片:%num2%个</a> <a href="#title_1" title="点击跳转至资源链接">购票:%num1%个</a> <a href="#title_1" title="点击跳转至资源链接">正片:%num1%个</a> <a href="#title_4" title="点击跳转至影评链接">影评:%num3%个</a> <a href="#title_5" title="点击跳转至资讯链接">资讯:%num4%个</a></div>
+										<div>权威评分: <span class="f12px">%jhb%%jhblinks%%ofsite%</span></div>
 									</div>
 									<div id="article_index">
 										<div id="index_title">
@@ -55,10 +57,9 @@
 										</div>
 										<div id="index_ul" style="display:block">
 											<ul>
-												<li class="level2"><a href="#title_1">1 下载</a><a href="#title_5">5 资讯</a></li>
-												<li class="level2"><a href="#title_2">2 在线</a><a href="#title_6">6 简介 </a></li>
-												<li class="level2"><a href="#title_3">3 预告</a><a href="#title_7">7 人物</a></li>
-												<li class="level2"><a href="#title_4">4 影评</a><a href="#title_8">8 评论</a></li>											
+												<li class="level2"><a href="#title_1">1 影讯</a><a href="#title_2">2 预告</a></li>
+												<li class="level2"><a href="#title_3">3 购票</a><a href="#title_4">4 影评</a></li>
+												<li class="level2"><a href="#title_5">5 片源</a><a href="#title_6">6 图片</a></li>
 											</ul>
 										</div>
 									</div>
@@ -74,30 +75,34 @@
 										<a class="bds_hi"></a>
 										<a class="shareCount"></a>
 									</span>
-									<!-- Baidu Button END -->
-									<span class="line1 fl f12px" style="padding: 5px 0;"> <a href="javascript:void(0);" onclick="AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页,关注更新</a></span>
-									<span class="line1 fr f12px" style="padding: 5px 0;">
-										%thisupdatetime% %pubcompany% %ofsite%
+									<!-- Baidu Button END -->									
+								</div>
+								<div style="margin:15px 0;"><span style="font-weight:700;">剧情简介： </span> %cat%《%title_key%》(别名 %keywords%),%pubcompany%,于%pubyear%年上映，其故事情节是：%summary%</div>
+								<div id="entry_content" style="border-top:1px solid #999">
+								<div style="margin:10px 0">									
+									<span style="font-weight:700">影片资源列表，不断更新中 ... </span> 
+									<span class="f12px">&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页,关注更新</a></span>
+									<span class="f12px fr"> 
+										%thisupdatetime%
 									</span>
-								</div>																
-								<div id="entry_content">
-									<h3>一、下载资源：<span style="font-weight:normal;font-size:12px">[云点播:<a href="http://www.happyfuns.com/happyvod/" target="_blank" rel="nofollow">快乐</a>/<a href="http://www.yundianbo.tv/" target="_blank" rel="nofollow">云点播</a>/<a href="http://www.huoyan.tv/" target="_blank" rel="nofollow">火焰</a>/<a href="http://yun.dybeta.com/" target="_blank" rel="nofollow">dybeta</a>/<a href="http://www.997m.com/" target="_blank" rel="nofollow">云点播beta</a>/<a href="http://www.bteye.com/" target="_blank" rel="nofollow">比特点播</a>] %shooter% %soushou%</span><div class="anchor"><a name="title_1" id="title_1">&nbsp;</a></div></h3>
-									<div class="linksmall">%downloadlinks%</div>
-									<h3>二、在线资源：<span style="font-weight:normal;font-size:12px">%search%</span><div class="anchor"><a name="title_2" id="title_2">&nbsp;</a></div></h3>
-									<div class="linksmall">%onlinelinks%</div>
-									<h3>三、影片预告：<div class="anchor"><a name="title_3" id="title_3">&nbsp;</a></div></h3>
-									<div class="linksmall">%tailer%</div>
-									<h3>四、精彩影评：<div class="anchor"><a name="title_4" id="title_4">&nbsp;</a></div></h3>
-									<div class="linksmall">%yingping%</div>
-									<h3>五、影片资讯：<div class="anchor"><a name="title_5" id="title_5">&nbsp;</a></div></h3>
+								</div>
+									<h3>一、影片资讯：<span class="f500 f12px">试试看 [%news%]</span><div class="anchor"><a name="title_1" id="title_1">&nbsp;</a></div></h3>
 									<div class="linksmall">%onlylinks%</div>
-									<h3>六、剧情简介：<div class="anchor"><a name="title_6" id="title_6">&nbsp;</a></div></h3>									
-									<div style="text-indent:2em;">%cat%《%title_key%》(别名 %keywords%),%pubcompany%,于%pubyear%年上映，其故事情节是：%summary%</div>
-									<h3>七、影视剧照：</h3>
+									<h3>二、影片预告：<span class="f500 f12px">试试搜索 [%trailer%]</span><div class="anchor"><div class="anchor"><a name="title_2" id="title_2">&nbsp;</a></div></h3>
+									<div class="linksmall">%tailer%</div>									
+									<h3>三、活动购票：<div class="anchor"><a name="title_3" id="title_3">&nbsp;</a></div></h3>
+									<div class="linksmall">%buyticket%</div>
+									<h3>四、精彩影评：<span class="f500 f12px">还可以看 [%review%]</span><div class="anchor"><a name="title_4" id="title_4">&nbsp;</a></div></h3>
+									<div class="linksmall">%yingping%</div>									
+									<h3>五、下载片源：<span class="f500 f12px">[云点播:<a href="http://www.happyfuns.com/happyvod/" target="_blank" rel="nofollow">快乐</a>/<a href="http://www.yundianbo.tv/" target="_blank" rel="nofollow">云点播</a>/<a href="http://www.huoyan.tv/" target="_blank" rel="nofollow">火焰</a>/<a href="http://yun.dybeta.com/" target="_blank" rel="nofollow">dybeta</a>/<a href="http://www.997m.com/" target="_blank" rel="nofollow">云点播beta</a>/<a href="http://www.bteye.com/" target="_blank" rel="nofollow">比特点播</a>] %shooter% %soushou%</span><div class="anchor"><a name="title_5" id="title_5">&nbsp;</a></div></h3>
+									<div class="linksmall">%downloadlinks%</div>
+									<h3>六、在线片源：<span class="f500 f12px">%search%</span></h3>
+									<div class="linksmall">%onlinelinks%</div>
+									<h3>七、影视剧照：<div class="anchor"><a name="title_6" id="title_6">&nbsp;</a></div></h3>
 									<div style="width:100%;height:120px;position:relative;">%simgs%</div>
-									<h3>八、影片人物：<div class="anchor"><a name="title_7" id="title_7">&nbsp;</a></div></h3>
+									<h3>八、影片人物：</h3>
 									<div>%cpics%</div>
-									<h3>左邻右舍：</h3>
+									<h3>九、左邻右舍：</h3>
 									<div style="z-index:1;overflow:hidden">%others%</div>
 									</br>
 								</div>
@@ -105,8 +110,9 @@
 						</div>
 					</div>
 				</div>
+				<a href="#title_c" title="评论" class="gocom_btn">评</br>论</br>∨</a>
 				<div id="comment">
-						<div class="anchor"><a name="title_8" id="title_8">&nbsp;</a></div>
+						<div class="anchor"><a name="title_c" id="title_c">&nbsp;</a></div>
 						<!-- Duoshuo Comment BEGIN -->
 						<div class="ds-thread" data-thread-key="%id%" data-title="%title%"></div>
 						<!-- Duoshuo Comment END -->

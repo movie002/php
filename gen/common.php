@@ -354,13 +354,21 @@ function dh_replace_content($count,$row,$DH_output_content)
 	//豆瓣 时光 评分等
 	$replace = '';
 	$rating='';
+	$review='';
+	$news='';
+	$trailer='';
 	preg_match('/<r1>(.*?)<\/r1>/s',$row['ids'],$match);
 	if(!empty($match[1]))
 	{
 		$rating = $match[1];
 	}
+	
 	if($row['mediaid']!='')
+	{
 		$replace.='<span style="font-size: 12px;"><a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank" rel="nofollow">豆瓣:'.$rating.'</a></span>';
+		$review.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/reviews" target="_blank" rel="nofollow">豆瓣影评</a>';
+		$trailer.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/trailer" target="_blank" rel="nofollow">豆瓣预告</a>';
+	}
 	
 	$rating='';
 	preg_match('/<r2>(.*?)<\/r2>/s',$row['ids'],$match);
@@ -373,6 +381,8 @@ function dh_replace_content($count,$row,$DH_output_content)
 	{
 		$mtimeid=$match[1];
 		$replace.='/<a href="http://www.m1905.com/mdb/film/'.$match[1].'/" target="_blank" rel="nofollow">m1905:'.$rating.'</a>';
+		$review.='/<a href="http://www.m1905.com/mdb/film/'.$match[1].'/review/" target="_blank" rel="nofollow">m1905影评</a>';
+		$trailer.='/<a href="http://www.m1905.com/mdb/film/'.$match[1].'/prevue/" target="_blank" rel="nofollow">m1905预告</a>';
 	}
 	$rating='';
 	preg_match('/<r3>(.*?)<\/r3>/s',$row['ids'],$match);
@@ -381,8 +391,13 @@ function dh_replace_content($count,$row,$DH_output_content)
 		
 	preg_match('/<3>(.*?)<\/3>/s',$row['ids'],$match);
 	if(!empty($match[1]))
+	{
 		$replace.='/<a href="http://movie.mtime.com/'.$match[1].'/" target="_blank" rel="nofollow">时光网:'.$rating.'</a>';
-	
+		$review.='/<a href="http://movie.mtime.com/'.$match[1].'/comment.html" target="_blank" rel="nofollow">时光影评</a>';
+		$news.='<a href="http://movie.mtime.com/'.$match[1].'/news.html" target="_blank" rel="nofollow">时光影讯</a>';
+		$trailer.='/<a href="http://movie.mtime.com/'.$match[1].'/trailer.html" target="_blank" rel="nofollow">时光预告</a>';
+		
+	}
 	preg_match('/<m>(.*?)<\/m>/s',$row['ids'],$match);
 	if(!empty($match[1]))
 		$replace.='/<a href="http://www.imdb.com/title/'.$match[1].'/" target="_blank" rel="nofollow">IMDB链接</a>';			
@@ -395,6 +410,10 @@ function dh_replace_content($count,$row,$DH_output_content)
 	//	$replace .= ' <a href="'.$match[1].'" target="_blank" >[官方网站]</a> </span>';
 	//}	
 	$DH_output_content_page = str_replace("%jhb%",$replace,$DH_output_content_page);
+	$DH_output_content_page = str_replace("%review%",$review,$DH_output_content_page);
+	$DH_output_content_page = str_replace("%news%",$news,$DH_output_content_page);
+	$DH_output_content_page = str_replace("%trailer%",$trailer,$DH_output_content_page);
+	
 	$updatetime = date("Ymd",strtotime($row['updatetime']));
 	
 	//出品公司
