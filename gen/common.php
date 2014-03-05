@@ -326,6 +326,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 //	print_r($celeimg_array);
 	//将演员组成
 	$celeimg_all='';
+	$people='';
 	$celeimg_length=count($celeimg_array);
 	$width='100px';
 	$height='150px';
@@ -339,17 +340,22 @@ function dh_replace_content($count,$row,$DH_output_content)
 		$width='80px';
 		$height='120px';		
 	}	
-	foreach ($celeimg_array as $celeimg_each)
+	foreach ($celeimg_array as $key=>$celeimg_each)
 	{
 		if(empty($celeimg_each[2]))
 			$imgeach='http://img3.douban.com/pics/celebrity-default-medium.gif';
 		else
 			$imgeach='http://img3.douban.com/img/celebrity/medium/'.$celeimg_each[2];
 		$celeimg_all.=	'<li style="width:'.$width.'; height:'.$height.'"><a href="http://movie.douban.com/celebrity/'.$celeimg_each[0].'/" target="_blank" rel="nofollow"><img style="width:'.$width.'; height:'.$height.'" data-src="'.$imgeach.'" alt="'.$celeimg_each[1].'的影人图片" width="'.$width.'" height="'.$height.'"/><span class="celeimg_title">'.$celeimg_each[3].'</span></a><div class="celeimg_name">'.$celeimg_each[1].'</div></li>';
+		if($key==0)
+			$people.=$celeimg_each[1];
+		else
+			$people.='/'.$celeimg_each[1];
 	}
 	$celeimg_all = '<div id="pageClass"><ul>'.$celeimg_all.'</ul></div>';		
 	//替换演员列表
 	$DH_output_content_page = str_replace("%cpics%",$celeimg_all,$DH_output_content_page);	
+	$DH_output_content_page = str_replace("%people%",$people,$DH_output_content_page);
 	
 	//豆瓣 时光 评分等
 	$replace = '';
