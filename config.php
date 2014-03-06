@@ -67,7 +67,7 @@ $linktype=array('','影视资讯','热门评论','影视资源','购票链接','
 //在link表中的资源
 $linkway=array('未知','网站','预告','花絮','在线','下载','综合','资讯','影评');
 $linkonlinetype=array('','优酷在线','搜狐影视','百度影音','PPlive','风行','土豆','爱稀奇','PPS');
-$linkdowntype=array('未知类型','迅雷资源','FTP资源','BT  资源','磁力链接','电驴资源','手机资源','其他资源');
+$linkdowntype=array('未知类型','迅雷资源','FTP资源','BT  资源','磁力链接','电驴资源','网盘资源','其他资源');
 $linkquality=array('未知','抢先','修正','普清','高清','超清','三维');
 $linkstatus=array('','得到链接','链接修正','内部得到mediaid','爬取得到mediaid','修正爬取得到mediaid','修正内部得到mediaid','得到src','结束');
 $linkproperty=array('未知资源','直接下载','跳转下载','登陆下载','积分下载');
