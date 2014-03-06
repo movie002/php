@@ -56,7 +56,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				case 2://预告
 				case 3://花絮
 					$num2++;
-					if($num2 > $num)
+					if($num2 > $num-2)
 						$tailer_more .= str_replace('%num%',$num2,$linkseach);
 					else
 						$tailer .= str_replace('%num%',$num2,$linkseach);
@@ -128,7 +128,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$hidetext2='[ ∧ 隐藏(以上'.($num01-$numdownload).'个) ∧ ]';
 			$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" class="showhide_more">'.$downloadlinks1_more.'<div onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
-		if($num02>0)$downloadlinks.=' <div class="downloadlist"> 【'.$linkproperty[2].'】(资源数:'.$num02.')<div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div></div>'.$linkstop.$downloadlinks2;
+		if($num02>0)
+			$downloadlinks.=' <div class="downloadlist"> 【'.$linkproperty[2].'】(资源数:'.$num02.')<div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div></div>'.$linkstop.$downloadlinks2;
 		if($num02 > $numdownload)
 		{
 			$showtext='[ << 展开(其余'.($num02-$numdownload).'个) >> ]';
@@ -136,7 +137,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$hidetext2='[ ∧ 隐藏(以上'.($num02-$numdownload).'个) ∧ ]';		
 			$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" class="showhide_more">'.$downloadlinks2_more.'<div onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
-		if($num03>0)$downloadlinks.=' <div class="downloadlist"> 【'.$linkproperty[3].'】(资源数:'.$num03.')<div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div></div>'.$linkstop.$downloadlinks3;
+		if($num03>0)
+			$downloadlinks.=' <div class="downloadlist"> 【'.$linkproperty[3].'】(资源数:'.$num03.')<div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div></div>'.$linkstop.$downloadlinks3;
 		if($num03 > $numdownload)
 		{
 			$showtext='[ << 展开(其余'.($num03-$numdownload).'个) >> ]';
@@ -144,7 +146,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$hidetext2='[ ∧ 隐藏(以上'.($num03-$numdownload).'个) ∧ ]';
 			$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" class="showhide_more">'.$downloadlinks3_more.'<div onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
-		if($num00>0)$downloadlinks.='<div class="downloadlist">'.$linkproperty[0].'(资源数:'.$num00.')<div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div></div>'.$linkstop.$downloadlinks0;
+		if($num00>0)
+			$downloadlinks.='<div class="downloadlist">'.$linkproperty[0].'(资源数:'.$num00.')<div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div></div>'.$linkstop.$downloadlinks0;
 		if($num00 > $numdownload)
 		{
 			$showtext='[ << 展开(其余'.($num00-$numdownload).'个) >> ]';
@@ -153,7 +156,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
 		
-		if(($num00+$num01+$num02) == 0)
+		if(($num00+$num01+$num02+$num03) == 0)
 		{
 			$downloadlinks=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
 		}
@@ -172,10 +175,12 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$hidetext2='[ ∧ 隐藏(以上'.($num1-$num).'个) ∧ ]';		
 			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" class="showhide_more">'.$onlinelinks_more.'<div onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'aonlinelinks\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
-		if($num2 == 0)
+		if($num2 > 0)
+			$tailer = $linkstop.$tailer;
+		else			
 		{
-			$tailer=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
-		}		
+			$tailer = ' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
+		}			
 		if($num2 > $num-2)
 		{
 			$showtext='[ << 展开(其余'.($num2-$num).'个) >> ]';
