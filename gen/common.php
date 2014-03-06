@@ -56,7 +56,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				case 2://预告
 				case 3://花絮
 					$num2++;
-					if($num2 > $num-2)
+					if($num2 > ($num-2))
 						$tailer_more .= str_replace('%num%',$num2,$linkseach);
 					else
 						$tailer .= str_replace('%num%',$num2,$linkseach);
@@ -181,11 +181,11 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		{
 			$tailer = ' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
 		}			
-		if($num2 > $num-2)
+		if($num2 > ($num-2))
 		{
-			$showtext='[ << 展开(其余'.($num2-$num).'个) >> ]';
-			$hidetext='[ >> 隐藏(其余'.($num2-$num).'个) << ]';
-			$hidetext2='[ ∧ 隐藏(以上'.($num2-$num).'个) ∧ ]';		
+			$showtext='[ << 展开(其余'.($num2+2-$num).'个) >> ]';
+			$hidetext='[ >> 隐藏(其余'.($num2+2-$num).'个) << ]';
+			$hidetext2='[ ∧ 隐藏(以上'.($num2+2-$num).'个) ∧ ]';		
 			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" class="showhide_more">'.$tailer_more.'<div onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
 		
@@ -495,7 +495,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	else
 	{
 		$piaozi='不在购票时间内';
-		$buyticket='不在购票时间内';	
+		$buyticket='';	
 	}	
 	
 	$ofsite='';
