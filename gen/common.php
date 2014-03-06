@@ -171,8 +171,12 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$hidetext='[ >> 隐藏(其余'.($num1-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num1-$num).'个) ∧ ]';		
 			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" class="showhide_more">'.$onlinelinks_more.'<div onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'aonlinelinks\')" style="text-align:center">'.$hidetext2.'</div></div>';
-		}						
-		if($num2 > $num)
+		}
+		if($num2 == 0)
+		{
+			$tailer=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
+		}		
+		if($num2 > $num-2)
 		{
 			$showtext='[ << 展开(其余'.($num2-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num2-$num).'个) << ]';
@@ -230,7 +234,7 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 {
 	global $linktype,$linkway;
 	$reslinks=dh_mysql_query($sql);
-	$num = 5;
+	$num = 3;
 	
 	if($reslinks)
 	{
@@ -281,7 +285,14 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 			$hidetext2='[ ∧ 隐藏(以上'.($num4-$num).'个) ∧ ]';		
 			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" class="showhide_more">'.$yingping_more.'<div onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_3\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
-		
+		if($num3 == 0)
+		{
+			$onlylinks=' <div style="color:#777"> 暂无下载资源,您可以收藏此页,如有资源会及时更新!</div>';
+		}
+		if($yingping == 0)
+		{
+			$yingping=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
+		}		
 		$DH_output_content_page = str_replace('%onlylinks%',$onlylinks,$DH_output_content);
 		$DH_output_content_page = str_replace('%yingping%',$yingping,$DH_output_content_page);
 	}	
@@ -355,6 +366,12 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$celeimg_all = '<div id="pageClass"><ul>'.$celeimg_all.'</ul></div>';		
 	//替换演员列表
 	$DH_output_content_page = str_replace("%cpics%",$celeimg_all,$DH_output_content_page);	
+	
+	$lengthpeople=mb_strlen($people,'UTF-8');
+	if($lengthpeople>33)
+	{
+		$people = '<span style="font-size:12px">'.$people.'</span>';
+	}	
 	$DH_output_content_page = str_replace("%people%",$people,$DH_output_content_page);
 	
 	//豆瓣 时光 评分等
@@ -363,6 +380,9 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$review='';
 	$news='';
 	$trailer='';
+	$photos='';
+	$piaozi='';
+	
 	preg_match('/<r1>(.*?)<\/r1>/s',$row['ids'],$match);
 	if(!empty($match[1]))
 	{
@@ -374,6 +394,8 @@ function dh_replace_content($count,$row,$DH_output_content)
 		$replace.='<span style="font-size: 12px;"><a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank" rel="nofollow">豆瓣:'.$rating.'</a></span>';
 		$review.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/reviews" target="_blank" rel="nofollow">豆瓣影评</a>';
 		$trailer.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/trailer" target="_blank" rel="nofollow">豆瓣预告</a>';
+		$photos.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/all_photos" target="_blank" rel="nofollow">豆瓣剧照</a>';
+		$piaozi.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target="_blank" rel="nofollow">豆瓣购票</a>';
 	}
 	
 	$rating='';
@@ -381,27 +403,30 @@ function dh_replace_content($count,$row,$DH_output_content)
 	if(!empty($match[1]))
 		$rating = $match[1];
 		
-	$mtimeid='';
+	
 	preg_match('/<2>(.*?)<\/2>/s',$row['ids'],$match);
 	if(!empty($match[1]))
 	{
-		$mtimeid=$match[1];
 		$replace.='/<a href="http://www.m1905.com/mdb/film/'.$match[1].'/" target="_blank" rel="nofollow">m1905:'.$rating.'</a>';
 		$review.='/<a href="http://www.m1905.com/mdb/film/'.$match[1].'/review/" target="_blank" rel="nofollow">m1905影评</a>';
 		$trailer.='/<a href="http://www.m1905.com/mdb/film/'.$match[1].'/prevue/" target="_blank" rel="nofollow">m1905预告</a>';
+		$photos.='/<a href="http://www.m1905.com/mdb/film/'.$match[1].'/still/" target="_blank" rel="nofollow">m1905剧照</a>';
 	}
 	$rating='';
 	preg_match('/<r3>(.*?)<\/r3>/s',$row['ids'],$match);
 	if(!empty($match[1]))
 		$rating = $match[1];
 		
+	$mtimeid='';	
 	preg_match('/<3>(.*?)<\/3>/s',$row['ids'],$match);
 	if(!empty($match[1]))
 	{
+		$mtimeid=$match[1];
 		$replace.='/<a href="http://movie.mtime.com/'.$match[1].'/" target="_blank" rel="nofollow">时光网:'.$rating.'</a>';
 		$review.='/<a href="http://movie.mtime.com/'.$match[1].'/comment.html" target="_blank" rel="nofollow">时光影评</a>';
 		$news.='<a href="http://movie.mtime.com/'.$match[1].'/news.html" target="_blank" rel="nofollow">时光影讯</a>';
 		$trailer.='/<a href="http://movie.mtime.com/'.$match[1].'/trailer.html" target="_blank" rel="nofollow">时光预告</a>';
+		$photos.='/<a href="http://movie.mtime.com/'.$match[1].'/posters_and_images/" target="_blank" rel="nofollow">时光剧照</a>';
 		
 	}
 	preg_match('/<m>(.*?)<\/m>/s',$row['ids'],$match);
@@ -419,6 +444,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$DH_output_content_page = str_replace("%review%",$review,$DH_output_content_page);
 	$DH_output_content_page = str_replace("%news%",$news,$DH_output_content_page);
 	$DH_output_content_page = str_replace("%trailer%",$trailer,$DH_output_content_page);
+	$DH_output_content_page = str_replace("%photos%",$photos,$DH_output_content_page);
 	
 	$updatetime = date("Ymd",strtotime($row['updatetime']));
 	
@@ -427,7 +453,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	preg_match('/<pc>(.*?)<\/pc>/s',$row['meta'],$match);
 	if(!empty($match[1]))
 	{	
-		$pubcompany.='['.$match[1].'出品]';
+		$pubcompany.=",该作品由$match[1]出品";
 	}	
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 
@@ -454,12 +480,19 @@ function dh_replace_content($count,$row,$DH_output_content)
 	
 		if($mtimeid!='')
 			$buyticket .='/<a href="http://theater.mtime.com/movie/'.$mtimeid.'/" target="_blank" rel="nofollow">时光网购票</a>';
+			
+		$codetitle=rawurlencode($row['title']);
+		$piaozi.='/<a href="http://www.gewara.com/newSearchKey.xhtml?skey='.$codetitle.'" target="_blank" rel="nofollow">搜索格瓦拉</a>';
+		$piaozi.='/<a href="http://www.wangpiao.com/Search/Index/0/'.$codetitle.'/1" target="_blank" rel="nofollow">搜索网票</a>';
+		$piaozi.='/<a href="http://film.spider.com.cn/shanghai-search/?keyword='.$codetitle.'" target="_blank" rel="nofollow">搜索蜘蛛网</a>';
+		$piaozi.='/<a href="http://www.hipiao.com/" target="_blank" rel="nofollow">登录哈票</a>';	
 	}
 	else
 	{
-		$buyticket='暂无购票信息';	
-	}
-
+		$piaozi='不在购票时间内';
+		$buyticket='不在购票时间内';	
+	}	
+	
 	$ofsite='';
 	preg_match('/<b>(.*?)<\/b>/s',$row['meta'],$match);
 	if(!empty($match[1]))	
@@ -467,6 +500,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$DH_output_content_page = str_replace("%ofsite%",$ofsite,$DH_output_content_page);	
 		
 	$DH_output_content_page = str_replace("%buyticket%",$buyticket,$DH_output_content_page);
+	$DH_output_content_page = str_replace("%piaozi%",$piaozi,$DH_output_content_page);
 	
 	$DH_output_content_page = str_replace("%thisupdatetime%",'最后更新:'.$updatetime,$DH_output_content_page);
 	return $DH_output_content_page;

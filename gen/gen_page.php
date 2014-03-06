@@ -138,7 +138,7 @@ function others($QUEUE)
 	while ( $q != $QUEUE->rear)
 	{
 		$page_path = output_page_path($DH_html_url,$QUEUE->pBase[$q][1]);
-		$liout.='<li style="width:48%;float:left"><a href="'.$page_path.'" target="_blank">《'.$QUEUE->pBase[$q][0].'》在线下载资源和影讯影评</a></li>';
+		$liout.='<li style="width:48%;float:left"><a href="'.$page_path.'" target="_blank">《'.$QUEUE->pBase[$q][0].'》在线下载等资源链接</a></li>';
 		$q = ($q+1) % $QUEUE->Num;//向上移动一位
 	}
 	return $liout;
