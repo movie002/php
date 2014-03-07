@@ -63,7 +63,7 @@ function readrssfile1006()
 			if(empty($match0[2]))
 			{
 				echo 'error no result!';
-				return;
+				continue;
 			}
 			foreach ($match0[2] as $key2=>$div)			
 			{	

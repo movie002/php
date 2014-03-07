@@ -42,7 +42,7 @@ function readrssfile1005($author)
 		if(empty($match[1]))
 		{
 			echo 'error no result!';
-			return;
+			continue;
 		}
 		foreach ($match[1] as $key2=>$div)			
 		{	

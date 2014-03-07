@@ -1,11 +1,21 @@
 <?php
-function readrssfile1009()
+function readrssfile1010()
 {
-	$authorname='BT天堂';
-	$authorurl='http://www.bttiantang.com';
+	$authorname='红潮网';
+	$authorurl='http://www.5281520.com/';
 
-	$url = array('http://www.bttiantang.com/?PageNo=');
-	$urlcat= array('电影');
+	$url = array('http://www.5281520.com/html/10/',
+				'http://www.5281520.com/html/52/',
+				'http://www.5281520.com/html/74/',
+				'http://www.5281520.com/html/72/',
+				'http://www.5281520.com/html/60/',
+				'http://www.5281520.com/html/73/');
+	$urlcat= array('华语电影',
+					'欧美电影',
+					'日韩电影',
+					'电视剧',
+					'综艺',
+					'动画片');
 	print_r($url);
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
@@ -25,7 +35,10 @@ function readrssfile1009()
 		while($change&&$i<4)
 		{
 			$i++;
-			$trueurl = $eachurl.$i;
+			if($i==1)
+				$trueurl = $eachurl;
+			else
+				$trueurl = $eachurl.$i.'.htm';
 				
 			$buff = get_file_curl($trueurl);
 			//如果失败，就使用就标记失败次数
@@ -40,10 +53,12 @@ function readrssfile1009()
 			$rssinfo = new rssinfo();
 			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
-			//print_r($buff);	
-			//return;
-			preg_match_all('/<p class="tt cl"><span>([^>]+)<\/span><a href="([^>]+)" target="\_blank"><b>([^>]+)<i>\/(.*?)<\/i>(.*?)<\/b><\/a><\/p>/s',$buff,$match0);		
+			//print_r($buff);
+			preg_match_all('/·<a href="(.*?)" target="_self" title=\'(.*?)\' style="font-size:14px;color:#07519A;">/s',$buff,$match0);
+			preg_match_all('/<span style="float:right;font-size:14px;">\((.*?)\)<\/span>/s',$buff,$match1);			
 			//print_r($match0);
+			//print_r($match1);
+			
 			if(empty($match0[2]))
 			{
 				echo 'error no result!';
@@ -51,12 +66,12 @@ function readrssfile1009()
 			}
 			foreach ($match0[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match0[1][$key2]));
+				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match1[1][$key2]));
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
-				$rssinfo->cat =trim($urlcat[$key]);
-				$rssinfo->link =$authorurl.trim($match0[2][$key2]);
-				$rssinfo->title = '《'.trim($match0[3][$key2]).'》'.trim($match0[4][$key2]).trim($match0[5][$key2]);
+				$rssinfo->cat = trim($urlcat[$key]);
+				$rssinfo->link = trim($match0[1][$key2]);
+				$rssinfo->title = trim($match0[2][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
 			}

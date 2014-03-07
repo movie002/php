@@ -14,6 +14,7 @@ require("henbt.com.php");
 //require("www.bestxl.com.php");
 require("www.dy2018.com.php");
 require("www.bttiantang.com.php");
+require("www.5281520.com.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -27,6 +28,7 @@ readrssfile1008();
 //readrssfile1002();
 readrssfile1006();
 readrssfile1009();
+readrssfile1010();
 mysql_close($conn);
 
 class author
