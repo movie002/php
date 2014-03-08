@@ -41,12 +41,17 @@ function all()
 			
 			$buff = get_file_curl($row['rssurl']);
 			//如果失败，就使用就标记失败次数
-			if(!$buff)
+			if($buff == false)
 			{
-				echo 'fail to get rss file !</br>';	
-				$sql="update author set failtimes=failtimes+1 where id = $authorid;";
-				$result=dh_mysql_query($sql);
-				continue;
+				sleep(5);
+				$buff = get_file_curl($row['rssurl']);
+				if(false==$buff)
+				{
+					echo 'fail to get rss file !</br>';	
+					$sql="update author set failtimes=failtimes+1 where id = $authorid;";
+					$result=dh_mysql_query($sql);
+					continue;
+				}
 			}
 			readrssfile($buff,$rssinfo,$authorid,$lastupdate,$row['clinktype']);			
         }
