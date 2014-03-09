@@ -13,7 +13,7 @@ $pagecount=15;
 
 $DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 $DH_input_path= '/srv/movie002/';
-$DH_home_url= 'http://www.movie002.com/';
+$DH_home_url= 'http://db.movie002.com/';
 
 //$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/movie/';
 //$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/movie002/';
@@ -25,7 +25,7 @@ $DH_output_html_path = $DH_output_path.'html/';
 $DH_output_index_path = $DH_output_path.'index/';
 $DH_html_url= $DH_home_url.'html/';
 $DH_index_url= $DH_home_url.'index/';
-
+$DH_name= '二手电影网-影视资源导航';
 
 //页面显示的文章列表条目的个数
 $DH_page_count_limit = 4;

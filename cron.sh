@@ -36,7 +36,7 @@ echo $(date) > $logfile
 ## 3.4 生成index
 /srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/gen/gen_index.php -o /srv/movie002/log/genindex.log
 ## 3.5 生成辅助页面，友情链接之类的
-/srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/gen/gen_author.php -o /srv/movie002/log/genauthor.log
+/srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/gen/author/gen.php -o /srv/movie002/log/genauthor.log
 ## 3.6 生成sitemap
 /srv/movie002/timeexc.sh curl http://127.0.0.1/movie002/sitemap/gen.php -o /srv/movie002/log/gensitemap.log
 ## 3.7 生成数据库备份

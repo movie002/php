@@ -10,12 +10,78 @@
 <body>
 	<div id="wrapper" class="width_1">
 		<div id="header">
-			%head%
+			<div id="service_list">
+	<div id="service_list_inner" class="width_1">
+		<div id="sub_date">
+			<script type="text/javascript">			
+				function s()  
+				{   
+					var a = new Date();
+					var b = a.getFullYear();
+					var c = a.getMonth()+1; 
+					var d = a.getDate();
+					var	e = a.getDay();
+					var f = new Array("天","一","二","三","四","五","六");					
+					return b+"年"+c+"月"+d+"日 星期"+f[e];   
+				}
+				document.write(s());				
+			</script>
+			<span id="txt"></span>
+		</div>
+		<ul>
+			<li><a href="#" id="movie002_day_1" onclick="SetCookie('movie002_day','day');window.location.reload();">日间模式</a>｜<a href="#" id="movie002_day_2" onclick="SetCookie('movie002_day','night'); window.location.reload();">夜间模式</a></li>
+			<li><a href="#" id="movie002_width_1" onclick="SetCookie('movie002_width','1024'); window.location.reload();">标准屏</a>｜<a href="#" id="movie002_width_2" onclick="SetCookie('movie002_width','1280');window.location.reload();">宽频</a></li>
+		</ul>
+		<script type="text/javascript">
+			function a()  
+			{   
+				var n = new Date();
+				var h = n.getHours();
+				var m='';
+				if(h>=22||h<=6)
+				{
+					m='<div style="color:#000;border:1px solid #FF3300;font-size:12px;position: absolute;top:2px;left:625px;background:#FFFFDF;padding:2px;">友情提醒： 亲，已经是晚上'+h+'点多了，</br>为了您和家人的健康，请注意减少熬夜!</div>';
+				}
+				return m;
+			}
+			document.write(a());
+		</script>		
+	</div>
+</div>
+	<!-- header-inner -->
+			
+<div id="global_nav">
+	<div id="global_nav_inner" class="width_1">
+		<div class="order">			
+			<a href="http://movie002.com" title="二手电影网-影视资源导航"><h3>&nbsp;</h3></a>
+		</div>
+		<div style="position: absolute;top:0;left:190px;border-bottom: 2px solid #252525;">
+			<div class="topnav">
+				<div>
+					<ul>		
+					<li><a href="http://www.movie002.com/" title="影视资源速递">影视资源速递</a></li>
+					<li><a href="http://dh.movie002.com/" title="影视网址导航">影视网址导航</a></li>
+					<li><a href="http://db.movie002.com/" title="影视资源导航">影视资源导航</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id = "searchmiddle">
+			<form name="f1"  target="_blank" action="http://127.0.0.1/movie/search.php" method="get">
+				<div id="search">				
+					<input id="submittext" class="searchinput"  name="q" type="text" value="输入影视名..." onclick="this.value='';"  onblur="if (this.value == &#39;&#39;) {this.value = &#39;输入影视名...&#39;;}" />					
+					<input type="submit" class="searchsubmit" value="搜索" />
+				</div>
+			</form>			
+		</div>	
+	</div>					
+</div>
+
 		</div>
 		<!-- header -->
 		<div id="middle" class="width_2">
 			<div id="title">
-				<div class="browse">您的位置： <a href="%home%" title="回到首页"> 首页</a> >>  合作意向留言</div>
+				<div class="browse">您的位置： <a href="http://movie002.com" title="回到首页"> 首页</a> >>  合作意向留言</div>
 				<div class="titlecontent"><h1>合作意向</h1> <h2>合作从沟通开始</h2></div>				
 			</div>
 			<div id="content" style="padding:0 20px;font-size:12px;width:95%">
