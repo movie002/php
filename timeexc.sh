@@ -1,11 +1,11 @@
-logfile=/srv/movie002/log/run.log
+logfile=/srv/php/log/run.log
 echo '' >> $logfile
 echo $* >> $logfile
 
 ##抽取log文件
 NAME=$*
 LOGFILE=`echo ${NAME##*log/}`
-echo 'log file:  http://www.movie002.com/movie002/log/'$LOGFILE >> $logfile
+echo 'log file:  http://php.movie002.com/log/'$LOGFILE >> $logfile
 timebegin=$(date +%s)
 echo 'begin: ' $(date) >> $logfile
 $*
