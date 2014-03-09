@@ -11,8 +11,9 @@ $pagecount=15;
 //预留几页的空间
 //$pagebgen=2;
 
-$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
-$DH_input_path= '/srv/movie002/';
+#$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
+$DH_output_path= '/srv/db/';
+$DH_input_path= '/srv/php/';
 $DH_author_path= '/srv/www/';
 $DH_home_url= 'http://db.movie002.com/';
 
