@@ -29,9 +29,9 @@ mysql_close($conn);
 
 function dh_gen_author()
 {
-	global $DH_home_url,$DH_src_path,$DH_output_path;
-	if (!file_exists($DH_output_path))  
-		mkdir($DH_output_path,0777);
+	global $DH_home_url,$DH_src_path,$DH_author_path;
+	if (!file_exists($DH_author_path))  
+		mkdir($DH_author_path,0777);
 	
 	$DH_input_html  = $DH_src_path . 'author/author.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
@@ -46,13 +46,13 @@ function dh_gen_author()
 	
 	$DH_output_content = str_replace("%list_each%",$authorlist,$DH_output_content);
 	
-	$DH_output_file = $DH_output_path.'author.html';
+	$DH_output_file = $DH_author_path.'author.html';
 	dh_file_put_contents($DH_output_file,$DH_output_content);		
 }
 
 function dh_gen_static($name)
 {
-	global $DH_home_url,$DH_src_path,$DH_input_path,$DH_output_path;
+	global $DH_home_url,$DH_src_path,$DH_input_path,$DH_author_path;
 	$DH_input_html  = $DH_src_path . 'author/'.$name.'.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 
@@ -72,7 +72,7 @@ function dh_gen_static($name)
 	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 	
-	$DH_output_file = $DH_output_path.$name.'.html';
+	$DH_output_file = $DH_author_path.$name.'.html';
 	dh_file_put_contents($DH_output_file,$DH_output_content);
 }
 
