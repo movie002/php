@@ -9,7 +9,7 @@
 header('Content-Type:text/html;charset= UTF-8'); 
 require("../config.php");
 #需要使用的基础函数
-require("../common.php");
+require("../common/common.php");
 set_time_limit(3600); 
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());

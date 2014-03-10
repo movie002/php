@@ -1,8 +1,8 @@
 <?php
 require("../../config.php");
-require("../../common.php");
-require("../../curl.php");
-require("../../gen/common.php");
+require("../../common/common.php");
+require("../../common/curl.php");
+require("../../common/common_gen.php");
 
 require("news.mtime.com.php");
 require("www.mtime.com.review.php");

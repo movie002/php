@@ -1,8 +1,8 @@
 <?php
 require("../config.php");
-require("../curl.php");
-require("../common.php");
-require_once("../gen/common.php");
+require("../common/curl.php");
+require("../common/common.php");
+require_once("../common/common_gen.php");
 
 class boxoffice
 {

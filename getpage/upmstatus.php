@@ -2,8 +2,8 @@
 /* 使用示例 */   
 
 require("../config.php");
-require("../curl.php");
-require("../common.php");
+require("../common/curl.php");
+require("../common/common.php");
 require("getsites/douban.php");
 require("getsites/mtime.php");
 require("getsites/m1905.php");

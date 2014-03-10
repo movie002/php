@@ -3,8 +3,8 @@
 //利用link修改page的状态
 
 require("../config.php");
-require("../curl.php");
-require("../common.php");
+require("../common/curl.php");
+require("../common/common.php");
 require("dbpage.php");
 
 require("getsites/douban.php");
