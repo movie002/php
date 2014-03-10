@@ -1,0 +1,10 @@
+
+		<item>
+		<title>%title%</title>
+		<link>%link%</link>
+		<pubDate>%pubDate%</pubDate>
+		<dc:creator>DH</dc:creator>
+		<category><![CDATA[%cat%]]></category>
+		<guid isPermaLink="true">%link%</guid>
+		<description><![CDATA[%description%]]></description>
+		</item>

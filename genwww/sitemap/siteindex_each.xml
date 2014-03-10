@@ -1,0 +1,5 @@
+
+<sitemap>
+	<loc>%home%%sitemap%</loc>
+	<lastmod>%date%</lastmod>
+</sitemap>

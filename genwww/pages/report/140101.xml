@@ -1,0 +1,222 @@
+<_e><_d>2014011800</_d><_T>2014年博客开始正常运转</_T><_c>建站技术</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+	<h2>1. 未更新原因</h2>
+	前段时间由于很多原因导致博客1年多没有更新，现在开始陆续更新。不更新的原因有：</br>
+		1.1 空间不稳定，没有时间去搞</br>
+		1.2 wordpress太过于复杂，不想在上面再搞下去了</br>
+		1.3 全力搞二手电影网(http://movie002.com)，没有太多时间搞博客</br>
+		1.4 新的博客方法没有想明白</br></br>
+	<h2>2. 面临的问题</h2>
+	现在博客已经开张，但是问题很多，现在着力解决。</br>
+		2.1 架构改造还在完善中，脱离wordpress之后，很多功能需要自己写</br>
+		2.2 之前的文章留言、图片很难恢复，争取恢复多少是多少</br>
+		2.3 很多地方的风格还是不能统一，再css上还需要下工夫</br>
+		2.4 很多原来的博友、交流群全部丢失，还有搜索引擎还需要再照顾一下</br>
+--></_b>
+</_e>
+<_e><_d>2014021100</_d><_T>css实现最简单回到顶部浮动标签</_T><_c>编程技术</_c><_t>css</_t><_a>DH</_a>
+<_b><!--
+	<h2>1. 示例</h2>
+	%tab%当页面向下拉动之后，我的博客的右边中下部会浮现一个∧的浮动图标，点击会回到顶部。这个做法非常简单，基于简单的css和js实现的
+	<h2>2. html代码</h2>
+	浮动的主体
+	<pre><xmp><a href="#top" title="回到顶部" class="gotop_btn1" id="goTopButton1">∧</br>∧</br>∧</br></a></xmp></pre>
+	<h2>3. css代码</h2>
+	用于设定浮动的位置
+<pre><code>.gotop_btn1 {
+position: fixed;
+left: 50%;
+margin-left: 458px;
+top: 400px;
+font-weight:700;
+font-size:11px;
+width: 22px;
+height: 71px;
+display: none;
+}</code></pre>
+	<h2>4. js代码</h2>	
+	用于设定在什么情况下浮动标签出现
+	<pre>
+<code>window.onscroll = function()
+{
+	var h =document.body.scrollTop,top = document.getElementById('goTopButton1');
+	if(h>0)
+	{
+		top.style.display = 'block';
+	}
+	else
+	{
+		top.style.display = 'none';
+	}
+}</code></pre>
+	<h2>4. 感想</h2>
+	%tab%本来找了很多资料，有用js的刷频的，有用jquery的，但是觉得还是这样简单，有效。简单简约依赖少，维护方便。
+--></_b>
+</_e>
+<_e><_d>2014022500</_d><_T>css实现最简单回到顶部浮动标签(兼容版)</_T><_c>编程技术</_c><_t>css</_t><_a>DH</_a>
+<_b><!--
+	<h2>1. 前言</h2>
+	上一篇文章中写道<a href="http://dhblog.org/html/0/76.html" target="_blank">使用简单的css和js实现浮动回到顶部</a>，遇到了两个问题：</br>
+	%tab%1. ∧ 比较土，用文字比较好</br>
+	%tab%2. firefox不兼容</br>
+	所以这里重新修改一下，弄一个兼容的版本
+	<h2>2. html代码</h2>
+	浮动的主体
+	<pre><xmp><a href="#top" title="回到顶部" class="gotop_btn" id="goTopButton">∧</br>回</br>到</br>顶</br>部</a></xmp></pre>
+	<h2>3. css代码</h2>
+	用于设定浮动的位置
+<pre><code>.gotop_btn1 {
+position: fixed;
+left: 50%;
+margin-left: 458px;
+top: 400px;
+font-weight:700;
+font-size:11px;
+width: 22px;
+height: 71px;
+display: none;
+}</code></pre>
+	<h2>4. js代码</h2>	
+	用于设定在什么情况下浮动标签出现
+	<pre>
+<code>window.onscroll = function()
+{
+	var h =document.body.scrollTop;
+	if(!h)
+		h=document.documentElement.scrollTop;
+	var top = document.getElementById('goTopButton');
+	if(h>0)
+	{
+		top.style.display = 'block';
+	}
+	else
+	{
+		top.style.display = 'none';
+	}
+};</code></pre>
+	<h2>4. 感想</h2>
+	%tab%还是要多测试，多使用才能磨练出一个比较好的体验度。
+--></_b>
+</_e>
+<_e><_d>2014030900</_d><_T>多说留言的导入导出</_T><_c>建站技术</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+	<h2>1. 祸起迁移</h2>
+	%tab%前段时间由于很多原因导致博客的迁移，但是原有使用的多说留言系统的留言已经混乱了，需要将留言对应到新的留言系统中。这里研究了一下多说的导入修改导出。
+	<h2>2. 导出</h2>
+	%tab%导出的地方是在 工具 -> 导入数据，导出可以有两种选择 导出文章和导出评论。我选择两者全部导出
+	<h2>3. 修改</h2>
+	%tab%多说是使用id区分留言的归属的文章的，这要求多说调用是需要填写data-thread-key,这个就是文章的id，如果将id正确和文章对上，那么我的任务就完成了。
+	多说使用格式：具体见 <a href="http://dev.duoshuo.com/docs/5003ecd94cab3e7250000008/">评论框调用代码参数说明</a>
+	<pre><code>class="ds-thread" data-thread-key="文章在原站点中的id或其他唯一标识" data-title="您的文章标题" ></code></pre>
+	多说导出json的格式：具体见：<a href="http://dev.duoshuo.com/docs/500d0629448f04782b00000a">多说自定义导入格式说明</a>
+	<pre><code>{
+"threads":
+[{
+	"author_key" : "1",
+	"thread_id":"1",
+	"thread_key" : "500d0629448f04782b00000a",
+	"title" : "多说自定义导入格式说明",
+	"url" : "http://duoshuo.com/01/",
+	"content" : "文章内容"
+},
+{
+	"author_key" : "2",
+	"thread_id":"2",
+	"thread_key" : "500d0629448f04782b00000b",
+	"title" : "多说导出文件说明",
+	"url" : "http://duoshuo.com/02/",
+	"content" : "文章内容"
+}],
+"posts":
+[{
+	"author_name" : "多说小武",
+	"created_at" : "2012-07-23 14:13:55",
+	"message" : "这是一条缺少必须的thread_key和post_key参数的评论，将无法正常导入"
+},
+{
+	"post_key" : "3",
+	"thread_key" : "201",
+	"author_name" : "多说小武",
+	"created_at" : "2012-07-23 14:13:55",
+	"message" : "这是一条缺少对应文章信息的评论，将无法正常导入"
+}]
+}</code></pre>
+	我的修改是将文章的thread_id修正过来
+	伪代码（只写获取代码接口）具体代码如下
+	<pre><code>//threads的获取：
+preg_match_all('/{"thread_id":"(.*?)","likes":"(.*?)","views":"(.*?)","thread_key":"([0-9]+)","title":"(.*?)","url":"(.*?)","author_key":"(.*?)","author_id":"(.*?)"}/s',$duoshuojson,$match2);		
+//posts的获取:
+preg_match_all('/{"post_id":"(.*?)","thread_id":"(.*?)","message":"(.*?)","created_at":"(.*?)","likes":"(.*?)","reposts":"(.*?)","ip":"(.*?)","author_id":"(.*?)","author_email":"(.*?)","author_name":"(.*?)","author_url":"(.*?)","author_key":"(.*?)"}/s',$duoshuojson,$match);			</code></pre>
+	<h2>4. 导入</h2>
+	将处理的结果一并导入即可。
+	<h2>5. 评论</h2>
+	%tab%5.1 多说比较稳定，速度比较好。</br>
+	%tab%5.2 支持自己修改导出导入文件较好。</br>
+	%tab%5.3 导入错误提示很少。</br>
+	%tab%5.4 评论导入每次不能超过1000条左右,没有提示，我自己测试出的。</br>
+--></_b>
+</_e>
+<_e><_d>2014050400</_d><_T>舍弃wordpress</_T><_c>建站技术</_c><_t>wordpress</_t><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+	<h2>1. 众说纷纭</h2>
+	%tab%做出舍弃wordpress的决定也很艰难的，之前写过很多的wordpress的文章，也搞过一个主题，自己写了很多的代码(ajax的运用、留言板的优化、备份和清理、主题等)，现在要放弃它，很不舍得，但是想想，换了一种方式，博客运行也是很好的，其实前面的成果没有废弃，这里说一下自己的想法和实践吧。
+	对wordpress的看法有支持派，有反对派。</br>
+	%tab%反对方的意见是：1. 卢松松的文章<a href="http://lusongsong.com/reed/526.html">我为什么放弃WordPress</a> 这个是<a href="http://twokg.com/blog.php?id=29">两公斤的投稿</a>，2.Willian kan的文章<a href="http://kan.willin.org/">WordPress真的飞不起来</a>。</br>
+	%tab%支持派的有文章：1. <a href="http://www.chinaz.com/news/2012/0828/271550.shtml">反驳：我为什么放弃WordPress</a>。</br>
+	%tab%这里，我说一下我的看法吧。</br>
+	<h2>2. 优点</h2>
+	2.1 支持多</br>
+	%tab%(1) 主题丰富</br>
+	%tab%(2) 插件众多</br>
+	%tab%(3) 第三方大都支持</br>
+	2.2 开发源码，可编程</br>
+	%tab%学习者可以自己写代码，根据自己的喜好进行定制。</br>
+	2.3 使用者多，资料多</br>
+	%tab%很多文档可以参考，很多论坛可以去学习,问题也可以很快被解决，还有很多博客做了很多的文章、主题、插件等。</br>
+	<h2>3. 缺点</h2>
+	3.1 安全问题</br>
+		%tab%这个也是使用者多带来的首要毛病，使用的人多，研究的人就多，也会成为坏人的特别喜好的对象。特别是每天投很多的人试图突破管理后台，垃圾评论也多。</br>
+	3.2 系统偏复杂</br>
+	%tab%(1) 由于很多人使用，就会有很多需求，为了满足大部分人的需求，系统会过去复杂。很多功能其实没有太多的必要。</br>
+	%tab%(2) 系统更新也较为频繁，记得当年使用的时候每个月都会有更新，站长会疲于跟踪系统的脚步。</br>
+	%tab%(3) 系统代码调用还是比较复杂的，要理解底层的调用还是比较困难。不排除后门的可能性。</br>
+	3.3 速度问题</br>
+		%tab%wordpress本身可能不是很慢，但是有时为了需求加了一些插件和主题，有的代码设计不是很合理，为了功能牺牲了性能，速度比较慢了。
+	<h2>4. 为何放弃</h2>
+		4.1 需要什么</br>
+		%tab%如果是一个博主，需要一个什么样的工具来展示自己的文章呢？文艺青年需要独特的花哨，技术青年需要极致的速度，特二青年需要简单易上手。其实，我想了很多的需求，我知道我需要什么，才会选择去用什么，不是为了使用而使用</br>
+		%tab%(1) 管理简单</br>
+		%tab%(2) 变化较少</br>
+		%tab%(3) 速度较快</br>
+		4.2 追求是什么</br>		%tab%系统能层次清楚即可，不需要花哨的主题。但是一定要有内容和用户体验。10%的用户是因为主题来你的博客，90%的用户是因为内容。所以重视内容，简化表现。</br>	
+		4.3 缺点难以解决、优点不太需要</br>
+		%tab%这个是我不选wp的主要原因。</br>
+		4.4 WP可以替代的</br>
+		%tab%这个是我不选wp的直接原因。可以替代之的软件很多，我这里从功能上说，wp的主要功能分为：</br>
+		%tab%(1) 后台管理，这个在线编辑不如本地编辑好，不会出问题</br>
+		%tab%(2) 前天展示，这个是主题和css相关，和wp无关</br>
+		%tab%(3) 留言，数据库的大部分内容是留言，而不是文章，自己管压力大，不如交给第三方</br>
+		%tab%(4) 后台插件，这个很多可以支持通用的场景，和wp关系不大</br>
+		%tab%(5) 内容，这个是核心，显然，这个和wp无关</br>
+		4.5 我的需求WP不能给</br>
+		%tab%(1) 成本要尽量低，php空间需要钱，钱少了稳定性比较差，钱多了花不起。但是一个博客一年需要花这么多钱吗，最好是免费的空间。免费的空间大多是静态的。免费的github不支持php</br>
+		%tab%(2) 静态化比较快，wp有插件可以解决，但是不一定要用wp才能静态化，杀鸡用牛刀。</br>
+		%tab%(3) 数据库也不太需要，可以使用文件保留文章，毕竟文章不需要复杂的查询。</br>
+		%tab%(4) 安全问题第一，可以wp的安全问题没有办法。</br>
+	<h2>5. 我的方案</h2>
+		%tab%(1) 本地文件管理文章,svn管理和备份</br>
+		%tab%(2) 使用免费和比较靠谱和无需备案的github免费空间</br>
+		%tab%(3) 使用css和js充分美化界面</br>
+		%tab%(4) 多使用第三方提供的服务和插件，比如留言、统计和查询等
+--></_b>
+</_e>
+<_e><_d>2014040900</_d><_T>常用网站备案</_T><_c>建站技术</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+	<h2>1. 素材网站</h2>
+	<h2>1. 网站建设</h2>
+	<h2>2. SEO专题</h2>
+	<h2>2. 监控网站</h2>
+	<h2>2. 技术相关</h2>
+	<h2>2. 优秀博客</h2>
+--></_b>
+</_e>
