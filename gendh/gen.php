@@ -3,10 +3,14 @@
 include("../config.php");
 include("../common/common_gen.php");
 include("../common/compressJS.class.php");
+require("../common/gen_share.php");
+
 
 $DH_dh_title="二手电影网-影视网址导航";
 $DH_dh_url="http://dh.movie002.com/";
 //$DH_dh_url="http://127.0.0.1/dh/";
+
+dh_gen_share($DH_dh_url);
 
 $DH_input_html  = 'index.tpl.html';
 $DH_output = dh_file_get_contents($DH_input_html);
