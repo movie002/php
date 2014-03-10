@@ -1,0 +1,33 @@
+DirectoryIndex index.html
+
+#对目录设置访问权限
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+#以避免目录列表
+Options -Indexes
+
+#更改字符集和语言的头文件
+AddDefaultCharset UTF-8
+DefaultLanguage zh-CN
+
+#设置服务器的时区（GMT）
+SetEnv TZ Asia/Shanghai
+
+#设置允许和不允许访问的IP
+# no nasty crackers in here!
+order allow,deny
+allow from all
+#deny from all
+#allow from 192.168.0.0/24
+#this would do the same thing..
+#allow from 192.168.0
+
+#防止.svn被访问
+RewriteBase /
+RewriteRule ^.svn/.*  ./404.html
+
+#发现服务器启用了TRACE Method
+RewriteCond %{REQUEST_METHOD} ^TRACE
+RewriteRule .* - [F]
