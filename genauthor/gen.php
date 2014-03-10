@@ -1,19 +1,19 @@
 <?php
 /////////////////////////////////////////////////////
-/// 函数名称：gen_list
+/// 函数名称：gen_author
 /// 函数作用：产生静态的最新的文章列表页面
 /// 函数作者: DH
-/// 作者地址: http://linkyou.org/ 
+/// 作者地址: http://dhblog.org
 /////////////////////////////////////////////////////
 
 header('Content-Type:text/html;charset= UTF-8'); 
 set_time_limit(120);
 
 #需要使用的基础函数
-include("../../config.php");
-include("../common.php");
-include("../page_navi.php");
-include("../compressJS.class.php");
+include("../config.php");
+include("../common/common_gen.php");
+include("../common/page_navi.php");
+include("../common/compressJS.class.php");
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
@@ -29,11 +29,11 @@ mysql_close($conn);
 
 function dh_gen_author()
 {
-	global $DH_home_url,$DH_src_path,$DH_author_path;
+	global $DH_home_url,$DH_input_path,$DH_author_path;
 	if (!file_exists($DH_author_path))  
 		mkdir($DH_author_path,0777);
 	
-	$DH_input_html  = $DH_src_path . 'author/author.html';
+	$DH_input_html  = $DH_input_path . 'genauthor/author.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = setshare($DH_output_content,'index.js');
 	
@@ -52,8 +52,8 @@ function dh_gen_author()
 
 function dh_gen_static($name)
 {
-	global $DH_home_url,$DH_src_path,$DH_input_path,$DH_author_path;
-	$DH_input_html  = $DH_src_path . 'author/'.$name.'.html';
+	global $DH_home_url,$DH_input_path,$DH_author_path;
+	$DH_input_html  = $DH_input_path . 'genauthor/'.$name.'.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 
 	$DH_share_output_path = $DH_input_path.'top/';
@@ -66,7 +66,7 @@ function dh_gen_static($name)
 	
 	$DH_output_content = str_replace("%meta%",$DH_output_meta,$DH_output_content);
 	$DH_output_content = str_replace("%head%",$DH_output_head,$DH_output_content);
-	$DH_output_content = str_replace("%foot%",$DH_output_foot,$DH_output_content);		
+	$DH_output_content = str_replace("%foot%",$DH_output_foot,$DH_output_content);
 	
 	$deep = '../../';
 	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);

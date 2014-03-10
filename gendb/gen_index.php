@@ -13,7 +13,7 @@ require("../config.php");
 require("../common/curl.php");
 require("../common/common_gen.php");
 require("../common/common.php");
-require("common/compressJS.class.php");
+require("../common/compressJS.class.php");
 require("movie.mtime.com.boxoffice.php");
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());

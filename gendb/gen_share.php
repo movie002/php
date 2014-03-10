@@ -155,11 +155,11 @@ $DH_side_content=$DH_side_hotmovie.$DH_side_hottv.$DH_side_tongji;
 	dh_file_put_contents($DH_output_file,$DH_side);	
 	echo "gen side success !</br>\n";
 	
-	$DH_input_html  = $DH_html_path . 'cse.html';
-	$DH_output = dh_file_get_contents($DH_input_html);
-	$DH_output = setshare($DH_output,'page.js');	
-	$DH_output_file = $DH_output_path. 'cse.html';
-	dh_file_put_contents($DH_output_file,$DH_output);	
+//	$DH_input_html  = $DH_html_path . 'cse.html';
+//	$DH_output = dh_file_get_contents($DH_input_html);
+//	$DH_output = setshare($DH_output,'page.js');	
+//	$DH_output_file = $DH_output_path. 'cse.html';
+//	dh_file_put_contents($DH_output_file,$DH_output);	
 	
 	$DH_input_html = $DH_html_path. 'search.php';
 	$DH_output = dh_file_get_contents($DH_input_html);

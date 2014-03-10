@@ -12,16 +12,23 @@ $pagecount=15;
 //$pagebgen=2;
 
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
+
+
 $DH_output_path= '/srv/db/';
 $DH_input_path= '/srv/php/';
 $DH_author_path= '/srv/www/';
+$DH_dh_path= '/srv/dh/';
 $DH_home_url= 'http://db.movie002.com/';
 
-//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/movie/';
-//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/movie002/';
-//$DH_home_url= 'http://127.0.0.1/movie/';
+//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/db/';
+//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
+//$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
+//$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
+//$DH_home_url= 'http://127.0.0.1/db/';
 
-$DH_src_path= $DH_input_path. 'gen/';
+
+
+$DH_src_path= $DH_input_path. 'gendb/';
 $DH_html_path= $DH_src_path . 'html/';
 $DH_output_html_path = $DH_output_path.'html/';
 $DH_output_index_path = $DH_output_path.'index/';
