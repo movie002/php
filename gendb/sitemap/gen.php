@@ -8,7 +8,8 @@
 header('Content-Type:text/html;charset= UTF-8'); 
 
 //导出数据库设置
-require("../config.php");
+require("../../config.php");
+require("../../common/base.php");
 require("page_navi.php");
 
 set_time_limit(3600); 
@@ -60,7 +61,7 @@ gen_sitemapall();
 
 function gen_sitemap($sql,$date,$cycle,$name,$times)
 {	
-	global $DH_input_path,$DH_output_path,$DH_home_url,$DH_html_url,$moviecountry,$movietype,$DH_name;
+	global $DH_src_path,$DH_output_path,$DH_home_url,$DH_html_url,$moviecountry,$movietype,$DH_name;
 	$sitemappath=$DH_output_path.'sitemapxml/';
 	if (!file_exists($sitemappath))  
 		mkdir($sitemappath,0777);
@@ -69,16 +70,16 @@ function gen_sitemap($sql,$date,$cycle,$name,$times)
 	$updatetime = date("Y-m-d",$timetmp)."T".date("H:i:s",$timetmp)."+00:00";
 
 	
-	$DH_input_html  = $DH_input_path . 'sitemap/sitemap.xml';
+	$DH_input_html  = $DH_src_path . 'sitemap/sitemap.xml';
 	$DH_sitemap = dh_file_get_contents("$DH_input_html");
 	$DH_sitemap = str_replace("%lastdate%",$updatetime,$DH_sitemap);
-	$DH_input_html  = $DH_input_path . 'sitemap/sitemap_each.xml';
+	$DH_input_html  = $DH_src_path . 'sitemap/sitemap_each.xml';
 	$DH_sitemap_each = dh_file_get_contents("$DH_input_html");	
 	
-	$DH_input_html  = $DH_input_path . 'sitemap/sitemap_baidu.xml';
+	$DH_input_html  = $DH_src_path . 'sitemap/sitemap_baidu.xml';
 	$DH_sitemap_baidu = dh_file_get_contents("$DH_input_html");	
 	$DH_sitemap_baidu = str_replace("%lastdate%",$updatetime,$DH_sitemap_baidu);
-	$DH_input_html  = $DH_input_path . 'sitemap/sitemap_baidu_each.xml';
+	$DH_input_html  = $DH_src_path . 'sitemap/sitemap_baidu_each.xml';
 	$DH_sitemap_baidu_each = dh_file_get_contents("$DH_input_html");		
 	
 	$rs = mysql_query($sql);
@@ -145,12 +146,12 @@ function gen_sitemap($sql,$date,$cycle,$name,$times)
 
 function genhtml($sql,$i,$times)
 {
-	global $movietype,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_input_path,$DH_name;
+	global $movietype,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_src_path,$DH_name;
 	$sitemappath=$DH_output_path.'sitemaphtml/';
 	if (!file_exists($sitemappath))  
 		mkdir($sitemappath,0777);
 		
-	$DH_input_html  = $DH_input_path . 'sitemap/sitemap.html';
+	$DH_input_html  = $DH_src_path . 'sitemap/sitemap.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 	$DH_output_content = str_replace("%name%",$DH_name,$DH_output_content);
@@ -189,14 +190,14 @@ function genhtml($sql,$i,$times)
 
 function genhtml2()
 {
-	global $movietype,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_input_path,$DH_name;
+	global $movietype,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_src_path,$DH_name;
 	$sitemappath=$DH_output_path.'sitemaphtml/';
 	if (!file_exists($sitemappath))  
 		mkdir($sitemappath,0777);
 	
 	$sql="select * from page order by updatetime desc";
 	
-	$DH_input_html  = $DH_input_path . 'sitemap/sitemap.html';
+	$DH_input_html  = $DH_src_path . 'sitemap/sitemap.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 	$DH_output_content = str_replace("%name%",$DH_name,$DH_output_content);
@@ -243,20 +244,20 @@ function genhtml2()
 
 function gen_siteindex($date)
 {
-	global $DH_output_path,$DH_input_path,$DH_home_url,$DH_home_url,$DH_name;
+	global $DH_output_path,$DH_src_path,$DH_home_url,$DH_home_url,$DH_name;
 	
 	$timetmp = strtotime($date);
 	$date = date("Y-m-d",$timetmp)."T".date("H:i:s",$timetmp)."+00:00";	
 	
-	$DH_input_html  = $DH_input_path . 'sitemap/siteindex.xml';
+	$DH_input_html  = $DH_src_path . 'sitemap/siteindex.xml';
 	$DH_siteindex = dh_file_get_contents("$DH_input_html");
-	$DH_input_html  = $DH_input_path . 'sitemap/siteindex_each.xml';
+	$DH_input_html  = $DH_src_path . 'sitemap/siteindex_each.xml';
 	$DH_siteindex_each = dh_file_get_contents("$DH_input_html");	
 	$DH_siteindex_each = str_replace("%home%",$DH_home_url,$DH_siteindex_each);
 	$DH_siteindex_each = str_replace("%name%",$DH_name,$DH_siteindex_each);
 	
 	
-	$DH_input_html  = $DH_input_path . 'sitemap/robots.txt';
+	$DH_input_html  = $DH_src_path . 'sitemap/robots.txt';
 	$DH_robots = dh_file_get_contents("$DH_input_html");
 		
 	$siteindex_all='';
@@ -324,9 +325,9 @@ function gen_siteindex($date)
 
 function gen_sitemapall()
 {
-	global $DH_output_path,$DH_input_path,$DH_home_url,$DH_home_url,$DH_name;
+	global $DH_output_path,$DH_src_path,$DH_home_url,$DH_home_url,$DH_name;
 	
-	$DH_input_html  = $DH_input_path . 'sitemap/sitemapindex.html';
+	$DH_input_html  = $DH_src_path . 'sitemap/sitemapindex.html';
 	$DH_siteindex = dh_file_get_contents("$DH_input_html");	
 	$DH_siteindex = str_replace("%home%",$DH_home_url,$DH_siteindex);
 	$DH_siteindex = str_replace("%name%",$DH_name,$DH_siteindex);

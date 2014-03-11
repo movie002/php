@@ -36,14 +36,14 @@ echo $(date) > $logfile
 ## 3.3 生成list
 /srv/php/timeexc.sh curl http://php.movie002.com/gendb/gen_list.php -o /srv/php/log/genlist.log
 ## 3.5 生成辅助页面，友情链接之类的
-/srv/php/timeexc.sh curl http://php.movie002.com/gendb/author/gen.php -o /srv/php/log/genauthor.log
+/srv/php/timeexc.sh curl http://php.movie002.com/genauthor/gen.php -o /srv/php/log/genauthor.log
 ## 3.6 生成sitemap
 /srv/php/timeexc.sh curl http://php.movie002.com/gendb/sitemap/gen.php -o /srv/php/log/gensitemap.log
 ## 3.7 生成数据库备份
 #/srv/movie002/timeexc.sh  curl http://php.movie002.com/backup/dumpfunc.php -o /srv/php/log/dumpfunc.log
 
 ## 4 通知更新
-/srv/php/timeexc.sh curl http://php.movie002.com/gen/gen_update.php -o /srv/php/log/genupdate.log
+/srv/php/timeexc.sh curl http://php.movie002.com/gendb/gen_update.php -o /srv/php/log/genupdate.log
 echo $(date) >> $logfile
 
 ## 4 操作日志发送到邮箱
