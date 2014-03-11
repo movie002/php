@@ -9,6 +9,7 @@
 
 header('Content-Type:text/html;charset= UTF-8'); 
 require("config.php");
+require("../common/base.php");
 require("scan.php");
 #需要使用的基础函数
 require("../common/compressJS.class.php");
