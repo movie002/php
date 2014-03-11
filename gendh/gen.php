@@ -10,6 +10,7 @@ $DH_dh_title="二手电影网-影视网址导航";
 $DH_dh_url="http://dh.movie002.com/";
 //$DH_dh_url="http://127.0.0.1/dh/";
 
+//利用本url建立share文件
 dh_gen_share($DH_dh_url);
 
 $DH_input_html  = 'index.tpl.html';
@@ -29,7 +30,7 @@ foreach ($replacecontent1 as $key=>$eachrc)
 	$DH_output3 = getcontent3($DH_output_site,$replacecontent1[$key],$replacecontent2[$key],$DH_output3);
 }
 
-
+//使用share文件补充自己的制定部分
 $DH_output = setshare($DH_output,'');
 $DH_output3 = setshare($DH_output3,'');
 $DH_output = str_replace("%home%",$DH_dh_url,$DH_output);

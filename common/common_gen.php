@@ -719,42 +719,4 @@ function getcele($patten,&$celeimg,&$celes,$meta,$title)
 		}
 	}
 }
-
-function setshare($DH_output_content,$js)
-{
-	global $DH_home_url,$DH_input_path,$DH_html_path;
-	$DH_share_output_path = $DH_input_path.'top/';
-	$DH_input_html  = $DH_share_output_path . 'meta.html';
-	$DH_output_meta = dh_file_get_contents("$DH_input_html");
-	$DH_input_html  = $DH_share_output_path . 'side.html';
-	$DH_output_side = dh_file_get_contents("$DH_input_html");
-	$DH_input_html  = $DH_share_output_path . 'head.html';
-	$DH_output_head = dh_file_get_contents("$DH_input_html");	
-	$DH_input_html  = $DH_share_output_path . 'foot.html';
-	$DH_output_foot = dh_file_get_contents("$DH_input_html");
-	
-	$DH_output_content = str_replace("%meta%",$DH_output_meta,$DH_output_content);
-	$DH_output_content = str_replace("%side%",$DH_output_side,$DH_output_content);
-	$DH_output_content = str_replace("%head%",$DH_output_head,$DH_output_content);
-	$DH_output_content = str_replace("%foot%",$DH_output_foot,$DH_output_content);		
-	
-	if($js!='')
-	{
-		$DH_input_html  = $DH_html_path.$js;
-		$DH_js = dh_file_get_contents($DH_input_html);
-		$DH_js = str_replace("%home%",$DH_home_url,$DH_js);
-		$myPacker = new compressJS($DH_js);	
-		$DH_js = $myPacker->pack();
-		$DH_output_content = str_replace("%$js%",$DH_js,$DH_output_content);	
-	}
-	
-	$DH_input_html  = $DH_html_path . 'foot.js';
-	$DH_js = dh_file_get_contents($DH_input_html);
-	$DH_js = str_replace("%home%",$DH_home_url,$DH_js);	
-	$myPacker = new compressJS($DH_js);	
-	$DH_js = $myPacker->pack();
-	$DH_output_content = str_replace("%footjs%",$DH_js,$DH_output_content);	
-	
-	return $DH_output_content;
-}
 ?>
