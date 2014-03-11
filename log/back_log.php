@@ -10,7 +10,7 @@ header('Content-Type:text/html;charset= UTF-8');
 
 #需要使用的基础函数
 include("../config.php");
-require("../backup/mail.php");
+require("../mail/mail.php");
 
 //phpinfo();
 $logdir=".";
