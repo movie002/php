@@ -10,6 +10,7 @@ header('Content-Type:text/html;charset= UTF-8');
 require("../config.php");
 #需要使用的基础函数
 require("../common/common_gen.php");
+require("../common/share.php");
 require("../common/compressJS.class.php");
 require("queue.php");
 set_time_limit(600); 

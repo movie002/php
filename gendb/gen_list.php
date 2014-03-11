@@ -12,6 +12,7 @@ set_time_limit(120);
 #需要使用的基础函数
 require("../config.php");
 require("../common/common_gen.php");
+require("../common/share.php");
 require("../common/page_navi.php");
 require("../common/compressJS.class.php");
 

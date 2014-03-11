@@ -11,9 +11,10 @@ header('Content-Type:text/html;charset= UTF-8');
 require("config.php");
 require("scan.php");
 #需要使用的基础函数
-require("compressJS.class.php");
-require("page_navi.php");
-require("gen_share.php");
+require("../common/compressJS.class.php");
+require("../common/page_navi.php");
+require("../common/share.php");
+//require("gen_share.php");
 require("sitemap/gen.php");
 require("article_index.php");
 require("genrss/gen.php");
@@ -48,7 +49,7 @@ ksort($pages);
 //output_all();
 
 //生成关键信息之后调用gen_share();
-dh_gen_share($lists);
+//dh_gen_share($lists);
 
 //输出到各个lists
 $tags=array();

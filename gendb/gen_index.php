@@ -11,11 +11,11 @@ header('Content-Type:text/html;charset= UTF-8');
 #需要使用的基础函数
 require("../config.php");
 require("../common/curl.php");
-require("../common/common_gen.php");
 require("../common/common.php");
+require("../common/common_gen.php");
 require("../common/compressJS.class.php");
 require("movie.mtime.com.boxoffice.php");
-require("../common/gen_share.php");
+require("../common/share.php");
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');

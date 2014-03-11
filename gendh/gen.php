@@ -3,7 +3,7 @@
 include("../config.php");
 include("../common/common_gen.php");
 include("../common/compressJS.class.php");
-require("../common/gen_share.php");
+require("../common/share.php");
 
 
 $DH_dh_title="二手电影网-影视网址导航";

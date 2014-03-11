@@ -1,7 +1,7 @@
 <?php
 /////////////////////////////////////////////////////
-/// 函数名称：gen 
-/// 函数作用：产生foot head side文件
+/// 函数名称：share 
+/// 函数作用：产生foot head side文件，提供利用接口
 /// 函数作者: DH
 /// 作者地址: http://dhblog.org
 /////////////////////////////////////////////////////
@@ -63,24 +63,6 @@ function dh_gen_share($DH_home_url)
 	$DH_output_file = $DH_share_output_path. 'meta.html';
 	dh_file_put_contents($DH_output_file,$DH_output);	
 	echo "gen meta success !</br>\n";
-	
-//	$DH_input_html  = $DH_html_path . 'cse.html';
-//	$DH_output = dh_file_get_contents($DH_input_html);
-//	$DH_output = setshare($DH_output,'page.js');	
-//	$DH_output_file = $DH_output_path. 'cse.html';
-//	dh_file_put_contents($DH_output_file,$DH_output);	
-	
-	$DH_input_html = $DH_html_path. 'search.php';
-	$DH_output = dh_file_get_contents($DH_input_html);
-	$DH_output = setshare($DH_output,'list.js');
-	$DH_output = str_replace("%deep%",'./',$DH_output);
-	$DH_output = str_replace("输入影视名...",'<?php echo $q ?>',$DH_output);
-	$DH_output = str_replace('<form name="f1"  target="_blank"','<form name="f1"',$DH_output);
-	
-	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
-	$DH_output_file = $DH_output_path. 'search.php';
-	dh_file_put_contents($DH_output_file,$DH_output);
-	echo "gen cse success !</br>\n";	
 }
 
 function dh_gen_side($DH_home_url)
@@ -171,7 +153,25 @@ function dh_gen_side($DH_home_url)
 	$DH_side= str_replace("%side_content%",$DH_side_content,$DH_side);
 	$DH_output_file = $DH_share_output_path. 'side.html';
 	dh_file_put_contents($DH_output_file,$DH_side);	
-	echo "gen side success !</br>\n";	
+	echo "gen side success !</br>\n";
+	
+//	$DH_input_html  = $DH_html_path . 'cse.html';
+//	$DH_output = dh_file_get_contents($DH_input_html);
+//	$DH_output = setshare($DH_output,'page.js');	
+//	$DH_output_file = $DH_output_path. 'cse.html';
+//	dh_file_put_contents($DH_output_file,$DH_output);	
+	
+	$DH_input_html = $DH_html_path. 'search.php';
+	$DH_output = dh_file_get_contents($DH_input_html);
+	$DH_output = setshare($DH_output,'list.js');
+	$DH_output = str_replace("%deep%",'./',$DH_output);
+	$DH_output = str_replace("输入影视名...",'<?php echo $q ?>',$DH_output);
+	$DH_output = str_replace('<form name="f1"  target="_blank"','<form name="f1"',$DH_output);
+	
+	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
+	$DH_output_file = $DH_output_path. 'search.php';
+	dh_file_put_contents($DH_output_file,$DH_output);
+	echo "gen search success !</br>\n";		
 }
 
 function dh_get_movie_type_ul($sql)
