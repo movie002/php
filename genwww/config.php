@@ -16,14 +16,14 @@ $DH_home_url= 'http://127.0.0.1/www/';
 
 
 $DH_src_path= $DH_input_path. 'genwww/';
-$DH_html_path= $DH_src_path . 'html/';
+$DH_html_path= $DH_input_path . 'gendb/html/';
 $DH_output_html_path = $DH_output_path.'html/';
 $DH_output_index_path = $DH_output_path.'index/';
 $DH_html_url= $DH_home_url.'html/';
 $DH_index_url= $DH_home_url.'index/';
 
-$DH_name= '灯火部落';
-$DH_name_des= '建站技术分享';
+$DH_name= '二手电影网';
+$DH_name_des= '影视资源速递';
 //页面显示的文章列表条目的个数
 $DH_page_count_limit = 4;
 //分页中能展示的页面数

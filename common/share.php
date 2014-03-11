@@ -30,7 +30,9 @@ function dh_gen_share($DH_home_url)
 	
 	$DH_input_html  = $DH_html_path . 'foot.html';
 	$DH_output = dh_file_get_contents($DH_input_html);
-	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
+	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);
+	$DH_output = str_replace("%DH_name%",$DH_name,$DH_output);
+	$DH_output = str_replace("%DH_name_des%",$DH_name_des,$DH_output);	
 	$DH_input_html  = $DH_html_path . 'foot.js';
 	$DH_js = dh_file_get_contents($DH_input_html);
 	$DH_js = str_replace("%home%",$DH_home_url,$DH_js);	
@@ -45,6 +47,8 @@ function dh_gen_share($DH_home_url)
 	$DH_input_html  = $DH_html_path . 'head.html';
 	$DH_output = dh_file_get_contents($DH_input_html);
 	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
+	$DH_output = str_replace("%DH_name%",$DH_name,$DH_output);
+	$DH_output = str_replace("%DH_name_des%",$DH_name_des,$DH_output);		
 	$DH_output_file = $DH_share_output_path. 'head.html';
 	dh_file_put_contents($DH_output_file,$DH_output);		
 	echo "gen head success !</br>\n";
