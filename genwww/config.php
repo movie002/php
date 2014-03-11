@@ -12,8 +12,8 @@ $DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
 //$DH_home_url= 'http://127.0.0.1/dhblog/';
 $DH_home_url= 'http://127.0.0.1/www/';
 
-$DH_src_path= $DH_input_path. 'genwww/';
-$DH_html_path= $DH_input_path . 'genwww/html/';
+$DH_src_path= $DH_input_path. 'genwww/html/';
+$DH_html_path= $DH_input_path . 'gendb/html/';
 $DH_output_html_path = $DH_output_path.'html/';
 $DH_output_index_path = $DH_output_path.'index/';
 $DH_html_url= $DH_home_url.'html/';

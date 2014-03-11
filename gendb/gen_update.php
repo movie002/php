@@ -12,6 +12,7 @@ date_default_timezone_set("Asia/Shanghai");//设定时区东八区
 require("../config.php");
 #需要使用的基础函数
 require("../common/common_gen.php");
+require("../common/base.php");
 require("../common/share.php");
 require("../mail/mail.php");
 require("../common/compressJS.class.php");
@@ -54,7 +55,7 @@ function dh_gen_update($cycle)
 	$results=dh_mysql_query($sql);
 	if($results)
 	{	
-		$DH_input_html  = $DH_src_path . 'author/update.html';
+		$DH_input_html  = $DH_src_path . 'update.html';
 		$DH_output_content = dh_file_get_contents("$DH_input_html");
 		$DH_output_content = str_replace("%date%",date('Y-m-d',time()),$DH_output_content);
 		$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);

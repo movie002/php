@@ -22,12 +22,12 @@ require("genrss/gen.php");
 set_time_limit(600); 
 
 //预定义
-global $DH_src_path;
+
 //$cats=array('美丽'=>array('xx'),'yy','zz','dd','bb','aa','cc');
 //$tags=array();
 
 //取出已经搞定的日期和数目
-$datepath=$DH_src_path.'tmp/date';
+$datepath=$DH_input_path.'genwww/tmp/date';
 $begindate = dh_file_get_contents("$datepath");
 //preg_match('/<date>(.*?)<\/date>/s',$content,$match);
 //print_r($match);
@@ -39,7 +39,7 @@ $todaydate=date("YmdH");
 $lists=array();
 $lists_num=array();
 $pages=array();
-scan_dir($DH_src_path.'pages');
+scan_dir($DH_input_path.'genwww/pages');
 krsort($lists);
 gen_lists_num();
 ksort($pages);
@@ -92,11 +92,11 @@ echo $maxdate;
 
 function dh_gen_page()
 {
-	global $cats,$lists,$lists_num,$pages,$DH_home_url,$DH_index_url,$DH_html_path,$DH_output_path,$DH_name,$DH_output_html_path,$DH_src_path,$begincount,$DH_html_url;
+	global $cats,$lists,$lists_num,$pages,$DH_home_url,$DH_index_url,$DH_output_path,$DH_name,$DH_output_html_path,$DH_src_path,$begincount,$DH_html_url;
 	if (!file_exists($DH_output_html_path))  
 		mkdir($DH_output_html_path,0777);
 	
-	$DH_input_html  = $DH_html_path . 'page.html';
+	$DH_input_html  = $DH_src_path . 'page.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = setshare($DH_output_content,'page.js');
 	//echo $DH_output_content;
@@ -191,17 +191,17 @@ function dh_gen_page()
 
 function dh_gen_list()
 {
-	global $tags,$cats,$all,$lists,$DH_home_url,$DH_html_path,$DH_output_path,$DH_output_index_path,$DH_src_path,$DH_name;
+	global $tags,$cats,$all,$lists,$DH_home_url,$DH_output_path,$DH_output_index_path,$DH_src_path,$DH_name;
 	if (!file_exists($DH_output_index_path))  
 		mkdir($DH_output_index_path,0777);
 	
-	$DH_input_html  = $DH_html_path . 'list.html';
+	$DH_input_html  = $DH_src_path . 'list.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = setshare($DH_output_content,'list.js');
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 	$DH_output_content = str_replace("%name%",$DH_name,$DH_output_content);
 	
-	$DH_input_html  = $DH_html_path . 'list_each.html';
+	$DH_input_html  = $DH_src_path . 'list_each.html';
 	$listeach = dh_file_get_contents("$DH_input_html");	
 	//echo $DH_output_content;
 	
