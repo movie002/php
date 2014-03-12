@@ -97,8 +97,9 @@
 
 #footer-nav ul, #footer-nav li { margin: 0; padding: 0; list-style: none; }
 #footer-nav li { float: left; padding-right: 6px; line-height: 1; }
-a.gotop_btn ,a.gocom_btn
+a.gotop_btn
 {
+text-align:center;
 position: fixed;
 left: 50%;
 margin-left: 500px;
@@ -106,33 +107,41 @@ top: 300px;
 font-weight:700;
 font-size:11px;
 width: 35px;
+background: #576d74;
+padding: 10px 0 8px 0;
+line-height: 15px;
+color: #333;
+display: block;
+}
+
+a.gotop_btn:hover
+{
+	background: #374d54;
+	text-decoration: none;
+	color: #bbb;
+}
+
+a.gotop_btn:visited
+{
+	color: #999;
+}
+
+a.gotop_btn_up
+{
+top: 300px;
 display: none;
 border-radius:10px 10px 3px 3px;
 -webkit-border-radius:10px 10px 3px 3px;
 -khtml-border-radius:10px 10px 3px 3px;
 -moz-border-radius:10px 10px 3px 3px;
-background: #576d74;
-padding: 10px 0 8px 0;
-line-height: 15px;
-color: #999;
 }
 
-a.gotop_btn:hover,a.gocom_btn:hover
+.bt2
 {
-	background: #356d74;
-	text-decoration: none;
-}
-
-a.gotop_btn:visited,a.gocom_btn:visited
-{
-	color: #999;
-}
-a.gocom_btn {
-text-align:center;
-top: 360px;
-display: block;
+/*top: 360px;
 border-radius:3px3px 10px 10px;
 -webkit-border-radius:3px3px 10px 10px;
 -khtml-border-radius:3px3px 10px 10px;
--moz-border-radius:3px3px 10px 10px;
+-moz-border-radius:3px3px 10px 10px;*/
+border-top:2px solid #444;
 }

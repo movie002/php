@@ -212,7 +212,7 @@ function dh_gen_movie($DH_index_cat)
 		$liouttitle ="\n<div class=\"TabTitle TabTitlex\"> \n <ul id=\"myTab$movietype_index\">";
 		$liouttitle .=$liout;
 		$liouttitle .="\n</ul>\n</div>";		
-		$DH_index_cats .= "\n".'<div class="TabContent">'.$liouttitle.$DH_index_cats_each.'</div>';
+		$DH_index_cats .= "\n".'<div class="TabContent"><div class="anchor"><a name="amyTab'.$movietype_index.'" id="myTab'.$movietype_index.'">&nbsp;</a></div>'.$liouttitle.$DH_index_cats_each.'</div>';
 	}
 	return $DH_index_cats;	
 }

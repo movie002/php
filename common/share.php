@@ -20,7 +20,7 @@
 
 function dh_gen_share($DH_home_url)
 {
-	global $DH_html_path,$DH_index_url,$DH_output_path,$DH_input_path,$conn;
+	global $DH_html_path,$DH_index_url,$DH_output_path,$DH_input_path,$conn,$DH_name,$DH_name_des;
 
 	$DH_share_output_path = $DH_input_path.'top/';
 	if (!file_exists($DH_share_output_path))  

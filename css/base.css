@@ -448,8 +448,8 @@ border-radius:5px;
 .top_content {
 margin:10px 0;
 border:1px dashed #898f8f;
-padding:15px 5px 15px 40px;
-background:url(../images/audio.png) no-repeat 5px;
+padding: 0px;
+height:30px;
 }
 
 code {
