@@ -43,10 +43,13 @@
 						}
 						else
 						{
-							require("config.php");
+							require("../php/common/common_gen.php");
+							require("../php/common/base.php");
+							require("../php/config.php");
 							$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 							mysql_select_db($dbname, $conn) or die('选择数据库失败');
-							mysql_query("set names utf8;");					
+							mysql_query("set names utf8;");
+							
 							$DH_input_html  = $DH_html_path . 'list_each.html';
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
 							$sql="select * from page where ";							
