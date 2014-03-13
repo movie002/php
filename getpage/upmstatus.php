@@ -132,7 +132,7 @@ function coming()
 	}
 	//echo $buffer;
 	
-	preg_match_all('/<a href="http:\/\/movie\.douban\.com\/subject\/(.*?)\/">(.*?)<\/a>/s',$buffer,$match);
+	preg_match_all('/subject\/([0-9]+)\/" class="">(.*?)<\/a>/s',$buffer,$match);	
 	//print_r($match);
 
 	if(!empty($match[1][0]))
