@@ -108,6 +108,10 @@ window.onload = function ()
 	loadimg();
 	showImgs();
 	document.getElementById('submittext').focus();
+	//iframe 的src值设置
+	var iframe_say = document.getElementById('iframe_say');
+	var iframe_say_src = iframe_say.getAttribute('data-src');
+	iframe_say.setAttribute('src',iframe_say_src);
 };
 
 window.onscroll = function()
