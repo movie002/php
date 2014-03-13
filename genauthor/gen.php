@@ -11,6 +11,7 @@ set_time_limit(120);
 
 #需要使用的基础函数
 include("../config.php");
+include("../common/base.php");
 include("../common/common_gen.php");
 include("../common/page_navi.php");
 include("../common/compressJS.class.php");
