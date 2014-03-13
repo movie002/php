@@ -108,10 +108,9 @@ window.onload = function ()
 	loadimg();
 	showImgs();
 	document.getElementById('submittext').focus();
-	//iframe 的src值设置
+	//延时调用 dh_say.php 节省时间
 	var iframe_say = document.getElementById('iframe_say');
-	var iframe_say_src = iframe_say.getAttribute('data-src');
-	iframe_say.setAttribute('src',iframe_say_src);
+	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="20px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
 };
 
 window.onscroll = function()
