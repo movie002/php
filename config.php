@@ -14,17 +14,17 @@ $pagecount=15;
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 
 
-//$DH_output_path= '/srv/db/';
-//$DH_input_path= '/srv/php/';
-//$DH_author_path= '/srv/www/';
-//$DH_dh_path= '/srv/dh/';
-//$DH_home_url= 'http://db.movie002.com/';
+$DH_output_path= '/srv/db/';
+$DH_input_path= '/srv/php/';
+$DH_author_path= '/srv/www/';
+$DH_dh_path= '/srv/dh/';
+$DH_home_url= 'http://db.movie002.com/';
 
-$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/db/';
-$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
-$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
-$DH_home_url= 'http://127.0.0.1/db/';
+//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/db/';
+//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
+//$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
+//$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
+//$DH_home_url= 'http://127.0.0.1/db/';
 
 
 
