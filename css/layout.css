@@ -6,7 +6,7 @@
 	
 .width_1{width: 1000px;}
 .width_2{width: 970px;} 
-.width_3{width: 696px;} 
+.width_3{width: 695px;} 
  
 #header {
     position: fixed;
@@ -31,11 +31,8 @@
 #content{
     float: left;
     margin-top: 10px;
-	margin-right: 5px;	
-}
-
-#content ul{
-	border: 1px solid #bbb;
+	margin-right: 5px;
+	border:1px solid #ccc;
 }
 
 .listcontent ul li{

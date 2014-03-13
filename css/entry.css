@@ -7,7 +7,7 @@
 {
 	border: 1px solid #ccc;
 	padding:5px;
-	margin:0;
+	margin:5px;
 	position:relative;
 }
 .titlecontent
@@ -45,7 +45,7 @@ color:#000
 }
 
 .entry {
-padding:2px 5px;
+padding:2px 8px;
 border-top: 1px solid #ccc;
 }
 
