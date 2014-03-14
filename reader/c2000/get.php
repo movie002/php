@@ -11,6 +11,8 @@ require("ent.ifeng.com.php");
 require("ent.163.com.php");
 require("ent.sina.com.cn.php");
 require("yule.sohu.com.php");
+require("www.gewara.com.news.php");
+require("www.gewara.com.activity.php");
 
 
 header('Content-Type:text/html;charset= UTF-8'); 
@@ -21,7 +23,11 @@ mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
 reader();
+readrssfile2008();
+readrssfile2009();
+
 mysql_close($conn);
+
 
 class author
 {

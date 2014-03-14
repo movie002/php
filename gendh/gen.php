@@ -36,8 +36,8 @@ foreach ($replacecontent1 as $key=>$eachrc)
 }
 
 //使用share文件补充自己的制定部分
-$DH_output = setshare($DH_output,'');
-$DH_output3 = setshare($DH_output3,'');
+$DH_output = setshare($DH_output,'index.js');
+$DH_output3 = setshare($DH_output3,'index.js');
 $DH_output = str_replace("%home%",$DH_dh_url,$DH_output);
 $DH_output3 = str_replace("%home%",$DH_dh_url,$DH_output3);
 $DH_output = str_replace("%title%",$DH_dh_title.'(美观版)',$DH_output);

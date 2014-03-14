@@ -121,7 +121,7 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			
 			$sqllinks = "select pageid,author,title,link,linktype,updatetime from link2 t where t.pageid = '".$row['id']."' order by updatetime desc";		
 			$DH_output_content_page = dh_replace_link2($sqllinks,$row,$DH_output_content_page);
-			$summary=$row['summary'].' <a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank"> [更多内容到豆瓣]</a>';
+			$summary=$row['summary'].' <a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank">[更多内容到豆瓣]</a>';
 			$DH_output_content_page = str_replace("%summary%",$summary,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%home%",$DH_home_url,$DH_output_content_page);
 			$DH_output_file = output_page_path($path,$row['id']);

@@ -566,7 +566,7 @@ width: 35px;
 background: #576d74;
 padding: 10px 0 8px 0;
 line-height: 15px;
-color: #333;
+color: #999;
 display: block;
 }
 
@@ -594,11 +594,6 @@ border-radius:10px 10px 3px 3px;
 
 .bt2
 {
-/*top: 360px;
-border-radius:3px3px 10px 10px;
--webkit-border-radius:3px3px 10px 10px;
--khtml-border-radius:3px3px 10px 10px;
--moz-border-radius:3px3px 10px 10px;*/
 border-top:2px solid #444;
 }#service_list {
     color: #ddd;
