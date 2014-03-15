@@ -52,6 +52,9 @@ ksort($pages);
 //生成关键信息之后调用gen_share();
 //dh_gen_share($lists);
 
+dh_gen_share_meta($DH_home_url);
+dh_gen_share_head($DH_input_path.'genwww/html/',$DH_home_url);
+
 //输出到各个lists
 $tags=array();
 $cats=array();

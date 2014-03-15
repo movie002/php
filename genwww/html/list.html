@@ -5,6 +5,7 @@
 	<meta name="keywords" content="%name%,%cat%,类别,索引,列表" />
 	<meta name="description" content="%name% %cat% 类别文章的 列表的第%page%页" />
 	%meta%
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 </head>
 <body>
 	<div id="wrapper" class="width_1">
@@ -14,8 +15,9 @@
 		<!-- header -->
 		<div id="middle" class="width_2">
 			<div class="top_content" style="position:relative">
-				<iframe id="iframe_say" allowtransparency="true" width="90%" height="20px" src="%home%dh_say.php" style="position:absolute;top:8px;right:50px;" frameBorder="0" scrolling="no" ></iframe>
-				<span style="width:40px;font-size:12px;position:absolute;top:7px;right:0;float:right;cursor:pointer;" onclick="iframe_say.window.location.reload();">下一条</span>
+				<img width="24px" height="24px" style="border:none" data-src="%home%images/audio.png"/>&nbsp;
+				<span id="iframe_say"></span>	
+				<span class="iframe_next" onclick="iframe_say.window.location.reload();">下一条</span>
 			</div>
 			<div id="title">
 				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置:<a href="%home%" title="回到首页"> 首页</a>>>%catlink% %cat%
@@ -48,6 +50,5 @@
 	<script type="text/javascript">
 	%footjs%
 	</script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>		
 </body>
 </html>

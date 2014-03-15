@@ -20,7 +20,15 @@
 
 function dh_gen_share($DH_home_url)
 {
-	global $DH_html_path,$DH_index_url,$DH_output_path,$DH_input_path,$conn,$DH_name,$DH_name_des;
+	 global $DH_html_path;
+	 dh_gen_share_foot($DH_home_url);
+	 dh_gen_share_head($DH_html_path,$DH_home_url);
+	 dh_gen_share_meta($DH_home_url);
+}
+
+function dh_gen_share_foot($DH_home_url)
+{
+	global $DH_html_path,$DH_input_path,$DH_name,$DH_name_des;
 
 	$DH_share_output_path = $DH_input_path.'top/';
 	if (!file_exists($DH_share_output_path))  
@@ -42,8 +50,18 @@ function dh_gen_share($DH_home_url)
 	$DH_output_file = $DH_share_output_path. 'foot.html';
 	dh_file_put_contents($DH_output_file,$DH_output);
 	echo "gen foot success !</br>\n";
-	$DH_cse_foot=$DH_output;
+}
 
+function dh_gen_share_head($DH_html_path,$DH_home_url)
+{
+	global $DH_input_path,$DH_name,$DH_name_des;
+
+	$DH_share_output_path = $DH_input_path.'top/';
+	if (!file_exists($DH_share_output_path))  
+	{   
+		mkdir($DH_share_output_path,0777);
+	}	
+	
 	$DH_input_html  = $DH_html_path . 'head.html';
 	$DH_output = dh_file_get_contents($DH_input_html);
 	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
@@ -52,7 +70,17 @@ function dh_gen_share($DH_home_url)
 	$DH_output_file = $DH_share_output_path. 'head.html';
 	dh_file_put_contents($DH_output_file,$DH_output);		
 	echo "gen head success !</br>\n";
-	$DH_cse_head=$DH_output;
+}
+
+function dh_gen_share_meta($DH_home_url)
+{
+	global $DH_html_path,$DH_input_path,$DH_name,$DH_name_des;
+
+	$DH_share_output_path = $DH_input_path.'top/';
+	if (!file_exists($DH_share_output_path))  
+	{   
+		mkdir($DH_share_output_path,0777);
+	}	
 	
 	$DH_input_html  = $DH_html_path . 'meta.html';
 	$DH_output = dh_file_get_contents($DH_input_html);	
@@ -68,6 +96,7 @@ function dh_gen_share($DH_home_url)
 	dh_file_put_contents($DH_output_file,$DH_output);	
 	echo "gen meta success !</br>\n";
 }
+
 
 function dh_gen_side($DH_home_url)
 {

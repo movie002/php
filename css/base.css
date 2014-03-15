@@ -451,6 +451,16 @@ padding: 0px;
 height:30px;
 }
 
+.iframe_next
+{
+width:40px;
+font-size:12px;
+position:absolute;
+top:7px;
+right:0;
+cursor:pointer;
+}
+
 code {
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;

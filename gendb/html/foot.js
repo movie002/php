@@ -110,7 +110,7 @@ window.onload = function ()
 	document.getElementById('submittext').focus();
 	//延时调用 dh_say.php 节省时间
 	var iframe_say = document.getElementById('iframe_say');
-	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="20px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
+	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="16px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
 };
 
 window.onscroll = function()

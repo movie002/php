@@ -5,6 +5,7 @@
 	<meta name="keywords" content="%keywords%,%name%" />
 	<meta name="description" content="%description%,%name%" />
 	%meta%
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
 </head>
 <body>
 	<div id="wrapper" class="width_1">
@@ -13,8 +14,13 @@
 		</div>
 		<!-- header -->
 		<div id="middle" class="width_2">
+			<div class="top_content" style="position:relative">
+				<img width="24px" height="24px" style="border:none" data-src="%home%images/audio.png"/>&nbsp;
+				<span id="iframe_say"></span>	
+				<span class="iframe_next" onclick="iframe_say.window.location.reload();">下一条</span>
+			</div>
+			<div class="browse">您的位置：<a href="%home%">首页</a> >>  <a href="%caturl%" title="查看分类 %cat% 下的所有文章">%cat%</a> >> %title% </div>			
 			<div id="content" class="width_3">
-				<div class="browse">你的位置：<a href="%home%">首页</a> >>  <a href="%caturl%" title="查看分类 %cat% 下的所有文章">%cat%</a> >> %title% </div>
 				<div class="entry">
 					<h1>%title%</h1>
 					<div style="height:35px">%metas%</div>
@@ -32,30 +38,30 @@
 							%xiangguan%
 						</div>
 					</div>
-					<div style="height:30px"> <a href="#top" style="float:right"> ∧回到顶部∧ </a></div>
-					<div id="comment">
-						<!-- Duoshuo Comment BEGIN -->
-						<div class="ds-thread" data-thread-key="%id%" data-title="%title%"></div>
-						<!-- Duoshuo Comment END -->		
-					</div>		
-				</div>
+				<div style="height:30px"> <a href="#top" style="float:right"> ∧回到顶部∧ </a></div>
+				<div id="comment">
+					<!-- Duoshuo Comment BEGIN -->
+					<div class="ds-thread" data-thread-key="%id%" data-title="%title%"></div>
+					<!-- Duoshuo Comment END -->		
+				</div>	
+			</div>
 			<div id="sidebar">
 				%side%
 			</div>
 			<!--end: sidebar-->
 			<div id="footer">
 				%foot%
-			</div>		
-		</div>
+			</div>
 		<!-- middle -->	
+		</div>
+	<!--end: wrapper-->	
 	</div>
-	<!--end: wrapper-->
 	<script type="text/javascript">
 	%page.js%
 	</script>
 	<script type="text/javascript">
 	%footjs%
 	</script>
-	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":[],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 </body>
 </html>
