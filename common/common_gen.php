@@ -154,9 +154,10 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$hidetext='[ >> 隐藏(其余'.($num00-$numdownload).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num00-$numdownload).'个) ∧ ]';		
 			$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')" style="text-align:center">'.$hidetext2.'</div></div>';
-		}
-		
-		if(($num00+$num01+$num02+$num03) == 0)
+		}		
+		$num0 = $num00+$num01+$num02+$num03;
+		$DH_output_content_page = str_replace('%num0x%',$num0,$DH_output_content);
+		if($num0 == 0)
 		{
 			$downloadlinks=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
 		}
@@ -168,6 +169,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		{
 			$onlinelinks=' <div style="color:#777"> 暂无在线资源,可以点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
 		}
+		$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content);
 		if($num1 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num1-$num).'个) >> ]';
@@ -179,7 +181,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$tailer = $linkstop.$tailer;
 		else			
 		{
-			$tailer = ' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
+			$tailer = ' <div style="color:#777"> 暂无资源,可点击以上搜索试试,如有资源会及时更新!</div>';
 		}			
 		if($num2 > ($num-2))
 		{
@@ -189,12 +191,12 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" class="showhide_more">'.$tailer_more.'<div onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
 		
-		$DH_output_content_page = str_replace('%jhblinks%',$jhblinks,$DH_output_content);
+		$DH_output_content_page = str_replace('%jhblinks%',$jhblinks,$DH_output_content_page);
 		
 		$shooter='';
 		$codetitle=rawurlencode($row['title']);
 		$codetitlegbk = rawurlencode(iconvbuffgbk($row['title']));
-		if(($num00+$num01+$num02+$num03)>0)
+		if(($num0)>0)
 		{
 			$shooter='[字幕:<a href="http://shooter.cn/search/'.$codetitle.'" target="_blank" rel="nofollow">射手网</a>/<a href="http://www.yyets.com/search/index?keyword='.$codetitle.'" target="_blank" rel="nofollow">人人网</a>]';
 		}		
@@ -226,8 +228,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$search.='/<a href="http://so.v.2345.com/search_'.$codetitle.'" target="_blank" rel="nofollow">[v2345]</a>';		
 		
 		$DH_output_content_page = str_replace('%search%',$search,$DH_output_content_page);
-	
-	
+		
 		$DH_output_content_page = str_replace('%downloadlinks%',$downloadlinks,$DH_output_content_page);
 		$DH_output_content_page = str_replace('%tailer%',$tailer,$DH_output_content_page);		
 		$DH_output_content_page = str_replace('%onlinelinks%',$onlinelinks,$DH_output_content_page);

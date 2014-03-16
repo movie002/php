@@ -22,20 +22,6 @@
 			<li><a href="#" id="movie002_width_1" onclick="SetCookie('movie002_width','1024'); window.location.reload();">标准屏</a>｜<a href="#" id="movie002_width_2" onclick="SetCookie('movie002_width','1280');window.location.reload();">宽频</a></li>
 			<li><a href="%home%siteindex.html" target="_blank">索引</a>｜<a href="%home%sitemap.html" target="_blank">地图</a></li>
 		</ul>
-		<script type="text/javascript">
-			function a()  
-			{   
-				var n = new Date();
-				var h = n.getHours();
-				var m='';
-				if(h>=22||h<=6)
-				{
-					m='<div style="color:#000;border:1px solid #FF3300;font-size:12px;position: absolute;top:2px;left:625px;background:#FFFFDF;padding:2px;">友情提醒： 亲，已经是晚上'+h+'点多了，</br>为了您和家人的健康，请注意减少熬夜!</div>';
-				}
-				return m;
-			}
-			document.write(a());
-		</script>		
 	</div>
 </div>
 	<!-- header-inner -->
@@ -203,6 +189,20 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			function a()  
+			{   
+				var n = new Date();
+				var h = n.getHours();
+				var m='';
+				if(h>=22||h<=6)
+				{
+					m='<div style="color:#000;border:1px solid #FF3300;font-size:12px;position: absolute;top:2px;left:625px;background:#FFFFDF;padding:2px;">友情提醒： 亲，已经是晚上'+h+'点多了，</br>为了您和家人的健康，请注意减少熬夜!</div>';
+				}
+				return m;
+			}
+			document.write(a());
+		</script>		
 		<!--<div id="weather" style="position:absolute;top:7px;right:330px;"></div>-->		
 		<div id = "searchmiddle">
 			<form name="f1"  target="_blank" action="%home%search.php" method="get">

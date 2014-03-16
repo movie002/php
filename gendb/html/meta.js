@@ -22,7 +22,7 @@ if(movie002_day==null)
 {
 	var now = new Date();
 	var hour = now.getHours();
-	if(hour>=20||hour<=6)
+	if(hour>=21||hour<=6)
 		movie002_day='night';
 	else
 		movie002_day='day';
