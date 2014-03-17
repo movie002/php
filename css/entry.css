@@ -267,10 +267,23 @@ margin:5px 0;
 padding:0
 }
 
+.linksmall
+{
+	font-size:12px;
+	margin-left:5px;
+	border: 1px solid #ccc;
+}
+.listtitle 
+{
+	line-height:220%;
+	font-weight:700;
+	font-size:14px;
+}
+
 .listall
 {
 	position:relative;	
-	margin: 5px 0;
+	margin: 0 0 5px 0;
 	padding: 2px 0;
 	border-bottom: 1px solid #CCC;
 	line-height: 150%;
@@ -279,19 +292,13 @@ padding:0
 .listnum
 {
 	position:absolute;
-	left:0px;
+	left:5px;
 }
 
 .listlink
 {
-	width:60%;
-	margin:0 0 0 15px;
-}
-
-.listlink2
-{
-	width:65%;
-	margin:0 0 0 0px;
+	width:70%;
+	margin:0 0 0 5px;
 }
 
 .listmeta
@@ -304,16 +311,13 @@ padding:0
 .showhide
 {
 	text-align:center;
-	border:1px solid #bbb;	
+	color: #888;
 }
 .showhide_more
 {
-	padding:5px 5px 0 5px;
-	border-left:1px solid #bbb;
-	border-right:1px solid #bbb;
-	border-bottom:1px solid #bbb;	
+	border-top:1px solid #bbb;	
 }
 .downloadlist
 {
-	margin-top:5px;
+	margin-top:10px;
 }

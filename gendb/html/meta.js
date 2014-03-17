@@ -33,7 +33,7 @@ if(movie002_day=='night')
 	style_need +='body{background:#383838;color:#B6AA7B}';
 	style_need +='a{color:#B6AA7B;background:transparent}';
 	style_need +='a:visited {color:#447FA8;}';	
-	style_need +='.order{background:url(%home%images/logonight_8.gif) no-repeat;}';				
+//	style_need +='.order{background:url(%home%images/logonight_8.gif) no-repeat;}';				
 	style_need +='#service_list{background:#383838;}';
 	style_need +='#global_nav{background:#383838;}';
 	style_need +='#topics-wrapper{border:none;}';

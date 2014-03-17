@@ -33,7 +33,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		
 		$jhblinks= '';
 
-		$linkstop = '<div class="listall" style="background:#CCC;"><div class="listnum"></div> <div class="listlink">清晰度 原文地址</div><div class="rt0v0">来源网站 资源类型 更新时间</div></div>';
+		$linkstop = '<div class="listall" style="background:#CCC;"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';
 		
 		while($rowlinks = mysql_fetch_array($reslinks))
 		{
@@ -49,7 +49,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$downtype = 0;
 			
 			$updatetime = date("Ymd",strtotime($rowlinks['updatetime']));
-			$linkseach = '<div class="listall"><div class="listnum">%num% </div> <div class="listlink"><span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v0"> '.$rowlinks['author'].' <span class="c'.$downtype.'">'.$linkdowntype[$downtype].'</span> <span class="c'.$onlinetype.'">'.$linkonlinetype[$onlinetype].'</span> '.$updatetime.'</div></div>';
+			$linkseach = '<div class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$downtype.'">'.$linkdowntype[$downtype].'</span> <span class="c'.$onlinetype.'">'.$linkonlinetype[$onlinetype].'</span> '.$updatetime.'</div></div>';
 			
 			switch ($way)
 			{
@@ -119,42 +119,55 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		
 		if($num01>0)
 		{
-			$downloadlinks.=' <div class="downloadlist"> 【'.$linkproperty[1].'】(资源数:'.$num01.')<div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div></div>'.$linkstop.$downloadlinks1;
+			$downloadlinks.=' <div class="downloadlist f12px"> 【'.$linkproperty[1].'】(资源数:'.$num01.')<div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks1;
+			if($num01 > $numdownload)
+			{
+				$showtext='[ << 展开(其余'.($num01-$numdownload).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num01-$numdownload).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num01-$numdownload).'个) ∧ ]';
+				$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" class="showhide_more">'.$downloadlinks1_more.'<div onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			}
+			$downloadlinks.='</div>';			
 		}
-		if($num01 > $numdownload)
-		{
-			$showtext='[ << 展开(其余'.($num01-$numdownload).'个) >> ]';
-			$hidetext='[ >> 隐藏(其余'.($num01-$numdownload).'个) << ]';
-			$hidetext2='[ ∧ 隐藏(以上'.($num01-$numdownload).'个) ∧ ]';
-			$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" class="showhide_more">'.$downloadlinks1_more.'<div onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')" style="text-align:center">'.$hidetext2.'</div></div>';
-		}
+		
 		if($num02>0)
-			$downloadlinks.=' <div class="downloadlist"> 【'.$linkproperty[2].'】(资源数:'.$num02.')<div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div></div>'.$linkstop.$downloadlinks2;
-		if($num02 > $numdownload)
 		{
-			$showtext='[ << 展开(其余'.($num02-$numdownload).'个) >> ]';
-			$hidetext='[ >> 隐藏(其余'.($num02-$numdownload).'个) << ]';
-			$hidetext2='[ ∧ 隐藏(以上'.($num02-$numdownload).'个) ∧ ]';		
-			$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" class="showhide_more">'.$downloadlinks2_more.'<div onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			$downloadlinks.=' <div class="downloadlist f12px"> 【'.$linkproperty[2].'】(资源数:'.$num02.')<div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks2;
+			if($num02 > $numdownload)
+			{
+				$showtext='[ << 展开(其余'.($num02-$numdownload).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num02-$numdownload).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num02-$numdownload).'个) ∧ ]';		
+				$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" class="showhide_more">'.$downloadlinks2_more.'<div onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			}
+			$downloadlinks.='</div>';
 		}
 		if($num03>0)
-			$downloadlinks.=' <div class="downloadlist"> 【'.$linkproperty[3].'】(资源数:'.$num03.')<div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div></div>'.$linkstop.$downloadlinks3;
-		if($num03 > $numdownload)
 		{
-			$showtext='[ << 展开(其余'.($num03-$numdownload).'个) >> ]';
-			$hidetext='[ >> 隐藏(其余'.($num03-$numdownload).'个) << ]';
-			$hidetext2='[ ∧ 隐藏(以上'.($num03-$numdownload).'个) ∧ ]';
-			$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" class="showhide_more">'.$downloadlinks3_more.'<div onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			$downloadlinks.=' <div class="downloadlist f12px"> 【'.$linkproperty[3].'】(资源数:'.$num03.')<div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks3;
+			if($num03 > $numdownload)
+			{
+				$showtext='[ << 展开(其余'.($num03-$numdownload).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num03-$numdownload).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num03-$numdownload).'个) ∧ ]';
+				$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" class="showhide_more">'.$downloadlinks3_more.'<div onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			}
+			$downloadlinks.='</div>';
 		}
+		
 		if($num00>0)
-			$downloadlinks.='<div class="downloadlist">'.$linkproperty[0].'(资源数:'.$num00.')<div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div></div>'.$linkstop.$downloadlinks0;
-		if($num00 > $numdownload)
 		{
-			$showtext='[ << 展开(其余'.($num00-$numdownload).'个) >> ]';
-			$hidetext='[ >> 隐藏(其余'.($num00-$numdownload).'个) << ]';
-			$hidetext2='[ ∧ 隐藏(以上'.($num00-$numdownload).'个) ∧ ]';		
-			$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')" style="text-align:center">'.$hidetext2.'</div></div>';
-		}		
+			$downloadlinks.='<div class="downloadlist f12px">'.$linkproperty[0].'(资源数:'.$num00.')<div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks0;
+			if($num00 > $numdownload)
+			{
+				$showtext='[ << 展开(其余'.($num00-$numdownload).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num00-$numdownload).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num00-$numdownload).'个) ∧ ]';		
+				$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			}
+			$downloadlinks.='</div>';
+		}
+		
 		$num0 = $num00+$num01+$num02+$num03;
 		$DH_output_content_page = str_replace('%num0x%',$num0,$DH_output_content);
 		if($num0 == 0)
@@ -169,7 +182,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		{
 			$onlinelinks=' <div style="color:#777"> 暂无在线资源,可以点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
 		}
-		$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content);
+		$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
 		if($num1 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num1-$num).'个) >> ]';
@@ -241,7 +254,8 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 	global $linktype,$linkway;
 	$reslinks=dh_mysql_query($sql);
 	$num = 3;
-	
+	$linkstop = '<div class="listall" style="background:#CCC;"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></div>';
+		
 	if($reslinks)
 	{
 		$onlylinks='';
@@ -256,7 +270,7 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 			$type = $rowlinks['linktype'];
 	
 			$updatetime = date("Ymd",strtotime($rowlinks['updatetime']));
-			$linkseach = '<div class="listall"><div class="listlink2">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v0"> '.$rowlinks['author'].' '.$updatetime.'</div></div>';
+			$linkseach = '<div class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' '.$updatetime.'</div></div>';
 			if($type==1)//影视资讯
 			{
 				$num3++;			
@@ -292,13 +306,14 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" class="showhide_more">'.$yingping_more.'<div onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_3\')" style="text-align:center">'.$hidetext2.'</div></div>';
 		}
 		if($num3 == 0)
-		{
 			$onlylinks=' <div style="color:#777"> 暂无下载资源,您可以收藏此页,如有资源会及时更新!</div>';
-		}
+		else
+			$onlylinks=$linkstop.$onlylinks;
 		if($yingping == 0)
-		{
 			$yingping=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
-		}		
+		else
+			$yingping=$linkstop.$yingping;
+			
 		$DH_output_content_page = str_replace('%onlylinks%',$onlylinks,$DH_output_content);
 		$DH_output_content_page = str_replace('%yingping%',$yingping,$DH_output_content_page);
 	}	

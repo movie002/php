@@ -106,10 +106,10 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%keywords%",$keywords,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%id%",$row['id'],$DH_output_content_page);
 			
-			//新浪微博控件
-			$weibotitle=rawurlencode($row['title']).'|'.rawurlencode($row['title']);
-			$weibo='<wb:livestream color="BEBEBE,E0E0E0,666666,000000,EEEEEE,E6E6E6" publish="n" topic="'.$weibotitle.'" width="auto" height="500" ></wb:livestream>';			
-			$DH_output_content_page = str_replace("%weibo%",$weibo,$DH_output_content_page);		
+//			//新浪微博控件
+//			$weibotitle=rawurlencode($row['title']).'|'.rawurlencode($row['title']);
+//			$weibo='<wb:livestream color="BEBEBE,E0E0E0,666666,000000,EEEEEE,E6E6E6" publish="n" topic="'.$weibotitle.'" width="auto" height="500" ></wb:livestream>';
+//			$DH_output_content_page = str_replace("%weibo%",$weibo,$DH_output_content_page);		
 			
 			
 			$cathref = $DH_index_url.$row['cattype'].'_'.$row['catcountry'].'_l/1.html';

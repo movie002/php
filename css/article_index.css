@@ -38,6 +38,7 @@ border:none;
 margin:0;
 padding:0;
 border:none;
+list-style-position:outside;
 }
 
 #index_ul li
@@ -50,5 +51,5 @@ padding:0;
 line-height:18px;
 }
 #index_ul .level2 a{
-padding-left: 5px;
+padding-left: 6px;
 }

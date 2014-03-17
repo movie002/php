@@ -366,15 +366,3 @@ padding: 0px;
 	width:100px;
 	height:100px;
 }
-.linksmall
-{
-	font-size:12px;
-	margin-left:5px;
-	border-top: 1px solid #ddd;
-}
-.listtitle 
-{
-	line-height:220%;
-	font-weight:700;
-	font-size:14px;
-}
