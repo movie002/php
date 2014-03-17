@@ -79,7 +79,7 @@ function scroller(el, duration)
     z.timer = window.setInterval(function(){z.step();},13);
 }
 
-// end ThickBox
+// end：ThickBox
 
 function f(i)  
 {   
@@ -187,10 +187,10 @@ function AddFavorite(title, url) {
 //光标聚焦
 window.onload = function ()
 {
+	document.getElementById('submittext').focus();
 	startTime();
 	loadimg();
 	showImgs();
-	document.getElementById('submittext').focus();
 	//延时调用 dh_say.php 节省时间
 	var iframe_say = document.getElementById('iframe_say');
 	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="16px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
