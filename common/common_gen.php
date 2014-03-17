@@ -125,9 +125,9 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$showtext='[ << 展开(其余'.($num01-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num01-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num01-$numdownload).'个) ∧ ]';
-				$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" class="showhide_more">'.$downloadlinks1_more.'<div onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')" style="text-align:center">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" class="showhide_more">'.$downloadlinks1_more.'<div class="showhide" onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')">'.$hidetext2.'</div></div>';
 			}
-			$downloadlinks.='</div>';			
+			$downloadlinks.='</div>';
 		}
 		
 		if($num02>0)
@@ -138,7 +138,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$showtext='[ << 展开(其余'.($num02-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num02-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num02-$numdownload).'个) ∧ ]';		
-				$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" class="showhide_more">'.$downloadlinks2_more.'<div onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')" style="text-align:center">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" class="showhide_more">'.$downloadlinks2_more.'<div class="showhide" onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')">'.$hidetext2.'</div></div>';
 			}
 			$downloadlinks.='</div>';
 		}
@@ -150,7 +150,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$showtext='[ << 展开(其余'.($num03-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num03-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num03-$numdownload).'个) ∧ ]';
-				$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" class="showhide_more">'.$downloadlinks3_more.'<div onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')" style="text-align:center">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" class="showhide_more">'.$downloadlinks3_more.'<div class="showhide" onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')">'.$hidetext2.'</div></div>';
 			}
 			$downloadlinks.='</div>';
 		}
@@ -163,7 +163,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$showtext='[ << 展开(其余'.($num00-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num00-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num00-$numdownload).'个) ∧ ]';		
-				$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')" style="text-align:center">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div class="showhide" onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')">'.$hidetext2.'</div></div>';
 			}
 			$downloadlinks.='</div>';
 		}
@@ -188,7 +188,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$showtext='[ << 展开(其余'.($num1-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num1-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num1-$num).'个) ∧ ]';		
-			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" class="showhide_more">'.$onlinelinks_more.'<div onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'aonlinelinks\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" class="showhide_more">'.$onlinelinks_more.'<div class="showhide" onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'title_6\')">'.$hidetext2.'</div></div>';
 		}
 		if($num2 > 0)
 			$tailer = $linkstop.$tailer;
@@ -201,7 +201,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$showtext='[ << 展开(其余'.($num2+2-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num2+2-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num2+2-$num).'个) ∧ ]';		
-			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" class="showhide_more">'.$tailer_more.'<div onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" class="showhide_more">'.$tailer_more.'<div class="showhide" onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')">'.$hidetext2.'</div></div>';
 		}
 		
 		$DH_output_content_page = str_replace('%jhblinks%',$jhblinks,$DH_output_content_page);
@@ -296,14 +296,14 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 			$showtext='[ << 展开(其余'.($num3-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num3-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num3-$num).'个) ∧ ]';		
-			$onlylinks.='<div class="showhide" id="onlylinks_t"  onclick="showhide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlylinks" style="display:none;" class="showhide_more">'.$onlylinks_more.'<div onclick="hide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\'title_4\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			$onlylinks.='<div class="showhide" id="onlylinks_t"  onclick="showhide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlylinks" style="display:none;" class="showhide_more">'.$onlylinks_more.'<div class="showhide" onclick="hide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\'title_1\')">'.$hidetext2.'</div></div>';
 		}
 		if($num4 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num4-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num4-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num4-$num).'个) ∧ ]';		
-			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" class="showhide_more">'.$yingping_more.'<div onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_3\')" style="text-align:center">'.$hidetext2.'</div></div>';
+			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" class="showhide_more">'.$yingping_more.'<div class="showhide" onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_4\')">'.$hidetext2.'</div></div>';
 		}
 		if($num3 == 0)
 			$onlylinks=' <div style="color:#777"> 暂无下载资源,您可以收藏此页,如有资源会及时更新!</div>';
