@@ -198,6 +198,7 @@ window.onload = function ()
 	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="16px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
 	
 	// 加载结束之后再调用百度统计代码，要不然会频繁刷新
+	// 百度统计
 	var _hmt = _hmt || [];
 	(function() {
 	  var hm = document.createElement("script");
@@ -205,7 +206,7 @@ window.onload = function ()
 	  var s = document.getElementsByTagName("script")[0]; 
 	  s.parentNode.insertBefore(hm, s);
 	})();	
-	
+	//多说
 	var duoshuoQuery = {short_name:"movie002"};
 	(function() {
 		var ds = document.createElement('script');
@@ -215,8 +216,18 @@ window.onload = function ()
 		(document.getElementsByTagName('head')[0] 
 		|| document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
-
-	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];		
+	//百度分享
+	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+	//google adsence
+	(function() {
+		var gs = document.createElement('script');
+		gs.type = 'text/javascript';
+		gs.async = true;
+		gs.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(gs);
+	})();	
+	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 };
 
 window.onscroll = function()
