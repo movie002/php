@@ -42,7 +42,7 @@ dh_save(1);
 
 function dh_gen_update($cycle)
 {
-	global $movietype,$DH_html_url,$DH_src_path,$DH_output_html_path,$DH_home_url;
+	global $movietype,$DH_html_url,$DH_src_path,$DH_author_path,$DH_home_url;
 	$updatenew='';
 	$upnew='<li><b>新资源</b> </li>';
 	$upold='<li><b>增加资源(无更高质量)</b></li>';
@@ -109,7 +109,7 @@ function dh_gen_update($cycle)
 		//print_r($up);
 		$listhtml .= $upnew.$upnewq.$upold;
 		$DH_output_content = str_replace("%newlist%",$listhtml,$DH_output_content);
-		$DH_output_file = $DH_output_html_path.'update.html';
+		$DH_output_file = $DH_author_path . 'update.html';
 		dh_file_put_contents($DH_output_file,$DH_output_content);
 		
 		if($updatenew!='')

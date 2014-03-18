@@ -157,7 +157,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		
 		if($num00>0)
 		{
-			$downloadlinks.='<div class="downloadlist f12px">'.$linkproperty[0].'(资源数:'.$num00.')<div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks0;
+			$downloadlinks.='<div class="downloadlist f12px">【'.$linkproperty[0].'】(资源数:'.$num00.')<div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks0;
 			if($num00 > $numdownload)
 			{
 				$showtext='[ << 展开(其余'.($num00-$numdownload).'个) >> ]';
