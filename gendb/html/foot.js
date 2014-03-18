@@ -194,6 +194,15 @@ window.onload = function ()
 	//延时调用 dh_say.php 节省时间
 	var iframe_say = document.getElementById('iframe_say');
 	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="16px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
+	
+	// 加载结束之后再调用百度统计代码，要不然会频繁刷新
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b3e266da506226dbaa921d5d4e1e69b2";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();	
 };
 
 window.onscroll = function()
