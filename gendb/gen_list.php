@@ -28,7 +28,7 @@ function dh_gen_list()
 	global $DH_home_url,$DH_html_path,$DH_output_index_path,$DH_output_path,$conn,$pagecount,$movietype,$moviecountry,$linktype,$DH_index_url;
 	$DH_input_html  = $DH_html_path . 'list.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
-	$DH_output_content = setshare($DH_output_content,'');
+	$DH_output_content = setshare($DH_output_content,'list.js');
 	$deep = '../../';
 	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);	

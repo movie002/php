@@ -1,22 +1,16 @@
-function nTabs(thisObj,Num)
+function google()
 {
-	if(thisObj.className == "active")return;
-	var tabObj = thisObj.parentNode.id;
-	var tabList = document.getElementById(tabObj).getElementsByTagName("li");
-	for(i=0; i <tabList.length; i++)
-	{
-	  if (i == Num)
-	  {
-		thisObj.className = "active"; 
-		document.getElementById(tabObj+"_Content"+i).style.display = "block";
-	  }
-	  else
-	  {
-		tabList[i].className = "normal"; 
-		document.getElementById(tabObj+"_Content"+i).style.display = "none";
-	  }
-	} 
-};
+	//google adsence
+	(function() {
+		var gs = document.createElement('script');
+		gs.type = 'text/javascript';
+		gs.async = true;
+		gs.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+		(document.getElementsByTagName('body')[0]
+		||document.getElementsByTagName('head')[0]).appendChild(gs);
+	})();	
+	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+}
 
 //光标聚焦
 window.onload = function ()
@@ -30,7 +24,8 @@ window.onload = function ()
 	// iframe chrome 加载会跳动，这里在最后加载，避免跳动
 	//document.getElementById('weather').innerHTML='<iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=1&v=0&d=3&k=&f=1&q=1&e=1&a=1&c=54511&w=180&h=36"></iframe>';
 	// 加载结束之后再调用百度统计代码，要不然会频繁刷新
-	
-	//index 独有的js
 	baidutongji();
+	
+	//list独有的函数	
+	google();
 };

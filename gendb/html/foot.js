@@ -70,21 +70,8 @@ function AddFavorite(title, url) {
     }
 };
 
-//光标聚焦
-window.onload = function ()
+function baidutongji()
 {
-	document.getElementById('submittext').focus();
-	startTime();
-	loadimg();
-	showImgs();
-	//延时调用 dh_say.php 节省时间
-	var iframe_say = document.getElementById('iframe_say');
-	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="16px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
-
-	// iframe chrome 加载会跳动，这里在最后加载，避免跳动
-	//document.getElementById('weather').innerHTML='<iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=1&v=0&d=3&k=&f=1&q=1&e=1&a=1&c=54511&w=180&h=36"></iframe>';
-	
-	// 加载结束之后再调用百度统计代码，要不然会频繁刷新
 	// 百度统计
 	var _hmt = _hmt || [];
 	(function() {
@@ -94,30 +81,15 @@ window.onload = function ()
 		//s.parentNode.insertBefore(hm, s);
 		(document.getElementsByTagName('body')[0]
 		|| document.getElementsByTagName('head')[0]).appendChild(hm);	  
-	})();	
-	//多说
-	var duoshuoQuery = {short_name:"movie002"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('body')[0]
-		|| document.getElementsByTagName('head')[0]).appendChild(ds);
 	})();
-	//百度分享
-	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(body||getElementsByTagName('head')[0]).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-	//google adsence
-	(function() {
-		var gs = document.createElement('script');
-		gs.type = 'text/javascript';
-		gs.async = true;
-		gs.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-		(document.getElementsByTagName('body')[0]
-		||document.getElementsByTagName('head')[0]).appendChild(gs);
-	})();	
-	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-};
+}
+
+function dhsay()
+{
+	//延时调用 dh_say.php 节省时间
+	var iframe_say = document.getElementById('iframe_say');
+	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="90%" height="16px" src="%home%dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
+}
 
 window.onscroll = function()
 {
