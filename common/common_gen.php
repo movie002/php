@@ -222,7 +222,6 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$soushou.='/<a href="http://wangpan.ed2kers.com/index.php?q='.$codetitle.'" target="_blank" rel="nofollow">网盘</a>';		
 		$soushou.='/<a href="http://h31bt.com/bt.asp?key='.$codetitle.'" target="_blank" rel="nofollow">H31BT</a>';
 		$soushou.='/<a href="http://www.kuaichuanmirror.com/search/'.$codetitle.'" target="_blank" rel="nofollow">有源</a>';
-		$soushou.='/<a href="http://www.cili.so/search.php?act=result&keyword='.$codetitle.'" target="_blank" rel="nofollow">磁力搜索</a>';
 		$soushou.='/<a href="http://www.torrentkitty.com/search/'.$codetitle.'" target="_blank" rel="nofollow">torrentkitty</a>';
 		$soushou.='/<a href="http://sosoyi.com/d?s='.$codetitle.'" target="_blank" rel="nofollow">搜搜易</a>]';
 
