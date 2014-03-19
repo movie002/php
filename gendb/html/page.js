@@ -56,6 +56,18 @@ function google()
 	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 }
 
+function weibo()
+{
+	(function() {
+		var wb = document.createElement('script');
+		wb.type = 'text/javascript';
+		wb.charset = 'UTF-8';
+		wb.src = 'http://tjs.sjs.sinajs.cn/open/api/js/wb.js';
+		(document.getElementsByTagName('body')[0]
+		||document.getElementsByTagName('head')[0]).appendChild(wb);
+	})();
+}
+
 //光标聚焦
 window.onload = function ()
 {
@@ -75,4 +87,5 @@ window.onload = function ()
 	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(body||getElementsByTagName('head')[0]).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 	google();
 	duoshuo();
+	weibo();
 };
