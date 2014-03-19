@@ -200,7 +200,7 @@ function dh_gen_list()
 	
 	$DH_input_html  = $DH_src_path . 'list.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
-	$DH_output_content = setshare($DH_output_content,'list.js');
+	$DH_output_content = setshare($DH_output_content,'');
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 	$DH_output_content = str_replace("%name%",$DH_name,$DH_output_content);
 	
