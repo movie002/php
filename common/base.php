@@ -28,7 +28,7 @@ function insertcelebrity($celebritys)
 			$name=trim($name);
 			$id=trim($id);
 			$name = str_replace("'","\'",$name);
-			$sql="insert into celebrity(id,name) values('$id','$name') ON DUPLICATE KEY UPDATE name = '$name'";
+			$sql="insert into celebrity(id,name) values('$id','$name') ON DUPLICATE KEY UPDATE name = '$name',fail=0";
 			$sqlresult=dh_mysql_query($sql);
 		}
 	}	

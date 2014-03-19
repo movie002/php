@@ -1,7 +1,7 @@
 <?php
 require("../../config.php");
-require("../../curl.php");
-require("../../base.php");
+require("../../common/curl.php");
+require("../../common/base.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -15,7 +15,7 @@ mysql_close($conn);
 
 function getcele()
 {
-	$sql="select id from celebrity where (pic='' or pic is null) and id <>'' and fail < 10";
+	$sql="select id from celebrity where (pic='' or pic is null) and id <>'' and fail < 3";
 	$results=dh_mysql_query($sql);	
 	if($results)
 	{	
@@ -23,7 +23,7 @@ function getcele()
 		while($row = mysql_fetch_array($results))
 		{
 			$i++;
-			//if($i>4)
+			//if($i>2)
 			//	break;
 			sleep(5);
 			echo $row['id']."<br/>\n";
@@ -38,6 +38,7 @@ function getcele()
 					echo "影人信息读取失败\n";				
 					continue;
 				}
+				//print_r($buffer);
 				preg_match('/douban.com\/img\/celebrity\/large\/(.*?)">/',$buffer,$match);
 				print_r($match);
 				if(!empty($match[1]))
