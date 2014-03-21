@@ -1,10 +1,12 @@
 <?php
-function readrssfile1005($author)
+function www_piaohua_com_php()
 {
-	if($author->rss!=1005)
-		return;
+	$authorname='飘花资源网';
+	print_r($authorname);
+	$authorurl='http://www.piaohua.com/';
 
-	$url = array('http://www.piaohua.com/html/dianying.html','http://www.piaohua.com/html/daylianxuju.html');
+	$url = array('http://www.piaohua.com/html/dianying.html',
+		'http://www.piaohua.com/html/daylianxuju.html');
 	$urlcat= array('电影','电视剧');
 	print_r($url);
 	
@@ -12,11 +14,11 @@ function readrssfile1005($author)
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
 	{
-		$sql="select max(updatetime) from link where author='$author->name' and cat = '".$eachurlcat."'";
+		$sql="select max(updatetime) from link where author='$authorname' and cat like '%".$eachurlcat."%'";
 		$sqlresult=dh_mysql_query($sql);
 		$row = mysql_fetch_array($sqlresult);
 		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
-	}	
+	}
 	print_r($updatetime);
 	
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
@@ -26,7 +28,7 @@ function readrssfile1005($author)
 		//如果失败，就使用就标记失败次数
 		if(!$buff)
 		{
-			echo 'fail to get file '.$author->rssurl."!</br>\n";	
+			echo 'fail to get file '.$eachurl."!</br>\n";	
 			$sql="update author set failtimes=failtimes+1 where id = $author->id;";
 			$result=dh_mysql_query($sql);
 			$i++;
@@ -34,7 +36,7 @@ function readrssfile1005($author)
 		}
 		$buff = iconvbuff($buff);
 		$rssinfo = new rssinfo();
-		$rssinfo->author = $author->name;
+		$rssinfo->author = $authorname;
 		echo "crawl ".$eachurl." </br>\n";
 		//print_r($buff);	
 		preg_match_all('/<li><a href="(.*?)"class="img"><img src=".*?"alt="(.*?)"width="120"height="150"border="0"\/><\/a><a href=".*?"><strong>.*?<\/strong><\/a><span>(.*?)<\/span><\/li>/',$buff,$match);
@@ -49,12 +51,7 @@ function readrssfile1005($author)
 			//有就去除 <font color=red>2013-05-26</font>，没有就取值
 			$pubdate = str_replace('<font color=red>','',$match[3][$key2]);
 			$pubdate = str_replace('</font>','',$pubdate);
-			$rssinfo->update =date("Y-m-d H:i:s",strtotime($pubdate));
-			if($rssinfo->update > date("Y-m-d H:i:s",strtotime("+3 days")))
-			{
-				//将年份减1
-				$rssinfo->update = date("Y-m-d H:i:s",strtotime('-1 year',strtotime($rssinfo->update)));
-			}			
+			$rssinfo->update =getrealtime($pubdate);			
 			if($rssinfo->update<$updatetime[$key])
 			{
 				echo "爬取到已经爬取文章，爬取结束! </br>\n";
@@ -65,7 +62,7 @@ function readrssfile1005($author)
 			if($newdate<$rssinfo->update)
 				$newdate = $rssinfo->update;
 			$rssinfo->cat =trim($urlcat[$key]);
-			$rssinfo->link =$author->rssurl.trim($match[1][$key2]);
+			$rssinfo->link =$authorurl.trim($match[1][$key2]);
 			$title = str_replace("<font color='#FF0000'>",'',$match[2][$key2]);
 			$title = str_replace('</font>','',$title);			
 			$rssinfo->title =$title;
@@ -73,7 +70,6 @@ function readrssfile1005($author)
 			insertonlylink($rssinfo);
 		}
 	}
-	setupdatetime(true,$newdate,$author->id);
-	return;	
+	setupdatetime2(true,$newdate,$authorname);
 }
 ?>

@@ -1,7 +1,8 @@
 <?php
-function readrssfile1008()
+function www_somag_net_php()
 {
 	$authorname='搜磁力链接';
+	print_r($authorname);
 	$authorurl='http://www.somag.net';
 	
 	$url = array('http://www.somag.net/category/%E7%94%B5%E5%BD%B1/',
@@ -10,10 +11,12 @@ function readrssfile1008()
 				 'http://www.somag.net/category/%E9%9F%A9%E5%89%A7/',
 				 'http://www.somag.net/category/%E5%8A%A8%E6%BC%AB/',
 				 'http://www.somag.net/category/3D/');
-	$urlcat= array('电影','美剧','日剧','韩剧','动漫','3D');
-	
-	//$url = array('http://www.ed2000.com/FileList.asp?FileCategory=%E7%94%B5%E5%BD%B1');
-	//$urlcat= array('电影');	
+	$urlcat= array('电影',
+			'美剧',
+			'日剧',
+			'韩剧',
+			'动漫',
+			'3D');	
 	print_r($url);
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
@@ -61,12 +64,7 @@ function readrssfile1008()
 			}
 			foreach ($match[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match2[1][$key2]));
-				if($rssinfo->update > date("Y-m-d H:i:s",strtotime("+3 days")))
-				{
-					//将年份减1
-					$rssinfo->update = date("Y-m-d H:i:s",strtotime('-1 year',strtotime($rssinfo->update)));
-				}			
+				$rssinfo->update =getrealtime($match2[1][$key2]);			
 				if($rssinfo->update<$updatetime[$key])
 				{
 					echo "爬取到已经爬取文章，爬取结束! </br>\n";
@@ -102,6 +100,5 @@ function readrssfile1008()
 		}
 	}
 	setupdatetime2(true,$newdate,$authorname);
-	return;	
 }
 ?>

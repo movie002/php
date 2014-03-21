@@ -1,7 +1,8 @@
 <?php
-function readrssfile1010()
+function bbs_1ou_com_php()
 {
 	$authorname='BT之家';
+	print_r($authorname);
 	$authorurl='http://bbs.1lou.com/';
 
 	$url = array('http://bbs.1lou.com/forum-index-fid-1183-page-',

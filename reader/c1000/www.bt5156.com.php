@@ -1,16 +1,16 @@
 <?php
-function readrssfile1001($author)
+function www_bt5156_com_php()
 {
-	if($author->rss!=1001)
-		return;
-	
+	$authorname='无忧无虑';
+	print_r($authorname);
+	$authorurl='http://www.bt5156.com/';
 	$urlcat= array('最新电影下载','迅雷电影资源','华语剧集专区','日韩剧集专区','欧美剧集专区','迅雷综艺节目','迅雷动漫资源');
 	
 	//寻找各自的updatetime	
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
 	{
-		$sql="select max(updatetime) from link where author='$author->name' and cat = '".$eachurlcat."'";
+		$sql="select max(updatetime) from link where author='$authorname' and cat = '".$eachurlcat."'";
 		$sqlresult=dh_mysql_query($sql);
 		$row = mysql_fetch_array($sqlresult);
 		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
@@ -18,7 +18,7 @@ function readrssfile1001($author)
 	print_r($updatetime);
 		
 		
-	$buff = get_file_curl($author->rssurl);
+	$buff = get_file_curl($authorurl);
 	//如果失败，就使用就标记失败次数
 	if(!$buff)
 	{
@@ -29,7 +29,7 @@ function readrssfile1001($author)
 	}		
 	$buff = iconvbuff($buff);
 	$rssinfo = new rssinfo();
-	$rssinfo->author = $author->name;
+	$rssinfo->author = $authorname;
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	
 	$change = false;	
@@ -53,19 +53,13 @@ function readrssfile1001($author)
 			{
 				preg_match("/<font color=#FF0000>(.*?)<\/font>/i",$match2[1][1],$match3);	
 				//print_r($match3);
-				$rssinfo->update = date("Y-m-d H:i:s",strtotime($match3[1]));
-				//print_r($rssinfo);
-				if($rssinfo->update > date("Y-m-d H:i:s",strtotime("+3 days")))
-				{
-					//将年份减1
-					$rssinfo->update = date("Y-m-d H:i:s",strtotime('-1 year',strtotime($rssinfo->update)));
-				}
+				$rssinfo->update = getrealtime($match3[1]);
 				if($rssinfo->update<$updatetime[$key-1])
 				{
 					echo "爬取到已经爬取文章，爬取结束! </br>\n";
 					break;
 					//continue;
-				}	
+				}
 				$change = true;
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
@@ -77,12 +71,11 @@ function readrssfile1001($author)
 				preg_match("/<a href='(.*?)'>(.*?)<\/a>/i",$match2[1][0],$match3);
 				//print_r($match3);
 				$rssinfo->title =trim($match3[2]);
-				$rssinfo->link = substr($author->rssurl,0,strlen($author->rssurl)-1).trim($match3[1]);
+				$rssinfo->link = substr($authorurl,0,strlen($authorurl)-1).trim($match3[1]);
 				insertonlylink($rssinfo);
 			}			
 		}
 	}
-	setupdatetime($change,$newdate,$author->id);
-	return;
+	setupdatetime2($change,$newdate,$authorname);
 }
 ?>

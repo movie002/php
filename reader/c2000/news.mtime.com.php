@@ -1,11 +1,10 @@
 <?php
-function readrssfile2006($author)
+function news_mtime_com_php()
 {
-	if($author->rss!=2006)
-		return;
-
-	$url = array('http://news.mtime.com/movie/2/',
-				'http://news.mtime.com/movie/1/',
+	$authorname='时光网新闻';
+	$authorurl='http://news.mtime.com/';
+	print_r($authorname);
+	$url = array('http://news.mtime.com/movie/1/',
 				'http://news.mtime.com/movie/3/',
 				'http://news.mtime.com/movie/4/',
 				'http://news.mtime.com/tv/2/',
@@ -18,7 +17,7 @@ function readrssfile2006($author)
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
 	{
-		$sql="select max(updatetime) from link2 where author='$author->name' and cat = '".$eachurlcat."'";
+		$sql="select max(updatetime) from link where author='$authorname' and cat like '%".$eachurlcat."%'";
 		$sqlresult=dh_mysql_query($sql);
 		$row = mysql_fetch_array($sqlresult);
 		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
@@ -50,11 +49,11 @@ function readrssfile2006($author)
 			}
 			$buff = iconvbuff($buff);
 			$rssinfo = new rssinfo();
-			$rssinfo->author = $author->name;
+			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
-			//print_r($buff);	
-			preg_match_all('/<li> <span>(.*?)月(.*?)日(.*?)<\/span><b>·<\/b><a href="(.*?)" target="_blank">(.*?)<\/a>(.*?)<\/li>/s',$buff,$match);
-			//print_r($match);
+			print_r($buff);	
+			preg_match_all('/<h3>[\s]+<a href="http:\/\/news\.mtime\.com\/([0-9|\/]+)\.html" target="\_blank">([^>]+)<\/a><\/h3>/s',$buff,$match);
+			print_r($match);
 			if(empty($match[2]))
 			{
 				echo 'error no result!';
@@ -62,12 +61,8 @@ function readrssfile2006($author)
 			}
 			foreach ($match[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match[1][$key2].'/'.$match[2][$key2].' '.$match[3][$key2]));
-				if($rssinfo->update > date("Y-m-d H:i:s",strtotime("+3 days")))
-				{
-					//将年份减1
-					$rssinfo->update = date("Y-m-d H:i:s",strtotime('-1 year',strtotime($rssinfo->update)));
-				}			
+				preg_match($match[4][$key2]);
+				$rssinfo->update = getrealtime();			
 				if($rssinfo->update<$updatetime[$key])
 				{
 					echo "爬取到已经爬取文章，爬取结束! </br>\n";
@@ -78,7 +73,7 @@ function readrssfile2006($author)
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
 				$rssinfo->cat =trim($urlcat[$key]);
-				$rssinfo->link =$author->rssurl.trim($match[4][$key2]);
+				$rssinfo->link =$authorurl.trim($match[4][$key2]);
 				$rssinfo->title = $match[5][$key2];
 				if(strstr($match[6][$key2],'图片新闻'))
 					$rssinfo->title .= '[图片新闻]';
@@ -86,10 +81,9 @@ function readrssfile2006($author)
 					$rssinfo->title .= '[视频新闻]';				
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
-			}			
+			}
 		}
 	}
-	setupdatetime(true,$newdate,$author->id);
-	return;	
+	setupdatetime2(true,$newdate,$authorname);
 }
 ?>

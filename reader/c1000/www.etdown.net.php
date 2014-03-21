@@ -1,22 +1,12 @@
 <?php
-function www_dy2018_com_php()
+function www_etdown_net_php()
 {
-	$authorname='电影天堂';
+	$authorname='光影资源联盟';
 	print_r($authorname);
-	$authorurl='http://www.dy2018.com';
+	$authorurl='http://www.etdown.net/';
 
-	$url = array('http://www.dy2018.com/html/gndy/dyzz/',
-				'http://www.dy2018.com/html/tv/hytv/',
-				'http://www.dy2018.com/html/tv/oumeitv/',
-				'http://www.dy2018.com/html/tv/rihantv/',
-				'http://www.dy2018.com/html/zongyi2013/',
-				'http://www.dy2018.com/html/dongman/');
-	$urlcat= array('最新电影',
-					'华语电视剧',
-					'欧美电视剧',
-					'日韩电视剧',
-					'综艺',
-					'动漫');
+	$url = array('http://www.etdown.net/index-');
+	$urlcat= array('');
 	print_r($url);
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
@@ -33,13 +23,10 @@ function www_dy2018_com_php()
 	{
 		$change = true;
 		$i=0;
-		while($change&&$i<4)
+		while($change&&$i<2)
 		{
 			$i++;
-			if($i==1)
-				$trueurl = $eachurl.'index.html';
-			else
-				$trueurl = $eachurl.'index_'.$i.'.html';
+			$trueurl = $eachurl.$i;
 				
 			$buff = get_file_curl($trueurl);
 			//如果失败，就使用就标记失败次数
@@ -54,12 +41,16 @@ function www_dy2018_com_php()
 			$rssinfo = new rssinfo();
 			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
-			//print_r($buff);	
+			//print_r($buff);
+			preg_match_all('/<a href=\'\.\/k\-([0-9]+)\' target=\'_blank\'>([^>]+)<\/a>/s',$buff,$match0);
+			preg_match_all('/<td align="left"  nowrap="" class="list2">(.*?)<\/td>/s',$buff,$match1);
+			preg_match_all('/<td nowrap="" class="list1" abbr=\'[0-9]+\'>([0-9]+)\.(.*?)<\/td>/s',$buff,$match2);
+			preg_match_all('/<td nowrap="" class="list2"><a href="\.\/c\-[0-9]+">(.*?)<\/a><\/td>/s',$buff,$match3);			
 			
-			preg_match_all('/<a href="([^>]+)" class="ulink" title="([^>]+)">(.*?)<\/a>/s',$buff,$match0);
-			preg_match_all('/<font color="#8F8C89">日期：(.*?)点击：.*?<\/font>/s',$buff,$match1);			
 			//print_r($match0);
 			//print_r($match1);
+			//print_r($match2);
+			//print_r($match3);
 			
 			if(empty($match0[2]))
 			{
@@ -68,19 +59,20 @@ function www_dy2018_com_php()
 			}
 			foreach ($match0[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =getrealtime($match1[1][$key2]);
+				$rssinfo->update =getrealtime(date("Y").'-'.$match2[1][$key2].'-'.$match2[2][$key2]);
 				if($rssinfo->update<$updatetime[$key])
 				{
-					echo "爬取到已经爬取文章，爬取结束! </br>\n";
+					///由于置顶和推荐导致时间小的放在前面，这里固定爬取2页,保证爬到
+					echo "爬取到已经爬取文章，爬取继续! </br>\n";
 					$change = false;	
-					break;
-					//continue;
-				}
+					//break;
+					continue;
+				}				
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
-				$rssinfo->cat =trim($urlcat[$key]);
-				$rssinfo->link =$authorurl.trim($match0[1][$key2]);
-				$rssinfo->title = trim($match0[2][$key2]);
+				$rssinfo->cat = trim($urlcat[$key]).trim($match3[1][$key2]);
+				$rssinfo->link = $authorurl.'k-'.trim($match0[1][$key2]);
+				$rssinfo->title = trim($match0[2][$key2]).trim($match2[1][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
 			}

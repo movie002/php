@@ -53,18 +53,82 @@ function all()
 					continue;
 				}
 			}
-			readrssfile($buff,$rssinfo,$authorid,$lastupdate,$row['clinktype']);			
+			//readrssfile($buff,$rssinfo,$authorid,$lastupdate);
+			pregrssfile($buff,$rssinfo,$authorid,$lastupdate);
         }
 	}
 }
 
-function readrssfile($buff,$rssinfo,$authorid,$lastupdate,$clinktype)
+function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 {
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	$buff =iconvbuff($buff);
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
 	//echo $buff;
-	$buff = preg_replace('#&(?=[a-z_0-9]+=)#', '&amp;', $buff);
+	//查找所有的item
+	preg_match_all('/<item>([\s\S]*?)<\/item>/i',$buff,$match);
+//	print_r($match);
+	if(!empty($match[1]))
+	{	
+		$change = false;
+		foreach ($match[1] as $matcheach)
+		{
+			preg_match('/<pubDate>(.*?)<\/pubDate>/i',$matcheach,$match2);
+			if(!empty($match2[1]))
+			{
+				$rssinfo->update = getrealtime($match2[1]);
+				if($rssinfo->update<=$lastupdate)
+				{
+					echo "爬取到已经爬取文章，爬取结束! </br>\n";
+					break;
+					//continue;
+				}
+				$change = true;
+				if($newdate<$rssinfo->update)
+					$newdate = $rssinfo->update;
+			}
+			$rssinfo->title='';
+			$rssinfo->link='';
+			$rssinfo->cat='';
+			
+			preg_match('/<title>(.*?)<\/title>/i',$matcheach,$match2);
+			if(!empty($match2[1]))
+			{
+				$rssinfo->title = getrealname($match2[1]);
+			}
+			preg_match('/<link>(.*?)<\/link>/i',$matcheach,$match2);
+			if(!empty($match2[1]))
+			{
+				$rssinfo->link = getrealname($match2[1]);
+			}
+			
+			preg_match_all('/<category>(.*?)<\/category>/i',$matcheach,$match2);
+			if(!empty($match2[1]))
+			{
+				foreach($match2[1] as $key=> $eachcat)
+					$rssinfo->cat .=' '.getrealname($eachcat);
+			}			
+			preg_match_all('/<categoryname>(.*?)<\/categoryname>/i',$matcheach,$match2);
+			if(!empty($match2[1]))
+			{
+				foreach($match2[1] as $key=> $eachcat)
+					$rssinfo->cat .=' '.getrealname($eachcat);
+			}			
+			//开始写入数据库信息
+			//print_r($rssinfo);
+			insertonlylink($rssinfo);
+		}
+	}
+	setupdatetime($change,$newdate,$authorid);
+}
+
+function readrssfile($buff,$rssinfo,$authorid,$lastupdate)
+{
+	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	$buff =iconvbuff($buff);
+	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
+	//echo $buff;
+	//$buff = preg_replace('#&(?=[a-z_0-9]+=)#', '&amp;', $buff);
 	$buff = simplexml_load_string($buff,null,LIBXML_NOCDATA);
 	//print_r($buff);
 	$change = false;
@@ -134,5 +198,11 @@ function readrssfile($buff,$rssinfo,$authorid,$lastupdate,$clinktype)
 		insertonlylink($rssinfo);
 	}
 	setupdatetime($change,$newdate,$authorid);
+}
+
+function getrealname($name)
+{
+	$name = preg_replace('/\<\!\[CDATA\[(.*?)\]\]\>/s','$1',$name);
+	return trim($name);
 }
 ?>

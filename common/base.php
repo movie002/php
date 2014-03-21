@@ -201,10 +201,11 @@ function iconvbuffgbk($buff)
 }
 function getrealtime($timebuf)
 {
+	$timetobe=date("Y-m-d H:i:s",strtotime($timebuf));
 	$datenow = date("Y-m-d H:i:s");
-	if($timebuf > $datenow)
+	if($timetobe > $datenow)
 		return $datenow;
-	return $timebuf;
+	return $timetobe;
 }
 
 function ftrim2($str)

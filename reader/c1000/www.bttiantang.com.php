@@ -1,7 +1,8 @@
 <?php
-function readrssfile1009()
+function www_bttiantang_com_php()
 {
 	$authorname='BT天堂';
+	print_r($authorname);
 	$authorurl='http://www.bttiantang.com';
 
 	$url = array('http://www.bttiantang.com/?PageNo=');
@@ -40,8 +41,7 @@ function readrssfile1009()
 			$rssinfo = new rssinfo();
 			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
-			//print_r($buff);	
-			//return;
+			//print_r($buff);
 			preg_match_all('/<p class="tt cl"><span>([^>]+)<\/span><a href="([^>]+)" target="\_blank"><b>([^>]+)<i>\/(.*?)<\/i>(.*?)<\/b><\/a><\/p>/s',$buff,$match0);		
 			//print_r($match0);
 			if(empty($match0[2]))
@@ -51,7 +51,14 @@ function readrssfile1009()
 			}
 			foreach ($match0[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match0[1][$key2]));
+				$rssinfo->update =getrealtime($match0[1][$key2]);
+				if($rssinfo->update<$updatetime[$key])
+				{
+					echo "爬取到已经爬取文章，爬取结束! </br>\n";
+					$change = false;	
+					break;
+					//continue;
+				}				
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
 				$rssinfo->cat =trim($urlcat[$key]);
@@ -62,7 +69,6 @@ function readrssfile1009()
 			}
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
-	return;	
+	setupdatetime2(true,$newdate,$authorname);	
 }
 ?>

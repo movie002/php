@@ -3,7 +3,7 @@ function readrssfile2009()
 {
 	$authorname='格瓦拉活动';
 	$authorurl='http://www.gewara.com';
-
+	print_r($authorname);
 	$url = array('http://www.gewara.com/activity/activityList.xhtml?pageNo=');
 	$urlcat= array('电影活动');
 	print_r($url);
@@ -52,8 +52,14 @@ function readrssfile2009()
 			}
 			foreach ($match0[2] as $key2=>$div)			
 			{	
-				$today = date("Y");
-				$rssinfo->update =date("Y-m-d H:i:s",strtotime($today."-".$match1[3][$key2].'-'.$match1[4][$key2]));
+				$rssinfo->update =getrealtime(date("Y").'-'.$match1[3][$key2].'-'.$match1[4][$key2]);
+				if($rssinfo->update<$updatetime[$key])
+				{
+					echo "爬取到已经爬取文章，爬取结束! </br>\n";
+					$change = false;	
+					break;
+					//continue;
+				}					
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
 				$rssinfo->cat = trim($urlcat[$key]);
