@@ -4,7 +4,8 @@ function news_mtime_com_php()
 	$authorname='时光网新闻';
 	$authorurl='http://news.mtime.com/';
 	print_r($authorname);
-	$url = array('http://news.mtime.com/movie/1/',
+	$url = array('http://news.mtime.com/movie/2/',
+				'http://news.mtime.com/movie/1/',
 				'http://news.mtime.com/movie/3/',
 				'http://news.mtime.com/movie/4/',
 				'http://news.mtime.com/tv/2/',
@@ -42,8 +43,8 @@ function news_mtime_com_php()
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
 			{
-				echo 'fail to get file '.$author->rssurl."!</br>\n";	
-				$sql="update author set failtimes=failtimes+1 where id = $author->id;";
+				echo 'fail to get file '.$trueurl."!</br>\n";	
+				$sql="update author set failtimes=failtimes+1 where author='$authorname';";
 				$result=dh_mysql_query($sql);
 				continue;
 			}
@@ -51,9 +52,9 @@ function news_mtime_com_php()
 			$rssinfo = new rssinfo();
 			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
-			print_r($buff);	
+			//print_r($buff);	
 			preg_match_all('/<h3>[\s]+<a href="http:\/\/news\.mtime\.com\/([0-9|\/]+)\.html" target="\_blank">([^>]+)<\/a><\/h3>/s',$buff,$match);
-			print_r($match);
+			//print_r($match);
 			if(empty($match[2]))
 			{
 				echo 'error no result!';
@@ -61,8 +62,9 @@ function news_mtime_com_php()
 			}
 			foreach ($match[2] as $key2=>$div)			
 			{	
-				preg_match($match[4][$key2]);
-				$rssinfo->update = getrealtime();			
+				preg_match('/([0-9]+\/[0-9]+\/[0-9]+)\/[0-9]+/s',$match[1][$key2],$matchdate);
+				//print_r($matchdate);
+				$rssinfo->update = getrealtime($matchdate[1]);			
 				if($rssinfo->update<$updatetime[$key])
 				{
 					echo "爬取到已经爬取文章，爬取结束! </br>\n";
@@ -73,12 +75,8 @@ function news_mtime_com_php()
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
 				$rssinfo->cat =trim($urlcat[$key]);
-				$rssinfo->link =$authorurl.trim($match[4][$key2]);
-				$rssinfo->title = $match[5][$key2];
-				if(strstr($match[6][$key2],'图片新闻'))
-					$rssinfo->title .= '[图片新闻]';
-				if(strstr($match[6][$key2],'视频新闻'))
-					$rssinfo->title .= '[视频新闻]';				
+				$rssinfo->link =$authorurl.trim($match[1][$key2]).".html";
+				$rssinfo->title = $match[2][$key2];				
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
 			}
