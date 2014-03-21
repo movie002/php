@@ -329,7 +329,7 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	$topic_list = "\n<div class=\"topic_list\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_yp/1.html';
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title">最新影评</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新影评</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
 	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,7 as linkway from link2 l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linktype=1 order by l.updatetime desc limit 0,8";
@@ -337,7 +337,7 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	$topic_list = "\n<div class=\"topic_list\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_zx/1.html';
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title">最新资讯</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新资讯</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
 	$result2 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";	
 
 	$DH_index_cat_eachs=$result1.$result2;	

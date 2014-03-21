@@ -2,14 +2,15 @@
 font-size: 12px;
 position: absolute;
 right: 0;
-top:33px;
+top:10px;
 margin:0;
 width:90px;
 border-radius: 6px;
 -webkit-border-radius:6px;
 -khtml_border-radius:6px;
 -moz_border-radius:6px;
-border: 1px solid #aaa
+border: 1px solid #aaa;
+background: wheat;
 }
 #index_title{
 border-radius: 4px 4px 0 0;

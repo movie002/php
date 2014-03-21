@@ -34,7 +34,7 @@ function all()
 		while($row = mysql_fetch_array($results))
 		{
 			//打开rss地址，并读取，读取失败则中止
-			echo "\n".$row['name'].'的全部文章:'.$row['rssurl']."</br>\n";
+			echo "\n".$row['id'].' -- '.$row['name'].'的全部文章:'.$row['rssurl']."</br>\n";
 			$rssinfo->author=$row['name'];
 			$authorid=$row['id'];
 			$lastupdate=$row['updatetime'];			
@@ -64,6 +64,7 @@ function readrssfile($buff,$rssinfo,$authorid,$lastupdate,$clinktype)
 	$buff =iconvbuff($buff);
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
 	//echo $buff;
+	$buff = preg_replace('#&(?=[a-z_0-9]+=)#', '&amp;', $buff);
 	$buff = simplexml_load_string($buff,null,LIBXML_NOCDATA);
 	//print_r($buff);
 	$change = false;

@@ -2,6 +2,7 @@
 function readrssfile1010()
 {
 	$authorname='红潮网';
+	print_r($authorname);
 	$authorurl='http://www.5281520.com/';
 
 	$url = array('http://www.5281520.com/html/10/',
