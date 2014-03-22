@@ -23,7 +23,7 @@ function www_bt5156_com_php()
 	if(!$buff)
 	{
 		echo 'fail to get file '.$author->rssurl."!</br>\n";	
-		$sql="update author set failtimes=failtimes+1 where id = $author->id;";
+		$sql="update author set failtimes=failtimes+1 where name='$authorname';";
 		$result=dh_mysql_query($sql);
 		return;
 	}		

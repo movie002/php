@@ -1,14 +1,14 @@
 <?php
-function ent_sina_com_cn_php()
+function ent_sina_com_cn_review_php()
 {
 	$authorname='新浪评论';
-	$authorurl='http://ent.sina.com.cn';
+	$authorurl='http://ent.sina.com.cn/review/';
 	print_r($authorname);
 
 	$url = array('http://ent.sina.com.cn/review/media/film/more.html',
 				'http://ent.sina.com.cn/review/media/tv/more.html');
 				
-	$urlcat= array('电影评论','电视评论','电影专题','电影评论','内地电视','港台电视','日韩电视','欧美电视','综艺节目');	
+	$urlcat= array('电影评论','电视评论');	
 	print_r($url);
 	
 	//寻找各自的updatetime	
@@ -20,7 +20,6 @@ function ent_sina_com_cn_php()
 		$row = mysql_fetch_array($sqlresult);
 		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
 	}
-	array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));	
 	
 	print_r($updatetime);
 	
@@ -30,18 +29,18 @@ function ent_sina_com_cn_php()
 		$trueurl=$eachurl;
 		$buff = get_file_curl($trueurl);
 		//如果失败，就使用就标记失败次数
+		if(!$buff)
+		{
+			sleep(5);
+			$buff = get_file_curl($trueurl);
 			if(!$buff)
 			{
-				sleep(5);
-				$buff = get_file_curl($trueurl);
-				if(!$buff)
-				{
-					echo 'fail to get file '.$trueurl."!</br>\n";	
-					$sql="update author set failtimes=failtimes+1 where name='$authorname';";
-					$result=dh_mysql_query($sql);
-					continue;
-				}
+				echo 'fail to get file '.$trueurl."!</br>\n";
+				$sql="update author set failtimes=failtimes+1 where name='$authorname';";
+				$result=dh_mysql_query($sql);
+				continue;
 			}
+		}
 		$buff = iconvbuff($buff);
 		$rssinfo = new rssinfo();
 		$rssinfo->author = $authorname;

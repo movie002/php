@@ -1,9 +1,9 @@
 <?php
-function readrssfile2008()
+function www_gewara_com_news_php()
 {
 	$authorname='格瓦拉影讯';
 	$authorurl='http://www.gewara.com';
-
+	print_r($authorname);
 	$url = array('http://www.gewara.com/news/cinema?pageNo=');
 	$urlcat= array('电影资讯');
 	print_r($url);
@@ -47,7 +47,7 @@ function readrssfile2008()
 			//print_r($match1);
 			if(empty($match0[2]))
 			{
-				echo 'error no result!';
+				echo 'preg buff error no result!';
 				continue;
 			}
 			foreach ($match0[2] as $key2=>$div)			

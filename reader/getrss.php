@@ -67,13 +67,14 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 	//echo $buff;
 	//查找所有的item
 	preg_match_all('/<item>([\s\S]*?)<\/item>/i',$buff,$match);
-//	print_r($match);
+	//print_r($match);
 	if(!empty($match[1]))
 	{	
 		$change = false;
 		foreach ($match[1] as $matcheach)
 		{
 			preg_match('/<pubDate>(.*?)<\/pubDate>/i',$matcheach,$match2);
+			//print_r($match2);
 			if(!empty($match2[1]))
 			{
 				$rssinfo->update = getrealtime($match2[1]);
@@ -91,24 +92,28 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 			$rssinfo->link='';
 			$rssinfo->cat='';
 			
-			preg_match('/<title>(.*?)<\/title>/i',$matcheach,$match2);
+			preg_match('/<title>(.*?)<\/title>/is',$matcheach,$match2);
+			//print_r($match2);
 			if(!empty($match2[1]))
 			{
 				$rssinfo->title = getrealname($match2[1]);
 			}
-			preg_match('/<link>(.*?)<\/link>/i',$matcheach,$match2);
+			preg_match('/<link>(.*?)<\/link>/is',$matcheach,$match2);
+			//print_r($match2);
 			if(!empty($match2[1]))
 			{
 				$rssinfo->link = getrealname($match2[1]);
 			}
 			
-			preg_match_all('/<category>(.*?)<\/category>/i',$matcheach,$match2);
+			preg_match_all('/<category>(.*?)<\/category>/is',$matcheach,$match2);
+			//print_r($match2);
 			if(!empty($match2[1]))
 			{
 				foreach($match2[1] as $key=> $eachcat)
 					$rssinfo->cat .=' '.getrealname($eachcat);
 			}			
-			preg_match_all('/<categoryname>(.*?)<\/categoryname>/i',$matcheach,$match2);
+			preg_match_all('/<categoryname>(.*?)<\/categoryname>/is',$matcheach,$match2);
+			//print_r($match2);
 			if(!empty($match2[1]))
 			{
 				foreach($match2[1] as $key=> $eachcat)
@@ -119,7 +124,7 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 			insertonlylink($rssinfo);
 		}
 	}
-	setupdatetime($change,$newdate,$authorid);
+	//setupdatetime($change,$newdate,$authorid);
 }
 
 function readrssfile($buff,$rssinfo,$authorid,$lastupdate)
@@ -202,7 +207,7 @@ function readrssfile($buff,$rssinfo,$authorid,$lastupdate)
 
 function getrealname($name)
 {
-	$name = preg_replace('/\<\!\[CDATA\[(.*?)\]\]\>/s','$1',$name);
+	$name = preg_replace('/\<\!\[CDATA\[(.*?)\]\]\>/s','$1',trim($name));
 	return trim($name);
 }
 ?>

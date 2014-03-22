@@ -29,9 +29,8 @@ function www_piaohua_com_php()
 		if(!$buff)
 		{
 			echo 'fail to get file '.$eachurl."!</br>\n";	
-			$sql="update author set failtimes=failtimes+1 where id = $author->id;";
+			$sql="update author set failtimes=failtimes+1 where name='$authorname';";
 			$result=dh_mysql_query($sql);
-			$i++;
 			continue;
 		}
 		$buff = iconvbuff($buff);
@@ -43,7 +42,7 @@ function www_piaohua_com_php()
 		//print_r($match);
 		if(empty($match[1]))
 		{
-			echo 'error no result!';
+			echo 'preg buff error no result!';
 			continue;
 		}
 		foreach ($match[1] as $key2=>$div)			

@@ -46,7 +46,7 @@ function www_dy2018_com_php()
 			if(!$buff)
 			{
 				echo 'fail to get file '.$trueurl."!</br>\n";	
-				$sql="update author set failtimes=failtimes+1 where author='$authorname';";
+				$sql="update author set failtimes=failtimes+1 where name='$authorname';";
 				$result=dh_mysql_query($sql);
 				continue;
 			}
@@ -63,7 +63,7 @@ function www_dy2018_com_php()
 			
 			if(empty($match0[2]))
 			{
-				echo 'error no result!';
+				echo 'preg buff error no result!';
 				continue;
 			}
 			foreach ($match0[2] as $key2=>$div)			

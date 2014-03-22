@@ -1,8 +1,9 @@
 <?php
-function readrssfile2001($author)
+function www_hunantv_com_php()
 {
-	if($author->rss!=2001)
-		return;
+	$authorname='金鹰网';
+	$authorurl='http://www.hunantv.com';
+	print_r($authorname);
 
 	$url = array('http://www.hunantv.com/movie/news/',
 				'http://www.hunantv.com/opinion/movie/',
@@ -11,16 +12,13 @@ function readrssfile2001($author)
 				'http://www.hunantv.com/show/news/',
 				'http://www.hunantv.com/opinion/show/');
 	$urlcat= array('电影资讯','电影评论','电视资讯','电视评论','综艺资讯','综艺评论');
-	
-	//$url = array('http://www.ed2000.com/FileList.asp?FileCategory=%E7%94%B5%E5%BD%B1');
-	//$urlcat= array('电影');	
 	print_r($url);
 	
 	//寻找各自的updatetime	
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
 	{
-		$sql="select max(updatetime) from link2 where author='$author->name' and cat = '".$eachurlcat."'";
+		$sql="select max(updatetime) from link2 where author='$authorname' and cat like '%".$eachurlcat."%'";
 		$sqlresult=dh_mysql_query($sql);
 		$row = mysql_fetch_array($sqlresult);
 		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
@@ -34,6 +32,7 @@ function readrssfile2001($author)
 		$i=1;
 		while($change&&$i<3)
 		{
+			$i++;
 			if($i===1)
 				$trueurl = $eachurl;
 			else
@@ -42,23 +41,27 @@ function readrssfile2001($author)
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
 			{
-				echo 'fail to get file '.$author->rssurl."!</br>\n";	
-				$sql="update author set failtimes=failtimes+1 where id = $author->id;";
-				$result=dh_mysql_query($sql);
-				$i++;
-				continue;
+				sleep(5);
+				$buff = get_file_curl($trueurl);
+				if(!$buff)
+				{
+					echo 'fail to get file '.$trueurl."!</br>\n";	
+					$sql="update author set failtimes=failtimes+1 where name='$authorname';";
+					$result=dh_mysql_query($sql);
+					continue;
+				}
 			}
 			$buff = iconvbuff($buff);
 			$rssinfo = new rssinfo();
-			$rssinfo->author = $author->name;
+			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
 			//print_r($buff);	
 			preg_match_all('/<li><span class="title"><a href="(.*?)" target="_blank">(.*?)<\/a><\/span><span class="time">(.*?)<\/span><\/li>/s',$buff,$match);
 			//print_r($match);
 			if(empty($match[1]))
 			{
-				echo 'error no result!';
-				return;
+				echo 'preg buff error no result!';
+				continue;
 			}
 			foreach ($match[1] as $key2=>$div)			
 			{	
@@ -82,11 +85,9 @@ function readrssfile2001($author)
 				$rssinfo->title = trim($match[2][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
-			}			
-			$i++;
+			}
 		}
 	}
-	setupdatetime(true,$newdate,$author->id);
-	return;	
+	setupdatetime2(true,$newdate,$authorname);
 }
 ?>
