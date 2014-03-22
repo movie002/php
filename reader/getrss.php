@@ -124,7 +124,7 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 			insertonlylink($rssinfo);
 		}
 	}
-	//setupdatetime($change,$newdate,$authorid);
+	setupdatetime($change,$newdate,$authorid);
 }
 
 function readrssfile($buff,$rssinfo,$authorid,$lastupdate)
