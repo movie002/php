@@ -41,7 +41,7 @@ function www_mtime_com_review_php()
 				$buff = get_file_curl($trueurl);
 				if(!$buff)
 				{
-					echo 'fail to get file '.$trueurl."!</br>\n";	
+					echo 'error: fail to get file '.$trueurl."!</br>\n";	
 					$sql="update author set failtimes=failtimes+1 where name='$authorname';";
 					$result=dh_mysql_query($sql);
 					continue;

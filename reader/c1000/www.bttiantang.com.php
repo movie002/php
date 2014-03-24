@@ -32,7 +32,7 @@ function www_bttiantang_com_php()
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
 			{
-				echo 'fail to get file '.$trueurl."!</br>\n";	
+				echo 'error: fail to get file '.$trueurl."!</br>\n";	
 				$sql="update author set failtimes=failtimes+1 where name='$authorname';";
 				$result=dh_mysql_query($sql);
 				continue;

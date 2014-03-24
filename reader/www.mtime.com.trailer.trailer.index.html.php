@@ -40,7 +40,7 @@ function reader()
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
 			{
-				echo 'fail to get file !</br>';	
+				echo 'error: fail to get file !</br>';	
 				$sql="update author set failtimes=failtimes+1 where id = $authorid;";
 				$result=mysql_query($sql,$conn);
 				echo 'update fail info:'.mysql_error().'</br>';	
@@ -63,7 +63,7 @@ function readerdirect()
 	//如果失败，就使用就标记失败次数
 	if(!$buff)
 	{
-		echo 'fail to get file !</br>';	
+		echo 'error: fail to get file !</br>';	
 		return;
 	}
 	//$buff = mb_convert_encoding($buff, "UTF-8", "GBK");

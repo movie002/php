@@ -39,7 +39,7 @@ function readerdirect()
 	//如果失败，就使用就标记失败次数
 	if(!$buff)
 	{
-		echo 'fail to get file !</br>';	
+		echo 'error: fail to get file !</br>';	
 		return;
 	}
 	//print_r($buff);

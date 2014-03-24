@@ -47,7 +47,7 @@ function all()
 				$buff = get_file_curl($row['rssurl']);
 				if(false==$buff)
 				{
-					echo 'fail to get rss file !</br>';	
+					echo 'error: fail to get rss file !</br>';	
 					$sql="update author set failtimes=failtimes+1 where id = $authorid;";
 					$result=dh_mysql_query($sql);
 					continue;
@@ -68,62 +68,85 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 	//查找所有的item
 	preg_match_all('/<item>([\s\S]*?)<\/item>/i',$buff,$match);
 	//print_r($match);
-	if(!empty($match[1]))
-	{	
-		$change = false;
-		foreach ($match[1] as $matcheach)
-		{
-			preg_match('/<pubDate>(.*?)<\/pubDate>/i',$matcheach,$match2);
-			//print_r($match2);
-			if(!empty($match2[1]))
-			{
-				$rssinfo->update = getrealtime($match2[1]);
-				if($rssinfo->update<=$lastupdate)
-				{
-					echo "爬取到已经爬取文章，爬取结束! </br>\n";
-					break;
-					//continue;
-				}
-				$change = true;
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
-			}
-			$rssinfo->title='';
-			$rssinfo->link='';
-			$rssinfo->cat='';
-			
-			preg_match('/<title>(.*?)<\/title>/is',$matcheach,$match2);
-			//print_r($match2);
-			if(!empty($match2[1]))
-			{
-				$rssinfo->title = getrealname($match2[1]);
-			}
-			preg_match('/<link>(.*?)<\/link>/is',$matcheach,$match2);
-			//print_r($match2);
-			if(!empty($match2[1]))
-			{
-				$rssinfo->link = getrealname($match2[1]);
-			}
-			
-			preg_match_all('/<category>(.*?)<\/category>/is',$matcheach,$match2);
-			//print_r($match2);
-			if(!empty($match2[1]))
-			{
-				foreach($match2[1] as $key=> $eachcat)
-					$rssinfo->cat .=' '.getrealname($eachcat);
-			}			
-			preg_match_all('/<categoryname>(.*?)<\/categoryname>/is',$matcheach,$match2);
-			//print_r($match2);
-			if(!empty($match2[1]))
-			{
-				foreach($match2[1] as $key=> $eachcat)
-					$rssinfo->cat .=' '.getrealname($eachcat);
-			}			
-			//开始写入数据库信息
-			//print_r($rssinfo);
-			insertonlylink($rssinfo);
-		}
+	if(empty($match[1]))
+	{
+		echo 'error: no get item result!';
+		return;		
 	}
+	
+	$change = false;
+	foreach ($match[1] as $matcheach)
+	{
+		preg_match('/<pubDate>(.*?)<\/pubDate>/i',$matcheach,$match2);
+		//print_r($match2);
+		if(empty($match2[1]))
+		{
+			echo 'error: no get pubDate result!';
+			return;		
+		}
+
+		$rssinfo->update = getrealtime($match2[1]);
+		if($rssinfo->update<=$lastupdate)
+		{
+			echo "爬取到已经爬取文章，爬取结束! </br>\n";
+			break;
+			//continue;
+		}
+		$change = true;
+		if($newdate<$rssinfo->update)
+			$newdate = $rssinfo->update;
+
+		$rssinfo->title='';
+		$rssinfo->link='';
+		$rssinfo->cat='';
+		
+		preg_match('/<title>(.*?)<\/title>/is',$matcheach,$match2);
+		//print_r($match2);
+		if(empty($match2[1]))
+		{
+			echo 'error: no get title result!';
+			return;		
+		}
+		$rssinfo->title = getrealname($match2[1]);
+
+		preg_match('/<link>(.*?)<\/link>/is',$matcheach,$match2);
+		//print_r($match2);
+		if(empty($match2[1]))
+		{
+			echo 'error: no get link result!';
+			return;		
+		}
+		$rssinfo->link = getrealname($match2[1]);
+		
+		preg_match_all('/<category>(.*?)<\/category>/is',$matcheach,$match2);
+		//print_r($match2);
+		if(empty($match2[1]))
+		{
+			echo 'error: no get category result!';	
+		}
+		else
+		{
+			foreach($match2[1] as $key=> $eachcat)
+				$rssinfo->cat .=' '.getrealname($eachcat);
+		}
+		
+		preg_match_all('/<categoryname>(.*?)<\/categoryname>/is',$matcheach,$match2);
+		//print_r($match2);
+		if(empty($match2[1]))
+		{
+			echo 'error: no get categoryname result!';	
+		}
+		else
+		{
+			foreach($match2[1] as $key=> $eachcat)
+				$rssinfo->cat .=' '.getrealname($eachcat);
+		}
+		
+		//开始写入数据库信息
+		//print_r($rssinfo);
+		insertonlylink($rssinfo);
+	}
+
 	setupdatetime($change,$newdate,$authorid);
 }
 
