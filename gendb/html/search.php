@@ -1,5 +1,10 @@
 <?php
-	require_once('360safe/360webscan.php'); // 注意文件路径
+	//require_once('360safe/360webscan.php'); // 注意文件路径
+	if(is_file('360safe/360webscan.php'))
+	{
+		require_once('360safe/360webscan.php');
+	}
+	
 	$active='';
 	$q='';
 	if( isset($_REQUEST['q']))
@@ -83,8 +88,7 @@
 								echo '';
 						}
 					?>
-				</ul>		
-				<div class="page_navi">%pagenavi%</div>
+				</ul>
 			</div>
 			<!-- content -->
 			<div id="sidebar" class="clearfix">
@@ -101,6 +105,13 @@
 	</script>
 	<script type="text/javascript">
 	%footjs%
+	window.onload = function ()
+	{
+		// 公共的函数
+		document.getElementById('submittext').focus();
+		startTime();
+		loadimg();
+	};
 	</script>	
 </body>
 </html>
