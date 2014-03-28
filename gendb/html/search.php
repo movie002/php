@@ -101,9 +101,6 @@
 	</div>
 	<!-- wrapper -->
 	<script type="text/javascript">
-	%list.js%
-	</script>
-	<script type="text/javascript">
 	%footjs%
 	window.onload = function ()
 	{
@@ -111,6 +108,8 @@
 		document.getElementById('submittext').focus();
 		startTime();
 		loadimg();
+		showImgs();
+		baidutongji();
 	};
 	</script>	
 </body>
