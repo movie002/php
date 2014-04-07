@@ -50,7 +50,7 @@ border-top: 1px solid #ccc;
 }
 
 .entry p {
-padding-bottom:10px;
+padding:5px 0;
 text-indent:2em;
 }
 
@@ -80,9 +80,13 @@ padding:0!important;
 }
 
 .entry h4 {
-font-size:12px;
-font-weight:700;
-padding:0 0 7px
+	font-size:12px;
+	font-weight:700;
+	margin:20px 0 0 0;
+	padding:5px 5px 0 5px;
+	border: 1px solid #759CC2;
+	position:relative;
+	color: purple;	
 }
 
 .entry h5 {
@@ -269,10 +273,9 @@ padding:0
 
 .linksmall
 {
-	font-size:12px;
-	margin-left:5px;
-	border: 1px solid #ccc;
-	border-bottom: none;	
+	border-bottom: none;
+	border-left: 1px solid #759CC2;	
+	border-right: 1px solid #759CC2;		
 }
 .listtitle 
 {
@@ -300,6 +303,11 @@ padding:0
 {
 	width:70%;
 	margin:0 0 0 5px;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
 }
 
 .listmeta
@@ -313,7 +321,7 @@ padding:0
 {
 	text-align:center;
 	color: #888;
-	border-bottom: 1px solid #CCC;	
+	border-bottom: 1px solid #759CC2;
 }
 .showhide_more
 {
@@ -321,6 +329,12 @@ padding:0
 }
 .downloadlist
 {
-	margin-top:10px;
+	padding:2px 0;
+	border-top:1px solid #bbb;
 	position: relative;
+}
+.borderside
+{
+	border-right: 1px solid #759CC2;
+	border-left: 1px solid #759CC2;	
 }

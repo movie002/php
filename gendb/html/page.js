@@ -1,3 +1,23 @@
+function nTabs(thisObj,Num)
+{
+	if(thisObj.className == "active")return;
+	var tabObj = thisObj.parentNode.id;
+	var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+	for(i=0; i <tabList.length; i++)
+	{
+	  if (i == Num)
+	  {
+		thisObj.className = "active"; 
+		document.getElementById(tabObj+"_Content"+i).style.display = "block";
+	  }
+	  else
+	  {
+		tabList[i].className = "normal"; 
+		document.getElementById(tabObj+"_Content"+i).style.display = "none";
+	  }
+	} 
+};
+
 function showhide(id1,id2,tx1,tx2)
 {
 	var id1div = document.getElementById(id1);
@@ -26,6 +46,18 @@ function hide(id1,id2,tx1,idjump)
 		//window.location.hash=idjump;
 		document.getElementById(idjump).scrollIntoView();
 	}
+};
+
+function showmiddle(id)
+{
+	var id = document.getElementById(id);
+	id.style.display='block';
+};
+
+function hidemiddle(id)
+{
+	var id = document.getElementById(id);
+	id.style.display='none';
 };
 
 function duoshuo()

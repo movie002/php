@@ -137,3 +137,22 @@ border-radius:10px 10px 3px 3px;
 {
 border-top:2px solid #444;
 }
+
+.middle_action
+{
+margin-left: -175px;
+position: fixed;
+left: 50%;
+top: 300px;
+font-weight:700;
+font-size:11px;
+width: 350px;
+background:#fff;
+padding: 20px;
+color: #999;
+border-radius:10px;
+-webkit-border-radius:10px;
+-khtml-border-radius:10px;
+-moz-border-radius:10px;
+z-index:9999;
+}

@@ -6,7 +6,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	global $linktype,$linkway,$linkquality,$linkdowntype,$linkonlinetype,$linkproperty;
 	$reslinks=dh_mysql_query($sql);
 	$num = 5;
-	$numdownload = 3;
+	$numdownload = 5;
 	
 	if($reslinks)
 	{
@@ -117,91 +117,111 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			}			
 		}
 		
+		$downloadlinkstitle='';
+		$active=false;
 		if($num01>0)
 		{
-			$downloadlinks.=' <div class="downloadlist f12px"> 【'.$linkproperty[1].'】(资源数:'.$num01.')<div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks1;
+			$active=true;
+			$downloadlinkstitle.='<li class="active" onclick="nTabs(this,0);">'.$linkproperty[1].'('.$num01.')</li>';
+			$downloadlinks.='<div id="dl_Content0" style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div><div class="linksmall">'.$linkstop.$downloadlinks1;
 			if($num01 > $numdownload)
 			{
 				$showtext='[ << 展开(其余'.($num01-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num01-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num01-$numdownload).'个) ∧ ]';
-				$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" class="showhide_more">'.$downloadlinks1_more.'<div class="showhide" onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" >'.$downloadlinks1_more.'<div class="showhide" onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')">'.$hidetext2.'</div></div>';
 			}
-			$downloadlinks.='</div>';
+			$downloadlinks.='</div></div>';
 		}
 		
 		if($num02>0)
 		{
-			$downloadlinks.=' <div class="downloadlist f12px"> 【'.$linkproperty[2].'】(资源数:'.$num02.')<div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks2;
+			$active=true;
+			$activetitle='normal';
+			$activelink='';
+			if(!active)
+				$activetitle='active';		
+			else
+				$activelink='class="none"';	
+				
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,1);">'.$linkproperty[2].'('.$num02.')</li>';			
+			$downloadlinks.='<div id="dl_Content1"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div><div class="linksmall">'.$linkstop.$downloadlinks2;
 			if($num02 > $numdownload)
 			{
 				$showtext='[ << 展开(其余'.($num02-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num02-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num02-$numdownload).'个) ∧ ]';		
-				$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" class="showhide_more">'.$downloadlinks2_more.'<div class="showhide" onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" >'.$downloadlinks2_more.'<div class="showhide" onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')">'.$hidetext2.'</div></div>';
 			}
-			$downloadlinks.='</div>';
+			$downloadlinks.='</div></div>';
 		}
 		if($num03>0)
 		{
-			$downloadlinks.=' <div class="downloadlist f12px"> 【'.$linkproperty[3].'】(资源数:'.$num03.')<div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks3;
+			$active=true;
+			$activetitle='normal';
+			$activelink='';
+			if(!active)
+				$activetitle='active';
+			else
+				$activelink='class="none"';	
+				
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,2);">'.$linkproperty[3].'('.$num03.')</li>';
+				
+			$downloadlinks.='<div id="dl_Content2" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div><div class="linksmall">'.$linkstop.$downloadlinks3;
 			if($num03 > $numdownload)
 			{
 				$showtext='[ << 展开(其余'.($num03-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num03-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num03-$numdownload).'个) ∧ ]';
-				$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" class="showhide_more">'.$downloadlinks3_more.'<div class="showhide" onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" >'.$downloadlinks3_more.'<div class="showhide" onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')">'.$hidetext2.'</div></div>';
 			}
-			$downloadlinks.='</div>';
+			$downloadlinks.='</div></div>';
 		}
 		
 		if($num00>0)
 		{
-			$downloadlinks.='<div class="downloadlist f12px">【'.$linkproperty[0].'】(资源数:'.$num00.')<div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div></div><div class="linksmall">'.$linkstop.$downloadlinks0;
+			$activelink='';
+			$activetitle='normal';
+			if(!active)
+				$activetitle='active';
+			else
+				$activelink='class="none"';				
+
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,3);">'.$linkproperty[0].'('.$num00.')</li>';
+			$downloadlinks.='<div id="dl_Content3" '.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div><div class="linksmall">'.$linkstop.$downloadlinks0;
 			if($num00 > $numdownload)
 			{
 				$showtext='[ << 展开(其余'.($num00-$numdownload).'个) >> ]';
 				$hidetext='[ >> 隐藏(其余'.($num00-$numdownload).'个) << ]';
 				$hidetext2='[ ∧ 隐藏(以上'.($num00-$numdownload).'个) ∧ ]';		
-				$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" class="showhide_more">'.$downloadlinks0_more.'<div class="showhide" onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')">'.$hidetext2.'</div></div>';
+				$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" >'.$downloadlinks0_more.'<div class="showhide" onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')">'.$hidetext2.'</div></div>';
 			}
-			$downloadlinks.='</div>';
+			$downloadlinks.='</div></div>';
 		}
-		
+		$downloadlinkstitle = '<div class="TabTitle borderside" style="padding:5px 0 5px 10px"><ul id="dl">'.$downloadlinkstitle.'</ul></div>';
+		$downloadlinks = $downloadlinkstitle.$downloadlinks;
 		$num0 = $num00+$num01+$num02+$num03;
 		$DH_output_content_page = str_replace('%num0x%',$num0,$DH_output_content);
-		if($num0 == 0)
-		{
-			$downloadlinks=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
-		}
-		
+
 		//echo $downloadlinks;
 		if($num1 > 0) 
 			$onlinelinks = $linkstop.$onlinelinks;
-		else
-		{
-			$onlinelinks=' <div style="color:#777"> 暂无在线资源,可以点击以上搜索试试,或收藏此页,如有资源会及时更新!</div>';
-		}
 		$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
 		if($num1 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num1-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num1-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num1-$num).'个) ∧ ]';		
-			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" class="showhide_more">'.$onlinelinks_more.'<div class="showhide" onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'title_6\')">'.$hidetext2.'</div></div>';
+			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" >'.$onlinelinks_more.'<div class="showhide" onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'title_6\')">'.$hidetext2.'</div></div>';
 		}
 		if($num2 > 0)
-			$tailer = $linkstop.$tailer;
-		else			
-		{
-			$tailer = ' <div style="color:#777"> 暂无资源,可点击以上搜索试试,如有资源会及时更新!</div>';
-		}			
+			$tailer = $linkstop.$tailer;			
 		if($num2 > ($num-2))
 		{
 			$showtext='[ << 展开(其余'.($num2+2-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num2+2-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num2+2-$num).'个) ∧ ]';		
-			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" class="showhide_more">'.$tailer_more.'<div class="showhide" onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')">'.$hidetext2.'</div></div>';
+			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" >'.$tailer_more.'<div class="showhide" onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')">'.$hidetext2.'</div></div>';
 		}
 		
 		$DH_output_content_page = str_replace('%jhblinks%',$jhblinks,$DH_output_content_page);
@@ -295,22 +315,18 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 			$showtext='[ << 展开(其余'.($num3-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num3-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num3-$num).'个) ∧ ]';		
-			$onlylinks.='<div class="showhide" id="onlylinks_t"  onclick="showhide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlylinks" style="display:none;" class="showhide_more">'.$onlylinks_more.'<div class="showhide" onclick="hide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\'title_1\')">'.$hidetext2.'</div></div>';
+			$onlylinks.='<div class="showhide" id="onlylinks_t"  onclick="showhide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlylinks" style="display:none;" >'.$onlylinks_more.'<div class="showhide" onclick="hide(\'onlylinks_t\',\'onlylinks\',\''.$showtext.'\',\'title_1\')">'.$hidetext2.'</div></div>';
 		}
 		if($num4 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num4-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num4-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num4-$num).'个) ∧ ]';		
-			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" class="showhide_more">'.$yingping_more.'<div class="showhide" onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_4\')">'.$hidetext2.'</div></div>';
+			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" >'.$yingping_more.'<div class="showhide" onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_4\')">'.$hidetext2.'</div></div>';
 		}
-		if($num3 == 0)
-			$onlylinks=' <div style="color:#777"> 暂无下载资源,您可以收藏此页,如有资源会及时更新!</div>';
-		else
+		if($num3 > 0)
 			$onlylinks=$linkstop.$onlylinks;
-		if($yingping == 0)
-			$yingping=' <div style="color:#777"> 暂无下载资源,可点击以上搜索试试,如有资源会及时更新!</div>';
-		else
+		if($yingping > 0)
 			$yingping=$linkstop.$yingping;
 			
 		$DH_output_content_page = str_replace('%onlylinks%',$onlylinks,$DH_output_content);

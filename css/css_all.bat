@@ -1,7 +1,7 @@
 del style_dhblog.css style_dh.css style_v.css style_www.css 
 
 copy base.css+layout.css+title.css+layout_tab.css+entry.css+article_index.css+page_navi.css+page_class.css style_v.css  /Y /B
-csstidy.exe style_db.css --template=highest --remove_last_;=true style_v.css
+csstidy.exe style_v.css --template=highest --remove_last_;=true style_v.css
 copy style_v.css ..\..\v\css\style.css /Y /B
 
 copy base.css+layout.css+title.css+entry_dhblog.css+article_index.css+page_navi.css+page_class.css+postbox.css style_www.css  /Y /B
