@@ -85,6 +85,7 @@ padding:0!important;
 	margin:20px 0 0 0;
 	padding:5px 5px 0 5px;
 	border: 1px solid #759CC2;
+	border-bottom: 1px solid #999;
 	position:relative;
 	color: purple;	
 }
