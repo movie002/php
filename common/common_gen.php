@@ -236,11 +236,11 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		}		
 		if($num2 > 0)
 			$tailer = $linkstop.$tailer;			
-		if($num2 > ($num-2))
+		if($num2 > $num)
 		{
-			$showtext='[ << 展开(其余'.($num2+2-$num).'个) >> ]';
-			$hidetext='[ >> 隐藏(其余'.($num2+2-$num).'个) << ]';
-			$hidetext2='[ ∧ 隐藏(以上'.($num2+2-$num).'个) ∧ ]';		
+			$showtext='[ << 展开(其余'.($num2-$num).'个) >> ]';
+			$hidetext='[ >> 隐藏(其余'.($num2-$num).'个) << ]';
+			$hidetext2='[ ∧ 隐藏(以上'.($num2-$num).'个) ∧ ]';		
 			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" >'.$tailer_more.'<div class="showhide" onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')">'.$hidetext2.'</div></div>';
 		}
 		else
@@ -358,7 +358,7 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 		}		
 		if($num3 > 0)
 			$onlylinks=$linkstop.$onlylinks;
-		if($yingping > 0)
+		if($num4 > 0)
 			$yingping=$linkstop.$yingping;
 			
 		$DH_output_content_page = str_replace('%onlylinks%',$onlylinks,$DH_output_content);
