@@ -10,6 +10,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	
 	if($reslinks)
 	{
+		$linkstop = '<div class="listall" style="background:#CCC;"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
+	
 		$downloadlinks = '';
 		$downloadlinks0 = '';
 		$downloadlinks0_more = '';
@@ -24,16 +26,14 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$downloadlinks3_more = '';
 		$num03=0;
 		
-		$onlinelinks = '';
+		$onlinelinks = $linkstop;
 		$onlinelinks_more = '';
 		$num1=0;
-		$tailer = '';
+		$tailer = $linkstop;
 		$tailer_more = '';
 		$num2=0;
 		
 		$jhblinks= '';
-
-		$linkstop = '<div class="listall" style="background:#CCC;"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';
 		
 		while($rowlinks = mysql_fetch_array($reslinks))
 		{
@@ -220,28 +220,25 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$DH_output_content_page = str_replace('%num0x%',$num0,$DH_output_content);
 
 		//echo $downloadlinks;
-		if($num1 > 0) 
-			$onlinelinks = $linkstop.$onlinelinks;
 		$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
 		if($num1 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num1-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num1-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num1-$num).'个) ∧ ]';		
-			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" >'.$onlinelinks_more.'<div class="showhide" onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'title_6\')">'.$hidetext2.'</div></div>';
+			$onlinelinks.='<div class="showhide" id="onlinelinks_t"  onclick="showhide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="onlinelinks" style="display:none;" >'.$onlinelinks_more.'<div class="showhide" onclick="hide(\'onlinelinks_t\',\'onlinelinks\',\''.$showtext.'\',\'title_3\')">'.$hidetext2.'</div></div>';
 		}
 		else
 		{
 			$onlinelinks.='<div class="showhide">更多资源,敬请期待</div>';
 		}		
-		if($num2 > 0)
-			$tailer = $linkstop.$tailer;			
+		
 		if($num2 > $num)
 		{
 			$showtext='[ << 展开(其余'.($num2-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num2-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num2-$num).'个) ∧ ]';		
-			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" >'.$tailer_more.'<div class="showhide" onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_2\')">'.$hidetext2.'</div></div>';
+			$tailer.='<div class="showhide" id="tailer_t"  onclick="showhide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="tailer" style="display:none;" >'.$tailer_more.'<div class="showhide" onclick="hide(\'tailer_t\',\'tailer\',\''.$showtext.'\',\'title_1\')">'.$hidetext2.'</div></div>';
 		}
 		else
 		{
@@ -301,10 +298,10 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 		
 	if($reslinks)
 	{
-		$onlylinks='';
+		$onlylinks=$linkstop;
 		$onlylinks_more='';
 		$num3=0;
-		$yingping='';
+		$yingping=$linkstop;
 		$yingping_more='';
 		$num4=0;
 				
@@ -350,16 +347,12 @@ function dh_replace_link2($sql,$row,$DH_output_content)
 			$showtext='[ << 展开(其余'.($num4-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num4-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num4-$num).'个) ∧ ]';		
-			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" >'.$yingping_more.'<div class="showhide" onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_4\')">'.$hidetext2.'</div></div>';
+			$yingping.='<div class="showhide" id="pinglun_t"  onclick="showhide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="pinglun" style="display:none;" style="display:none;" >'.$yingping_more.'<div class="showhide" onclick="hide(\'pinglun_t\',\'pinglun\',\''.$showtext.'\',\'title_1\')">'.$hidetext2.'</div></div>';
 		}
 		else
 		{
 			$yingping.='<div class="showhide">更多资源,敬请期待</div>';
-		}		
-		if($num3 > 0)
-			$onlylinks=$linkstop.$onlylinks;
-		if($num4 > 0)
-			$yingping=$linkstop.$yingping;
+		}
 			
 		$DH_output_content_page = str_replace('%onlylinks%',$onlylinks,$DH_output_content);
 		$DH_output_content_page = str_replace('%yingping%',$yingping,$DH_output_content_page);
@@ -526,48 +519,56 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 
 	//处理购票
-	$buyticket='';
+	$buyticket='<div class="listall" style="background:#CCC;"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></div>';
+	$ticketnum=0;
 	if($row['mstatus']==3)
 	{
 		if($row['mediaid']!='')
-			$buyticket .='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target="_blank" rel="nofollow">豆瓣购票</a>';
-			
+		{
+			$ticketnum++;
+			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target = "_blank" title="豆瓣购票链接" rel="nofollow">豆瓣购票链接</a></div><div class="lqc3 rt0v5">豆瓣 '.$updatetime.'</div></div>';			
+		}
 		preg_match('/<4>(.*?)<\/4>/s',$row['ids'],$match1);
 		//print_r($match1);
 		if(!empty($match1[1]))
 		{
-			$buyticket.='/<a href="http://www.gewara.com/movie/'.$match1[1].'" target="_blank" rel="nofollow">格瓦拉</a>';
+			$ticketnum++;
+			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://www.gewara.com/movie/'.$match1[1].'" target = "_blank" title="格瓦拉购票链接" rel="nofollow">格瓦拉购票链接</a></div><div class="lqc3 rt0v5">格瓦拉 '.$updatetime.'</div></div>';			
 		}
 		
 		preg_match('/<5>(.*?)<\/5>/s',$row['ids'],$match1);
 		//print_r($match1);
 		if(!empty($match1[1]))
 		{
-			$buyticket.='/<a href="http://wangpiao.com/movie/'.$match1[1].'/?showulcinfo=1" target="_blank" rel="nofollow">网票网</a>';
+			$ticketnum++;
+			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://wangpiao.com/movie/'.$match1[1].'/?showulcinfo=1" target = "_blank" title="网票网购票链接" rel="nofollow">网票网购票链接</a></div><div class="lqc3 rt0v5">网票网 '.$updatetime.'</div></div>';
 		}	
 	
 		if($mtimeid!='')
-			$buyticket .='/<a href="http://theater.mtime.com/movie/'.$mtimeid.'/" target="_blank" rel="nofollow">时光网购票</a>';
-			
+		{
+			$ticketnum++;
+			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://theater.mtime.com/movie/'.$mtimeid.'/" target = "_blank" title="时光网购票链接" rel="nofollow">时光网购票链接</a></div><div class="lqc3 rt0v5">时光网 '.$updatetime.'</div></div>';			
+		}	
 		$codetitle=rawurlencode($row['title']);
 		$piaozi.='/<a href="http://www.gewara.com/newSearchKey.xhtml?skey='.$codetitle.'" target="_blank" rel="nofollow">搜索格瓦拉</a>';
 		$piaozi.='/<a href="http://www.wangpiao.com/Search/Index/0/'.$codetitle.'/1" target="_blank" rel="nofollow">搜索网票</a>';
 		$piaozi.='/<a href="http://film.spider.com.cn/shanghai-search/?keyword='.$codetitle.'" target="_blank" rel="nofollow">搜索蜘蛛网</a>';
-		$piaozi.='/<a href="http://www.hipiao.com/" target="_blank" rel="nofollow">登录哈票</a>';	
+		$piaozi.='/<a href="http://www.hipiao.com/" target="_blank" rel="nofollow">登录哈票</a>';
 	}
 	else
 	{
 		$piaozi='不在购票时间内';
-		$buyticket='';	
+		$buyticket.='<div class="showhide">更多资源,敬请期待</div>';	
 	}	
 	
 	$ofsite='';
 	preg_match('/<b>(.*?)<\/b>/s',$row['meta'],$match);
 	if(!empty($match[1]))	
 		$ofsite = ' <a href="'.$match[1].'" target="_blank" rel="nofollow">[官方网站]</a> </span>';
-	$DH_output_content_page = str_replace("%ofsite%",$ofsite,$DH_output_content_page);	
-		
-	$DH_output_content_page = str_replace("%buyticket%",$buyticket,$DH_output_content_page);
+	$DH_output_content_page = str_replace("%ofsite%",$ofsite,$DH_output_content_page);
+	
+	$DH_output_content_page = str_replace("%buyticket%",$buyticket,$DH_output_content_page);	
+	$DH_output_content_page = str_replace("%ticketnum%",$ticketnum,$DH_output_content_page);
 	$DH_output_content_page = str_replace("%piaozi%",$piaozi,$DH_output_content_page);
 	
 	$DH_output_content_page = str_replace("%thisupdatetime%",'最后更新:'.$updatetime,$DH_output_content_page);
