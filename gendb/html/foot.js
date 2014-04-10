@@ -84,6 +84,17 @@ function baidutongji()
 	})();
 }
 
+function cnzz()
+{
+	(function() {
+		var cnzz = document.createElement('script');
+		cnzz.type = 'text/javascript';
+		cnzz.src = 'http://s22.cnzz.com/z_stat.php?id=1000362328&web_id=1000362328';
+		(document.getElementsByTagName('body')[0]
+		||document.getElementsByTagName('head')[0]).appendChild(cnzz);
+	})();
+}
+
 function dhsay()
 {
 	//延时调用 dh_say.php 节省时间
