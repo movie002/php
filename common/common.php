@@ -248,56 +248,7 @@ function testneed($need,$link,$title,$cat)
 					//echo 'l';
 					preg_match('/'.$pat.'/i',$link,$match1);
 					break;
-				}
-				case 'q':
-				{
-					switch ($pat)
-					{
-						case 'c':
-						{
-							$filterret = filter_quality_each($cat);							
-							if($filterret != -1 )
-							{
-								$ret = $filterret;
-								$match1 = array('ok');
-							}
-							break;
-						}					
-						case 'l':
-						{
-							$filterret = filter_quality_each($link);							
-							if($filterret != -1 )
-							{
-								$ret = $filterret;
-								$match1 = array('ok');
-							}
-							break;
-						}					
-						case 't':
-						{
-							$filterret = filter_quality_each($title);							
-							if($filterret != -1 )
-							{
-								$ret = $filterret;
-								$match1 = array('ok');
-							}
-							break;
-						}
-						case 's':
-						{
-							$filterret = filter_quality_size($title);							
-							if($filterret != -1 )
-							{
-								$ret = $filterret;
-								$match1 = array('ok');
-							}
-							break;
-						}
-						default:
-							echo "error in testneed to get x method </br> \n";
-					}
-					break;
-				}				
+				}			
 				default:
 				{
 					echo 'error in testneed to get ?? method';

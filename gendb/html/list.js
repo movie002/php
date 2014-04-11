@@ -1,3 +1,17 @@
+function duoshuo()
+{
+	//多说
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';
+		ds.async = false;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('body')[0]
+		|| document.getElementsByTagName('head')[0]).appendChild(ds);
+	})();
+}
+
 function google()
 {
 	//google adsence
@@ -37,7 +51,8 @@ window.onload = function ()
 	// 加载结束之后再调用百度统计代码，要不然会频繁刷新
 	cnzz();
 	
-	//list独有的函数	
+	//list独有的函数
+	duoshuo();
 	google();
 	weibo();
 	dhsay();

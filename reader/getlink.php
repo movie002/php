@@ -15,18 +15,18 @@ mysql_close($conn);
 function getlink()
 {
 //	$sql="select l.author,l.updatetime,l.link,l.title,l.cat,a.cmovietype,a.cmoviecountry,a.clinkquality,a.clinktype,a.clinkway,a.clinkonlinetype,a.clinkdowntype,a.clinkproperty,a.ctitle from link l,author a where l.author = a.name";	
-	$sql="select l.author,l.updatetime,l.link,l.title,l.cat,a.cmovietype,a.cmoviecountry,a.clinkquality,a.clinktype,a.clinkway,a.clinkonlinetype,a.clinkdowntype,a.clinkproperty,a.ctitle from onlylink l,author a where l.author=a.name";
+	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name";
 
 	//全部重新计算link
 	if(isset($_REQUEST['reget']))
 	{
-		$sql="select l.author,l.updatetime,l.link,l.title,l.cat,a.cmovietype,a.cmoviecountry,a.clinkquality,a.clinktype,a.clinkway,a.clinkonlinetype,a.clinkdowntype,a.clinkproperty,a.ctitle from link l,author a WHERE l.author = a.name";
+		$sql="select l.*,a.* from link l,author a WHERE l.author = a.name";
 	}
 	//只重新计算一个author的link
 	if(isset($_REQUEST['aid']))
 	{
 		$aid = $_REQUEST['aid'];
-		$sql="select l.author,l.updatetime,l.link,l.title,l.cat,a.cmovietype,a.cmoviecountry,a.clinkquality,a.clinktype,a.clinkway,a.clinkonlinetype,a.clinkdowntype,a.clinkproperty,a.ctitle from link l,author a where a.id = $aid and l.author=a.name";
+		$sql="select l.*,a.* from link l,author a where a.id = $aid and l.author=a.name";
 	}	
 	echo $sql."</br>\n";
 	
@@ -36,6 +36,7 @@ function getlink()
 		$i=0;
 		while($row = mysql_fetch_array($results))
 		{
+			print_r($row);
 			echo $i.":";
 			$i++;
 			//对linktype不符合的选项，不予处理
@@ -45,17 +46,15 @@ function getlink()
 			$cat=$row['cat'];
 			$updatetime=$row['updatetime'];			
 			
-			$testlinktype = testneed($row['clinktype'],$link,$title,$cat);
-			//echo $testlinktype.' ';
-			if($testlinktype<0)
+			$testlinkway = testneed($row['clinkway'],$link,$title,$cat);
+			if($testlinkway<0)
 			{
 				//linktype 不对，说明有问题不大
-				echo "linktype=$testlinktype % title=$title link=$link cat=$cat -> linktype error 失败，请查明原因！</br> \n";
+				echo "linkway=$testlinkway % title=$title link=$link cat=$cat -> linkway error 失败，请查明原因！</br> \n";
 				continue;
-			}
-			//对title不符合的选项，不予处理
+			}		
+
 			$ctitle=testtitle($row['ctitle'],$row['title']);
-			//$ctitle = filter_ed2000($title);
 			if($ctitle<0||$ctitle==='')
 			{
 				//问题很大
@@ -63,28 +62,21 @@ function getlink()
 				continue;
 			}
 			
+			
+			$testlinktype = testneed($row['clinktype'],$link,$title,$cat);
 			$testmovietype = testneed($row['cmovietype'],$link,$title,$cat);
-			//echo " *** ".$testmovietype." *** ";
-			if($testmovietype<0)
-			{
-				//问题很大
-				echo "movietype=$testmovietype % title=$title link=$link cat=$cat -> movietype error 失败，请查明原因！</br> \n";
-				continue;
-			}			
 			$testmoviecountry = testneed($row['cmoviecountry'],$link,$title,$cat);
 			$testlinkquality = testneed($row['clinkquality'],$link,$title,$cat);
-			$testlinkway = testneed($row['clinkway'],$row['link'],$link,$title,$cat);
-			$testlinkonlinetype = testneed($row['clinkonlinetype'],$link,$title,$cat);
-			$testlinkdowntype = testneed($row['clinkdowntype'],$link,$title,$cat);			
+			$testlinkdownway = testneed($row['clinkdownway'],$link,$title,$cat);			
 			
 			$movieyear = 0;
 			preg_match('/((19|20|18)[0-9]{2,2})/',$title,$match);
 			if(!empty($match[1]))
 				$movieyear=$match[1];
 	
-			global $movietype,$moviecountry,$linkquality,$linkway,$linktype,$linkonlinetype,$linkdowntype,$linkproperty;	
+			global $movietype,$moviecountry,$linkquality,$linkway,$linktype,$linkdownway;	
 			//资讯和资源插入link2表
-			if($testlinktype==1||$testlinktype==2)
+			if($testlinkway==1||$testlinkway==2||$testlinkway==4||$testlinkway==5||$testlinkway==8)
 			{
 				$sql="insert into link2(author,title,link,cat,linktype,ctitle,moviecountry,movieyear,movietype,updatetime) values('$author',\"$title\",'$link','$cat',$testlinktype,\"$ctitle\",$testmoviecountry,$movieyear,$testmovietype,'$updatetime')ON DUPLICATE KEY UPDATE linktype=$testlinktype,ctitle='$ctitle',moviecountry=$testmoviecountry,movieyear='$movieyear',movietype=$testmovietype,updatetime='$updatetime'";
 				$sqlresult=dh_mysql_query($sql);
@@ -97,8 +89,8 @@ function getlink()
 				$sqlresult=dh_mysql_query($sql);
 				echo $movietype[$testmovietype].'|'.$moviecountry[$testmoviecountry].'|'.$linktype[$testlinktype].'|'.$linkquality[$testlinkquality].'|'.$linkway[$testlinkway].'|'.$linkonlinetype[$testlinkonlinetype].'|'.$linkdowntype[$testlinkdowntype].'|'.$linkproperty[$testlinkproperty].'|'.$movieyear.'|'.$ctitle." >> ".$title.'|'.$link.'|'.$cat.'|'.$row['updatetime']." -> 插入link成功！</br> \n";				
 			}			
-			$sql="delete from onlylink where link='".$row['link']."'";
-			$sqlresult=dh_mysql_query($sql);
+			//$sql="delete from onlylink where link='".$row['link']."'";
+			//$sqlresult=dh_mysql_query($sql);
         }
 	}
 }
