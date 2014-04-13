@@ -44,7 +44,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$quality = $rowlinks['linkquality'];
 			if($quality=='')
 				$quality = 0;			
-			$downtype = $rowlinks['linkdowntype'];
+			$downtype = $rowlinks['linkdownway'];
 			if($downtype=='')
 				$downtype = 0;
 			
@@ -622,7 +622,12 @@ function dh_replace_snapshot($type='middle',$row,$DH_output_content,$needcountry
 		if($row['quality']>=5)
 			$way.='[<a href="'.$DH_index_url.$row['cattype'].'_'.$row['catcountry'].'_c/1.html">'.$linkquality[$row['quality']].'</a>]';
 		else
-			$way='['.$linkquality[$row['quality']].']';
+		{
+			if($row['quality']<0)
+				$way='[未知]';
+			else
+				$way='['.$linkquality[$row['quality']].']';
+		}
 	}
 	$DH_output_content_page = str_replace("%way%",$way,$DH_output_content_page);
 	

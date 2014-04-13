@@ -3,26 +3,21 @@
 
 //header('Content-Type:text/html;charset= UTF-8');
 //require("../../config.php");
-//require("../../curl.php");
-//require("../../common.php");
+//require("../../common/curl.php");
+//require("../../common/dbaction.php");
 //
 //$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 //mysql_select_db($dbname, $conn) or die('选择数据库失败');
 //dh_mysql_query("set names utf8;");
-//$douban_result = new MovieResult();
-//$douban_result->title='名侦探柯南';
-//#$douban_result->aka='名侦探柯南/铁甲奇侠/Iron Man';
-//$douban_result->type=1;
-//get_shousibaocai($douban_result);
-//print_r($douban_result);
+//get_shousibaocai('超级笑星','名侦探柯南/铁甲奇侠/Iron Man',3,'2000-05-05 00:00:00',4);
 //mysql_close($conn);
 
 
 //处理电影名  
-function get_shousibaocai(&$resultlast,$pageid=-1)
+function get_shousibaocai($title,$aka,$type,$updatetime,$pageid=-1)
 { 
 	echo " \n begin to get from shousibaocai:\n";	
-	$name = rawurlencode($resultlast->title);
+	$name = rawurlencode($title);
 	
 	$buffer = get_file_curl('http://bt.shousibaocai.com/?s='.$name);
 	//echo $buffer;
@@ -33,7 +28,7 @@ function get_shousibaocai(&$resultlast,$pageid=-1)
 		$buffer = get_file_curl('http://bt.shousibaocai.com/?s='.$name);
 		if(false==$buffer)
 		{
-			echo $resultlast->title."搜索失败 </br>\n";
+			echo $title."搜索失败 </br>\n";
 			return;
 		}
 	}
@@ -64,13 +59,12 @@ function get_shousibaocai(&$resultlast,$pageid=-1)
 			break;
 		$i++;
 		$title = trim($match0[1][$key]);
-		if(!strstr($title,$resultlast->title))
+		if(!strstr($title,$title))
 			continue;
 		$updatetime = date("Y-m-d H:i:s",strtotime($match1[1][$key]));
 		$title .='[热度:'.$match3[1][$key].'/速度:'.$match4[1][$key].']('.$match2[1][$key].')';
 		$url='magnet:?xt=urn:btih:'.$match5[1][$key];	
-		insertsiteslink($updatetime,$resultlast->mediaid,'shousibaocai',$title,$url,5,3,4,0,4,1,$pageid);
-		//echo $url."--> shousibaocai -->".$title." ==> ".$url."\n";
+		addorupdatelink($pageid,'shousibaocai',$title,$url,'',4,7,7,0,$updatetime,1);
 	}
 }
 ?>  

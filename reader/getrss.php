@@ -2,6 +2,8 @@
 require("../config.php");
 require("../common/curl.php");
 require("../common/common.php");
+require("../common/dbaction.php");
+
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
 set_time_limit(3600); 
@@ -122,7 +124,7 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 		//print_r($match2);
 		if(empty($match2[1]))
 		{
-			echo 'error: no get category result!';	
+			//echo 'error: no get category result!';	
 		}
 		else
 		{
@@ -134,7 +136,7 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 		//print_r($match2);
 		if(empty($match2[1]))
 		{
-			echo 'error: no get categoryname result!';	
+			//echo 'error: no get categoryname result!';	
 		}
 		else
 		{

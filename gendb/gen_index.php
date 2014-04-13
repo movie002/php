@@ -11,7 +11,8 @@ header('Content-Type:text/html;charset= UTF-8');
 #需要使用的基础函数
 require("../config.php");
 require("../common/curl.php");
-require("../common/common.php");
+require("../common/base.php");
+require("../common/dbaction.php");
 require("../common/common_gen.php");
 require("../common/compressJS.class.php");
 require("movie.mtime.com.boxoffice.php");
@@ -44,11 +45,11 @@ function dh_gen_index()
 	$results=dh_mysql_query($sql);
 	$count = mysql_fetch_array($results);
 	$topnews.="影视".$count[0]."部";
-	$sql="select count(*) from link where updatetime >= '$datetoday'";
+	$sql="select count(*) from link where updatetime >= '$datetoday' and linkway=6 or linkway=7";
 	$results=dh_mysql_query($sql);
 	$count = mysql_fetch_array($results);
 	$topnews.="，资源".$count[0]."个";
-	$sql="select count(*) from link2 where updatetime >= '$datetoday'";
+	$sql="select count(*) from link where updatetime >= '$datetoday' and linkway=1";
 	$results=dh_mysql_query($sql);
 	$count = mysql_fetch_array($results);
 	$topnews.="，资讯".$count[0]."条）";
@@ -57,11 +58,11 @@ function dh_gen_index()
 	$results=dh_mysql_query($sql);
 	$count = mysql_fetch_array($results);
 	$topnews.="影视".$count[0]."部";
-	$sql="select count(*) from link";
+	$sql="select count(*) from link where linkway=6 or linkway=7";
 	$results=dh_mysql_query($sql);
 	$count = mysql_fetch_array($results);
 	$topnews.="，资源".$count[0]."个";
-	$sql="select count(*) from link2";
+	$sql="select count(*) from link where linkway=1";
 	$results=dh_mysql_query($sql);
 	$count = mysql_fetch_array($results);
 	$topnews.="，资讯".$count[0]."条）";

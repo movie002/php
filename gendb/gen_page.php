@@ -10,6 +10,7 @@ header('Content-Type:text/html;charset= UTF-8');
 require("../config.php");
 #需要使用的基础函数
 require("../common/common_gen.php");
+require("../common/dbaction.php");
 require("../common/base.php");
 require("../common/share.php");
 require("../common/compressJS.class.php");
@@ -119,7 +120,7 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			//echo $sqllinks;
 			$DH_output_content_page = dh_replace_link($sqllinks,$row,$DH_output_content_page);
 			
-			$sqllinks = "select pageid,author,title,link,linktype,updatetime from link2 t where t.pageid = '".$row['id']."' order by updatetime desc";		
+			$sqllinks = "select pageid,author,title,link,linktype,updatetime from link t where t.pageid = '".$row['id']."' order by updatetime desc";		
 			$DH_output_content_page = dh_replace_link2($sqllinks,$row,$DH_output_content_page);
 			$summary=$row['summary'];
 			$DH_output_content_page = str_replace("%summary%",$summary,$DH_output_content_page);

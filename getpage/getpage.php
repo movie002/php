@@ -4,18 +4,10 @@
 
 require("../config.php");
 require("../common/curl.php");
-require("../common/common.php");
-require("dbpage.php");
-
+require("../common/compare.php");
+require("../common/dbaction.php");
 require("getsites/douban.php");
-require("getsites/mtime.php");
-require("getsites/m1905.php");
-require("getsites/v360.php");
-require("getsites/v2345.php");
-require("getsites/vbaidu.php");
-require("getsites/www.cili.so.php");
-require("getsites/bt.shousibaocai.com.php");
-require("getsites/yugaopian.com.php");
+
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -30,9 +22,7 @@ mysql_close($conn);
 function getpage()
 {
 	$datebegin = getupdatebegin(2);
-//	$sql="select * from link where author ='无忧无虑'";
-	$sql="select * from link where (pageid ='' or pageid is null) and updatetime > '$datebegin' and fail < 1";
-//	$sql="select * from link where pageid ='' and ctitle<>'' and linktype=3";
+	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 1 and mtitle is not null";
 
 	if(isset($_REQUEST['pageid']))
 	{
@@ -45,7 +35,7 @@ function getpage()
 		$sql="select * from link where link='$link'";	
 	}	
 	
-	echo $sql;
+	echo $sql."</br>\n";
 	
 	$results=dh_mysql_query($sql);
 	if($results)
@@ -53,95 +43,63 @@ function getpage()
 		$count=0;
 		while($row = mysql_fetch_array($results))
 		{
+			$count++;
 			//每次需要休息5秒钟
 			//if($count > 2)
 			//	break;
 			sleep(5);
-			$douban_result = new MovieResult();
-			echo "\n \n".$count.':'.$row['link'].' '.$row['ctitle'].' ';
-			$serach_input = new SearchInput();
-			$serach_input->title=$row['ctitle'];
-			$serach_input->country=$row['moviecountry'];
-			$serach_input->year=$row['movieyear'];
-			$serach_input->type=$row['movietype'];
-			//先从数据库寻找，再从豆瓣寻找
+			//先从数据库寻找，再从豆瓣寻找	
+			echo "\n\n".$count.": ";
 			$maxrate=1;
-			$pageid = getdbpageid($serach_input,$row['link'],$maxrate);
+			$pageid = getdbpageid($row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);			
+			
 			if($pageid>=0)
 			{
-				$sqlupdate = "update link set pageid = ". $pageid.", lstatus=".$maxrate." where link = '".$row['link']."'" ;
-				dh_mysql_query($sqlupdate);
+				addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$row['linkquality'],$row['linkway'],$row['linktype'],$row['linkdownway'],$row['updatetime'],0);
 				$sqlupdate = "update page set updatetime = '".$row['updatetime']."' where id = '".$pageid."';";
 				dh_mysql_query($sqlupdate);
 				
-				$sqlupdate = "select * from page where id = '".$pageid."';";
-				$result_sqlupdate = dh_mysql_query($sqlupdate);
-				$row_sqlupdate = mysql_fetch_array($result_sqlupdate);
-				
-				
-				$douban_result->title = $row_sqlupdate['title'];
-				$douban_result->aka = $row_sqlupdate['aka'];
-				$douban_result->updatetime = $row_sqlupdate['updatetime'];
-				$douban_result->type = $row_sqlupdate['cattype'];
-				
-				get_v360($douban_result,$pageid);
-				get_v2345($douban_result,$pageid);
-				get_vbaidu($douban_result,$pageid);
-				get_cili($douban_result,$pageid);
-				get_shousibaocai($douban_result,$pageid);
-				get_yugaopian($douban_result,$pageid);		
+				//删除onlylink中的部分
+				$sql="delete from onlylink where link='".$row['link']."'";
+				$sqlresult=dh_mysql_query($sql);
 				continue;
 			}
 			
-			$res = get_douban($serach_input,$douban_result);			
+			$douban_result = new MovieResult();
+			$res = get_douban($row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$douban_result);			
 			if($res)
 			{
 				echo "\n douban last: ".$douban_result->mediaid;
 				echo " update $douban_result->title ";
 				
-				if($douban_result->type===1)
-				{
-					//$input = new SearchInput();
-					//$input->title=$douban_result->title;
-					//$input->year = $douban_result->pubdate;
-					get_m1905($douban_result);
-					get_mtime($douban_result);
-				}
 				//print_r($douban_result);
 				updatepage($douban_result,$row['updatetime']);
-				insertpagelink($douban_result,$row['updatetime'],$douban_result->mediaid);
 				//得到更新的page的id
 				$sqlupdate = "update link set pageid = (select id from page where mediaid='".$douban_result->mediaid."') where link = '".$row['link']."'";
-				dh_mysql_query($sqlupdate);
+				dh_mysql_query($sqlupdate);	
 				
-				$douban_result->updatetime = $row['updatetime'];				
-				get_v360($douban_result);
-				get_v2345($douban_result);
-				get_vbaidu($douban_result);
-				get_cili($douban_result);
-				get_shousibaocai($douban_result);
-				get_yugaopian($douban_result);	
-				
-				//插入到cele表中
-				preg_match("/<c>(.*?)<\/c>/",$douban_result->meta,$match);
-				if(!empty($match[1]))
+				if($douban_result->doubantrail!='')
 				{
-					insertcelebrity($match[1]);
+					addorupdatelink($pageid,'豆瓣预告',$douban_result->doubantrail,$$douban_result->doubantrailurl,'',0,3,7,0,$row['updatetime'],1);
+					$sql = "update link set pageid = (select id from page where mediaid='$mediaid') where link = '$douban_result->doubantrailurl'" ;
+					$sqlresult=dh_mysql_query($sql);
 				}
-				preg_match("/<d>(.*?)<\/d>/",$douban_result->meta,$match);
-				if(!empty($match[1]))
+				if($douban_result->doubansp!='')
 				{
-					insertcelebrity($match[1]);
-				}				
+					addorupdatelink($pageid,'豆瓣播放',$douban_result->doubansp,$$douban_result->doubanspurl,'',0,7,7,0,$row['updatetime'],1);
+					$sql = "update link set pageid = (select id from page where mediaid='$mediaid') where link = '$douban_result->doubanspurl'" ;
+					$sqlresult=dh_mysql_query($sql);
+				}
+				//删除onlylink中的部分
+				$sql="delete from onlylink where link='".$row['link']."'";
+				$sqlresult=dh_mysql_query($sql);				
 			}
 			else
 			{
 				echo " no get douban_result set fail ++ ";
-				$sqlupdate = "update link set fail = fail+1 where link = '".$row['link']."'" ;
+				$sqlupdate = "update onlylink set fail = fail+1 where link = '".$row['link']."'" ;
 				dh_mysql_query($sqlupdate);	
 			}
-			echo "\n";
-			$count ++;
         }
 	}
 }

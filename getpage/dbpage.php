@@ -1,9 +1,9 @@
 <?php
 
-function getdbpageid($input,$link,&$maxrate)
+function getdbpageid($mtitle,$country,$year,$type,&$maxrate)
 {
 	global $movietype,$moviecountry;
-	$ctitles = processtitle($input->title);
+	$ctitles = processtitle($mtitle);
 	//print_r($ctitles);
 	//continue;
 	//主标题和副标题都需要出现在page的title或者aka中
@@ -27,13 +27,13 @@ function getdbpageid($input,$link,&$maxrate)
 				$akaall=$rowpage['title'];
 			else
 				$akaall=$rowpage['title'].'/'.$rowpage['aka'];					
-			if(!c_movietype($input->type,$rowpage['cattype']))
+			if(!c_movietype($type,$rowpage['cattype']))
 				continue;
-			if(!c_moviecountry($input->country,$rowpage['catcountry']))
+			if(!c_moviecountry($country,$rowpage['catcountry']))
 				continue;
-			if(!c_movieyear($input->year,$rowpage['pubdate'],2,$akaall))
+			if(!c_movieyear($year,$rowpage['pubdate'],2,$akaall))
 				continue;
-			$rate = c_title($input->title,$akaall);
+			$rate = c_title($mtitle,$akaall);
 			echo ' rate: '.$rate;
 			if($rate>=3)
 			{
@@ -48,21 +48,6 @@ function getdbpageid($input,$link,&$maxrate)
 		}
 		echo '<<<'.$pageid.'>>>';
 		return $pageid;
-		if($pageid>=0)
-		{
-			echo " true";
-			$sqlupdate = "update link set pageid = ". $pageid.", lstatus=".$maxrate." where link = '".$link."'" ;
-			//echo $sqlupdate;
-			dh_mysql_query($sqlupdate);
-			if($input->type==3)
-			{
-				$sqlupdate = "update page set updatetime = '".$row['updatetime']."' where id = '".$pageid."';";
-				echo "\n".$sqlupdate;
-				dh_mysql_query($sqlupdate);
-			}
-			return true;
-		}
-		return false;
 	}
 	return -1;
 }

@@ -234,6 +234,17 @@ function compare($ctitle,$aka,$movietype1,$movietype2,$moviecountry1,$moviecount
 
 function c_title($title,$aka)
 {
+	//消除空格和.以防止对比出错
+
+	$title=str_replace(' ',"",$title);
+	$title=str_replace('.',"",$title);
+	$title=str_replace('·',"",$title);
+	
+	
+	$aka=str_replace(' ',"",$aka);
+	$aka=str_replace('.',"",$aka);
+	$aka=str_replace('·',"",$aka);
+	
 	$rate=0;
 	$titles=processtitle($title);
 	if(empty($titles))
@@ -248,9 +259,9 @@ function c_title($title,$aka)
 		return $rate;
 	}
 	
+	echo '// each title:';		
 	foreach($titles as $eachtitle)
 	{
-		echo ' each title '.$eachtitle .' ';	
 		if(!(strstr($aka,$eachtitle)===false))
 		{
 			$seachres=array_search($eachtitle,$akas);
@@ -266,20 +277,21 @@ function c_title($title,$aka)
 			}
 		}
 	}
+	
+	echo ' // each aka:';		
 	foreach($akas as $eachaka)
 	{
-		echo ' // each aka '.$eachaka .' ';	
 		if(!(strstr($title,$eachaka)===false))
 		{
 			$seachres=array_search($eachaka,$titles);
 			if (!($seachres===false))
 			{	
-				echo $eachaka.' in akas +1, ';
+				echo $eachaka.' in titles +1, ';
 				$rate +=1;
 			}
 			else
 			{
-				echo $eachaka.'  in akas part +0.5, ';
+				echo $eachaka.'  in titles part +0.5, ';
 				$rate +=0.5;
 			}
 		}
@@ -319,12 +331,12 @@ function c_movietype($movietype1,$movietype2)
 		//电影一定要和电影对应
 		if($movietype1==1 && $movietype2!=1)
 		{
-			echo ' movietype diff ';
+			echo " movietype diff $movietype1 vs $movietype2";
 			return false;			
 		}
 		if($movietype1!=1 && $movietype2==1)
 		{
-			echo ' movietype diff ';
+			echo " movietype diff  $movietype1 vs $movietype2";
 			return false;			
 		}
 		//电视剧 综艺 动漫 都属于电视剧
@@ -344,7 +356,7 @@ function c_moviecountry($moviecountry1,$moviecountry2)
 		}
 		else if($moviecountry1!=$moviecountry2)
 		{
-			echo ' moviecountry diff ';
+			echo " moviecountry diff $moviecountry1 vs $moviecountry2";
 			return false;
 		}
 	}
@@ -373,7 +385,7 @@ function c_movieyear($movieyear1,$movieyear2,$years,$aka)
 				$diff = $movieyear1int-$movieyear2int;					
 				if ($diff>$years||$diff<-$years)
 				{
-					echo ' year diff:'.$diff;
+					echo ' year diff $movieyear1int vs $movieyear2int:'.$diff;
 					return false;						
 				}
 			}

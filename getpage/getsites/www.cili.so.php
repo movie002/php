@@ -3,27 +3,21 @@
 
 //header('Content-Type:text/html;charset= UTF-8');
 //require("../../config.php");
-//require("../../curl.php");
-//require("../../common.php");
+//require("../../common/curl.php");
+//require("../../common/dbaction.php");
 //
 //$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 //mysql_select_db($dbname, $conn) or die('选择数据库失败');
 //dh_mysql_query("set names utf8;");
-//$douban_result = new MovieResult();
-//$douban_result->title='澳门风云';
-//#$douban_result->aka='名侦探柯南/铁甲奇侠/Iron Man';
-//$douban_result->type=1;
-//get_cili($douban_result);
-//print_r($douban_result);
+//get_cili('超级笑星','名侦探柯南/铁甲奇侠/Iron Man',3,'2000-05-05 00:00:00',4);
 //mysql_close($conn);
 
 
-
 //处理电影名  
-function get_cili(&$resultlast,$pageid=-1)
+function get_cili($title,$aka,$type,$updatetime,$pageid=-1)
 { 
 	echo " \n begin to get from cili.so:\n";	
-	$name = rawurlencode($resultlast->title);
+	$name = rawurlencode($title);
 	
 	$buffer = get_file_curl('http://www.cili.so/search.php?act=result&keyword='.$name);
 	//echo $buffer;
@@ -34,7 +28,7 @@ function get_cili(&$resultlast,$pageid=-1)
 		$buffer = get_file_curl('http://www.cili.so/search.php?act=result&keyword='.$name);	
 		if(false==$buffer)
 		{
-			echo $resultlast->title."搜索失败 </br>\n";
+			echo $title."搜索失败 </br>\n";
 			return;
 		}
 	}
@@ -76,7 +70,7 @@ function get_cili(&$resultlast,$pageid=-1)
 		if(strstr($match0[1][$key],"MV"))
 			continue;
 		if($thistype!=0)
-			if($resultlast->type!=0 && $thistype!=$resultlast->type)
+			if($type!=0 && $thistype!=$type)
 				continue;		
 
 		$url=$match2[1][$key];
@@ -85,8 +79,7 @@ function get_cili(&$resultlast,$pageid=-1)
 		$title =preg_replace('/<span class="keyword">(.*?)<\/span>/s','{$1}',$match1[1][$key]);
 		$url='magnet:?xt=urn:btih:'.$match2[2][$key];
 		
-		insertsiteslink($updatetime,$resultlast->mediaid,'cili.so',$title,$url,5,3,4,0,4,1,$pageid);
-		//echo $url."--> cili.so -->".$title." ".$url."\n";
+		addorupdatelink($pageid,'cili.so',$title,$url,'',4,7,7,0,$updatetime,1);
 	}
 }
 ?>  

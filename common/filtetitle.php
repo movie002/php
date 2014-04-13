@@ -29,9 +29,9 @@ function gettitle($title)
 	//print_r($match);
 	if(!empty($match[1]))//如果有《》，不处理
 	{
-		//return $match[1];
-		insertarray($duanarray,$match[1]);
-		return judgetitle($duanarray);
+		return $match[1];
+		//insertarray($duanarray,$match[1]);
+		//return judgetitle($duanarray);
 	}
 	preg_match('/＜(.*?)＞/',$title,$match);
 	//print_r($match);
@@ -48,8 +48,7 @@ function gettitle($title)
 		//return $match[1];
 		insertarray($duanarray,$match[1]);
 		return judgetitle($duanarray);
-	}
-		
+	}		
 	
 	//如果有[]or【】就按照剔除方式处理
 	//分段 xxx[yyy]zzz【ddd】bbb  一共五段
@@ -117,7 +116,7 @@ function insertarray(&$duanarray,$title)
 			$innertitleneed = getfirsttitle($eachtitle);
 			//echo $innertitleneed;
 			$innertitleneed = preg_replace('/[a-zA-Z0-9\s\.\/\']+/','_',$innertitleneed);
-			echo ' >> '.$innertitleneed;
+			//echo ' >> '.$innertitleneed;
 			
 			//利用特殊符号分隔
 			$innertitleneed = preg_replace('/★|◆|×|●/us','_',$innertitleneed);

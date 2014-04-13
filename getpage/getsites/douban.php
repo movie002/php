@@ -16,13 +16,12 @@
 //print_r($douban_result);
 
 //处理电影名  
-function get_douban($input,&$resultlast)  
+function get_douban($title,$country,$year,$type,&$resultlast)  
 { 
 	//设置默认值
-	echo "title country type year </br>\n";
-	echo $input->title.' '.$input->country.' '.$input->type.' '.$input->year."</br>\n";
-	$titles=processtitle($input->title);
-	print_r($titles);
+	echo $title.' '.$country.' '.$type.' '.$year."</br>\n";
+	$titles=processtitle($title);
+	//print_r($titles);
 	$titlesearch = array();
 	array_push($titlesearch,$titles[0]);
 	if(count($titles)>1)
@@ -68,13 +67,13 @@ function get_douban($input,&$resultlast)
 			else
 				$akaall=$result->title.'/'.$result->aka;
 								
-			if(!c_movietype($input->type,$result->type))
+			if(!c_movietype($type,$result->type))
 				continue;
-			if(!c_moviecountry($input->country,$result->country))
+			if(!c_moviecountry($country,$result->country))
 				continue;
-			if(!c_movieyear($input->year,$result->pubdate,2,$akaall))
+			if(!c_movieyear($year,$result->pubdate,2,$akaall))
 				continue;
-			$rate = c_title($input->title,$akaall);
+			$rate = c_title($title,$akaall);
 				echo ' rate: '.$rate;
 			if($rate>=2)
 			{
@@ -220,7 +219,7 @@ function getdetail(&$result)
 	$match = array();
 	preg_match('/<a href="(.*?)">预告片([0-9]+)<\/a>/',$buffer_2,$match);
 	//echo $buffer_2;
-	print_r($match);
+	//print_r($match);
 	//$datenow=date("Y-m-d H:i:s");
 	if(!empty($match[1]))
 	{
@@ -229,7 +228,7 @@ function getdetail(&$result)
 		//$title = $result->title.' 预告片('.$match[2].')';
 		//$sql="insert into link(mediaid,author,title,link,quality,way,type,updatetime) values ('$result->mediaid','豆瓣预告','$title','$match[1]',2,3,7,'$datenow') ON DUPLICATE KEY UPDATE title='$title' , updatetime='$datenow'";
 		//$sqlresult=dh_mysql_query($sql);
-		
+		//addorupdatelink($pageid,$author,$title,$link,$cat,$linkquality,$linkway,$linktype,$linkdownway,$updatetime,1);	
 	}
 	//全篇播放
 	$match = array();
@@ -329,7 +328,7 @@ function getdetail(&$result)
 				$eachmatchs .= '['.$match2[2][$key].'|'.$eachmatch.']';
 			}
 			$result->meta .='<d>'.$eachmatchs.'</d>';
-			//insertcelebrity($eachmatchs);
+			insertcelebrity($eachmatchs);
 		}		
 	}
 	
@@ -350,7 +349,8 @@ function getdetail(&$result)
 				
 			}
 			$result->meta .='<c>'.$eachmatchs.'</c>';
-			//insertcelebrity($eachmatchs);
+			//插入到cele表中
+			insertcelebrity($eachmatchs);
 		}		
 	}	
 	

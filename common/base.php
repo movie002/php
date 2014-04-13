@@ -16,57 +16,6 @@ function cut_word( &$name, $word)
 	return FALSE;  
 }  
 
-function insertcelebrity($celebritys)
-{
-	preg_match_all('/\[(.*?)\]/s',$celebritys,$match);
-//	print_r($match);
-	if(!empty($match[1]))
-	{
-		foreach ($match[1] as $celebrity)
-		{
-			list($name, $id) = split('[|]', $celebrity);
-			$name=trim($name);
-			$id=trim($id);
-			$name = str_replace("'","\'",$name);
-			$sql="insert into celebrity(id,name) values('$id','$name') ON DUPLICATE KEY UPDATE name = '$name',fail=0";
-			$sqlresult=dh_mysql_query($sql);
-		}
-	}	
-}
-
-function setupdatetime($change,$newdate,$authorid)
-{
-	if($change)
-	{
-		$sql="update author set updatetime='$newdate' where id = $authorid;";
-		echo $sql."</br>\n";
-		$result=dh_mysql_query($sql);		
-	}
-}
-
-function setupdatetime2($change,$newdate,$authorname)
-{
-	if($change)
-	{
-		$sql="update author set updatetime='$newdate' where name = '$authorname';";
-		echo $sql."</br>\n";
-		$result=dh_mysql_query($sql);		
-	}
-}
-
-function dh_mysql_query($sql)
-{
-	$rs = mysql_query($sql);
-	$mysql_error = mysql_error();
-	if($mysql_error)
-	{
-		echo 'dh_mysql_query error info:'.$mysql_error.'</br>';
-		echo $sql;
-		return null;
-	}
-	return $rs;
-}
-
 function output_page_path($basepath,$id) 
 {	
 	global $DH_page_store_deep,$DH_page_store_count;
@@ -214,5 +163,131 @@ function ftrim2($str)
     $str = str_replace('　', ' ', $str); //将全角空格转换为半角空格
     $str = preg_replace('/^\s*|\s*$/is', '', $str); //将开头或结尾的一个或多个半角空格转换为空  
     return $str;
+}
+
+function testneed($need,$link,$title,$cat)
+{
+	$ret = 0;
+	if($need==''||$need==null)
+		return $ret;
+	preg_match_all('/<c>(.*?)<\/c>/',$need,$match);
+	//print_r($match);
+	if(!empty($match[1]))
+	{
+		foreach ($match[1] as $contain)
+		{
+			list($case,$pat,$ret) = split('[%]', $contain);
+			//echo $case.' ' .$pat.' '.$ret ." </br> \n";
+			$match1 = array();
+			switch ($case)
+			{
+				case 'c':
+				{
+					//echo 'c';
+					preg_match('/'.$pat.'/i',$cat,$match1);
+					break;
+				}
+				case 't':
+				{
+					//echo 't';
+					preg_match('/'.$pat.'/i',$title,$match1);
+					break;
+				}
+				case 'l':
+				{
+					//echo 'l';
+					preg_match('/'.$pat.'/i',$link,$match1);
+					break;
+				}			
+				default:
+				{
+					echo 'error in testneed to get ?? method';
+					return -1;
+				}
+			}
+			//print_r($match1);
+			if(!empty($match1))
+			{
+				return $ret;
+			}
+		}
+	}
+	return $ret;
+}
+
+//提取标题
+function testtitle($ctitle,$title)
+{
+	$result = '';
+	$ltitle = $title;
+	if($ctitle==''||$ctitle==null)
+		return $title;
+	preg_match_all('/<c>(.*?)<\/c>/',$ctitle,$match);
+	//print_r($match);	
+	if(!empty($match[1]))
+	{
+		foreach ($match[1] as $pattern)
+		{
+			//list($case,$pat) = split('[%]',$pattern);
+			list($case,$pat,$ret) = split('[%]',$pattern);
+			//echo $case.' ' .$pat ." </br> \n";
+			switch ($case)
+			{
+				case 'g':
+				{
+					//echo 'g';
+					preg_match('/'.$pat.'/',$ltitle,$match1);
+					//print_r($match1);
+					if(!empty($match1[1]))
+					{
+						$result .= $match1[1].'/';
+						//$ltitle = preg_replace('/'.$pat.'/','',$ltitle);
+						//echo '***'.$ltitle.'***';
+					}
+					else
+					{
+						if($ret==0)
+						{
+							echo " error in testtitle !</br>\n";
+							return -1;
+						}
+						//return -1;
+					}
+					break;
+				}
+				case 'f':
+				{
+					//echo 'f';
+					$ltitle = preg_replace('/'.$pat.'/i','',$ltitle);				
+					break;
+				}
+				case 'x':
+				{
+					return filter_ed2000($title);
+				}					
+				default:
+				{
+					echo 'error in testtitle';
+					return -1;
+				}
+			}	
+		}
+		if($result=='')
+		{
+			//分割
+			//$titles=preg_split("/[\/]+/s", $ltitle);	
+			//print_r($titles);
+			//return $titles[0];
+			return $ltitle;
+		}
+		else
+		{
+			//$results=preg_split("/[\/]+/", $result);
+			//print_r($results);
+			//return $results[0];
+			return substr($result,0,strlen($result)-1);
+		}
+	}
+	return -2;
 }
 ?>
