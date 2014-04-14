@@ -11,7 +11,7 @@
 //	preg_match_all('/.*?/','',$match); 
 //	print_r($match);
 
-function filter_ed2000($title)
+function x11($title)
 {
 	//第一步: 大致的提取标题，利用分割符号对标题处理
 	$subtitle = gettitle($title);

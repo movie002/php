@@ -11,7 +11,7 @@ function trimtitle($ctitle)
 	//print_r($match);
 	
 	$ctitle = preg_replace('/(上集|下集|续集)$/','',$ctitle);	
-	$ctitle = preg_replace('/第[零一二三四五六七八九十]+(季|部|集|话|回)$/s','',$ctitle);
+	$ctitle = preg_replace('/(第|全)[零一二三四五六七八九十]+(季|部|集|话|回)$/s','',$ctitle);
 	$ctitle = preg_replace('/[零一二三四五六七八九十]+(季|部|集|话)$/s','',$ctitle);
 	$ctitle = preg_replace('/第[0-9]+(季|部|集|话)$/s','',$ctitle);
 	$ctitle = preg_replace('/[0-9]+(季|部|集|话)$/s','',$ctitle);
@@ -42,36 +42,9 @@ function trimtitle($ctitle)
 	return $ctitle;
 }
 
-//function filtertitle($ctitle)
-//{
-//	//再进行仔细判断，仔细判断标题的一致性
-//	//去除 第几季，第几部，但是在后面比较的时候，需要从新加回来	
-//	$ctitle = preg_replace('/第([^<>]){1,4}(季|部)/s','',$ctitle);
-//	$ctitle = preg_replace('/Season [0-9]{1,4}/i','',$ctitle);
-//	//去除(港) (台) 等
-//	$ctitle = preg_replace('/(\(.*?\))/i','',$ctitle);
-//	//去除（.*?\） 等
-//	$ctitle = preg_replace('/(（.*?）)/','',$ctitle);	
-//	//去除电影版，剧场版
-//	$ctitle = preg_replace('/(电影版|剧场版)/i','',$ctitle);
-//	$ctitle = preg_replace('/完结/i','',$ctitle);
-//	//$ctitle = preg_replace('/,|!|，|。|！|·|./','',$ctitle);
-//	$ctitle = preg_replace('/(\,|\!|，|。|！|\·|\.|\?)/','',$ctitle);	
-//	//去除 ,
-//	//$ctitle = preg_replace('/,|·/i','',$ctitle);
-//	//去除 上集 下集
-//	$ctitle = preg_replace('/(上集|下集)/','',$ctitle);
-//	//去除1
-//	//$ctitle = preg_replace('/1|一/i','',$ctitle);
-//	//去除年份
-//	$ctitle1 = preg_replace('/(19|20|18)[0-9]{2,2}/','',$ctitle);
-//	if(trim($ctitle1)!='')
-//		$ctitle = $ctitle1;
-//	return $ctitle;
-//}
-
 function filtertitle($ctitle)
 {
+	echo $ctitle.'-->';
 	$del_word=array('预告片','先行','剧场版','电影版','完整版','完结','收藏版','动画版','未删减','标准','&amp;','&','!','！','·',',','，',':','：','+');
 	$qulity=array('高清','蓝光','720p','1080p','DVD','1280','1024','mkv','MKV','枪版','抢先','TS','BD','HD','RMVB','AVI','avi','迅雷','下载','BT','MP4','mp4');
 	foreach ($del_word as $eachlist)
@@ -83,6 +56,16 @@ function filtertitle($ctitle)
 	$ctitle = str_replace('Ⅱ','2',$ctitle);
 	$ctitle = str_replace('II','2',$ctitle);	
 	$ctitle = str_replace('—','-',$ctitle);	
+	
+	//标题的提取技巧，提取(之前的作为标题
+	preg_match('/^(.*?)[\(|\（]/us',$title,$match);
+	//print_r($match);
+	if(!empty($match[1]))
+	{
+		$title = $match[1];
+	}
+	
+	echo $ctitle.'!';
 	return $ctitle;
 }
 
@@ -236,14 +219,8 @@ function c_title($title,$aka)
 {
 	//消除空格和.以防止对比出错
 
-	$title=str_replace(' ',"",$title);
-	$title=str_replace('.',"",$title);
-	$title=str_replace('·',"",$title);
-	
-	
-	$aka=str_replace(' ',"",$aka);
-	$aka=str_replace('.',"",$aka);
-	$aka=str_replace('·',"",$aka);
+	$title = preg_replace('/[\s|.|,|，|·]/','',$title);
+	$aka = preg_replace('/[\s|.|,|，|·]/','',$aka);
 	
 	$rate=0;
 	$titles=processtitle($title);

@@ -1,7 +1,7 @@
 <?php
 require("../config.php");
 require("../common/curl.php");
-require("../common/common.php");
+require("../common/base.php");
 require("../common/dbaction.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
@@ -56,12 +56,12 @@ function all()
 				}
 			}
 			//readrssfile($buff,$rssinfo,$authorid,$lastupdate);
-			pregrssfile($buff,$rssinfo,$authorid,$lastupdate);
+			pregrssfile($buff,$rssinfo,$row['url'],$lastupdate);
         }
 	}
 }
 
-function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
+function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 {
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	$buff =iconvbuff($buff);
@@ -119,6 +119,9 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 			return;		
 		}
 		$rssinfo->link = getrealname($match2[1]);
+		//对个别网站link不写网站域名的修正
+		if(strstr($rssinfo->link,'http')===false)
+			$rssinfo->link=$url.$rssinfo->link;
 		
 		preg_match_all('/<category>(.*?)<\/category>/is',$matcheach,$match2);
 		//print_r($match2);
@@ -149,7 +152,7 @@ function pregrssfile($buff,$rssinfo,$authorid,$lastupdate)
 		insertonlylink($rssinfo);
 	}
 
-	setupdatetime($change,$newdate,$authorid);
+	setupdatetime2($change,$newdate,$rssinfo->author);
 }
 
 function readrssfile($buff,$rssinfo,$authorid,$lastupdate)

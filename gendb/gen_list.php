@@ -13,6 +13,7 @@ set_time_limit(120);
 require("../config.php");
 require("../common/common_gen.php");
 require("../common/base.php");
+require("../common/dbaction.php");
 require("../common/share.php");
 require("../common/page_navi.php");
 require("../common/compressJS.class.php");
@@ -162,14 +163,14 @@ function dh_gen_list()
 			
 		$path = $keytype.'_yp/';		
 		$cat =$movietypeeach. '[最新影评]';			
-		$sqlc="select count(*) from link2 l,page p where l.pageid=p.id and p.cattype = $keytype and l.linktype=2 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime)";
-		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,8 as linkway,p.hot,p.catcountry,p.cattype from link2 l,page p where l.pageid=p.id and p.cattype = $keytype and l.linktype=2 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime) order by l.updatetime desc";
+		$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and l.linkway=2 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime)";
+		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and l.linkway=2 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime) order by l.updatetime desc";
 		dh_gen_each_file_onlylink($sqlc,$sql,$DH_output_content,$path,$cat,'','nolink');
 		
 		$path = $keytype.'_zx/';		
 		$cat =$movietypeeach. '[最新资讯]';		
-		$sqlc="select count(*) from link2 l,page p where l.pageid=p.id and p.cattype = $keytype and l.linktype=1 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime)";
-		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,7 as linkway,p.hot,p.catcountry,p.cattype from link2 l,page p where l.pageid=p.id and p.cattype = $keytype and l.linktype=1 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime) order by l.updatetime desc";
+		$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and l.linkway=1 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime)";
+		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,7 as linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and l.linktype=1 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime) order by l.updatetime desc";
 		dh_gen_each_file_onlylink($sqlc,$sql,$DH_output_content,$path,$cat,'','nolink');		
 	}	
 

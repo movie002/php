@@ -116,12 +116,10 @@ function dh_gen_each_page_file($table,$path,$DH_output_content)
 			$cathref = $DH_index_url.$row['cattype'].'_'.$row['catcountry'].'_l/1.html';
 			$DH_output_content_page = str_replace("%cathref%",$cathref,$DH_output_content_page);
 						
-			$sqllinks = "select pageid,author,title,link,linkquality,linkway,linktype,linkonlinetype,linkdowntype,linkproperty,updatetime from link t where t.pageid = '".$row['id']."' order by linkquality desc,updatetime desc";
+			$sqllinks = "select pageid,author,title,link,linkquality,linkway,linktype,linkdownway,updatetime from link t where t.pageid = '".$row['id']."' order by linkquality desc,updatetime desc";
 			//echo $sqllinks;
 			$DH_output_content_page = dh_replace_link($sqllinks,$row,$DH_output_content_page);
 			
-			$sqllinks = "select pageid,author,title,link,linktype,updatetime from link t where t.pageid = '".$row['id']."' order by updatetime desc";		
-			$DH_output_content_page = dh_replace_link2($sqllinks,$row,$DH_output_content_page);
 			$summary=$row['summary'];
 			$DH_output_content_page = str_replace("%summary%",$summary,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%home%",$DH_home_url,$DH_output_content_page);

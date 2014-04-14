@@ -29,7 +29,7 @@ function get_file_curl($url)
 	//超时时间为10秒钟
 	$timeout = 30;
 	
-//	curl_setopt($ch, CURLOPT_PROXY,"http://172.28.89.1:8080");
+	curl_setopt($ch, CURLOPT_PROXY,"http://172.28.89.1:8080");
 	curl_setopt($ch, CURLOPT_URL, $url);
 //	curl_setopt($ch, CURLOPT_HEADER, 1);	
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
