@@ -58,7 +58,7 @@ function filtertitle($ctitle)
 	$ctitle = str_replace('—','-',$ctitle);	
 	
 	//标题的提取技巧，提取(之前的作为标题
-	preg_match('/^(.*?)[\(|\（]/us',$title,$match);
+	//preg_match('/^(.*?)[\(|\（]/us',$title,$match);
 	//print_r($match);
 	if(!empty($match[1]))
 	{

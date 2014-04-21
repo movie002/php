@@ -35,7 +35,7 @@ function getonlylink()
 	while($row = mysql_fetch_array($results))
 	{
 		//print_r($row);
-		echo $i.":";
+		echo "\n".$i.":";
 		$i++;
 		//对linktype不符合的选项，不予处理
 		$author=$row['author'];
@@ -51,7 +51,7 @@ function getonlylink()
 			echo "linkway=$linkway % title=$title link=$link cat=$cat -> linkway error 失败，请查明原因！</br> \n";
 			continue;
 		}		
-
+		echo $row['title'];
 		$mtitle=testtitle($row['ctitle'],$row['title']);
 		//$mtitle=trimtitle($mtitle);
 		if($mtitle<0||$mtitle==='')
@@ -72,7 +72,7 @@ function getonlylink()
 		if(!empty($match[1]))
 			$movieyear=$match[1];
 
-		addorupdateonlylink($author,$title,$link,$cat,$updatetime,$linkquality,$linkway,$linktype,$linkdownway,$mtitle,$moviecountry,$movieyear,$movietype);
+		//addorupdateonlylink($author,$title,$link,$cat,$updatetime,$linkquality,$linkway,$linktype,$linkdownway,$mtitle,$moviecountry,$movieyear,$movietype);
 	}
 }
 

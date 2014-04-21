@@ -80,13 +80,13 @@ function getpage()
 				
 				if($douban_result->doubantrail!='')
 				{
-					addorupdatelink($pageid,'豆瓣预告',$douban_result->doubantrail,$$douban_result->doubantrailurl,'',0,3,7,0,$row['updatetime'],1);
+					addorupdatelink($pageid,'豆瓣预告',$douban_result->doubantrail,$douban_result->doubantrailurl,'',0,3,7,0,$row['updatetime'],1);
 					$sql = "update link set pageid = (select id from page where mediaid='$mediaid') where link = '$douban_result->doubantrailurl'" ;
 					$sqlresult=dh_mysql_query($sql);
 				}
 				if($douban_result->doubansp!='')
 				{
-					addorupdatelink($pageid,'豆瓣播放',$douban_result->doubansp,$$douban_result->doubanspurl,'',0,7,7,0,$row['updatetime'],1);
+					addorupdatelink($pageid,'豆瓣播放',$douban_result->doubansp,$douban_result->doubanspurl,'',0,7,7,0,$row['updatetime'],1);
 					$sql = "update link set pageid = (select id from page where mediaid='$mediaid') where link = '$douban_result->doubanspurl'" ;
 					$sqlresult=dh_mysql_query($sql);
 				}
