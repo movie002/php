@@ -1,11 +1,11 @@
 <?php  
 
 //子集应该在父类之后
-$country=array('中国','中國','大陆',"香港","台湾","澳门","国产",'港台','日剧',"日本",'日韩',"韩剧","韩国",'欧美','美国','美國',"德国","法国",'法國',"美剧","朝鲜","澳大利亚","意大利","西班牙","越南","泰国","柬埔寨","印度","巴基斯坦","英国","阿根廷","加拿大","俄罗斯",'俄羅斯','苏联','蘇聯',"中日","中俄",'中美','匈牙利','捷克','瑞典','南斯拉夫','西德','东德','美法',"国语","中字","中英双字","中英字",'簡繁','简繁','繁體','繁体','简体','外挂','外掛','中文','英语','粵語','粤语','无字','無字','内嵌','马来西亚','内地','泰语','字','语','中','美','日','韩','国','英','台','港','粤');
-$qulity=array('高清','蓝光','720p','1080p','1080i','DVD','1280','1024','mkv','MKV','枪版','抢先','TS','BD','bd','HD','RMVB','AVI','avi','迅雷','下载','BT','MP4','快传','百度网盘','电驴','网盘','立体','原盘','HDTV','TV','3D','WMV','mp3','mv','分辨率');
+$country=array('中国','中國','大陆',"香港","台湾","澳门","国产",'港台','日剧',"日本",'日韩',"韩剧","韩国",'欧美','美国','美國',"德国","法国",'法國',"美剧","朝鲜","澳大利亚","意大利","西班牙","越南","泰国","柬埔寨","印度",'印语',"巴基斯坦","英国","阿根廷","加拿大","俄罗斯",'俄羅斯','苏联','蘇聯',"中日","中俄",'中美','匈牙利','捷克','瑞典','南斯拉夫','西德','东德','美法',"国语","中字","中英双字","中英字",'簡繁','简繁','繁體','繁体','简体','外挂','外掛','中文','英语','粵語','粤语','无字','無字','内嵌','马来西亚','内地','泰语','字','语','中','美','日','韩','国','英','台','港','粤');
+$qulity=array('高清','蓝光','720p','1080p','1080i','DVD','1280','1024','mkv','MKV','枪版','抢先','TS','BD','bd','HD','RMVB','AVI','avi','迅雷','下载','BT','MP4','快传','百度网盘','电驴','网盘','立体','原盘','HDTV','TV','3D','WMV','mp3','mv','百度云');
 $type=array("记录",'紀錄','纪录',"动作",'動作',"情色","爱情","动作惊悚","历史","恐怖","励志","首发","青春","偶像","魔幻","惊悚","喜剧","悬疑","奇幻","科幻","剧情","冒险","经典","推理",'凶杀','史诗','综艺','其他','其它','犯罪','传记','影视','战争','动画','歌舞','体育','重口味','R级');
-$other=array('应求',"观看","首映","首款","首发","网络","独播","暑期必看","配音","最新","高分","热门",'未分级版',"版本","版","精彩","先行","制作","官方","字幕","漢化","汉化","月番","月新番","新番","动漫","电影","电视",'電視',"未删减版","主要","演员","主演","主打","大片",'系列','合集',"片",'剧集','剧','年','贴','连载','更新中','更新','重现','注意','原创','求片','左右','半宽','上下','再造','TOP','BTV','TSKS','KS','TVB','SUBPIG','OST','TSJS','票房','最强');
-$del_word=array("限制级","限制","R级","三级","四级","禁片","出品",'回馈','重发','+','集');
+$other=array('应求',"观看","首映","首款","首发","网络","独播","暑期必看","配音","最新","高分","热门",'未分级版',"版本","版","精彩","先行","制作","官方","字幕","漢化","汉化","月番","月新番","新番","动漫","电影","电视",'電視',"未删减版","主要","演员","主演","主打","大片",'系列','合集',"片",'剧集','剧','年','贴','连载','更新中','更新','重现','注意','原创','求片','左右','半宽','上下','再造','TOP','BTV','TSKS','KS','TVB','SUBPIG','OST','TSJS','BBC','票房','最强','分辨率','每集','集');
+$del_word=array("限制级","限制","R级","三级","四级","禁片","出品",'回馈','重发','+');
 //$smbol=array('★','◆','×','●');
 $mustnot=array('字幕','制作');
 
@@ -24,93 +24,32 @@ $season2=array('01'=>'第1季','02'=>'第2季','03'=>'第3季','04'=>'第4季','
 
 function x11($title)
 {
-	//第一步: 大致的提取标题，利用分割符号对标题处理
-	$subtitle = gettitle($title);
-	if($subtitle===false)
-		 return -1;
-	echo $subtitle."\n";
-	return $subtitle;
-}
-	
-//利用《》「」 [] 【】等括号提取标题
-function gettitle($title)
-{
-	$duanarray = array();
-	//如果是《》<> 就一定是title
+	if($title=='')
+		return -1;
+		
+	//第一步: 大致的提取标题，利用分割符号对标题处理		
 	preg_match('/《(.*?)》/',$title,$match);
 	//print_r($match);
 	if(!empty($match[1]))//如果有《》，不处理
 	{
 		return $match[1];
-	}	
-	
-	//如果有[]or【】就按照剔除方式处理
-	//分段 xxx[yyy]zzz【ddd】bbb  一共五段
-	while($title!='')
-	{
-		//echo $title. "\n";
-		//如果没有【[，说明无法分拆，退出
-		preg_match('/(【|\[|「)/',$title,$match);
-		//print_r($match);
-		if(empty($match[0]))
-		{
-			insertarray($duanarray,$title);
-			break;
-		}		
-		//echo $title;
-		preg_match('/^(.*?)(\[|【|「)/',$title,$match);
-		//print_r($match);
-		if(!empty($match[1]))
-		{
-			insertarray($duanarray,$match[1]);
-			$title = str_replace($match[1],'',$title);
-		}
-		
-		//echo $title;
-		preg_match('/^\[(.*?)\]/',$title,$match);
-		//print_r($match);
-		if(!empty($match[1]))
-		{	
-			//既然用括号了，说明是一个整体，不能拆
-			insertarray($duanarray,$match[1]);
-			//array_push($duanarray,getfirsttitle($match[1]));
-			$title = str_replace($match[0],'',$title);
-		}
-		else
-		{		
-			//echo $title;
-			preg_match('/^【(.*?)】/',$title,$match);
-			//print_r($match);
-			if(!empty($match[1]))
-			{
-				insertarray($duanarray,$match[1]);
-				//array_push($duanarray,getfirsttitle($match[1]));
-				$title = str_replace($match[0],'',$title);
-			}
-			else
-			{
-				preg_match('/^「(.*?)」/',$title,$match);
-				//print_r($match);
-				if(!empty($match[1]))
-				{
-					insertarray($duanarray,$match[1]);
-					//array_push($duanarray,getfirsttitle($match[1]));
-					$title = str_replace($match[0],'',$title);
-				}
-				else
-					//有问题了 有【[没有尾部
-					$title = preg_replace('/^(【|\[|「)/','',$title);
-			}
-		}
-		$title=trim($title);
 	}
+	
+	//「」 [] 【】等括号提取标题
+	$title = preg_replace('/(【|】|\[|\]|「|」|《|》)/','/',$title);
+	$duanarray = array();
+	insertarray($duanarray,$title);	
 	print_r($duanarray);
-	return judgetitle($duanarray);
+	$subtitle = judgetitle($duanarray);
+	if($subtitle===false)
+		 return -1;
+	//echo $subtitle."\n";
+	return $subtitle;
 }
 
 function insertarray(&$duanarray,$title)
 {
-	//echo "\n".$title;
+//	echo "\n".$title;
 	if(trim($title)=='')
 		return;
 		
@@ -131,11 +70,11 @@ function insertarray(&$duanarray,$title)
 		
 	//先判断是否是全部英文
 	preg_match('/^[a-zA-Z0-9\s\.\_\-\'\(\)]+$/',$title,$match);
+//	print_r($match);
 	if(!empty($match[0]))
-	{
-		
+	{		
 		$firsttitle = getfirsttitle($match[0]);
-		$firsttitle=str_replace('.',' ',$firsttitle);
+		$firsttitle = str_replace('.',' ',$firsttitle);
 		if(trim($firsttitle)!='')
 			array_push($duanarray,trim($firsttitle));	
 		return;
@@ -144,7 +83,7 @@ function insertarray(&$duanarray,$title)
 	preg_match('/[a-zA-Z]/si',$title,$match);
 	if(empty($match[0]))
 	{
-		$titles=preg_split("/(\s)/", $title);
+		$titles=preg_split("/(\s|\.)/", $title);
 		foreach($titles as $eachtitle)
 		{
 			if(trim($eachtitle)!='')
@@ -157,16 +96,43 @@ function insertarray(&$duanarray,$title)
 		}
 		return;
 	}
-	return;
+	echo "\ncande:".$title."\n";
+//	return;
 	//这个是中英文夹杂的情况，比较难办，中英文分开
-	preg_match_all('/([a-zA-Z0-9\s\.\_\-\'\(\)]+)/',$title,$matchs);
-	if(!empty($matchs[0]))
-		foreach($matchs[1] as $eachtitle)
-			insertarray($duanarray,trim($eachtitle));
-	preg_match_all('/([^a-zA-Z]+)/',$title,$matchs);	
-	if(!empty($matchs[0]))
-		foreach($matchs[1] as $eachtitle)
-			insertarray($duanarray,trim($eachtitle));
+//	preg_match_all('/([a-zA-Z0-9\s\.\_\-\'\(\)]+)/',$title,$matchs);
+//	if(!empty($matchs[0]))
+//		foreach($matchs[1] as $eachtitle)
+//			insertarray($duanarray,trim($eachtitle));
+//	preg_match_all('/([^a-zA-Z]+)/',$title,$matchs);	
+//	if(!empty($matchs[0]))
+//		foreach($matchs[1] as $eachtitle)
+//			insertarray($duanarray,trim($eachtitle));
+
+	//字母处理 将 e R 处理成 e.R b 便于分开处理
+	$title = preg_replace('/([a-zA-Z])\s([a-zA-Z])/','$1.$2',$title);
+	//echo "--> ".$title;	
+	//$title= getfirsttitle($title);
+	$titles=preg_split("/(\s)/", $title);
+	//print_r($titles);
+	if(count($titles)<=1)
+	{
+		$titles=preg_split("/(\.)/", $title);
+		if(count($titles)<=1)
+		{
+			array_push($duanarray,trim($title));
+			return;
+		}
+	}
+	foreach($titles as $eachtitle)
+	{
+		if(trim($eachtitle)!='')
+		{
+			//在插入之前挑选一下
+			$firsttitle= getfirsttitle($eachtitle);
+			if(trim($firsttitle)!='')
+				insertarray($duanarray,trim($firsttitle));
+		}
+	}
 }
 
 //对每个标题，判断是否是关键词段，根据情况决定是否采用
