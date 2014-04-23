@@ -1,13 +1,15 @@
 <?php  
 
 //子集应该在父类之后
-$country=array('中国','中國','大陆',"香港","台湾","澳门","国产",'港台','日剧',"日本",'日韩',"韩剧","韩国",'欧美','美国','美國',"德国","法国",'法國',"美剧","朝鲜","澳大利亚","意大利","西班牙","越南","泰国","柬埔寨","印度",'印语',"巴基斯坦","英国","阿根廷","加拿大","俄罗斯",'俄羅斯','苏联','蘇聯',"中日","中俄",'中美','匈牙利','捷克','瑞典','南斯拉夫','西德','东德','美法',"国语","中字","中英双字","中英字",'簡繁','简繁','繁體','繁体','简体','外挂','外掛','中文','英语','粵語','粤语','无字','無字','内嵌','马来西亚','内地','泰语','字','语','中','美','日','韩','国','英','台','港','粤');
-$qulity=array('高清','蓝光','720p','1080p','1080i','DVD','1280','1024','mkv','MKV','枪版','抢先','TS','BD','bd','HD','RMVB','AVI','avi','迅雷','下载','BT','MP4','快传','百度网盘','电驴','网盘','立体','原盘','HDTV','TV','3D','WMV','mp3','mv','百度云');
-$type=array("记录",'紀錄','纪录',"动作",'動作',"情色","爱情","动作惊悚","历史","恐怖","励志","首发","青春","偶像","魔幻","惊悚","喜剧","悬疑","奇幻","科幻","剧情","冒险","经典","推理",'凶杀','史诗','综艺','其他','其它','犯罪','传记','影视','战争','动画','歌舞','体育','重口味','R级');
-$other=array('应求',"观看","首映","首款","首发","网络","独播","暑期必看","配音","最新","高分","热门",'未分级版',"版本","版","精彩","先行","制作","官方","字幕","漢化","汉化","月番","月新番","新番","动漫","电影","电视",'電視',"未删减版","主要","演员","主演","主打","大片",'系列','合集',"片",'剧集','剧','年','贴','连载','更新中','更新','重现','注意','原创','求片','左右','半宽','上下','再造','TOP','BTV','TSKS','KS','TVB','SUBPIG','OST','TSJS','BBC','票房','最强','分辨率','每集','集');
+$country=array('中国','中國','大陆',"香港","台湾","澳门","国产",'港台','日剧',"日本",'日韩',"韩剧","韩国",'欧美','美国','美國',"德国","法国",'法國',"美剧","朝鲜","澳大利亚","意大利","西班牙","越南","泰国","柬埔寨","印度",'印语',"巴基斯坦","英国","阿根廷","加拿大","俄罗斯",'俄羅斯','苏联','蘇聯',"中日","中俄",'中美','匈牙利','捷克','瑞典','南斯拉夫','西德','东德','美法','字','语','中','美','日','韩','国','英','台','港','粤');
+$type=array("记录",'紀錄','纪录',"动作",'動作',"情色","爱情","动作惊悚","历史","恐怖","励志","首发","青春","偶像","魔幻","惊悚","喜剧","悬疑","奇幻","科幻","剧情","冒险","经典","推理",'凶杀','史诗','综艺','其他','其它','犯罪','传记','影视','战争','动画','歌舞','体育','重口味','R级',"月番","月新番","新番","动漫","电影","电视剧","电视",'電視');
+$other=array('应求',"观看","首映","首款","首发","网络","独播","暑期必看","配音","最新","高分","热门","版本","版","精彩","先行","制作","官方","字幕","漢化","汉化","主要","演员","主演","主打","大片",'系列','合集',"片",'剧集','剧','年','贴','连载','更新中','更新','重现','注意','原创','求片','左右','半宽','上下','再造','TOP','BTV','TSKS','KS','TVB','SUBPIG','OST','TSJS','BBC','票房','分辨率','每集','集');
 $del_word=array("限制级","限制","R级","三级","四级","禁片","出品",'回馈','重发','+');
 //$smbol=array('★','◆','×','●');
 $mustnot=array('字幕','制作');
+
+//下面两个用在后缀，可以提权之前的
+$qulity=array('高清','蓝光','720p','1080p','1080i','DVD','1280','1024','mkv','MKV','枪版','抢先','TS','BD','HD','RMVB','AVI','avi','迅雷','下载','BT','MP4','快传','百度网盘','电驴','网盘','立体','原盘','HDTV','TV','3D','WMV','mp3','mv','百度云','未分级版','最新','最强','真人版','电影版',"未删减版","全集","国语","中字","中英双字","中英字",'簡繁','简繁','繁體','繁体','简体','外挂','外掛','中文','英语','粵語','粤语','无字','無字','内嵌','马来西亚','内地','泰语');
 
 //第几季的对应关系
 //$season1=array('01'=>'第一季','02'=>'第二季','03'=>'第三季','04'=>'第四季','05'=>'第五季','06'=>'第六季','07'=>'第七季','08'=>'第八季','09'=>'第九季','10'=>'第十季','11'=>'第十一季','12'=>'第十二季');
@@ -43,7 +45,7 @@ function x11($title)
 	$subtitle = judgetitle($duanarray);
 	if($subtitle===false)
 		 return -1;
-	//echo $subtitle."\n";
+	echo "\nres:".$subtitle."\n";
 	return $subtitle;
 }
 
@@ -97,7 +99,7 @@ function insertarray(&$duanarray,$title)
 		}
 		return;
 	}
-	echo "\ncande:".$title."\n";
+//	echo "\ncande:".$title."\n";
 //	return;
 	//这个是中英文夹杂的情况，比较难办，中英文分开
 //	preg_match_all('/([a-zA-Z0-9\s\.\_\-\'\(\)]+)/',$title,$matchs);
@@ -117,22 +119,17 @@ function insertarray(&$duanarray,$title)
 	//print_r($titles);
 	if(count($titles)<=1)
 	{
-		$titles=preg_split("/(\.)/", $title);
-		if(count($titles)<=1)
-		{
-			array_push($duanarray,trim($title));
-			return;
-		}
+		$title = str_replace('_',' ',$title);
+		$title = str_replace('.',' ',$title);
+		$firsttitle= getfirsttitle($title);
+		if(trim($firsttitle)!='')
+			array_push($duanarray,trim($firsttitle));
+		return;
 	}
 	foreach($titles as $eachtitle)
 	{
 		if(trim($eachtitle)!='')
-		{
-			//在插入之前挑选一下
-			$firsttitle= getfirsttitle($eachtitle);
-			if(trim($firsttitle)!='')
-				insertarray($duanarray,trim($firsttitle));
-		}
+			insertarray($duanarray,trim($eachtitle));
 	}
 }
 
@@ -174,11 +171,6 @@ function judgetitle($titlearray)
 			$innertitleneed = str_ireplace($eachlist,"",$innertitleneed,$i);
 			$replacecount+=$i;
 		}
-		foreach ($qulity as $eachlist)
-		{
-			$innertitleneed = str_ireplace($eachlist,"",$innertitleneed,$i);
-			$replacecount+=$i;
-		}
 		foreach ($type as $eachlist)
 		{
 			$innertitleneed = str_ireplace($eachlist,"",$innertitleneed,$i);
@@ -216,6 +208,8 @@ function judgetitle($titlearray)
 			if($wordslast<2)
 				continue;
 		//如果没有这些词语，就说明是标题，并且不需要再找了
+		//标题处理，
+		
 		$titlenext++;
 		if($titlenext==1)
 			$titlereturn.=$innertitle;
@@ -232,11 +226,11 @@ function judgetitle($titlearray)
 function getfirsttitle($title)
 {
 	global $season2;
-	//echo $title;
+	echo $title;
 	$firsttitle=$title;
 	preg_match('/^(.*?)[\(|\（]/us',$firsttitle,$match1);
-	//print_r($match1);
-	if(!empty($match1[1]))
+	print_r($match1);
+	if(!empty($match1[0]))
 	{
 		$firsttitle=$match1[1];
 	}
@@ -267,6 +261,15 @@ function getfirsttitle($title)
 	{
 		//得到season信息
 		$firsttitle=$match1[1];
+	}
+	
+	global $qulity;
+	foreach ($qulity as $eachlist)
+	{
+		$preg1='/^(.*?)'.$eachlist.'/si';
+		preg_match($preg1,$firsttitle,$match1);
+		if(!empty($match1[0]))
+			$firsttitle=$match1[1];	
 	}
 	
 	return trim($firsttitle);
