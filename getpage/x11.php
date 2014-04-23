@@ -75,6 +75,7 @@ function insertarray(&$duanarray,$title)
 	{		
 		$firsttitle = getfirsttitle($match[0]);
 		$firsttitle = str_replace('.',' ',$firsttitle);
+		$firsttitle = str_replace('_',' ',$firsttitle);
 		if(trim($firsttitle)!='')
 			array_push($duanarray,trim($firsttitle));	
 		return;
@@ -109,10 +110,10 @@ function insertarray(&$duanarray,$title)
 //			insertarray($duanarray,trim($eachtitle));
 
 	//字母处理 将 e R 处理成 e.R b 便于分开处理
-	$title = preg_replace('/([a-zA-Z])\s([a-zA-Z])/','$1.$2',$title);
+	$title = preg_replace('/([a-zA-Z])[\s|\.]([a-zA-Z])/','$1_$2',$title);
 	//echo "--> ".$title;	
 	//$title= getfirsttitle($title);
-	$titles=preg_split("/(\s)/", $title);
+	$titles=preg_split("/(\s|\.)/", $title);
 	//print_r($titles);
 	if(count($titles)<=1)
 	{
@@ -226,7 +227,6 @@ function judgetitle($titlearray)
 	}
 	return $titlereturn;
 }
-
 
 //利用标点符号、第几季、特殊字体、中英文等提取标题
 function getfirsttitle($title)
