@@ -98,6 +98,7 @@ function dh_gen_top($DH_index_cat,$DH_index_cat_each)
 {
 	global $DH_home_url,$imgurlputl,$DH_index_url,$conn,$linktype,$DH_html_url,$DH_input_path;	
 	$DH_index_cat_ins = str_replace("%catname%",'',$DH_index_cat);
+	$DH_index_cat_ins = str_replace("%catnum%",'',$DH_index_cat_ins);
 	$DH_index_cat_eachs	='';
 		
 	$liouttitle ="\n<div class=\"TabTitle lt2v0\"> \n <ul id=\"myTaba\">";
@@ -179,34 +180,37 @@ function dh_gen_movie($DH_index_cat)
 				continue;
 		echo "</br>\n".$movietype_name.":";
 		$i=0;
-
 		
+		$sql="select count(*) from page where cattype=$movietype_index";
+		$results=dh_mysql_query($sql);
+		$count = mysql_fetch_array($results);	
+		$DH_index_cat_each = str_replace("%catnum%",'共'.$count[0].'部',$DH_index_cat);
 		if($movietype_index==1||$movietype_index==2)
 		{
 			//全部最新+精选最新
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat,$movietype_index)."\n</div>\n";
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
 			$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">最新资源</li>';
 			$i++;
 			//热门图片+热门列表
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat,$movietype_index)."\n</div>\n";
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat_each,$movietype_index)."\n</div>\n";
 			$liout .="\n".'<li class="active" onclick="nTabs(this,'.$i.');">热门资源</li>';	
 			$i++;
 			//高清图片+超清资源
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_high($DH_index_cat,$movietype_index)."\n</div>\n";;
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_high($DH_index_cat_each,$movietype_index)."\n</div>\n";;
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">超清资源</li>';
 			$i++;
 			//最新影评+最新新闻
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link2($DH_index_cat,$movietype_index)."\n</div>\n";;
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link2($DH_index_cat_each,$movietype_index)."\n</div>\n";;
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯影评</li>';
 		}
 		else
 		{
 			//全部最新+精选最新
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat,$movietype_index)."\n</div>\n";
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
 			$liout .='<li class="active" onclick="nTabs(this,'.$i.');">最新资源</li>';
 			$i++;
 			//热门图片+热门列表
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat,$movietype_index)."\n</div>\n";
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat_each,$movietype_index)."\n</div>\n";
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">热门资源</li>';
 		}
 				
