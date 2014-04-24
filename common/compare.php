@@ -219,8 +219,8 @@ function c_title($title,$aka)
 {
 	//消除空格和.以防止对比出错
 
-	$title = preg_replace('/[\s|.|,|，|·]/','',$title);
-	$aka = preg_replace('/[\s|.|,|，|·]/','',$aka);
+	$title = preg_replace('/[\s|.|,|，|·]/su','',$title);
+	$aka = preg_replace('/[\s|.|,|，|·]/su','',$aka);
 	
 	$rate=0;
 	$titles=processtitle($title);

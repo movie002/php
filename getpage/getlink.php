@@ -19,7 +19,8 @@ mysql_close($conn);
 function getlink()
 {
 	$datebegin = getupdatebegin(2);
-	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 100 and mtitle is not null";
+//	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 100 and mtitle is not null";
+	$sql="select * from onlylink where mtitle is not null";
 
 	if(isset($_REQUEST['pageid']))
 	{
@@ -48,8 +49,8 @@ function getlink()
 			dh_mysql_query($sqlupdate);
 			
 			//删除onlylink中的部分
-			$sql="delete from onlylink where link='".$row['link']."'";
-			$sqlresult=dh_mysql_query($sql);
+			//$sql="delete from onlylink where link='".$row['link']."'";
+			//$sqlresult=dh_mysql_query($sql);
 		}
 	}
 }

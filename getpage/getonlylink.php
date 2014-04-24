@@ -72,7 +72,7 @@ function getonlylink()
 		if(!empty($match[1]))
 			$movieyear=$match[1];
 
-		//addorupdateonlylink($author,$title,$link,$cat,$updatetime,$linkquality,$linkway,$linktype,$linkdownway,$mtitle,$moviecountry,$movieyear,$movietype);
+		addorupdateonlylink($author,$title,$link,$cat,$updatetime,$linkquality,$linkway,$linktype,$linkdownway,$mtitle,$moviecountry,$movieyear,$movietype);
 	}
 }
 
@@ -151,7 +151,9 @@ function testtitle($ctitle,$title)
 					//print_r($match1);
 					if(!empty($match1[1]))
 					{
-						$result .= $match1[1].'/';
+						$firsttitle = getfirsttitle($match1[1]);
+						if(trim($firsttitle)!='')
+							$result .= trim($firsttitle).'/';
 						//$ltitle = preg_replace('/'.$pat.'/','',$ltitle);
 						//echo '***'.$ltitle.'***';
 					}

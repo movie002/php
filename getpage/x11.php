@@ -39,10 +39,10 @@ function x11($title)
 	}
 	
 	//「」 [] 【】等括号提取标题
-	$title = preg_replace('/(【|】|\[|\]|「|」|《|》)/','/',$title);
-	$title = preg_replace('/(Ⅰ)/','1/',$title);
-	$title = preg_replace('/(Ⅱ)/','2/',$title);
-	$title = preg_replace('/(Ⅲ)/','3/',$title);
+	$title = preg_replace('/(【|】|\[|\]|「|」|《|》)/su','/',$title);
+	$title = preg_replace('/(Ⅰ)/su','1/',$title);
+	$title = preg_replace('/(Ⅱ)/su','2/',$title);
+	$title = preg_replace('/(Ⅲ)/su','3/',$title);
 	$duanarray = array();
 	insertarray($duanarray,$title);	
 	//print_r($duanarray);
@@ -198,8 +198,8 @@ function judgetitle($titlearray)
 		
 		//全部是数字和字母的组合不要，不符合中国国情
 		//$innertitleneed = preg_replace('/[a-zA-Z0-9\s\.\/\']+/','',$innertitleneed);
-		$innertitleneed = preg_replace('/\(.*?\)/','',$innertitleneed);
-		$innertitleneed = preg_replace('/（.*?）/','',$innertitleneed);
+		$innertitleneed = preg_replace('/\(.*?\)/su','',$innertitleneed);
+		$innertitleneed = preg_replace('/（.*?）/su','',$innertitleneed);
 		//如果被削的一点没有了，说明不是标题
 		//if(trim($innertitleneed)==='')
 		//	continue;
