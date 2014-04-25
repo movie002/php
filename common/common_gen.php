@@ -284,7 +284,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$yingping.='<div class="showhide">更多资源,敬请期待</div>';
 		}
 		
-		$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content);
+		$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content_page);
 		$DH_output_content_page = str_replace('%downloadlinks%',$downloadlinks,$DH_output_content_page);
 		$DH_output_content_page = str_replace('%tailer%',$tailer,$DH_output_content_page);		
 		$DH_output_content_page = str_replace('%onlinelinks%',$onlinelinks,$DH_output_content_page);	
