@@ -12,31 +12,31 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$linkstop1 = '<div class="listall" style="background:#CCC;"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
 		$linkstop2 = '<div class="listall" style="background:#CCC;"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></div>';	
 		$downloadlinks = '';
-		$downloadlinks0 = $linkstop2;
+		$downloadlinks0 = $linkstop1;
 		$downloadlinks0_more = '';
 		$num00=0;
-		$downloadlinks1 = $linkstop2;
+		$downloadlinks1 = $linkstop1;
 		$downloadlinks1_more = '';
 		$num01=0;
-		$downloadlinks2 = $linkstop2;
+		$downloadlinks2 = $linkstop1;
 		$downloadlinks2_more = '';
 		$num02=0;
-		$downloadlinks3 = $linkstop2;
+		$downloadlinks3 = $linkstop1;
 		$downloadlinks3_more = '';
 		$num03=0;
 		
-		$onlinelinks = $linkstop2;
+		$onlinelinks = $linkstop1;
 		$onlinelinks_more = '';
 		$num1=0;
 		
-		$tailer = $linkstop2;
+		$tailer = $linkstop1;
 		$tailer_more = '';
 		$num2=0;
 		
-		$zixun=$linkstop1;
+		$zixun=$linkstop2;
 		$zixun_more='';
 		$num3=0;
-		$yingping=$linkstop1;
+		$yingping=$linkstop2;
 		$yingping_more='';
 		$num4=0;		
 		
@@ -48,28 +48,28 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$quality = $rowlinks['linkquality'];
 			if($quality=='')
 				$quality = 0;			
-			$downway = $rowlinks['linkdownway'];
-			if($downway=='')
-				$downway = 0;
+			$type = $rowlinks['linktype'];
+			if($type=='')
+				$type = 0;
 			
 			$updatetime = date("Ymd",strtotime($rowlinks['updatetime']));
-			$linkseach1 = '<div class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$downtype.'">'.$linkdownway[$downway].'</span>'.$updatetime.'</div></div>';
+			$linkseach1 = '<div class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> '.$updatetime.'</div></div>';
 			$linkseach2 = '<div class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' '.$updatetime.'</div></div>';			
 			switch ($way)
 			{
-				case 1://
+				case 1://资讯
 					$num3++;
 					if($num3 > $num)
 						$zixun_more .= str_replace('%num%',$num3,$linkseach2);
 					else
 						$zixun .= str_replace('%num%',$num3,$linkseach2);
 					break;
-				case 2://
+				case 2://评论
 					$num4++;
 					if($num4 > $num)
-						$yingping_more .= str_replace('%num%',$num4,$linkseach);
+						$yingping_more .= str_replace('%num%',$num4,$linkseach2);
 					else
-						$yingping .= str_replace('%num%',$num4,$linkseach);		
+						$yingping .= str_replace('%num%',$num4,$linkseach2);		
 					break;
 				case 3://预告花絮
 					$num2++;
@@ -80,7 +80,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 					break;
 				case 6://下载
 					{
-						switch($downway)
+						switch($rowlinks['linkdownway'])
 						{
 							case 0:
 								$num00++;
@@ -138,13 +138,13 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		if($num01>0)
 		{
 			$downloadlinksi++;
-			$downloadlinkstitle.='<li class="active" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkproperty[1].'('.$num01.')</li>';
+			$downloadlinkstitle.='<li class="active" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[1].'('.$num01.')</li>';
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div><div class="linksmall">'.$downloadlinks1;
-			if($num01 > $numdownload)
+			if($num01 > $num)
 			{
-				$showtext='[ << 展开(其余'.($num01-$numdownload).'个) >> ]';
-				$hidetext='[ >> 隐藏(其余'.($num01-$numdownload).'个) << ]';
-				$hidetext2='[ ∧ 隐藏(以上'.($num01-$numdownload).'个) ∧ ]';
+				$showtext='[ << 展开(其余'.($num01-$num).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num01-$num).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num01-$num).'个) ∧ ]';
 				$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" >'.$downloadlinks1_more.'<div class="showhide" onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')">'.$hidetext2.'</div></div>';
 			}
 			else
@@ -163,13 +163,13 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$activetitle='active';		
 			else
 				$activelink='class="none"';	
-			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkproperty[2].'('.$num02.')</li>';			
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';			
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div><div class="linksmall">'.$downloadlinks2;
-			if($num02 > $numdownload)
+			if($num02 > $num)
 			{
-				$showtext='[ << 展开(其余'.($num02-$numdownload).'个) >> ]';
-				$hidetext='[ >> 隐藏(其余'.($num02-$numdownload).'个) << ]';
-				$hidetext2='[ ∧ 隐藏(以上'.($num02-$numdownload).'个) ∧ ]';		
+				$showtext='[ << 展开(其余'.($num02-$num).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num02-$num).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num02-$num).'个) ∧ ]';		
 				$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" >'.$downloadlinks2_more.'<div class="showhide" onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')">'.$hidetext2.'</div></div>';
 			}
 			else
@@ -187,14 +187,14 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$activetitle='active';
 			else
 				$activelink='class="none"';	
-			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkproperty[3].'('.$num03.')</li>';
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[3].'('.$num03.')</li>';
 				
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div><div class="linksmall">'.$downloadlinks3;
-			if($num03 > $numdownload)
+			if($num03 > $num)
 			{
-				$showtext='[ << 展开(其余'.($num03-$numdownload).'个) >> ]';
-				$hidetext='[ >> 隐藏(其余'.($num03-$numdownload).'个) << ]';
-				$hidetext2='[ ∧ 隐藏(以上'.($num03-$numdownload).'个) ∧ ]';
+				$showtext='[ << 展开(其余'.($num03-$num).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num03-$num).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num03-$num).'个) ∧ ]';
 				$downloadlinks.='<div class="showhide" id="downloadlinks3_t"  onclick="showhide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks3" style="display:none;" >'.$downloadlinks3_more.'<div class="showhide" onclick="hide(\'downloadlinks3_t\',\'downloadlinks3\',\''.$showtext.'\',\'adownloadlinks3\')">'.$hidetext2.'</div></div>';
 			}
 			else
@@ -212,13 +212,13 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$activetitle='active';
 			else
 				$activelink='class="none"';
-			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkproperty[0].'('.$num00.')</li>';
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[0].'('.$num00.')</li>';
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div><div class="linksmall">'.$downloadlinks0;
-			if($num00 > $numdownload)
+			if($num00 > $num)
 			{
-				$showtext='[ << 展开(其余'.($num00-$numdownload).'个) >> ]';
-				$hidetext='[ >> 隐藏(其余'.($num00-$numdownload).'个) << ]';
-				$hidetext2='[ ∧ 隐藏(以上'.($num00-$numdownload).'个) ∧ ]';		
+				$showtext='[ << 展开(其余'.($num00-$num).'个) >> ]';
+				$hidetext='[ >> 隐藏(其余'.($num00-$num).'个) << ]';
+				$hidetext2='[ ∧ 隐藏(以上'.($num00-$num).'个) ∧ ]';		
 				$downloadlinks.='<div class="showhide" id="downloadlinks0_t"  onclick="showhide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks0" style="display:none;" >'.$downloadlinks0_more.'<div class="showhide" onclick="hide(\'downloadlinks0_t\',\'downloadlinks0\',\''.$showtext.'\',\'adownloadlinks0\')">'.$hidetext2.'</div></div>';
 			}
 			else

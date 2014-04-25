@@ -53,6 +53,7 @@ function getonlylink()
 		}		
 		echo $row['title'];
 		$mtitle=testtitle($row['ctitle'],$row['title']);
+		echo "\nres:".$mtitle."\n";
 		//$mtitle=trimtitle($mtitle);
 		if($mtitle<0||$mtitle==='')
 		{
@@ -161,10 +162,12 @@ function testtitle($ctitle,$title)
 					{
 						if($ret==0)
 						{
-							echo " error in testtitle !</br>\n";
-							return -1;
+							if($result=='')
+							{
+								echo " error in testtitle !</br>\n";
+								return -1;
+							}
 						}
-						//return -1;
 					}
 					break;
 				}
