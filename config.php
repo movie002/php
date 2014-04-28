@@ -28,7 +28,7 @@ $DH_home_url= 'http://127.0.0.1/v/';
 
 
 
-$DH_src_path= $DH_input_path. 'gendb/';
+$DH_src_path= $DH_input_path. 'genv/';
 $DH_html_path= $DH_src_path . 'html/';
 $DH_output_html_path = $DH_output_path.'html/';
 $DH_output_index_path = $DH_output_path.'index/';
