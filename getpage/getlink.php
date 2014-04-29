@@ -20,7 +20,7 @@ function getlink()
 {
 	$datebegin = getupdatebegin(2);
 //	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 100 and mtitle is not null";
-	$sql="select * from onlylink where mtitle is not null";
+	$sql="select * from onlylink where mtitle is not null and mtitle!=''";
 
 	if(isset($_REQUEST['pageid']))
 	{

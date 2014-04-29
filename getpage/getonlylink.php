@@ -15,7 +15,7 @@ mysql_close($conn);
 
 function getonlylink()
 {
-	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name";
+	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name and (mtitle='' or mtitle is null)";
 
 	//全部重新计算link
 	if(isset($_REQUEST['reget']))
