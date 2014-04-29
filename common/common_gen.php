@@ -9,8 +9,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	
 	if($reslinks)
 	{
-		$linkstop1 = '<div class="listall" style="background:#CCC;"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
-		$linkstop2 = '<div class="listall" style="background:#CCC;"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></div>';	
+		$linkstop1 = '<div class="listall"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
+		$linkstop2 = '<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="rt0v5">来源网站 更新时间</div></div>';	
 		$downloadlinks = '';
 		$downloadlinks0 = $linkstop1;
 		$downloadlinks0_more = '';
@@ -266,7 +266,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$showtext='[ << 展开(其余'.($num3-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num3-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num3-$num).'个) ∧ ]';		
-			$zixun.='<div class="showhide" id="onlylinks_t"  onclick="showhide(\'ziyuan_t\',\'zixun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="zixun" style="display:none;" >'.$onlylinks_more.'<div class="showhide" onclick="hide(\'onlylinks_t\',\'zixun\',\''.$showtext.'\',\'title_1\')">'.$hidetext2.'</div></div>';
+			$zixun.='<div class="showhide" id="onlylinks_t"  onclick="showhide(\'ziyuan_t\',\'zixun\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="zixun" style="display:none;" >'.$zixun_more.'<div class="showhide" onclick="hide(\'onlylinks_t\',\'zixun\',\''.$showtext.'\',\'title_1\')">'.$hidetext2.'</div></div>';
 		}
 		else
 		{
@@ -487,7 +487,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 
 	//处理购票
-	$buyticket='<div class="listall" style="background:#CCC;"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></div>';
+	$buyticket='<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></div>';
 	$ticketnum=0;
 	if($row['mstatus']==3)
 	{

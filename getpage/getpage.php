@@ -71,13 +71,12 @@ function getpage()
 			{
 				echo "\n douban last: ".$douban_result->mediaid;
 				echo " update $douban_result->title ";
-				
+				$mediaid=$douban_result->mediaid;
 				//print_r($douban_result);
 				updatepage($douban_result,$row['updatetime']);
 				//得到更新的page的id
-				$sqlupdate = "update link set pageid = (select id from page where mediaid='".$douban_result->mediaid."') where link = '".$row['link']."'";
-				dh_mysql_query($sqlupdate);	
-				
+				$sqlupdate = "update link set pageid = (select id from page where mediaid='$mediaid') where link = '".$row['link']."'";
+				dh_mysql_query($sqlupdate);				
 				if($douban_result->doubantrail!='')
 				{
 					addorupdatelink($pageid,'豆瓣预告',$douban_result->doubantrail,$douban_result->doubantrailurl,'',0,3,7,0,$row['updatetime'],1);
@@ -91,8 +90,8 @@ function getpage()
 					$sqlresult=dh_mysql_query($sql);
 				}
 				//删除onlylink中的部分
-				$sql="delete from onlylink where link='".$row['link']."'";
-				$sqlresult=dh_mysql_query($sql);				
+				//$sql="delete from onlylink where link='".$row['link']."'";
+				//$sqlresult=dh_mysql_query($sql);				
 			}
 			else
 			{

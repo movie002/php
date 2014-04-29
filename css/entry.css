@@ -86,7 +86,8 @@ padding:0!important;
 	border: 1px solid #759CC2;
 	border-bottom: 1px solid #999;
 	position:relative;
-	color: purple;	
+	color: purple;
+	background-color: lightblue;	
 }
 
 .entry h5 {
@@ -336,7 +337,7 @@ padding:0
 .borderside
 {
 	border-right: 1px solid #759CC2;
-	border-left: 1px solid #759CC2;	
+	border-left: 1px solid #759CC2;
 }
 .eh4
 {

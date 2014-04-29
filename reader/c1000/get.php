@@ -1,8 +1,8 @@
 <?php
 require("../../config.php");
-require("../../common/common.php");
+require("../../common/base.php");
 require("../../common/curl.php");
-require("../../common/common_gen.php");
+require("../../common/dbaction.php");
 
 
 require("bbs.1lou.com.php");

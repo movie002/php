@@ -12,7 +12,7 @@ function www_mtime_com_review_php()
 	$updatetime = array();	
 	foreach ($urlcat as $eachurlcat)
 	{
-		$sql="select max(updatetime) from link2 where author='$authorname' and cat like '%".$eachurlcat."%'";
+		$sql="select max(updatetime) from link where author='$authorname' and cat like '%".$eachurlcat."%'";
 		$sqlresult=dh_mysql_query($sql);
 		$row = mysql_fetch_array($sqlresult);
 		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
