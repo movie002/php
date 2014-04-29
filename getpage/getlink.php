@@ -34,7 +34,7 @@ function getlink()
 	}	
 	
 	echo $sql."</br>\n";
-	
+	$count=0;
 	$results=dh_mysql_query($sql);
 	while($row = mysql_fetch_array($results))
 	{

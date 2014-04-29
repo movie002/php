@@ -9,7 +9,8 @@
 header('Content-Type:text/html;charset= UTF-8'); 
 require("../config.php");
 #需要使用的基础函数
-require("../common/common.php");
+require("../common/dbaction.php");
+require("../common/base.php");
 set_time_limit(3600); 
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
@@ -46,11 +47,11 @@ function update_status()
 			$results1=dh_mysql_query($sql1);
 			$yugaoall = mysql_fetch_array($results1);
             		
-			$sql1="select count(*) from link2 l where l.pageid='". $row['id'] ."' and l.linktype=1";
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=1";
 			$results1=dh_mysql_query($sql1);
 			$zixunall = mysql_fetch_array($results1);	
             			
-			$sql1="select count(*) from link2 l where l.pageid='". $row['id'] ."' and l.linktype=2";
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=2";
 			$results1=dh_mysql_query($sql1);
 			$yingpingall = mysql_fetch_array($results1);
 			
@@ -139,11 +140,11 @@ function update_hot()
 			$results1=dh_mysql_query($sql1);
 			$yugao = mysql_fetch_array($results1);
             
-			$sql1="select count(*) from link2 l where l.pageid='". $row['id'] ."' and l.linktype=1".$sqldayslink;
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=1".$sqldayslink;
 			$results1=dh_mysql_query($sql1);
 			$zixun = mysql_fetch_array($results1);			
             
-			$sql1="select count(*) from link2 l where l.pageid='". $row['id'] ."' and l.linktype=2".$sqldayslink;
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=2".$sqldayslink;
 			$results1=dh_mysql_query($sql1);
 			$yingping = mysql_fetch_array($results1);	
 			

@@ -522,12 +522,13 @@ function dh_replace_content($count,$row,$DH_output_content)
 		$piaozi.='/<a href="http://www.wangpiao.com/Search/Index/0/'.$codetitle.'/1" target="_blank" rel="nofollow">搜索网票</a>';
 		$piaozi.='/<a href="http://film.spider.com.cn/shanghai-search/?keyword='.$codetitle.'" target="_blank" rel="nofollow">搜索蜘蛛网</a>';
 		$piaozi.='/<a href="http://www.hipiao.com/" target="_blank" rel="nofollow">登录哈票</a>';
+		$buyticket.='<div class="showhide">更多资源,敬请期待</div>';
 	}
 	else
 	{
 		$piaozi='不在购票时间内';
-		$buyticket.='<div class="showhide">更多资源,敬请期待</div>';	
-	}	
+		$buyticket.='<div class="showhide">更多资源,敬请期待</div>';
+	}
 	
 	$ofsite='';
 	preg_match('/<b>(.*?)<\/b>/s',$row['meta'],$match);
