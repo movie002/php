@@ -62,6 +62,14 @@ function getonlylink()
 			continue;
 		}
 		
+		$movietype = testneed($row['cmovietype'],$link,$title,$cat);
+		if($movietype<0)
+		{
+			//问题很大
+			echo "movietype=$movietype % title=$title link=$link cat=$cat -> movietype error 失败，请查明原因！</br> \n";
+			continue;
+		}		
+		
 		$linktype = testneed($row['clinktype'],$link,$title,$cat);
 		$movietype = testneed($row['cmovietype'],$link,$title,$cat);
 		$moviecountry = testneed($row['cmoviecountry'],$link,$title,$cat);

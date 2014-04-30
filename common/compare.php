@@ -72,7 +72,7 @@ function filtertitle($ctitle)
 //找出搜寻的字段
 function processtitle($ctitle)
 {
-	$ctitle=filtertitle($ctitle);
+	//$ctitle=filtertitle($ctitle);
 	$rettitles = array();
 	insertarray($rettitles,$ctitle);
 	//print_r($rettitles);
