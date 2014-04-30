@@ -263,7 +263,7 @@ function insertsiteslink($updatetime,$mediaid,$author,$title,$url,$way,$type,$qu
 	}	
 }
 
-function getdbpageid($mtitle,$country,$year,$type,&$maxrate)
+function getdbpageid($title,$mtitle,$country,$year,$type,&$maxrate)
 {
 	//global $movietype,$moviecountry;
 	$ctitles = processtitle($mtitle);
@@ -271,21 +271,30 @@ function getdbpageid($mtitle,$country,$year,$type,&$maxrate)
 	//continue;
 	//主标题和副标题都需要出现在page的title或者aka中
 	//$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where title like '%$mtitle%' or aka like '%$mtitle%' order by updatetime desc;";
-	$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
-	foreach($ctitles as $title)
-		$sqlpage .= " or title like '%$title%' or aka like '%$title%' ";
-	$sqlpage .= 'order by updatetime desc;';	
+	$sqlpage1 = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
+	foreach($ctitles as $ctitle)
+		$sqlpage1 .= " or title like '%$ctitle%'";
+	$sqlpage1 .= 'order by pubdate desc limit 0,4';
+
+	$sqlpage2 = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
+	foreach($ctitles as $ctitle)
+		$sqlpage2 .= " or aka like '%$ctitle%' ";
+	$sqlpage2 .= 'order by pubdate desc limit 0,4';
 	
-	echo $sqlpage;
+	$sqlpage = '('.$sqlpage1.') union ('.$sqlpage2.')';
+	
+	//echo $sqlpage;
+	echo $title.' : '.$mtitle;
 	$resultspage=dh_mysql_query($sqlpage);
 	if($resultspage)
 	{
-		$i=0;$pageid=-1;
+		//$i=0;
+		$pageid=-1;
 		while($rowpage = mysql_fetch_array($resultspage))
 		{	
-			if($i>5) //如果结果太多，就不对了
-				break;
-			$i++;
+			//if($i>5) //如果结果太多，就不对了
+			//	break;
+			//$i++;
 			echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['updatetime'];
 			//拼出一个综合akas
 			if($rowpage['aka']=='')

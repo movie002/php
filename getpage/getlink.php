@@ -41,7 +41,7 @@ function getlink()
 		$count++;
 		echo "\n".$count.": ";
 		$maxrate=1;
-		$pageid = getdbpageid($row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);
+		$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);
 		if($pageid>=0)
 		{
 			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$row['linkquality'],$row['linkway'],$row['linktype'],$row['linkdownway'],$row['updatetime'],0);

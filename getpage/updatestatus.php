@@ -39,19 +39,19 @@ function update_status()
 	{	
 		while($row = mysql_fetch_array($results))
 		{	
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway>=4";
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and (l.linkway=6 or l.linkway=7)";
 			$results1=dh_mysql_query($sql1);
 			$ziyuanall = mysql_fetch_array($results1);
 			
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=2";
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=3";
 			$results1=dh_mysql_query($sql1);
 			$yugaoall = mysql_fetch_array($results1);
             		
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=1";
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=1";
 			$results1=dh_mysql_query($sql1);
 			$zixunall = mysql_fetch_array($results1);	
             			
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=2";
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=2";
 			$results1=dh_mysql_query($sql1);
 			$yingpingall = mysql_fetch_array($results1);
 			
@@ -132,19 +132,19 @@ function update_hot()
 			if($ratenum!=0)
 				$hot = floor(($hot*10)/$ratenum)/10;
 			
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway>=4".$sqldayslink;
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway>=6".$sqldayslink;
 			$results1=dh_mysql_query($sql1);
 			$ziyuan = mysql_fetch_array($results1);
 			
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=2".$sqldayslink;
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=3".$sqldayslink;
 			$results1=dh_mysql_query($sql1);
 			$yugao = mysql_fetch_array($results1);
             
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=1".$sqldayslink;
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=1".$sqldayslink;
 			$results1=dh_mysql_query($sql1);
 			$zixun = mysql_fetch_array($results1);			
             
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linktype=2".$sqldayslink;
+			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=2".$sqldayslink;
 			$results1=dh_mysql_query($sql1);
 			$yingping = mysql_fetch_array($results1);	
 			
