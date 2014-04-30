@@ -49,8 +49,8 @@ function getlink()
 			dh_mysql_query($sqlupdate);
 			
 			//删除onlylink中的部分
-			//$sql="delete from onlylink where link='".$row['link']."'";
-			//$sqlresult=dh_mysql_query($sql);
+			$sql="delete from onlylink where link='".$row['link']."'";
+			$sqlresult=dh_mysql_query($sql);
 		}
 	}
 }
