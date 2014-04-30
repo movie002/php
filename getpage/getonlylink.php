@@ -22,7 +22,7 @@ function getonlylink()
 		$d = $_REQUEST['d'];
 	}
 	$datebegin = getupdatebegin($d);
-	$sql="select l.*,a.* from onlylink l,author a where l.updatetime > '$datebegin' and l.author=a.name";
+	$sql="select l.*,a.* from onlylink l,author a where l.updatetime > '$datebegin' and l.author=a.name and mtitle is null";
 
 	//全部重新计算link
 	if(isset($_REQUEST['reget']))
