@@ -1,6 +1,7 @@
 <?php
 require("../config.php");
 require("x11.php");
+require("../common/base.php");
 require("../common/dbaction.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
@@ -21,7 +22,7 @@ function getonlylink()
 		$d = $_REQUEST['d'];
 	}
 	$datebegin = getupdatebegin($d);
-	$sql="select l.*,a.* from onlylink l,author a where updatetime > '$datebegin' and l.author=a.name and mtitle is null";
+	$sql="select l.*,a.* from onlylink l,author a where l.updatetime > '$datebegin' and l.author=a.name";
 
 	//全部重新计算link
 	if(isset($_REQUEST['reget']))
@@ -127,7 +128,7 @@ function testneed($need,$link,$title,$cat)
 				}			
 				default:
 				{
-					echo 'error in testneed to get ?? method';
+					echo 'error in testneed to get '.$contain.' method';
 					return -1;
 				}
 			}

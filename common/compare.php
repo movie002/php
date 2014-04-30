@@ -236,8 +236,8 @@ function c_title($title,$aka)
 		return $rate;
 	}
 	
-	print_r($titles);
-	print_r($akas);
+	//print_r($titles);
+	//print_r($akas);
 	echo '// each title:';		
 	foreach($titles as $eachtitle)
 	{
@@ -282,6 +282,7 @@ function c_title($title,$aka)
 function c_title_com($title,$akasall)
 {
 	$akas=processtitle($akasall);
+	//print_r($akas);
 	if(empty($akas))
 	{
 		echo 'akas is empty!';
@@ -292,8 +293,8 @@ function c_title_com($title,$akasall)
 	{
 		if(!(strstr($title,$eachaka)===false))
 		{
-			echo $eachaka.' in alltitle +0.5, ';
-			$rate += 0.5;
+			echo $eachaka.' in alltitle +1, ';
+			$rate += 1;
 		}
 	}
 	return $rate;

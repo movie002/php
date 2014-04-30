@@ -286,44 +286,37 @@ function getdbpageid($title,$mtitle,$country,$year,$type,&$maxrate)
 	//echo $sqlpage;
 	echo $title.' : '.$mtitle;
 	$resultspage=dh_mysql_query($sqlpage);
-	if($resultspage)
-	{
-		//$i=0;
-		$pageid=-1;
-		while($rowpage = mysql_fetch_array($resultspage))
-		{	
-			//if($i>5) //如果结果太多，就不对了
-			//	break;
-			//$i++;
-			echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['updatetime'];
-			//拼出一个综合akas
-			if($rowpage['aka']=='')
-				$akaall=$rowpage['title'];
-			else
-				$akaall=$rowpage['title'].'/'.$rowpage['aka'];					
-			if(!c_movietype($type,$rowpage['cattype']))
-				continue;
-			if(!c_moviecountry($country,$rowpage['catcountry']))
-				continue;
-			if(!c_movieyear($year,$rowpage['pubdate'],2,$akaall))
-				continue;
-			$rate = c_title($mtitle,$akaall);
-			$rate += c_title_com($title,$akaall);
-			echo ' rate: '.$rate;
-			if($rate>=3)
-			{
-				$pageid=$rowpage['id'];	
-				break;
-			}						
-			if($rate>$maxrate)
-			{
-				$maxrate = $rate;
-				$pageid=$rowpage['id'];
-			}
+	
+	$pageid=-1;
+	while($rowpage = mysql_fetch_array($resultspage))
+	{	
+		echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['updatetime'];
+		//拼出一个综合akas
+		if($rowpage['aka']=='')
+			$akaall=$rowpage['title'];
+		else
+			$akaall=$rowpage['title'].'/'.$rowpage['aka'];					
+		if(!c_movietype($type,$rowpage['cattype']))
+			continue;
+		if(!c_moviecountry($country,$rowpage['catcountry']))
+			continue;
+		if(!c_movieyear($year,$rowpage['pubdate'],2,$akaall))
+			continue;
+		//$rate = c_title($mtitle,$akaall);
+		$rate = c_title_com($title,$akaall);
+		echo ' rate: '.$rate;
+		if($rate>=3)
+		{
+			$pageid=$rowpage['id'];	
+			break;
+		}						
+		if($rate>$maxrate)
+		{
+			$maxrate = $rate;
+			$pageid=$rowpage['id'];
 		}
-		echo "</br>\n<<<".$pageid.">>></br>\n";
-		return $pageid;
 	}
-	return -1;
+	echo "</br>\n<<<".$pageid.">>></br>\n";
+	return $pageid;
 }
 ?>
