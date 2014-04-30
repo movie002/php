@@ -263,7 +263,7 @@ function insertsiteslink($updatetime,$mediaid,$author,$title,$url,$way,$type,$qu
 	}	
 }
 
-function getdbpageid($title,$mtitle,$country,$year,$type,&$maxrate)
+function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 {
 	//global $movietype,$moviecountry;
 	$ctitles = processtitle($mtitle);
@@ -271,26 +271,35 @@ function getdbpageid($title,$mtitle,$country,$year,$type,&$maxrate)
 	//continue;
 	//主标题和副标题都需要出现在page的title或者aka中
 	//$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where title like '%$mtitle%' or aka like '%$mtitle%' order by updatetime desc;";
-	$sqlpage1 = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
+	$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
 	foreach($ctitles as $ctitle)
-		$sqlpage1 .= " or title like '%$ctitle%'";
-	$sqlpage1 .= 'order by pubdate desc limit 0,4';
-
-	$sqlpage2 = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
-	foreach($ctitles as $ctitle)
-		$sqlpage2 .= " or aka like '%$ctitle%' ";
-	$sqlpage2 .= 'order by pubdate desc limit 0,4';
-	
-	$sqlpage = '('.$sqlpage1.') union ('.$sqlpage2.')';
+		$sqlpage .= " or title like '%$ctitle%'";
+	$sqlpage .= 'order by pubdate desc limit 0,4';
 	
 	//echo $sqlpage;
 	echo $title.' : '.$mtitle;
 	$resultspage=dh_mysql_query($sqlpage);
-	
+	$pageid=getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate);
+	if($pageid>-1)
+		return $pageid;
+		
+	$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
+	foreach($ctitles as $ctitle)
+		$sqlpage .= " or aka like '%$ctitle%' ";
+	$sqlpage .= 'order by pubdate desc limit 0,4';
+	$pageid=getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate);
+	if($pageid>-1)
+		return $pageid;
+	return -1;
+}
+
+function getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate)
+{
 	$pageid=-1;
+	$resultspage=dh_mysql_query($sqlpage);
 	while($rowpage = mysql_fetch_array($resultspage))
 	{	
-		echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['updatetime'];
+		echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['pubdate'];
 		//拼出一个综合akas
 		if($rowpage['aka']=='')
 			$akaall=$rowpage['title'];
@@ -302,8 +311,8 @@ function getdbpageid($title,$mtitle,$country,$year,$type,&$maxrate)
 			continue;
 		if(!c_movieyear($year,$rowpage['pubdate'],2,$akaall))
 			continue;
-		//$rate = c_title($mtitle,$akaall);
-		$rate = c_title_com($title,$akaall);
+		$rate = c_title($mtitle,$akaall);
+		$rate += c_title_com($title,$akaall);
 		echo ' rate: '.$rate;
 		if($rate>=3)
 		{
