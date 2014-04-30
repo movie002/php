@@ -221,11 +221,11 @@ function judgetitle($titlearray)
 			continue;
 			
 		if($replacecount>=2)
-			if($wordslast<4)
-				continue;
-		if($replacecount>=1)
 			if($wordslast<2)
 				continue;
+		//if($replacecount>=1)
+		//	if($wordslast<1)
+		//		continue;
 		//如果没有这些词语，就说明是标题，并且不需要再找了
 		//标题处理，
 		
