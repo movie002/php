@@ -21,8 +21,17 @@ mysql_close($conn);
 
 function getpage()
 {
-	$datebegin = getupdatebegin(2);
-	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 1 and mtitle is not null";
+	$d=2;
+	if( isset($_REQUEST['d']))
+	{
+		$d = $_REQUEST['d'];
+	}
+	$datebegin = getupdatebegin($d);
+	if( isset($_REQUEST['d']))
+	{
+		$datebegin = getupdatebegin($_REQUEST['d']);
+	}		
+	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 2 and mtitle is not null";
 
 	if(isset($_REQUEST['pageid']))
 	{
@@ -51,7 +60,7 @@ function getpage()
 			//先从数据库寻找，再从豆瓣寻找	
 			echo "\n\n".$count.": ";
 			$maxrate=1;
-			$pageid = getdbpageid($row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);			
+			$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);			
 			
 			if($pageid>=0)
 			{

@@ -15,7 +15,13 @@ mysql_close($conn);
 
 function getonlylink()
 {
-	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name and mtitle is null";
+	$d=2;
+	if( isset($_REQUEST['d']))
+	{
+		$d = $_REQUEST['d'];
+	}
+	$datebegin = getupdatebegin($d);
+	$sql="select l.*,a.* from onlylink l,author a where updatetime > '$datebegin' and l.author=a.name and mtitle is null";
 
 	//全部重新计算link
 	if(isset($_REQUEST['reget']))

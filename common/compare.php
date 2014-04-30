@@ -83,8 +83,8 @@ function processtitle($ctitle)
 	foreach($titles as $key=>$eachtitle)
 	{
 		//取两个
-		if($key>1)
-			break;
+		//if($key>1)
+		//	break;
 		$eachtitle = trimtitle($eachtitle);
 		array_push($rettitles,$eachtitle);	
 	}
@@ -236,6 +236,8 @@ function c_title($title,$aka)
 		return $rate;
 	}
 	
+	print_r($titles);
+	print_r($akas);
 	echo '// each title:';		
 	foreach($titles as $eachtitle)
 	{
@@ -274,6 +276,27 @@ function c_title($title,$aka)
 		}
 	}	
 	return 	$rate;
+}
+
+//titles 里面的标题和 title的相似度
+function c_title_com($title,$akasall)
+{
+	$akas=processtitle($akasall);
+	if(empty($akas))
+	{
+		echo 'akas is empty!';
+		return 0;
+	}
+	$rate=0;
+	foreach($akas as $eachaka)
+	{
+		if(!(strstr($title,$eachaka)===false))
+		{
+			echo $eachaka.' in alltitle +0.5, ';
+			$rate += 0.5;
+		}
+	}
+	return $rate;
 }
 
 //弱比较

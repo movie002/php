@@ -308,6 +308,7 @@ function getdbpageid($title,$mtitle,$country,$year,$type,&$maxrate)
 			if(!c_movieyear($year,$rowpage['pubdate'],2,$akaall))
 				continue;
 			$rate = c_title($mtitle,$akaall);
+			$rate += c_title_com($title,$akaall);
 			echo ' rate: '.$rate;
 			if($rate>=3)
 			{
