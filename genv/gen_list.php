@@ -170,7 +170,7 @@ function dh_gen_list()
 		$path = $keytype.'_zx/';		
 		$cat =$movietypeeach. '[最新资讯]';		
 		$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and l.linkway=1 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime)";
-		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,7 as linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and l.linktype=1 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime) order by l.updatetime desc";
+		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and l.linkway=1 and DATE_SUB(CURDATE(), INTERVAL 2 WEEK) <= date(l.updatetime) order by l.updatetime desc";
 		dh_gen_each_file_onlylink($sqlc,$sql,$DH_output_content,$path,$cat,'','nolink');		
 	}	
 
