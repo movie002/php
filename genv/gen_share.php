@@ -12,6 +12,7 @@ header('Content-Type:text/html;charset= UTF-8');
 require("../config.php");
 require("../common/curl.php");
 require("../common/common.php");
+require("../common/dbaction.php");
 require("../common/compressJS.class.php");
 require("../common/share.php");
 
