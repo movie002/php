@@ -13,6 +13,7 @@ set_time_limit(120);
 include("../config.php");
 include("../common/base.php");
 include("../common/share.php");
+include("../common/dbaction.php");
 include("../common/common_gen.php");
 include("../common/page_navi.php");
 include("../common/compressJS.class.php");
@@ -89,19 +90,19 @@ function dh_get_author($sql)
 		while($row = mysql_fetch_array($results))
 		{
 			//查找资源的数目
-			$sqlcount="select count(*) from link where author='".$row['name']."'";
+			$sqlcount="select count(*) from link where author='".$row['name']."' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount1 = mysql_fetch_array($lres);
-			$sqlcount="select count(*) from link2 where author='".$row['name']."'";
+			$sqlcount="select count(*) from link where author='".$row['name']."' and (linkway=1 or linkway=2)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount2 = mysql_fetch_array($lres);
 			
 			$datetoday =date("Y-m-d");
 			$datetoday = date("Y-m-d  H:i:s",strtotime($datetoday));
-			$sqlcount="select count(*) from link where author='".$row['name']."' and updatetime >= '$datetoday'";
+			$sqlcount="select count(*) from link where author='".$row['name']."' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount3 = mysql_fetch_array($lres);
-			$sqlcount="select count(*) from link2 where author='".$row['name']."' and updatetime >= '$datetoday'";
+			$sqlcount="select count(*) from link where author='".$row['name']."' and updatetime >= '$datetoday' and (linkway=1 or linkway=2)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount4 = mysql_fetch_array($lres);
 			

@@ -14,6 +14,7 @@ require("../config.php");
 require("../common/common_gen.php");
 require("../common/base.php");
 require("../common/share.php");
+require("../common/dbaction.php");
 require("../mail/mail.php");
 require("../common/compressJS.class.php");
 

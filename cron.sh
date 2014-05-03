@@ -11,13 +11,13 @@ echo $(date) > $logfile
 
 ## 2 资源处理
 ## 2.1 处理onlylink，得到mtitle
-/srv/php/timeexc.sh curl http://php.movie002.com/reader/getonlylink.php?d=10 -o /srv/php/log/getonlylink.log
+/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getonlylink.php?d=10 -o /srv/php/log/getonlylink.log
 ## 2.1 处理onlylink，将onlylink处理到link和link2
-/srv/php/timeexc.sh curl http://php.movie002.com/reader/getlink.php?d=10 -o /srv/php/log/getlink.log
+/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getlink.php?d=10 -o /srv/php/log/getlink.log
 ## 2.2 处理电影的状态，正在上映和即将上映的
 /srv/php/timeexc.sh curl http://php.movie002.com/getpage/upmstatus.php -o /srv/php/log/upmstatus.log
 ## 2.4 利用link得到page并修改其状态
-/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getpage.php?d=3 -o /srv/php/log/getpage.log
+/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getpage.php?d=2 -o /srv/php/log/getpage.log
 ## 2.5 更新page的状态，资源数等
 /srv/php/timeexc.sh curl http://php.movie002.com/getpage/updatestatus.php?d=30 -o /srv/php/log/updatestatus.log
 ## 2.5 得到票房信息
