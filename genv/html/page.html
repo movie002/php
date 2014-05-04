@@ -50,7 +50,7 @@
 							<div>权威评分: <span>%jhb%%jhblinks%%ofsite%</span></div>
 							<div style="width:98%;overflow:hidden;"><a href="#title_5" title="点击跳转至人物图片和链接">影片人物</a>: %people%</div>
 							<div>
-								<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧">百度贴吧</a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ好友</a><a href="#" class="bds_hi" data-cmd="hi" title="分享到百度空间">百度空间</a><a href="#" class="bds_t163" data-cmd="t163" title="分享到网易微博">网易微博</a><a href="#" class="bds_diandian" data-cmd="diandian" title="分享到点点网">点点网</a><a href="#" class="bds_qy" data-cmd="qy" title="分享到奇艺奇谈">奇艺奇谈</a><a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区">天涯社区</a></div>
+								<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧">百度贴吧</a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">豆瓣网</a><a href="#" class="bds_hi" data-cmd="hi" title="分享到百度空间">百度空间</a><a href="#" class="bds_t163" data-cmd="t163" title="分享到网易微博">网易微博</a><a href="#" class="bds_diandian" data-cmd="diandian" title="分享到点点网">点点网</a><a href="#" class="bds_qy" data-cmd="qy" title="分享到奇艺奇谈">奇艺奇谈</a><a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区">天涯社区</a></div>
 							</div>
 						</div>
 						<div id="article_index">
@@ -66,12 +66,9 @@
 							</div>
 						</div>
 					</div>
-					<p style="width:100%">为方便广大%cat%爱好者,二手电影网提供《%title_key%》的下载地址、在线观看、影评影讯等资源链接，《%title_key%》(别名 %keywords%)%pubcompany%,于%pubdate%年上映，情节大概是: <a id="summarya" onclick="showhide('summarya','summaryi','>>','<<');">>></a><span id="summaryi" style="display:none">%summary%%more%,欢迎持续关注以下资源更新情况,由于资源全部由计算机自动完成收集和匹配,二手电影网无法保证下载地址和在线观看等资源链接的真实性、正确性以及合法性，如果出现此类情况，希望广大影视爱好者体谅!<a onclick="hide2('summarya','summaryi','>>')"><<</a></span></p>
+					<p style="width:100%">为方便广大%cat%《%title_key%》爱好者，二手电影网提供其下载地址、在线观看、影评影讯等资源链接汇总。《%title_key%》(%keywords%)%pubcompany%，于%pubdate%上映。情节大概是： <a id="summarya" onclick="showhide('summarya','summaryi','>>>','<<<');">>>></a> <span id="summaryi" style="display:none">%summary%，%more%。欢迎持续关注此类资源更新情况,由于资源全部由计算机自动完成收集和匹配,二手电影网无法保证下载地址和在线观看等资源链接的真实性、正确性以及合法性，如果出现此类情况，希望广大影视爱好者体谅！<a onclick="hide2('summarya','summaryi','>>>')"><<<</a> </span></p>
 					<div id="entry_content" style="border-top:1px solid #999">
-						<div style="margin:10px 0">									
-							<span class="eh4">影片资源列表，不断更新中 ... </span>							
-							<span class="fr"> %thisupdatetime%</span>
-						</div>
+						<div class="eh4" style="position:relative;margin:15px 0 0 0">影片资源列表，不断更新中 ...<span class="fr fwn"> %thisupdatetime%</span></div>
 						<div style="display:none">									
 							<span>我是影视爱好者:我要[<a href="javascript:void(0);" onclick="showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>] [<a href="javascript:void(0);" onclick="AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页</a>] || 我是站长:我要[<a href="javascript:void(0);" onclick="showmiddle('srcsub')">提交资源</a>] || 我是版权方:我要[<a href="javascript:void(0);" onclick="showmiddle('del')">通知处理</a>]</span>
 						</div>
@@ -99,10 +96,13 @@
 						<div style="position:relative;">%downloadlinks%</div>
 						<h4 style="margin:30px 0 0 0">在线观看：%num1x%个 <span class="f500">%search%</span><div class="anchor"><a name="title_3" id="title_3">&nbsp;</a></div></h4>
 						<div class="linksmall">%onlinelinks%</div>
+						
 						<div class="eh4" style="position:relative;margin:30px 0 0 0">影视剧照：<span class="f500">更多在 [%photos%]</span><div class="anchor"><a name="title_4" id="title_4">&nbsp;</a></div></div>
 						<div style="margin:10px 0 0 0">%simgs%&nbsp;</div>
+						
 						<div class="eh4" style="position:relative;margin:20px 0 0 0">影片人物：<div class="anchor"><a name="title_5" id="title_5">&nbsp;</a></div></div>
 						<div style="margin:10px 0 0 0">%cpics%</div>
+						
 						<div class="eh4" style="margin:20px 0 0 0">左邻右舍：</div>
 						<div style="z-index:1;overflow:hidden;margin:10px 0 0 0">%others%</div>
 						</br>

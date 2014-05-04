@@ -482,7 +482,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	preg_match('/<pc>(.*?)<\/pc>/s',$row['meta'],$match);
 	if(!empty($match[1]))
 	{	
-		$pubcompany.=",该作品由$match[1]公司出品";
+		$pubcompany.="由$match[1]公司出品";
 	}	
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 
