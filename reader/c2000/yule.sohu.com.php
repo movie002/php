@@ -6,10 +6,9 @@ function yule_sohu_com_php()
 	print_r($authorname);
 
 	$url = array('http://yule.sohu.com/dianyingpinglun.shtml',
-				'http://yule.sohu.com/dramafeature/index.shtml',
-				'http://yule.sohu.com/comment/index.shtml');
+				'http://yule.sohu.com/dramafeature/index.shtml');
 				
-	$urlcat= array('电影评论','电视评论','娱乐评论');	
+	$urlcat= array('电影评论','电视评论');	
 	print_r($url);
 	
 	//寻找各自的updatetime	
