@@ -50,6 +50,7 @@
 						{
 							require("../php/common/common_gen.php");
 							require("../php/common/base.php");
+							require("../php/common/dbaction.php");
 							require("../php/config.php");
 							$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 							mysql_select_db($dbname, $conn) or die('选择数据库失败');

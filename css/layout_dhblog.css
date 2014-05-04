@@ -250,7 +250,37 @@ float:left;
 margin:0;
 padding:0;
 }
- 
+
+.tag_widget {
+border:1px solid #aaa;
+margin:0 0 10px;
+padding:0;
+z-index:1;
+overflow:hidden;
+border-radius:4px;
+-webkit-border-radius:4px;
+-khtml-border-radius:4px;
+-moz-border-radius:4px;
+}
+
+.tag_widget_box a {
+	background: #B3875B;
+    border: 3px double white;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+	font-size:13px;
+    margin: 2px;
+    padding: 2px 8px;
+    text-decoration: none;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+.tag_widget_box a:hover {
+	background:#FF8F0D;
+}
+
 .close a {   
 float:right;   
 margin:0 10px 0 0;   
