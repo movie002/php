@@ -404,10 +404,11 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$DH_output_content_page = str_replace("%people%",$people,$DH_output_content_page);
 	
 	//豆瓣 时光 评分等
+	$codetitle=rawurlencode($row['title']);
 	$replace = '';
 	$rating='';
 	$review='';
-	$news='';
+	$news='<a href="http://news.mtime.com/search/tag/index.html?t='.$codetitle.'" target="_blank" rel="nofollow">查找时光影讯</a>';;
 	$trailer='';
 	$photos='';
 	$piaozi='';
@@ -453,7 +454,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 		$mtimeid=$match[1];
 		$replace.='/<a href="http://movie.mtime.com/'.$match[1].'/" target="_blank" rel="nofollow">时光网:'.$rating.'</a>';
 		$review.='/<a href="http://movie.mtime.com/'.$match[1].'/comment.html" target="_blank" rel="nofollow">时光影评</a>';
-		$news.='<a href="http://movie.mtime.com/'.$match[1].'/news.html" target="_blank" rel="nofollow">时光影讯</a>';
+		$news.='/<a href="http://movie.mtime.com/'.$match[1].'/news.html" target="_blank" rel="nofollow">时光影讯</a>';
 		$trailer.='/<a href="http://movie.mtime.com/'.$match[1].'/trailer.html" target="_blank" rel="nofollow">时光预告</a>';
 		$photos.='/<a href="http://movie.mtime.com/'.$match[1].'/posters_and_images/" target="_blank" rel="nofollow">时光剧照</a>';
 		
@@ -517,7 +518,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 			$ticketnum++;
 			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://theater.mtime.com/movie/'.$mtimeid.'/" target = "_blank" title="时光网购票链接" rel="nofollow">时光网购票链接</a></div><div class="lqc3 rt0v5">时光网 '.$updatetime.'</div></div>';			
 		}	
-		$codetitle=rawurlencode($row['title']);
+		//$codetitle=rawurlencode($row['title']);
 		$piaozi.='/<a href="http://www.gewara.com/newSearchKey.xhtml?skey='.$codetitle.'" target="_blank" rel="nofollow">搜索格瓦拉</a>';
 		$piaozi.='/<a href="http://www.wangpiao.com/Search/Index/0/'.$codetitle.'/1" target="_blank" rel="nofollow">搜索网票</a>';
 		$piaozi.='/<a href="http://film.spider.com.cn/shanghai-search/?keyword='.$codetitle.'" target="_blank" rel="nofollow">搜索蜘蛛网</a>';
