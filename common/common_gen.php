@@ -138,7 +138,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		if($num01>0)
 		{
 			$downloadlinksi++;
-			$downloadlinkstitle.='<li class="active" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[1].'('.$num01.')</li>';
+			$downloadlinkstitle.='<li class="active" onmouseover="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[1].'('.$num01.')</li>';
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div><div class="linksmall">'.$downloadlinks1;
 			if($num01 > $num)
 			{
@@ -163,7 +163,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$activetitle='active';		
 			else
 				$activelink='class="none"';	
-			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';			
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onmouseover="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';			
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div><div class="linksmall">'.$downloadlinks2;
 			if($num02 > $num)
 			{
@@ -187,7 +187,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$activetitle='active';
 			else
 				$activelink='class="none"';	
-			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[3].'('.$num03.')</li>';
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onmouseover="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[3].'('.$num03.')</li>';
 				
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div><div class="linksmall">'.$downloadlinks3;
 			if($num03 > $num)
@@ -212,7 +212,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$activetitle='active';
 			else
 				$activelink='class="none"';
-			$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[0].'('.$num00.')</li>';
+			$downloadlinkstitle.='<li class="'.$activetitle.'" onmouseover="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[0].'('.$num00.')</li>';
 			$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div><div class="linksmall">'.$downloadlinks0;
 			if($num00 > $num)
 			{
