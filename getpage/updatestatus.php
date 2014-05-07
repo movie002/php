@@ -80,7 +80,7 @@ function update_status($daybegin)
 function update_hot($daybegin)
 {
 	$sql="select id,title,ids from page p where p.updatetime >= '$daybegin'";
-	$daysbegin = getupdatebegin(10);
+	$daysbegin = getupdatebegin(7);
 	$sqldayslink=" and l.updatetime >= '$daysbegin'";	
 	echo "</br>\n".$sql."</br>\n";
 	$results=dh_mysql_query($sql);
