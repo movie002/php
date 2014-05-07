@@ -16,23 +16,22 @@ set_time_limit(3600);
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
-update_status();
-update_hot();
+
+$daybeginnum=30;
+if( isset($_REQUEST['d']))
+{
+	$daybeginnum = $_REQUEST['d'];
+}
+	
+$daybegin = getupdatebegin($daybeginnum);
+update_status($daybegin);
+update_hot($daybegin);
 mysql_close($conn);
 
-function update_status()
-{
-	//需要更新的page的时间
-	$sqldays='';
-	
-	if( isset($_REQUEST['d']))
-	{
-		$daybegin = getupdatebegin($_REQUEST['d']);
-		$sqldays=" where p.updatetime >= '$daybegin'";
-	}
-	
+function update_status($daybegin)
+{	
 	//得到电影的权重
-	$sql="select * from page p".$sqldays;
+	$sql="select * from page p where p.updatetime >= '$daybegin'";
 	echo "</br>\n".$sql."</br>\n";
 	$results=dh_mysql_query($sql);
 	if($results)
@@ -78,19 +77,10 @@ function update_status()
 	}	
 }
 
-function update_hot()
+function update_hot($daybegin)
 {
-	$daysbefore=10;
-	//十天之前的报告就不hot了
-	$daybeginlink = getupdatebegin($daysbefore+1);
-	$dayendlink = getupdatebegin($daysbefore);
-	$daybeginpage = getupdatebegin(1);
-	$sqldayslink=" and l.updatetime >= '$dayendlink'";
-	//得到电影的权重
-	$hot=0;
-	$sql="(select p.id,p.title,p.ids from page p,link l where p.id = l.pageid and l.updatetime >= '$daybeginlink' and l.updatetime < '$dayendlink') union (select p.id,p.title,p.ids from page p,link2 l where p.id = l.pageid and l.updatetime >= '$daybeginlink' and l.updatetime < '$dayendlink') union (select id,title,ids from page where updatetime >='$daybeginpage')";
-	
-	
+	$sql="select id,title,ids from page p where p.updatetime >= '$daybegin'";
+	$sqldayslink=" and l.updatetime >= '$daybegin'";	
 	echo "</br>\n".$sql."</br>\n";
 	$results=dh_mysql_query($sql);
 	if($results)
