@@ -72,7 +72,7 @@ function insertonlylink2($author,$title,$link,$cat,$update)
 	echo $title.' = '.$link.' = '.$cat." = ".$update." ->插入onlylink成功</br> \n";	
 }
 
-function addorupdateonlylink($author,$title,$link,$cat,$updatetime,$linkquality,$linkway,$linktype,$linkdownway,$mtitle,$moviecountry,$movieyear,$movietype)
+function addorupdateonlylink($author,$title,$link,$cat,$updatetime,$mtitle,$moviecountry,$movieyear,$movietype)
 {
 	//清理title的空格
 	$title = trim($title);
@@ -84,12 +84,12 @@ function addorupdateonlylink($author,$title,$link,$cat,$updatetime,$linkquality,
 	if($updatetime > $datenow)
 		$updatetime = $datenow;
 
-	$sql="insert into onlylink(author,title,link,cat,linkquality,linkway,linktype,linkdownway,mtitle,moviecountry,movieyear,movietype,updatetime) values('$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$mtitle',$moviecountry,$movieyear,$movietype,'$updatetime')ON DUPLICATE KEY UPDATE linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,mtitle='$mtitle',moviecountry=$moviecountry,movieyear='$movieyear',movietype=$movietype,updatetime='$updatetime'";
+	$sql="insert into onlylink(author,title,link,cat,mtitle,moviecountry,movieyear,movietype,updatetime) values('$author','$title','$link','$cat','$mtitle',$moviecountry,$movieyear,$movietype,'$updatetime')ON DUPLICATE KEY UPDATE mtitle='$mtitle',moviecountry=$moviecountry,movieyear='$movieyear',movietype=$movietype,updatetime='$updatetime'";
 	echo $sql."</br>\n";
 	$sqlresult=dh_mysql_query($sql);
 
 	//global $movietype,$moviecountry,$linkquality,$linkway,$linktype,$linkdownway;
-	//echo $movietype[$movietype].'|'.$moviecountry[$moviecountry].'|'.$linktype[$linktype].'|'.$linkquality[$linkquality].'|'.$linkway[$linkway].'|'.$linkdownway[$linkdownway].'|'.$movieyear.'|'.$mtitle." >> ".$title.'|'.$link.'|'.$cat.'|'.$updatetime." -> 插入onlylink成功！</br> \n";
+	//echo $movietype[$movietype].'|'.$moviecountry[$moviecountry].$movieyear.'|'.$mtitle." >> ".$title.'|'.$link.'|'.$cat.'|'.$updatetime." -> 插入onlylink成功！</br> \n";
 }
 
 function addorupdatelink($pageid,$author,$title,$link,$cat,$linkquality,$linkway,$linktype,$linkdownway,$updatetime,$input)

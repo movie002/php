@@ -23,7 +23,7 @@ function getlink()
 		$d = $_REQUEST['d'];
 	}
 	$datebegin = getupdatebegin($d);	
-	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 3 and mtitle is not null";
+	$sql="select * from link where updatetime > '$datebegin'";
 //	$sql="select * from onlylink where mtitle is not null";
 
 	if(isset($_REQUEST['pageid']))
@@ -45,23 +45,20 @@ function getlink()
 		$count++;
 		echo "\n".$count.": ";
 		$maxrate=1;
-		$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);
+		$sqlauthor="select * from author where name='".$row['author']."'";
+		$resultsauthor=dh_mysql_query($sqlauthor);
+		$rowauthor = mysql_fetch_array($resultsauthor);		
+
+		if(getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
+			continue;
+
+		$pageid = getdbpageid($row['title'],$mtitle,$moviecountry,$movieyear,$movietype,$maxrate);
 		if($pageid>=0)
 		{
 			//查找资源质量
-			
-			$sqlauthor="select * from author where name='".$row['author']."'";
-			$resultsauthor=dh_mysql_query($sqlauthor);
-			$rowauthor = mysql_fetch_array($resultsauthor);
 			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$row['link'],$row['title'],$row['cat'])==-1)
 				continue;	
 			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime'],0);
-			$sqlupdate = "update page set updatetime = '".$row['updatetime']."' where id = '".$pageid."';";
-			dh_mysql_query($sqlupdate);
-			
-			//删除onlylink中的部分
-			$sql="delete from onlylink where link='".$row['link']."'";
-			$sqlresult=dh_mysql_query($sql);
 		}
 	}
 }
