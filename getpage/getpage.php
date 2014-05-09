@@ -7,7 +7,7 @@ require("../common/curl.php");
 require("../common/compare.php");
 require("../common/dbaction.php");
 require("getsites/douban.php");
-
+require("common.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -60,11 +60,17 @@ function getpage()
 			//先从数据库寻找，再从豆瓣寻找	
 			echo "\n\n".$count.": ";
 			$maxrate=1;
-			$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);			
 			
+			$sqlauthor="select * from author where name='".$row['author']."'";
+			$resultsauthor=dh_mysql_query($sqlauthor);
+			$rowauthor = mysql_fetch_array($resultsauthor);	
+			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$row['link'],$row['title'],$row['cat'])==-1)
+				continue;
+				
+			$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);	
 			if($pageid>=0)
 			{
-				addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$row['linkquality'],$row['linkway'],$row['linktype'],$row['linkdownway'],$row['updatetime'],0);
+				addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime'],0);
 				$sqlupdate = "update page set updatetime = '".$row['updatetime']."' where id = '".$pageid."';";
 				dh_mysql_query($sqlupdate);
 				
@@ -84,6 +90,7 @@ function getpage()
 				//print_r($douban_result);
 				updatepage($douban_result,$row['updatetime']);
 				//得到更新的page的id
+				addorupdatelink(-1,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime'],0);
 				$sqlupdate = "update link set pageid = (select id from page where mediaid='$mediaid') where link = '".$row['link']."'";
 				dh_mysql_query($sqlupdate);				
 				if($douban_result->doubantrail!='')

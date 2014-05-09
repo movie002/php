@@ -40,9 +40,9 @@ function getlinkmeta($row,&$linkway,&$linktype,&$linkquality,&$linkdownway,$link
 		echo "linkway=$linkway % title=$title link=$link cat=$cat -> linkway error 失败，请查明原因！</br> \n";
 		return -1;
 	}
-	$linktype = testneed($rowauthor['clinktype'],$link,$title,$cat);
-	$linkquality = testneed($rowauthor['clinkquality'],$link,$title,$cat);
-	$linkdownway = testneed($rowauthor['clinkdownway'],$link,$title,$cat);
+	$linktype = testneed($row['clinktype'],$link,$title,$cat);
+	$linkquality = testneed($row['clinkquality'],$link,$title,$cat);
+	$linkdownway = testneed($row['clinkdownway'],$link,$title,$cat);
 	return 0;
 }
 
