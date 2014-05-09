@@ -7,24 +7,38 @@
 /////////////////////////////////////////////////////
 
 header('Content-Type:text/html;charset= UTF-8'); 
-require("../config.php");
+require_once("../config.php");
 #需要使用的基础函数
-require("../common/common_gen.php");
-require("../common/dbaction.php");
-require("../common/base.php");
-require("../common/share.php");
-require("../common/compressJS.class.php");
-require("queue.php");
+require_once("../common/common_gen.php");
+require_once("../common/dbaction.php");
+require_once("../common/base.php");
+require_once("../common/share.php");
+require_once("../common/compressJS.class.php");
+require_once("queue.php");
 set_time_limit(600); 
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
-dh_gen_page();
+
+$days=0;
+$pageid=-1;
+
+if( isset($_REQUEST['d']))
+{
+	$days = $_REQUEST['d'];
+}
+if( isset($_REQUEST['id']))
+{
+	$pageid = $_REQUEST['id'];
+}
+
+echo 'ddd';
+dh_gen_page($days,$pageid);
 
 //echo output_page_path(63);
 
-function dh_gen_page()
+function dh_gen_page($days,$pageid)
 {
 	global $DH_home_url,$DH_html_path,$DH_output_path,$DH_page_store_deep,$DH_output_html_path;
 	if (!file_exists($DH_output_html_path))  
@@ -41,26 +55,25 @@ function dh_gen_page()
 	}
 	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);	
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);		
-	dh_gen_each_page_file('page',$DH_output_html_path,$DH_output_content);
+	dh_gen_each_page_file($days,$pageid,'page',$DH_output_html_path,$DH_output_content);
 }
 
-function dh_gen_each_page_file($table,$path,$DH_output_content)
+function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 {
 	global $DH_index_url,$conn,$linkquality,$linkway,$linktype,$DH_home_url;
 	
 	//从参数里面去的天数
-	$sqldays='';
-	if( isset($_REQUEST['d']))
+	$sqllast='';
+	if( $days != 0)
 	{
-		$daybegin = getupdatebegin($_REQUEST['d']);
-		$sqldays=" where updatetime >= '$daybegin'";
+		$daybegin = getupdatebegin($days);
+		$sqllast=" where updatetime >= '$daybegin'";
 	}
-	if( isset($_REQUEST['id']))
+	if( $pageid != -1)
 	{
-		$id = $_REQUEST['id'];
-		$sqldays=" where id = $id";
+		$sqllast=" where id = $pageid";
 	}	
-	$sql = "select * from ". $table.$sqldays;
+	$sql = "select * from ". $table.$sqllast;
 	echo $sql;
 	$results=mysql_query($sql,$conn);	
 	if($results)

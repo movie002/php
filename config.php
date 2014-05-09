@@ -14,17 +14,17 @@ $pagecount=15;
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 
 
-$DH_output_path= '/srv/v/';
-$DH_input_path= '/srv/php/';
-$DH_author_path= '/srv/www/';
-$DH_dh_path= '/srv/dh/';
-$DH_home_url= 'http://v.movie002.com/';
+//$DH_output_path= '/srv/v/';
+//$DH_input_path= '/srv/php/';
+//$DH_author_path= '/srv/www/';
+//$DH_dh_path= '/srv/dh/';
+//$DH_home_url= 'http://v.movie002.com/';
 
-//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
-//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-//$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
-//$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
-//$DH_home_url= 'http://127.0.0.1/v/';
+$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
+$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
+$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
+$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
+$DH_home_url= 'http://127.0.0.1/v/';
 
 
 
@@ -69,7 +69,7 @@ $moviecountry=array('','华语','欧美','日韩','其他');
 $moviestatus=array('','出预告片','马上登陆','正在上映','放映结束','出售碟片','经典影片');
 
 //所有的链接类型，除了影视资源,都在onlylink表中
-$linkquality=array('','未知','抢先','修正','普清','高清','超清','三维');
+$linkquality=array('未知','未知','抢先','修正','普清','高清','超清','三维');
 $linkway=array('未知类型','影视资讯','热门评论','预告花絮','相关活动','购票链接','下载链接','在线观看','影视资料');
 $linktype=array('未知资源','迅雷资源','FTP资源','BT 资源','磁力链接','电驴资源','网盘资源','网页在线','百度影音','快播资源','综合资源');
 $linkdownway=array('未知资源','直接下载','跳转下载','登陆下载','积分下载');

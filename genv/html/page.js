@@ -71,6 +71,17 @@ function hidemiddle(id)
 	id.style.display='none';
 };
 
+function deleteurl(title,url,id)
+{
+	var deltitle = document.getElementById('deltitle');
+	deltitle.innerHTML=title;
+	var delurl = document.getElementById('delurl');
+	delurl.innerHTML=url;
+	var delurlinput = document.getElementById('delurlinput');
+	delurlinput.value=url;	
+	showmiddle('del');
+};
+
 function duoshuo()
 {
 	//多说

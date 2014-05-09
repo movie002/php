@@ -68,13 +68,13 @@
 					</div>
 					<p style="width:100%">为方便广大%cat%《%title_key%》爱好者，二手电影网提供其下载地址、在线观看、影评影讯等资源链接汇总。《%title_key%》(%keywords%)%pubcompany%，于%pubdate%上映。情节大概是： <a id="summarya" onclick="showhide('summarya','summaryi','>>>','<<<');">>>></a> <span id="summaryi" style="display:none">%summary%，%more%。欢迎持续关注此类资源更新情况,由于资源全部由计算机自动完成收集和匹配,二手电影网无法保证下载地址和在线观看等资源链接的真实性、正确性以及合法性，如果出现此类情况，希望广大影视爱好者体谅！<a onclick="hide2('summarya','summaryi','>>>')"><<<</a> </span></p>
 					<div id="entry_content" style="border-top:1px solid #999">
-						<div class="eh4" style="position:relative;margin:15px 0 0 0">影片资源列表，不断更新中 ...<span class="fr fwn"> %thisupdatetime%</span></div>
-						<div style="display:none">									
+						<div class="eh4" style="position:relative;margin:15px 0 0 0">影片资源列表，不断更新中 ...<span class="rt0v0 f500"> %thisupdatetime%</span></div>
+						<div style="margin:5px 0 0 0">									
 							<span>我是影视爱好者:我要[<a href="javascript:void(0);" onclick="showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>] [<a href="javascript:void(0);" onclick="AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页</a>] || 我是站长:我要[<a href="javascript:void(0);" onclick="showmiddle('srcsub')">提交资源</a>] || 我是版权方:我要[<a href="javascript:void(0);" onclick="showmiddle('del')">通知处理</a>]</span>
 						</div>
-						<div style="position:relative">
+						<div style="position:relative;margin:15px 0 0 0">
 							<div class="anchor"><a name="title_1" id="title_1">&nbsp;</a></div>
-							<div class="TabTitle" style="position:relative;top:50px;left:10px;"><ul id="dt"><li class="active" onmouseover="nTabs(this,0);">资讯新闻(%num4%)</li><li class="normal" onmouseover="nTabs(this,1);">精彩影评(%num3%)</li><li class="normal" onmouseover="nTabs(this,2);">预告花絮(%num2%)</li><li class="normal" onmouseover="nTabs(this,3);">活动购票(%ticketnum%)</li></ul></div>
+							<div class="TabTitle rl35v10"><ul id="dt"><li class="active" onmouseover="nTabs(this,0);">资讯新闻(%num4%)</li><li class="normal" onmouseover="nTabs(this,1);">精彩影评(%num3%)</li><li class="normal" onmouseover="nTabs(this,2);">预告花絮(%num2%)</li><li class="normal" onmouseover="nTabs(this,3);">活动购票(%ticketnum%)</li></ul></div>
 							<div id="dt_Content0" style="overflow:hidden;z-index:2;">
 								<h4>影片动态(资讯新闻) <span class="f500">试试看 [%news%]</span></h4>
 								<div class="borderside" style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div class="linksmall">%zixun%</div>
@@ -173,11 +173,13 @@
 				<div id="del" class="middle_action" style="display:none;">
 					1.请您提交有效的资源</br>
 					2.提交之后24小时之后审查不通过会被删除</br></br>
-					<form action="%home%php/del.php" method="POST" target="deli"> 
-						链接地址： <input type="text" style="width:200px" name="email"></br>
-						意见反馈： <input type="text" style="width:200px;height:60px" name="email"></br>
+					<form action="%home%php/srcdel.php" method="POST"> 
+						链接名称： <div id="deltitle"></div></br>
+						链接地址： <div id="delurl" class="overflow"></div></br>
+						权限密码： <input type="text" style="width:100px;height:20px" name="passwd"></br>
 						<input type="submit" name="submit" value="提交">
-						<input type="hidden" name="hidden" value="%id%"> 
+						<input type="hidden" name="pageid" value="%id%">
+						<input type="hidden" name="delurl" id="delurlinput" value="">
 						<a href="javascript:void(0);" onclick="hidemiddle('del')">退出</a>
 					</form>
 					<iframe name="deli" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
