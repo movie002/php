@@ -71,7 +71,7 @@ function hidemiddle(id)
 	id.style.display='none';
 };
 
-function deleteurl(title,url,id)
+function deleteurl(title,url)
 {
 	var deltitle = document.getElementById('deltitle');
 	deltitle.innerHTML=title;

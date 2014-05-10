@@ -53,8 +53,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				$type = 0;
 			
 			$updatetime = date("Ymd",strtotime($rowlinks['updatetime']));
-			$linkseach1 = '<div class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> '.$updatetime.'</div></div>';
-			$linkseach2 = '<div class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' '.$updatetime.'</div></div>';			
+			$linkseach1 = '<div class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> <span onclick="deleteurl(\''.$rowlinks['title'].'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</span></div></div>';
+			$linkseach2 = '<div class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$rowlinks['title']. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span onclick="deleteurl(\''.$rowlinks['title'].'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</span></div></div>';			
 			switch ($way)
 			{
 				case 1://资讯
