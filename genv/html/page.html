@@ -74,7 +74,7 @@
 						</div>
 						<div style="position:relative;margin:15px 0 0 0">
 							<div class="anchor"><a name="title_1" id="title_1">&nbsp;</a></div>
-							<div class="TabTitle rl35v10"><ul id="dt"><li class="active" onmouseover="nTabs(this,0);">资讯新闻(%num4%)</li><li class="normal" onmouseover="nTabs(this,1);">精彩影评(%num3%)</li><li class="normal" onmouseover="nTabs(this,2);">预告花絮(%num2%)</li><li class="normal" onmouseover="nTabs(this,3);">活动购票(%ticketnum%)</li></ul></div>
+							<div class="TabTitle lt35v10"><ul id="dt"><li class="active" onmouseover="nTabs(this,0);">资讯新闻(%num4%)</li><li class="normal" onmouseover="nTabs(this,1);">精彩影评(%num3%)</li><li class="normal" onmouseover="nTabs(this,2);">预告花絮(%num2%)</li><li class="normal" onmouseover="nTabs(this,3);">活动购票(%ticketnum%)</li></ul></div>
 							<div id="dt_Content0" style="overflow:hidden;z-index:2;">
 								<h4>影片动态(资讯新闻) <span class="f500">试试看 [%news%]</span></h4>
 								<div class="borderside" style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div class="linksmall">%zixun%</div>
@@ -171,9 +171,10 @@
 					<iframe name="srcsubi" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
 				</div>
 				<div id="del" class="middle_action" style="display:none;">
-					1.请您提交有效的资源</br>
-					2.提交之后24小时之后审查不通过会被删除</br></br>
-					<form action="%home%php/srcdel.php" method="POST"> 
+					1.提交资源删除请求需要删除码</br>
+					2.如果是自己提交的资源，删除码为提交码</br>
+					3.其他情况，请联系管理员获取删除码</br></br>
+					<form action="%home%php/srcdel.php" method="POST" target="deli"> 
 						链接名称： <div id="deltitle"></div></br>
 						链接地址： <div id="delurl" class="overflow"></div></br>
 						权限密码： <input type="text" style="width:100px;height:20px" name="passwd"></br>
