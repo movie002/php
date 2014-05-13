@@ -123,55 +123,58 @@
 					</form>
 					<iframe name="mailsubi" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
 				</div>
-				<div id="srcsub" class="middle_action" style="display:none;">
+				<div id="srcsub" class="middle_action" style="display:none" target="srcsubi">
 					1.请您提交有效的资源</br>
 					2.提交之后24小时之后审查不通过会被删除</br></br>
 					<form action="%home%php/srcsub.php" method="POST">
 						资源名字： <input type="text" style="width:250px" name="title"></br>
 						链接地址： <input type="text" style="width:250px" name="link"></br>
 						来源网站： <input type="text" style="width:250px" name="author"></br>
-						资源类型： <select id="linktype" name="linktype">
-										<option value="0">影视资讯</option>
-										<option value="1">影视评论</option>
-										<option value="2">预告花絮</option>
-										<option value="3">活动购票</option>
-										<option value="4">下载资源</option>
-										<option value="5">在线观看</option>
+						资源类型： <select id="linkway" name="linkway">
+										<option value="1">影视资讯</option>
+										<option value="2">影视评论</option>
+										<option value="3">预告花絮</option>
+										<option value="4">相关活动</option>
+										<option value="5">购票链接</option>
+										<option selected value="6">下载资源</option>
+										<option value="7">在线观看</option>
+										<option value="8">影视资料</option>
 									</select>
 						资源质量：<select id="linkquality" name="linkquality">
-										<option value="0">未知</option>
-										<option value="1">抢先</option>
-										<option value="2">普清</option>
-										<option value="3">高清</option>
-										<option value="4">超清</option>
-										<option value="5">3D</option>
+										<option value="1">未知</option>
+										<option value="2">抢先</option>
+										<option value="3">修正</option>
+										<option selected value="4">普清</option>
+										<option value="5">高清</option>
+										<option value="6">超清</option>
+										<option value="7">三维</option>
 									</select></br>			
-						资源类型： <select id="linkdowntype" name="linkdowntype">
+						获取方式： <select id="linktype" name="linktype">
 										<option value="0">未知类型</option>
-										<option value="1">迅雷资源</option>
+										<option selected value="1">迅雷资源</option>
 										<option value="2">FTP资源</option>
 										<option value="3">BT 资源</option>
 										<option value="4">磁力链接</option>
 										<option value="5">电驴资源</option>
 										<option value="6">网盘资源</option>
+										<option value="7">网页在线</option>
+										<option value="8">百度影音</option>
+										<option value="9">快播资源</option>
 									</select>						
-						资源渠道：<select id="linkproperty" name="linkproperty">
-										<option value="0">直接</option>
-										<option value="1">跳转</option>
-										<option value="2">登录</option>
-										<option value="3">未知</option>
+						下载渠道：<select id="linkdownway" name="linkdownway">
+										<option value="1">直接下载</option>
+										<option selected value="2">跳转下载</option>				<option value="3">需要登录</option>
+										<option value="4">未知渠道</option>
 								  </select></br>
 						更新时间： <input type="text" style="width:78px" name="updatetime">(格式:20130101  默认为今日)</br>
 						<input type="hidden" name="id" value="%id%">
-						<div style="text-align:center;margin-top:5px">
-							授权码:<input type="text" style="width:78px" name="passwd">
-							<input type="submit" name="submit" value="提交">
-							<a href="javascript:void(0);" onclick="hidemiddle('srcsub')">退出</a>
-						</div>
+						授权号码： <input type="text" style="width:78px" name="passwd">
+						<input type="submit" name="submit" value="提交">
+						<a href="javascript:void(0);" onclick="hidemiddle('srcsub')">退出</a>
 					</form>
 					<iframe name="srcsubi" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
 				</div>
-				<div id="del" class="middle_action" style="display:none;" target="deli">
+				<div id="del" class="middle_action" style="display:none" target="deli">
 					1.提交资源删除请求需要删除码</br>
 					2.如果是自己提交的资源，删除码为提交码</br>
 					3.其他情况，请联系管理员获取删除码</br></br>
@@ -186,7 +189,7 @@
 					</form>
 					<iframe name="deli" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
 				</div>
-				<div id="notify" class="middle_action" style="display:none;" target="notifyi">
+				<div id="notify" class="middle_action" style="display:none">
 					1.通知需要发邮件通知</br>
 					2.附带相关权利证明和相关证明材料</br>
 					3.审核通过之后会发送删除码</br>
