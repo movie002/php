@@ -123,10 +123,10 @@
 					</form>
 					<iframe name="mailsubi" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
 				</div>
-				<div id="srcsub" class="middle_action" style="display:none" target="srcsubi">
+				<div id="srcsub" class="middle_action" style="display:none">
 					1.请您提交有效的资源</br>
 					2.提交之后24小时之后审查不通过会被删除</br></br>
-					<form action="%home%php/srcsub.php" method="POST">
+					<form action="%home%php/srcsub.php" method="POST" target="srcsubi">
 						资源名字： <input type="text" style="width:250px" name="title"></br>
 						链接地址： <input type="text" style="width:250px" name="link"></br>
 						来源网站： <input type="text" style="width:250px" name="author"></br>
@@ -174,11 +174,11 @@
 					</form>
 					<iframe name="srcsubi" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
 				</div>
-				<div id="del" class="middle_action" style="display:none" target="deli">
+				<div id="del" class="middle_action" style="display:none">
 					1.提交资源删除请求需要删除码</br>
 					2.如果是自己提交的资源，删除码为提交码</br>
 					3.其他情况，请联系管理员获取删除码</br></br>
-					<form action="%home%php/srcdel.php" method="POST"> 
+					<form action="%home%php/srcdel.php" method="POST" target="deli"> 
 						链接名称： <div id="deltitle"></div></br>
 						链接地址： <div id="delurl" class="overflow"></div></br>
 						权限密码： <input type="text" style="width:100px;height:20px" name="passwd"></br>
