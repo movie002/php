@@ -55,7 +55,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$updatetime = date("Ymd",strtotime($rowlinks['updatetime']));
 			$title = str_replace("'","`",$rowlinks['title']);
 			$title = str_replace("\"","`",$title);
-			echo $title."\n";
+			//echo $title."\n";
 			
 			$linkseach1 = '<div class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$title.' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> <span onclick="deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</span></div></div>';
 			$linkseach2 = '<div class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$title.' - '.$rowlinks['author'].'的链接" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span onclick="deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</span></div></div>';			
