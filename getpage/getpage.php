@@ -70,7 +70,7 @@ function getpage()
 			$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);	
 			if($pageid>=0)
 			{
-				addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime'],0);
+				addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime']);
 				$sqlupdate = "update page set updatetime = '".$row['updatetime']."' where id = '".$pageid."';";
 				dh_mysql_query($sqlupdate);
 				
@@ -90,7 +90,7 @@ function getpage()
 				//print_r($douban_result);
 				updatepage($douban_result,$row['updatetime']);
 				//得到更新的page的id
-				addorupdatelink(-1,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime'],0);
+				addorupdatelink(-1,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime']);
 				$sqlupdate = "update link set pageid = (select id from page where mediaid='$mediaid') where link = '".$row['link']."'";
 				dh_mysql_query($sqlupdate);				
 				if($douban_result->doubantrail!='')

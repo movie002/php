@@ -128,7 +128,7 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$cathref = $DH_index_url.$row['cattype'].'_'.$row['catcountry'].'_l/1.html';
 			$DH_output_content_page = str_replace("%cathref%",$cathref,$DH_output_content_page);
 						
-			$sqllinks = "select pageid,author,title,link,linkquality,linkway,linktype,linkdownway,updatetime from link t where t.pageid = '".$row['id']."' and remove='0' order by linkquality desc,updatetime desc";
+			$sqllinks = "select pageid,author,title,link,linkquality,linkway,linktype,linkdownway,updatetime from link t where t.pageid = '".$row['id']."' and remove is null order by linkquality desc,updatetime desc";
 			//echo $sqllinks;
 			$DH_output_content_page = dh_replace_link($sqllinks,$row,$DH_output_content_page);
 			$summary=trim($row['summary']);

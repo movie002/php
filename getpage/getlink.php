@@ -55,7 +55,7 @@ function getlink()
 			$rowauthor = mysql_fetch_array($resultsauthor);
 			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$row['link'],$row['title'],$row['cat'])==-1)
 				continue;	
-			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime'],0);
+			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime']);
 			$sqlupdate = "update page set updatetime = '".$row['updatetime']."' where id = '".$pageid."';";
 			dh_mysql_query($sqlupdate);
 			
