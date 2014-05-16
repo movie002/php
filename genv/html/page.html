@@ -43,7 +43,7 @@
 				<div class="entry f12px">
 					<div class="movie_meta h154px">
 						%imgposter%
-						<div class="imglist">
+						<div class="imglist bb">
 							<div>资源情况: <a href="#title_1" title="点击跳转至影讯链接">影讯:%num4%个</a> <a href="#title_1" title="点击跳转至预告片链接">预告:%num2%个</a> <a href="#title_1" title="点击跳转至购票链接">购票:0个</a> <a href="#title_1" title="点击跳转至影评链接">影评:%num3%个</a> <a href="#title_2" title="点击跳转至下载地址链接">下载:%num0x%个</a> <a href="#title_3" title="点击跳转至在线观看链接">在线:%num1x%个</a></div>
 							<div>上映时间: %pubdate% 国家:%country%</div>
 							<div>影片时长: %time% 类型:%tags% 语言:%language%</div>
@@ -70,7 +70,7 @@
 					<div id="entry_content" style="border-top:1px solid #999">
 						<div class="eh4" style="position:relative;margin:15px 0 0 0">影片资源列表，不断更新中 ...<span class="rt0v0 f500"> %thisupdatetime%</span></div>
 						<div style="margin:5px 0 0 0">									
-							<span>我是影视爱好者:我要[<a href="javascript:void(0);" onclick="showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>] [<a href="javascript:void(0);" onclick="AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页</a>] || 我是站长:我要[<a href="javascript:void(0);" onclick="showmiddle('srcsub')">提交资源</a>] || 我是版权方:我要[<a href="javascript:void(0);" onclick="showmiddle('notify')">通知处理</a>]</span>
+							<span>我是影视爱好者:我要<!--[<a href="javascript:showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>]--> [<a href="javascript:AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页</a>] || 我是站长:我要[<a href="javascript:showmiddle('srcsub')">提交资源</a>] || 我是版权方:我要[<a href="javascript:showmiddle('notify')">通知处理</a>]</span>
 						</div>
 						<div style="position:relative;margin:15px 0 0 0">
 							<div class="anchor"><a name="title_1" id="title_1">&nbsp;</a></div>
@@ -181,7 +181,7 @@
 					<form action="%home%php/srcdel.php" method="POST" target="deli"> 
 						链接名称： <div id="deltitle"></div></br>
 						链接地址： <div id="delurl" class="overflow"></div></br>
-						权限密码： <input type="text" style="width:100px;height:20px" name="passwd"></br>
+						权限密码： <input type="text" style="width:100px;height:20px" name="passwd">
 						<input type="submit" name="submit" value="提交">
 						<input type="hidden" name="pageid" value="%id%">
 						<input type="hidden" name="delurl" id="delurlinput" value="">
@@ -190,11 +190,10 @@
 					<iframe name="deli" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
 				</div>
 				<div id="notify" class="middle_action" style="display:none">
-					1.通知需要发邮件通知</br>
-					2.附带相关权利证明和相关证明材料</br>
-					3.审核通过之后会发送删除码</br>
-					4.利用删除码可以删除改影视资源相关侵权链接</br>
-					5.也可以通知管理员删除</br></br>
+					1.如遇到侵权行为，请发邮件到a@movie002.com</br>
+					2.邮件中附带相关权利证明和相关证明材料</br>
+					3.管理员审核通过之后会发送删除码</br>
+					4.利用删除码点击日期可删除侵权链接 
 					<a href="javascript:void(0);" onclick="hidemiddle('notify')">退出</a>
 				</div>				
 			</div>

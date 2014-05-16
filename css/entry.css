@@ -46,7 +46,6 @@ color:#000
 
 .entry {
 padding:2px 8px;
-border-top: 1px solid #ccc;
 }
 
 .entry p {
@@ -87,7 +86,7 @@ padding:0!important;
 	border-bottom: 1px solid #999;
 	position:relative;
 	color: purple;
-	background-color: lightblue;	
+	background: lightblue;	
 }
 
 .entry h5 {

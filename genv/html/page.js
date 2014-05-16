@@ -38,6 +38,19 @@ function weibo()
 	})();
 }
 
+function dsstyle()
+{
+	//多说留言的style修改
+	if(movie002_day=='night')
+	{
+		var dss = document.createElement('style');
+		dss.type = 'text/css';
+		dss.textContent = '#ds-reset p{color:#B6AA7B}';
+		(document.getElementsByTagName('body')[0]
+		||document.getElementsByTagName('head')[0]).appendChild(dss);
+	}
+}
+
 //光标聚焦
 window.onload = function ()
 {
@@ -57,5 +70,6 @@ window.onload = function ()
 	google();
 	duoshuo();
 	weibo();
-	dhsay();	
+	dhsay();
+	dsstyle();
 };

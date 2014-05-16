@@ -50,9 +50,6 @@
 	margin:0;
 	padding:5px 0 0 5px;
 	border:1px solid transparent;
-	/*border-bottom: 1px solid #999;*/
-	-moz-border-radius:6px;
-	border-radius:6px;	
 }
 .movie_meta_cover{
 	height:127px;
@@ -203,14 +200,15 @@ padding: 0px;
 	position:relative;
 	width:100%;
 	margin:0 0 10px 0;
-	padding:8px;
+	padding:0 8px 0 0;
+	z-index: 1;
+	overflow: hidden;
+	border-bottom:1px solid #ccc;	
 }
 
 .col1 li,.col2 li,.col3 li,.col4 li,.col5 li,.col6 li
 {
 	position:relative;
-	border-right:1px solid #ccc;
-	border-bottom:1px solid #ccc;	
 }
 
 .col2 li
@@ -229,6 +227,7 @@ padding: 0px;
 	width:31%;
 	padding:5px 10px;
 	margin:0;
+	border: 1px solid transparent;	
 }
 
 .col4 li
@@ -310,7 +309,6 @@ padding: 0px;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
-	border-bottom:1px solid #999;
 	width:85%;
 }
 

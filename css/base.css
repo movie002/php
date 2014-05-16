@@ -352,6 +352,26 @@ a:active {
 	color:#000;
 }
 
+.bb
+{
+	border-bottom:1px solid #999;
+}
+
+.bt
+{
+	border-top:1px solid #999;
+}
+
+.br
+{
+	border-right:1px solid #999;
+}
+
+.bl
+{
+	border-left:1px solid #999;
+}
+
 .cpright 
 {
 	font:12px Arial,Helvetica,sans-serif;

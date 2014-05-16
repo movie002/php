@@ -355,7 +355,7 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 function dh_get_movie_type_onlylink($sql)
 {
 	global $DH_html_url,$conn,$linkway;
-	$recs=mysql_query($sql,$conn);
+	$recs=dh_mysql_query($sql,$conn);
 	$liout="";
 	if($recs)
 	{									
@@ -386,7 +386,7 @@ function dh_get_movie_type_onlylink($sql)
 function dh_get_movie_type_img($sql)
 {
 	global $DH_html_url,$conn,$linkway;
-	$recs=mysql_query($sql,$conn);
+	$recs=dh_mysql_query($sql,$conn);
 	$liout="";
 	if($recs)
 	{									
@@ -426,7 +426,7 @@ function dh_get_movie_type_img($sql)
 function dh_get_movie_type_block($sql,$i)
 {
 	global $DH_html_url,$conn,$linkway,$linkquality;
-	$recs=mysql_query($sql,$conn);
+	$recs=dh_mysql_query($sql,$conn);
 	$liout="";
 	if($recs)
 	{									
@@ -474,7 +474,7 @@ function dh_get_movie_type_block($sql,$i)
 function dh_get_movie_type_list($sql,$list_html,$type)
 {
 	global $DH_html_url,$conn,$linkway,$DH_html_path;
-	$recs=mysql_query($sql,$conn);
+	$recs=dh_mysql_query($sql,$conn);
 	$liout="";
 	if($recs)
 	{			
