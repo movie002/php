@@ -2,10 +2,10 @@
 {
 	overflow:hidden;
 	position:relative;
-	margin:5px 0 0 0; 
+	height:20px;
 	line-height:20px;
 	border-bottom: 1px solid #bbb; 
-	padding:2px;
+	padding:8px 0;
 }
 
 .topic_title
@@ -197,20 +197,22 @@ padding: 0px;
 
 .col2,.col3,.col4,.col5,.col6
 {
-	position:relative;
-	width:100%;
-	margin:0 0 10px 0;
-	padding:0 8px 0 0;
 	z-index: 1;
 	overflow: hidden;
-	border-bottom:1px solid #ccc;	
 }
 
-.col1 li,.col2 li,.col3 li,.col4 li,.col5 li,.col6 li
+.col1 li,.col2 li,.col3 li,.col4 li
 {
 	position:relative;
 }
 
+.col1 li
+{
+	height:68px;
+	z-index:1;
+	margin:0;
+	padding:5px 0 0 5px;	
+}
 .col2 li
 {
 	height:154px;
@@ -239,35 +241,6 @@ padding: 0px;
 	white-space:nowrap;
 	padding:5px;
 	border: 1px solid transparent;
-}
-
-.col5 li
-{
-	width:18.5%;
-	height:40px;	
-	float:left;
-	margin:0;
-	white-space:nowrap;
-	padding:5px;
-	border: 1px solid transparent;
-}
-
-.col6 li
-{
-	width:22%;
-	height:40px;	
-	float:left;
-	margin:0;
-	white-space:nowrap;
-	padding:5px;
-	border: 1px solid transparent;
-}
-.col1 li
-{
-	height:65px;
-	z-index:1;
-	margin:0;
-	padding:5px 0 0 5px;	
 }
 
 .hotmeta1

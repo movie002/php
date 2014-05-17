@@ -273,7 +273,7 @@ function dh_get_hot($DH_index_cat,$movietype_index)
 {
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
 	$sql="select * from page where cattype = $movietype_index order by hot desc limit 0,3";
-	$result1 = '<div class="col3">'.dh_get_movie_type_list($sql,'index_list_each3.html','big').'</div>';
+	$result1 = '<div class="col3 bb">'.dh_get_movie_type_list($sql,'index_list_each3.html','big').'</div>';
 		
 	$sql="select * from page where cattype = $movietype_index order by hot desc limit 3,12";
 	$list = dh_get_movie_type_block($sql,4);
@@ -301,7 +301,7 @@ function dh_get_high($DH_index_cat,$movietype_index)
 {
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
 	$sql="select * from page where cattype = $movietype_index and ziyuan>0 and quality>=5 order by updatetime desc limit 0,2";
-	$result1 ='<div class="col2">'. dh_get_movie_type_list($sql,'index_list_each2.html','big').'</div>';
+	$result1 ='<div class="col2 bb">'. dh_get_movie_type_list($sql,'index_list_each2.html','big').'</div>';
 	
 	$sql="select * from page where cattype = $movietype_index and ziyuan>0 and quality>=5 order by updatetime desc limit 2,12";				
 	$list = dh_get_movie_type_block($sql,3);
