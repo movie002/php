@@ -3,9 +3,26 @@
 	overflow:hidden;
 	position:relative;
 	margin:5px 0 0 0; 
-	line-height:20px;
+	line-height:1.6;
 	border-bottom: 1px solid #bbb; 
-	padding:2px;
+}
+
+.title_list ul li,.title_list ol li
+{
+	overflow:hidden;
+	position:relative;
+	margin:9px 0 0 0;
+	height:27px;
+	border-bottom: 1px solid #bbb; 
+}
+
+.link_list ul li,.link_list ol li
+{
+	overflow:hidden;
+	position:relative;
+	margin:5px 0 0 0;
+	height:23px;
+	border-bottom: 1px solid #bbb; 
 }
 
 .topic_title

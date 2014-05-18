@@ -227,7 +227,7 @@ function dh_get_new($DH_index_cat,$movietype_index)
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index order by l.updatetime desc limit 0,8";
 	$list = dh_get_movie_type_onlylink($sql);	
-	$topic_list = "\n<div class=\"topic_list\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"title_list f12px\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_t/1.html';
 
 	$more='';
@@ -329,17 +329,17 @@ function dh_get_high($DH_index_cat,$movietype_index)
 function dh_get_link2($DH_index_cat,$movietype_index)
 {
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
-	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=2 order by l.updatetime desc limit 0,8";
+	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=2 order by l.updatetime desc limit 0,10";
 	$list = dh_get_movie_type_onlylink($sql);	
-	$topic_list = "\n<div class=\"topic_list\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_yp/1.html';
 	
 	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新影评</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
 	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
-	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linktype=1 order by l.updatetime desc limit 0,8";
+	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linktype=1 order by l.updatetime desc limit 0,10";
 	$list = dh_get_movie_type_onlylink($sql);	
-	$topic_list = "\n<div class=\"topic_list\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_zx/1.html';
 	
 	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新资讯</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
