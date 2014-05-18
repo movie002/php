@@ -2,10 +2,10 @@
 {
 	overflow:hidden;
 	position:relative;
-	height:20px;
+	margin:5px 0 0 0; 
 	line-height:20px;
 	border-bottom: 1px solid #bbb; 
-	padding:8px 0;
+	padding:2px;
 }
 
 .topic_title
