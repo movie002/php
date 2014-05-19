@@ -6,6 +6,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	global $linktype,$linkway,$linkquality,$linkdownway;
 	$reslinks=dh_mysql_query($sql);
 	$num = 5;
+	$innernum = 2;
 	$DH_output_content_page ='';
 
 	$linkstop1 = '<div class="listall"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
@@ -40,6 +41,11 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	$num4=0;		
 	
 	$jhblinks= '';
+
+	global $DH_html_path;
+	$DH_input_html  = $DH_html_path . 'innerpage.html';
+	$innerpage = dh_file_get_contents($DH_input_html);
+
 	
 	while($rowlinks = mysql_fetch_array($reslinks))
 	{
@@ -56,8 +62,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$title = str_replace("\"","`",$title);
 		//echo $title."\n";
 		
-		$linkseach1 = '<div class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> <a title="点击删除" href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></div>';
-		$linkseach2 = '<div class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <a title="点击删除"  href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></div>';			
+		$linkseach1 = '<li class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> <a title="点击删除" href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></li>';
+		$linkseach2 = '<li class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <a title="点击删除"  href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></li>';			
 		switch ($way)
 		{
 			case 1://资讯
@@ -148,7 +154,20 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$showtext='[ << 展开(其余'.($num01-$num).'个) >> ]';
 			$hidetext='[ >> 隐藏(其余'.($num01-$num).'个) << ]';
 			$hidetext2='[ ∧ 隐藏(以上'.($num01-$num).'个) ∧ ]';
-			$downloadlinks.='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" >'.$downloadlinks1_more.'<div class="showhide" onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')">'.$hidetext2.'</div></div>';
+			if($num01 <= ($num+$innernum))
+			{
+				$tmplinks='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" >'.$downloadlinks1_more.'<div class="showhide" onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')">'.$hidetext2.'</div></div>';
+			}
+			else
+			{
+				$innerpagetmp = str_replace("%pagesNav%",'2',$innerpage);
+				$innerpagetmp = str_replace("%pageP%",'3',$innerpagetmp);
+				$innerpagetmp = str_replace("%pagesA%",'4',$innerpagetmp);
+				$innerpagetmp = str_replace("%pageN%",'5',$innerpagetmp);
+				$innerpagetmp = str_replace("%liid%",'6',$innerpagetmp);
+				$tmplinks='<div class="showhide" id="downloadlinks1_t" name="downloadlinks1_t" onclick="showhide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks1" style="display:none;" ><div id="downloadlinks">'.$downloadlinks1_more.'</div>'.$innerpagetmp.'<div class="showhide" onclick="hide(\'downloadlinks1_t\',\'downloadlinks1\',\''.$showtext.'\',\'adownloadlinks1\')">'.$hidetext2.'</div></div>';
+			}
+			$downloadlinks.=$tmplinks;
 		}
 		else
 		{
@@ -169,16 +188,9 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';			
 		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div><div class="linksmall">'.$downloadlinks2;
 		if($num02 > $num)
-		{
-			$showtext='[ << 展开(其余'.($num02-$num).'个) >> ]';
-			$hidetext='[ >> 隐藏(其余'.($num02-$num).'个) << ]';
-			$hidetext2='[ ∧ 隐藏(以上'.($num02-$num).'个) ∧ ]';		
-			$downloadlinks.='<div class="showhide" id="downloadlinks2_t"  onclick="showhide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="downloadlinks2" style="display:none;" >'.$downloadlinks2_more.'<div class="showhide" onclick="hide(\'downloadlinks2_t\',\'downloadlinks2\',\''.$showtext.'\',\'adownloadlinks2\')">'.$hidetext2.'</div></div>';
-		}
+			$downloadlinks.=getlinksmore($num02,$num,$innernum,$downloadlinks2_more,'downloadlinks2',$innerpage);			
 		else
-		{
-			$downloadlinks.='<div class="showhide">更多资源,敬请期待</div>';
-		}			
+			$downloadlinks.='<div class="showhide">更多资源,敬请期待</div>';			
 		$downloadlinks.='</div></div>';
 	}
 	if($num03>0)
@@ -759,5 +771,25 @@ function getcele($patten,&$celeimg,&$celes,$meta,$title)
 			$celes = substr($celes,0,strlen($celes)-1);
 		}
 	}
+}
+
+function getlinksmore($num0,$num,$innernum,$more,$id,$innerpage)
+{
+	$tmplinks='';
+	$showtext='[ << 展开(其余'.($num0-$num).'个) >> ]';
+	$hidetext='[ >> 隐藏(其余'.($num0-$num).'个) << ]';
+	$hidetext2='[ ∧ 隐藏(以上'.($num0-$num).'个) ∧ ]';		
+	if($num0 <= ($num+$innernum))
+		$tmplinks='<div class="showhide" id="'.$id.'_t"  onclick="showhide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="'.$id.'" style="display:none;" >'.$more.'<div class="showhide" onclick="hide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\'a'.$id.'\')">'.$hidetext2.'</div></div>';
+	else
+	{
+		$innerpagetmp = str_replace("%pagesNav%",'2',$innerpage);
+		$innerpagetmp = str_replace("%pageP%",'3',$innerpagetmp);
+		$innerpagetmp = str_replace("%pagesA%",'4',$innerpagetmp);
+		$innerpagetmp = str_replace("%pageN%",'5',$innerpagetmp);
+		$innerpagetmp = str_replace("%liid%",'6',$innerpagetmp);
+		$tmplinks='<div class="showhide" id="'.$id.'_t" name="'.$id.'_t" onclick="showhide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="'.$id.'" style="display:none;" ><div id="6">'.$more.'</div>'.$innerpagetmp.'<div class="showhide" onclick="hide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\'a'.$id.'\')">'.$hidetext2.'</div></div>';
+	}
+	return $tmplinks;
 }
 ?>
