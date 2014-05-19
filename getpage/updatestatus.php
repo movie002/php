@@ -79,7 +79,11 @@ function update_status($daybegin)
 
 function update_hot($daybegin)
 {
-	$sql="select id,title,ids from page p where p.updatetime >= '$daybegin'";
+	//首先全部清空为0
+	$sql="update page p set hot=0 where true";
+	$results=dh_mysql_query($sql);	
+
+	$sql="select id,title,ids from page p where DATE_SUB(CURDATE(), INTERVAL 2 YEAR)<=date(pubdate) and p.updatetime >= '$daybegin'";
 	$daysbegin = getupdatebegin(7);
 	$sqldayslink=" and l.updatetime >= '$daysbegin'";	
 	echo "</br>\n".$sql."</br>\n";

@@ -49,18 +49,18 @@ function dh_gen_list()
 		$cat =$movietypeeach. '[全部最新]';			
 		$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime)";
 		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime) order by l.updatetime desc";
-		dh_gen_each_file_onlylink($sqlc,$sql,$DH_output_content,$path,$cat,'t');		
+		dh_gen_each_file_onlylink($sqlc,$sql,$DH_output_content,$path,$cat,'t');	
 		//生成 精选最新
 		$path = $keytype.'_l/';		
 		$cat =$movietypeeach. '[精选最新]';			
-		$sqlc="select count(*) from page where cattype=$keytype and ziyuan>0 and ( hot>5 or DATE_SUB(CURDATE(), INTERVAL 2 MONTH) <= date(pubdate)) and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(updatetime)";	
-		$sql="select * from page where cattype=$keytype and ziyuan>0  and  ( hot>5 or DATE_SUB(CURDATE(), INTERVAL 2 MONTH) <= date(pubdate)) and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(updatetime) order by updatetime desc";
+		$sqlc="select count(*) from page where cattype=$keytype and ziyuan>0 and hot>5";	
+		$sql="select * from page where cattype=$keytype and ziyuan>0  and  hot>5 order by updatetime desc";
 		dh_gen_each_file($sqlc,$sql,$DH_output_content,$path,$cat,'','l');
 		//生成 近日热门
 		$path = $keytype.'_h/';		
 		$cat = $movietypeeach.'[近日热门]';
-		$sqlc="select count(*) from page where cattype=$keytype and DATE_SUB(CURDATE(), INTERVAL 2 MONTH) <= date(updatetime) and hot>=10";	
-		$sql="select * from page where cattype=$keytype and DATE_SUB(CURDATE(), INTERVAL 2 MONTH) <= date(updatetime) and hot>=10 order by hot desc";
+		$sqlc="select count(*) from page where cattype=$keytype and hot>=10";	
+		$sql="select * from page where cattype=$keytype and hot>=10 order by hot desc";
 		dh_gen_each_file($sqlc,$sql,$DH_output_content,$path,$cat,'','h');		
 			
 		//再生成按国家的
@@ -140,15 +140,15 @@ function dh_gen_list()
 					$path = $keytype.'_'.$keycountry.'_l/';		
 					$cat = $catpre.'[精选最新]';
 					$catlink=' <a href="'.$DH_index_url.$keytype.'_l/1.html">'.$movietype[$keytype].'[精选最新]</a> >> ';		
-					$sqlc="select count(*) from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0 and hot>5 and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(updatetime)";	
-					$sql="select * from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0  and hot>5 and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(updatetime) order by updatetime desc";				
+					$sqlc="select count(*) from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0 and hot>5";	
+					$sql="select * from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0 and hot>5 order by updatetime desc";				
 					dh_gen_each_file($sqlc,$sql,$DH_output_content,$path,$cat,$catlink);
 					//生成 近日热门
 					$path = $keytype.'_'.$keycountry.'_h/';		
 					$cat = $catpre.'[近日热门]';
 					$catlink=' <a href="'.$DH_index_url.$keytype.'_h/1.html">'.$movietype[$keytype].'[近日热门]</a> >> ';
-					$sqlc="select count(*) from page where cattype=".$keytype." and catcountry=".$keycountry." and DATE_SUB(CURDATE(), INTERVAL 2 MONTH) <= date(updatetime) and hot>=10";	
-					$sql="select * from page where cattype=".$keytype." and catcountry=".$keycountry." and DATE_SUB(CURDATE(), INTERVAL 2 MONTH) <= date(updatetime) and hot>=10 order by hot desc";
+					$sqlc="select count(*) from page where cattype=".$keytype." and catcountry=".$keycountry." and hot>=10";	
+					$sql="select * from page where cattype=".$keytype." and catcountry=".$keycountry." and hot>=10 order by hot desc";
 					dh_gen_each_file($sqlc,$sql,$DH_output_content,$path,$cat,$catlink,'h');
 				}				
 				break;
