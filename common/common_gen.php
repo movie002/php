@@ -166,12 +166,12 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		else
 			$activelink='class="none"';	
 		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';			
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div><div class="linksmall">'.$downloadlinks2;
+		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div><div class="linksmall">'.$downloadlinks2.'</div>';
 		if($num02 > $num)
 			$downloadlinks.=getlinksmore($num02,$num,$innernum,$downloadlinks2_more,'downloadlinks2',$innerpage);
 		else
 			$downloadlinks.='<div class="showhide">更多资源,敬请期待</div>';			
-		$downloadlinks.='</div></div>';
+		$downloadlinks.='</div>';
 	}
 	if($num03>0)
 	{
@@ -184,12 +184,12 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			$activelink='class="none"';	
 		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[3].'('.$num03.')</li>';
 			
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div><div class="linksmall">'.$downloadlinks3;
+		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div><div class="linksmall">'.$downloadlinks3.'</div>';
 		if($num03 > $num)
 			$downloadlinks.=getlinksmore($num03,$num,$innernum,$downloadlinks3_more,'downloadlinks3',$innerpage);
 		else
 			$downloadlinks.='<div class="showhide">更多资源,敬请期待</div>';			
-		$downloadlinks.='</div></div>';
+		$downloadlinks.='</div>';
 	}	
 	if($num00>0)
 	{
@@ -201,12 +201,12 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		else
 			$activelink='class="none"';
 		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[0].'('.$num00.')</li>';
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div><div class="linksmall">'.$downloadlinks0;
+		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div><div class="linksmall">'.$downloadlinks0.'</div>';
 		if($num00 > $num)
 			$downloadlinks.=getlinksmore($num00,$num,$innernum,$downloadlinks0_more,'downloadlinks0',$innerpage);
 		else
 			$downloadlinks.='<div class="showhide">更多资源,敬请期待</div>';			
-		$downloadlinks.='</div></div>';
+		$downloadlinks.='</div>';
 	}
 
 	$downloadlinkstitle = '<div class="TabTitle" style="padding:5px 0 5px 10px"><ul id="dl">'.$downloadlinkstitle.'</ul></div>';
@@ -718,7 +718,7 @@ function getlinksmore($num0,$num,$innernum,$more,$id,$innerpage)
 	$hidetext='[ >> 隐藏(其余'.($num0-$num).'个) << ]';
 	$hidetext2='[ ∧ 隐藏(以上'.($num0-$num).'个) ∧ ]';		
 	if($num0 <= ($num+$innernum))
-		$tmplinks='<div class="showhide" id="'.$id.'_t"  onclick="showhide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="'.$id.'" style="display:none;" ><div>'.$more.'</div><div class="showhide" onclick="hide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\'a'.$id.'\')">'.$hidetext2.'</div></div>';
+		$tmplinks='<div class="showhide cp" id="'.$id.'_t"  onclick="showhide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="'.$id.'" style="display:none;" ><div>'.$more.'</div><div class="showhide" onclick="hide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\'a'.$id.'\')">'.$hidetext2.'</div></div>';
 	else
 	{
 		$innerpagetmp = str_replace("%pagesNav%",$id.'p1',$innerpage);
@@ -726,7 +726,7 @@ function getlinksmore($num0,$num,$innernum,$more,$id,$innerpage)
 		$innerpagetmp = str_replace("%pagesA%",$id.'p3',$innerpagetmp);
 		$innerpagetmp = str_replace("%pageN%",$id.'p4',$innerpagetmp);
 		$innerpagetmp = str_replace("%liid%",$id.'p5',$innerpagetmp);
-		$tmplinks='<div class="showhide" id="'.$id.'_t" name="'.$id.'_t" onclick="showhide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="'.$id.'" class="bt" style="display:none;" ><div id="'.$id.'p5">'.$more.'</div>'.$innerpagetmp.'<div><div class="showhide" onclick="hide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\'a'.$id.'\')">'.$hidetext2.'</div></div>';
+		$tmplinks='<div class="showhide cp" id="'.$id.'_t" name="'.$id.'_t" onclick="showhide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\''.$hidetext.'\');">'.$showtext.'</div><div id="'.$id.'" class="bt" style="display:none;" ><div id="'.$id.'p5">'.$more.'</div>'.$innerpagetmp.'<div><div class="showhide" onclick="hide(\''.$id.'_t\',\''.$id.'\',\''.$showtext.'\',\'a'.$id.'\')">'.$hidetext2.'</div></div></div>';
 	}
 	return $tmplinks;
 }
