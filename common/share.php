@@ -197,7 +197,6 @@ function dh_gen_side($DH_home_url)
 	$DH_input_html = $DH_html_path. 'search.php';
 	$DH_output = dh_file_get_contents($DH_input_html);
 	$DH_output = setshare($DH_output,'');
-	$DH_output = str_replace("%deep%",'./',$DH_output);
 	$DH_output = str_replace("输入影视名...",'<?php echo $q ?>',$DH_output);
 	$DH_output = str_replace('<form name="f1"  target="_blank"','<form name="f1"',$DH_output);
 	

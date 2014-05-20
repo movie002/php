@@ -33,3 +33,33 @@ margin:2px;
 -webkit-border-radius:6px;
 padding:3px 8px
 }
+
+.pagesNav ul,.pagesNav li
+{
+display:inline;
+padding:0 8px;
+}
+
+.pagesNav li
+{
+	border:1px solid #ccc;
+	cursor: pointer;
+	margin:0 2px;
+}
+
+.pagesNav li:hover
+{
+	border:1px solid #f90;
+	color: red;
+}
+
+.pagesNav
+{
+	padding:0 0 0 15px;
+}
+
+.pagesNav .cur
+ {
+	border:1px solid #f90;
+	color: red;
+}

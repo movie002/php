@@ -352,6 +352,11 @@ a:active {
 	color:#000;
 }
 
+.border1
+{
+	border: 1px solid #759CC2;
+}
+
 .bb
 {
 	border-bottom:1px solid #999;
@@ -432,6 +437,10 @@ a:active {
 	text-decoration: none;
 }
 
+.cp
+{
+	cursor: pointer;
+}
 
 #searchform {
 line-height:28px;

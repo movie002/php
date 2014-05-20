@@ -6,98 +6,7 @@
 	<meta name="description" content="提供%cat%《%title_key%》(别名 %keywords%)的下载地址、在线观看、影评影讯等资源链接汇总,《%title_key%》上映与%pubyear%年，本页内容包括简介(导演、剧情、演员、海报、剧照、影片状态等)、预告、下载(迅雷、BT种子、网盘等)、在线观看(在线资源、百度影音、快播等)、影讯、影评、购票等相关的优质资源网站(豆瓣、时光网、电影网、格瓦拉等)的资源链接导航。" />
 	%meta%
 	<script type="text/javascript">
-	function nextPage(nextPage)
-	{
-		var pages=document.getElementById(nextPage.pagesMain);//分页内容
-		var pagesNav=document.getElementById(nextPage.pagesNav);//分页数
-		var prev=document.getElementById(nextPage.prevBtn);//上一页
-		var next=document.getElementById(nextPage.nextBtn);//下一页
-		var curNum=nextPage.curNum;//当前页
-		var leng=Math.ceil(pages.children.length/curNum); //页数
-		var pageList="";//自动生成页码 数组
-		var num=0;//当前的index
-		//自动生成页码li
-		for(var i=0;i<leng;i++)
-		{
-			pageList+="\<li\>"+parseInt(i+1)+"\<\/li\>";
-		};
-		//给ul加上 页码
-		pagesNav.innerHTML=pageList;
-		//默认第一页 给第一页页码加上高亮
-		pagesNav.children[0].className=nextPage.activeClass;
-
-		//给点击页码加上 高亮class 返回index
-		for(var i=0;i<pagesNav.children.length;i++)
-		{
-			pagesNav.children[i].index=i;
-			pagesNav.children[i].onclick=function()
-			{
-				for(var i=0;i<pagesNav.children.length;i++)
-				{
-					pagesNav.children[i].className="";                                
-				}
-				this.className=nextPage.activeClass;
-				num=this.index;
-				ini(num)// 传入当前页的index 用ini方法显示点击到的组
-			}
-		}
-		
-		//上一页
-		prev.onclick=function()
-		{
-			if (num==0)
-				return false;
-			else
-			{
-				console.log(num)
-				for(var i=0;i<pagesNav.children.length;i++)
-					pagesNav.children[i].className="";                                
-				pagesNav.children[num-1].className=nextPage.activeClass;
-				ini(num-1)
-				return num--;
-			}
-		}
-		
-		//下一页
-		next.onclick=function()
-		{
-			if (num==leng-1) 
-				return false;
-			else
-			{
-				console.log(leng)
-				for(var i=0;i<pagesNav.children.length;i++)
-					pagesNav.children[i].className="";                                
-				pagesNav.children[num+1].className=nextPage.activeClass;
-				ini(num+1)
-				return num++;
-			}
-		}
-		
-		//初始化显示第一页内容 隐藏后面
-		function ini(iniBum)
-		{
-			var iniBum=iniBum;
-			for(var j=0;j<leng;j++)
-			{
-				for(var i=0;i<curNum;i++)
-				{
-					if(pages.children[(j*curNum)+i]==undefined)
-						continue;
-					pages.children[(j*curNum)+i].style.display="none";
-				}
-			}
-			for(var i=0;i<curNum;i++)
-			{
-				if(pages.children[(iniBum*curNum)+i]==undefined)
-					continue;
-				pages.children[(iniBum*curNum)+i].style.display="block";
-			}
-		}
-		
-		//初始化显示第一页内容 隐藏后面	
-		ini(nextPage.ini)
-	}
+	function nextPage(j){var b=document.getElementById(j.pagesMain);var f=document.getElementById(j.pagesNav);var c=document.getElementById(j.prevBtn);var h=document.getElementById(j.nextBtn);var l=j.curNum;var a=Math.ceil(b.children.length/l);var d="";var g=0;for(var e=0;e<a;e++){d+="<li>"+parseInt(e+1)+"</li>"}f.innerHTML=d;f.children[0].className=j.activeClass;for(var e=0;e<f.children.length;e++){f.children[e].index=e;f.children[e].onclick=function(){for(var m=0;m<f.children.length;m++){f.children[m].className=""}this.className=j.activeClass;g=this.index;k(g)}}c.onclick=function(){if(g==0){return false}else{console.log(g);for(var m=0;m<f.children.length;m++){f.children[m].className=""}f.children[g-1].className=j.activeClass;k(g-1);return g--}};h.onclick=function(){if(g==a-1){return false}else{console.log(a);for(var m=0;m<f.children.length;m++){f.children[m].className=""}f.children[g+1].className=j.activeClass;k(g+1);return g++}};function k(n){var n=n;for(var m=0;m<a;m++){for(var o=0;o<l;o++){if(b.children[(m*l)+o]==undefined){continue}b.children[(m*l)+o].style.display="none"}}for(var o=0;o<l;o++){if(b.children[(n*l)+o]==undefined){continue}b.children[(n*l)+o].style.display="block"}}k(j.ini)};
 	</script>
 </head>
 <body>
@@ -166,30 +75,36 @@
 						<div style="margin:5px 0 0 0">									
 							<span>我是影视爱好者:我要<!--[<a href="javascript:showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>]--> [<a href="javascript:AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页</a>] || 我是站长:我要[<a href="javascript:showmiddle('srcsub')">提交资源</a>] || 我是版权方:我要[<a href="javascript:showmiddle('notify')">通知处理</a>]</span>
 						</div>
-						<div style="position:relative;margin:15px 0 0 0">
+						<div style="position:relative;margin:15px 0 0 0" class="border1">
 							<div class="anchor"><a name="title_1" id="title_1">&nbsp;</a></div>
 							<div class="TabTitle lt35v10"><ul id="dt"><li class="active" onclick="nTabs(this,0);">资讯新闻(%num4%)</li><li class="normal" onclick="nTabs(this,1);">精彩影评(%num3%)</li><li class="normal" onclick="nTabs(this,2);">预告花絮(%num2%)</li><li class="normal" onclick="nTabs(this,3);">活动购票(%ticketnum%)</li></ul></div>
 							<div id="dt_Content0" style="overflow:hidden;z-index:2;">
 								<h4>影片动态(资讯新闻) <span class="f500">试试看 [%news%]</span></h4>
-								<div class="borderside" style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div class="linksmall">%zixun%</div>
+								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div>%zixun%</div>
 							</div>
 							<div id="dt_Content1" class="none" style="overflow:hidden;z-index:2;">
 								<h4>影片动态(精彩影评) <span class="f500">还可以看 [%review%]</span></h4>
-								<div class="borderside" style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div class="linksmall">%yingping%</div>
+								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div>%yingping%</div>
 							</div>
 							<div id="dt_Content2" class="none" style="overflow:hidden;z-index:2;">
 								<h4>影片动态(预告花絮) <span class="f500">试试搜索 [%trailer%]</span></h4>
-								<div class="borderside" style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div class="linksmall">%tailer%</div>
+								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div>%tailer%</div>
 							</div>
 							<div id="dt_Content3" class="none" style="overflow:hidden;z-index:2;">
 								<h4>影片动态(活动购票) <span class="f500">试试 [%piaozi%]</span></h4>
-								<div class="borderside" style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div class="linksmall">%buyticket%</div>
+								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div><div>%buyticket%</div>
 							</div>
-						</div>							
-						<h4 style="margin:30px 0 0 0">下载资源：%num0x%个<span class="f500">%shooter% %soushou%</span><div class="anchor"><a name="title_2" id="title_2">&nbsp;</a></div></h4>
+						</div>
+						
+						<div style="margin:30px 0 0 0" class="border1">
+						<h4>下载资源：%num0x%个<span class="f500">%shooter% %soushou%</span><div class="anchor"><a name="title_2" id="title_2">&nbsp;</a></div></h4>
 						<div style="position:relative;">%downloadlinks%</div>
-						<h4 style="margin:30px 0 0 0">在线观看：%num1x%个 <span class="f500">%search%</span><div class="anchor"><a name="title_3" id="title_3">&nbsp;</a></div></h4>
+						</div>
+						
+						<div style="margin:30px 0 0 0" class="border1">
+						<h4>在线观看：%num1x%个 <span class="f500">%search%</span><div class="anchor"><a name="title_3" id="title_3">&nbsp;</a></div></h4>
 						<div class="linksmall">%onlinelinks%</div>
+						</div>
 						
 						<div class="eh4" style="position:relative;margin:30px 0 0 0">影视剧照：<span class="f500">更多在 [%photos%]</span><div class="anchor"><a name="title_4" id="title_4">&nbsp;</a></div></div>
 						<div style="margin:10px 0 0 0">%simgs%&nbsp;</div>

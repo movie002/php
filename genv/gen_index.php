@@ -34,8 +34,6 @@ function dh_gen_index()
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 
 	$DH_output_content = setshare($DH_output_content,'index.js');
-	$deep = './';
-	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 
 	$topnews="今日更新（";

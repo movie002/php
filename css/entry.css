@@ -82,7 +82,6 @@ padding:0!important;
 	font-size:12px;
 	font-weight:700;
 	padding:5px 0 5px 5px;
-	border: 1px solid #759CC2;
 	border-bottom: 1px solid #999;
 	position:relative;
 	color: purple;
@@ -125,18 +124,6 @@ list-style:square inside
 .entry ol {
 padding-bottom:10px;
 list-style:decimal inside
-}
-
-.entry li {
-font-size:12px;
-line-height:15px;
-color:#4C4C4C;
-padding:2px 0 2px 10px
-}
-
-.entry li ul {
-margin:0;
-padding:0
 }
 
 .entry  .single_content{
@@ -271,12 +258,6 @@ margin:5px 0;
 padding:0
 }
 
-.linksmall
-{
-	border-bottom: none;
-	border-left: 1px solid #759CC2;	
-	border-right: 1px solid #759CC2;		
-}
 .listtitle 
 {
 	line-height:220%;
@@ -287,10 +268,9 @@ padding:0
 .listall
 {
 	position:relative;	
-	margin: 0 0 5px 0;
-	padding: 2px 0;
+	margin: 0 0 3px 5px;
+	padding: 0 0 3px 0;
 	border-bottom: 1px solid #CCC;
-	line-height: 150%;
 }
 
 .listnum
@@ -321,7 +301,9 @@ padding:0
 {
 	text-align:center;
 	color: #888;
-	border-bottom: 1px solid #759CC2;
+	width:200px;
+	cursor:pointer;
+	margin:0 auto;
 }
 .showhide_more
 {

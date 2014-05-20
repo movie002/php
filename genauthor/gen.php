@@ -40,8 +40,6 @@ function dh_gen_author()
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = setshare($DH_output_content,'index.js');
 	
-	$deep = '../../';
-	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 
 	$sql="select * from author order by updatetime desc";
@@ -71,8 +69,6 @@ function dh_gen_static($name)
 	$DH_output_content = str_replace("%head%",$DH_output_head,$DH_output_content);
 	$DH_output_content = str_replace("%foot%",$DH_output_foot,$DH_output_content);
 	
-	$deep = '../../';
-	$DH_output_content = str_replace("%deep%",$deep,$DH_output_content);
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 	
 	$DH_output_file = $DH_author_path.$name.'.html';
