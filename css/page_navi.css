@@ -34,27 +34,35 @@ margin:2px;
 padding:3px 8px
 }
 
+.pagesNav
+{
+	padding:0 0 5px 15px;
+	z-index:1;
+	overflow:hidden;
+	margin:5px 0;
+}
+
+.pagesNav ul
+{
+	padding:0 10px;
+	z-index:1;
+	overflow:hidden;
+}
 .pagesNav li
 {
 	border: 1px solid #ccc;
 	cursor: pointer;
 	margin: 2px 5px 0 0;
 	float: left;
-	width: 15px;
-	text-align: center;	
+	width: 20px;
+	text-align: center;
+	line-height: 1.1;	
 }
 
 .pagesNav li:hover
 {
 	border:1px solid #f90;
 	color: red;
-}
-
-.pagesNav
-{
-	padding:0 0 0 15px;
-	z-index:1;
-	overflow:hidden;
 }
 
 .pagesNav .cur
