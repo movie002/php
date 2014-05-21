@@ -219,23 +219,24 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	//echo $downloadlinks;
 	$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
 	if($num1 > $num)
-		$onlinelinks.=getlinksmore($num1,$num,$innernum,$onlinelinks_more,'onlinelinks',$innerpage);
+		$onlinelinks='<div>'.$onlinelinks.'</div>'.getlinksmore($num1,$num,$innernum,$onlinelinks_more,'onlinelinks',$innerpage);
 	else
-		$onlinelinks.='<div class="showhide">更多资源,敬请期待</div>';		
+		$onlinelinks='<div>'.$onlinelinks.'</div>'.'<div class="showhide">更多资源,敬请期待</div>';		
 	
 	if($num2 > $num)
-		$tailer.=getlinksmore($num2,$num,$innernum,$tailer_more,'tailer',$innerpage);
+		$tailer='<div>'.$tailer.'</div>'.getlinksmore($num2,$num,$innernum,$tailer_more,'tailer',$innerpage);
 	else
-		$tailer.='<div class="showhide">更多资源,敬请期待</div>';		
+		$tailer='<div>'.$tailer.'</div>'.'<div class="showhide">更多资源,敬请期待</div>';		
 
 	if($num3 > $num)
-		$zixun.=getlinksmore($num3,$num,$innernum,$zixun_more,'zixun',$innerpage);
+		$zixun='<div>'.$zixun.'</div>'.getlinksmore($num3,$num,$innernum,$zixun_more,'zixun',$innerpage);
 	else
-		$zixun.='<div class="showhide">更多资源,敬请期待</div>';		
+		$zixun='<div>'.$zixun.'</div>'.'<div class="showhide">更多资源,敬请期待</div>';	
+		
 	if($num4 > $num)
-		$yingping.=getlinksmore($num4,$num,$innernum,$yingping_more,'pinglun',$innerpage);
+		$yingping='<div>'.$yingping.'</div>'.getlinksmore($num4,$num,$innernum,$yingping_more,'pinglun',$innerpage);
 	else
-		$yingping.='<div class="showhide">更多资源,敬请期待</div>';
+		$yingping='<div>'.$yingping.'</div>'.'<div class="showhide">更多资源,敬请期待</div>';
 	
 	$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content_page);
 	$DH_output_content_page = str_replace('%downloadlinks%',$downloadlinks,$DH_output_content_page);
@@ -440,21 +441,21 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 
 	//处理购票
-	$buyticket='<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></div>';
+	$buyticket='<li class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></li>';
 	$ticketnum=0;
 	if($row['mstatus']==3)
 	{
 		if($row['mediaid']!='')
 		{
 			$ticketnum++;
-			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target = "_blank" title="豆瓣购票链接" rel="nofollow">豆瓣购票链接</a></div><div class="lqc3 rt0v5">豆瓣 '.$updatetime.'</div></div>';			
+			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target = "_blank" title="豆瓣购票链接" rel="nofollow">豆瓣购票链接</a></div><div class="lqc3 rt0v5">豆瓣 '.$updatetime.'</div></li>';
 		}
 		preg_match('/<4>(.*?)<\/4>/s',$row['ids'],$match1);
 		//print_r($match1);
 		if(!empty($match1[1]))
 		{
 			$ticketnum++;
-			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://www.gewara.com/movie/'.$match1[1].'" target = "_blank" title="格瓦拉购票链接" rel="nofollow">格瓦拉购票链接</a></div><div class="lqc3 rt0v5">格瓦拉 '.$updatetime.'</div></div>';			
+			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://www.gewara.com/movie/'.$match1[1].'" target = "_blank" title="格瓦拉购票链接" rel="nofollow">格瓦拉购票链接</a></div><div class="lqc3 rt0v5">格瓦拉 '.$updatetime.'</div></li>';
 		}
 		
 		preg_match('/<5>(.*?)<\/5>/s',$row['ids'],$match1);
@@ -462,26 +463,23 @@ function dh_replace_content($count,$row,$DH_output_content)
 		if(!empty($match1[1]))
 		{
 			$ticketnum++;
-			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://wangpiao.com/movie/'.$match1[1].'/?showulcinfo=1" target = "_blank" title="网票网购票链接" rel="nofollow">网票网购票链接</a></div><div class="lqc3 rt0v5">网票网 '.$updatetime.'</div></div>';
+			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://wangpiao.com/movie/'.$match1[1].'/?showulcinfo=1" target = "_blank" title="网票网购票链接" rel="nofollow">网票网购票链接</a></div><div class="lqc3 rt0v5">网票网 '.$updatetime.'</div></li>';
 		}	
 	
 		if($mtimeid!='')
 		{
 			$ticketnum++;
-			$buyticket .='<div class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://theater.mtime.com/movie/'.$mtimeid.'/" target = "_blank" title="时光网购票链接" rel="nofollow">时光网购票链接</a></div><div class="lqc3 rt0v5">时光网 '.$updatetime.'</div></div>';			
+			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://theater.mtime.com/movie/'.$mtimeid.'/" target = "_blank" title="时光网购票链接" rel="nofollow">时光网购票链接</a></div><div class="lqc3 rt0v5">时光网 '.$updatetime.'</div></li>';			
 		}	
 		//$codetitle=rawurlencode($row['title']);
 		$piaozi.='/<a href="http://www.gewara.com/newSearchKey.xhtml?skey='.$codetitle.'" target="_blank" rel="nofollow">搜索格瓦拉</a>';
 		$piaozi.='/<a href="http://www.wangpiao.com/Search/Index/0/'.$codetitle.'/1" target="_blank" rel="nofollow">搜索网票</a>';
 		$piaozi.='/<a href="http://film.spider.com.cn/shanghai-search/?keyword='.$codetitle.'" target="_blank" rel="nofollow">搜索蜘蛛网</a>';
 		$piaozi.='/<a href="http://www.hipiao.com/" target="_blank" rel="nofollow">登录哈票</a>';
-		$buyticket.='<div class="showhide">更多资源,敬请期待</div>';
 	}
 	else
-	{
 		$piaozi='不在购票时间内';
-		$buyticket.='<div class="showhide">更多资源,敬请期待</div>';
-	}
+	$buyticket='<div>'.$buyticket.'</div>'.'<div class="showhide">更多资源,敬请期待</div>';
 	
 	$ofsite='';
 	preg_match('/<b>(.*?)<\/b>/s',$row['meta'],$match);
