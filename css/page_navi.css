@@ -47,6 +47,7 @@ padding:3px 8px
 	padding:0 10px;
 	z-index:1;
 	overflow:hidden;
+	max-width:80%;
 }
 .pagesNav li
 {

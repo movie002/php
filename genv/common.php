@@ -111,7 +111,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			
 		$downloadlinksi++;
 		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';		
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div>'.getlinksmore($num02,$num,'downloadlinks2',$downloadlinks2,$innerpage).'</div>';
+		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div>'.$linkstop2.getlinksmore($num02,$num,'downloadlinks2',$downloadlinks2,$innerpage).'</div>';
 	}
 	if($num03>0)
 	{
