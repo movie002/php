@@ -114,21 +114,7 @@ function showhide(id1,id2,tx1,tx2)
 	}	
 };
 
-function hide(id1,id2,tx1,idjump)
-{
-	var id1div = document.getElementById(id1);
-	var id2div = document.getElementById(id2);
-	if(id2div.style.display=='block')
-	{
-		id2div.style.display='none';
-		id1div.innerHTML=tx1;	
-		//scroller(idjump, 800);
-		//window.location.hash=idjump;
-		document.getElementById(idjump).scrollIntoView();
-	}
-};
-
-function hide2(id1,id2,tx1)
+function hide(id1,id2,tx1)
 {
 	var id1div = document.getElementById(id1);
 	var id2div = document.getElementById(id2);
@@ -137,18 +123,6 @@ function hide2(id1,id2,tx1)
 		id2div.style.display='none';
 		id1div.innerHTML=tx1;
 	}
-};
-
-function showmiddle(id)
-{
-	var id = document.getElementById(id);
-	id.style.display='block';
-};
-
-function hidemiddle(id)
-{
-	var id = document.getElementById(id);
-	id.style.display='none';
 };
 
 function deleteurl(title,url)

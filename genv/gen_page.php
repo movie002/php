@@ -9,11 +9,12 @@
 header('Content-Type:text/html;charset= UTF-8'); 
 require_once("../config.php");
 #需要使用的基础函数
-require_once("../common/common_gen.php");
+
 require_once("../common/dbaction.php");
 require_once("../common/base.php");
 require_once("../common/share.php");
 require_once("../common/compressJS.class.php");
+require_once("common.php");
 require_once("queue.php");
 set_time_limit(600); 
 
