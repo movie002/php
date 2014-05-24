@@ -99,7 +99,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	{
 		$downloadlinksi++;
 		$downloadlinkstitle.='<li class="active" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[1].'('.$num01.')</li>';		
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div>'.$linkstop2.getlinksmore($num02,$num,'downloadlinks1',$downloadlinks1,$innerpage).'</div>';
+		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div>'.$linkstop1.getlinksmore($num02,$num,'downloadlinks1',$downloadlinks1,$innerpage).'</div>';
 	}
 	if($num02>0)
 	{
@@ -111,7 +111,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			
 		$downloadlinksi++;
 		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';		
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div>'.$linkstop2.getlinksmore($num02,$num,'downloadlinks2',$downloadlinks2,$innerpage).'</div>';
+		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div>'.$linkstop1.getlinksmore($num02,$num,'downloadlinks2',$downloadlinks2,$innerpage).'</div>';
 	}
 	if($num03>0)
 	{
@@ -123,7 +123,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 			
 		$downloadlinksi++;
 		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[3].'('.$num03.')</li>';	
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div>'.$linkstop2.getlinksmore($num03,$num,'downloadlinks3',$downloadlinks3,$innerpage).'</div>';
+		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div>'.$linkstop1.getlinksmore($num03,$num,'downloadlinks3',$downloadlinks3,$innerpage).'</div>';
 	}	
 	if($num00>0)
 	{
@@ -143,14 +143,14 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	$num0 = $num00+$num01+$num02+$num03;
 	$DH_output_content_page = str_replace('%num0x%',$num0,$DH_output_content);
 	if($num0<=0)
-		$downloadlinks='<div>'.$linkstop2.'<div class="showhide">更多资源,敬请期待</div></div>';
+		$downloadlinks='<div>'.$linkstop1.'<div class="showhide">更多资源,敬请期待</div></div>';
 	
 	$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
 
-	$onlinelinks=$linkstop2.getlinksmore($num1,$num,'onlinelinks',$onlinelinks,$innerpage);
-	$tailer=$linkstop2.getlinksmore($num2,$num,'tailer',$tailer,$innerpage);
-	$zixun=$linkstop1.getlinksmore($num3,$num,'zixun',$zixun,$innerpage);
-	$yingping=$linkstop1.getlinksmore($num4,$num,'pinglun',$yingping,$innerpage);
+	$onlinelinks=$linkstop1.getlinksmore($num1,$num,'onlinelinks',$onlinelinks,$innerpage);
+	$tailer=$linkstop1.getlinksmore($num2,$num,'tailer',$tailer,$innerpage);
+	$zixun=$linkstop2.getlinksmore($num3,$num,'zixun',$zixun,$innerpage);
+	$yingping=$linkstop2.getlinksmore($num4,$num,'pinglun',$yingping,$innerpage);
 	
 	$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content_page);
 	$DH_output_content_page = str_replace('%downloadlinks%',$downloadlinks,$DH_output_content_page);

@@ -33,6 +33,7 @@ h2
 	font-size:13px;
     font-weight: normal;
 	margin:5px 0;
+	max-width:50%;
 }
 
 .postmeta {

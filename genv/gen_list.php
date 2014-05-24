@@ -98,11 +98,11 @@ function dh_gen_list()
 			}
 			case 2:
 			{
-				//生成 高清资源
+				//生成 超清资源
 				$path = $keytype.'_c/';		
-				$cat = $movietypeeach.'[高清资源]';			
-				$sqlc="select count(*) from page where cattype=".$keytype." and ziyuan>0 and quality>=5 ";	
-				$sql="select * from page where cattype=".$keytype." and ziyuan>0 and quality>=5 order by updatetime desc";				
+				$cat = $movietypeeach.'[超清资源]';			
+				$sqlc="select count(*) from page where cattype=".$keytype." and ziyuan>0 and quality>=6 ";	
+				$sql="select * from page where cattype=".$keytype." and ziyuan>0 and quality>=6 order by updatetime desc";				
 				dh_gen_each_file($sqlc,$sql,$DH_output_content,$path,$cat,'','c');
 			
 				foreach($moviecountry as $keycountry=>$moviecountryeach)
@@ -111,11 +111,11 @@ function dh_gen_list()
 						continue;
 					echo $movietypeeach.'_'.$moviecountryeach."</br>\n";
 					$catpre = dh_get_catname($keytype,$keycountry);
-					//生成 高清资源
+					//生成 超清资源
 					$path = $keytype.'_'.$keycountry.'_c/';		
 					$cat = $catpre.'[超清资源]';			
-					$sqlc="select count(*) from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0 and quality>=5 ";	
-					$sql="select * from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0 and quality>=5 order by updatetime desc";				
+					$sqlc="select count(*) from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0 and quality>=6 ";	
+					$sql="select * from page where cattype=".$keytype." and catcountry=".$keycountry." and ziyuan>0 and quality>=6 order by updatetime desc";				
 					dh_gen_each_file($sqlc,$sql,$DH_output_content,$path,$cat,'','c');
 				}
 			}

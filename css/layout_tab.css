@@ -219,7 +219,7 @@ padding: 0px;
 	overflow: hidden;
 }
 
-.col1 li,.col2 li,.col3 li,.col4 li
+.col1 li,.col2 li,.col3 li,.col4 li,.col5 li,.col6 li
 {
 	position:relative;
 }
@@ -250,7 +250,7 @@ padding: 0px;
 	border: 1px solid transparent;	
 }
 
-.col4 li
+.col4 li,.col5 li,.col6 li
 {
 	width:23.5%;
 	height:40px;	
@@ -259,6 +259,16 @@ padding: 0px;
 	white-space:nowrap;
 	padding:5px;
 	border: 1px solid transparent;
+}
+
+.col5 li
+{
+	width:18.5%;
+}
+
+.col6 li
+{
+	width:22%;
 }
 
 .hotmeta1

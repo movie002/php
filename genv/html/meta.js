@@ -125,6 +125,18 @@ function hide(id1,id2,tx1)
 	}
 };
 
+function showmiddle(id)
+{
+	var id = document.getElementById(id);
+	id.style.display='block';
+};
+
+function hidemiddle(id)
+{
+	var id = document.getElementById(id);
+	id.style.display='none';
+};
+
 function deleteurl(title,url)
 {
 	var deltitle = document.getElementById('deltitle');

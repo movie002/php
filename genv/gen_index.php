@@ -298,10 +298,10 @@ function dh_get_hot($DH_index_cat,$movietype_index)
 function dh_get_high($DH_index_cat,$movietype_index)
 {
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
-	$sql="select * from page where cattype = $movietype_index and ziyuan>0 and quality>=5 order by updatetime desc limit 0,2";
+	$sql="select * from page where cattype = $movietype_index and ziyuan>0 and quality>=6 order by updatetime desc limit 0,2";
 	$result1 ='<div class="col2 bb">'. dh_get_movie_type_list($sql,'index_list_each2.html','big').'</div>';
 	
-	$sql="select * from page where cattype = $movietype_index and ziyuan>0 and quality>=5 order by updatetime desc limit 2,12";				
+	$sql="select * from page where cattype = $movietype_index and ziyuan>0 and quality>=6 order by updatetime desc limit 2,12";				
 	$list = dh_get_movie_type_block($sql,3);
 	$result2='<div class="col4">'.$list.'</div>';	
 	$DH_index_cat_eachs=$result1.$result2;		
