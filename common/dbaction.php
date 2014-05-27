@@ -77,8 +77,10 @@ function addorupdateonlylink($author,$title,$link,$cat,$updatetime,$mtitle,$movi
 	//清理title的空格
 	$title = trim($title);
 	//清理title中的'和"
-	$title = str_replace('\'','\'',$title);
-	$title = str_replace('"','\"',$title);
+	$title = str_replace('\'','`',$title);
+	$title = str_replace('"','`',$title);
+	
+	$title = str_replace('"','`',$title);
 	
 	$datenow = date("Y-m-d H:i:s",strtotime("+1 days"));
 	if($updatetime > $datenow)
@@ -95,9 +97,9 @@ function addorupdateonlylink($author,$title,$link,$cat,$updatetime,$mtitle,$movi
 function addorupdatelink($pageid,$author,$title,$link,$cat,$linkquality,$linkway,$linktype,$linkdownway,$updatetime,$input=null)
 {
 	if($input==null)
-		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,updatetime) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$updatetime')ON DUPLICATE KEY UPDATE pageid=$pageid,linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,updatetime='$updatetime',remove=null";
+		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,updatetime) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$updatetime')ON DUPLICATE KEY UPDATE pageid=$pageid,author='$author',title='$title',cat='$cat',linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,updatetime='$updatetime',remove=null";
 	else
-		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,updatetime,input) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$updatetime','$input')ON DUPLICATE KEY UPDATE pageid=$pageid,linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,updatetime='$updatetime',input='$input',remove=null";
+		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,updatetime,input) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$updatetime','$input')ON DUPLICATE KEY UPDATE pageid=$pageid,author='$author',title='$title',cat='$cat',linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,updatetime='$updatetime',input='$input',remove=null";
 	//echo $sql."</br>\n";
 	$sqlresult=dh_mysql_query($sql);
 }

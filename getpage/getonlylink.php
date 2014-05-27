@@ -1,8 +1,8 @@
 <?php
 require("../config.php");
-require("x11.php");
 require("../common/base.php");
 require("../common/dbaction.php");
+require("x11.php");
 require("common.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
@@ -28,13 +28,13 @@ function getonlylink()
 	//全部重新计算link
 	if(isset($_REQUEST['reget']))
 	{
-		$sql="select l.*,a.* from link l,author a WHERE l.author = a.name";
+		$sql="select l.*,a.* from onlylink l,author a WHERE l.author = a.name";
 	}
 	//只重新计算一个author的link
 	if(isset($_REQUEST['aid']))
 	{
 		$aid = $_REQUEST['aid'];
-		$sql="select l.*,a.* from link l,author a where a.id = $aid and l.author=a.name";
+		$sql="select l.*,a.* from onlylink l,author a where a.id = $aid and l.author=a.name";
 	}	
 	echo $sql."</br>\n";
 	

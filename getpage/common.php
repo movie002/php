@@ -2,9 +2,9 @@
 
 function getmoviemeta($row,&$mtitle,&$moviecountry,&$movieyear,&$movietype,$link,$title,$cat)
 {
-	echo $row['title'];
+	//echo $row['title'];
 	$mtitle=testtitle($row['ctitle'],$row['title']);
-	echo "\nres:".$mtitle."\n";
+	//echo "\n res: $mtitle \n";
 	//$mtitle=trimtitle($mtitle);
 	if($mtitle<0||$mtitle==='')
 	{
@@ -14,14 +14,14 @@ function getmoviemeta($row,&$mtitle,&$moviecountry,&$movieyear,&$movietype,$link
 	}
 	
 	$movietype = testneed($row['cmovietype'],$link,$title,$cat);
-	if($movietype<0)
+	//echo "\n x: $movietype \n";
+	if($movietype < 0)
 	{
 		//问题很大
 		echo "movietype=$movietype % title=$title link=$link cat=$cat -> movietype error 失败，请查明原因！</br> \n";
 		return -1;
 	}		
 			
-	$movietype = testneed($row['cmovietype'],$link,$title,$cat);
 	$moviecountry = testneed($row['cmoviecountry'],$link,$title,$cat);	
 		
 	$movieyear = 0;
@@ -83,7 +83,7 @@ function testneed($need,$link,$title,$cat)
 				default:
 				{
 					echo 'error in testneed to get '.$contain.' method';
-					return -1;
+					return -l;
 				}
 			}
 			//print_r($match1);
