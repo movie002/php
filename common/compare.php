@@ -366,15 +366,15 @@ function c_moviecountry($moviecountry1,$moviecountry2)
 
 function c_movieyear($movieyear1,$movieyear2,$years,$aka)
 {
-	if($movieyear1<=0)
+	if($movieyear1<1900)
 		return true;
-	if($movieyear2 ==='1970-01-01')
+	if($movieyear2 ==='0000-00-00')
 		return true;
 	//如果akas含有year，则不需要比较year
 	if(strstr($aka,$movieyear1)===false)
 	{
-		//两个year必须在合理的范围之内		
-		$movieyear1int = date("Y",strtotime($movieyear1));		
+		//两个year必须在合理的范围之内
+		$movieyear1int = date("Y",strtotime($movieyear1.'-00-00'));		
 		$movieyear2int = date("Y",strtotime($movieyear2));
 		$thisyear= date("Y");
 		$maxyear = $thisyear+3;//电影提前三年公布
@@ -386,7 +386,7 @@ function c_movieyear($movieyear1,$movieyear2,$years,$aka)
 				$diff = $movieyear1int-$movieyear2int;					
 				if ($diff>$years||$diff<-$years)
 				{
-					echo ' year diff $movieyear1int vs $movieyear2int:'.$diff;
+					echo " year diff $movieyear1int vs $movieyear2int:".$diff;
 					return false;						
 				}
 			}

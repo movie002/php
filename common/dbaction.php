@@ -60,8 +60,8 @@ function insertonlylink2($author,$title,$link,$cat,$update)
 	//清理title的空格
 	$title = trim($title);
 	//清理title中的'为"
-	$title = str_replace('\'','\'',$title);
-	$title = str_replace('"','\"',$title);
+	$title = str_replace('\'','`',$title);
+	$title = str_replace('"','`',$title);
 	
 	$datenow = date("Y-m-d H:i:s",strtotime("+1 days"));
 	if($update > $datenow)
@@ -304,7 +304,7 @@ function getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate)
 	$resultspage=dh_mysql_query($sqlpage);
 	while($rowpage = mysql_fetch_array($resultspage))
 	{	
-		echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['pubdate'];
+		echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['pubdate']." --> ";
 		//拼出一个综合akas
 		if($rowpage['aka']=='')
 			$akaall=$rowpage['title'];

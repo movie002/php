@@ -23,18 +23,13 @@ function getlink()
 		$d = $_REQUEST['d'];
 	}
 	$datebegin = getupdatebegin($d);	
-	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 3 and mtitle is not null";
-//	$sql="select * from onlylink where mtitle is not null";
+//	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 3 and mtitle is not null";
+	$sql="select * from onlylink where updatetime > '$datebegin'  and mtitle is not null";
 
-	if(isset($_REQUEST['pageid']))
+	if(isset($_REQUEST['a']))
 	{
-		$pageid = $_REQUEST['pageid'];
-		$sql="select * from link where pageid=$pageid";	
-	}
-	if(isset($_REQUEST['link']))
-	{
-		$link = $_REQUEST['link'];
-		$sql="select * from link where link='$link'";	
+		$a = $_REQUEST['a'];
+		$sql="select * from onlylink l where l.author='$a'";
 	}	
 	
 	echo $sql."</br>\n";
@@ -43,7 +38,7 @@ function getlink()
 	while($row = mysql_fetch_array($results))
 	{
 		$count++;
-		echo "\n".$count.": ";
+		echo "\n".$count.": ".$row['link'].': '.$row['movieyear'].': '.$row['movietype'].': ';
 		$maxrate=1;
 		$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);
 		if($pageid>=0)
