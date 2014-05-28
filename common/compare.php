@@ -329,18 +329,24 @@ function c_movietype($movietype1,$movietype2)
 	//movietype需要一致性
 	if($movietype1>0)
 	{
-		//电影一定要和电影对应
-		if($movietype1==1 && $movietype2!=1)
-		{
-			echo " movietype diff $movietype1 vs $movietype2";
-			return false;			
-		}
-		if($movietype1!=1 && $movietype2==1)
-		{
-			echo " movietype diff  $movietype1 vs $movietype2";
-			return false;			
-		}
-		//电视剧 综艺 动漫 都属于电视剧
+		//电影 --> 电影、动漫
+		if($movietype1==1 && ($movietype2==1 || $movietype2==4))			
+			return true;
+			
+		//电视剧 --> 电视剧、综艺、动漫
+		if($movietype1=2 && ($movietype2==2 || $movietype2==3 || $movietype2==4))
+			return true;
+			
+		//综艺 --> 综艺、电视剧
+		if($movietype1=3 && ($movietype2==3 || $movietype2==2))
+			return true;
+			
+		//动漫  --> 电影、电视剧、动漫
+		if($movietype1=4 && ($movietype2==1 || $movietype2==2 || $movietype2==4))
+			return true;
+			
+		echo " movietype diff $movietype1 vs $movietype2";
+		return false;
 	}
 	return true;
 }

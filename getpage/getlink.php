@@ -43,8 +43,7 @@ function getlink()
 		$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);
 		if($pageid>=0)
 		{
-			//查找资源质量
-			
+			//查找资源质量			
 			$sqlauthor="select * from author where name='".$row['author']."'";
 			$resultsauthor=dh_mysql_query($sqlauthor);
 			$rowauthor = mysql_fetch_array($resultsauthor);
