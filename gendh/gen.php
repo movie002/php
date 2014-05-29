@@ -2,7 +2,6 @@
 
 include("../config.php");
 include("../common/base.php");
-include("../common/common_gen.php");
 include("../common/compressJS.class.php");
 require("../common/share.php");
 

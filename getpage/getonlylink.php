@@ -17,25 +17,25 @@ mysql_close($conn);
 
 function getonlylink()
 {
-	$d=2;
+	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name";
 	if( isset($_REQUEST['d']))
 	{
+		$d=2;
 		$d = $_REQUEST['d'];
-	}
-	$datebegin = getupdatebegin($d);
-	$sql="select l.*,a.* from onlylink l,author a where l.updatetime > '$datebegin' and l.author=a.name and mtitle is null";
-
-	//全部重新计算link
-	if(isset($_REQUEST['reget']))
-	{
-		$sql="select l.*,a.* from onlylink l,author a WHERE l.author = a.name";
+		$datebegin = getupdatebegin($d);
+		$sql .= " and l.updatetime > '$datebegin'";
 	}
 	//只重新计算一个author的link
-	if(isset($_REQUEST['aid']))
+	if(isset($_REQUEST['a']))
 	{
-		$aid = $_REQUEST['aid'];
-		$sql="select l.*,a.* from onlylink l,author a where a.id = $aid and l.author=a.name";
-	}	
+		$a = $_REQUEST['a'];
+		$sql .= " and a.name = '$a'";
+	}
+	if(!isset($_REQUEST['all']))
+	{
+		$sql .= " and mtitle is null";
+	}
+	
 	echo $sql."</br>\n";
 	
 	$results=dh_mysql_query($sql);	

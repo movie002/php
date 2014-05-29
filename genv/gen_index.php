@@ -13,7 +13,7 @@ require("../config.php");
 require("../common/curl.php");
 require("../common/base.php");
 require("../common/dbaction.php");
-require("../common/common_gen.php");
+require("common.php");
 require("../common/compressJS.class.php");
 require("movie.mtime.com.boxoffice.php");
 require("../common/share.php");

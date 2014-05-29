@@ -270,6 +270,7 @@ function insertsiteslink($updatetime,$mediaid,$author,$title,$url,$way,$type,$qu
 
 function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 {
+	echo " : ".$mtitle;
 	//global $movietype,$moviecountry;
 	$ctitles = processtitle($mtitle);
 	//print_r($ctitles);
@@ -280,9 +281,7 @@ function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 	foreach($ctitles as $ctitle)
 		$sqlpage .= " or title like '%$ctitle%'";
 	$sqlpage .= 'order by pubdate desc limit 0,4';
-	
-	//echo $sqlpage;
-	echo $title.' : '.$mtitle;
+	echo "\n".$sqlpage;
 	$resultspage=dh_mysql_query($sqlpage);
 	$pageid=getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate);
 	if($pageid>-1)
@@ -292,6 +291,7 @@ function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 	foreach($ctitles as $ctitle)
 		$sqlpage .= " or aka like '%$ctitle%' ";
 	$sqlpage .= 'order by pubdate desc limit 0,4';
+	echo "\n".$sqlpage;
 	$pageid=getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate);
 	if($pageid>-1)
 		return $pageid;
@@ -304,7 +304,7 @@ function getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate)
 	$resultspage=dh_mysql_query($sqlpage);
 	while($rowpage = mysql_fetch_array($resultspage))
 	{	
-		echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].' '.$rowpage['catcountry'].' '.$rowpage['pubdate']." --> ";
+		echo "</br>\n -> ".$rowpage['id'].' '.$rowpage['title'].' '.$rowpage['aka'].' '.$rowpage['cattype'].'/'.$rowpage['catcountry'].'/'.$rowpage['pubdate']." --> ";
 		//拼出一个综合akas
 		if($rowpage['aka']=='')
 			$akaall=$rowpage['title'];

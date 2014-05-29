@@ -354,14 +354,9 @@ function c_movietype($movietype1,$movietype2)
 function c_moviecountry($moviecountry1,$moviecountry2)
 {
 	//moviecountry需要一致性
-	if($moviecountry1>0)
+	if($moviecountry1>0 && $moviecountry1!=4 && $moviecountry2!=4)
 	{
-		//2 表示 欧美，4表示其他,这两者可以通用
-		if(($moviecountry1==2 && $moviecountry2==4) || ($moviecountry1==4 && $moviecountry2==2))
-		{
-			//这种情况是允许的
-		}
-		else if($moviecountry1!=$moviecountry2)
+		if($moviecountry1!=$moviecountry2)
 		{
 			echo " moviecountry diff $moviecountry1 vs $moviecountry2";
 			return false;

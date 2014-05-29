@@ -48,7 +48,7 @@
 						}
 						else
 						{
-							require("../php/common/common_gen.php");
+							require("../php/genv/common.php");
 							require("../php/common/base.php");
 							require("../php/common/dbaction.php");
 							require("../php/config.php");

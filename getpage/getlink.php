@@ -17,19 +17,22 @@ mysql_close($conn);
 
 function getlink()
 {
-	$d=2;
+	$sql="select * from onlylink where true";
 	if( isset($_REQUEST['d']))
 	{
+		$d=2;
 		$d = $_REQUEST['d'];
+		$datebegin = getupdatebegin($d);
+		$sql .= " and updatetime > '$datebegin'";
 	}
-	$datebegin = getupdatebegin($d);	
-//	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 3 and mtitle is not null";
-	$sql="select * from onlylink where updatetime > '$datebegin'  and mtitle is not null";
-
 	if(isset($_REQUEST['a']))
 	{
 		$a = $_REQUEST['a'];
-		$sql="select * from onlylink l where l.author='$a'";
+		$sql .= " and author = '$a'";
+	}
+	if(!isset($_REQUEST['all']))
+	{
+		$sql .= " and mtitle is not null";
 	}	
 	
 	echo $sql."</br>\n";
@@ -38,7 +41,7 @@ function getlink()
 	while($row = mysql_fetch_array($results))
 	{
 		$count++;
-		echo "\n".$count.": ".$row['link'].': '.$row['movieyear'].': '.$row['movietype'].': ';
+		echo "\n".$count.": ".$row['title'].': '.$row['link'].': '.$row['cat'].' --> '.$row['movietype'].'/'.$row['moviecountry'].'/'.$row['movieyear'];
 		$maxrate=1;
 		$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);
 		if($pageid>=0)

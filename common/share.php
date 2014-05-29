@@ -8,7 +8,6 @@
 
 //#需要使用的基础函数
 //include("../config.php");
-//include("../common/common_gen.php");
 //include("../common/compressJS.class.php");
 //
 //$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());

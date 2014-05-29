@@ -11,7 +11,7 @@ set_time_limit(120);
 
 #需要使用的基础函数
 require("../config.php");
-require("../common/common_gen.php");
+require("common.php");
 require("../common/base.php");
 require("../common/dbaction.php");
 require("../common/share.php");

@@ -14,7 +14,6 @@ include("../config.php");
 include("../common/base.php");
 include("../common/share.php");
 include("../common/dbaction.php");
-include("../common/common_gen.php");
 include("../common/page_navi.php");
 include("../common/compressJS.class.php");
 
