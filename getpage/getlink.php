@@ -17,7 +17,7 @@ mysql_close($conn);
 
 function getlink()
 {
-	$sql="select * from onlylink where true";
+	$sql="select * from onlylink where mtitle is not null";
 	if( isset($_REQUEST['d']))
 	{
 		$d=2;
@@ -30,10 +30,6 @@ function getlink()
 		$a = $_REQUEST['a'];
 		$sql .= " and author = '$a'";
 	}
-	if(!isset($_REQUEST['all']))
-	{
-		$sql .= " and mtitle is not null";
-	}	
 	
 	echo $sql."</br>\n";
 	$count=0;

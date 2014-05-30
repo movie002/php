@@ -121,22 +121,8 @@ function testtitle($ctitle,$title)
 					//print_r($match1);
 					if(!empty($match1[1]))
 					{
-						$firsttitle = getfirsttitle($match1[1]);
-						if(trim($firsttitle)!='')
-							$result .= trim($firsttitle).'/';
-						//$ltitle = preg_replace('/'.$pat.'/','',$ltitle);
-						//echo '***'.$ltitle.'***';
-					}
-					else
-					{
-						if($ret==0)
-						{
-							if($result=='')
-							{
-								echo " error in testtitle !</br>\n";
-								return -1;
-							}
-						}
+						if(trim($match1[1])!='')
+							$result .= trim($match1[1]).'/';
 					}
 					break;
 				}
@@ -155,23 +141,21 @@ function testtitle($ctitle,$title)
 					echo 'error in testtitle';
 					return -1;
 				}
-			}	
-		}
-		if($result=='')
-		{
-			//分割
-			//$titles=preg_split("/[\/]+/s", $ltitle);	
-			//print_r($titles);
-			//return $titles[0];
-			return $ltitle;
-		}
-		else
-		{
-			//$results=preg_split("/[\/]+/", $result);
-			//print_r($results);
-			//return $results[0];
+			}
+			if($ret==0)//说明需要结束了
+			{
+				if($result=='')
+					return -1;		
+				if($case=='g')
+					return substr($result,0,strlen($result)-1);
+				return $ltitle;				
+			}		
+		}		
+		if(trim($result)=='')
+			return -1;
+		if($case=='g')
 			return substr($result,0,strlen($result)-1);
-		}
+		return $ltitle;	
 	}
 	return -2;
 }
