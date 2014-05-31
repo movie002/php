@@ -17,7 +17,7 @@ mysql_close($conn);
 
 function getlink()
 {
-	$sql="select * from onlylink where mtitle is not null and fail < 6";
+	$sql="select * from onlylink where mtitle is not null and fail < 3";
 	if( isset($_REQUEST['d']))
 	{
 		$d=2;
