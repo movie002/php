@@ -17,7 +17,7 @@ mysql_close($conn);
 
 function getlink()
 {
-	$sql="select * from onlylink where mtitle is not null";
+	$sql="select * from onlylink where mtitle is not null and fail < 6";
 	if( isset($_REQUEST['d']))
 	{
 		$d=2;
@@ -56,5 +56,11 @@ function getlink()
 			$sql="delete from onlylink where link='".$row['link']."'";
 			$sqlresult=dh_mysql_query($sql);
 		}
+		else
+		{
+			echo " no get page set fail ++ ";
+			$sqlupdate = "update onlylink set fail = fail+1 where link = '".$row['link']."'" ;
+			dh_mysql_query($sqlupdate);	
+		}		
 	}
 }
