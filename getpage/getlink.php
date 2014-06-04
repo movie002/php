@@ -1,5 +1,7 @@
 <?php
-//利用link修改page的状态
+// 将onlylink中找出pageid之后，插入link表
+//	从数据库查找pageid
+//	匹配系数为1，开始的匹配系数较高，防止匹配出错
 require("../config.php");
 require("../common/compare.php");
 require("../common/dbaction.php");

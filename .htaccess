@@ -1,5 +1,7 @@
 DirectoryIndex index.html
 
+ErrorDocument 404 /404.html
+
 #对目录设置访问权限
 <Files .htaccess>
 	order allow,deny
@@ -25,8 +27,12 @@ allow from all
 #allow from 192.168.0
 
 #防止.svn被访问
+#防止.svn被访问
 RewriteBase /
 RewriteRule ^.svn/.*  ./404.html
+
+RewriteBase /
+RewriteRule ^.*/.svn/.*  ./404.html
 
 #发现服务器启用了TRACE Method
 RewriteCond %{REQUEST_METHOD} ^TRACE

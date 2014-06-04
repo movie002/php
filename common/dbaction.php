@@ -280,7 +280,7 @@ function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 	$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where false ";
 	foreach($ctitles as $ctitle)
 		$sqlpage .= " or title like '%$ctitle%'";
-	$sqlpage .= 'order by pubdate desc limit 0,4';
+	$sqlpage .= 'order by hot desc limit 0,4';
 	echo "\n".$sqlpage;
 	$resultspage=dh_mysql_query($sqlpage);
 	$pageid=getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate);

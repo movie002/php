@@ -65,7 +65,6 @@ function dh_gen_index()
 	$count = mysql_fetch_array($results);
 	$topnews.="，资讯".$count[0]."条）";
 	
-	$topnews.=" <a href=\"http://www.movie002.com/author.html\">站点资源一览>></a> ";
 	$topnews.=" <a href=\"http://www.movie002.com/update.html\">今日资源更新>></a>";
 	
 	$DH_output_content = str_replace("%topnews%",$topnews,$DH_output_content);

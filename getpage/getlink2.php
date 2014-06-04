@@ -1,5 +1,7 @@
 <?php
-//利用link修改page的状态
+// 将onlylink中找出pageid之后，插入link表
+//	从数据库查找pageid
+//	匹配系数为0.5，由于失败次数超过一定的额度，就可以使用较低的匹配系数
 require("../config.php");
 require("../common/compare.php");
 require("../common/dbaction.php");
@@ -17,7 +19,14 @@ mysql_close($conn);
 
 function getlink()
 {
-	$sql="select * from onlylink where mtitle is not null and fail > 3";
+	$f1=0;
+	$f2=3;
+	if(isset($_REQUEST['f1']))
+		$f1 = $_REQUEST['f1'];
+	if(isset($_REQUEST['f2']))
+		$f2 = $_REQUEST['f2'];
+	
+	$sql="select * from onlylink where mtitle is not null and fail between $f1 and $f2";
 	if( isset($_REQUEST['d']))
 	{
 		$d=2;
@@ -31,6 +40,12 @@ function getlink()
 		$sql .= " and author = '$a'";
 	}
 	
+	$maxrate=0.9;
+	if(isset($_REQUEST['r']))
+	{
+		$maxrate = $_REQUEST['r'];
+	}
+	
 	echo $sql."</br>\n";
 	$count=0;
 	$results=dh_mysql_query($sql);
@@ -38,7 +53,6 @@ function getlink()
 	{
 		$count++;
 		echo "\n".$count.": ".$row['title'].': '.$row['link'].': '.$row['cat'].' --> '.$row['movietype'].'/'.$row['moviecountry'].'/'.$row['movieyear'];
-		$maxrate=0.5;
 		$pageid = getdbpageid($row['title'],$row['mtitle'],$row['moviecountry'],$row['movieyear'],$row['movietype'],$maxrate);
 		if($pageid>=0)
 		{
