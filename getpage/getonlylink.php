@@ -51,7 +51,8 @@ function getonlylink()
 		$link=$row['link'];
 		$cat=$row['cat'];
 		$updatetime=$row['updatetime'];			
-		
+		if(getlinkmeta($row,$linkway,$linktype,$linkquality,$linkdownway,$row['link'],$row['title'],$row['cat'])==-1)
+			continue;
 		if(getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$link,$title,$cat)==-1)
 			continue;
 		addorupdateonlylink($author,$title,$link,$cat,$updatetime,$mtitle,$moviecountry,$movieyear,$movietype);
