@@ -13,8 +13,8 @@ echo $(date) > $logfile
 ## 2.1 处理onlylink，得到mtitle
 /srv/php/timeexc.sh curl http://php.movie002.com/getpage/getonlylink.php?d=10 -o /srv/php/log/getonlylink.log
 ## 2.1 处理onlylink，将onlylink处理到link和link2
-/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getlink2.php?f1=0&f2=2&r=0.9&d=10 -o /srv/php/log/getlink.log
-/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getlink2.php?f1=3&f2=5&r=0.4&d=10 -o /srv/php/log/getlink.log
+/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getlink2.php?f1=0&f2=2&r=0.9&d=10 -o /srv/php/log/getlink1.log
+/srv/php/timeexc.sh curl http://php.movie002.com/getpage/getlink2.php?f1=3&f2=5&r=0.4&d=10 -o /srv/php/log/getlink2.log
 ## 2.2 处理电影的状态，正在上映和即将上映的
 /srv/php/timeexc.sh curl http://php.movie002.com/getpage/upmstatus.php -o /srv/php/log/upmstatus.log
 ## 2.4 利用link得到page并修改其状态
