@@ -110,7 +110,7 @@
 		startTime();
 		loadimg();
 		showImgs();
-		baidutongji();
+		cnzz();
 	};
 	</script>	
 </body>

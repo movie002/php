@@ -273,7 +273,7 @@ function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 	echo " : ".$mtitle;
 	//global $movietype,$moviecountry;
 	$ctitles = processtitle($mtitle);
-	//print_r($ctitles);
+	print_r($ctitles);
 	//continue;
 	//主标题和副标题都需要出现在page的title或者aka中
 	//$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where title like '%$mtitle%' or aka like '%$mtitle%' order by updatetime desc;";
@@ -318,7 +318,7 @@ function getdbpageid_com($sqlpage,$title,$mtitle,$country,$year,$type,$maxrate)
 			continue;
 		$rate = c_title($mtitle,$akaall);
 		$rate += c_title_com($title,$akaall);
-		echo ' rate: '.$rate;
+		echo '=> rate: '.$rate;
 		if($rate>=3)
 		{
 			$pageid=$rowpage['id'];	

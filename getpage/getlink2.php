@@ -45,7 +45,7 @@ function getlink()
 	{
 		$maxrate = $_REQUEST['r'];
 	}
-	
+	//$sql.=' limit 0,100';
 	echo $sql."</br>\n";
 	$count=0;
 	$results=dh_mysql_query($sql);

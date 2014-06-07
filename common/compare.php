@@ -24,6 +24,7 @@ function trimtitle($ctitle)
 	$ctitle = preg_replace('/完结$/','',$ctitle);
 	$ctitle = preg_replace('/(\,|\!|，|。|！|\·|\.)$/s','',$ctitle);
 	$ctitle1 = preg_replace('/(19|20|18)[0-9]{2,2}$/','',$ctitle);
+	$ctitle1 = preg_replace('/[1-9]$/','',$ctitle);
 	
 	if(trim($ctitle1)!='')
 		$ctitle = $ctitle1;
@@ -69,10 +70,23 @@ function filtertitle($ctitle)
 	return $ctitle;
 }
 
+function getnumber($title)
+{
+	preg_match('/([1-9])$/',$title,$match);
+	if(!empty($match[1]))
+		return $match[1];
+	else
+	{
+		preg_match('/([1-9])\//',$title,$match);
+		if(!empty($match[1]))
+			return $match[1];
+	}
+	return -1;
+}
+
 //找出搜寻的字段
 function processtitle($ctitle)
 {
-	//$ctitle=filtertitle($ctitle);
 	$rettitles = array();
 	insertarray($rettitles,$ctitle);
 	//print_r($rettitles);
@@ -85,134 +99,11 @@ function processtitle($ctitle)
 		//取两个
 		//if($key>1)
 		//	break;
+		//$eachtitle = filtertitle($eachtitle);
 		$eachtitle = trimtitle($eachtitle);
 		array_push($rettitles,$eachtitle);	
 	}
 	return $rettitles;	
-}
-
-//严格拆封，只对/拆分.用于比较两者是否相同
-function processtitle1($ctitle)
-{
-	$ctitle=filtertitle($ctitle);
-	$titles=preg_split("/[\/]+/s",$ctitle);	
-	$rettitles = array();
-	foreach($titles as $key=>$eachtitle)
-	{
-		$eachtitle = trimtitle($eachtitle);
-		array_push($rettitles,$eachtitle);	
-	}
-	return $rettitles;
-}
-
-//不严格拆封 对:也拆分,比较细的拆分,且不能替换中间。用于数据库查找
-function processtitledb($ctitle)
-{
-//	$ctitle=filtertitle($ctitle);
-	//如果将:拆封之后没有找到，说明不对	
-	$rettitles = array();
-	$titles=preg_split("/[\/]+/s",$ctitle);
-	//print_r($titles);
-	foreach($titles as $key=>$eachtitle)
-	{
-		//只判断两个标题即可
-		if($key>1)
-			break;
-		//去除头尾空格
-		$eachtitle = trimtitle($eachtitle);
-		$eachtitles= preg_split("/:|：|\,|\!|！/",$eachtitle);
-		//print_r($eachtitles);
-		//只取前面部分
-		$eacheachtitles = trim($eachtitles[0]);
-		if($eacheachtitles!='')
-			array_push($rettitles,$eacheachtitles);
-		 
-		// foreach($eachtitles as $eacheachtitles)
-		// {
-			// $eacheachtitles = trim($eacheachtitles);
-			// if($eacheachtitles!='')
-				// array_push($rettitles,$eacheachtitles);
-		// }		
-	}
-	return $rettitles;
-}
-
-function processtitlesearch($ctitle)
-{
-	$rettitles = array();
-	$titles=preg_split("/[\/]+/s",$ctitle);
-	//print_r($titles);
-	foreach($titles as $key=>$eachtitle)
-	{
-		//只判断两个标题即可
-		if($key>1)
-			break;
-		//去除头尾空格
-		$eachtitle = trimtitle($eachtitle);
-		$eachtitles= preg_replace("/:|：|\,|\!|！/",$eachtitle);
-		array_push($rettitles,$eachtitles);		
-	}
-	return $rettitles;
-}
-
-//强比较
-function compare($ctitle,$aka,$movietype1,$movietype2,$moviecountry1,$moviecountry2,$movieyear1,$movieyear2)
-{
-	if(!comparemust($movietype1,$movietype2,$moviecountry1,$moviecountry2,$movieyear1,$movieyear2,2))
-		return false;
-	//得到标题的分离
-	//如果有第几季，第几季一定要在aka中出现
-//	preg_match('/第[^<>]{1,4}季|部/',$ctitle,$match);
-//	if(!empty($match[0]))
-//	{
-//		if(strstr($aka,$match[0])===false)
-//		{
-//			echo 'aka no '.$match[0];
-//			return false;
-//		}
-//	}
-	//print_r($match);
-	//如果每个标题都有在aka中，说明正确
-	//否则，需要一个标题完整出现在akas中
-	$titletest=true;
-	//$ctitle=filtertitle($ctitle);
-	$ctitles = processtitledb($ctitle);
-	$aka1 = filtertitle($aka);
-	//print_r($ctitles);
-	echo ' >> aka1: '.$aka1;
-	foreach($ctitles as $eachtitle)
-	{
-		echo ' each title '.$eachtitle .' ';
-	    //echo ' strstr: '.strstr($aka1,$eachtitle).';';		
-		if(strstr($aka1,$eachtitle)===false)
-		{
-			$titletest = false;
-		}
-	}
-	
-	if(!$titletest)
-	{
-		echo 'akas 不包含所有的titles, 第一次比较结果是 false | ';
-		//$ctitles = processtitle0($ctitle);
-		//print_r($ctitles);		
-		$akas =  processtitle1($aka);
-		print_r($akas);
-		print_r($ctitles);
-		foreach($ctitles as $eachtitle)
-		{
-			//echo '***'.array_search($eachtitle,$akas).'***';
-			$seachres=array_search($eachtitle,$akas);
-			if (!($seachres===false))
-			{	
-				echo $eachtitle.' in akas';
-				return true;
-			}
-		}
-		echo '没有一个 title 准确出现在akas中';
-		return false;
-	}
-	echo ' 第一次比较结果是 true';
-	return true;
 }
 
 function c_title($title,$aka)
@@ -238,6 +129,17 @@ function c_title($title,$aka)
 	
 	//print_r($titles);
 	//print_r($akas);
+	//判断数字，加分
+	$titlenum=getnumber($title);
+	if($titlenum!=-1)
+	{
+		echo ' titlenum==='.$titlenum;	
+		if(!(strstr($aka,$titlenum)===false))
+		{
+			echo ' num is '.$titlenum.' in akas +0.5, ';
+			$rate+=0.5;
+		}
+	}	
 	echo '// each title:';		
 	foreach($titles as $eachtitle)
 	{
@@ -274,7 +176,7 @@ function c_title($title,$aka)
 				$rate +=0.5;
 			}
 		}
-	}	
+	}
 	return 	$rate;
 }
 
@@ -298,30 +200,6 @@ function c_title_com($title,$akasall)
 		}
 	}
 	return $rate;
-}
-
-//弱比较
-function compare2($ctitle,$aka,$movietype1,$movietype2,$moviecountry1,$moviecountry2,$movieyear1,$movieyear2)
-{
-	if(!comparemust($movietype1,$movietype2,$moviecountry1,$moviecountry2,$movieyear1,$movieyear2,3))
-		return false;
-	
-	//只要有一个标题符合，就符合！
-	$ctitles = processtitle0($ctitle);
-	$aka1 = filtertitle($aka);	
-	foreach($ctitles as $key=>$eachtitle)
-	{
-		//比较之前，两者都去除标点符号等
-		//寻找，只要包含在akas中，即可	
-		if(!(strstr($aka1,$eachtitle)===false))
-		{
-			echo $eachtitle.' is ok ';
-			return true;
-		}
-		else
-			echo $eachtitle.' no contain ! next-- ';
-	}
-	return false;
 }
 
 function c_movietype($movietype1,$movietype2)
@@ -391,66 +269,6 @@ function c_movieyear($movieyear1,$movieyear2,$years,$aka)
 					return false;						
 				}
 			}
-		}
-	}
-	return true;
-}
-
-function comparemust($movietype1,$movietype2,$moviecountry1,$moviecountry2,$movieyear1,$movieyear2,$years,$aka)
-{
-	//年份、国家、类型必须要按照规定
-	if($movieyear1>0)
-	{
-		//如果akas含有year，则不需要比较year
-		if(strstr($aka,$movietype1)===false)
-		{
-			//两个year必须在合理的范围之内					
-			$movieyear2int = date("Y",strtotime($movieyear2));
-			$thisyear= date("Y");
-			$maxyear = $thisyear+3;//电影提前三年公布
-			$minyear = 1905;
-			if($movieyear1>=$minyear && $movieyear1<=$maxyear)
-			{
-				if($movieyear2int>=$minyear && $movieyear2int<=$maxyear)
-				{
-					$diff = $movieyear1-$movieyear2int;					
-					if ($diff>$years||$diff<-$years)
-					{
-						echo ' year diff:'.$diff;
-						return false;						
-					}
-				}
-			}
-		}	
-	}
-	//movietype需要一致性
-	if($movietype1>0)
-	{
-		//电影一定要和电影对应
-		if($movietype1==1 && $movietype2!=1)
-		{
-			echo ' movietype diff ';
-			return false;			
-		}
-		if($movietype1!=1 && $movietype2==1)
-		{
-			echo ' movietype diff ';
-			return false;			
-		}
-		//电视剧 综艺 动漫 都属于电视剧
-	}
-	//moviecountry需要一致性
-	if($moviecountry1>0)
-	{
-		//2 表示 欧美，4表示其他,这两者可以通用
-		if(($moviecountry1==2 && $moviecountry2==4) || ($moviecountry1==4 && $moviecountry2==2))
-		{
-			//这种情况是允许的
-		}
-		else if($moviecountry1!=$moviecountry2)
-		{
-			echo ' moviecountry diff ';
-			return false;
 		}
 	}
 	return true;
