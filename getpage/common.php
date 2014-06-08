@@ -121,10 +121,7 @@ function testtitle($ctitle,$title)
 					//print_r($match1);
 					if(!empty($match1[1]))
 					{
-						//中文和英文分开
-						$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$match1[1]);
-						//：，！:,分开
-						$title = preg_replace('/(：|，|！|:|,|!)/su','/',$title);						
+						$title = changetitle($match1[1]);					
 						if(trim($title)!='')
 							$result .= trim($title).'/';
 					}
@@ -162,5 +159,17 @@ function testtitle($ctitle,$title)
 		return $ltitle;	
 	}
 	return -2;
+}
+
+function changetitle($title)
+{
+	//中文和英文分开
+	$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$title);
+	//：，！:,分开
+	$title = preg_replace('/(：|，|！|:|,|!|－|\-)/su','/',$title);
+	$title = preg_replace('/(Ⅰ)/su','1/',$title);
+	$title = preg_replace('/(Ⅱ)/su','2/',$title);
+	$title = preg_replace('/(Ⅲ)/su','3/',$title);
+	return $title;
 }
 ?>

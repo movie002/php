@@ -32,10 +32,7 @@ function x11($title)
 	if($title=='')
 		return -1;
 
-	//中文和英文分开
-	$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$title);
-	//：，！:,分开
-	$title = preg_replace('/(：|，|！|:|,|!)/su','/',$title);
+	$title = changetitle($title);
 		
 	//第一步: 大致的提取标题，利用分割符号对标题处理		
 	preg_match('/《(.*?)》/',$title,$match);
@@ -47,9 +44,6 @@ function x11($title)
 	
 	//「」 [] 【】等括号提取标题
 	$title = preg_replace('/(【|】|\[|\]|「|」|《|》)/su','/',$title);
-	$title = preg_replace('/(Ⅰ)/su','1/',$title);
-	$title = preg_replace('/(Ⅱ)/su','2/',$title);
-	$title = preg_replace('/(Ⅲ)/su','3/',$title);
 	$duanarray = array();
 	insertarray($duanarray,$title);
 	//print_r($duanarray);
