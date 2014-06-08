@@ -31,6 +31,11 @@ function x11($title)
 {
 	if($title=='')
 		return -1;
+
+	//中文和英文分开
+	$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$title);
+	//：，！:,分开
+	$title = preg_replace('/(：|，|！|:|,|!)/su','/',$title);
 		
 	//第一步: 大致的提取标题，利用分割符号对标题处理		
 	preg_match('/《(.*?)》/',$title,$match);
@@ -46,7 +51,7 @@ function x11($title)
 	$title = preg_replace('/(Ⅱ)/su','2/',$title);
 	$title = preg_replace('/(Ⅲ)/su','3/',$title);
 	$duanarray = array();
-	insertarray($duanarray,$title);	
+	insertarray($duanarray,$title);
 	//print_r($duanarray);
 	$subtitle = judgetitle($duanarray);
 	if($subtitle===false)
@@ -240,7 +245,7 @@ function judgetitle($titlearray)
 	return $titlereturn;
 }
 
-//利用标点符号、第几季、特殊字体、中英文等提取标题
+//利用标点符号、第几季、特殊字体、中英文等提取第一个为标题
 function getfirsttitle($title)
 {
 	global $season2;

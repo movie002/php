@@ -121,8 +121,12 @@ function testtitle($ctitle,$title)
 					//print_r($match1);
 					if(!empty($match1[1]))
 					{
-						if(trim($match1[1])!='')
-							$result .= trim($match1[1]).'/';
+						//中文和英文分开
+						$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$match1[1]);
+						//：，！:,分开
+						$title = preg_replace('/(：|，|！|:|,|!)/su','/',$title);						
+						if(trim($title)!='')
+							$result .= trim($title).'/';
 					}
 					break;
 				}

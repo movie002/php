@@ -68,6 +68,7 @@ function insertonlylink2($author,$title,$link,$cat,$update)
 		$update = $datenow;
 		
 	$sql="insert into onlylink(author,title,link,cat,updatetime) values ('$author','$title','$link','$cat','$update') ON DUPLICATE KEY UPDATE author= '$author',title='$title',cat='$cat',updatetime='$update'";
+	//echo $sql."\n";
 	$sqlresult=dh_mysql_query($sql);
 	echo $title.' = '.$link.' = '.$cat." = ".$update." ->插入onlylink成功</br> \n";	
 }
