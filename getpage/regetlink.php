@@ -3,7 +3,9 @@
 require("../config.php");
 require("../common/compare.php");
 require("../common/dbaction.php");
+require("../common/base.php");
 require("common.php");
+require("x11.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -17,24 +19,28 @@ mysql_close($conn);
 
 function getlink()
 {
-	$d=2;
+	$sql="select * from link where true ";
+
 	if( isset($_REQUEST['d']))
 	{
 		$d = $_REQUEST['d'];
+		$datebegin = getupdatebegin($d);
+		$sql .= " and updatetime > '$datebegin'";
 	}
-	$datebegin = getupdatebegin($d);	
-	$sql="select * from link where updatetime > '$datebegin'";
-//	$sql="select * from onlylink where mtitle is not null";
-
+	if(isset($_REQUEST['a']))
+	{
+		$a = $_REQUEST['a'];
+		$sql .= " and author = '$a'";
+	}	
 	if(isset($_REQUEST['pageid']))
 	{
 		$pageid = $_REQUEST['pageid'];
-		$sql="select * from link where pageid=$pageid";	
+		$sql .=" and pageid='$pageid'";	
 	}
 	if(isset($_REQUEST['link']))
 	{
 		$link = $_REQUEST['link'];
-		$sql="select * from link where link='$link'";	
+		$sql .="and link='$link'";	
 	}	
 	
 	echo $sql."</br>\n";
@@ -49,10 +55,11 @@ function getlink()
 		$resultsauthor=dh_mysql_query($sqlauthor);
 		$rowauthor = mysql_fetch_array($resultsauthor);		
 
-		if(getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
+		if(getmoviemeta($rowauthor,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
 			continue;
-
+		echo '-->'.$mtitle;
 		$pageid = getdbpageid($row['title'],$mtitle,$moviecountry,$movieyear,$movietype,$maxrate);
+		continue;
 		if($pageid>=0)
 		{
 			//查找资源质量

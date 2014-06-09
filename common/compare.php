@@ -1,7 +1,7 @@
 <?php
-require("base.php");
-require("filtetitle.php");
-require("filter_quality.php");
+//require("base.php");
+//require("filtetitle.php");
+//require("filter_quality.php");
 
 //判断电影的性质
 
@@ -101,7 +101,8 @@ function processtitle($ctitle)
 		//	break;
 		//$eachtitle = filtertitle($eachtitle);
 		$eachtitle = trimtitle($eachtitle);
-		array_push($rettitles,$eachtitle);	
+		if($eachtitle!='')
+			array_push($rettitles,$eachtitle);	
 	}
 	return $rettitles;	
 }
@@ -159,24 +160,25 @@ function c_title($title,$aka)
 		}
 	}
 	
-	echo ' // each aka:';		
-	foreach($akas as $eachaka)
-	{
-		if(!(strstr($title,$eachaka)===false))
-		{
-			$seachres=array_search($eachaka,$titles);
-			if (!($seachres===false))
-			{	
-				echo $eachaka.' in titles +1, ';
-				$rate +=1;
-			}
-			else
-			{
-				echo $eachaka.'  in titles part +0.5, ';
-				$rate +=0.5;
-			}
-		}
-	}
+//	echo ' // each aka:';		
+//	foreach($akas as $eachaka)
+//	{
+//		if(!(strstr($title,$eachaka)===false))
+//		{
+//			$seachres=array_search($eachaka,$titles);
+//			if (!($seachres===false))
+//			{	
+//				echo $eachaka.' in titles +1, ';
+//				$rate +=1;
+//			}
+//			else
+//			{
+//				echo $eachaka.'  in titles part +0.5, ';
+//				$rate +=0.5;
+//			}
+//		}
+//	}
+
 	return 	$rate;
 }
 

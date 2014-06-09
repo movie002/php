@@ -3,7 +3,7 @@
 function getmoviemeta($row,&$mtitle,&$moviecountry,&$movieyear,&$movietype,$link,$title,$cat)
 {
 	//echo $row['title'];
-	$mtitle=testtitle($row['ctitle'],$row['title']);
+	$mtitle=testtitle($row['ctitle'],$title);
 	//echo "\n res: $mtitle \n";
 	//$mtitle=trimtitle($mtitle);
 	if($mtitle<0||$mtitle==='')
@@ -169,12 +169,6 @@ function changetitle($title)
 	$title = preg_replace('/(：|，|！|:|,|!|－|\-|·)/su','/',$title);
 	$title = preg_replace('/(★|◆|×|●|\*)/su','/',$title);
 	
-	if(count($titles)>1)
-	{
-		foreach($titles as $eachtitle)
-			insertarray($duanarray,$eachtitle);
-		return;
-	}
 	$title = preg_replace('/(Ⅰ)/su','1/',$title);
 	$title = preg_replace('/(Ⅱ)/su','2/',$title);
 	$title = preg_replace('/(Ⅲ)/su','3/',$title);

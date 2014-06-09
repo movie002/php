@@ -274,7 +274,9 @@ function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 	echo " : ".$mtitle;
 	//global $movietype,$moviecountry;
 	$ctitles = processtitle($mtitle);
-	//print_r($ctitles);
+	print_r($ctitles);
+	if(empty($ctitles))
+		return -1;
 	//continue;
 	//主标题和副标题都需要出现在page的title或者aka中
 	//$sqlpage = "select id,title,aka,catcountry,cattype,updatetime,pubdate from page where title like '%$mtitle%' or aka like '%$mtitle%' order by updatetime desc;";
