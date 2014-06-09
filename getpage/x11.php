@@ -66,7 +66,7 @@ function insertarray(&$duanarray,$title)
 		return;	
 		
 	//按照/分开
-	$titles=preg_split("/(\/|★|◆|×|●|\*)/", $title);
+	$titles=preg_split("/(\/)/", $title);
 	if(count($titles)>1)
 	{
 		foreach($titles as $eachtitle)

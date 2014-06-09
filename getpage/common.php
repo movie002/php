@@ -166,7 +166,15 @@ function changetitle($title)
 	//中文和英文分开
 	$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$title);
 	//：，！:,分开
-	$title = preg_replace('/(：|，|！|:|,|!|－|\-)/su','/',$title);
+	$title = preg_replace('/(：|，|！|:|,|!|－|\-|·)/su','/',$title);
+	$title = preg_replace('/(★|◆|×|●|\*)/su','/',$title);
+	
+	if(count($titles)>1)
+	{
+		foreach($titles as $eachtitle)
+			insertarray($duanarray,$eachtitle);
+		return;
+	}
 	$title = preg_replace('/(Ⅰ)/su','1/',$title);
 	$title = preg_replace('/(Ⅱ)/su','2/',$title);
 	$title = preg_replace('/(Ⅲ)/su','3/',$title);
