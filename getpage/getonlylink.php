@@ -20,7 +20,6 @@ function getonlylink()
 	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name";
 	if( isset($_REQUEST['d']))
 	{
-		$d=2;
 		$d = $_REQUEST['d'];
 		$datebegin = getupdatebegin($d);
 		$sql .= " and l.updatetime > '$datebegin'";
@@ -46,16 +45,17 @@ function getonlylink()
 		echo "\n".$i.":";
 		$i++;
 		//对linktype不符合的选项，不予处理
-		$author=$row['author'];
-		$title=$row['title'];
-		$link=$row['link'];
-		$cat=$row['cat'];
-		$updatetime=$row['updatetime'];			
-		if(getlinkmeta($row,$linkway,$linktype,$linkquality,$linkdownway,$row['link'],$row['title'],$row['cat'])==-1)
+		$linkway = testneed($row['clinkway'],$row['link'],$row['title'],$row['cat']);
+		if($linkway<0)
+		{
+			//linktype 不对，说明有问题不大
+			echo "linkway=".$row['clinkway']." % title=".$row['title']." link=".$row['link']." cat=".$row['cat']." -> linkway error 失败，请查明原因！</br> \n";
 			continue;
-		if(getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$link,$title,$cat)==-1)
+		}		
+		
+		if(getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
 			continue;
-		addorupdateonlylink($author,$title,$link,$cat,$updatetime,$mtitle,$moviecountry,$movieyear,$movietype);
+		addorupdateonlylink($row['author'],$row['title'],$row['link'],$row['cat'],$row['updatetime'],$mtitle,$moviecountry,$movieyear,$movietype);
 	}
 }
 ?>

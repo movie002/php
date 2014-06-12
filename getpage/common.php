@@ -120,11 +120,7 @@ function testtitle($ctitle,$title)
 					preg_match('/'.$pat.'/',$ltitle,$match1);
 					//print_r($match1);
 					if(!empty($match1[1]))
-					{
-						$title = changetitle($match1[1]);					
-						if(trim($title)!='')
-							$result .= trim($title).'/';
-					}
+						$result .= changetitle($match1[1]).'/';
 					break;
 				}
 				case 'f':
