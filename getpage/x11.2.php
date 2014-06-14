@@ -33,14 +33,13 @@ function x11($title)
 		return -1;
 
 	$title = changetitle($title);
-	echo "\n-->".$title;
 		
 	//第一步: 大致的提取标题，利用分割符号对标题处理		
 	preg_match('/《(.*?)》/',$title,$match);
 	//print_r($match);
 	if(!empty($match[1]))//如果有《》，不处理
 	{
-		return trim($match[1],'\t\n\r\0\x0B/.');
+		return $match[1];
 	}
 	
 	//「」 [] 【】等括号提取标题
@@ -51,15 +50,13 @@ function x11($title)
 	$subtitle = judgetitle($duanarray);
 	if($subtitle===false)
 		 return -1;
-	//return $subtitle;
-	return trim($subtitle,'\t\n\r\0\x0B/.');
+	return $subtitle;
 }
 
 function insertarray(&$duanarray,$title)
 {
 //	echo "\n".$title;
-	$title = trim($title,'\t\n\r\0\x0B.');
-	if($title=='')
+	if(trim($title)=='')
 		return;
 		
 	//存数字不要
@@ -83,8 +80,8 @@ function insertarray(&$duanarray,$title)
 	if(!empty($match[0]))
 	{		
 		$firsttitle = getfirsttitle($match[0]);
-		//$firsttitle = str_replace('.',' ',$firsttitle);
-		//$firsttitle = str_replace('_',' ',$firsttitle);
+		$firsttitle = str_replace('.',' ',$firsttitle);
+		$firsttitle = str_replace('_',' ',$firsttitle);
 		if(trim($firsttitle)!='')
 			array_push($duanarray,trim($firsttitle));	
 		return;
@@ -248,7 +245,21 @@ function getfirsttitle($title)
 	global $season2;
 	//echo "\n".$title;
 	$firsttitle=$title;
-	preg_match('/^(.*?)([\(|\（])/us',$firsttitle,$match1);
+	preg_match('/^(.*?)([\(|\（|\+|\-]|3D)/us',$firsttitle,$match1);
+	//print_r($match1);
+	if(!empty($match1[0]))
+	{
+		$firsttitle=$match1[1];
+	}
+
+	preg_match('/^(.*?)((19|20|18)[0-9]{2,2})/s',$firsttitle,$match1);
+	if(!empty($match1[0]))
+	{
+		//有年份
+		$firsttitle=$match1[1];
+	}	
+	
+	preg_match('/^(.*?)(EP|E)[0-9]+/si',$firsttitle,$match1);
 	//print_r($match1);
 	if(!empty($match1[0]))
 	{
@@ -260,6 +271,14 @@ function getfirsttitle($title)
 	if(!empty($match1[0]))
 	{
 		$firsttitle = $match1[1];
+	}	
+	
+	preg_match('/^(.*?)S([0-9]+)/si',$firsttitle,$match1);
+	//print_r($match1);
+	if(!empty($match1[0]))
+	{
+		//得到season信息
+		$firsttitle=$match1[1];
 	}
 	
 	global $qulity;

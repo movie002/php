@@ -4,6 +4,7 @@ function getmoviemeta($row,&$mtitle,&$moviecountry,&$movieyear,&$movietype,$link
 {
 	//echo $row['title'];
 	$mtitle=testtitle($row['ctitle'],$title);
+	//$mtitle=x11($title);
 	//echo "\n res: $mtitle \n";
 	//$mtitle=trimtitle($mtitle);
 	if($mtitle<0||$mtitle==='')
@@ -120,13 +121,17 @@ function testtitle($ctitle,$title)
 					preg_match('/'.$pat.'/',$ltitle,$match1);
 					//print_r($match1);
 					if(!empty($match1[1]))
-						$result .= changetitle($match1[1]).'/';
+					{
+						$tmp = changetitle($match1[1]);
+						$result .= $tmp.'/';
+						$ltitle = $result;
+					}
 					break;
 				}
 				case 'f':
 				{
 					//echo 'f';
-					$ltitle = preg_replace('/'.$pat.'/i','',$ltitle);				
+					$ltitle = preg_replace('/'.$pat.'/i','',$ltitle);
 					break;
 				}
 				case 'x':
@@ -140,18 +145,16 @@ function testtitle($ctitle,$title)
 				}
 			}
 			if($ret==0)//说明需要结束了
-			{
-				if($result=='')
-					return -1;		
-				if($case=='g')
-					return substr($result,0,strlen($result)-1);
-				return $ltitle;				
-			}		
+				break;
 		}		
-		if(trim($result)=='')
-			return -1;
 		if($case=='g')
+		{
+			if(trim($result)=='')
+				return -1;		
 			return substr($result,0,strlen($result)-1);
+		}
+		if(trim($result)=='')
+			return -1;	
 		return $ltitle;	
 	}
 	return -2;
@@ -159,10 +162,22 @@ function testtitle($ctitle,$title)
 
 function changetitle($title)
 {
+	$title = preg_replace('/(S[0-9]+.*?)$/si','/',$title);
+	$title = preg_replace('/((EP|E)[0-9]+.*?)$/si','',$title);
+	$title = preg_replace('/([\(|\（])/si','',$title);
+	
+	$title = preg_replace('/((19|20|18)[0-9]{2,2})/si','/',$title);	
+	$qulity=array('高清','蓝光','720p','1080p','1080i','1280','1024','枪版','抢先','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','BD','mp4','avi','mkv','rmvb');	
+	foreach ($qulity as $eachlist)
+	{
+		$title = preg_replace('/('.$eachlist.'.*?)$/si','',$title);
+	}	
+	
 	//中文和英文分开
 	$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$title);
+	$title = preg_replace('/([a-zA-Z\s\.\_\-])([^a-zA-Z\s\.\_\-])/','$1/$2',$title);
 	//：，！:,分开
-	$title = preg_replace('/(：|，|！|:|,|!|－|\-|·)/su','/',$title);
+	$title = preg_replace('/(：|，|！|:|,|!|－|\-|·|\+)/su','/',$title);
 	$title = preg_replace('/(★|◆|×|●|\*)/su','/',$title);
 	
 	$title = preg_replace('/(Ⅰ)/su','1/',$title);

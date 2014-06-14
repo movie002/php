@@ -52,10 +52,11 @@ function getonlylink()
 			echo "linkway=".$row['clinkway']." % title=".$row['title']." link=".$row['link']." cat=".$row['cat']." -> linkway error 失败，请查明原因！</br> \n";
 			continue;
 		}		
-		
+		echo "\n".$row['title'];
 		if(getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
 			continue;
-		addorupdateonlylink($row['author'],$row['title'],$row['link'],$row['cat'],$row['updatetime'],$mtitle,$moviecountry,$movieyear,$movietype);
+		echo "\n -->".$mtitle;
+	//addorupdateonlylink($row['author'],$row['title'],$row['link'],$row['cat'],$row['updatetime'],$mtitle,$moviecountry,$movieyear,$movietype);
 	}
 }
 ?>
