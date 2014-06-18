@@ -39,31 +39,13 @@ function dh_gen_index()
 	$topnews="今日更新（";
 	$datetoday =date("Y-m-d");
 	$datetoday = date("Y-m-d  H:i:s",strtotime($datetoday));
-	$sql="select count(*) from page where updatetime >= '$datetoday'";
-	$results=dh_mysql_query($sql);
-	$count = mysql_fetch_array($results);
-	$topnews.="影视".$count[0]."部";
-	$sql="select count(*) from link where updatetime >= '$datetoday' and linkway=6 or linkway=7";
-	$results=dh_mysql_query($sql);
-	$count = mysql_fetch_array($results);
-	$topnews.="，资源".$count[0]."个";
-	$sql="select count(*) from link where updatetime >= '$datetoday' and linkway=1";
-	$results=dh_mysql_query($sql);
-	$count = mysql_fetch_array($results);
-	$topnews.="，资讯".$count[0]."条）";
+	$topnews.="影视".dh_mysql_get_count("select count(*) from page where updatetime >= '$datetoday'")."部";
+	$topnews.="，在线下载".dh_mysql_get_count("select count(*) from link where updatetime >= '$datetoday' and (linkway=6 or linkway=7)")."个";
+	$topnews.="，资讯影评".dh_mysql_get_count("select count(*) from link where updatetime >= '$datetoday' and (linkway=1 or linkway=2)")."条）";
 	$topnews.="全部资源（";
-	$sql="select max(id) from page";
-	$results=dh_mysql_query($sql);
-	$count = mysql_fetch_array($results);
-	$topnews.="影视".$count[0]."部";
-	$sql="select count(*) from link where linkway=6 or linkway=7";
-	$results=dh_mysql_query($sql);
-	$count = mysql_fetch_array($results);
-	$topnews.="，资源".$count[0]."个";
-	$sql="select count(*) from link where linkway=1";
-	$results=dh_mysql_query($sql);
-	$count = mysql_fetch_array($results);
-	$topnews.="，资讯".$count[0]."条）";
+	$topnews.="影视".dh_mysql_get_count("select max(id) from page")."部";
+	$topnews.="，在线下载".dh_mysql_get_count("select count(*) from link  where linkway=6 or linkway=7")."个";
+	$topnews.="，资讯影评".dh_mysql_get_count("select count(*) from link where linkway=1 or linkway=2")."条）";
 	
 	$topnews.=" <a href=\"http://www.movie002.com/update.html\">今日资源更新>></a>";
 	

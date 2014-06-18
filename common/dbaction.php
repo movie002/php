@@ -12,6 +12,14 @@ function dh_mysql_query($sql)
 	return $rs;
 }
 
+//给count(*)的sql去除count(*)
+function dh_mysql_get_count($sql)
+{
+	$results=dh_mysql_query($sql);
+	$count = mysql_fetch_array($results);
+	return $count[0];
+}
+
 function insertcelebrity($celebritys)
 {
 	preg_match_all('/\[(.*?)\]/s',$celebritys,$match);
