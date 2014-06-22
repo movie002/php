@@ -31,9 +31,8 @@ function x11($title)
 {
 	if($title=='')
 		return -1;
-
 	$title = changetitle($title);
-	echo "\n-->".$title;
+	echo "\n x11-->".$title;
 		
 	//第一步: 大致的提取标题，利用分割符号对标题处理		
 	preg_match('/《(.*?)》/',$title,$match);
@@ -47,7 +46,7 @@ function x11($title)
 	$title = preg_replace('/(【|】|\[|\]|「|」|《|》)/su','/',$title);
 	$duanarray = array();
 	insertarray($duanarray,$title);
-	//print_r($duanarray);
+	print_r($duanarray);
 	$subtitle = judgetitle($duanarray);
 	if($subtitle===false)
 		 return -1;

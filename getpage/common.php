@@ -162,24 +162,47 @@ function testtitle($ctitle,$title)
 
 function changetitle($title)
 {
+	$title =  str_replace('\'','`',$title);
+	//s01之后的不要
 	$title = preg_replace('/(S[0-9]+.*?)$/si','/',$title);
+	echo "\n mm1:".$title."\n";
+	//e(p)01之后的不要
 	$title = preg_replace('/((EP|E)[0-9]+.*?)$/si','',$title);
-	$title = preg_replace('/([\(|\（])/si','',$title);
+	echo "mm2:".$title."\n";
+	//括号之后的不需要
+	$title = preg_replace('/([\(|\（].*?)$/su','',$title);
+	echo "mm3:".$title."\n";
+	//年份之后的不要
+	//$title = preg_replace('/((19|20|18)[0-9]{2,2})/si','/',$title);	
 	
-	$title = preg_replace('/((19|20|18)[0-9]{2,2})/si','/',$title);	
-	$qulity=array('高清','蓝光','720p','1080p','1080i','1280','1024','枪版','抢先','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','BD','mp4','avi','mkv','rmvb');	
-	foreach ($qulity as $eachlist)
-	{
-		$title = preg_replace('/('.$eachlist.'.*?)$/si','',$title);
-	}	
+	//$qulity=array('高清','蓝光','720p','1080p','1080i','1280','1024','枪版','抢先','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','BD','mp4','avi','mkv','rmvb');	
+	//foreach ($qulity as $eachlist)
+	//{
+	//	$title = preg_replace('/('.$eachlist.'.*?)$/si','',$title);
+	//}
+
+	//用一下的数字充当间隔
+	$number=array('720p','1080p','1080i','1280','1024','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','BD','mp4','avi','mkv','rmvb','HDRip');	
+	foreach ($number as $eachlist)
+		$title = preg_replace('/('.$eachlist.')/si','/',$title);
+	//用容量大小作为间隔
+	$title = preg_replace('/([0-9.]+[mg])/si','/',$title);		
+	//用存数字作为间隔
+	$title = preg_replace('/([0-9.]+)/','/',$title);
 	
+	//echo "mm4:".$title."\n";
 	//中文和英文分开
-	$title = preg_replace('/([^a-zA-Z\s\.\_\-])([a-zA-Z\s\.\_\-])/','$1/$2',$title);
-	$title = preg_replace('/([a-zA-Z\s\.\_\-])([^a-zA-Z\s\.\_\-])/','$1/$2',$title);
+	$title = preg_replace('/([a-zA-Z\s.\.\_\-`]+)/s','/$1/',$title);
+	echo "mm5:".$title."\n";
+	//$title = preg_replace('/([a-zA-Z\s\.\_\-`])([^a-zA-Z\s\.\_\-`])/','$1/$2',$title);
+	//echo "mm6:".$title."\n";
 	//：，！:,分开
-	$title = preg_replace('/(：|，|！|:|,|!|－|\-|·|\+)/su','/',$title);
+	$title = preg_replace('/(：|，|！|:|,|!|－|·|\+)/su','/',$title);
+	echo "mm7:".$title."\n";
+	$title = preg_replace('/([\/|-|]+)/s','/',$title);
+	echo "mm7:".$title."\n";	
 	$title = preg_replace('/(★|◆|×|●|\*)/su','/',$title);
-	
+	echo "mm8:".$title."\n";
 	$title = preg_replace('/(Ⅰ)/su','1/',$title);
 	$title = preg_replace('/(Ⅱ)/su','2/',$title);
 	$title = preg_replace('/(Ⅲ)/su','3/',$title);

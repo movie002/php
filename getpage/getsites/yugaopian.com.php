@@ -52,12 +52,13 @@ function get_yugaopian($title,$aka,$type,$updatetime,$pageid=-1)
 		if($i>4)
 			break;
 		$i++;
-		$title =$match1[1][$key];
-		if(!strstr($title,$title))
+		$xtitle =$match1[1][$key];
+		if(!strstr($title,$xtitle))
 			continue;
+		$ytitle ="《".$title."》".$xtitle;
 		$updatetime = date("Y-m-d H:i:s");
 		$url='http://www.yugaopian.com/movie/'.$match0[1][$key];	
-		addorupdatelink($pageid,'预告片世界',$title,$url,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'预告片世界',$ytitle,$url,'',4,7,7,0,$updatetime,1);
 	}
 }
 ?>  
