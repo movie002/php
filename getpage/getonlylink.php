@@ -35,7 +35,7 @@ function getonlylink()
 		$sql .= " and mtitle is null";
 	}
 	
-	$sql .='limit 0,200';
+	$sql .=' limit 0,200';
 	
 	echo $sql."</br>\n";
 	
