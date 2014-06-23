@@ -163,12 +163,16 @@ function testtitle($ctitle,$title)
 function changetitle($title)
 {
 	$title =  str_replace('\'','`',$title);
+	$title =  str_replace('_',' ',$title);	
 	//s01之后的不要
 	$title = preg_replace('/(S[0-9]+.*?)$/si','/',$title);
 	echo "\n mm1:".$title."\n";
 	//e(p)01之后的不要
 	$title = preg_replace('/((EP|E)[0-9]+.*?)$/si','',$title);
 	echo "mm2:".$title."\n";
+	//第几季第几集之后的不要
+	$title = preg_replace('/([第|前|后|下|全][0-9\-零一二三四五六七八九十]+[季|部|集|话|回|話].*?)$/sui','',$title);
+	echo "mm2:".$title."\n";	
 	//括号之后的不需要
 	$title = preg_replace('/([\(|\（].*?)$/su','',$title);
 	echo "mm3:".$title."\n";
@@ -182,13 +186,14 @@ function changetitle($title)
 	//}
 
 	//用一下的数字充当间隔
-	$number=array('720p','1080p','1080i','1280','1024','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','BD','mp4','avi','mkv','rmvb','HDRip');	
+	$number=array('1280x720','1280','1024','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','480P','720p','1080p','1080i','BD','mp4','avi','mkv','rmvb','HDRip','BIG5','ts');	
 	foreach ($number as $eachlist)
 		$title = preg_replace('/('.$eachlist.')/si','/',$title);
+	echo "mm4:".$title."\n";	
 	//用容量大小作为间隔
-	$title = preg_replace('/([0-9.]+[mg])/si','/',$title);		
+	$title = preg_replace('/([0-9.]+[mMgGbBpx年全集]+)/su','/',$title);		
 	//用存数字作为间隔
-	$title = preg_replace('/([0-9.]+)/','/',$title);
+	$title = preg_replace('/([0-9.ⅠⅡⅢ]+)/su','/',$title);
 	
 	//echo "mm4:".$title."\n";
 	//中文和英文分开
@@ -198,14 +203,12 @@ function changetitle($title)
 	//echo "mm6:".$title."\n";
 	//：，！:,分开
 	$title = preg_replace('/(：|，|！|:|,|!|－|·|\+)/su','/',$title);
-	echo "mm7:".$title."\n";
-	$title = preg_replace('/([\/|-|]+)/s','/',$title);
 	echo "mm7:".$title."\n";	
-	$title = preg_replace('/(★|◆|×|●|\*)/su','/',$title);
+	$title = preg_replace('/(★|◆|×|●|•|\*)/su','/',$title);
 	echo "mm8:".$title."\n";
-	$title = preg_replace('/(Ⅰ)/su','1/',$title);
-	$title = preg_replace('/(Ⅱ)/su','2/',$title);
-	$title = preg_replace('/(Ⅲ)/su','3/',$title);
-	return $title;
+	$title = preg_replace('/([\/|\-|【|】|\[|\]|「|」|《|》]+)/su','/',$title);
+	echo "mm7:".$title."\n";
+
+	return trim($title," \t\n\r\0\x0B\/.");;
 }
 ?>

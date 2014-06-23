@@ -21,7 +21,7 @@ function getonlylink()
 	if( isset($_REQUEST['d']))
 	{
 		$d = $_REQUEST['d'];
-		$datebegin = getupdatebegin($d);
+		$datebegin = getupdatebegin($d,'onlylink');
 		$sql .= " and l.updatetime > '$datebegin'";
 	}
 	//只重新计算一个author的link
@@ -34,6 +34,8 @@ function getonlylink()
 	{
 		$sql .= " and mtitle is null";
 	}
+	
+	$sql .='limit 0,200';
 	
 	echo $sql."</br>\n";
 	

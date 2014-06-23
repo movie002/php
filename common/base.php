@@ -112,11 +112,11 @@ function higrid_compress_html($higrid_uncompress_html_source )
 	return $higrid_uncompress_html_source; 
 } 
 
-function getupdatebegin($day)
+function getupdatebegin($day,$table='link')
 {
 	//默认设置成120天之前
 	//$day = 365;
-	$sql="select max(updatetime) from page";
+	$sql="select max(updatetime) from ".$table;
 	$res = dh_mysql_query($sql);	
 	$updatetime = mysql_fetch_array($res);
 	$timenow = strtotime($updatetime[0]);
