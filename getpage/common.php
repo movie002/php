@@ -174,7 +174,7 @@ function changetitle($title)
 	echo "mm2:".$title."\n";
 	//第几季第几集之后的不要
 	$title = preg_replace('/([第|前|后|下|全][0-9\-零一二三四五六七八九十]+[季|部|集|话|回|話].*?)$/sui','',$title);
-	echo "mm2:".$title."\n";	
+	echo "mm3:".$title."\n";	
 	//括号之后的不需要
 	//$title = preg_replace('/([\(|\（].*?)$/su','',$title);
 	//echo "mm3:".$title."\n";
@@ -193,13 +193,13 @@ function changetitle($title)
 	//	$title = preg_replace('/('.$eachlist.')/si','/',$title);
 	//echo "mm4:".$title."\n";	
 	//用容量大小作为间隔
-	$title = preg_replace('/([0-9.]+[mMgGbBpx年全集]+)/su','/',$title);		
+	//$title = preg_replace('/([0-9\s]+[mMgGbBpx年全集]+)/su','/',$title);		
 	//用存数字作为间隔
-	$title = preg_replace('/([0-9.ⅠⅡⅢ]+)/su','/',$title);
-	
+	//$title = preg_replace('/([0-9\sⅠⅡⅢ]+)/su','/',$title);
+	//echo "mm4:".$title."\n";	
 	//echo "mm4:".$title."\n";
 	//中文和英文分开
-	$title = preg_replace('/([a-zA-Z\s`]+)/s','/$1/',$title);
+	$title = preg_replace("/([0-9a-zA-Z\s]+)/",'/$1/',$title);
 	echo "mm5:".$title."\n";
 	//$title = preg_replace('/([a-zA-Z\s\.\_\-`])([^a-zA-Z\s\.\_\-`])/','$1/$2',$title);
 	//echo "mm6:".$title."\n";
@@ -209,7 +209,7 @@ function changetitle($title)
 	$title = preg_replace('/(★|◆|×|●|•|\*)/su','/',$title);
 	echo "mm8:".$title."\n";
 	$title = preg_replace('/([\/|\-|【|】|\[|\]|「|」|《|》|\(|（|\)|）]+)/su','/',$title);
-	echo "mm7:".$title."\n";
+	echo "mm9:".$title."\n";
 
 	return trim($title," \t\n\r\0\x0B\/.");;
 }
