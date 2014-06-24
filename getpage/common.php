@@ -199,7 +199,7 @@ function changetitle($title)
 	//echo "mm4:".$title."\n";	
 	//echo "mm4:".$title."\n";
 	//中文和英文分开
-	$title = preg_replace("/([0-9a-zA-Z\s]+)/",'/$1/',$title);
+	$title = preg_replace("/([0-9a-zA-Z\s`]+)/",'/$1/',$title);
 	echo "mm5:".$title."\n";
 	//$title = preg_replace('/([a-zA-Z\s\.\_\-`])([^a-zA-Z\s\.\_\-`])/','$1/$2',$title);
 	//echo "mm6:".$title."\n";
