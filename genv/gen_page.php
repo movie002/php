@@ -109,10 +109,14 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 //				$title.=' '.$akas[0];
 //				//echo $title."</br>\n";
 //			}
-			$keywords = $row['title'];			
-			$keywords.=','.strtr($row['aka'],'/',',');
-			$DH_output_content_page = str_replace("%title_key%",$row['title'],$DH_output_content_page);
-			$DH_output_content_page = str_replace("%keywords%",$keywords,$DH_output_content_page);
+			$akas = $row['title'];			
+			$akas.=','.strtr($row['aka'],'/',',');
+			$title = preg_replace('/([：\:])/','',$row['title']);
+			//str_replace('：','',$title);
+			$DH_output_content_page = str_replace("%title_key%",$title,$DH_output_content_page);
+			$DH_output_content_page = str_replace("%catkeyword%",dh_get_catkeyword($row['cattype'],$title),$DH_output_content_page);
+			$DH_output_content_page = str_replace("%title_meta%",dh_get_title($row['cattype'],$title),$DH_output_content_page);
+			$DH_output_content_page = str_replace("%akas%",$akas,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%id%",$row['id'],$DH_output_content_page);
 			
 //			//新浪微博控件
@@ -133,6 +137,7 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%home%",$DH_home_url,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%more%",'<a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank">[更多内容到豆瓣]</a>',$DH_output_content_page);
 			$DH_output_file = output_page_path($path,$row['id']);
+			
 			dh_file_put_contents($DH_output_file,$DH_output_content_page);
 		}
 		echo 'gen page count:'.$count."</br>\n";

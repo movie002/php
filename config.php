@@ -14,17 +14,17 @@ $pagecount=15;
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 
 
-$DH_output_path= '/srv/v/';
-$DH_input_path= '/srv/php/';
-$DH_author_path= '/srv/www/';
-$DH_dh_path= '/srv/dh/';
-$DH_home_url= 'http://v.movie002.com/';
+//$DH_output_path= '/srv/v/';
+//$DH_input_path= '/srv/php/';
+//$DH_author_path= '/srv/www/';
+//$DH_dh_path= '/srv/dh/';
+//$DH_home_url= 'http://v.movie002.com/';
 
-//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
-//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-//$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
-//$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
-//$DH_home_url= 'http://127.0.0.1/v/';
+$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
+$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
+$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
+$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
+$DH_home_url= 'http://127.0.0.1/v/';
 
 
 
@@ -35,7 +35,7 @@ $DH_output_index_path = $DH_output_path.'index/';
 $DH_html_url= $DH_home_url.'html/';
 $DH_index_url= $DH_home_url.'index/';
 $DH_name= '二手电影网';
-$DH_name_des= '影视资源导航';
+$DH_name_des= '电影大全_电视剧大全_影视大全导航';
 
 //页面显示的文章列表条目的个数
 $DH_page_count_limit = 4;
@@ -64,7 +64,9 @@ $DH_page_store_count = 100;
 ///状态：0:'' 1:得到链接 2:链接修正 3:得到共同的电影标题 4:得到mediaid 5:得到src 6:结束
 ///下载链接属性：0:未知资源 1:直接下载 2:跳转下载 3:登陆下载
 
-$movietype=array('','电影','电视剧','综艺','动漫');//综艺和动漫剧集归结为电视节目，动漫电影归结为电影
+$movietype=array('','电影大全','电视剧大全','综艺节目大全','动画片大全');
+$movietype2=array('','电影','电视剧','综艺','动画片');
+//综艺和动漫剧集归结为电视节目，动漫电影归结为电影
 $moviecountry=array('','华语','欧美','日韩','其他');
 $moviestatus=array('','出预告片','马上登陆','正在上映','放映结束','出售碟片','经典影片');
 
@@ -81,8 +83,52 @@ function dh_get_catname($type,$country)
 		echo 'get type: '.$type.'：预告片';
 		return '预告片';
 	}
-	global $movietype,$moviecountry;
-	$cat =$moviecountry[$country].$movietype[$type];
+	global $movietype2,$moviecountry;
+	$cat =$moviecountry[$country].$movietype2[$type];
+	return $cat;
+}
+
+function dh_get_catkeyword($type,$title)
+{
+	preg_match('/([a-z])/si',$title,$match);
+//	if(!empty($match[1]))
+//	if()
+	global $movietype2;
+	if($type==1)
+		$cat =$title.'电影,'.$title.'国语,'.$title.'完整版,'.$title.'预告片,'.$title.'影评';
+	if($type==2)
+		$cat =$title.'电视剧,'.$title.'全集,'.$title.'国语,'.$title.'电视剧全集';
+	if($type==3)
+		$cat =$title.'综艺,'.$title.'国语,'.$title.'全集';
+	if($type==4)
+		$cat =$title.'动漫,'.$title.'动画,'.$title.'国语,'.$title.'全集';
+	return $cat;
+}
+
+function dh_get_title($type,$title)
+{
+	if($type==1)
+		$cat =$title.'电影_'.$title.'下载';
+	if($type==2)
+		$cat =$title.'电视剧_'.$title.'在线观看_全集';
+	if($type==3)
+		$cat =$title.'综艺_'.$title.'在线观看_全集';
+	if($type==4)
+		$cat =$title.'动画/动漫_'.$title.'在线观看';
+	return $cat;
+}
+
+function dh_get_title_key_cat($type,$title)
+{
+	global $movietype2;
+	if($type==1)
+		$cat =$title.'电影_'.$title.'完整版';
+	if($type==2)
+		$cat =$title.'电视剧_'.$title.'全集';
+	if($type==3)
+		$cat =$title.'综艺_'.$title.'全集';
+	if($type==4)
+		$cat =$title.'动漫_'.$title.'动画';
 	return $cat;
 }
 
@@ -100,15 +146,50 @@ function get_movietype($name)
 	return 0;
 }
 
-function get_moviecountry($name)
+function get_moviecountry($allname)
 {
-	if(strstr($name,"大陆") ||strstr($name,"中国") ||strstr($name,"香港")  ||strstr($name,"台湾") ||strstr($name,"澳门"))
-		return 1;			
-	if(strstr($name,"美国") ||strstr($name,"USA")|| strstr($name,"法国")|| strstr($name,"德国")|| strstr($name,"俄罗斯")|| strstr($name,"英国"))
-		return 2;
-	if(strstr($name,"日本")||strstr($name,"韩国")||strstr($name,"朝鲜"))
-		return 3;
-	return 4;
+	$country = 0;
+	$get=false;
+	//将国家细化到各个国家
+	$names=explode("/",$allname);
+	//print_r($names);
+	foreach($names as $key=>$name)
+	{
+		//echo 'need: '.$name.'/'.$country;	
+		//$name=trim($name);
+		if(strstr($name,"大陆") ||strstr($name,"中国") ||strstr($name,"香港")  ||strstr($name,"台湾") ||strstr($name,"澳门"))
+		{
+			if($country==1 || $country==0)
+				$country = 1;
+			else
+				return 4;
+			continue;
+		}
+		if(strstr($name,"美国") ||strstr($name,"USA")|| strstr($name,"法国")|| strstr($name,"德国")|| strstr($name,"英国")|| strstr($name,"UK")|| strstr($name,"爱尔兰")|| strstr($name,"加拿大")|| strstr($name,"加拿大")|| strstr($name,"加拿大")|| strstr($name,"加拿大"))
+		{
+			if($country==2 || $country==0)
+				$country = 2;
+			else
+				return 4;
+			continue;
+		}
+		
+		if(strstr($name,"日本")||strstr($name,"韩国"))
+		{
+			if($country==3 || $country==0)
+				$country = 3;
+			else
+				return 4;
+			continue;
+		}
+		
+		//如果一个国家不属于以上的，认为是其他国家
+		if($country==4 || $country==0)
+			$country = 4;
+		else
+			return 4;
+	}
+	return $country;
 }
 
 function get_quality($name)
@@ -148,7 +229,7 @@ class MovieResult
 	var $imgurl='';
 	var $simgurl='';
 	var $meta='';
-	var	$pubdate='0000-00-00 00:00:00';
+	var	$pubdate='0000-00-00';
 	var $country=0;
 	var $type=0;
 	var $summary='';

@@ -29,13 +29,15 @@ dh_gen_index();
 
 function dh_gen_index()
 {
-	global $DH_home_url,$DH_html_path,$DH_html_url,$DH_output_path,$conn,$pagecount;
+	global $DH_home_url,$DH_html_path,$DH_html_url,$DH_output_path,$conn,$pagecount,$DH_name,$DH_name_des;
 	$DH_input_html  = $DH_html_path . 'index.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 
 	$DH_output_content = setshare($DH_output_content,'index.js');
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
-
+	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);
+	$DH_output_content = str_replace("%DH_name_des%",$DH_name_des,$DH_output_content);	
+	
 	$topnews="今日更新（";
 	$datetoday =date("Y-m-d");
 	$datetoday = date("Y-m-d  H:i:s",strtotime($datetoday));
@@ -263,7 +265,7 @@ function dh_get_hot($DH_index_cat,$movietype_index)
 	$more='';
 	if($movietype_index==1||$movietype_index==2)
 	{
-		$more='热门资源子类: ';
+		$more=$movietype[$movietype_index].'_热门资源子类: ';
 		foreach($moviecountry as $key=>$eachcountry)
 		{
 			if($key===0)continue;
@@ -291,7 +293,7 @@ function dh_get_high($DH_index_cat,$movietype_index)
 	$more='';
 	if($movietype_index==1||$movietype_index==2)
 	{
-		$more='高清资源子类: ';
+		$more=$movietype[$movietype_index].'_高清资源子类: ';
 		foreach($moviecountry as $key=>$eachcountry)
 		{
 			if($key===0)continue;
