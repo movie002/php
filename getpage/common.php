@@ -166,6 +166,7 @@ function changetitle($title)
 	$title =  str_replace('_',' ',$title);
 	$title =  str_replace('.',' ',$title);
 	
+//处理数字	
 	//s01之后的不要
 	$title = preg_replace('/(S[0-9]+.*?)$/si','/',$title);
 	echo "\n mm1:".$title."\n";
@@ -179,31 +180,29 @@ function changetitle($title)
 	//$title = preg_replace('/([\(|\（].*?)$/su','',$title);
 	//echo "mm3:".$title."\n";
 	//年份之后的不要
-	//$title = preg_replace('/((19|20|18)[0-9]{2,2})/si','/',$title);	
-	
-	//$qulity=array('高清','蓝光','720p','1080p','1080i','1280','1024','枪版','抢先','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','BD','mp4','avi','mkv','rmvb');	
-	//foreach ($qulity as $eachlist)
-	//{
-	//	$title = preg_replace('/('.$eachlist.'.*?)$/si','',$title);
-	//}
-
-	//用一下的数字充当间隔
-	//$number=array('1280x720','1280','1024','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','480P','720p','1080p','1080i','BD','mp4','avi','mkv','rmvb','HDRip','BIG5','ts','WEB');	
-	//foreach ($number as $eachlist)
-	//	$title = preg_replace('/('.$eachlist.')/si','/',$title);
-	//echo "mm4:".$title."\n";	
+	$title = preg_replace('/((19|20|18)[0-9]{2,6})/si','/',$title);
+	$title = preg_replace('/((19|20|18)[0-9]{2,2}[年]{0,1})/si','/',$title);
+	//用特殊标志充当间隔
+	$number=array('1280x720','1280','1024','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','480P','720p','1080p','1080i','BD','mp4','mp3','avi','mkv','rmvb','HDRip','BIG5','ts','WEB');	
+	foreach ($number as $eachlist)
+		$title = preg_replace('/([^a-z]'.$eachlist.'[^a-z])/sui','/',$title);		
+	//1024x768类似的去掉
+	$title = preg_replace('/([0-9]+x[0-9]{3,4})/si','/',$title);	
+	echo "mm4:".$title."\n";	
 	//用容量大小作为间隔
-	//$title = preg_replace('/([0-9\s]+[mMgGbBpx年全集]+)/su','/',$title);		
+	$title = preg_replace('/[^a-z]([0-9\.\s]+(GB|MB|G|M))[^a-z]/sui','/',$title);		
 	//用存数字作为间隔
 	//$title = preg_replace('/([0-9\sⅠⅡⅢ]+)/su','/',$title);
-	//echo "mm4:".$title."\n";	
-	//echo "mm4:".$title."\n";
-	//中文和英文分开
+	echo "mm41:".$title."\n";	
+	
+//处理中文和英文分开
 	$title = preg_replace("/([0-9a-zA-Z\s`]+)/",'/$1/',$title);
 	echo "mm5:".$title."\n";
 	//$title = preg_replace('/([a-zA-Z\s\.\_\-`])([^a-zA-Z\s\.\_\-`])/','$1/$2',$title);
 	//echo "mm6:".$title."\n";
 	//：，！:,分开
+	
+//处理符号	
 	$title = preg_replace('/(：|，|！|:|,|!|－|·|\+)/su','/',$title);
 	echo "mm7:".$title."\n";	
 	$title = preg_replace('/(★|◆|×|●|•|\*)/su','/',$title);
@@ -212,5 +211,23 @@ function changetitle($title)
 	echo "mm9:".$title."\n";
 
 	return trim($title," \t\n\r\0\x0B\/.");;
+}
+
+function gettitlearray($title)
+{
+	$duanarray = array();
+	$titles=preg_split("/(\/)/", $title);
+	//print_r($titles);
+	if(count($titles)>0)
+	{
+		foreach($titles as $eachtitle)
+		{			 
+			$trimtitle=trim($eachtitle," \t\n\r\0\x0B.`");
+			echo $trimtitle.'--';
+			if($trimtitle!='')
+				array_push($duanarray,$trimtitle);		
+		}
+	}
+	return $duanarray;
 }
 ?>
