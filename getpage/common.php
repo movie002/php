@@ -180,10 +180,11 @@ function changetitle($title)
 	//$title = preg_replace('/([\(|\（].*?)$/su','',$title);
 	//echo "mm3:".$title."\n";
 	//年份之后的不要
+	$title = preg_replace('/((19|20|18)[0-9]{2,2}年)/si','/',$title);
 	$title = preg_replace('/((19|20|18)[0-9]{2,6})/si','/',$title);
 	$title = preg_replace('/((19|20|18)[0-9]{2,2}[年]{0,1})/si','/',$title);
 	//用特殊标志充当间隔
-	$number=array('1280x720','1280','1024','WEBRip','BRrip','HDTV','HDTVrip','BluRay','x264','AC3','AAC','576p','480P','720p','1080p','1080i','BD','mp4','mp3','avi','mkv','rmvb','HDRip','BIG5','ts','WEB');	
+	$number=array('1280x720','1280','1024','WEBRip','BRrip','HDTV','HDTVrip','BluRay','DVDscr','x264','AC3','AAC','576p','480P','720p','1080p','1080i','BDrip','BD','mp4','mp3','avi','mkv','rmvb','HDRip','BIG5','ts','WEB');	
 	foreach ($number as $eachlist)
 		$title = preg_replace('/([^a-z]'.$eachlist.'[^a-z])/sui','/',$title);		
 	//1024x768类似的去掉
