@@ -19,7 +19,7 @@ function get_vbaidu($title,$aka,$type,$updatetime,$pageid=-1)
 	//$name = rawurlencode($title);
 	$name = rawurlencode(iconvbuffgbk($title));
 	
-	$buffer = get_file_curl('http://v.baidu.com/v?word='.$name);
+	$buffer = get_file_curl('http://v.baidu.com/#word='.$name);
 
 	if(false==$buffer)
 	{
@@ -29,6 +29,12 @@ function get_vbaidu($title,$aka,$type,$updatetime,$pageid=-1)
 	//判断类型和名字
 	$buffer = iconvbuff($buffer);
 	//echo $buffer;
+
+	preg_match_all('/<a href="([^>\"]+)" class="le\-btn le\-btn\-green" data\-logger="ctype=detail"><span class="btn-icon">立即播放<\/span><\/a>/s',$buffer,$match0);	
+	//print_r($match0);
+	if(empty($match0[1]))
+		return;
+	return;
 	
 //	preg_match('/<div class="special-area-cont">(.*?)<\/div>[\s]+<div class="normalarea">/s',$buffer,$match0);	
 //	print_r($match0);

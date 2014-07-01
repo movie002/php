@@ -5,11 +5,6 @@ require("../config.php");
 require("../common/base.php");
 require("../common/curl.php");
 require("../common/dbaction.php");
-require("getsites/douban.php");
-require("getsites/mtime.php");
-require("getsites/m1905.php");
-require("getsites/gewara.php");
-require("getsites/wangpiao.php");
 require("getsites/v360.php");
 require("getsites/v2345.php");
 require("getsites/vbaidu.php");
@@ -45,12 +40,12 @@ function updatepageother()
 		$count++;
 		echo "\n".$count.": ".$row['id'].': '.$row['title'].' --> '.$row['cattype'].'/'.$row['catcountry'].'/'.$row['updatetime'];
 		$title=
-		get_v360($row['title'],$row['cattype'],$row['updatetime'],$row['id']);
-		//get_v2345($douban_result);
-		//get_vbaidu($douban_result);
-		//get_cili($douban_result);
-		//get_shousibaocai($douban_result);
-		//get_yugaopian($douban_result);		
+		//get_v360($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
+		//get_v2345($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
+		get_vbaidu($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
+		//get_cili($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
+		//get_shousibaocai($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
+		//get_yugaopian($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);	
 	}
 }
 ?>  

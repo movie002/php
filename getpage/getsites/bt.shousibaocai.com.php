@@ -19,13 +19,13 @@ function get_shousibaocai($title,$aka,$type,$updatetime,$pageid=-1)
 	echo " \n begin to get from shousibaocai:\n";	
 	$name = rawurlencode($title);
 	
-	$buffer = get_file_curl('http://bt.shousibaocai.com/?s='.$name);
+	$buffer = get_file_curl('http://bt.shousibaocai.com/list/'.$name.'/');
 	//echo $buffer;
 
 	if(false==$buffer)
 	{
 		sleep(5);
-		$buffer = get_file_curl('http://bt.shousibaocai.com/?s='.$name);
+		$buffer = get_file_curl('http://bt.shousibaocai.com/list/'.$name.'/');
 		if(false==$buffer)
 		{
 			echo $title."搜索失败 </br>\n";
