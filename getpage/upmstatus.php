@@ -2,6 +2,7 @@
 /* 使用示例 */   
 
 require("../config.php");
+require("../common/base.php");
 require("../common/curl.php");
 require("../common/dbaction.php");
 require("getsites/douban.php");
