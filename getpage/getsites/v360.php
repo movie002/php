@@ -13,11 +13,11 @@
 //mysql_close($conn);
 
 //处理电影名  
-function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
+function get_v360($title,$type,$updatetime,$pageid=-1)
 { 
 	echo " \n begin to get from v360:\n";	
 	$name = rawurlencode($title);   
-	$buffer = get_file_curl('http://so.v.360.cn/index.php?kw='.$name);
+	$buffer = get_file_curl('http://so.360kan.com/index.php?kw='.$name);
 	//echo $buffer;
 
 	if(false==$buffer)
@@ -27,11 +27,16 @@ function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
 	}
 	//判断类型和名字
 	
-	preg_match_all('/<div class="le-figure (.*?)<\/div><\/div><\/div>/s',$buffer,$match0);	
-	//print_r($match0);
+	preg_match('/<div data\-logger="hidstat=0"(.*?)<\/div><div class="item\-others"/s',$buffer,$matchx);
+	print_r($matchx);
+	if(empty($matchx[1]))
+		return;	
+	return;
+	preg_match_all('/<div class="le\-figure (.*?)<\/div><\/div><\/div>/s',$matchx[1],$match0);	
+	print_r($match0);
 	if(empty($match0[1]))
 		return;
-	
+	return;
 	foreach($match0[1] as $key=>$each)
 	{	
 		preg_match('/<h3 class="title"><a href="(.*?)" .*?><b>(.*?)<\/b><\/a><span class="playtype">\[(.*?)\]<\/span><\/h3>/s',$each,$match2);
@@ -71,7 +76,7 @@ function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
 			if (array_search($title,$akas)==false)
 				continue;
 		}
-		addorupdatelink($pageid,'360影视',$title,$url,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'360影视','《'.$title.'》360影视在线',$url,'',4,7,7,0,$updatetime,1);
 	}
 }
 ?>  

@@ -11,6 +11,13 @@ require("getsites/m1905.php");
 require("getsites/gewara.php");
 require("getsites/wangpiao.php");
 
+require("getsites/v360.php");
+require("getsites/v2345.php");
+require("getsites/vbaidu.php");
+require("getsites/www.cili.so.php");
+require("getsites/bt.shousibaocai.com.php");
+require("getsites/yugaopian.com.php");
+
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
 set_time_limit(3600); 
@@ -103,6 +110,12 @@ function nowplaying()
 				}
 				//echo "\n</br>有记录:";
 				//print_r($result);
+				get_v360($douban_result);
+				get_v2345($douban_result);
+				get_vbaidu($douban_result);
+				get_cili($douban_result);
+				get_shousibaocai($douban_result);
+				get_yugaopian($douban_result);			
 			}
 			else
 			{
