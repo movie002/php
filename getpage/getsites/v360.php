@@ -27,16 +27,16 @@ function get_v360($title,$type,$updatetime,$pageid=-1)
 	}
 	//判断类型和名字
 	
-	preg_match('/<div data\-logger="hidstat=0"(.*?)<\/div><div class="item\-others"/s',$buffer,$matchx);
-	print_r($matchx);
-	if(empty($matchx[1]))
-		return;	
-	return;
-	preg_match_all('/<div class="le\-figure (.*?)<\/div><\/div><\/div>/s',$matchx[1],$match0);	
+
+	preg_match_all('/<a href="([^>\"]+)" data\-logger="ctype=detail">(.*?)<\/a>/s',$buffer,$match0);	
 	print_r($match0);
 	if(empty($match0[1]))
 		return;
-	return;
+	preg_match_all('/<a href="([^>\"]+)" data\-logger="ctype=detail">(.*?)<\/a>/s',$buffer,$match1);	
+	print_r($match1);
+	if(empty($match1[1]))
+		return;
+		
 	foreach($match0[1] as $key=>$each)
 	{	
 		preg_match('/<h3 class="title"><a href="(.*?)" .*?><b>(.*?)<\/b><\/a><span class="playtype">\[(.*?)\]<\/span><\/h3>/s',$each,$match2);
