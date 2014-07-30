@@ -193,7 +193,7 @@ function changetitle($title)
 	//用容量大小作为间隔
 	$title = preg_replace('/[^a-z]([0-9\.\s]+(GB|MB|G|M))[^a-z]/sui','/',$title);		
 	//用存数字作为间隔
-	//$title = preg_replace('/([0-9\sⅠⅡⅢ]+)/su','/',$title);
+	$title = preg_replace('/([^a-z])([0-9\sⅠⅡⅢ]+)([^a-z])/su','$1/$3',$title);
 	echo "mm41:".$title."\n";	
 	
 //处理中文和英文分开

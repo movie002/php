@@ -12,19 +12,19 @@ function duoshuo()
 	})();
 }
 
-function google()
-{
-	//google adsence
-	(function() {
-		var gs = document.createElement('script');
-		gs.type = 'text/javascript';
-		gs.async = true;
-		gs.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-		(document.getElementsByTagName('body')[0]
-		||document.getElementsByTagName('head')[0]).appendChild(gs);
-	})();	
-	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-}
+//function google()
+//{
+//	//google adsence
+//	(function() {
+//		var gs = document.createElement('script');
+//		gs.type = 'text/javascript';
+//		gs.async = true;
+//		gs.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+//		(document.getElementsByTagName('body')[0]
+//		||document.getElementsByTagName('head')[0]).appendChild(gs);
+//	})();	
+//	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+//}
 
 function weibo()
 {
@@ -67,7 +67,7 @@ window.onload = function ()
 	//page独有的函数	
 	//百度分享
 	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(body||getElementsByTagName('head')[0]).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-	google();
+//	google();
 	duoshuo();
 	weibo();
 	dhsay();

@@ -12,19 +12,19 @@ function duoshuo()
 	})();
 }
 
-function google()
-{
-	//google adsence
-	(function() {
-		var gs = document.createElement('script');
-		gs.type = 'text/javascript';
-		gs.async = true;
-		gs.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-		(document.getElementsByTagName('body')[0]
-		||document.getElementsByTagName('head')[0]).appendChild(gs);
-	})();	
-	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-}
+//function google()
+//{
+//	//google adsence
+//	(function() {
+//		var gs = document.createElement('script');
+//		gs.type = 'text/javascript';
+//		gs.async = true;
+//		gs.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+//		(document.getElementsByTagName('body')[0]
+//		||document.getElementsByTagName('head')[0]).appendChild(gs);
+//	})();	
+//	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+//}
 
 function weibo()
 {
@@ -53,7 +53,7 @@ window.onload = function ()
 	
 	//list独有的函数
 	duoshuo();
-	google();
+//	google();
 	weibo();
 	dhsay();
 };
