@@ -12,7 +12,7 @@ date_default_timezone_set("Asia/Shanghai");//设定时区东八区
 require("../config.php");
 #需要使用的基础函数
 require("../common/base.php");
-require("../common/share.php");
+require("share.php");
 require("../common/dbaction.php");
 require("../mail/mail.php");
 require("../common/compressJS.class.php");
