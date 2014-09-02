@@ -14,17 +14,17 @@ $pagecount=15;
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 
 
-//$DH_output_path= '/srv/v/';
-//$DH_input_path= '/srv/php/';
-//$DH_author_path= '/srv/www/';
-//$DH_dh_path= '/srv/dh/';
-//$DH_home_url= 'http://v.movie002.com/';
+$DH_output_path= '/srv/v/';
+$DH_input_path= '/srv/php/';
+$DH_author_path= '/srv/www/';
+$DH_dh_path= '/srv/dh/';
+$DH_home_url= 'http://v.movie002.com/';
 
-$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
-$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
-$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
-$DH_home_url= 'http://127.0.0.1/v/';
+//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
+//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
+//$DH_author_path= $_SERVER['DOCUMENT_ROOT'] . '/www/';
+//$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
+//$DH_home_url= 'http://127.0.0.1/v/';
 
 
 
@@ -34,7 +34,7 @@ $DH_output_html_path = $DH_output_path.'html/';
 $DH_output_index_path = $DH_output_path.'index/';
 $DH_html_url= $DH_home_url.'html/';
 $DH_index_url= $DH_home_url.'index/';
-$DH_name= '二手电影网';
+$DH_name= '电影小二网';
 $DH_name_des= '电影大全_电视剧大全_影视大全导航';
 
 //页面显示的文章列表条目的个数
@@ -108,13 +108,13 @@ function dh_get_catkeyword($type,$title)
 function dh_get_title($type,$title)
 {
 	if($type==1)
-		$cat =$title.'电影_'.$title.'下载';
+		$cat =$title.'电影-'.$title.'下载/在线';
 	if($type==2)
-		$cat =$title.'电视剧_'.$title.'在线观看_全集';
+		$cat =$title.'电视剧-'.$title.'在线观看/全集/下载';
 	if($type==3)
-		$cat =$title.'综艺_'.$title.'在线观看_全集';
+		$cat =$title.'综艺-'.$title.'在线观看/全集/下载';
 	if($type==4)
-		$cat =$title.'动画/动漫_'.$title.'在线观看';
+		$cat =$title.'动画/动漫-'.$title.'在线观看/下载';
 	return $cat;
 }
 

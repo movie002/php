@@ -219,7 +219,7 @@ function dh_get_movie_type_ul($sql)
 
 function setshare($DH_output_content,$js)
 {
-	global $DH_home_url,$DH_input_path,$DH_html_path;
+	global $DH_home_url,$DH_input_path,$DH_html_path,$DH_name,$DH_name_des;
 	$DH_share_output_path = $DH_input_path.'top/';
 	$DH_input_html  = $DH_share_output_path . 'meta.html';
 	$DH_output_meta = dh_file_get_contents("$DH_input_html");
@@ -234,6 +234,8 @@ function setshare($DH_output_content,$js)
 	$DH_output_content = str_replace("%side%",$DH_output_side,$DH_output_content);
 	$DH_output_content = str_replace("%head%",$DH_output_head,$DH_output_content);
 	$DH_output_content = str_replace("%foot%",$DH_output_foot,$DH_output_content);		
+	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);
+	$DH_output_content = str_replace("%DH_name_des%",$DH_name_des,$DH_output_content);
 	
 	if($js!='')
 	{
