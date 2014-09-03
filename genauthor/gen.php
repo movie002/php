@@ -55,7 +55,8 @@ function dh_gen_static($name)
 	global $DH_home_url,$DH_input_path,$DH_author_path;
 	$DH_input_html  = $DH_input_path . 'genauthor/'.$name.'.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
-
+	$DH_output_content = setshare($DH_output_content,'');
+	
 	$DH_share_output_path = $DH_input_path.'top/';
 	$DH_input_html  = $DH_share_output_path . 'meta.html';
 	$DH_output_meta = dh_file_get_contents("$DH_input_html");
