@@ -60,11 +60,9 @@
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
 							$sql="select * from page where ";							
 							if($aid!='')
-								$sql="select p.* from page p,link l where  p.id=l.pageid and l.author='$aid' order by l.updatetime desc limit 0,15 ;
+								$sql="select p.* from page p,link l where  p.id=l.pageid and l.author='$aid' order by l.updatetime desc limit 0,15 ";
 							if($q!='')
 								$sql.=" title like '%$q%' or aka like '%$q%' ";
-							//if($q!='')
-							//	$sql.=" title like '%$q%' or aka like '%$q%' ";
 							
 							$sql.=" limit 0,15";
 							
