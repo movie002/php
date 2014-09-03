@@ -4,6 +4,7 @@
 
 require("../config.php");
 require("../common/curl.php");
+require("../common/base.php");
 require("../common/compare.php");
 require("../common/dbaction.php");
 require("getsites/douban.php");

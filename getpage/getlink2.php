@@ -4,8 +4,10 @@
 //	匹配系数为0.5，由于失败次数超过一定的额度，就可以使用较低的匹配系数
 require("../config.php");
 require("../common/compare.php");
+require("../common/base.php");
 require("../common/dbaction.php");
 require("common.php");
+require("X11.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');

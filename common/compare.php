@@ -87,8 +87,8 @@ function getnumber($title)
 //找出搜寻的字段
 function processtitle($ctitle)
 {
-	$rettitles = array();
-	insertarray($rettitles,$ctitle);
+	//$rettitles = array();
+	//insertarray($rettitles,$ctitle);	
 	//print_r($rettitles);
 	//return $rettitles;
 	
