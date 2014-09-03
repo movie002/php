@@ -230,6 +230,8 @@ function dh_gen_each_file($sqlc,$sql,$DH_catlist,$path,$cat,$catlink='',$needcou
 				$DH_catlist_new2= str_replace("%pagenavi%",$pagenavi,$DH_catlist_new);
 				$DH_catlist_new2= str_replace("%list_each%",$liout,$DH_catlist_new2);
 				$DH_catlist_new2 = str_replace("%num%",$catpage,$DH_catlist_new2);
+				$linkurl=dh_pagenum_link($DH_index_url.$path,$catpage);
+				$DH_catlist_new2 = str_replace("%permalink%",$linkurl,$DH_catlist_new2);
 				$DH_output_file = $outputpath.$catpage.'.html';
 				dh_file_put_contents($DH_output_file,$DH_catlist_new2);
 				$liout='';
@@ -243,6 +245,8 @@ function dh_gen_each_file($sqlc,$sql,$DH_catlist,$path,$cat,$catlink='',$needcou
 			$DH_catlist_new2= str_replace("%pagenavi%",$pagenavi,$DH_catlist_new);
 			$DH_catlist_new2= str_replace("%list_each%",$liout,$DH_catlist_new2);
 			$DH_catlist_new2 = str_replace("%num%",$catpage,$DH_catlist_new2);
+			$linkurl=dh_pagenum_link($DH_index_url.$path,$catpage);
+			$DH_catlist_new2 = str_replace("%permalink%",$linkurl,$DH_catlist_new2);
 			$DH_output_file = $outputpath.$catpage.'.html';
 			dh_file_put_contents($DH_output_file,$DH_catlist_new2);			
 		}
@@ -300,10 +304,12 @@ function dh_gen_each_file_onlylink($sqlc,$sql,$DH_catlist,$path,$cat,$catlink=''
 			{
 				$catpage = ceil($count/$pagecountonly);
 				$pagenavi = dh_pagenavi(5,$pages,$DH_index_url.$path,$catpage);
-				echo 'genpage:'.$catpage."</br>\n";				
+				echo 'genpage:'.$catpage."</br>\n";		
 				$DH_catlist_new2= str_replace("%pagenavi%",$pagenavi,$DH_catlist_new);
 				$DH_catlist_new2= str_replace("%list_each%",$liout,$DH_catlist_new2);
 				$DH_catlist_new2 = str_replace("%num%",$catpage,$DH_catlist_new2);
+				$linkurl=dh_pagenum_link($DH_index_url.$path,$catpage);
+				$DH_catlist_new2 = str_replace("%permalink%",$linkurl,$DH_catlist_new2);
 				$DH_output_file = $outputpath.$catpage.'.html';
 				dh_file_put_contents($DH_output_file,$DH_catlist_new2);
 				$liout = $liouttop;
@@ -317,6 +323,8 @@ function dh_gen_each_file_onlylink($sqlc,$sql,$DH_catlist,$path,$cat,$catlink=''
 			$DH_catlist_new2= str_replace("%pagenavi%",$pagenavi,$DH_catlist_new);
 			$DH_catlist_new2= str_replace("%list_each%",$liout,$DH_catlist_new2);
 			$DH_catlist_new2 = str_replace("%num%",$catpage,$DH_catlist_new2);
+			$linkurl=dh_pagenum_link($DH_index_url.$path,$catpage);
+			$DH_catlist_new2 = str_replace("%permalink%",$linkurl,$DH_catlist_new2);
 			$DH_output_file = $outputpath.$catpage.'.html';
 			dh_file_put_contents($DH_output_file,$DH_catlist_new2);			
 		}

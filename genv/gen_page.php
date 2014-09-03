@@ -55,7 +55,7 @@ function dh_gen_page($days,$pageid)
 
 function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 {
-	global $DH_index_url,$conn,$linkquality,$linkway,$linktype,$DH_home_url;
+	global $DH_index_url,$conn,$linkquality,$linkway,$linktype,$DH_home_url,$DH_html_url;
 	
 	//从参数里面去的天数
 	$sqllast='';
@@ -118,6 +118,7 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%title_meta%",dh_get_title($row['cattype'],$title),$DH_output_content_page);
 			$DH_output_content_page = str_replace("%akas%",$akas,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%id%",$row['id'],$DH_output_content_page);
+			$DH_output_content_page = str_replace("%permalink%",output_page_path($DH_html_url,$row['id']),$DH_output_content_page);
 			
 //			//新浪微博控件
 //			$weibotitle=rawurlencode($row['title']).'|'.rawurlencode($row['title']);
