@@ -23,7 +23,7 @@ function get_yugaopian($title,$aka,$type,$updatetime,$pageid=-1)
 	$url='http://www.yugaopian.com/?view=search&keyword='.$name;
 	echo $url."\n";	
 	$buffer = get_file_curl($url);
-	echo $buffer;
+	//echo $buffer;
 
 	if(false==$buffer)
 	{
