@@ -7,7 +7,7 @@ require("../common/compare.php");
 require("../common/base.php");
 require("../common/dbaction.php");
 require("common.php");
-require("X11.php");
+require("x11.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
