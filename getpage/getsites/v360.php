@@ -24,8 +24,13 @@ function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
 
 	if(false==$buffer)
 	{
-		echo $title."搜索失败 </br>\n";
-		return;
+		sleep(5);
+		$buffer = get_file_curl($url);
+		if(false==$buffer)
+		{
+			echo $title."搜索失败 </br>\n";
+			return;
+		}
 	}
 	//判断类型和名字
 

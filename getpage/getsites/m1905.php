@@ -23,10 +23,16 @@ function get_m1905($title,$aka,$type,$updatetime,$ids,$pageid=-1)
 	echo $url."\n";
 	$buffer = get_file_curl($url);
 	//echo $buffer;
+	
 	if(false==$buffer)
 	{
-		echo $title."搜索失败 </br>\n";
-		return;
+		sleep(5);
+		$buffer = get_file_curl($url);
+		if(false==$buffer)
+		{
+			echo $title."搜索失败 </br>\n";
+			return;
+		}
 	}
 	preg_match('/<h2 class="title\-mv".*?>.*?<\/h2>/s',$buffer,$match);
 	//print_r($match);

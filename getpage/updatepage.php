@@ -19,13 +19,13 @@ updatepageother();
 //处理电影名  
 function updatepageother()  
 { 
-	$sql="select * from page limit 1,1";
-	//$d=2;
-	//if( isset($_REQUEST['d']))
-	//	$d = $_REQUEST['d'];
-	//$datebegin = getupdatebegin($d,'onlylink');
-	//$sql .= " where updatetime > '$datebegin'";
-	//
+	$sql="select * from page ";
+	$d=2;
+	if( isset($_REQUEST['d']))
+		$d = $_REQUEST['d'];
+	$datebegin = getupdatebegin($d,'onlylink');
+	$sql .= " where updatetime > '$datebegin'";
+	
 	echo $sql."</br>\n";
 	$count=0;
 	$results=dh_mysql_query($sql);

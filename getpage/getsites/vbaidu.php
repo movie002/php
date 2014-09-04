@@ -17,9 +17,10 @@ function get_vbaidu($title,$aka,$type,$updatetime,$pageid=-1)
 { 
 	echo " \n begin to get from vbaidu:\n";	
 	//$name = rawurlencode($title);
-	$name = rawurlencode(iconvbuffgbk($title));
-	
-	$buffer = get_file_curl('http://v.baidu.com/#word='.$name);
+	//$name = rawurlencode(iconvbuffgbk($title));
+	$url='http://v.baidu.com/#word='.$title;
+	echo $url."\n";
+	$buffer = get_file_curl($url);
 
 	if(false==$buffer)
 	{
@@ -28,7 +29,7 @@ function get_vbaidu($title,$aka,$type,$updatetime,$pageid=-1)
 	}
 	//判断类型和名字
 	$buffer = iconvbuff($buffer);
-	//echo $buffer;
+	echo $buffer;
 
 	preg_match_all('/<a href="([^>\"]+)" class="le\-btn le\-btn\-green" data\-logger="ctype=detail"><span class="btn-icon">立即播放<\/span><\/a>/s',$buffer,$match0);	
 	//print_r($match0);

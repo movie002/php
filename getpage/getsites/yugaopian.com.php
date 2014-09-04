@@ -20,14 +20,15 @@ function get_yugaopian($title,$aka,$type,$updatetime,$pageid=-1)
 		return;
 	echo " \n begin to get from yugaopian:\n";	
 	$name = rawurlencode($title);
-	
-	$buffer = get_file_curl('http://www.yugaopian.com/?view=search&keyword='.$name);
-	//echo $buffer;
+	$url='http://www.yugaopian.com/?view=search&keyword='.$name;
+	echo $url."\n";	
+	$buffer = get_file_curl($url);
+	echo $buffer;
 
 	if(false==$buffer)
 	{
 		sleep(5);
-		$buffer = get_file_curl('http://www.yugaopian.com/?view=search&keyword='.$name);
+		$buffer = get_file_curl($url);
 		if(false==$buffer)
 		{
 			echo $title."搜索失败 </br>\n";

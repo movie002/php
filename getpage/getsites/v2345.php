@@ -17,14 +17,20 @@ function get_v2345($title,$aka,$type,$updatetime,$pageid=-1)
 { 
 	echo " \n begin to get from v2345:\n";	
 	$name = rawurlencode($title);
-	
-	$buffer = get_file_curl('http://so.v.2345.com/search_'.$name);
+	$url='http://so.v.2345.com/search_'.$name;
+	echo $url."\n";
+	$buffer = get_file_curl($url);
 	//echo $buffer;
 
 	if(false==$buffer)
 	{
-		echo $title."搜索失败 </br>\n";
-		return;
+		sleep(5);
+		$buffer = get_file_curl($url);
+		if(false==$buffer)
+		{
+			echo $title."搜索失败 </br>\n";
+			return;
+		}
 	}
 	//判断类型和名字
 	$buffer = iconvbuff($buffer);
