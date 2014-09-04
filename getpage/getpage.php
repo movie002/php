@@ -27,7 +27,7 @@ function getpage()
 	{
 		$d = $_REQUEST['d'];
 	}
-	$datebegin = getupdatebegin($d);
+	$datebegin = getupdatebegin($d,'link');
 	if( isset($_REQUEST['d']))
 	{
 		$datebegin = getupdatebegin($_REQUEST['d']);
