@@ -24,7 +24,7 @@ function getlink()
 	{
 		$d=2;
 		$d = $_REQUEST['d'];
-		$datebegin = getupdatebegin($d);
+		$datebegin = getupdatebegin($d,'onlylink');
 		$sql .= " and updatetime > '$datebegin'";
 	}
 	if(isset($_REQUEST['a']))
