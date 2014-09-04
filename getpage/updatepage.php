@@ -5,12 +5,7 @@ require("../config.php");
 require("../common/base.php");
 require("../common/curl.php");
 require("../common/dbaction.php");
-require("getsites/v360.php");
-require("getsites/v2345.php");
-require("getsites/vbaidu.php");
-require("getsites/www.cili.so.php");
-require("getsites/bt.shousibaocai.com.php");
-require("getsites/yugaopian.com.php");
+require("./getsites/get.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -24,7 +19,7 @@ updatepageother();
 //处理电影名  
 function updatepageother()  
 { 
-	$sql="select * from page limit 0,2";
+	$sql="select * from page limit 1,1";
 	//$d=2;
 	//if( isset($_REQUEST['d']))
 	//	$d = $_REQUEST['d'];
@@ -38,14 +33,10 @@ function updatepageother()
 	while($row = mysql_fetch_array($results))
 	{
 		$count++;
+		if($count!=1)
+			sleep(10);
 		echo "\n".$count.": ".$row['id'].': '.$row['title'].' --> '.$row['cattype'].'/'.$row['catcountry'].'/'.$row['updatetime'];
-		$title=
-		//get_v360($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
-		//get_v2345($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
-		get_vbaidu($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
-		//get_cili($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
-		//get_shousibaocai($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
-		//get_yugaopian($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);	
+		getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['ids'],$row['id']);
 	}
 }
 ?>  

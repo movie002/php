@@ -279,10 +279,10 @@ function insertsiteslink($updatetime,$mediaid,$author,$title,$url,$way,$type,$qu
 
 function getdbpageid($title,$mtitle,$country,$year,$type,$maxrate)
 {
-	echo " : ".$mtitle;
+	echo " ".$mtitle;
 	//global $movietype,$moviecountry;
 	$ctitles = processtitle($mtitle);
-	print_r($ctitles);
+	//print_r($ctitles);
 	if(empty($ctitles))
 		return -1;
 	//continue;

@@ -6,17 +6,7 @@ require("../common/base.php");
 require("../common/curl.php");
 require("../common/dbaction.php");
 require("getsites/douban.php");
-require("getsites/mtime.php");
-require("getsites/m1905.php");
-require("getsites/gewara.php");
-require("getsites/wangpiao.php");
-
-require("getsites/v360.php");
-require("getsites/v2345.php");
-require("getsites/vbaidu.php");
-require("getsites/www.cili.so.php");
-require("getsites/bt.shousibaocai.com.php");
-require("getsites/yugaopian.com.php");
+require("getsites/get.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -87,51 +77,19 @@ function nowplaying()
 				$result->meta = $row['meta'];
 				$result->pubdate = $row['pubdate'];
 				$result->country = $row['catcountry'];
-				$result->summary = $row['summary'];
-				
+				$result->summary = $row['summary'];	
 				$result->title = $match[3][$key];
 				$result->imgurl = getimgurl($match[2][$key]);			
-				getdetail($result);
-				get_m1905($result);
-				get_mtime($result);		
-				preg_match('/<4>(.*?)<\/4>/s',$row['ids'],$match1);
-				//print_r($match1);
-				if(!empty($match1[1]))
-				{
-					sleep(10);
-					get_gewara($result);					
-				}
-				preg_match('/<5>(.*?)<\/5>/s',$row['ids'],$match1);
-				//print_r($match1);
-				if(!empty($match1[1]))
-				{
-					sleep(10);
-					get_wangpiao($result);				
-				}
-				//echo "\n</br>有记录:";
-				//print_r($result);
-				get_v360($douban_result);
-				get_v2345($douban_result);
-				get_vbaidu($douban_result);
-				get_cili($douban_result);
-				get_shousibaocai($douban_result);
-				get_yugaopian($douban_result);			
+				getdetail($result);		
 			}
 			else
-			{
-				$result->title = $match[3][$key];
-				$result->imgurl = getimgurl($match[2][$key]);			
-				getdetail($result);
-				get_m1905($result);
-				get_mtime($result);
-				sleep(10);
-				get_gewara($result);
-				sleep(10);
-				get_wangpiao($result);
-				echo "无记录:";
-				print_r($result);			
-			}		
+			{					
+				echo "无记录:";							
+			}
+			$result->imgurl = getimgurl($match[2][$key]);
+			print_r($result);			
 			updatepage2($result,3);
+			getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
 		}	
 	}
 }
@@ -184,10 +142,9 @@ function coming()
 			$result->title = $match[2][$key];
 			//$result->imgurl = $match[2][$key];
 			getdetail($result);
-			get_m1905($result);
-			get_mtime($result);
-			//print_r($result);
+			print_r($result);
 			updatepage2($result,2);
+			getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
 		}		
 	}
 }

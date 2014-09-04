@@ -45,6 +45,7 @@ function getpage()
 		$sql="select * from link where link='$link'";	
 	}	
 	
+	$sql.=' limit 0,2 ';
 	echo $sql."</br>\n";
 	
 	$results=dh_mysql_query($sql);

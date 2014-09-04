@@ -16,8 +16,10 @@
 function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
 { 
 	echo " \n begin to get from v360:\n";	
-	$name = rawurlencode($title);   
-	$buffer = get_file_curl('http://so.360kan.com/index.php?kw='.$name);
+	$name = rawurlencode($title); 
+	$url='http://so.360kan.com/index.php?kw='.$name;
+	echo $url."\n";
+	$buffer = get_file_curl($url);
 	//echo $buffer;
 
 	if(false==$buffer)
@@ -27,11 +29,11 @@ function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
 	}
 	//判断类型和名字
 
-	preg_match_all('/<a href="([^>\"]+)" class="le\-btn le\-btn\-green" data\-logger="ctype=detail"><span class="btn-icon">立即播放<\/span><\/a>/s',$buffer,$match0);	
+	preg_match_all('/<a href="([^>\"]+)" class="le\-btn le\-btn\-green" data\-logger="ctype\=detail"><span class="btn\-icon">立即播放<\/span><\/a>/s',$buffer,$match0);	
 	//print_r($match0);
 	if(empty($match0[1]))
 		return;
-	preg_match_all('/<a href="([^>\"]+)" data\-logger="ctype=detail">(.*?)<\/a>/s',$buffer,$match1);	
+	preg_match_all('/<a href="([^>"]+)" data\-logger="ctype=detail">(.*?)<\/a>/s',$buffer,$match1);	
 	//print_r($match1);
 	if(empty($match1[1]))
 		return;
@@ -58,7 +60,6 @@ function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
 		
 		$titlex = str_replace('<b>','',$titlex);
 		$titlex = str_replace('</b>','',$titlex);
-		
 		//比较名字是否一致
 		if($titlex!=$title)
 		{

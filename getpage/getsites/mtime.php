@@ -14,7 +14,7 @@
 
 
 //处理电影名  
-function get_mtime($title,$aka,$type,$ids,$meta,$updatetime,$pageid=-1)
+function get_mtime($title,$aka,$type,$meta,$updatetime,$ids,$pageid=-1)
 { 
 	echo " \n begin to get from mtime:\n";
 	$name = rawurlencode($title);    
