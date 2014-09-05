@@ -132,8 +132,10 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$sqllinks = "select pageid,author,title,link,linkquality,linkway,linktype,linkdownway,updatetime from link t where t.pageid = '".$row['id']."' and remove is null order by linkquality desc,updatetime desc";
 			//echo $sqllinks;
 			$DH_output_content_page = dh_replace_link($sqllinks,$row,$DH_output_content_page);
-			$summary=trim($row['summary']);
-			$summary=trim($summary,'　');
+			
+			//$summary=trim($summary,'　');
+			$summary = preg_replace('/(　)/us',' ',$summary);
+			$summary = trim($row['summary']);
 			$DH_output_content_page = str_replace("%summary%",$summary,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%home%",$DH_home_url,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%more%",'<a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank">[更多内容到豆瓣]</a>',$DH_output_content_page);

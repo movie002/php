@@ -34,10 +34,10 @@ function getpage()
 	}		
 	$sql="select * from onlylink where updatetime > '$datebegin' and fail < 2 and mtitle is not null";
 
-	if(isset($_REQUEST['pageid']))
+	if(isset($_REQUEST['id']))
 	{
-		$pageid = $_REQUEST['pageid'];
-		$sql="select * from link where pageid=$pageid";	
+		$pageid = $_REQUEST['id'];
+		$sql="select * from link where id=$pageid";	
 	}
 	if(isset($_REQUEST['link']))
 	{
