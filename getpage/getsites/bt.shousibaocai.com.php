@@ -68,7 +68,7 @@ function get_shousibaocai($title,$aka,$type,$updatetime,$pageid=-1)
 		//$updatetime = date("Y-m-d H:i:s",strtotime($match1[1][$key]));
 		$title .='[热度:'.$match3[1][$key].'/速度:'.$match4[1][$key].']('.$match2[1][$key].')';
 		$url='magnet:?xt=urn:btih:'.$match5[1][$key];	
-		addorupdatelink($pageid,'shousibaocai',$title,$url,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'shousibaocai',$title,$url,'',4,6,4,1,$updatetime,1);
 	}
 }
 ?>  
