@@ -108,13 +108,13 @@ function dh_get_catkeyword($type,$title)
 function dh_get_title($type,$title)
 {
 	if($type==1)
-		$cat =$title.'电影-'.$title.'下载/在线';
+		$cat =$title.'电影_'.$title.'下载/在线';
 	if($type==2)
-		$cat =$title.'电视剧-'.$title.'在线观看/全集/下载';
+		$cat =$title.'电视剧_'.$title.'在线观看/全集/下载';
 	if($type==3)
-		$cat =$title.'综艺-'.$title.'在线观看/全集/下载';
+		$cat =$title.'综艺_'.$title.'在线观看/全集/下载';
 	if($type==4)
-		$cat =$title.'动画/动漫-'.$title.'在线观看/下载';
+		$cat =$title.'动画/动漫_'.$title.'在线观看/下载';
 	return $cat;
 }
 
