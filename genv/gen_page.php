@@ -134,8 +134,8 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = dh_replace_link($sqllinks,$row,$DH_output_content_page);
 			
 			//$summary=trim($summary,'　');
-			$summary = preg_replace('/(　)/us',' ',$summary);
-			$summary = trim($row['summary']);
+			$summary = preg_replace('/(　)/us',' ',$row['summary']);
+			$summary = trim($summary);
 			$DH_output_content_page = str_replace("%summary%",$summary,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%home%",$DH_home_url,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%more%",'<a href="http://movie.douban.com/subject/'.$row['mediaid'].'" target="_blank">[更多内容到豆瓣]</a>',$DH_output_content_page);
