@@ -111,7 +111,7 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 //			}
 			$akas = $row['title'];			
 			$akas.=','.strtr($row['aka'],'/',',');
-			$title = preg_replace('/([：\:])/','',$row['title']);
+			$title = preg_replace('/([：\:])/us','',$row['title']);
 			//str_replace('：','',$title);
 			$DH_output_content_page = str_replace("%title_key%",$title,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%catkeyword%",dh_get_catkeyword($row['cattype'],$title),$DH_output_content_page);
