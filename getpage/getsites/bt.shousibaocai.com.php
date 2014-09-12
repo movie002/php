@@ -1,18 +1,4 @@
 <?php 
-/* 使用示例 */   
-
-//header('Content-Type:text/html;charset= UTF-8');
-//require("../../config.php");
-//require("../../common/curl.php");
-//require("../../common/dbaction.php");
-//
-//$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-//mysql_select_db($dbname, $conn) or die('选择数据库失败');
-//dh_mysql_query("set names utf8;");
-//get_shousibaocai('超级笑星','名侦探柯南/铁甲奇侠/Iron Man',3,'2000-05-05 00:00:00',4);
-//mysql_close($conn);
-
-
 //处理电影名  
 function get_shousibaocai($title,$aka,$type,$updatetime,$pageid=-1)
 { 
@@ -36,7 +22,8 @@ function get_shousibaocai($title,$aka,$type,$updatetime,$pageid=-1)
 	//判断类型和名字
 	$buffer = iconvbuff($buffer);
 	//print_r($buffer);
-	preg_match_all('/<span class="highlight">(.*?)<\/span>/s',$buffer,$match0);
+	//preg_match_all('/<span class="highlight">(.*?)<\/span>([^>])<\/a>/s',$buffer,$match0);
+	preg_match_all('/<a class="title" href="\/info[^>]+">(.*?)<\/a>/s',$buffer,$match0);
 	//preg_match_all('/创建时间: (.*?)&nbsp;&nbsp;/s',$buffer,$match1);
 	preg_match_all('/大小：(.*?[G|M|K]B)/s',$buffer,$match2);
 	preg_match_all('/热度：(.*?)速度/s',$buffer,$match3);
@@ -56,19 +43,25 @@ function get_shousibaocai($title,$aka,$type,$updatetime,$pageid=-1)
 		return;
 	
 	$i = 0;
-	foreach($match0[0] as $key=>$each)
+	foreach($match0[1] as $key=>$each)
 	{	
 		if($i>4)
 			break;
-		$i++;
-		$title = trim($each);
+		preg_match('/<span class="highlight">(.*?)<\/span>/s',$each,$matcht);
+		if(empty($matcht))
+			break;
+		//print_r($matcht);
+		$title = $matcht[1];
 		echo $title;
 		if(!strstr($title,$title))
 			continue;
+		$titlex = str_replace('<span class="highlight">','',trim($each));
+		$titlex = str_replace('</span>','',$titlex);
 		//$updatetime = date("Y-m-d H:i:s",strtotime($match1[1][$key]));
-		$title .='[热度:'.$match3[1][$key].'/速度:'.$match4[1][$key].']('.$match2[1][$key].')';
+		$titlex .='[热度:'.$match3[1][$key].'/速度:'.$match4[1][$key].']('.$match2[1][$key].')';
 		$url='magnet:?xt=urn:btih:'.$match5[1][$key];	
-		addorupdatelink($pageid,'shousibaocai',$title,$url,'',4,6,4,1,$updatetime,1);
+		addorupdatelink($pageid,'shousibaocai',$titlex,$url,'',4,6,4,1,$updatetime,1);
+		$i++;
 	}
 }
 ?>  

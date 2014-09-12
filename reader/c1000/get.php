@@ -13,8 +13,8 @@ require("www.dy2018.com.php");
 require("www.ed2000.com.php");
 require("www.etdown.net.php");
 require("www.piaohua.com.php");
-require("www.somag.net.php");
-
+//require("www.somag.net.php");
+require("www.mp4ba.com.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -31,7 +31,7 @@ www_dy2018_com_php();
 www_ed2000_com_php();
 www_etdown_net_php();
 www_piaohua_com_php();
-//www_somag_net_php();
+www_mp4ba_com_php();
 
 mysql_close($conn);
 ?>
