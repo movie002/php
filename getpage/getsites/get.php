@@ -1,10 +1,10 @@
 <?php 
 
-header('Content-Type:text/html;charset= UTF-8');
-require("../../config.php");
-require("../../common/curl.php");
-require("../../common/base.php");
-require("../../common/dbaction.php");
+//header('Content-Type:text/html;charset= UTF-8');
+//require("../../config.php");
+//require("../../common/curl.php");
+//require("../../common/base.php");
+//require("../../common/dbaction.php");
 
 $getsiteurl=$DH_input_path.'/getpage/getsites';
 require("$getsiteurl/v360.php");
@@ -18,11 +18,11 @@ require("$getsiteurl/mtime.php");
 require("$getsiteurl/m1905.php");
 
 
-$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-mysql_select_db($dbname, $conn) or die('选择数据库失败');
-dh_mysql_query("set names utf8;");
-getallsites('催眠大师','催眠大师',1,'2000-05-05 00:00:00','',4);
-mysql_close($conn);
+//$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
+//mysql_select_db($dbname, $conn) or die('选择数据库失败');
+//dh_mysql_query("set names utf8;");
+//getallsites('催眠大师','催眠大师',1,'2000-05-05 00:00:00','',4);
+//mysql_close($conn);
 
 function getallsites($title,$aka,$cattype,$updatetime,$ids,$pageid)
 {
