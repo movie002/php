@@ -127,24 +127,29 @@ function update_hot($daybegin)
 			if($ratenum!=0)
 				$hot = floor(($hot*10)/$ratenum)/10;
 			
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway>=6".$sqldayslink;
-			$results1=dh_mysql_query($sql1);
-			$ziyuan = mysql_fetch_array($results1);
+			//$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway>=6".$sqldayslink;
+			//$results1=dh_mysql_query($sql1);
+			//$ziyuan = mysql_fetch_array($results1);
+			//
+			//$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=3".$sqldayslink;
+			//$results1=dh_mysql_query($sql1);
+			//$yugao = mysql_fetch_array($results1);
+            //
+			//$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=1".$sqldayslink;
+			//$results1=dh_mysql_query($sql1);
+			//$zixun = mysql_fetch_array($results1);			
+            //
+			//$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=2".$sqldayslink;
+			//$results1=dh_mysql_query($sql1);
+			//$yingping = mysql_fetch_array($results1);	
 			
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=3".$sqldayslink;
-			$results1=dh_mysql_query($sql1);
-			$yugao = mysql_fetch_array($results1);
-            
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=1".$sqldayslink;
-			$results1=dh_mysql_query($sql1);
-			$zixun = mysql_fetch_array($results1);			
-            
-			$sql1="select count(*) from link l where l.pageid='". $row['id'] ."' and l.linkway=2".$sqldayslink;
-			$results1=dh_mysql_query($sql1);
-			$yingping = mysql_fetch_array($results1);	
+			//echo '-->'.$hot.' + ('.$ziyuan[0].'+'.$yugao[0].') + ('.$zixun[0].'+'.$yingping[0].')/2-->';						
+			//$hot = $hot + ($ziyuan[0]+$yugao[0])+($zixun[0]+$yingping[0])/2;
 			
-			echo '-->'.$hot.' + ('.$ziyuan[0].'+'.$yugao[0].') + ('.$zixun[0].'+'.$yingping[0].')/2-->';						
-			$hot = $hot + ($ziyuan[0]+$yugao[0])+($zixun[0]+$yingping[0])/2;
+			$sql1="select count(linkvalue) from link l where l.pageid='". $row['id'] ."' ".$sqldayslink;
+			$results1=dh_mysql_query($sql1);
+			$hotall = mysql_fetch_array($results1);				
+			$hot+=$hotall[0]/5;
 			echo $hot."</br>\n";
 			$sqlpage="update page set hot=$hot where id = ".$row['id'];
 			echo $sqlpage;
