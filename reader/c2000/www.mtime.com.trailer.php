@@ -28,7 +28,7 @@ function www_mtime_com_trailer_php()
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
 				continue;
-			$buff = iconvbuff($buff);
+			
 			echo "crawl ".$trueurl." </br>\n";
 			//print_r($buff);				
 			preg_match_all('/<a href="([^>]+)" target="\_blank">([^>]+) ([^>]+)<\/a><\/h3>/s',$buff,$match0);
@@ -43,8 +43,7 @@ function www_mtime_com_trailer_php()
 			foreach ($match0[1] as $key1=>$div)			
 			{
 				$strpubdate=$match1[1][$key1].$match1[2][$key1].$match1[3][$key1];				
-				$update = getrealtime($strpubdate);			
-				echo $update;
+				$update = getrealtime($strpubdate);
 				if($update<$updatetime[$key])
 				{
 					echo "爬取到已经爬取文章，爬取结束! </br>\n";

@@ -9,15 +9,7 @@ function www_mtime_com_review_php()
 				'http://www.mtime.com/review/mediareview/');
 	$urlcat= array('影评人专栏','媒体评论');	
 	print_r($url);
-	$updatetime = array();	
-	foreach ($urlcat as $eachurlcat)
-	{
-		$sql="select max(updatetime) from link where author='$authorname' and cat like '%".$eachurlcat."%'";
-		$sqlresult=dh_mysql_query($sql);
-		$row = mysql_fetch_array($sqlresult);
-		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
-	}
-	print_r($updatetime);
+	$updatetime = getupdatetime($urlcat,$authorname);
 	
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	foreach ($url as $key=>$eachurl)
@@ -33,21 +25,11 @@ function www_mtime_com_review_php()
 				$trueurl = $eachurl.'index-'.$i.'.html';
 			//echo $trueurl."\n";
 			//continue;
-			$buff = get_file_curl($trueurl);
+			$buff = geturl($trueurl,$authorname);
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
-			{
-				sleep(5);
-				$buff = get_file_curl($trueurl);
-				if(!$buff)
-				{
-					echo 'error: fail to get file '.$trueurl."!</br>\n";	
-					$sql="update author set failtimes=failtimes+1 where name='$authorname';";
-					$result=dh_mysql_query($sql);
-					continue;
-				}
-			}
-			$buff = iconvbuff($buff);
+				continue;
+				
 			$rssinfo = new rssinfo();
 			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
