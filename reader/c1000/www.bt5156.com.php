@@ -76,6 +76,6 @@ function www_bt5156_com_php()
 			}			
 		}
 	}
-	setupdatetime2($change,$newdate,$authorname);
+	setupdatetime($change,$newdate,$authorname);
 }
 ?>

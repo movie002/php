@@ -38,7 +38,6 @@ function all()
 			//打开rss地址，并读取，读取失败则中止
 			echo "\n".$row['id'].' -- '.$row['name'].'的全部文章:'.$row['rssurl']."</br>\n";
 			$rssinfo->author=$row['name'];
-			$authorid=$row['id'];
 			$lastupdate=$row['updatetime'];			
 			
 			$buff = get_file_curl($row['rssurl']);
@@ -50,7 +49,7 @@ function all()
 				if(false==$buff)
 				{
 					echo 'error: fail to get rss file !</br>';	
-					$sql="update author set failtimes=failtimes+1 where id = $authorid;";
+					$sql="update author set failtimes=failtimes+1 where name = $rssinfo->author;";
 					$result=dh_mysql_query($sql);
 					continue;
 				}
@@ -152,10 +151,10 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 		insertonlylink($rssinfo);
 	}
 
-	setupdatetime2($change,$newdate,$rssinfo->author);
+	setupdatetime($change,$newdate,$rssinfo->author);
 }
 
-function readrssfile($buff,$rssinfo,$authorid,$lastupdate)
+function readrssfile($buff,$rssinfo,$lastupdate)
 {
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	$buff =iconvbuff($buff);
@@ -230,7 +229,7 @@ function readrssfile($buff,$rssinfo,$authorid,$lastupdate)
 		//print_r($rssinfo);
 		insertonlylink($rssinfo);
 	}
-	setupdatetime($change,$newdate,$authorid);
+	setupdatetime($change,$newdate,$rssinfo->author);
 }
 
 function getrealname($name)

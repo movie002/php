@@ -95,6 +95,6 @@ function www_mtime_com_review_php()
 			}
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 }
 ?>

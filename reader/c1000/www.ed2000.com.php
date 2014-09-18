@@ -90,6 +90,6 @@ function www_ed2000_com_php()
 			$i++;
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 }
 ?>

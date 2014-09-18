@@ -78,6 +78,6 @@ function www_etdown_net_php()
 			}
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 }
 ?>

@@ -69,6 +69,6 @@ function www_bttiantang_com_php()
 			}
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);	
+	setupdatetime(true,$newdate,$authorname);	
 }
 ?>

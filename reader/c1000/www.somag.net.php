@@ -99,6 +99,6 @@ function www_somag_net_php()
 			}
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 }
 ?>

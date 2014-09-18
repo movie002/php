@@ -67,7 +67,7 @@ function get_mtime($title,$aka,$type,$meta,$updatetime,$ids,$pageid=-1)
 	{
 		$mtimetrail= '《'.$title.'》时光网预告 ('.$match1[2].'部)';
 		$mtimetrailurl=$match1[1];
-		addorupdatelink($pageid,'时光网预告',$mtimetrail,$mtimetrailurl,'',4,7,7,0,$updatetime,1);		
+		addorupdatelink($pageid,'时光网预告',$mtimetrail,$mtimetrailurl,'',4,7,7,0,$updatetime,1);
 	}
 	//更新page
 	$sql="update page set ids='$ids',meta='$meta' where id=$pageid";

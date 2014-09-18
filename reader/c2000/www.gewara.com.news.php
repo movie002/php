@@ -63,7 +63,7 @@ function www_gewara_com_news_php()
 			}
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 	return;	
 }
 ?>

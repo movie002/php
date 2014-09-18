@@ -73,6 +73,6 @@ function ent_sina_com_cn_review_php()
 			insertonlylink($rssinfo);
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 }
 ?>

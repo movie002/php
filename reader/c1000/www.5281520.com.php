@@ -85,6 +85,6 @@ function www_5281520_com_php()
 			}
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 }
 ?>

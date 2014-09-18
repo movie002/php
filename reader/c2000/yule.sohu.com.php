@@ -72,6 +72,6 @@ function yule_sohu_com_php()
 			insertonlylink($rssinfo);
 		}
 	}
-	setupdatetime2(true,$newdate,$authorname);
+	setupdatetime(true,$newdate,$authorname);
 }
 ?>
