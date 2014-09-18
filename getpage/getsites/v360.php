@@ -73,7 +73,7 @@ function get_v360($title,$aka,$type,$updatetime,$pageid=-1)
 			if (array_search($titlex,$akas)==false)
 				continue;
 		}
-		addorupdatelink($pageid,'360影视','《'.$title.'》360影视在线',$url,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'360影视','《'.$title.'》360影视在线',$url,'',4,7,7,0,0,$updatetime,1);
 	}
 }
 ?>  

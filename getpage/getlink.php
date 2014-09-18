@@ -48,9 +48,9 @@ function getlink()
 			$sqlauthor="select * from author where name='".$row['author']."'";
 			$resultsauthor=dh_mysql_query($sqlauthor);
 			$rowauthor = mysql_fetch_array($resultsauthor);
-			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$row['link'],$row['title'],$row['cat'])==-1)
+			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$linkvalue,$row['link'],$row['title'],$row['cat'])==-1)
 				continue;	
-			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime']);
+			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,$row['updatetime']);
 			$sqlupdate = "update page set updatetime = '".$row['updatetime']."' where id = '".$pageid."';";
 			dh_mysql_query($sqlupdate);
 			

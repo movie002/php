@@ -32,7 +32,7 @@ function getmoviemeta($row,&$mtitle,&$moviecountry,&$movieyear,&$movietype,$link
 	return 0;
 }
 
-function getlinkmeta($row,&$linkway,&$linktype,&$linkquality,&$linkdownway,$link,$title,$cat)
+function getlinkmeta($row,&$linkway,&$linktype,&$linkquality,&$linkdownway,&$linkvalue,$link,$title,$cat)
 {
 	$linkway = testneed($row['clinkway'],$link,$title,$cat);
 	if($linkway<0)
@@ -44,6 +44,7 @@ function getlinkmeta($row,&$linkway,&$linktype,&$linkquality,&$linkdownway,$link
 	$linktype = testneed($row['clinktype'],$link,$title,$cat);
 	$linkquality = testneed($row['clinkquality'],$link,$title,$cat);
 	$linkdownway = testneed($row['clinkdownway'],$link,$title,$cat);
+	$linkvalue = testneed($row['clinkvalue'],$link,$title,$cat);
 	return 0;
 }
 

@@ -128,7 +128,7 @@ function get_vbaidu($title,$aka,$type,$updatetime,$pageid=-1)
 			}
 		}
 
-		addorupdatelink($pageid,'百度视频',$title,$url,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'百度视频',$title,$url,'',4,7,7,0,0,$updatetime,1);
 	}
 }
 ?>  

@@ -79,7 +79,7 @@ function get_cili($title,$aka,$type,$updatetime,$pageid=-1)
 		$title =preg_replace('/<span class="keyword">(.*?)<\/span>/s','{$1}',$match1[1][$key]);
 		$url='magnet:?xt=urn:btih:'.$match2[2][$key];
 		
-		addorupdatelink($pageid,'cili.so',$title,$url,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'cili.so',$title,$url,'',4,7,7,0,0,$updatetime,1);
 	}
 }
 ?>  

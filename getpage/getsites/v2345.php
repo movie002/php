@@ -92,7 +92,7 @@ function get_v2345($title,$aka,$type,$updatetime,$pageid=-1)
 		else
 			$title .='('.$match3[1].$match3[2].')'; 
 
-		addorupdatelink($pageid,'2345影视',$title,$url,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'2345影视',$title,$url,'',4,7,7,0,0,$updatetime,1);
 	}
 }
 ?>  

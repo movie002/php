@@ -55,17 +55,17 @@ function getlink()
 		$resultsauthor=dh_mysql_query($sqlauthor);
 		$rowauthor = mysql_fetch_array($resultsauthor);		
 
-		if(getmoviemeta($rowauthor,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
-			continue;
-		echo '-->'.$mtitle;
-		$pageid = getdbpageid($row['title'],$mtitle,$moviecountry,$movieyear,$movietype,$maxrate);
-		continue;
-		if($pageid>=0)
-		{
+		//if(getmoviemeta($rowauthor,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
+		//	continue;
+		//echo '-->'.$mtitle;
+		//$pageid = getdbpageid($row['title'],$mtitle,$moviecountry,$movieyear,$movietype,$maxrate);
+		//continue;
+		//if($pageid>=0)
+		//{
 			//查找资源质量
-			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$row['link'],$row['title'],$row['cat'])==-1)
+			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$linkvalue,$row['link'],$row['title'],$row['cat'])==-1)
 				continue;	
-			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$row['updatetime']);
-		}
+			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,$row['updatetime']);
+		//}
 	}
 }

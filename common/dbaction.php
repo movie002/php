@@ -93,12 +93,12 @@ function updateonlylink($author,$title,$link,$cat,$updatetime,$mtitle,$moviecoun
 	//echo $movietype[$movietype].'|'.$moviecountry[$moviecountry].$movieyear.'|'.$mtitle." >> ".$title.'|'.$link.'|'.$cat.'|'.$updatetime." -> 插入onlylink成功！</br> \n";
 }
 
-function addorupdatelink($pageid,$author,$title,$link,$cat,$linkquality,$linkway,$linktype,$linkdownway,$updatetime,$input=null)
+function addorupdatelink($pageid,$author,$title,$link,$cat,$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,$updatetime,$input=null)
 {
 	if($input==null)
-		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,updatetime) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$updatetime')ON DUPLICATE KEY UPDATE pageid=$pageid,author='$author',title='$title',cat='$cat',linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,updatetime='$updatetime',remove=null";
+		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,linkvalue,updatetime) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,'$updatetime')ON DUPLICATE KEY UPDATE pageid=$pageid,author='$author',title='$title',cat='$cat',linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,linkvalue=$linkvalue,updatetime='$updatetime',remove=null";
 	else
-		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,updatetime,input) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$updatetime','$input')ON DUPLICATE KEY UPDATE pageid=$pageid,author='$author',title='$title',cat='$cat',linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,updatetime='$updatetime',input='$input',remove=null";
+		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,updatetime,input) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,'$updatetime','$input')ON DUPLICATE KEY UPDATE pageid=$pageid,author='$author',title='$title',cat='$cat',linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,linkvalue=$linkvalue,updatetime='$updatetime',input='$input',remove=null";
 	echo $sql."</br>\n";
 	$sqlresult=dh_mysql_query($sql);
 }

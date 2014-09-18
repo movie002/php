@@ -54,7 +54,7 @@ function get_m1905($title,$aka,$type,$updatetime,$ids,$pageid=-1)
 	{
 		$xtitle = '《'.$title.'》m1905 在线观看';
 		$xurl = $match[1];
-		addorupdatelink($pageid,'m1905在线',$xtitle,$xurl,'',4,7,7,0,$updatetime,1);
+		addorupdatelink($pageid,'m1905在线',$xtitle,$xurl,'',4,7,7,0,0,$updatetime,1);
 	}
 	preg_match('/<a class="[^>]+" href="([^>]+)" style="cursor\: pointer\;">预告片([^>]+)<\/a>/s',$buffer,$match);
 	//print_r($match);
@@ -62,7 +62,7 @@ function get_m1905($title,$aka,$type,$updatetime,$ids,$pageid=-1)
 	{
 		$xtitle = '《'.$title.'》m1905 预告 '.'('.$match[2].')';
 		$xurl = 'http://www.1905.com'.$match[1];
-		addorupdatelink($pageid,'m1905预告',$xtitle,$xurl,'',4,3,7,0,$updatetime,1);
+		addorupdatelink($pageid,'m1905预告',$xtitle,$xurl,'',4,3,7,0,0,$updatetime,1);
 	}
 	
 	preg_match('/<a class="[^>]+" href="([^>]+)" style="cursor: pointer;">新闻视频([^>]+)<\/a>/s',$buffer,$match);
@@ -71,7 +71,7 @@ function get_m1905($title,$aka,$type,$updatetime,$ids,$pageid=-1)
 	{
 		$xtitle =  '《'.$title.'》m1905 新闻视频'.'('.$match[2].')';
 		$xurl = 'http://www.1905.com'.$match[1];
-		addorupdatelink($pageid,'m1905新闻视频',$xtitle,$xurl,'',4,3,7,0,$updatetime,1);
+		addorupdatelink($pageid,'m1905新闻视频',$xtitle,$xurl,'',4,3,7,0,0,$updatetime,1);
 	}
 	//评分
 	preg_match('/<span class="score">(.*?)<\/span>[\s]+<span class="nop">\(<q id="rating_num">(.*?)<\/q>人评分\)<\/span>/s',$buffer,$match);
