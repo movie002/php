@@ -148,7 +148,8 @@ function update_hot($daybegin)
 			
 			$sql1="select count(linkvalue) from link l where l.pageid='". $row['id'] ."' ".$sqldayslink;
 			$results1=dh_mysql_query($sql1);
-			$hotall = mysql_fetch_array($results1);				
+			$hotall = mysql_fetch_array($results1);	
+			echo '+'.$hotall[0].'=';
 			$hot+=$hotall[0]/5;
 			echo $hot."</br>\n";
 			$sqlpage="update page set hot=$hot where id = ".$row['id'];
