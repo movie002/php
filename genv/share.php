@@ -163,8 +163,8 @@ function dh_gen_side($DH_home_url)
 	$DH_side_tongji= str_replace("%content%",$tongji,$DH_side_tongji);
 	
 	//友情链接
-	$DH_side_fl= str_replace("%title%",'友情链接',$DH_side_each);	
-	$DH_side_fl= str_replace("%content%",'',$DH_side_fl);	
+	//$DH_side_fl= str_replace("%title%",'友情链接',$DH_side_each);	
+	//$DH_side_fl= str_replace("%content%",'',$DH_side_fl);	
 	
 //	$DH_side_content=$DH_side_ad.$DH_side_hotmovie.$DH_side_hottv.$DH_side_tongji.$DH_side_fl;	
 	$DH_side_content=$DH_side_hotmovie.$DH_side_hottv.$DH_side_tongji;	
