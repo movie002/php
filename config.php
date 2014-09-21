@@ -1,7 +1,7 @@
 <?php
 $dbip='localhost';
 $dbuser='root';
-$dbpasswd='root';
+$dbpasswd='!QAZ2wsx';
 $dbname='movie002';
 
 date_default_timezone_set ('Asia/Shanghai');
