@@ -55,7 +55,7 @@ while($i>$begin)
 	$i--;
 }
 
-//安月生成每个sitemap
+//按月生成每个sitemap
 genhtml2();
 gen_siteindex(date("Y-m-d H:i:s"));
 gen_sitemapall();
@@ -116,15 +116,7 @@ function gen_sitemap($sql,$date,$cycle,$name,$times)
 				
 		$sitemap_baidu_each = str_replace("%url%",$htmlpath,$DH_sitemap_baidu_each);
 		$sitemap_baidu_each = str_replace("%updatetime%",$row['updatetime'],$sitemap_baidu_each);	
-		$title = $row['title'];
-		//if($row['aka']!='')
-		//{
-		//	$akas=preg_split("/[\/]+/", $row['aka']);
-		//	$title.=' '.$akas[0];
-		//	//echo $title."</br>\n";
-		//}
-		//$title .=' 在线下载资源和影讯影评(二手电影)';
-		$title ="《".$title."》".$moviecountry[$row['catcountry']].$movietype[$row['cattype']]."-在线下载等资源链接";
+		$title = dh_get_title($row['cattype'],$row['title'])."_资源汇总-".$DH_name;
 		$sitemap_baidu_each = str_replace("%title%",$title,$sitemap_baidu_each);		
 		$sitemap_baidu_all.=$sitemap_baidu_each;
 	}
@@ -147,7 +139,7 @@ function gen_sitemap($sql,$date,$cycle,$name,$times)
 
 function genhtml($sql,$i,$times)
 {
-	global $movietype,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_src_path,$DH_name;
+	global $movietype,$movietype2,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_src_path,$DH_name;
 	$sitemappath=$DH_output_path.'sitemaphtml/';
 	if (!file_exists($sitemappath))  
 		mkdir($sitemappath,0777);
@@ -172,7 +164,9 @@ function genhtml($sql,$i,$times)
 			$htmlpath = output_page_path($DH_html_url,$row['id']);
 			$updatetime=date('Y-m-d',strtotime($row['updatetime']));
 			//$liout.='<li> '.$row['id'].' ['.$updatetime.']['.$movietype[$row['cattype']].']['.$moviecountry[$row['catcountry']].':'.$type.'] <a href="'.$htmlpath.'" target="_blank">'.$row['title']."</a></li>\n";
-			$liout.='<li>['.$updatetime.']<a href="'.$htmlpath.'" target="_blank">《'.$row['title']."》".$moviecountry[$row['catcountry']].$movietype[$row['cattype']]."-在线下载等资源链接</a></li>\n";	
+			$title =$movietype2[$row['cattype']]. "《".$row['title']."》在线下载资源汇总";
+			$title2 = dh_get_title($row['cattype'],$row['title'])."_资源汇总-".$DH_name;
+			$liout.='<li>['.$updatetime.'] <a href="'.$htmlpath.'" target="_blank" title="'.$title2.'">'.$title."</a></li>\n";	
 		}
 		$sitemaphtml = str_replace("%num%",'第 '.$i.' 页',$DH_output_content);
 		$sitemaphtml = str_replace("%list%",$liout,$sitemaphtml);		
@@ -191,7 +185,7 @@ function genhtml($sql,$i,$times)
 
 function genhtml2()
 {
-	global $movietype,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_src_path,$DH_name;
+	global $movietype,$movietype2,$moviecountry,$DH_html_url,$DH_home_url,$DH_output_path,$DH_src_path,$DH_name;
 	$sitemappath=$DH_output_path.'sitemaphtml/';
 	if (!file_exists($sitemappath))  
 		mkdir($sitemappath,0777);
@@ -232,7 +226,11 @@ function genhtml2()
 			}
 			$htmlpath = output_page_path($DH_html_url,$row['id']);
 			$updatetime=date('Y-m-d',strtotime($row['updatetime']));
-			$liout.='<li>['.$updatetime.']<a href="'.$htmlpath.'" target="_blank">《'.$row['title']."》".$moviecountry[$row['catcountry']].$movietype[$row['cattype']]."-在线下载等资源链接</a></li>\n";			
+			//$liout.='<li>['.$updatetime.']<a href="'.$htmlpath.'" target="_blank">《'.$row['title']."》".$moviecountry[$row['catcountry']].$movietype[$row['cattype']]."-在线下载等资源链接</a></li>\n";
+			//$title = "《".$row['title']."》在线下载资源汇总";
+			$title =$movietype2[$row['cattype']]. "《".$row['title']."》在线下载资源汇总";
+			$title2 = dh_get_title($row['cattype'],$row['title'])."_资源汇总-".$DH_name;
+			$liout.='<li>['.$updatetime.'] <a href="'.$htmlpath.'" target="_blank" title="'.$title2.'">'.$title."</a></li>\n";			
 		}
 		$DH_output_file = $sitemappath.'sitemap_'.$updatetimepageold.'.html';
 		$sitemaphtml = str_replace("%pagenavi%",'',$DH_output_content);
