@@ -91,8 +91,6 @@ function dh_get_catname($type,$country)
 function dh_get_catkeyword($type,$title)
 {
 	preg_match('/([a-z])/si',$title,$match);
-//	if(!empty($match[1]))
-//	if()
 	global $movietype2;
 	if($type==1)
 		$cat =$title.'电影,'.$title.'国语,'.$title.'完整版,'.$title.'预告片,'.$title.'影评';
@@ -108,27 +106,13 @@ function dh_get_catkeyword($type,$title)
 function dh_get_title($type,$title)
 {
 	if($type==1)
-		$cat =$title.'电影_'.$title.'下载/在线';
+		$cat =$title.'_电影_下载/在线观看';
 	if($type==2)
-		$cat =$title.'电视剧_'.$title.'在线观看/全集/下载';
+		$cat =$title.'_电视剧全集_在线观看/下载';
 	if($type==3)
-		$cat =$title.'综艺_'.$title.'在线观看/全集/下载';
+		$cat =$title.'_综艺全集_在线观看/下载';
 	if($type==4)
-		$cat =$title.'动画/动漫_'.$title.'在线观看/下载';
-	return $cat;
-}
-
-function dh_get_title_key_cat($type,$title)
-{
-	global $movietype2;
-	if($type==1)
-		$cat =$title.'电影_'.$title.'完整版';
-	if($type==2)
-		$cat =$title.'电视剧_'.$title.'全集';
-	if($type==3)
-		$cat =$title.'综艺_'.$title.'全集';
-	if($type==4)
-		$cat =$title.'动漫_'.$title.'动画';
+		$cat =$title.'_动画/动漫全集_在线观看/下载';
 	return $cat;
 }
 
