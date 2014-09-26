@@ -26,17 +26,17 @@ function duoshuo()
 //	//<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 //}
 
-function weibo()
-{
-	(function() {
-		var wb = document.createElement('script');
-		wb.type = 'text/javascript';
-		wb.charset = 'UTF-8';
-		wb.src = 'http://tjs.sjs.sinajs.cn/open/api/js/wb.js';
-		(document.getElementsByTagName('body')[0]
-		||document.getElementsByTagName('head')[0]).appendChild(wb);
-	})();
-}
+//function weibo()
+//{
+//	(function() {
+//		var wb = document.createElement('script');
+//		wb.type = 'text/javascript';
+//		wb.charset = 'UTF-8';
+//		wb.src = 'http://tjs.sjs.sinajs.cn/open/api/js/wb.js';
+//		(document.getElementsByTagName('body')[0]
+//		||document.getElementsByTagName('head')[0]).appendChild(wb);
+//	})();
+//}
 
 //光标聚焦
 window.onload = function ()
@@ -54,6 +54,6 @@ window.onload = function ()
 	//list独有的函数
 	duoshuo();
 //	google();
-	weibo();
+//	weibo();
 	dhsay();
 };

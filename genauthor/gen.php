@@ -60,7 +60,7 @@ function dh_gen_static($name)
 	$DH_share_output_path = $DH_input_path.'top/';
 	$DH_input_html  = $DH_share_output_path . 'meta.html';
 	$DH_output_meta = dh_file_get_contents("$DH_input_html");
-	$DH_input_html  = $DH_share_output_path . 'head.html';
+	$DH_input_html  = $DH_input_path . 'genauthor/head.html';
 	$DH_output_head = dh_file_get_contents("$DH_input_html");	
 	$DH_input_html  = $DH_share_output_path . 'foot.html';
 	$DH_output_foot = dh_file_get_contents("$DH_input_html");
