@@ -206,7 +206,7 @@ function dh_gen_movie($DH_index_cat)
 function dh_get_new($DH_index_cat,$movietype_index)
 {
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
-	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index order by l.updatetime desc limit 0,8";
+	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=6 order by l.updatetime desc limit 0,8";
 	$list = dh_get_movie_type_onlylink($sql);	
 	$topic_list = "\n<div class=\"title_list f12px\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_t/1.html';

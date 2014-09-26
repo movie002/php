@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
 <head>
 	<title>%title%</title>
+	<link rel='canonical' href='%home%%cname%.html'/>
 	<meta name="keywords" content="电影导航,电影网址导航,电影网站导航,网址导航,影视网址导航,电影导航,影视导航"/>
 	<meta name="description" content="%title%(%home%)是电影网站导航,电影网址导航、影视网址导航。搜集、归类、整理、分享各种影视网站网址，致力于让用户全面地访问到一个影视网站大全。" />
 	%meta%
@@ -29,7 +30,7 @@
 						<span id="txt"></span>
 					</div>
 					<ul>
-						<li>影视 <a style="font-weight:700;color:rgb(160, 199, 211)" href="http://dh.movie002.com/" title="影视网址导航">网址导航</a>｜<a href="http://movie002.com/" title="影视资源导航">资源导航</a>｜<a href="http://dhblog.org" title="DH博客">站长博客</a>｜<a href="http://blog.movie002.com" title="影视速递">影视速递</a></li>
+						<li><a style="font-weight:700;color:rgb(160, 199, 211)" href="http://dh.movie002.com/" title="影视网址导航">网址导航</a>｜<a href="http://v.movie002.com/" title="影视大全">影视大全</a>｜<a href="http://www.movie002.com" title="电影推荐">电影推荐</a></li>
 						<li><a href="#" id="movie002_day_1" onclick="SetCookie('movie002_day','day');window.location.reload();">日间模式</a>｜<a href="#" id="movie002_day_2" onclick="SetCookie('movie002_day','night'); window.location.reload();">夜间模式</a></li>
 						<li><a href="#" id="movie002_width_1" onclick="SetCookie('movie002_width','1024'); window.location.reload();">标准屏</a>｜<a href="#" id="movie002_width_2" onclick="SetCookie('movie002_width','1280');window.location.reload();">宽频</a></li>
 					</ul>		
@@ -44,9 +45,9 @@
 					<div class="topnav menunav">
 						<div>
 							<ul>
-								<li><a href="%home%index.html" title="">精简版本</a></li>
-								<li><a href="%home%max.html" title="">美观版本</a></li>
-								<li><a href="%home%message.html" title="">给我留言</a></li>
+								<li><a href="%home%index.html" title="精简版本">精简版本</a></li>
+								<li><a href="%home%max.html" title="美观版本">美观版本</a></li>
+								<li><a href="http://www.movie002.com/opinion.html" title="给我留言" target="_blank">给我留言</a></li>
 								<li><a href="#" title="">本页导航</a>
 									<ul>
 										<li><a href="#myTab1_Content0" title="">影视软件</a></li>
@@ -90,10 +91,8 @@
 					<div style="text-align:center;font-size:12px;margin:0 0 5px 0">
 						<div class="search-tabs">
 							<form name=websearch onsubmit=return(search4())>
-							<Input type=checkbox CHECKED value=baidu name=baidu> 
-							百度视频
-							<Input type=checkbox value=google name=google> 
-							google视频
+							<Input type=checkbox CHECKED value=movie002 name=movie002> 
+							电影小二
 							<Input type=checkbox CHECKED value=qihu name=qihu> 
 							360影视 
 							<Input type=checkbox CHECKED value=v2345 name=v2345> 
@@ -403,10 +402,8 @@
 	<script type="text/javascript">
 		function search4()
 		{
-			if(websearch.google.checked)
-			openwin("https://www.google.com.hk/search?tbm=vid&hl=zh-CN&source=hp&q="+websearch.key.value,"mspg6");
-			if(websearch.baidu.checked)
-			openwin("http://v.hao123.com/v?word="+websearch.key.value,"mspg9");
+			if(websearch.movie002.checked)
+			openwin("http://v.movie002.com/search.php?q="+websearch.key.value,"mspg9");
 			if(websearch.qihu.checked)
 			openwin("http://so.v.360.cn/index.php?kw="+websearch.key.value,"mspg0");
 			if(websearch.v2345.checked)

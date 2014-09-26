@@ -3,11 +3,11 @@
 include("../config.php");
 include("../common/base.php");
 include("../common/compressJS.class.php");
-require("../common/share.php");
+require("../genv/share.php");
 
 
 
-$DH_name='二手电影网';
+$DH_name='电影小二网';
 $DH_name_des='电影网址导航_电影网站导航';
 $DH_dh_title=$DH_name."-".$DH_name_des;
 $DH_dh_url="http://dh.movie002.com/";
@@ -39,6 +39,8 @@ $DH_output = setshare($DH_output,'index.js');
 $DH_output3 = setshare($DH_output3,'index.js');
 $DH_output = str_replace("%home%",$DH_dh_url,$DH_output);
 $DH_output3 = str_replace("%home%",$DH_dh_url,$DH_output3);
+$DH_output = str_replace("%cname%",'max',$DH_output);
+$DH_output3 = str_replace("%cname%",'index',$DH_output3);
 $DH_output = str_replace("%title%",$DH_dh_title.'(美观版)',$DH_output);
 $DH_output3 = str_replace("%title%",$DH_dh_title.'(精简版)',$DH_output3);
 
@@ -46,14 +48,6 @@ $DH_output_file =$DH_dh_path.'max.html';
 dh_file_put_contents($DH_output_file,$DH_output);
 $DH_output_file =$DH_dh_path.'index.html';
 dh_file_put_contents($DH_output_file,$DH_output3);
-
-$DH_input_html  = 'message.html';
-$DH_output = dh_file_get_contents($DH_input_html);
-$DH_output = setshare($DH_output,'');
-$DH_output = str_replace("%home%",$DH_dh_url,$DH_output);
-$DH_output = str_replace("%title%",$DH_dh_title,$DH_output);
-$DH_output_file =$DH_dh_path.'message.html';
-dh_file_put_contents($DH_output_file,$DH_output);
 
 function getcontent($DH_output_site)
 {
