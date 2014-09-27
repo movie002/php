@@ -165,7 +165,7 @@ function genhtml($sql,$i,$times)
 			$updatetime=date('Y-m-d',strtotime($row['updatetime']));
 			//$liout.='<li> '.$row['id'].' ['.$updatetime.']['.$movietype[$row['cattype']].']['.$moviecountry[$row['catcountry']].':'.$type.'] <a href="'.$htmlpath.'" target="_blank">'.$row['title']."</a></li>\n";
 			$title =$movietype2[$row['cattype']]. "《".$row['title']."》在线下载资源汇总";
-			$title2 = dh_get_title($row['cattype'],$row['title'])."_资源汇总-".$DH_name;
+			$title2 = dh_get_title($row['cattype'],$row['title'])."-".$DH_name;
 			$liout.='<li>['.$updatetime.'] <a href="'.$htmlpath.'" target="_blank" title="'.$title2.'">'.$title."</a></li>\n";	
 		}
 		$sitemaphtml = str_replace("%num%",'第 '.$i.' 页',$DH_output_content);
@@ -229,7 +229,7 @@ function genhtml2()
 			//$liout.='<li>['.$updatetime.']<a href="'.$htmlpath.'" target="_blank">《'.$row['title']."》".$moviecountry[$row['catcountry']].$movietype[$row['cattype']]."-在线下载等资源链接</a></li>\n";
 			//$title = "《".$row['title']."》在线下载资源汇总";
 			$title =$movietype2[$row['cattype']]. "《".$row['title']."》在线下载资源汇总";
-			$title2 = dh_get_title($row['cattype'],$row['title'])."_资源汇总-".$DH_name;
+			$title2 = dh_get_title($row['cattype'],$row['title'])."-".$DH_name;
 			$liout.='<li>['.$updatetime.'] <a href="'.$htmlpath.'" target="_blank" title="'.$title2.'">'.$title."</a></li>\n";			
 		}
 		$DH_output_file = $sitemappath.'sitemap_'.$updatetimepageold.'.html';
