@@ -12,11 +12,8 @@ set_time_limit(120);
 #需要使用的基础函数
 include("../config.php");
 include("../common/base.php");
-include("../genv/share.php");
 include("../common/dbaction.php");
 include("../common/page_navi.php");
-include("../common/compressJS.class.php");
-
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
@@ -31,16 +28,15 @@ mysql_close($conn);
 
 function dh_gen_author()
 {
-	global $DH_home_url,$DH_input_path,$DH_author_path;
+	global $DH_home_url,$DH_input_path,$DH_author_path,$DH_name;
 	if (!file_exists($DH_author_path))  
 		mkdir($DH_author_path,0777);
-	
 	$DH_input_html  = $DH_input_path . 'genauthor/author.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
-	$DH_output_content = setshare($DH_output_content,'index.js');
-	
+	$DH_output_content = setshare($DH_output_content,'');
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
-
+	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);	
+	
 	$sql="select * from author order by updatetime desc";
 	$authorlist=dh_get_author($sql);
 	
@@ -52,25 +48,13 @@ function dh_gen_author()
 
 function dh_gen_static($name)
 {
-	global $DH_home_url,$DH_input_path,$DH_author_path;
+	global $DH_home_url,$DH_input_path,$DH_author_path,$DH_name;
 	$DH_input_html  = $DH_input_path . 'genauthor/'.$name.'.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = setshare($DH_output_content,'');
 	
-	$DH_share_output_path = $DH_input_path.'top/';
-	$DH_input_html  = $DH_share_output_path . 'meta.html';
-	$DH_output_meta = dh_file_get_contents("$DH_input_html");
-	$DH_input_html  = $DH_input_path . 'genauthor/head.html';
-	$DH_output_head = dh_file_get_contents("$DH_input_html");	
-	$DH_input_html  = $DH_share_output_path . 'foot.html';
-	$DH_output_foot = dh_file_get_contents("$DH_input_html");
-	
-	$DH_output_content = str_replace("%meta%",$DH_output_meta,$DH_output_content);
-	$DH_output_content = str_replace("%head%",$DH_output_head,$DH_output_content);
-	$DH_output_content = str_replace("%foot%",$DH_output_foot,$DH_output_content);
-	
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
-	
+	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);	
 	$DH_output_file = $DH_author_path.$name.'.html';
 	dh_file_put_contents($DH_output_file,$DH_output_content);
 }
@@ -85,6 +69,7 @@ function dh_get_author($sql)
 	{			
 		while($row = mysql_fetch_array($results))
 		{
+			echo 'genauthor:'.$row['name']."\n";
 			//查找资源的数目
 			$sqlcount="select count(*) from link where author='".$row['name']."' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
@@ -94,7 +79,7 @@ function dh_get_author($sql)
 			$linkcount2 = mysql_fetch_array($lres);
 			
 			$datetoday =date("Y-m-d");
-			$datetoday = date("Y-m-d  H:i:s",strtotime($datetoday));
+			//$datetoday = date("Y-m-d  H:i:s",strtotime($datetoday));
 			$sqlcount="select count(*) from link where author='".$row['name']."' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount3 = mysql_fetch_array($lres);
@@ -110,5 +95,26 @@ function dh_get_author($sql)
 		}
 	}
 	return $liout;
+}
+
+
+function setshare($DH_output_content,$js)
+{
+	global $DH_home_url,$DH_input_path,$DH_html_path,$DH_name,$DH_name_des;
+	$DH_share_output_path = $DH_input_path.'top/';
+	$DH_input_html  = $DH_share_output_path . 'meta.html';
+	$DH_output_meta = dh_file_get_contents("$DH_input_html");
+	$DH_input_html  = $DH_input_path . 'genauthor/head.html';
+	$DH_output_head = dh_file_get_contents("$DH_input_html");	
+	$DH_input_html  = $DH_share_output_path . 'foot.html';
+	$DH_output_foot = dh_file_get_contents("$DH_input_html");
+	
+	$DH_output_content = str_replace("%meta%",$DH_output_meta,$DH_output_content);
+	$DH_output_content = str_replace("%head%",$DH_output_head,$DH_output_content);
+	$DH_output_content = str_replace("%foot%",$DH_output_foot,$DH_output_content);		
+	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);
+	$DH_output_content = str_replace("%DH_name_des%",$DH_name_des,$DH_output_content);
+	
+	return $DH_output_content;
 }
 ?>
