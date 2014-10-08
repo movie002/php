@@ -1,7 +1,7 @@
 <?php
 $dbip='127.0.0.1';
 $dbuser='root';
-$dbpasswd='!QAZ2wsx';
+$dbpasswd='qazxsw';
 $dbname='movie002';
 
 date_default_timezone_set ('Asia/Shanghai');
@@ -106,13 +106,13 @@ function dh_get_catkeyword($type,$title)
 function dh_get_title($type,$title)
 {
 	if($type==1)
-		$cat =$title.'_电影_在线下载等_资源汇总';
+		$cat =$title.'电影(%pubyear%)_下载地址等资源汇总';
 	if($type==2)
-		$cat =$title.'_电视剧全集_在线观看等_资源汇总';
+		$cat =$title.'电视剧全集_在线观看等资源汇总';
 	if($type==3)
-		$cat =$title.'_综艺全集_在线观看等_资源汇总';
+		$cat =$title.'综艺全集_在线观看等资源汇总';
 	if($type==4)
-		$cat =$title.'_动画(动漫)全集_在线观看等_资源汇总';
+		$cat =$title.'动画(动漫)全集_在线观看等资源汇总';
 	return $cat;
 }
 

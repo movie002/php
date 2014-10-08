@@ -90,16 +90,6 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = dh_replace_content($count,$row,$DH_output_content_page);
 			$cat = dh_get_catname($row['cattype'],$row['catcountry']);
 			$DH_output_content_page = str_replace("%cat%",$cat,$DH_output_content_page);
-			//提取年份
-			if($row['pubdate']=='0000-00-00' || $row['pubdate']=='1970-01-01')
-			{
-				$pubyear = '';	
-			}
-			else
-			{
-				$pubyear =date("Y",strtotime($row['pubdate']));			
-			}
-			$DH_output_content_page = str_replace("%pubyear%",$pubyear,$DH_output_content_page);
 			
 			//提取标题
 //			$title = $row['title'];
@@ -116,6 +106,16 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%title_key%",$title,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%catkeyword%",dh_get_catkeyword($row['cattype'],$title),$DH_output_content_page);
 			$DH_output_content_page = str_replace("%title_meta%",dh_get_title($row['cattype'],$title),$DH_output_content_page);
+			//提取年份
+			if($row['pubdate']=='0000-00-00' || $row['pubdate']=='1970-01-01')
+			{
+				$pubyear = '';	
+			}
+			else
+			{
+				$pubyear =date("Y",strtotime($row['pubdate']));			
+			}
+			$DH_output_content_page = str_replace("%pubyear%",$pubyear,$DH_output_content_page);			
 			$DH_output_content_page = str_replace("%akas%",$akas,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%id%",$row['id'],$DH_output_content_page);
 			$DH_output_content_page = str_replace("%permalink%",output_page_path($DH_html_url,$row['id']),$DH_output_content_page);
