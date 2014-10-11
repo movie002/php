@@ -252,8 +252,8 @@ function postmail_db($to,$file_dir)
     $mail->Port       = 465;                   // SMTP服务器的端口号
     $mail->Username   = "xzhh0747";  // SMTP服务器用户名
     $mail->Password   = "19850523";            // SMTP服务器密码
-    $mail->SetFrom('tech@movie002.com', 'movie002.com');
-    $mail->AddReplyTo("tech@movie002.com","movie002.com");
+    $mail->SetFrom('a@movie002.com', 'movie002.com');
+    $mail->AddReplyTo("a@movie002.com","movie002.com");
     $mail->Subject    = "movie002.com 的数据库备份 ".$datetitle;
     $mail->AltBody    = "To view the message, please use an HTML compatible email viewer! - From www.jiucool.com"; // optional, comment out and test
 //    $mail->MsgHTML($body);

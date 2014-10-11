@@ -16,8 +16,8 @@ function postmail($to,$sub,$zipfile,$body)
     $mail->Port       = 465;                   // SMTP服务器的端口号
     $mail->Username   = "xzhh0747";  // SMTP服务器用户名
     $mail->Password   = "19850523";            // SMTP服务器密码
-    $mail->SetFrom('admin@movie002.com', 'movie002.com');
-    $mail->AddReplyTo("admin@movie002.com","movie002.com");
+    $mail->SetFrom('a@movie002.com', 'movie002.com');
+    $mail->AddReplyTo("a@movie002.com","movie002.com");
     $mail->Subject    = $sub;
     $mail->AltBody    = "To view the message, please use an HTML compatible email viewer! - From movie002.com"; // optional, comment out and test
 	//$body = eregi_replace("[\]",'',$body); //对邮件内容进行必要的过滤
