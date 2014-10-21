@@ -166,33 +166,33 @@ function dh_gen_movie($DH_index_cat)
 		$results=dh_mysql_query($sql);
 		$count = mysql_fetch_array($results);	
 		$DH_index_cat_each = str_replace("%catnum%",'共'.$count[0].'部',$DH_index_cat);
+
+		//全部最新+精选最新
+		$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
+		$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">最新资源</li>';
+		$i++;
+		//热门图片+热门列表
+		$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat_each,$movietype_index)."\n</div>\n";
+		$liout .="\n".'<li class="active" onclick="nTabs(this,'.$i.');">热门资源</li>';	
+		$i++;
+		
 		if($movietype_index==1||$movietype_index==2)
 		{
-			//全部最新+精选最新
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
-			$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">最新资源</li>';
-			$i++;
-			//热门图片+热门列表
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat_each,$movietype_index)."\n</div>\n";
-			$liout .="\n".'<li class="active" onclick="nTabs(this,'.$i.');">热门资源</li>';	
-			$i++;
 			//高清图片+超清资源
 			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_high($DH_index_cat_each,$movietype_index)."\n</div>\n";;
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">超清资源</li>';
-			$i++;
+			$i++;		
+		}	
+		
+		if($movietype_index==1)
+		{
 			//最新影评+最新新闻
 			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link2($DH_index_cat_each,$movietype_index)."\n</div>\n";;
-			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯影评</li>';
-		}
-		else
-		{
-			//全部最新+精选最新
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
-			$liout .='<li class="active" onclick="nTabs(this,'.$i.');">最新资源</li>';
-			$i++;
-			//热门图片+热门列表
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat_each,$movietype_index)."\n</div>\n";
-			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">热门资源</li>';
+			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯/影评</li>';
+			$i++;		
+			//预告/购票/活动
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
+			$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">预告/购票/活动</li>';
 		}
 				
 		$liouttitle ="\n<div class=\"TabTitle TabTitlex\"> \n <ul id=\"myTab$movietype_index\">";
@@ -352,7 +352,7 @@ function dh_get_movie_type_onlylink($sql)
 				$titlea='title="'.$title.'"';
 				$title=mb_substr($title,0,20,'UTF-8').'...';
 			}
-			$lieach = "\n".'<li><span class="line1"><span class="f12px">['.$linkway[$row['linkway']].']</span> <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a><span class="f12px"> (<a href="'.$row['link'].'" rel="nofollow">'.$row['author'].'</a>)</span></span><span class="rt5v2">'.$update.'</span></li>';
+			$lieach = "\n".'<li><span class="line1"><span class="f12px">['.$linkway[$row['linkway']].']</span> <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a><span class="f12px"> (<a href="'.$row['link'].'" rel="nofollow" target="_blank">'.$row['author'].' 的链接</a>)</span></span><span class="rt5v2">'.$update.'</span></li>';
 			$liout.= $lieach;		
 		}
 		$liout.= "\n</ol>";	

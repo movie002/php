@@ -132,8 +132,8 @@ function dh_gen_list()
 					$path = $keytype.'_'.$keycountry.'_t/';		
 					$cat = $catpre.'[全部最新]';
 					$catlink=' <a href="'.$DH_index_url.$keytype.'_t/1.html">'.$movietype[$keytype].'[全部最新]</a> >> ';
-					$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and p.catcountry = $keycountry and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime)";
-					$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and p.catcountry = $keycountry  and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime) order by l.updatetime desc";
+					$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and p.catcountry = $keycountry and (l.linkway=6 or l.linkway=7) and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime)";
+					$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and p.catcountry = $keycountry and (l.linkway=6 or l.linkway=7) and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime) order by l.updatetime desc";
 					dh_gen_each_file_onlylink($sqlc,$sql,$DH_output_content,$path,$cat,$catlink);
 					//生成 精选最新
 					$path = $keytype.'_'.$keycountry.'_l/';		
@@ -253,8 +253,9 @@ function dh_gen_each_file($sqlc,$sql,$DH_catlist,$path,$cat,$catlink='',$needcou
 	}	
 }
 
-function dh_gen_each_file_onlylink($sqlc,$sql,$DH_catlist,$path,$cat,$catlink='',$needcountrytype='no')
+function dh_gen_each_file_onlylink($sqlc,$sql,$DH_catlist,$path,$cat,$catlink,$needcountrytype='no')
 {
+	echo $cat;
 	global $DH_html_url,$DH_index_url,$conn,$pagecount,$DH_output_index_path,$linkquality,$linkway,$moviecountry;
 	$pagecountonly = $pagecount*4;
 
@@ -285,7 +286,7 @@ function dh_gen_each_file_onlylink($sqlc,$sql,$DH_catlist,$path,$cat,$catlink=''
 			$htmlpath = output_page_path($DH_html_url,$row['pageid']);	
 			$updatef = date("m-d",strtotime($row['updatetime']));
 			$countrymeta='';
-			//echo "****".$needcountrytype."****\n";
+			echo "****".$needcountrytype."****\n";
 			if($needcountrytype=='no')
 			{
 				$countrymeta='';
