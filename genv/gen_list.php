@@ -46,8 +46,8 @@ function dh_gen_list()
 		//生成 全部最新
 		$path = $keytype.'_t/';		
 		$cat =$movietypeeach. '[全部最新]';			
-		$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime)";
-		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime) order by l.updatetime desc";
+		$sqlc="select count(*) from link l,page p where l.pageid=p.id and p.cattype = $keytype and (l.linkway=6 or l.linkway=7) and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime)";
+		$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and p.cattype = $keytype and (l.linkway=6 or l.linkway=7) and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) <= date(l.updatetime) order by l.updatetime desc";
 		dh_gen_each_file_onlylink($sqlc,$sql,$DH_output_content,$path,$cat,'t');	
 		//生成 精选最新
 		$path = $keytype.'_l/';		
