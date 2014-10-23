@@ -167,22 +167,23 @@ function dh_gen_movie($DH_index_cat)
 		$count = mysql_fetch_array($results);	
 		$DH_index_cat_each = str_replace("%catnum%",'共'.$count[0].'部',$DH_index_cat);
 
-		//全部最新+精选最新
-		$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
-		$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">最新资源</li>';
-		$i++;
-		//热门图片+热门列表
+		//热门资源
 		$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" style="overflow:hidden;z-index:2;">'.dh_get_hot($DH_index_cat_each,$movietype_index)."\n</div>\n";
 		$liout .="\n".'<li class="active" onclick="nTabs(this,'.$i.');">热门资源</li>';	
-		$i++;
+		$i++;	
 		
 		if($movietype_index==1||$movietype_index==2)
 		{
-			//高清图片+超清资源
+			//超清资源
 			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_high($DH_index_cat_each,$movietype_index)."\n</div>\n";;
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">超清资源</li>';
 			$i++;		
-		}	
+		}
+		
+		//最新在线+最新下载		
+		$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
+		$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">最新资源</li>';
+		$i++;
 		
 		if($movietype_index==1)
 		{
@@ -191,7 +192,7 @@ function dh_gen_movie($DH_index_cat)
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯/影评</li>';
 			$i++;		
 			//预告/购票/活动
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_link($DH_index_cat_each,$movietype_index)."\n</div>\n";
 			$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">预告/购票/活动</li>';
 		}
 				
@@ -206,10 +207,10 @@ function dh_gen_movie($DH_index_cat)
 function dh_get_new($DH_index_cat,$movietype_index)
 {
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
-	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and (l.linkway=6 or l.linkway=7) order by l.updatetime desc limit 0,8";
+	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=6 order by l.updatetime desc limit 0,8";
 	$list = dh_get_movie_type_onlylink($sql);	
 	$topic_list = "\n<div class=\"title_list f12px\">\n $list \n</div>";
-	$link = $DH_index_url.$movietype_index.'_t/1.html';
+	$link = $DH_index_url.$movietype_index.'_download/1.html';
 
 	$more='';
 	if($movietype_index==1||$movietype_index==2)
@@ -217,18 +218,18 @@ function dh_get_new($DH_index_cat,$movietype_index)
 		foreach($moviecountry as $key=>$eachcountry)
 		{
 			if($key===0)continue;
-			$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_t/1.html">'.$eachcountry.'</a> &nbsp;';
+			$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_download/1.html">'.$eachcountry.'</a> &nbsp;';
 		}
 	}
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title">全部最新</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';	
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title">最新下载</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';	
 	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
-	$sql="select * from page where cattype=$movietype_index and ziyuan>0 and  ( hot>5 or DATE_SUB(CURDATE(), INTERVAL 2 MONTH) <= date(pubdate)) order by updatetime desc limit 0,4";	
-	$list = dh_get_movie_type_list($sql,'index_list_each1.html','small');
+	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=7 order by l.updatetime desc limit 0,8";	
+	$list = dh_get_movie_type_onlylink($sql);
 	
-	$topic_list = "\n<div class=\"col1\">\n $list \n</div>";
-	$link = $DH_index_url.$movietype_index.'_l/1.html';
+	$topic_list = "\n<div class=\"title_list f12px\">\n $list \n</div>";
+	$link = $DH_index_url.$movietype_index.'_online/1.html';
 	
 	$more='';
 	if($movietype_index==1||$movietype_index==2)
@@ -236,11 +237,11 @@ function dh_get_new($DH_index_cat,$movietype_index)
 		foreach($moviecountry as $key=>$eachcountry)
 		{
 			if($key===0)continue;
-			$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_l/1.html">'.$eachcountry.'</a> &nbsp;';
+			$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_online/1.html">'.$eachcountry.'</a> &nbsp;';
 		}
 	}	
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title">精选最新</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';		
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title">最新在线</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';		
 	$result2 = "\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
 	$DH_index_cat_eachs=$result2.$result1;	
@@ -253,12 +254,21 @@ function dh_get_new($DH_index_cat,$movietype_index)
 function dh_get_hot($DH_index_cat,$movietype_index)
 {
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
-	$sql="select * from page where cattype = $movietype_index order by hot desc limit 0,3";
-	$result1 = '<div class="col3 bb">'.dh_get_movie_type_list($sql,'index_list_each3.html','big').'</div>';
-		
-	$sql="select * from page where cattype = $movietype_index order by hot desc limit 3,12";
+	if($movietype_index==1||$movietype_index==2)
+	{
+		$sql="select * from page where cattype = $movietype_index order by hot desc limit 0,3";
+		$result1 = '<div class="col3 bb">'.dh_get_movie_type_list($sql,'index_list_each3.html','big').'</div>';
+		$sql="select * from page where cattype = $movietype_index order by hot desc limit 3,12";		
+	}
+	else
+	{
+		$sql="select * from page where cattype = $movietype_index order by hot desc limit 0,2";
+		$result1 = '<div class="col2 bb">'.dh_get_movie_type_list($sql,'index_list_each2.html','big').'</div>';	
+		$sql="select * from page where cattype = $movietype_index order by hot desc limit 2,12";
+	}		
 	$list = dh_get_movie_type_block($sql,4);
-	$result2='<div class="col4">'.$list.'</div>';	
+	$result2='<div class="col4">'.$list.'</div>';
+	
 	$DH_index_cat_eachs=$result1.$result2;		
 	$DH_index_cat_ins = str_replace("%catname%",$movietype[$movietype_index],$DH_index_cat);
 	
@@ -314,8 +324,16 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	$list = dh_get_movie_type_onlylink($sql);	
 	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_yp/1.html';
+
+	$more='';
+	foreach($moviecountry as $key=>$eachcountry)
+	{
+		if($key===0)continue;
+		$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_yp/1.html">'.$eachcountry.'</a> &nbsp;';
+	}
+	$more.='<a href="'.$DH_index_url.$movietype_index.'_yp/1.html">全部</a> ';
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新影评</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新影评</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
 	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=1 order by l.updatetime desc limit 0,10";
@@ -323,7 +341,49 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_zx/1.html';
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新资讯</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
+	$more='';
+	foreach($moviecountry as $key=>$eachcountry)
+	{
+		if($key===0)continue;
+		$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_zx/1.html">'.$eachcountry.'</a> &nbsp;';
+	}
+	$more.='<a href="'.$DH_index_url.$movietype_index.'_yp/1.html">全部</a> ';
+	
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新资讯</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
+	$result2 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";	
+
+	$DH_index_cat_eachs=$result1.$result2;	
+	$DH_index_cat_ins = str_replace("%catname%",$movietype[$movietype_index],$DH_index_cat);
+	$DH_index_cat_ins = str_replace("%more%",'',$DH_index_cat_ins);
+	$DH_index_cat_ins = str_replace("%index_cat_each%",$DH_index_cat_eachs,$DH_index_cat_ins);
+	return $DH_index_cat_ins;
+}
+
+function dh_get_link($DH_index_cat,$movietype_index)
+{
+	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
+	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=3 order by l.updatetime desc limit 0,10";
+	$list = dh_get_movie_type_onlylink($sql);
+	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
+	$link = $DH_index_url.$movietype_index.'_yg/1.html';
+	
+	$more='';
+	foreach($moviecountry as $key=>$eachcountry)
+	{
+		if($key===0)continue;
+		$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_yg/1.html">'.$eachcountry.'</a> &nbsp;';
+	}
+	$more.='<a href="'.$DH_index_url.$movietype_index.'_yg/1.html">全部</a> ';	
+	
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">预告·花絮</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
+	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
+	
+	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and (l.linkway=4 or l.linkway=5) order by l.updatetime desc limit 0,10";
+	$list = dh_get_movie_type_onlylink($sql);	
+	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
+	$link = $DH_index_url.$movietype_index.'_gp/1.html';
+	
+	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">活动·购票</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
 	$result2 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";	
 
 	$DH_index_cat_eachs=$result1.$result2;	
