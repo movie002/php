@@ -192,7 +192,7 @@ function dh_gen_movie($DH_index_cat)
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯/影评</li>';
 			$i++;		
 			//预告/购票/活动
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_link($DH_index_cat_each,$movietype_index)."\n</div>\n";
+			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link($DH_index_cat_each,$movietype_index)."\n</div>\n";
 			$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">预告/购票/活动</li>';
 		}
 				
