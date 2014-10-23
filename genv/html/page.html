@@ -25,8 +25,8 @@
 			<div id="title">
 				<div class="browse">
 					<span>您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <a href="%cathref%" title="查看 中的全部文章">%cat%</a> >> %title% (%pubyear%) %mstatus%</span>
-					<span>
-					<div class="bdsharebuttonbox" style="position:relative;left:200px"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a></div>
+					<span style="position:absolute">&nbsp;
+					<div class="bdsharebuttonbox" style="position:relative;left:10px;top:-28px"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a></div>
 					</span>
 				</div>
 				<div class="titlecontent">
@@ -80,11 +80,11 @@
 					<div id="entry_content" style="border-top:1px solid #999">
 						<div class="eh4" style="position:relative;margin:15px 0 0 0">影片资源列表，不断更新中 ... 如发现版权问题，请及时和我们联系!<span class="rt0v0 f500"> %thisupdatetime%</span></div>
 						<div style="margin:5px 0 0 0">									
-							<span>我是影视爱好者:我要<!--[<a href="javascript:showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>]--> [<a href="javascript:AddFavorite('《%title_key%》资源链接(在线下载等)-二手电影网',location.href)">收藏此页</a>] || 我是站长:我要[<a href="javascript:showmiddle('srcsub')">提交资源</a>] || 我是版权方:我要[<a href="javascript:showmiddle('notify')">通知处理</a>]</span>
+							<span>我是影视爱好者:我要<!--[<a href="javascript:showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>]--> [<a href="javascript:AddFavorite('《%title_key%》资源链接(在线下载等)-%DH_name%',location.href)">收藏此页</a>] || 我是站长:我要[<a href="javascript:showmiddle('srcsub')">提交资源</a>] || 我是版权方:我要[<a href="javascript:showmiddle('notify')">通知处理</a>]</span>
 						</div>
 						<div style="position:relative;margin:15px 0 0 0" class="border1">
 							<div class="anchor"><a name="title_1" id="title_1">&nbsp;</a></div>
-							<div class="TabTitle lt35v10"><ul id="dt"><li class="active" onclick="nTabs(this,0);">资讯新闻(%num4%)</li><li class="normal" onclick="nTabs(this,1);">精彩影评(%num3%)</li><li class="normal" onclick="nTabs(this,2);">预告花絮(%num2%)</li><li class="normal" onclick="nTabs(this,3);">活动购票(%ticketnum%)</li></ul></div>
+							<div class="TabTitle lt35v10"><ul id="dt"><li class="active" onclick="nTabs(this,0);">资讯新闻(%num4%)</li><li class="normal" onclick="nTabs(this,1);">精彩影评(%num3%)</li></ul></div>
 							<div id="dt_Content0" style="overflow:hidden;z-index:2;">
 								<h4>影片动态(资讯新闻) <span class="f500">试试看 [%news%]</span></h4>
 								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div>%zixun%
@@ -93,12 +93,16 @@
 								<h4>影片动态(精彩影评) <span class="f500">还可以看 [%review%]</span></h4>
 								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div>%yingping%
 							</div>
-							<div id="dt_Content2" class="none" style="overflow:hidden;z-index:2;">
-								<h4>影片动态(预告花絮) <span class="f500">试试搜索 [%trailer%]</span></h4>
+						</div>
+						
+						<div style="position:relative;margin:15px 0 0 0" class="border1">
+							<div class="TabTitle lt35v10"><ul id="yg"><li class="active" onclick="nTabs(this,0);">预告花絮(%num2%)</li><li class="normal" onclick="nTabs(this,1);">活动购票(%ticketnum%)</li></ul></div>
+							<div id="yg_Content0" style="overflow:hidden;z-index:2;">
+								<h4>预告·活动(预告花絮) <span class="f500">试试搜索 [%trailer%]</span></h4>
 								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div>%tailer%
 							</div>
-							<div id="dt_Content3" class="none" style="overflow:hidden;z-index:2;">
-								<h4>影片动态(活动购票) <span class="f500">试试 [%piaozi%]</span></h4>
+							<div id="yg_Content1" class="none" style="overflow:hidden;z-index:2;">
+								<h4>预告·活动(活动购票) <span class="f500">试试 [%piaozi%]</span></h4>
 								<div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div>%buyticket%
 							</div>
 						</div>

@@ -148,7 +148,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
 
 	$onlinelinks=$linkstop1.getlinksmore($num1,$num,'onlinelinks',$onlinelinks,$innerpage);
-	$tailer=$linkstop1.getlinksmore($num2,$num,'tailer',$tailer,$innerpage);
+	$tailer=$linkstop1.getlinksmore($num2,5,'tailer',$tailer,$innerpage);
 	$zixun=$linkstop2.getlinksmore($num3,$num,'zixun',$zixun,$innerpage);
 	$yingping=$linkstop2.getlinksmore($num4,$num,'pinglun',$yingping,$innerpage);
 	

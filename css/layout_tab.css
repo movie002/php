@@ -305,12 +305,13 @@ padding: 0px;
 	position:absolute;
 	left:117px;
 	top:5px;
-	line-height:250%;
+	line-height:240%;
 	word-break:break-all;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
 	width:85%;
+	padding-bottom: 7px;	
 }
 
 .imglist2
