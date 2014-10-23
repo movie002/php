@@ -23,7 +23,12 @@
 				<span class="iframe_next" onclick="iframe_say.window.location.reload();">下一条</span>
 			</div>
 			<div id="title">
-				<div class="browse">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <a href="%cathref%" title="查看 中的全部文章">%cat%</a> >> %title% (%pubyear%) %mstatus%</div>
+				<div class="browse">
+					<span>您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <a href="%cathref%" title="查看 中的全部文章">%cat%</a> >> %title% (%pubyear%) %mstatus%</span>
+					<span>
+					<div class="bdsharebuttonbox" style="position:relative;left:200px"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a></div>
+					</span>
+				</div>
 				<div class="titlecontent">
 					<h1>%title% (%pubyear%)
 						<span style="font-size:14px;font-weight:normal">资源汇总,级别%way%</span>
@@ -53,9 +58,6 @@
 							<div>影片时长: %time% 类型:%tags% 语言:%language%</div>
 							<div>权威评分: <span>%jhb%%jhblinks%%ofsite%</span></div>
 							<div style="width:98%;overflow:hidden;"><a href="#title_5" title="点击跳转至人物图片和链接">影片人物</a>: %people%</div>
-							<div>
-								<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧">百度贴吧</a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">豆瓣网</a><a href="#" class="bds_hi" data-cmd="hi" title="分享到百度空间">百度空间</a><a href="#" class="bds_t163" data-cmd="t163" title="分享到网易微博">网易微博</a><a href="#" class="bds_diandian" data-cmd="diandian" title="分享到点点网">点点网</a><a href="#" class="bds_qy" data-cmd="qy" title="分享到奇艺奇谈">奇艺奇谈</a><a href="#" class="bds_ty" data-cmd="ty" title="分享到天涯社区">天涯社区</a></div>
-							</div>
 						</div>
 						<div id="article_index">
 							<div id="index_title">
@@ -70,9 +72,11 @@
 							</div>
 						</div>
 					</div>
-					<p style="width:100%">为方便广大%cat%《%title_key%》爱好者，%DH_name%提供其高清下载地址、在线观看、影评影讯等资源链接汇总。《%title_key%》(%akas%)%pubcompany%，于%pubdate%上映。情节大概是： <a id="summarya" onclick="showhide('summarya','summaryi','>>>','<<<');">>>></a></p>
-					<span id="summaryi" style="display:none"><p>%summary%，%more%。</p>	
-					<p>欢迎持续关注%catkeyword%,%title_key%下载,%title_key%在线观看等资源更新情况,由于资源全部由计算机自动完成收集和匹配,%DH_name%无法保证高清下载地址和在线观看等资源链接的真实性、正确性以及合法性，如果出现此类情况，希望广大影视爱好者体谅！<a onclick="hide('summarya','summaryi','>>>')"><<<</a> </p></span>
+					<div style="padding:10px 0">
+						<p style="width:100%">为方便广大%cat%《%title_key%》爱好者，%DH_name%提供其高清下载地址、在线观看、影评影讯等资源链接汇总。《%title_key%》(%akas%)%pubcompany%，于%pubdate%上映。情节大概是： <a id="summarya" onclick="showhide('summarya','summaryi','>>>','<<<');">>>></a></p>
+						<span id="summaryi" style="display:none"><p>%summary%，%more%。</p>
+						<p>欢迎持续关注%catkeyword%,%title_key%下载,%title_key%在线观看等资源更新情况,由于资源全部由计算机自动完成收集和匹配,%DH_name%无法保证高清下载地址和在线观看等资源链接的真实性、正确性以及合法性，如果出现此类情况，希望广大影视爱好者体谅！<a onclick="hide('summarya','summaryi','>>>')"><<<</a> </p></span>
+					</div>
 					<div id="entry_content" style="border-top:1px solid #999">
 						<div class="eh4" style="position:relative;margin:15px 0 0 0">影片资源列表，不断更新中 ... 如发现版权问题，请及时和我们联系!<span class="rt0v0 f500"> %thisupdatetime%</span></div>
 						<div style="margin:5px 0 0 0">									
