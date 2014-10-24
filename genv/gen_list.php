@@ -34,7 +34,7 @@ function dh_gen_list()
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);	
 //	$DH_output_content = str_replace("%weibo%",'',$DH_output_content);	
 
-	$datebegin = getupdatebegin(90);
+	$datebegin = getupdatebegin(60);
 	if (!file_exists($DH_output_index_path))  
 		mkdir($DH_output_index_path,0777);
 	
@@ -288,10 +288,12 @@ function dh_gen_each_file_onlylink($sql,$DH_catlist,$path,$cat,$catlink,$needcou
 	$DH_catlist_new = str_replace("%catlink%",$catlink,$DH_catlist_new);
 	
 	$count=0;
-	$results=dh_mysql_query($sql);			
+	$results=dh_mysql_query($sql);
+	//echo $sql;
 	$count = mysql_num_rows($results);
-	echo '共'.$count[0]."篇/".$pagecount;
-	$pages=ceil($count[0]/$pagecount);
+	//print_r($count);
+	echo '共'.$count."篇/".$pagecountonly;
+	$pages=ceil($count/$pagecountonly);
 	echo '/共'. $pages. "页</br>\n";	
 	$count=0;
 	if($results)
