@@ -177,20 +177,18 @@ function dh_gen_movie($DH_index_cat)
 			//超清资源
 			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_high($DH_index_cat_each,$movietype_index)."\n</div>\n";;
 			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">超清资源</li>';
-			$i++;		
+			$i++;
 		}
-		
 		//最新在线+最新下载		
 		$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;">'.dh_get_new($DH_index_cat_each,$movietype_index)."\n</div>\n";
 		$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">最新资源</li>';
 		$i++;
-		
+		//最新影评+最新新闻
+		$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link2($DH_index_cat_each,$movietype_index)."\n</div>\n";;
+		$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯/影评</li>';
+		$i++;
 		if($movietype_index==1)
-		{
-			//最新影评+最新新闻
-			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link2($DH_index_cat_each,$movietype_index)."\n</div>\n";;
-			$liout .="\n".'<li class="normal" onclick="nTabs(this,'.$i.');">资讯/影评</li>';
-			$i++;		
+		{		
 			//预告/购票/活动
 			$DH_index_cats_each.="\n".'<div id="myTab'.$movietype_index.'_Content'.$i.'" class="none" style="overflow:hidden;z-index:2;font-size:12px">'.dh_get_link($DH_index_cat_each,$movietype_index)."\n</div>\n";
 			$liout .='<li class="normal" onclick="nTabs(this,'.$i.');">预告/购票/活动</li>';
@@ -326,11 +324,15 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	$link = $DH_index_url.$movietype_index.'_yp/1.html';
 
 	$more='';
-	foreach($moviecountry as $key=>$eachcountry)
+	if($movietype_index==1||$movietype_index==2)
 	{
-		if($key===0)continue;
-		$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_yp/1.html">'.$eachcountry.'</a> &nbsp;';
-	}
+		$more='子类：';
+		foreach($moviecountry as $key=>$eachcountry)
+		{
+			if($key===0)continue;
+			$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_yp/1.html">'.$eachcountry.'</a> &nbsp;';
+		}
+	}	
 	$more.='<a href="'.$DH_index_url.$movietype_index.'_yp/1.html">全部</a> ';
 	
 	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新影评</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
@@ -342,12 +344,16 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	$link = $DH_index_url.$movietype_index.'_zx/1.html';
 	
 	$more='';
-	foreach($moviecountry as $key=>$eachcountry)
+	if($movietype_index==1||$movietype_index==2)
 	{
-		if($key===0)continue;
-		$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_zx/1.html">'.$eachcountry.'</a> &nbsp;';
+		$more='子类: ';
+		foreach($moviecountry as $key=>$eachcountry)
+		{
+			if($key===0)continue;
+			$more.='<a href="'.$DH_index_url.$movietype_index.'_'.$key.'_zx/1.html">'.$eachcountry.'</a> &nbsp;';
+		}
 	}
-	$more.='<a href="'.$DH_index_url.$movietype_index.'_yp/1.html">全部</a> ';
+	$more.='<a href="'.$DH_index_url.$movietype_index.'_zx/1.html">全部</a> ';
 	
 	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新资讯</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
 	$result2 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";	

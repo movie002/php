@@ -86,8 +86,8 @@ function readrssfile($buff)
 			preg_match("/<span class=\"weekly\">(.*?)<\/span>/i",$eachmovie,$match5);			
 			$boxofficeeach->weekmoney = $match5[1];
 			
-			preg_match("/<span class=\"sum\">(.*?)<\/span>/i",$eachmovie,$match6);				
-			$boxofficeeach->allmoney = $match6[1];
+			preg_match("/<span class=\"sum\">(.*?)<\/span>/is",$eachmovie,$match6);				
+			$boxofficeeach->allmoney = trim($match6[1]);
 			//print_r($boxofficeeach);
 			$outputPlace .= '<span class="list">'.$key."</span>";			
 			$outputPlace .= '<span class="name"><a href="'.$link.'" target="_blank" >'.$boxofficeeach->title."</a></span>";
