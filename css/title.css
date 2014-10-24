@@ -75,8 +75,8 @@ list-style:none;
 border-right:1px solid #898f8f;
 margin:0 3px 0 0;
 padding:0;
--moz-opacity:.9;
-opacity:.9
+-moz-opacity:.95;
+opacity:.95
 }
 
 .topnav li ul {
