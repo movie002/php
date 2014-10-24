@@ -149,8 +149,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 
 	$onlinelinks=$linkstop1.getlinksmore($num1,$num,'onlinelinks',$onlinelinks,$innerpage);
 	$tailer=$linkstop1.getlinksmore($num2,5,'tailer',$tailer,$innerpage);
-	$zixun=$linkstop2.getlinksmore($num3,$num,'zixun',$zixun,$innerpage);
-	$yingping=$linkstop2.getlinksmore($num4,$num,'pinglun',$yingping,$innerpage);
+	$zixun=$linkstop2.getlinksmore($num3,5,'zixun',$zixun,$innerpage);
+	$yingping=$linkstop2.getlinksmore($num4,5,'pinglun',$yingping,$innerpage);
 	
 	$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content_page);
 	$DH_output_content_page = str_replace('%downloadlinks%',$downloadlinks,$DH_output_content_page);
