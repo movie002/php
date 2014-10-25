@@ -61,11 +61,11 @@
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
 							
 							if($aid!='')
-								$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and l.author like '$aid' ";
+								$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and l.author like '$aid' order by l.updatetime desc ";
 							if($q!='')
-								$sql="select * from page where title like '%$q%' or aka like '%$q%' ";
+								$sql="select * from page where title like '%$q%' or aka like '%$q%' order by updatetime desc";
 							
-							$sql.="  order by l.updatetime desc limit 0,15";
+							$sql.=" limit 0,15";
 							
 							$results=dh_mysql_query($sql);
 							$count=0;
@@ -84,6 +84,7 @@
 									}
 									else
 									{
+										$updatef = date("m-d",strtotime($row['updatetime']));
 										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$htmlpath.'" target="_blank">'.$row['title'].'</a></span> <span class="rt100v2"><a href="'.$row['link'].'" target="_blank" rel="nofollow">'.$row['author'].'</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
 										echo $lieach;
 									}
