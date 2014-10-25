@@ -61,11 +61,9 @@
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
 							
 							if($aid!='')
-								$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and l.author like '$aid' order by l.updatetime desc ";
+								$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and l.author like '$aid' order by l.updatetime desc  limit 0,60";
 							if($q!='')
-								$sql="select * from page where title like '%$q%' or aka like '%$q%' order by updatetime desc";
-							
-							$sql.=" limit 0,15";
+								$sql="select * from page where title like '%$q%' or aka like '%$q%' order by updatetime desc  limit 0,15";
 							
 							$results=dh_mysql_query($sql);
 							$count=0;
