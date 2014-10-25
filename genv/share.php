@@ -189,6 +189,7 @@ function dh_gen_side($DH_home_url)
 	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
 	$DH_output_file = $DH_output_path. 'search.php';
 	dh_file_put_contents($DH_output_file,$DH_output);
+	
 	echo "gen search success !</br>\n";		
 }
 

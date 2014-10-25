@@ -7,17 +7,18 @@
 	
 	$active='';
 	$q='';
+	$aid='';
 	if( isset($_REQUEST['q']))
 	{
 		$q = htmlspecialchars($_REQUEST['q']);
 		$active=$q;
 	}
-	$aid='';
 	if( isset($_REQUEST['aid']))
 	{
 		$aid = htmlspecialchars($_REQUEST['aid']);
 		$active='资源网站 '.$aid.' 的最新资源列表';
 	}
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -58,13 +59,13 @@
 							
 							$DH_input_html  = $DH_html_path . 'list_each.html';
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
-							$sql="select * from page where ";							
-							if($aid!='')
-								$sql="select p.* from page p,link l where  p.id=l.pageid and l.author='$aid' order by l.updatetime desc limit 0,15 ";
-							if($q!='')
-								$sql.=" title like '%$q%' or aka like '%$q%' ";
 							
-							$sql.=" limit 0,15";
+							if($aid!='')
+								$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and l.author like '$aid' ";
+							if($q!='')
+								$sql="select * from page where title like '%$q%' or aka like '%$q%' ";
+							
+							$sql.="  order by l.updatetime desc limit 0,15";
 							
 							$results=dh_mysql_query($sql);
 							$count=0;
@@ -74,15 +75,23 @@
 								while($row = mysql_fetch_array($results))
 								{	
 									$count ++;
-									$DH_output_content_page = dh_replace_snapshot('list',$row,$DH_output_content,true);
-									$page_path = output_page_path($DH_html_url,$row['id']);
-									$DH_output_content_page = str_replace("%title_link%",$page_path,$DH_output_content_page);	
-									echo $DH_output_content_page;
+									if($q!='')
+									{
+										$DH_output_content_page = dh_replace_snapshot('list',$row,$DH_output_content,true);
+										$page_path = output_page_path($DH_html_url,$row['id']);
+										$DH_output_content_page = str_replace("%title_link%",$page_path,$DH_output_content_page);	
+										echo $DH_output_content_page;
+									}
+									else
+									{
+										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$htmlpath.'" target="_blank">'.$row['title'].'</a></span> <span class="rt100v2"><a href="'.$row['link'].'" target="_blank" rel="nofollow">'.$row['author'].'</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
+										echo $lieach;
+									}
 								}
 							}
 							mysql_close($conn);
 							if($count==0)
-								echo "</br>".'  <div style="text-align:center">好像没有相关资源哦！请更换关键词重新搜索，或者耐心等待，只要不断关注二手电影，就会第一时间得到资源，您不会失望哦！</div>'."</br>";
+								echo "</br>".'  <div style="text-align:center">好像没有相关资源哦！请更换关键词重新搜索，或者耐心等待，只要不断关注电影小二网，就会第一时间得到资源，您不会失望哦！</div>'."</br>";
 
 								echo '';
 						}
