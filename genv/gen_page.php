@@ -55,7 +55,7 @@ function dh_gen_page($days,$pageid)
 
 function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 {
-	global $DH_index_url,$conn,$linkquality,$linkway,$linktype,$DH_home_url,$DH_html_url;
+	global $DH_index_url,$conn,$linkquality,$linkway,$linktype,$DH_home_url,$DH_html_url,$DH_html_path;
 	
 	//从参数里面去的天数
 	$sqllast='';
@@ -75,6 +75,10 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 	{	
 		$count=0;
 		$queue = new Queue(9);
+		
+		$DH_input_html  = $DH_html_path . 'page_tmp.html';
+		$DH_output_content_tmp = dh_file_get_contents("$DH_input_html");		
+		
 		while($row = mysql_fetch_array($results))
 		{	
 			$count++;			
@@ -84,7 +88,12 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 				$queue->out_queue($queue);
 			$queue->en_queue($queue,$queueadd);
 			$others = others($queue); 
-			$DH_output_content_page = str_replace("%others%",$others,$DH_output_content);			
+			$DH_output_content_page = str_replace("%others%",$others,$DH_output_content);
+
+			//如果不是电影，不需要预告和购票
+			if($row['cattype']!= 1)
+				$DH_output_content_tmp='';
+			$DH_output_content_page = str_replace('%page_tmp%',$DH_output_content_tmp,$DH_output_content_page);
 			
 			$DH_output_content_page = dh_replace_snapshot('big',$row,$DH_output_content_page);
 			$DH_output_content_page = dh_replace_content($count,$row,$DH_output_content_page);
