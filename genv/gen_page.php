@@ -91,12 +91,10 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%others%",$others,$DH_output_content);
 
 			//如果不是电影，不需要预告和购票
-			echo "---".$row['cattype']."---";
 			if($row['cattype']!= 1)
 				$DH_output_content_tmp_each='';
 			else
 				$DH_output_content_tmp_each=$DH_output_content_tmp;
-			echo $DH_output_content_tmp_each;
 			$DH_output_content_page = str_replace('%page_tmp%',$DH_output_content_tmp_each,$DH_output_content_page);
 			
 			$DH_output_content_page = dh_replace_snapshot('big',$row,$DH_output_content_page);
