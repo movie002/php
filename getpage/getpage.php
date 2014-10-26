@@ -37,7 +37,7 @@ function getpage()
 	if(isset($_REQUEST['id']))
 	{
 		$pageid = $_REQUEST['id'];
-		$sql="select * from link where id=$pageid";	
+		$sql="select * from link where pageid=$pageid";	
 	}
 	if(isset($_REQUEST['link']))
 	{
