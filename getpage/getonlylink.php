@@ -17,7 +17,7 @@ mysql_close($conn);
 
 function getonlylink()
 {
-	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name";
+	$sql="select l.*,a.* from onlylink l,author a where l.author=a.name and l.fail<3 ";
 	if( isset($_REQUEST['d']))
 	{
 		$d = $_REQUEST['d'];
@@ -35,7 +35,7 @@ function getonlylink()
 		$sql .= " and mtitle is null";
 	}
 	
-	$sql .=' limit 0,200';
+	//$sql .=' limit 0,200';
 	
 	echo $sql."</br>\n";
 	
@@ -52,13 +52,26 @@ function getonlylink()
 		{
 			//linktype 不对，说明有问题不大
 			echo "linkway=".$row['clinkway']." % title=".$row['title']." link=".$row['link']." cat=".$row['cat']." -> linkway error 失败，请查明原因！</br> \n";
+			setfail($row);
 			continue;
 		}		
 		echo "\n".$row['title'];
-		if(getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
+		$movieall = getmoviemeta($row,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat']);
+		if($movieall==-1)
+		{
+			echo "movietype and country and year not right % cmovietype=".$row['cmovietype']." cmoviecountry=".$row['cmoviecountry']." mtitle=".$mtitle." ->  error 失败，请查明原因！</br> \n";
+			setfail($row);
 			continue;
+		}
 		echo "\n -->".$mtitle;
 		updateonlylink($row['author'],$row['title'],$row['link'],$row['cat'],$row['updatetime'],$mtitle,$moviecountry,$movieyear,$movietype);
 	}
+}
+
+function setfail($row)
+{
+	echo " no get onlylink set fail ++ ";
+	$sqlupdate = "update onlylink set fail = fail+1 where link = '".$row['link']."'" ;
+	dh_mysql_query($sqlupdate);	
 }
 ?>
