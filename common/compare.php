@@ -130,17 +130,18 @@ function c_title($title,$aka)
 	
 	//print_r($titles);
 	//print_r($akas);
-	//判断数字，加分
+	//一个由数字，一个没有数字，减分
 	$titlenum=getnumber($title);
 	if($titlenum!=-1)
 	{
 		echo ' titlenum==='.$titlenum;	
-		if(!(strstr($aka,$titlenum)===false))
+		if((strstr($aka,$titlenum)===false))
 		{
 			echo ' num is '.$titlenum.' in akas +0.5, ';
-			$rate+=0.5;
+			$rate-=0.2;
 		}
-	}	
+	}
+	
 	echo '// each title:';		
 	foreach($titles as $eachtitle)
 	{
