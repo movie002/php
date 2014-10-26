@@ -94,7 +94,8 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			if($row['cattype']!= 1)
 				$DH_output_content_tmp_each='';
 			else
-				$DH_output_content_tmp_each=$DH_output_content_tmp;	
+				$DH_output_content_tmp_each=$DH_output_content_tmp;
+			echo $DH_output_content_tmp_each;
 			$DH_output_content_page = str_replace('%page_tmp%',$DH_output_content_tmp_each,$DH_output_content_page);
 			
 			$DH_output_content_page = dh_replace_snapshot('big',$row,$DH_output_content_page);
