@@ -91,6 +91,7 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%others%",$others,$DH_output_content);
 
 			//如果不是电影，不需要预告和购票
+			echo "---".$row['cattype']."---";
 			if($row['cattype']!= 1)
 				$DH_output_content_tmp_each='';
 			else
