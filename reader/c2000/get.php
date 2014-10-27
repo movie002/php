@@ -14,7 +14,7 @@ require("ent.sina.com.cn.review.php");
 require("yule.sohu.com.php");
 require("www.gewara.com.news.php");
 require("www.gewara.com.activity.php");
-
+require("www.sfs-cn.com.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -33,6 +33,7 @@ ent_sina_com_cn_review_php();
 yule_sohu_com_php();
 www_gewara_com_news_php();
 www_gewara_com_activity_php();
+www_sfscn_com_php();
 
 mysql_close($conn);
 ?>

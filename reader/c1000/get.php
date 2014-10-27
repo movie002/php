@@ -13,7 +13,7 @@ require("www.dy2018.com.php");
 require("www.ed2000.com.php");
 require("www.etdown.net.php");
 require("www.piaohua.com.php");
-//require("www.somag.net.php");
+require("www.somag.net.php");
 require("www.mp4ba.com.php");
 require("www.dy558.com.php");
 require("www.quanji.com.php");
@@ -27,8 +27,8 @@ mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
 ////bbs_1ou_com_php();
+//www_bt5156_com_php();
 www_5281520_com_php();
-www_bt5156_com_php();
 www_bttiantang_com_php();
 www_dy2018_com_php();
 www_ed2000_com_php();
@@ -38,6 +38,7 @@ www_mp4ba_com_php();
 www_dy558_com_php();
 www_quanji_com_php();
 www_icili_com_php();
+www_somag_net_php();
 
 mysql_close($conn);
 ?>

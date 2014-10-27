@@ -73,17 +73,18 @@
 								while($row = mysql_fetch_array($results))
 								{	
 									$count ++;
+									$page_path = output_page_path($DH_html_url,$row['id']);
 									if($q!='')
 									{
 										$DH_output_content_page = dh_replace_snapshot('list',$row,$DH_output_content,true);
-										$page_path = output_page_path($DH_html_url,$row['id']);
+										//$page_path = output_page_path($DH_html_url,$row['id']);
 										$DH_output_content_page = str_replace("%title_link%",$page_path,$DH_output_content_page);	
 										echo $DH_output_content_page;
 									}
 									else
 									{
 										$updatef = date("m-d",strtotime($row['updatetime']));
-										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$htmlpath.'" target="_blank">'.$row['title'].'</a></span> <span class="rt100v2"><a href="'.$row['link'].'" target="_blank" rel="nofollow">'.$row['author'].'</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
+										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$page_path.'" target="_blank">'.$row['title'].'</a></span> <span class="rt100v2"><a href="'.$row['link'].'" target="_blank" rel="nofollow">'.$row['author'].'</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
 										echo $lieach;
 									}
 								}

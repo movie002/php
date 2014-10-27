@@ -62,9 +62,9 @@ function dh_gen_static($name)
 function dh_get_author($sql)
 {
 	global $linkquality,$linkway,$DH_home_url;
-
+	$datetoday =getupdatebegin(1);
 	$results=dh_mysql_query($sql);
-	$liout='<li> <span class="moviemeta">序号</span> <span class="lefttop40v2">网站</span><span class="rt500v2">今日资源</span> <span class="rt420v2">今日资讯</span> <span class="rt340v2">全部资源</span> <span class="rt260v2">全部资讯</span> <span class="rt180v2">失败次数</span><span class="rt5v2" >最后更新时间</span></li>';
+	$liout='<li> <span class="moviemeta">序号</span> <span class="lefttop40v2">网站</span><span class="rt500v2">近日资源</span> <span class="rt420v2">近日资讯</span> <span class="rt340v2">全部资源</span> <span class="rt260v2">全部资讯</span> <span class="rt180v2">失败次数</span><span class="rt5v2" >最后更新时间</span></li>';
 	if($results)
 	{			
 		while($row = mysql_fetch_array($results))
@@ -78,8 +78,6 @@ function dh_get_author($sql)
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount2 = mysql_fetch_array($lres);
 			
-			$datetoday =date("Y-m-d");
-			//$datetoday = date("Y-m-d  H:i:s",strtotime($datetoday));
 			$sqlcount="select count(*) from link where author='".$row['name']."' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount3 = mysql_fetch_array($lres);
