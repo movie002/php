@@ -67,7 +67,7 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
 	//echo $buff;
 	//查找所有的item
-	preg_match_all('/<item>([\s\S]*?)<\/item>/i',$buff,$match);
+	preg_match_all('/<item>([\s\S]*?)<\/item>/is',$buff,$match);
 	//print_r($match);
 	if(empty($match[1]))
 	{
@@ -87,7 +87,7 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 		}
 
 		$rssinfo->update = getrealtime($match2[1]);
-		if($rssinfo->update<=$lastupdate)
+		if($rssinfo->update<$lastupdate)
 		{
 			echo "爬取到已经爬取文章，爬取结束! </br>\n";
 			break;
