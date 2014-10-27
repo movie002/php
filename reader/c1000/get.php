@@ -18,6 +18,8 @@ require("www.mp4ba.com.php");
 require("www.dy558.com.php");
 require("www.quanji.com.php");
 require("www.icili.com.php");
+require("www.ygdy8.net.php");
+
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -27,7 +29,7 @@ mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
 ////bbs_1ou_com_php();
-//www_bt5156_com_php();
+////www_bt5156_com_php();
 www_5281520_com_php();
 www_bttiantang_com_php();
 www_dy2018_com_php();
@@ -39,6 +41,7 @@ www_dy558_com_php();
 www_quanji_com_php();
 www_icili_com_php();
 www_somag_net_php();
+www_ygdy8_net_php();
 
 mysql_close($conn);
 ?>
