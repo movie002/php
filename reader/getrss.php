@@ -49,7 +49,7 @@ function all()
 				if(false==$buff)
 				{
 					echo 'error: fail to get rss file !</br>';	
-					$sql="update author set failtimes=failtimes+1 where name = $rssinfo->author;";
+					$sql="update author set failtimes=failtimes+1 where name = '$rssinfo->author';";
 					$result=dh_mysql_query($sql);
 					continue;
 				}
@@ -65,10 +65,10 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	$buff =iconvbuff($buff);
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
-	echo $buff;
+	//echo $buff;
 	//查找所有的item
 	preg_match_all('/<item>([\s\S]*?)<\/item>/is',$buff,$match);
-	print_r($match);
+	//print_r($match);
 	if(empty($match[1]))
 	{
 		echo 'error: no get item result!';
