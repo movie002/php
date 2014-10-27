@@ -40,7 +40,7 @@ function www_dy2018_com_php()
 				$trueurl = $eachurl.'index.html';
 			else
 				$trueurl = $eachurl.'index_'.$i.'.html';
-				
+			sleep(5);
 			$buff = get_file_curl($trueurl);
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
