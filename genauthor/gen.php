@@ -37,7 +37,7 @@ function dh_gen_author()
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);	
 	
-	$sql="select * from author order by updatetime desc";
+	$sql="select * from author where rss>0 order by updatetime desc";
 	$authorlist=dh_get_author($sql);
 	
 	$DH_output_content = str_replace("%list_each%",$authorlist,$DH_output_content);
