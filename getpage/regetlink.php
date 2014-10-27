@@ -1,9 +1,10 @@
 <?php
-//利用link修改page的状态
+//将link中找出pageid之后， 修改link表
+//由于之前的匹配错误，使用新的算法重新匹配
 require("../config.php");
 require("../common/compare.php");
-require("../common/dbaction.php");
 require("../common/base.php");
+require("../common/dbaction.php");
 require("common.php");
 require("x11.php");
 
@@ -42,31 +43,37 @@ function getlink()
 		$link = $_REQUEST['link'];
 		$sql .="and link='$link'";	
 	}	
-	
+	$maxrate=0.9;
+	if(isset($_REQUEST['r']))
+	{
+		$maxrate = $_REQUEST['r'];
+	}	
 	echo $sql."</br>\n";
 	$count=0;
 	$results=dh_mysql_query($sql);
 	while($row = mysql_fetch_array($results))
 	{
 		$count++;
-		echo "\n".$count.": ";
-		$maxrate=1;
+		echo "\n".$count.": ".$row['title'].': '.$row['link'].': '.$row['cat'].' --> ';
 		$sqlauthor="select * from author where name='".$row['author']."'";
 		$resultsauthor=dh_mysql_query($sqlauthor);
 		$rowauthor = mysql_fetch_array($resultsauthor);		
 
-		//if(getmoviemeta($rowauthor,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
-		//	continue;
-		//echo '-->'.$mtitle;
-		//$pageid = getdbpageid($row['title'],$mtitle,$moviecountry,$movieyear,$movietype,$maxrate);
-		//continue;
-		//if($pageid>=0)
-		//{
+		if(getmoviemeta($rowauthor,$mtitle,$moviecountry,$movieyear,$movietype,$row['link'],$row['title'],$row['cat'])==-1)
+			continue;			
+		echo '-->'.$mtitle.$movietype.'/'.$moviecountry.'/'.$movieyear;
+		$pageid = getdbpageid($row['title'],$mtitle,$moviecountry,$movieyear,$movietype,$maxrate);
+		if($pageid>=0)
+		{
 			//查找资源质量
 			if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$linkvalue,$row['link'],$row['title'],$row['cat'])==-1)
 				continue;	
-			addorupdatelink($row['pageid'],$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,$row['updatetime']);
-			//addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,$row['updatetime']);
-		//}
+			addorupdatelink($pageid,$row['author'],$row['title'],$row['link'],$row['cat'],$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,$row['updatetime']);
+		}
+		else
+		{
+			$sqlupdate = "update link set pageid = null where link = '".$row['link']."'" ;
+			dh_mysql_query($sqlupdate);
+		}
 	}
 }
