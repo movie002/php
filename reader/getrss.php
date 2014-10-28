@@ -22,12 +22,7 @@ function all()
 	{
 		$id = $_REQUEST['id'];
 		$sql="select * from author where rss = 1 and id=$id";	
-	}		
-//	if(isset($_GET['id']))
-//	{
-//		$id = $_GET['id'];
-//		$sql="select * from author where rss = 1 and id=$id";	
-//	}
+	}
 	echo $sql."</br>\n";
 	$results=dh_mysql_query($sql);
 	if($results)
@@ -85,8 +80,8 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 			echo 'error: no get pubDate result!';
 			return;		
 		}
-
-		$rssinfo->update = getrealtime($match2[1]);
+		$rssinfo->update = date("Y-m-d H:i:s",strtotime(getrealtime($match2[1])));
+		echo $rssinfo->update;
 		if($rssinfo->update<$lastupdate)
 		{
 			echo "爬取到已经爬取文章，爬取结束! </br>\n";
@@ -234,6 +229,7 @@ function readrssfile($buff,$rssinfo,$lastupdate)
 
 function getrealname($name)
 {
+	//echo '----'.$name.'*****';
 	$name = preg_replace('/\<\!\[CDATA\[(.*?)\]\]\>/s','$1',trim($name));
 	return trim($name);
 }

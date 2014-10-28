@@ -150,8 +150,35 @@ function iconvbuffgbk($buff)
 }
 function getrealtime($timebuf)
 {
-	$timetobe=date("Y-m-d H:i:s",strtotime($timebuf));
-	$datenow = date("Y-m-d H:i:s");
+	if(strstr($timebuf,'星期'))
+	{
+		preg_match('/(20[0-9]{2})/s',$timebuf,$match);
+		//print_r($match);
+		$timereal = $match[1].'';
+
+		$cnmouth=array("一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月");
+		foreach($cnmouth as $key=>$eachmouth)
+		{
+			if(strstr($timebuf,$eachmouth))
+			{
+				$timereal .= '-'.$key;	
+				break;
+			}
+		}
+
+		preg_match('/([0-9]{2})/s',$timebuf,$match);
+		//print_r($match);
+		$timereal .= '-'.$match[1];
+		
+		preg_match('/([0-9]{2}\:[0-9]{2}:[0-9]{2})/s',$timebuf,$match);
+		//print_r($match);
+		$timereal .= ' '.$match[1];
+	}
+	else
+		$timereal = $timebuf;
+	echo $timereal;
+	$timetobe=date("Y-m-d H:i:s",strtotime($timereal));
+	$datenow = date("Y-m-d H:i:s",strtotime("-1 day"));
 	if($timetobe > $datenow)
 		return $datenow;
 	return $timetobe;
