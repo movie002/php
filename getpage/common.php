@@ -193,7 +193,7 @@ function changetitle($title)
 	echo "mm4:".$title."\n";	
 	//用容量大小作为间隔
 	$title = preg_replace('/[^a-z]([0-9\.\s]+(GB|MB|G|M))[^a-z]/sui','/',$title);		
-	//用存数字作为间隔
+	//用纯数字作为间隔
 	$title = preg_replace('/([^a-z])([0-9\sⅠⅡⅢ]+)([^a-z])/su','$1/$3',$title);
 	echo "mm41:".$title."\n";	
 	
@@ -205,7 +205,7 @@ function changetitle($title)
 	//：，！:,分开
 	
 //处理符号	
-	$title = preg_replace('/(：|，|！|:|,|!|－|·|\+)/su','/',$title);
+	$title = preg_replace('/(：|，|！|:|,|!|－|、|·|\+)/su','/',$title);
 	echo "mm7:".$title."\n";	
 	$title = preg_replace('/(★|◆|×|●|•|\*)/su','/',$title);
 	echo "mm8:".$title."\n";
