@@ -74,14 +74,19 @@ function dh_get_author($sql)
 			$sqlcount="select count(*) from link where author='".$row['name']."' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount1 = mysql_fetch_array($lres);
-			$sqlcount="select count(*) from link where author='".$row['name']."' and (linkway=1 or linkway=2)";
+			$sqlcount="select count(*) from link where author='".$row['name']."' and !(linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount2 = mysql_fetch_array($lres);
 			
-			$sqlcount="select count(*) from link where author='".$row['name']."' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";
+			//先处理updatetime
+			$authorname=$row['name'];
+			$sqlup="update author set updatetime = (select max(updatetime) from link where author='$authorname') where name='$authorname'";
+			$lres=dh_mysql_query($sqlcount);			
+			
+			$sqlcount="select count(*) from link where author='$authorname' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount3 = mysql_fetch_array($lres);
-			$sqlcount="select count(*) from link where author='".$row['name']."' and updatetime >= '$datetoday' and (linkway=1 or linkway=2)";
+			$sqlcount="select count(*) from link where author='$authorname' and updatetime >= '$datetoday' and !(linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
 			$linkcount4 = mysql_fetch_array($lres);
 			
