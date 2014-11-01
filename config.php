@@ -107,7 +107,7 @@ function dh_get_catkeyword($type,$title)
 function dh_get_title($type,$title)
 {
 	if($type==1)
-		$cat =$title.'电影(%pubyear%)_下载地址等资源汇总';
+		$cat =$title.'电影(%pubyear%)下载地址等资源汇总';
 	if($type==2)
 		$cat =$title.'电视剧全集_在线观看等资源汇总';
 	if($type==3)
