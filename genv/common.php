@@ -2,7 +2,7 @@
 function dh_replace_link($sql,$row,$DH_output_content)
 {
 	global $linktype,$linkway,$linkquality,$linkdownway;
-	$num = 8;//内部分页的分页内条数
+	$num = 5;//内部分页的分页内条数
 	$DH_output_content_page ='';
 	$downloadlinks = '';
 	$downloadlinks0 = '';$num00=0;
@@ -148,9 +148,9 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
 
 	$onlinelinks=$linkstop1.getlinksmore($num1,$num,'onlinelinks',$onlinelinks,$innerpage);
-	$tailer=$linkstop1.getlinksmore($num2,5,'tailer',$tailer,$innerpage);
-	$zixun=$linkstop2.getlinksmore($num3,5,'zixun',$zixun,$innerpage);
-	$yingping=$linkstop2.getlinksmore($num4,5,'pinglun',$yingping,$innerpage);
+	$tailer=$linkstop1.getlinksmore($num2,$num,'tailer',$tailer,$innerpage);
+	$zixun=$linkstop2.getlinksmore($num3,$num,'zixun',$zixun,$innerpage);
+	$yingping=$linkstop2.getlinksmore($num4,$num,'pinglun',$yingping,$innerpage);
 	
 	$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content_page);
 	$DH_output_content_page = str_replace('%downloadlinks%',$downloadlinks,$DH_output_content_page);
