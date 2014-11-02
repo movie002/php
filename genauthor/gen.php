@@ -62,7 +62,7 @@ function dh_gen_static($name)
 function dh_get_author($sql)
 {
 	global $linkquality,$linkway,$DH_home_url;
-	$datetoday =getupdatebegin(1);
+	$datetoday =getupdatebegin(2);
 	$results=dh_mysql_query($sql);
 	$liout='<li> <span class="moviemeta">序号</span> <span class="lefttop40v2">网站</span><span class="rt500v2">近日资源</span> <span class="rt420v2">近日资讯</span> <span class="rt340v2">全部资源</span> <span class="rt260v2">全部资讯</span> <span class="rt180v2">失败次数</span><span class="rt5v2" >最后更新时间</span></li>';
 	if($results)
