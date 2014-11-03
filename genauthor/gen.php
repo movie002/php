@@ -69,7 +69,7 @@ function dh_get_author($sql)
 	{			
 		while($row = mysql_fetch_array($results))
 		{
-			echo 'genauthor:'.$row['name']."\n";
+			echo "\n".'genauthor:'.$row['name'];
 			//查找资源的数目
 			$sqlcount="select count(*) from link where author='".$row['name']."' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
@@ -81,7 +81,7 @@ function dh_get_author($sql)
 			//先处理updatetime
 			$authorname=$row['name'];
 			$sqlup="update author set updatetime = (select max(updatetime) from link where author='$authorname') where name='$authorname'";
-			echo $sqlup;
+			#echo $sqlup;
 			$lres=dh_mysql_query($sqlcount);			
 			
 			$sqlcount="select count(*) from link where author='$authorname' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";

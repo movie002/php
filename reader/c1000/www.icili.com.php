@@ -50,7 +50,8 @@ function www_icili_com_php()
 			$rssinfo->author = $authorname;			
 			foreach ($match0[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =$match1[1][$key2];
+				//$rssinfo->update =date("Y-m-d H:i:s",strtotime($match1[1][$key2].':00'));
+				$rssinfo->update = getrealtime($match1[1][$key2].':00');
 				if($rssinfo->update<$updatetime[$key])
 				{
 					///由于置顶和推荐导致时间小的放在前面，这里固定爬取2页,保证爬到

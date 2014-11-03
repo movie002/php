@@ -178,7 +178,8 @@ function getrealtime($timebuf)
 		$timereal = $timebuf;
 	echo $timereal;
 	$timetobe=date("Y-m-d H:i:s",strtotime($timereal));
-	$datenow = date("Y-m-d H:i:s",strtotime("-1 day"));
+	$datenow = date("Y-m-d H:i:s",strtotime("+1 day"));
+	//$datenow = date("Y-m-d H:i:s");
 	if($timetobe > $datenow)
 		return $datenow;
 	return $timetobe;
