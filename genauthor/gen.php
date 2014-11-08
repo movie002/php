@@ -80,8 +80,10 @@ function dh_get_author($sql)
 			
 			//先处理updatetime
 			$authorname=$row['name'];
-			$sqlup="update author set updatetime = (select max(updatetime) from link where author='$authorname') where name='$authorname'";
-			#echo $sqlup;
+			$sqlup="select max(updatetime) from link where author='$authorname'";
+			$lres=dh_mysql_query($sqlup);
+			$lupdatetime = mysql_fetch_array($lres);			
+			$sqlup="update author set updatetime = '$lupdatetime' where name='$authorname'";
 			$lres=dh_mysql_query($sqlup);			
 			
 			$sqlcount="select count(*) from link where author='$authorname' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";
@@ -92,7 +94,7 @@ function dh_get_author($sql)
 			$linkcount4 = mysql_fetch_array($lres);
 			
 			//$numlink = $linkcount1[0]+$linkcount2[0];
-			$updatef = date("Y-m-d H:i:s",strtotime($row['updatetime']));
+			$updatef = date("Y-m-d H:i:s",strtotime($lupdatetime);
 			$name = rawurlencode($row['name']);
 			$lieach = '<li> <span class="moviemeta">['.$row['id'].']</span> <span class="lefttop40v2"> <a href="'.$row['url'].'" target="_blank">'.$row['name'].'</a> (<a href="'.$DH_home_url.'search.php?aid='.$name.'" target="_blank">资源列表</a>)</span><span class="rt500v2">'.$linkcount3[0].'</span><span class="rt420v2">'.$linkcount4[0].'</span><span class="rt340v2">'.$linkcount1[0].'</span><span class="rt260v2">'.$linkcount2[0].'</span> <span class="rt180v2">'.$row['failtimes'].'</span><span class="rt5v2" > '.$updatef.'</span></li>';			
 			$liout.= $lieach;
