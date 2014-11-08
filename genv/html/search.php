@@ -24,7 +24,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>搜索结果(二手电影)</title>
+	<title>搜索结果-电影小二网</title>
 	<meta name="keywords" content="二手电影网中包含 <?php echo $active ?> 搜索结果" />
 	<meta name="description" content="二手电影网中包含 <?php echo $active ?> 的搜索结果的展示" />
 	%meta%		
@@ -73,7 +73,7 @@
 								while($row = mysql_fetch_array($results))
 								{	
 									$count ++;
-									$page_path = output_page_path($DH_html_url,$row['id']);
+									$page_path = output_page_path($DH_html_url,$row['pageid']);
 									if($q!='')
 									{
 										$DH_output_content_page = dh_replace_snapshot('list',$row,$DH_output_content,true);
@@ -84,7 +84,7 @@
 									else
 									{
 										$updatef = date("m-d",strtotime($row['updatetime']));
-										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$page_path.'" target="_blank">'.$row['title'].'</a></span> <span class="rt100v2"><a href="'.$row['link'].'" target="_blank" rel="nofollow">'.$row['author'].'</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
+										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$row['link'].'" target="_blank">'.$row['title'].'['.$row['author'].']</a></span> <span class="rt100v2"><a href="'.$$page_path.'" target="_blank" rel="nofollow">资源汇总页面</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
 										echo $lieach;
 									}
 								}
