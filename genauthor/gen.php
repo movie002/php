@@ -80,13 +80,9 @@ function dh_get_author($sql)
 			
 			//先处理updatetime
 			$authorname=$row['name'];
-			$sqllinkupdate="select max(updatetime) from link where author='$authorname'";
-			$lres=dh_mysql_query($sqllinkupdate);
-			$lupdatetime = mysql_fetch_array($lres);
-			$sqlup="update author set updatetime = '$lupdatetime ' where name='$authorname'";
-			
+			$sqlup="update author set updatetime = (select max(updatetime) from link where author='$authorname') where name='$authorname'";
 			#echo $sqlup;
-			$lres=dh_mysql_query($sqlcount);			
+			$lres=dh_mysql_query($sqlup);			
 			
 			$sqlcount="select count(*) from link where author='$authorname' and updatetime >= '$datetoday' and (linkway=6 or linkway=7)";
 			$lres=dh_mysql_query($sqlcount);
