@@ -83,7 +83,7 @@ function dh_get_author($sql)
 			$sqlup="select max(updatetime) from link where author='$authorname'";
 			$lres=dh_mysql_query($sqlup);
 			$lupdatetime = mysql_fetch_array($lres);			
-			$updatef = date("Y-m-d H:i:s",strtotime($lupdatetime));
+			$updatef = date("Y-m-d H:i:s",strtotime($lupdatetime[0]));
 			$sqlup="update author set updatetime = '$updatef' where name='$authorname'";
 			$lres=dh_mysql_query($sqlup);			
 			
