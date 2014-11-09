@@ -60,7 +60,7 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	$buff =iconvbuff($buff);
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
-	//echo $buff;
+	echo $buff;
 	//查找所有的item
 	preg_match_all('/<item>([\s\S]*?)<\/item>/is',$buff,$match);
 	//print_r($match);
@@ -81,7 +81,7 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 			return;		
 		}
 		$rssinfo->update = date("Y-m-d H:i:s",strtotime(getrealtime($match2[1])));
-		echo $rssinfo->update;
+		//echo $rssinfo->update;
 		if($rssinfo->update<$lastupdate)
 		{
 			echo "爬取到已经爬取文章，爬取结束! </br>\n";
@@ -145,8 +145,7 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 		//print_r($rssinfo);
 		insertonlylink($rssinfo);
 	}
-
-	setupdatetime($change,$newdate,$rssinfo->author);
+	//setupdatetime($change,$newdate,$rssinfo->author);
 }
 
 function readrssfile($buff,$rssinfo,$lastupdate)
