@@ -1,19 +1,13 @@
 <?php
 function www_vvtor_com_php()
 {
-	$authorname='爱磁力';
+	$authorname='思享';
 	print_r($authorname);
 	
-	$authorurl='http://www.icili.com';
+	$authorurl='http://www.vvtor.com';
 
-	$url = array('http://www.icili.com/emule/movie/',
-				'http://www.icili.com/emule/series/',
-				'http://www.icili.com/emule/cartoon/',
-				'http://www.icili.com/emule/tv/');
-	$urlcat= array('电影',
-			'剧集',
-			'动漫',
-			'综艺');
+	$url = array('http://www.vvtor.com/daily');
+	$urlcat= array('电影');
 			
 	print_r($url);
 	$updatetime = getupdatetime($urlcat,$authorname);
@@ -23,22 +17,21 @@ function www_vvtor_com_php()
 	{
 		$change = true;
 		$i=0;
-		while($change&&$i<3)
+		while($change&&$i<1)
 		{
 			$i++;
-			$trueurl = $eachurl.$i;
+			$trueurl = $eachurl;
 				
 			$buff = geturl($trueurl,$authorname);
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
 				continue;				
 
-				echo "crawl ".$trueurl." </br>\n";
+			echo "crawl ".$trueurl." </br>\n";
 			//print_r($buff);
-			preg_match_all('/title="精华资源"><a href="(.*?)" title="(.*?)">(.*?)<\/a><\/h4>/s',$buff,$match0);				
-			preg_match_all('/<p>发布时间：(.*?) 更新时间：(.*?)<\/p>/s',$buff,$match1);	
+			
+			preg_match_all('/<h2 class="entry\-title"><a href="(.*?)" title="(.*?)" rel="bookmark" target="\_blank">(.*?)<\/a><\/h2>/s',$buff,$match0);				
 			//print_r($match0);
-			//print_r($match1);
 
 			if(empty($match0[2]))
 			{
@@ -50,7 +43,7 @@ function www_vvtor_com_php()
 			$rssinfo->author = $authorname;			
 			foreach ($match0[2] as $key2=>$div)			
 			{	
-				$rssinfo->update =$match1[1][$key2];
+				$rssinfo->update = date("Y-m-d H:i:s");
 				if($rssinfo->update<$updatetime[$key])
 				{
 					///由于置顶和推荐导致时间小的放在前面，这里固定爬取2页,保证爬到
@@ -62,7 +55,7 @@ function www_vvtor_com_php()
 				if($newdate<$rssinfo->update)
 					$newdate = $rssinfo->update;
 				$rssinfo->cat = $urlcat[$key];
-				$rssinfo->link = $authorurl.trim($match0[1][$key2]);
+				$rssinfo->link =trim($match0[1][$key2]);
 				$rssinfo->title = trim($match0[2][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);

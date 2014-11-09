@@ -84,7 +84,7 @@
 									else
 									{
 										$updatef = date("m-d",strtotime($row['updatetime']));
-										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$row['link'].'" target="_blank">'.$row['title'].'['.$row['author'].']</a></span> <span class="rt100v2"><a href="'.$$page_path.'" target="_blank" rel="nofollow">资源汇总页面</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
+										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$row['link'].'" target="_blank">'.$row['title'].'['.$row['author'].']</a></span> <span class="rt100v2"><a href="'.$page_path.'" target="_blank" rel="nofollow">汇总页面</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
 										echo $lieach;
 									}
 								}
