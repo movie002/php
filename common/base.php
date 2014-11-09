@@ -176,7 +176,7 @@ function getrealtime($timebuf)
 	}
 	else
 		$timereal = $timebuf;
-	echo $timereal;
+	//echo $timereal;
 	$timetobe=date("Y-m-d H:i:s",strtotime($timereal));
 	$datenow = date("Y-m-d H:i:s",strtotime("+1 day"));
 	//$datenow = date("Y-m-d H:i:s");
