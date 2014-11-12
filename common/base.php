@@ -192,4 +192,15 @@ function ftrim2($str)
     $str = preg_replace('/^\s*|\s*$/is', '', $str); //将开头或结尾的一个或多个半角空格转换为空  
     return $str;
 }
+//从一个相对路径到一个绝对路径
+function getnewurl($base,$after)
+{
+	$lasturl=$after;
+	$after = trim($after);
+	if($after[0]!='h')
+	{
+		$lasturl = $base.$after;
+	}
+	return $lasturl;
+}
 ?>

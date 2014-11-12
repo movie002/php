@@ -27,7 +27,7 @@ news_mtime_com_php();
 www_mtime_com_review_php();
 www_mtime_com_trailer_php();
 www_hunantv_com_php();
-//ent_ifeng_com_php();
+ent_ifeng_com_php();
 ent_163_com_php();
 ent_sina_com_cn_review_php();
 yule_sohu_com_php();

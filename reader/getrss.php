@@ -34,21 +34,12 @@ function all()
 			echo "\n".$row['id'].' -- '.$row['name'].'的全部文章:'.$row['rssurl']."</br>\n";
 			$rssinfo->author=$row['name'];
 			$lastupdate=$row['updatetime'];			
-			
-			$buff = get_file_curl($row['rssurl']);
-			//如果失败，就使用就标记失败次数
-			if($buff == false)
-			{
-				sleep(5);
-				$buff = get_file_curl($row['rssurl']);
-				if(false==$buff)
-				{
-					echo 'error: fail to get rss file !</br>';	
-					$sql="update author set failtimes=failtimes+1 where name = '$rssinfo->author';";
-					$result=dh_mysql_query($sql);
-					continue;
-				}
-			}
+			//$buff = geturl($row['rssurl'],$row['name']);
+			$buff = geturljsjump($row['url'],$row['rssurl'],$row['name'],0);
+			if(!$buff)
+				continue;
+				
+			//开始处理得到的结果
 			//readrssfile($buff,$rssinfo,$authorid,$lastupdate);
 			pregrssfile($buff,$rssinfo,$row['url'],$lastupdate);
         }
@@ -58,9 +49,9 @@ function all()
 function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 {
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
-	$buff =iconvbuff($buff);
+	//$buff =iconvbuff($buff);
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
-	echo $buff;
+	//echo $buff;
 	//查找所有的item
 	preg_match_all('/<item>([\s\S]*?)<\/item>/is',$buff,$match);
 	//print_r($match);

@@ -318,7 +318,7 @@ function dh_gen_each_file_onlylink($sql,$DH_catlist,$path,$cat,$catlink,$needcou
 			{
 				$countrymeta=' <a class="vtop" href="'.$DH_index_url.$row['cattype'].'_'.$row['catcountry'].'_'.$needcountrytype.'/1.html">['.$moviecountry[$row['catcountry']].']</a> ';
 			}
-			$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$row['link'].'" target="_blank">'.$row['title'].'['.$row['author'].']</a></span> <span class="rt100v2"><a href="'.$htmlpath.'" target="_blank" rel="nofollow">资源汇总</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';			
+			$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$row['link'].'" target="_blank" rel="nofollow">'.$row['title'].'['.$row['author'].']</a></span> <span class="rt100v2"><a href="'.$htmlpath.'" target="_blank" >资源汇总</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';			
 			$liout.= $lieach;
 			if($count%$pagecountonly==0)
 			{

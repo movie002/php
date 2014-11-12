@@ -418,8 +418,8 @@ function dh_get_movie_type_onlylink($sql)
 				$titlea='title="'.$title.'"';
 				$title=mb_substr($title,0,20,'UTF-8').'...';
 			}
-			$lieach = "\n".'<li><span class="line1"><span class="f12px">['.$linkway[$row['linkway']].']</span> <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a><span class="f12px"> (<a href="'.$row['link'].'" rel="nofollow" target="_blank">'.$row['author'].' 的链接</a>)</span></span><span class="rt5v2">'.$update.'</span></li>';
-			$liout.= $lieach;		
+			$lieach = "\n".'<li><span class="line1"><span class="f12px">['.$linkway[$row['linkway']].']</span> <a href="'.$row['link'].'" target="_blank" '.$titlea.' rel="nofollow" >'.$title.'['.$row['author'].']</a><span class="f12px"> (<a href="'.$htmlpath.'"target="_blank">汇总页面</a>)</span></span><span class="rt5v2">'.$update.'</span></li>';
+			$liout.= $lieach;
 		}
 		$liout.= "\n</ol>";	
 	}

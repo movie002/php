@@ -38,6 +38,7 @@ function dh_gen_author()
 	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);	
 	
 	$sql="select * from author where rss>0 order by updatetime desc";
+	dh_update_author($sql);
 	$authorlist=dh_get_author($sql);
 	
 	$DH_output_content = str_replace("%list_each%",$authorlist,$DH_output_content);
@@ -57,6 +58,26 @@ function dh_gen_static($name)
 	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);	
 	$DH_output_file = $DH_author_path.$name.'.html';
 	dh_file_put_contents($DH_output_file,$DH_output_content);
+}
+
+function dh_update_author($sql)
+{
+	$results=dh_mysql_query($sql);
+	if($results)
+	{			
+		while($row = mysql_fetch_array($results))
+		{
+			echo "\n".'updateauthor:'.$row['name'];			
+			//先处理updatetime
+			$authorname=$row['name'];
+			$sqlup="select max(updatetime) from link where author='$authorname'";
+			$lres=dh_mysql_query($sqlup);
+			$lupdatetime = mysql_fetch_array($lres);			
+			$updatef = date("Y-m-d H:i:s",strtotime($lupdatetime[0]));
+			$sqlup="update author set updatetime = '$updatef' where name='$authorname'";
+			$lres=dh_mysql_query($sqlup);
+		}
+	}
 }
 
 function dh_get_author($sql)
