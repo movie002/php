@@ -31,9 +31,10 @@ function get_file_curl($url)
 	
 //	curl_setopt($ch, CURLOPT_PROXY,"http://172.28.89.1:8080");	
 	//爬取网站时需要的cookie
-	//$cookie_jar = tempnam('./tmp','JSESSIONID');	
-	curl_setopt($ch, CURLOPT_COOKIEJAR, "cookie.txt");
-	curl_setopt($ch, CURLOPT_COOKIEFILE, "cookie.txt");
+	//$cookie_jar = tempnam('./tmp','JSESSIONID');
+	$cookie_jar = $_SERVER['DOCUMENT_ROOT'].'/cookie.jar';
+	curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_jar);
+	curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie_jar);
 	curl_setopt($ch, CURLOPT_URL, $url);
 //	curl_setopt($ch, CURLOPT_HEADER, 1);	
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
