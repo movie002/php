@@ -33,6 +33,7 @@ function get_file_curl($url)
 	//爬取网站时需要的cookie
 	//$cookie_jar = tempnam('./tmp','JSESSIONID');
 	$cookie_jar = $_SERVER['DOCUMENT_ROOT'].'/php/cookie.jar';
+	echo $cookie_jar;
 	curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_jar);
 	curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie_jar);
 	curl_setopt($ch, CURLOPT_URL, $url);
