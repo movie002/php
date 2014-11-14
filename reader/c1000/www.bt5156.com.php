@@ -7,30 +7,16 @@ function www_bt5156_com_php()
 	$urlcat= array('最新电影下载','迅雷电影资源','华语剧集专区','日韩剧集专区','欧美剧集专区','迅雷综艺节目','迅雷动漫资源');
 	
 	//寻找各自的updatetime	
-	$updatetime = array();	
-	foreach ($urlcat as $eachurlcat)
-	{
-		$sql="select max(updatetime) from link where author='$authorname' and cat = '".$eachurlcat."'";
-		$sqlresult=dh_mysql_query($sql);
-		$row = mysql_fetch_array($sqlresult);
-		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
-	}
-	print_r($updatetime);
+	$updatetime = getupdatetime($urlcat,$authorname);
 		
 		
-	$buff = get_file_curl($authorurl);
+	$buff = geturl($trueurl,$authorname);
 	//如果失败，就使用就标记失败次数
 	if(!$buff)
-	{
-		echo 'error: fail to get file '.$author->rssurl."!</br>\n";	
-		$sql="update author set failtimes=failtimes+1 where name='$authorname';";
-		$result=dh_mysql_query($sql);
-		return;
-	}		
-	$buff = iconvbuff($buff);
+		continue;	
+		
 	$rssinfo = new rssinfo();
 	$rssinfo->author = $authorname;
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	
 	$change = false;	
 	preg_match_all("/<table[^>]*+>([^<]*+(?:(?!<\/?+table)<[^<]*+)*+)<\/table>/i",$buff,$match);
@@ -61,8 +47,7 @@ function www_bt5156_com_php()
 					//continue;
 				}
 				$change = true;
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
+				
 					
 				preg_match("/\[<a href=\".*?\">(.*?)<\/a>\]/i",$match2[1][0],$match3);
 				//print_r($match3);
@@ -76,6 +61,5 @@ function www_bt5156_com_php()
 			}			
 		}
 	}
-	setupdatetime($change,$newdate,$authorname);
 }
 ?>

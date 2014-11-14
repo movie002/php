@@ -14,17 +14,9 @@ function www_ed2000_com_php()
 			'动漫',
 			'综艺');	
 	print_r($url);
-	$updatetime = array();	
-	foreach ($urlcat as $eachurlcat)
-	{
-		$sql="select max(updatetime) from link where author='$authorname' and cat like '%".$eachurlcat."%'";
-		$sqlresult=dh_mysql_query($sql);
-		$row = mysql_fetch_array($sqlresult);
-		array_push($updatetime,date("Y-m-d H:i:s",strtotime($row[0])));
-	}
-	print_r($updatetime);
+	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$change = true;
@@ -32,17 +24,10 @@ function www_ed2000_com_php()
 		while($change&&$i<6)
 		{
 			$trueurl = $eachurl.'&PageIndex='.$i;
-			$buff = get_file_curl($trueurl);
+			$buff = geturl($trueurl,$authorname);
 			//如果失败，就使用就标记失败次数
 			if(!$buff)
-			{
-				echo 'error: fail to get file '.$trueurl."!</br>\n";	
-				$sql="update author set failtimes=failtimes+1 where name='$authorname';";
-				$result=dh_mysql_query($sql);
-				$i++;
-				continue;
-			}
-			$buff = iconvbuff($buff);
+				continue;	
 			$rssinfo = new rssinfo();
 			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
@@ -65,8 +50,7 @@ function www_ed2000_com_php()
 					break;
 					//continue;
 				}
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
+				
 				$cat = trim($match[1][$key2]);
 				if($urlcat[$key]==='动漫')
 					if($cat!='电视动画'&&$cat!='剧场动画'&&$cat!='OVA'&&$cat!='新番连载')
@@ -90,6 +74,5 @@ function www_ed2000_com_php()
 			$i++;
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

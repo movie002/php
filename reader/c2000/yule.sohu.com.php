@@ -14,7 +14,6 @@ function yule_sohu_com_php()
 	//寻找各自的updatetime	
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	foreach ($url as $key=>$eachurl)
 	{
 		$trueurl=$eachurl;
@@ -45,8 +44,6 @@ function yule_sohu_com_php()
 				break;
 				//continue;
 			}
-			if($newdate<$rssinfo->update)
-				$newdate = $rssinfo->update;
 			$rssinfo->cat =trim($urlcat[$key]);
 			$rssinfo->link =trim($match[1][$key2]);
 			$rssinfo->title = trim($match[2][$key2]);
@@ -54,6 +51,5 @@ function yule_sohu_com_php()
 			insertonlylink($rssinfo);
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

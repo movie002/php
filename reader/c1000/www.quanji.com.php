@@ -11,7 +11,7 @@ function www_quanji_com_php()
 	$urlcat= array('');
 	print_r($url);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$change = true;
@@ -42,8 +42,7 @@ function www_quanji_com_php()
 				$matchdate=str_replace('<em>',"",$match0[1][$key2]); 
 				$matchdate=str_replace('</em>',"",$matchdate);				
 				$rssinfo->update =date('Y-').$matchdate;			
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
+				
 				//$rssinfo->cat = trim($urlcat[$key]).trim($match3[1][$key2]);
 				$rssinfo->link = trim($match0[2][$key2]);
 				$rssinfo->title = trim($match0[3][$key2]);
@@ -52,6 +51,5 @@ function www_quanji_com_php()
 			}
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

@@ -19,6 +19,7 @@ function www_51oscar_com_php()
 		$i=0;
 		while($change&&$i<3)
 		{
+			sleep(2);
 			$i++;
 			$trueurl = $eachurl.$i.'/list.shtml';
 				

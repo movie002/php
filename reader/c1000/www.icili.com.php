@@ -18,7 +18,7 @@ function www_icili_com_php()
 	print_r($url);
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$change = true;
@@ -60,8 +60,7 @@ function www_icili_com_php()
 					//break;
 					continue;
 				}				
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
+				
 				$rssinfo->cat = $urlcat[$key];
 				$rssinfo->link = $authorurl.trim($match0[1][$key2]);
 				$rssinfo->title = trim($match0[2][$key2]);
@@ -70,6 +69,5 @@ function www_icili_com_php()
 			}
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

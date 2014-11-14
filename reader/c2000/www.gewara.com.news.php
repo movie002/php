@@ -9,7 +9,7 @@ function www_gewara_com_news_php()
 	print_r($url);
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$change = true;
@@ -39,8 +39,7 @@ function www_gewara_com_news_php()
 			foreach ($match0[2] as $key2=>$div)			
 			{	
 				$rssinfo->update =date("Y-m-d H:i:s",strtotime($match1[1][$key2].'-'.$match1[2][$key2].'-'.$match1[3][$key2]));
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
+				
 				$rssinfo->cat = trim($urlcat[$key]);
 				$rssinfo->link = $authorurl.trim($match0[1][$key2]);
 				$rssinfo->title = trim($match0[2][$key2]);
@@ -49,7 +48,5 @@ function www_gewara_com_news_php()
 			}
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
-	return;	
 }
 ?>

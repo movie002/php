@@ -34,14 +34,13 @@ function all()
 			echo "\n".$row['id'].' -- '.$row['name'].'的全部文章:'.$row['rssurl']."</br>\n";
 			$rssinfo->author=$row['name'];
 			$lastupdate=$row['updatetime'];			
-			//$buff = geturl($row['rssurl'],$row['name']);
-			$buff = geturljsjump($row['url'],$row['rssurl'],$row['name'],0);
+			$buff = geturl($row['rssurl'],$row['name']);
+			//$buff = geturljsjump($row['url'],$row['rssurl'],$row['name'],0);
 			//print_r($buff);
 			if(!$buff)
 				continue;
 				
 			//开始处理得到的结果
-			//readrssfile($buff,$rssinfo,$authorid,$lastupdate);
 			pregrssfile($buff,$rssinfo,$row['url'],$lastupdate);
         }
 	}
@@ -49,7 +48,6 @@ function all()
 
 function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 {
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
 	$buff =iconvbuff($buff);
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
 	//echo $buff;
@@ -81,8 +79,6 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 			//continue;
 		}
 		$change = true;
-		if($newdate<$rssinfo->update)
-			$newdate = $rssinfo->update;
 
 		$rssinfo->title='';
 		$rssinfo->link='';
@@ -137,85 +133,6 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 		//print_r($rssinfo);
 		insertonlylink($rssinfo);
 	}
-	//setupdatetime($change,$newdate,$rssinfo->author);
-}
-
-function readrssfile($buff,$rssinfo,$lastupdate)
-{
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
-	$buff =iconvbuff($buff);
-	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
-	//echo $buff;
-	//$buff = preg_replace('#&(?=[a-z_0-9]+=)#', '&amp;', $buff);
-	$buff = simplexml_load_string($buff,null,LIBXML_NOCDATA);
-	//print_r($buff);
-	$change = false;
-	echo "开始爬取".$rssinfo->author." ";
-	//首先取得rss的更新时间
-	if(!empty($buff->channel->lastBuildDate))
-	{
-		$newdate = getrealtime(date("Y-m-d H:i:s",strtotime($buff->channel->lastBuildDate)));
-		echo $newdate." vs ".$lastupdate."</br> \n";
-		if($newdate<$lastupdate)
-		{
-			echo "无最新内容，不爬取! </br> \n";
-			return;
-		}	
-	}
-	
-	foreach ($buff->channel->item as $matcheach)
-	{	
-		$matcheach = (array)$matcheach;
-		//print_r($matcheach);
-		if(!empty($matcheach['pubDate']))
-		{
-			$update=trim((string)$matcheach['pubDate']);
-			$rssinfo->update = getrealtime(date("Y-m-d H:i:s",strtotime($update)));
-			if($rssinfo->update<$lastupdate)
-			{
-				echo "爬取到已经爬取文章，爬取结束! </br>\n";
-				break;
-				//continue;
-			}
-			$change = true;
-			if($newdate<$rssinfo->update)
-				$newdate = $rssinfo->update;
-		}		
-		if(!empty($matcheach['title']))
-		{
-			$rssinfo->title =trim($matcheach['title']);
-		}
-		else
-			$rssinfo->title='';
-		
-		if(!empty($matcheach['link']))
-		{
-			$rssinfo->link = trim((string)$matcheach['link']);
-		}
-		else
-			$rssinfo->link ='';
-			
-		if(!empty($matcheach['category']))
-		{
-			if(is_array($matcheach['category']))
-				$rssinfo->cat = implode(',',$matcheach['category']);
-			else
-				$rssinfo->cat = trim($matcheach['category']);
-		}
-		else if(!empty($matcheach['categoryname']))
-		{
-			if(is_array($matcheach['categoryname']))
-				$rssinfo->cat = implode(',',$matcheach['categoryname']);
-			else
-				$rssinfo->cat = trim($matcheach['categoryname']);			
-		}
-		else
-			$rssinfo->cat='';
-		//开始写入数据库信息
-		//print_r($rssinfo);
-		insertonlylink($rssinfo);
-	}
-	setupdatetime($change,$newdate,$rssinfo->author);
 }
 
 function getrealname($name)

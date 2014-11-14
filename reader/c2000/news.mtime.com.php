@@ -18,13 +18,14 @@ function news_mtime_com_php()
 	//寻找各自的updatetime	
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$change = true;
 		$i=0;
 		while($change&&$i<4)
 		{
+			sleep(2);
 			$i++;
 			if($i==1)
 				$trueurl = $eachurl;
@@ -59,8 +60,7 @@ function news_mtime_com_php()
 					break;
 					//continue;
 				}
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
+				
 				$rssinfo->cat =trim($urlcat[$key]);
 				$rssinfo->link =$authorurl.trim($match[1][$key2]).".html";
 				$rssinfo->title = $match[2][$key2];				
@@ -69,6 +69,5 @@ function news_mtime_com_php()
 			}
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

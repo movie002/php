@@ -11,13 +11,14 @@ function www_gewara_com_activity_php()
 	
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$change = true;
 		$i=-1;
 		while($change&&$i<2)
 		{
+			sleep(2);
 			$i++;
 			$trueurl = $eachurl.$i;
 				
@@ -49,8 +50,7 @@ function www_gewara_com_activity_php()
 					break;
 					//continue;
 				}					
-				if($newdate<$rssinfo->update)
-					$newdate = $rssinfo->update;
+				
 				$rssinfo->cat = trim($urlcat[$key]);
 				$rssinfo->link = $authorurl.'/activity/'.trim($match0[1][$key2]);
 				$rssinfo->title = trim($match0[2][$key2]).'('.$match1[1][$key2].'月'.$match1[2][$key2].'日-'.$match1[3][$key2].'月'.$match1[3][$key2].'日)';
@@ -59,6 +59,5 @@ function www_gewara_com_activity_php()
 			}
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

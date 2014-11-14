@@ -11,13 +11,14 @@ function www_mtime_com_trailer_php()
 	print_r($url);
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$change = true;
 		$i=0;
 		while($change&&$i<4)
 		{
+			sleep(2);
 			$i++;
 			if($i==1)
 				$trueurl = $eachurl.'.html';
@@ -60,6 +61,5 @@ function www_mtime_com_trailer_php()
 			}
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

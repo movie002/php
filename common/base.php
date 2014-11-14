@@ -157,7 +157,7 @@ function getrealtime($timebuf)
 		$timereal = $match[1].'';
 
 		$mouthcn=array("三月","四月","五月","六月","七月","八月","九月","十一月","十二月","一月","二月","十月");
-		$mouthnum=array(3,4,5,6,7,8,9,10,1,2,11);
+		$mouthnum=array(3,4,5,6,7,8,9,11,12,1,2,10);
 		foreach($mouthcn as $key=>$eachmouth)
 		{
 			if(strstr($timebuf,$eachmouth))

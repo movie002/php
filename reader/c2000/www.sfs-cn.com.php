@@ -13,7 +13,7 @@ function www_sfscn_com_php()
 	//寻找各自的updatetime	
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
-	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
+	
 	foreach ($url as $key=>$eachurl)
 	{
 		$trueurl=$eachurl;
@@ -46,8 +46,6 @@ function www_sfscn_com_php()
 				break;
 				//continue;
 			}
-			if($newdate<$rssinfo->update)
-				$newdate = $rssinfo->update;
 			$rssinfo->cat =trim($urlcat[$key]);
 			$rssinfo->link = $authorurl.trim($match0[1][$key2]);
 			$rssinfo->title = trim($match0[2][$key2]);
@@ -55,6 +53,5 @@ function www_sfscn_com_php()
 			insertonlylink($rssinfo);
 		}
 	}
-	setupdatetime(true,$newdate,$authorname);
 }
 ?>

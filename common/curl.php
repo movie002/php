@@ -32,10 +32,10 @@ function get_file_curl($url)
 //	curl_setopt($ch, CURLOPT_PROXY,"http://172.28.89.1:8080");	
 	//爬取网站时需要的cookie
 	//$cookie_jar = tempnam('./tmp','JSESSIONID');
-	$cookie_jar = $_SERVER['DOCUMENT_ROOT'].'/cookie.jar';
-	echo $cookie_jar."\n";
-	curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_jar);
-	curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie_jar);
+//	$cookie_jar = $_SERVER['DOCUMENT_ROOT'].'/cookie.jar';
+//	echo $cookie_jar."\n";
+//	curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_jar);
+//	curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie_jar);
 	curl_setopt($ch, CURLOPT_URL, $url);
 //	curl_setopt($ch, CURLOPT_HEADER, 1);	
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -58,7 +58,7 @@ function get_file_curl($url)
 	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	if ($http_code >= 400)
 	{	//400 - 600都是服务器错误
-		echo "error :".$http_code."//".$url."//服务器错误!\n";
+		echo "error :".$http_code."---".$url."---服务器错误!\n";
 		//echo $contents;
 		return false;
 	} 
