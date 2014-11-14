@@ -23,17 +23,11 @@ $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
-news_mtime_com_php();
-www_mtime_com_review_php();
-www_mtime_com_trailer_php();
-www_hunantv_com_php();
-//ent_ifeng_com_php();
-ent_163_com_php();
-ent_sina_com_cn_review_php();
-yule_sohu_com_php();
-www_gewara_com_news_php();
-www_gewara_com_activity_php();
-www_sfscn_com_php();
+$id=0;
+if(isset($_REQUEST['id']))
+	$id = $_REQUEST['id'];
+
+if($id==0||$id==1)news_mtime_com_php();
 
 mysql_close($conn);
 ?>

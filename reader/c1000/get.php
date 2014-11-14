@@ -29,23 +29,27 @@ $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
-////bbs_1ou_com_php();
-////www_bt5156_com_php();
-//www_5281520_com_php();
-//www_bttiantang_com_php();
-//www_dy2018_com_php();
-//www_ed2000_com_php();
-//www_etdown_net_php();
-//www_piaohua_com_php();
-//www_mp4ba_com_php();
-//www_dy558_com_php();
-//www_quanji_com_php();
-//www_icili_com_php();
-//www_somag_net_php();
-//www_ygdy8_net_php();
-//www_vvtor_com_php();
-www_hd180_com_php();
+$id=0;
+if(isset($_REQUEST['id']))
+	$id = $_REQUEST['id'];	
 
+
+//bbs_1ou_com_php();
+//www_bt5156_com_php();
+if($id==0||$id==1)www_5281520_com_php();
+if($id==0||$id==2)www_bttiantang_com_php();
+if($id==0||$id==3)www_dy2018_com_php();
+if($id==0||$id==4)www_ed2000_com_php();
+if($id==0||$id==5)www_etdown_net_php();
+if($id==0||$id==6)www_piaohua_com_php();
+if($id==0||$id==7)www_mp4ba_com_php();
+if($id==0||$id==8)www_dy558_com_php();
+if($id==0||$id==9)www_quanji_com_php();
+if($id==0||$id==10)www_icili_com_php();
+if($id==0||$id==11)www_somag_net_php();
+if($id==0||$id==12)www_ygdy8_net_php();
+if($id==0||$id==13)www_vvtor_com_php();
+if($id==0||$id==14)www_hd180_com_php();
 
 mysql_close($conn);
 ?>
