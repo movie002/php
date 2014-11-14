@@ -36,6 +36,7 @@ function all()
 			$lastupdate=$row['updatetime'];			
 			//$buff = geturl($row['rssurl'],$row['name']);
 			$buff = geturljsjump($row['url'],$row['rssurl'],$row['name'],0);
+			//print_r($buff);
 			if(!$buff)
 				continue;
 				
@@ -49,11 +50,11 @@ function all()
 function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 {
 	$newdate = date("Y-m-d H:i:s",strtotime('0000-00-00 00:00:00'));
-	//$buff =iconvbuff($buff);
+	$buff =iconvbuff($buff);
 	$buff = preg_replace('/encoding=".*?"/','encoding="UTF-8"',$buff);
 	//echo $buff;
 	//查找所有的item
-	preg_match_all('/<item>([\s\S]*?)<\/item>/is',$buff,$match);
+	preg_match_all('/<item.*?>([\s\S]*?)<\/item>/is',$buff,$match);
 	//print_r($match);
 	if(empty($match[1]))
 	{
@@ -71,7 +72,7 @@ function pregrssfile($buff,$rssinfo,$url,$lastupdate)
 			echo 'error: no get pubDate result!';
 			return;		
 		}
-		$rssinfo->update = date("Y-m-d H:i:s",strtotime(getrealtime($match2[1])));
+		$rssinfo->update = date("Y-m-d H:i:s",strtotime(getrealtime(getrealname($match2[1]))));
 		//echo $rssinfo->update;
 		if($rssinfo->update<$lastupdate)
 		{

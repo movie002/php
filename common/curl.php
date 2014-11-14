@@ -33,7 +33,7 @@ function get_file_curl($url)
 	//爬取网站时需要的cookie
 	//$cookie_jar = tempnam('./tmp','JSESSIONID');
 	$cookie_jar = $_SERVER['DOCUMENT_ROOT'].'/cookie.jar';
-	echo $cookie_jar;
+	echo $cookie_jar."\n";
 	curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_jar);
 	curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie_jar);
 	curl_setopt($ch, CURLOPT_URL, $url);
@@ -45,7 +45,8 @@ function get_file_curl($url)
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 	curl_setopt($ch, CURLOPT_AUTOREFERER, 1); 
 	curl_setopt($ch, CURLOPT_ENCODING ,'gzip');
-	curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)");
+//	curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)");
+	curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/5.0 (Windows NT 5.2) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.215 Safari/535.1");
 	$HTTP_SESSION=_rand();
 	curl_setopt($ch, CURLOPT_COOKIE,$HTTP_SESSION);
 	
@@ -57,7 +58,7 @@ function get_file_curl($url)
 	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	if ($http_code >= 400)
 	{	//400 - 600都是服务器错误
-		echo "error :".$url."服务器错误!\n";
+		echo "error :".$http_code."//".$url."//服务器错误!\n";
 		//echo $contents;
 		return false;
 	} 

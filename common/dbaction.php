@@ -277,7 +277,7 @@ function geturljsjump($baseurl,$trueurl,$authorname,$level)
 	$buff = geturl($trueurl,$authorname);
 	if(!$buff)
 		return false;
-		
+	//print_r($buff);	
 	//判断是否有页面跳转			
 	preg_match('/<script>.*?self\.location="(.*?)".*?<\/script>/is',$buff,$match);
 	//print_r($match);
