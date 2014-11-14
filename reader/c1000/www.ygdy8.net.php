@@ -7,9 +7,9 @@ function www_ygdy8_net_php()
 	$urlcat= array('最新电影下载','迅雷电影资源','华语剧集专区','日韩剧集专区','欧美剧集专区','迅雷综艺节目','迅雷动漫资源');
 	
 	//寻找各自的updatetime	
-	$updatetime = getupdatetime($authorurl,$authorname);	
+	$updatetime = getupdatetime($urlcat,$authorname);	
 		
-	$buff = geturl($trueurl,$authorname);
+	$buff = geturl($authorurl,$authorname);
 	//如果失败，就使用就标记失败次数
 	if(!$buff)
 		continue;	

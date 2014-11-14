@@ -27,7 +27,7 @@ $id=0;
 if(isset($_REQUEST['id']))
 	$id = $_REQUEST['id'];
 
-if($id==0||$id==1)news_mtime_com_php();
+if($id==0||$id==1)echo "id: 1   ";news_mtime_com_php();
 
 mysql_close($conn);
 ?>
