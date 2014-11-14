@@ -31,25 +31,25 @@ mysql_query("set names utf8;");
 
 $id=0;
 if(isset($_REQUEST['id']))
-	$id = $_REQUEST['id'];	
-
+	$id = $_REQUEST['id'];
+echo 'this id is: '.$id."\n";
 
 //bbs_1ou_com_php();
 //www_bt5156_com_php();
-if($id==0||$id==1)echo "id: 1   ";www_5281520_com_php();
-if($id==0||$id==2)echo "id: 2   ";www_bttiantang_com_php();
-if($id==0||$id==3)echo "id: 3   ";www_dy2018_com_php();
-if($id==0||$id==4)echo "id: 4   ";www_ed2000_com_php();
-if($id==0||$id==5)echo "id: 5   ";www_etdown_net_php();
-if($id==0||$id==6)echo "id: 6   ";www_piaohua_com_php();
-if($id==0||$id==7)echo "id: 7   ";www_mp4ba_com_php();
-if($id==0||$id==8)echo "id: 8   ";www_dy558_com_php();
-if($id==0||$id==9)echo "id: 9   ";www_quanji_com_php();
-if($id==0||$id==10)echo "id: 10   ";www_icili_com_php();
-if($id==0||$id==11)echo "id: 11   ";www_somag_net_php();
-if($id==0||$id==12)echo "id: 12   ";www_ygdy8_net_php();
-if($id==0||$id==13)echo "id: 13   ";www_vvtor_com_php();
-if($id==0||$id==14)echo "id: 14   ";www_hd180_com_php();
+if($id==0||$id==1){echo "id: 1   ";www_5281520_com_php();}
+if($id==0||$id==2){echo "id: 2   ";www_bttiantang_com_php();}
+if($id==0||$id==3){echo "id: 3   ";www_dy2018_com_php();}
+if($id==0||$id==4){echo "id: 4   ";www_ed2000_com_php();}
+if($id==0||$id==5){echo "id: 5   ";www_etdown_net_php();}
+if($id==0||$id==6){echo "id: 6   ";www_piaohua_com_php();}
+if($id==0||$id==7){echo "id: 7   ";www_mp4ba_com_php();}
+if($id==0||$id==8){echo "id: 8   ";www_dy558_com_php();}
+if($id==0||$id==9){echo "id: 9   ";www_quanji_com_php();}
+if($id==0||$id==10){echo "id: 10   ";www_icili_com_php();}
+if($id==0||$id==11){echo "id: 11   ";www_somag_net_php();}
+if($id==0||$id==12){echo "id: 12   ";www_ygdy8_net_php();}
+if($id==0||$id==13){echo "id: 13   ";www_vvtor_com_php();}
+if($id==0||$id==14){echo "id: 14   ";www_hd180_com_php();}
 
 mysql_close($conn);
 ?>
