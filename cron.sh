@@ -17,7 +17,7 @@ echo $(date) > $logfile
 /srv/php/timeexc.sh curl 'http://php.movie002.com/getpage/getlink2.php?f1=3&f2=5&r=0.4&d=10' -o /srv/php/log/getlink2.log
 ## 2.2 处理电影的状态，正在上映和即将上映的
 /srv/php/timeexc.sh curl http://php.movie002.com/getpage/upmstatus.php -o /srv/php/log/upmstatus.log
-## 2.4 利用link得到page并修改其状态
+## 2.4 利用onlylink得到page并修改其状态
 /srv/php/timeexc.sh curl http://php.movie002.com/getpage/getpage.php?d=2 -o /srv/php/log/getpage.log
 ## 2.4 更新page的其他属性
 /srv/php/timeexc.sh curl http://php.movie002.com/getpage/updatepage.php?d=2 -o /srv/php/log/getpage.log

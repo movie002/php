@@ -33,7 +33,7 @@ $DH_output_index_path = $DH_output_path.'index/';
 $DH_html_url= $DH_home_url.'html/';
 $DH_index_url= $DH_home_url.'index/';
 $DH_name= '电影小二网';
-$DH_name_des= '电影大全_电视剧大全_影视大全导航';
+$DH_name_des= '电影大全_电视剧大全_影视大全';
 
 //页面显示的文章列表条目的个数
 $DH_page_count_limit = 4;
