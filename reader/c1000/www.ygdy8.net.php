@@ -3,7 +3,7 @@ function www_ygdy8_net_php()
 {
 	$authorname='阳光电影';
 	print_r($authorname);
-	$authorurl='http://www.ygdy8.net/';
+	$authorurl='http://www.ygdy8.com/';
 	$urlcat= array('最新电影下载','迅雷电影资源','华语剧集专区','日韩剧集专区','欧美剧集专区','迅雷综艺节目','迅雷动漫资源');
 	
 	//寻找各自的updatetime	

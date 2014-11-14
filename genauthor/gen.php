@@ -17,6 +17,9 @@ include("../common/page_navi.php");
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
+
+$DH_author_path=$DH_output_path.'/author/';
+
 dh_gen_author();
 dh_gen_static('aboutus');
 dh_gen_static('coperation');
