@@ -21,6 +21,7 @@ require("www.icili.com.php");
 require("www.ygdy8.net.php");
 require("www.vvtor.com.php");
 require("www.hd180.com.php");
+require("www.6vhao.com.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -50,6 +51,7 @@ if($id==0||$id==11){echo "id: 11   ";www_somag_net_php();}
 if($id==0||$id==12){echo "id: 12   ";www_ygdy8_net_php();}
 if($id==0||$id==13){echo "id: 13   ";www_vvtor_com_php();}
 if($id==0||$id==14){echo "id: 14   ";www_hd180_com_php();}
+if($id==0||$id==15){echo "id: 15   ";www_6vhao_com_php();}
 
 mysql_close($conn);
 ?>

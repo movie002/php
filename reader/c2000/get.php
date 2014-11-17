@@ -15,6 +15,7 @@ require("yule.sohu.com.php");
 require("www.gewara.com.news.php");
 require("www.gewara.com.activity.php");
 require("www.sfs-cn.com.php");
+require("www.51oscar.com.php");
 
 header('Content-Type:text/html;charset= UTF-8'); 
 date_default_timezone_set('PRC');
@@ -38,6 +39,7 @@ if($id==0||$id==8){echo "id: 8   ";yule_sohu_com_php();}
 if($id==0||$id==9){echo "id: 9   ";www_gewara_com_news_php();}
 if($id==0||$id==10){echo "id: 10   ";www_gewara_com_activity_php();}
 if($id==0||$id==11){echo "id: 11   ";www_sfscn_com_php();}
+if($id==0||$id==12){echo "id: 12   ";www_51oscar_com_php();}
 
 mysql_close($conn);
 ?>
