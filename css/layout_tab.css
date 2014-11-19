@@ -261,6 +261,11 @@ padding: 0px;
 	border: 1px solid transparent;
 }
 
+.col5 li:hover
+{
+	background-color:#f2f8fd;
+}
+
 .col5 li
 {
 	width:18.5%;
@@ -317,7 +322,7 @@ padding: 0px;
 .imglistp
 {
 	line-height:240%;
-	padding-bottom: 7px;	
+	padding-bottom:7px;	
 }
 
 .imglist2
