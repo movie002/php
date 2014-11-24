@@ -77,7 +77,7 @@ function judgetitlearray($titlearray)
 
 function judgetitle($title)
 {
-		//print_r($titlearray);
+	//print_r($titlearray);
 	global $country,$qulity,$type,$other,$del_word,$mustnot,$mingxing,$little;
 
 	$replacecount=0;

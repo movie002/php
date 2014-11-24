@@ -107,6 +107,12 @@ function processtitle($ctitle)
 	return $rettitles;	
 }
 
+
+//比对两个标题的相似度
+// title: 456/der/使命感
+// aka: 456/ddd/前进着
+// 比较标题的相似度
+
 function c_title($title,$aka)
 {
 	//消除空格和.以防止对比出错

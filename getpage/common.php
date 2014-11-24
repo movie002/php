@@ -197,22 +197,22 @@ function changetitle($title)
 	$title = preg_replace('/([^a-z])([0-9\sⅠⅡⅢ]+)([^a-z])/su','$1/$3',$title);
 	echo "mm41:".$title."\n";	
 	
-//处理中文和英文分开
+	//处理中文和英文分开
 	$title = preg_replace("/([0-9a-zA-Z\s`]+)/",'/$1/',$title);
 	echo "mm5:".$title."\n";
 	//$title = preg_replace('/([a-zA-Z\s\.\_\-`])([^a-zA-Z\s\.\_\-`])/','$1/$2',$title);
 	//echo "mm6:".$title."\n";
 	//：，！:,分开
 	
-//处理符号	
+	//处理符号	
 	$title = preg_replace('/(：|，|！|:|,|!|－|、|·|\+)/su','/',$title);
 	echo "mm7:".$title."\n";	
-	$title = preg_replace('/(★|◆|×|●|•|\*)/su','/',$title);
+	$title = preg_replace('/(★|◆|×|●|•|°|\*)/su','/',$title);
 	echo "mm8:".$title."\n";
 	$title = preg_replace('/([\/|\-|【|】|\[|\]|「|」|《|》|\(|（|\)|）]+)/su','/',$title);
 	echo "mm9:".$title."\n";
 
-	return trim($title," \t\n\r\0\x0B\/.");;
+	return trim($title," \t\n\r\0\x0B\/.");
 }
 
 function gettitlearray($title)
