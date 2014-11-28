@@ -60,7 +60,7 @@ function www_51oscar_com_php()
 					continue;
 				}
 				$rssinfo->cat =trim($urlcat[$key]);
-				$rssinfo->link =$authorurl.'/detail/'.trim($match[1][$key2]);
+				$rssinfo->link =$eachurl.'/detail/'.trim($match[1][$key2]);
 				$rssinfo->title = trim($match[3][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
