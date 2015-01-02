@@ -44,7 +44,7 @@ function www_quanji_com_php()
 				$rssinfo->update =date('Y-').$matchdate;			
 				
 				//$rssinfo->cat = trim($urlcat[$key]).trim($match3[1][$key2]);
-				$rssinfo->link = trim($match0[2][$key2]);
+				$rssinfo->link = $authorurl.trim($match0[2][$key2]);
 				$rssinfo->title = trim($match0[3][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
