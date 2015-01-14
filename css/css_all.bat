@@ -4,6 +4,8 @@ copy base.css+layout.css+title.css+layout_tab.css+entry.css+article_index.css+pa
 csstidy.exe style_v.css --template=highest --remove_last_;=true style_v.css
 copy style_v.css ..\..\v\css\style.css /Y /B
 
+copy style_v.css ..\..\s\css\style.css /Y /B
+
 copy base.css+layout.css+title.css+entry_dhblog.css+article_index.css+page_navi.css+page_class.css+postbox.css style_www.css  /Y /B
 csstidy.exe style_www.css --template=highest --remove_last_;=true style_www.css
 copy style_www.css ..\..\www\css\style.css /Y /B
