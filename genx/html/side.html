@@ -1,0 +1,48 @@
+<div>
+	<div >
+		<script type="text/javascript">
+			function a()  
+			{   
+				var n = new Date();
+				var h = n.getHours();
+				var m='';
+				if(h>=22||h<=6)
+				{
+					m='<div style="color:#000;border:1px solid #FF3300;font-size:12px;background:#FFFFDF;padding:2px;">友情提醒： 亲，已经是晚上'+h+'点多了，</br>为了您和家人的健康，请注意减少熬夜!</div>';
+				}
+				return m;
+			}
+			document.write(a());
+		</script>
+	</div>
+	<div class="sidebar_wrapper">
+		<div class="sidebar_title">
+			<span style="float:left">广告</span> (现在本站无广告)
+		</div>
+		<div class="sidebar_content">
+		<!--	<ins class="adsbygoogle"
+				 style="display:inline-block;width:250px;height:250px"
+				 data-ad-client="ca-pub-5121554631963985"
+				 data-ad-slot="7830703534">
+			</ins>
+			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>	-->
+		</div>
+	</div>
+	<div class="sidebar_wrapper">
+		<div class="sidebar_title">
+			<span style="float:left">最近评论</span>
+		</div>
+		<div class="sidebar_content">
+			<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="0" data-show-admin="1" data-excerpt-length="20"></ul>
+		</div>
+	</div>
+	<div class="sidebar_wrapper">
+		<div class="sidebar_title">
+			<span style="float:left">最新访客</span>
+		</div>
+		<div class="sidebar_content">
+			<ul style="margin:8px 6px" class="ds-recent-visitors" data-num-items="10"></ul>
+		</div>
+	</div>
+	%side_content%
+</div>	

@@ -1,0 +1,18 @@
+<div id="%pagesNav%" class="pagesNav">
+	<span id="%pageP%" class="cp fl"><< PREV</span>
+	<ul id="%pagesA%" class="fl"></ul>
+	<span id="%pageN%" class="cp fl">NEXT >></span>
+</div>	
+<script>
+nextPage
+({
+	pagesMain:"%liid%",
+	pagesNav:"%pagesA%",
+	curNum:%num%,
+	pages:"%liid%",
+	activeClass:"cur",
+	ini:"0",//初始化显示第几页 0为第一页
+	prevBtn:"%pageP%",
+	nextBtn:"%pageN%"
+});	
+</script>

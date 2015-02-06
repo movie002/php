@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document xmlns:bbs="http://www.baidu.com/search/bbs_sitemap.xsd">
+<!-- generated-on="%lastdate%" -->
+<webSite>%home%</webSite>
+<webMaster>a@movie002.com</webMaster>
+<updatePeri>48</updatePeri>
+<updatetime>%lastdate%</updatetime>
+<version>%home% V1.0</version>%sitemaps%
+</document>
