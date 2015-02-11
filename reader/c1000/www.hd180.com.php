@@ -4,7 +4,7 @@ function www_hd180_com_php()
 	$authorname='HD180';
 	print_r($authorname);
 	
-	$authorurl='http://www.hd180.com';
+	$authorurl='http://www.hd180.com/';
 
 	$url = array('http://www.hd180.com');
 	$urlcat= array('电影');
@@ -56,7 +56,7 @@ function www_hd180_com_php()
 					continue;
 				}
 				$rssinfo->cat = $urlcat[$key];
-				$rssinfo->link =trim($match0[1][$key2]);
+				$rssinfo->link =$authorurl.trim($match0[1][$key2]);
 				$rssinfo->title = trim($match0[2][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
