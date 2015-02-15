@@ -1,5 +1,5 @@
 <?php
-$dbip='127.0.0.1';
+$dbip='216.189.56.238';
 $dbuser='root';
 $dbpasswd='qazxsw';
 $dbname='movie002';
@@ -14,9 +14,9 @@ $pagecount=15;
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 
 
-$DH_output_path= '/srv/v/';
-$DH_input_path= '/srv/php/';
-$DH_dh_path= '/srv/dh/';
+$DH_output_path= $_SERVER['DOCUMENT_ROOT'].'/v/';
+$DH_input_path= $_SERVER['DOCUMENT_ROOT'].'/php/';
+##$DH_dh_path= '/srv/dh/';
 $DH_home_url= 'http://v.movie002.com/';
 
 //$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
