@@ -19,7 +19,7 @@ require("movie.mtime.com.boxoffice.php");
 require("share.php");
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-mysql_select_db($dbname, $conn) or die('选择数据库失败');
+mysql_select_db($dbname, $conn) or die('选择数据库失败'.mysql_error());
 mysql_query("set names utf8;");
 
 dh_gen_share($DH_home_url);
