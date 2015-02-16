@@ -144,6 +144,6 @@ function get_movie_url($title,$link)
 			echo '查找 aka 失败 ';
 		}	
 	}
-	return output_page_path($DH_html_url,$id);;
+	return output_page_path($DH_html_url,$id);
 }
 ?>
