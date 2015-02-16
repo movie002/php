@@ -612,4 +612,9 @@ function getlinksmore($num0,$num,$id,$content,$innerpage)
 	}
 	return $tmplinks;
 }
+
+function dh_pagenum_link($link,$page)
+{
+	return $link.$page.'.html';
+}
 ?>

@@ -62,9 +62,4 @@ function dh_pagenavi($range,$max_page,$link,$paged=1)
 	$output=$output. "<a href='" . dh_pagenum_link($link,$max_page) . "' class='extend' title='跳转到最后一页'> 最后一页($max_page 页) </a>";
 	return $output;
 }
-
-function dh_pagenum_link($link,$page)
-{
-	return $link.$page.'.html';
-}
 ?>
