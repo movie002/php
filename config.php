@@ -14,8 +14,8 @@ $pagecount=15;
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 
 
-$DH_output_path= $_SERVER['DOCUMENT_ROOT'].'/v/';
-$DH_input_path= $_SERVER['DOCUMENT_ROOT'].'/php/';
+$DH_output_path= '/srv/v/';
+$DH_input_path= '/srv/php/';
 ##$DH_dh_path= '/srv/dh/';
 $DH_home_url= 'http://v.movie002.com/';
 
