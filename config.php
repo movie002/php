@@ -14,26 +14,26 @@ $pagecount=15;
 #$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/';
 
 
-$DH_output_path= '/srv/v/';
-$DH_input_path= '/srv/php/';
-##$DH_dh_path= '/srv/dh/';
-$DH_home_url= 'http://v.movie002.com/';
+//$DH_output_path= '/srv/v/';
+//$DH_input_path= '/srv/php/';
+//$DH_dh_path= '/srv/dh/';
+//$DH_home_url= 'http://v.movie002.com';
 
 //$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/v/';
 //$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
 //$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
-//$DH_home_url= 'http://127.0.0.1/v/';
-
-
-
-$DH_src_path= $DH_input_path. 'genv/';
-$DH_html_path= $DH_src_path . 'html/';
-$DH_output_html_path = $DH_output_path.'html/';
-$DH_output_index_path = $DH_output_path.'index/';
-$DH_html_url= $DH_home_url.'html/';
-$DH_index_url= $DH_home_url.'index/';
-$DH_name= '电影小二网';
-$DH_name_des= '电影大全_电视剧大全_影视大全';
+//$DH_home_url= 'http://s.x2y4.com/';
+//
+//
+//
+//$DH_src_path= $DH_input_path. 'genv/';
+//$DH_html_path= $DH_src_path . 'html/';
+//$DH_output_html_path = $DH_output_path.'html/';
+//$DH_output_index_path = $DH_output_path.'index/';
+//$DH_html_url= $DH_home_url.'html/';
+//$DH_index_url= $DH_home_url.'index/';
+//$DH_name= '小二影视网';
+//$DH_name_des= '小二影视网_影视资源(电影/电视剧等)搜索大全';
 
 //页面显示的文章列表条目的个数
 $DH_page_count_limit = 4;
@@ -63,7 +63,7 @@ $DH_page_store_count = 100;
 ///下载链接属性：0:未知资源 1:直接下载 2:跳转下载 3:登陆下载
 
 $movietype=array('','电影大全','电视剧大全','综艺节目大全','动画片大全');
-$movietype2=array('','电影','电视剧','综艺','动画片');
+$movietype2=array('','电影','电视','综艺','动画');
 //综艺和动漫剧集归结为电视节目，动漫电影归结为电影
 $moviecountry=array('','华语','欧美','日韩','其他');
 $moviestatus=array('','出预告片','马上登陆','正在上映','放映结束','出售碟片','经典影片');
@@ -99,19 +99,6 @@ function dh_get_catkeyword($type,$title)
 		$cat =$title.'综艺,'.$title.'国语,'.$title.'全集';
 	if($type==4)
 		$cat =$title.'动漫,'.$title.'动画,'.$title.'国语,'.$title.'全集';
-	return $cat;
-}
-
-function dh_get_title($type,$title)
-{
-	if($type==1)
-		$cat =$title.'电影(%pubyear%)下载地址等资源汇总';
-	if($type==2)
-		$cat =$title.'电视剧全集_在线观看等资源汇总';
-	if($type==3)
-		$cat =$title.'综艺全集_在线观看等资源汇总';
-	if($type==4)
-		$cat =$title.'动画(动漫)全集_在线观看等资源汇总';
 	return $cat;
 }
 

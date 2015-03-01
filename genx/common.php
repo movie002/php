@@ -1,27 +1,28 @@
 <?php
 function dh_replace_link($sql,$row,$DH_output_content)
 {
-	global $linktype,$linkway,$linkquality,$linkdownway;
+	global $linktype,$linkway,$linkquality;
 	$num = 5;//内部分页的分页内条数
+	$maxnum = 25;//最多显示的条目
 	$DH_output_content_page ='';
-	$downloadlinks = '';
-	$downloadlinks0 = '';$num00=0;
-	$downloadlinks1 = '';$num01=0;
-	$downloadlinks2 = '';$num02=0;
-	$downloadlinks3 = '';$num03=0;
-	$onlinelinks = '';$num1=0;	
-	$tailer = '';$num2=0;
-	$zixun='';$num3=0;
-	$yingping='';$num4=0;		
-	$jhblinks= '';
 
+	$zixun='';$num1=0;
+	$yingping='';$num2=0;
+	$tailer = '';$num3=0;
+	$online = '';$num7=0;	
+	$online0 = '';$num70=0;	
+	$download = '';$num6=0;	
+	$download0 = '';$num60=0;	
+	$zimu = '';$num8=0;	
+    $ticket = '';$num4=0;$num5=0;
+	
 	global $DH_html_path;
-	$DH_input_html  = $DH_html_path . 'innerpage.html';
+	$DH_input_html  = $DH_html_path . 'page_inner_navi.html';
 	$innerpage = dh_file_get_contents($DH_input_html);
 	
-	$linkstop1 = '<div class="listall"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
-	$linkstop2 = '<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="rt0v5">来源网站 更新时间</div></div>';
-	
+	$linkstop1 = '<div class="listall"><div class="listlink">&nbsp;&nbsp;清晰度 资源地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
+	$linkstop2 = '<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;资源地址</div><div class="rt0v5">来源网站 更新时间</div></div>';
+    $searchcat='';	
 	$reslinks=dh_mysql_query($sql);	
 	while($rowlinks = mysql_fetch_array($reslinks))
 	{
@@ -43,127 +44,137 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		switch ($way)
 		{
 			case 1://资讯
-				$num3++;
-				$zixun .= str_replace('%num%',$num3,$linkseach2);
+				$num1++;
+				if($num1<=$maxnum)
+				    $zixun .= str_replace('%num%',$num1,$linkseach2);
 				break;
 			case 2://评论
-				$num4++;
-				$yingping .= str_replace('%num%',$num4,$linkseach2);		
+				$num2++;
+				if($num2<=$maxnum)
+				    $yingping .= str_replace('%num%',$num2,$linkseach2);		
 				break;
 			case 3://预告花絮
-				$num2++;
-				$tailer .= str_replace('%num%',$num2,$linkseach1);
+				$num3++;
+				if($num3<=$maxnum)
+				    $tailer .= str_replace('%num%',$num3,$linkseach1);
+				break;
+			case 4://活动购票
+			case 5://
+                $num4++;    
+				if($num4<=$maxnum)
+				    $ticket .= str_replace('%num%',$num4,$linkseach2);
 				break;
 			case 6://下载
-				{
-					switch($rowlinks['linkdownway'])
-					{
-						case 0:
-							$num00++;
-							$downloadlinks0 .= str_replace('%num%',$num00,$linkseach1);
-							break;
-						case 1:
-							$num01++;
-							$downloadlinks1 .= str_replace('%num%',$num01,$linkseach1);
-							break;
-						case 2:
-							$num02++;
-							$downloadlinks2 .= str_replace('%num%',$num02,$linkseach1);
-							break;
-						case 3:
-							$num03++;
-							$downloadlinks3 .= str_replace('%num%',$num03,$linkseach1);
-							break;								
-						default:
-							echo $rowlinks['title']."-->".$rowlinks['link']."-->".$way."</br>\n";
-							print_r(" error get linkproperty on dh_replace_link </br>  \n");
-					}
-					break;
-				}
-			case 7://在线
-				$num1++;
-				$onlinelinks .= str_replace('%num%',$num1,$linkseach1);
+                $num6++;    
+                if($num6<=$maxnum)
+			    	$download .= str_replace('%num%',$num6,$linkseach1);
+                if($rowlinks['linkquality']>=5)
+                {
+                   $num60++;
+                   if($num60<=$maxnum)
+			           $download0 .= str_replace('%num%',$num60,$linkseach1);
+                } 
 				break;
-			case 8://影片信息
-			//	$jhblinks .= '<a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].'的链接" rel="nofollow">['.$rowlinks['author']. ']</a>';
-				break;					
+			case 7://在线
+				$num7++;
+                if($num7<=$maxnum)
+			    	$online .= str_replace('%num%',$num7,$linkseach1);
+                if($rowlinks['linkquality']>=5)
+                {
+                   $num70++;
+                   if($num70<=$maxnum)
+			           $online0 .= str_replace('%num%',$num70,$linkseach1);
+                } 
+				break;
+			case 8://字幕信息
+				$num8++;
+				if($num8<=$maxnum)
+				    $zimu .= str_replace('%num%',$num8,$linkseach2);		
+				break;
 			default:
 				echo $rowlinks['title']."-->".$rowlinks['link']."-->".$way."</br>\n";
 				print_r(" error get type on dh_replace_link </br>  \n");
-		}			
+		}
 	}
 	
-	$downloadlinkstitle='';
-	$downloadlinksi=-1;
-	if($num01>0)
-	{
-		$downloadlinksi++;
-		$downloadlinkstitle.='<li class="active" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[1].'('.$num01.')</li>';		
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks1" id="adownloadlinks1">&nbsp;</a></div>'.$linkstop1.getlinksmore($num02,$num,'downloadlinks1',$downloadlinks1,$innerpage).'</div>';
-	}
-	if($num02>0)
-	{
-		$activetitle='normal';$activelink='';		
-		if($downloadlinksi==-1)
-			$activetitle='active';		
-		else
-			$activelink='class="none"';
-			
-		$downloadlinksi++;
-		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[2].'('.$num02.')</li>';		
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'"'.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks2" id="adownloadlinks2">&nbsp;</a></div>'.$linkstop1.getlinksmore($num02,$num,'downloadlinks2',$downloadlinks2,$innerpage).'</div>';
-	}
-	if($num03>0)
-	{
-		$activetitle='normal';$activelink='';		
-		if($downloadlinksi==-1)
-			$activetitle='active';
-		else
-			$activelink='class="none"';	
-			
-		$downloadlinksi++;
-		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[3].'('.$num03.')</li>';	
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"> <div class="anchor"><a name="adownloadlinks3" id="adownloadlinks3">&nbsp;</a></div>'.$linkstop1.getlinksmore($num03,$num,'downloadlinks3',$downloadlinks3,$innerpage).'</div>';
-	}	
-	if($num00>0)
-	{
-		$activelink='';$activetitle='normal';
-		if($downloadlinksi==-1)
-			$activetitle='active';
-		else
-			$activelink='class="none"';
-		
-		$downloadlinksi++;
-		$downloadlinkstitle.='<li class="'.$activetitle.'" onclick="nTabs(this,'.$downloadlinksi.');">'.$linkdownway[0].'('.$num00.')</li>';		
-		$downloadlinks.='<div id="dl_Content'.$downloadlinksi.'" '.$activelink.' style="overflow:hidden;z-index:2;"><div class="anchor"><a name="adownloadlinks0" id="adownloadlinks0">&nbsp;</a></div>'.$linkstop2.getlinksmore($num00,$num,'downloadlinks0',$downloadlinks0,$innerpage).'</div>';
-	}
+	$zixun=getlinksmore('cb&b1',$linkstop2,$num1,$num,'zixun',$zixun,$innerpage);
+	$yingping=getlinksmore('cb&b2',$linkstop2,$num2,$num,'pinglun',$yingping,$innerpage);
+	$tailer=getlinksmore('cb&b3',$linkstop1,$num3,$num,'tailer',$tailer,$innerpage);
+	$ticket=getlinksmore('cb&b4',$linkstop2,$num4,$num,'ticket',$ticket,$innerpage);
+	$download=getlinksmore('cb&b6',$linkstop1,$num6,$num,'download',$download,$innerpage);
+	$download0=getlinksmore('cb&b6',$linkstop1,$num60,$num,'download0',$download0,$innerpage);
+	$online=getlinksmore('cb&b7',$linkstop1,$num7,$num,'online',$online,$innerpage);
+	$online0=getlinksmore('cb&b7',$linkstop1,$num70,$num,'online0',$online0,$innerpage);
+	$zimu=getlinksmore('cb&b8',$linkstop1,$num70,$num,'zimu',$zimu,$innerpage);
 
-	$downloadlinkstitle = '<div class="TabTitle" style="padding:5px 0 5px 10px"><ul id="dl">'.$downloadlinkstitle.'</ul></div>';
-	$downloadlinks = $downloadlinkstitle.$downloadlinks;
-	$num0 = $num00+$num01+$num02+$num03;
-	$DH_output_content_page = str_replace('%num0x%',$num0,$DH_output_content);
-	if($num0<=0)
-		$downloadlinks='<div>'.$linkstop1.'<div class="showhide">更多资源,敬请期待</div></div>';
-	
-	$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
-
-	$onlinelinks=$linkstop1.getlinksmore($num1,$num,'onlinelinks',$onlinelinks,$innerpage);
-	$tailer=$linkstop1.getlinksmore($num2,$num,'tailer',$tailer,$innerpage);
-	$zixun=$linkstop2.getlinksmore($num3,$num,'zixun',$zixun,$innerpage);
-	$yingping=$linkstop2.getlinksmore($num4,$num,'pinglun',$yingping,$innerpage);
-	
-	$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content_page);
-	$DH_output_content_page = str_replace('%downloadlinks%',$downloadlinks,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content);
 	$DH_output_content_page = str_replace('%tailer%',$tailer,$DH_output_content_page);		
-	$DH_output_content_page = str_replace('%onlinelinks%',$onlinelinks,$DH_output_content_page);	
+	$DH_output_content_page = str_replace('%ticket%',$ticket,$DH_output_content_page);		
+	$DH_output_content_page = str_replace('%online%',$online,$DH_output_content_page);	
+	$DH_output_content_page = str_replace('%online0%',$online0,$DH_output_content_page);	
 	$DH_output_content_page = str_replace('%yingping%',$yingping,$DH_output_content_page);		
-	$DH_output_content_page = str_replace('%jhblinks%',$jhblinks,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%zimu%',$zimu,$DH_output_content_page);		
+	$DH_output_content_page = str_replace('%download%',$download,$DH_output_content_page);		
+	$DH_output_content_page = str_replace('%download0%',$download0,$DH_output_content_page);		
+
+	$DH_output_content_page = str_replace('%num1x%',$num1,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%num2x%',$num2,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%num3x%',$num3,$DH_output_content_page);	
+	$DH_output_content_page = str_replace('%num4x%',$num4,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%num6x%',$num6,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%num60x%',$num60,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%num7x%',$num7,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%num70x%',$num70,$DH_output_content_page);
+	$DH_output_content_page = str_replace('%num8x%',$num8,$DH_output_content_page);
 
 	$codetitle=rawurlencode($row['title']);
 	$codetitlegbk = rawurlencode(iconvbuffgbk($row['title']));
 	$DH_output_content_page = str_replace('%codetitle%',$codetitle,$DH_output_content_page);	
 	$DH_output_content_page = str_replace('%codetitlegbk%',$codetitlegbk,$DH_output_content_page);
 
+	return $DH_output_content_page;
+}
+
+function dh_replace_piaozi($row,$DH_output_content)
+{
+	$codetitle=rawurlencode($row['title']);
+	//处理购票
+	//$buyticket='<li class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></li>';
+	$buyticket='';
+    $piaozi='';
+	if($row['mstatus']==3)
+	{
+		if($row['mediaid']!='')
+			$buyticket .='<a href = "http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target = "_blank" title="豆瓣购票链接" rel="nofollow">豆瓣购票</a>';
+
+		preg_match('/<4>(.*?)<\/4>/s',$row['ids'],$match1);
+		//print_r($match1);
+		if(!empty($match1[1]))
+			$buyticket .=' <a href = "http://www.gewara.com/movie/'.$match1[1].'" target = "_blank" title="格瓦拉购票链接" rel="nofollow">格瓦拉购票</a>';
+		
+		preg_match('/<5>(.*?)<\/5>/s',$row['ids'],$match1);
+		//print_r($match1);
+		if(!empty($match1[1]))
+			$buyticket .=' <a href = href="http://wangpiao.com/movie/'.$match1[1].'/?showulcinfo=1" target = "_blank" title="网票网购票" rel="nofollow">网票网购票</a>';
+
+    	$mtimeid='';	
+    	preg_match('/<3>(.*?)<\/3>/s',$row['ids'],$match);
+    	if(!empty($match[1]))
+		    $mtimeid=$match[1];
+		if($mtimeid!='')
+			$buyticket .=' <a href = href="http://theater.mtime.com/movie/'.$mtimeid.'/" target = "_blank" title="时光网购票" rel="nofollow">时光网购票</a>';			
+
+		$piaozi.='<a href="http://www.gewara.com/newSearchKey.xhtml?skey='.$codetitle.'" target="_blank" rel="nofollow">搜索格瓦拉</a>';
+		$piaozi.='/<a href="http://www.wangpiao.com/Search/Index/0/'.$codetitle.'/1" target="_blank" rel="nofollow">搜索网票</a>';
+		$piaozi.='/<a href="http://film.spider.com.cn/shanghai-search/?keyword='.$codetitle.'" target="_blank" rel="nofollow">搜索蜘蛛网</a>';
+		$piaozi.='/<a href="http://www.hipiao.com/" target="_blank" rel="nofollow">登录哈票</a>';
+	}
+	else
+		$piaozi='不在购票时间内';
+	
+	$DH_output_content_page = str_replace("%buyticket%",$buyticket,$DH_output_content);
+	$DH_output_content_page = str_replace("%piaozi%",$piaozi,$DH_output_content_page);
+	
 	return $DH_output_content_page;
 }
 
@@ -250,7 +261,6 @@ function dh_replace_content($count,$row,$DH_output_content)
 	$news='<a href="http://news.mtime.com/search/tag/index.html?t='.$codetitle.'" target="_blank" rel="nofollow">查找时光影讯</a>';;
 	$trailer='';
 	$photos='';
-	$piaozi='';
 	
 	preg_match('/<r1>(.*?)<\/r1>/s',$row['ids'],$match);
 	if(!empty($match[1]))
@@ -264,7 +274,6 @@ function dh_replace_content($count,$row,$DH_output_content)
 		$review.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/reviews" target="_blank" rel="nofollow">豆瓣影评</a>';
 		$trailer.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/trailer" target="_blank" rel="nofollow">豆瓣预告</a>';
 		$photos.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/all_photos" target="_blank" rel="nofollow">豆瓣剧照</a>';
-		$piaozi.='<a href="http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target="_blank" rel="nofollow">豆瓣购票</a>';
 	}
 	
 	$rating='';
@@ -326,56 +335,11 @@ function dh_replace_content($count,$row,$DH_output_content)
 	}	
 	$DH_output_content_page = str_replace("%pubcompany%",$pubcompany,$DH_output_content_page);	
 
-	//处理购票
-	$buyticket='<li class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="lqc3 rt0v5">来源网站 更新时间</div></li>';
-	$ticketnum=0;
-	if($row['mstatus']==3)
-	{
-		if($row['mediaid']!='')
-		{
-			$ticketnum++;
-			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://movie.douban.com/subject/'.$row['mediaid'].'/cinema/" target = "_blank" title="豆瓣购票链接" rel="nofollow">豆瓣购票链接</a></div><div class="lqc3 rt0v5">豆瓣 '.$updatetime.'</div></li>';
-		}
-		preg_match('/<4>(.*?)<\/4>/s',$row['ids'],$match1);
-		//print_r($match1);
-		if(!empty($match1[1]))
-		{
-			$ticketnum++;
-			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = "http://www.gewara.com/movie/'.$match1[1].'" target = "_blank" title="格瓦拉购票链接" rel="nofollow">格瓦拉购票链接</a></div><div class="lqc3 rt0v5">格瓦拉 '.$updatetime.'</div></li>';
-		}
-		
-		preg_match('/<5>(.*?)<\/5>/s',$row['ids'],$match1);
-		//print_r($match1);
-		if(!empty($match1[1]))
-		{
-			$ticketnum++;
-			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://wangpiao.com/movie/'.$match1[1].'/?showulcinfo=1" target = "_blank" title="网票网购票链接" rel="nofollow">网票网购票链接</a></div><div class="lqc3 rt0v5">网票网 '.$updatetime.'</div></li>';
-		}	
-	
-		if($mtimeid!='')
-		{
-			$ticketnum++;
-			$buyticket .='<li class="listall"><div class="listlink">'.$ticketnum.' <a href = href="http://theater.mtime.com/movie/'.$mtimeid.'/" target = "_blank" title="时光网购票链接" rel="nofollow">时光网购票链接</a></div><div class="lqc3 rt0v5">时光网 '.$updatetime.'</div></li>';			
-		}	
-		//$codetitle=rawurlencode($row['title']);
-		$piaozi.='/<a href="http://www.gewara.com/newSearchKey.xhtml?skey='.$codetitle.'" target="_blank" rel="nofollow">搜索格瓦拉</a>';
-		$piaozi.='/<a href="http://www.wangpiao.com/Search/Index/0/'.$codetitle.'/1" target="_blank" rel="nofollow">搜索网票</a>';
-		$piaozi.='/<a href="http://film.spider.com.cn/shanghai-search/?keyword='.$codetitle.'" target="_blank" rel="nofollow">搜索蜘蛛网</a>';
-		$piaozi.='/<a href="http://www.hipiao.com/" target="_blank" rel="nofollow">登录哈票</a>';
-	}
-	else
-		$piaozi='不在购票时间内';
-	$buyticket='<div>'.$buyticket.'</div>'.'<div class="showhide">更多资源,敬请期待</div>';
-	
 	$ofsite='';
 	preg_match('/<b>(.*?)<\/b>/s',$row['meta'],$match);
 	if(!empty($match[1]))	
 		$ofsite = ' <a href="'.$match[1].'" target="_blank" rel="nofollow">[官方网站]</a> </span>';
 	$DH_output_content_page = str_replace("%ofsite%",$ofsite,$DH_output_content_page);
-	
-	$DH_output_content_page = str_replace("%buyticket%",$buyticket,$DH_output_content_page);	
-	$DH_output_content_page = str_replace("%ticketnum%",$ticketnum,$DH_output_content_page);
-	$DH_output_content_page = str_replace("%piaozi%",$piaozi,$DH_output_content_page);
 	
 	$DH_output_content_page = str_replace("%thisupdatetime%",'最后更新:'.$updatetime,$DH_output_content_page);
 	return $DH_output_content_page;
@@ -570,7 +534,7 @@ function getcele($patten,&$celeimg,&$celes,$meta,$title)
 			{
 				if($key>5)
 					break;
-				list($name,$id) = split('[|]', $eachmatch);
+				list($name,$id) = preg_split('[|]', $eachmatch);
 				if($id)
 				{
 					$celes .= '<a href="http://movie.douban.com/celebrity/'.$id.'/" target="_blank" rel="nofollow">'.trim($name).'</a>'.'/';
@@ -595,12 +559,18 @@ function getcele($patten,&$celeimg,&$celes,$meta,$title)
 	}
 }
 
-function getlinksmore($num0,$num,$id,$content,$innerpage)
+function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
 {
 	$tmplinks='<div id="'.$id.'">'.$content.'</div>';
-	if($num0 <= $num)
-		$tmplinks.='<div class="showhide">更多资源,敬请期待</div>';
-	else
+    if($num0 != 0)
+    {
+	    $tmplinks=$linktop.$tmplinks;
+    }
+    else
+    {
+	    $tmplinks = '<div class="listall" style="text-align:center;padding:3px 0 1px 0">暂无此类资源，本站会及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
+    }
+	if($num0 > $num)
 	{
 		$innerpagetmp = str_replace("%pagesNav%",$id.'p1',$innerpage);
 		$innerpagetmp = str_replace("%pageP%",$id.'p2',$innerpagetmp);
@@ -610,6 +580,8 @@ function getlinksmore($num0,$num,$id,$content,$innerpage)
 		$innerpagetmp = str_replace("%num%",$num,$innerpagetmp);
 		$tmplinks.=$innerpagetmp;
 	}
+    //替换各个搜搜类别
+	$tmplinks = str_replace("%cat%",$searchcat,$tmplinks);
 	return $tmplinks;
 }
 function dh_pagenum_link($link,$page)

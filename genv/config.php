@@ -21,12 +21,12 @@ $DH_name_des= '小二影视网_影视资源(电影/电视剧/动漫/综艺/纪�
 function dh_get_title($type,$title)
 {
 	if($type==1)
-		$cat ='电影《'.$title.'(%pubyear%)》下载等资源链接汇总';
+		$cat =$title.'电影(%pubyear%)下载地址等资源汇总';
 	if($type==2)
-		$cat ='电视剧《'.$title.'》全集_在线等资源链接汇总';
+		$cat =$title.'电视剧全集_在线观看等资源汇总';
 	if($type==3)
-		$cat ='综艺《'.$title.'》全集_在线等资源链接汇总';
+		$cat =$title.'综艺全集_在线观看等资源汇总';
 	if($type==4)
-		$cat ='动画(动漫)《'.$title.'》全集_在线等资源链接汇总';
+		$cat =$title.'动画(动漫)全集_在线观看等资源汇总';
 	return $cat;
 }

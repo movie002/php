@@ -97,10 +97,9 @@
 a.gotop_btn
 {
 text-align:center;
-position: fixed;
-left: 50%;
-margin-left: 500px;
-top: 300px;
+position:fixed;
+margin-left: -50px;
+top: 150px;
 font-weight:700;
 font-size:11px;
 width: 35px;
@@ -125,7 +124,7 @@ a.gotop_btn:visited
 
 a.gotop_btn_up
 {
-top: 300px;
+top: 150px;
 display: none;
 border-radius:10px 10px 3px 3px;
 -webkit-border-radius:10px 10px 3px 3px;

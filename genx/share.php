@@ -173,24 +173,6 @@ function dh_gen_side($DH_home_url)
 	$DH_output_file = $DH_share_output_path. 'side.html';
 	dh_file_put_contents($DH_output_file,$DH_side);	
 	echo "gen side success !</br>\n";
-	
-//	$DH_input_html  = $DH_html_path . 'cse.html';
-//	$DH_output = dh_file_get_contents($DH_input_html);
-//	$DH_output = setshare($DH_output,'page.js');	
-//	$DH_output_file = $DH_output_path. 'cse.html';
-//	dh_file_put_contents($DH_output_file,$DH_output);	
-	
-	$DH_input_html = $DH_html_path. 'search.php';
-	$DH_output = dh_file_get_contents($DH_input_html);
-	$DH_output = setshare($DH_output,'');
-	$DH_output = str_replace("输入影视名...",'<?php echo $q ?>',$DH_output);
-	$DH_output = str_replace('<form name="f1"  target="_blank"','<form name="f1"',$DH_output);
-	
-	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
-	$DH_output_file = $DH_output_path. 'search.php';
-	dh_file_put_contents($DH_output_file,$DH_output);
-	
-	echo "gen search success !</br>\n";		
 }
 
 function dh_get_movie_type_ul($sql)

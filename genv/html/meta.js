@@ -15,7 +15,7 @@ function getCookie(name)//取cookies函数
 
 //解决ie的这个不符合w3c的方法
 var style_need='.topnav ul li ,.celeimg_title{filter:alpha(opacity=90);}';
-var style_need='.celeimg_title{filter:alpha(opacity=50);}';
+style_need+='.celeimg_title{filter:alpha(opacity=50);}';
 
 var movie002_day =  getCookie("movie002_day");
 if(movie002_day==null)

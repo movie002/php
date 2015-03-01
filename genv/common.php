@@ -570,7 +570,7 @@ function getcele($patten,&$celeimg,&$celes,$meta,$title)
 			{
 				if($key>5)
 					break;
-				list($name,$id) = split('[|]', $eachmatch);
+				list($name,$id) = preg_split('[|]', $eachmatch);
 				if($id)
 				{
 					$celes .= '<a href="http://movie.douban.com/celebrity/'.$id.'/" target="_blank" rel="nofollow">'.trim($name).'</a>'.'/';

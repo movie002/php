@@ -77,8 +77,12 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 		$count=0;
 		$queue = new Queue(9);
 		
-		$DH_input_html  = $DH_html_path . 'page_tmp.html';
-		$DH_output_content_tmp = dh_file_get_contents("$DH_input_html");		
+		$DH_input_html  = $DH_html_path . 'page_tmp_ticket.html';
+		$DH_output_content_ticket = dh_file_get_contents("$DH_input_html");
+		$DH_input_html  = $DH_html_path . 'page_tmp_download0.html';
+		$DH_output_content_download0 = dh_file_get_contents("$DH_input_html");		
+		$DH_input_html  = $DH_html_path . 'page_tmp_download1.html';
+		$DH_output_content_download1 = dh_file_get_contents("$DH_input_html");		
 		
 		while($row = mysql_fetch_array($results))
 		{	
@@ -93,13 +97,21 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 
 			//如果不是电影，不需要预告和购票
 			if($row['cattype']!= 1)
-				$DH_output_content_tmp_each='';
+				$DH_output_content_ticket_each='';
 			else
-				$DH_output_content_tmp_each=$DH_output_content_tmp;
-			$DH_output_content_page = str_replace('%page_tmp%',$DH_output_content_tmp_each,$DH_output_content_page);
+				$DH_output_content_ticket_each=$DH_output_content_ticket;
+			$DH_output_content_page = str_replace('%page_ticket%',$DH_output_content_ticket_each,$DH_output_content_page);
+
+            $todaydate = date("Y-m-d");
+			if($todaydate >= $row['access'])
+				$DH_output_content_download_each=$DH_output_content_download1;
+			else
+				$DH_output_content_download_each=$DH_output_content_download0;
+			$DH_output_content_page = str_replace('%page_download%',$DH_output_content_download_each,$DH_output_content_page);
 			
 			$DH_output_content_page = dh_replace_snapshot('big',$row,$DH_output_content_page);
 			$DH_output_content_page = dh_replace_content($count,$row,$DH_output_content_page);
+			$DH_output_content_page = dh_replace_piaozi($row,$DH_output_content_page);
 			$cat = dh_get_catname($row['cattype'],$row['catcountry']);
 			$DH_output_content_page = str_replace("%cat%",$cat,$DH_output_content_page);
 			
@@ -141,7 +153,7 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$cathref = $DH_index_url.$row['cattype'].'_'.$row['catcountry'].'_l/1.html';
 			$DH_output_content_page = str_replace("%cathref%",$cathref,$DH_output_content_page);
 						
-			$sqllinks = "select pageid,author,title,link,linkquality,linkway,linktype,linkdownway,updatetime from link t where t.pageid = '".$row['id']."' and remove is null order by linkquality desc,updatetime desc";
+			$sqllinks = "select * from link t where t.pageid = '".$row['id']."' and remove is null order by linkquality desc,updatetime desc";
 			//echo $sqllinks;
 			$DH_output_content_page = dh_replace_link($sqllinks,$row,$DH_output_content_page);
 			
