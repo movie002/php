@@ -1,13 +1,12 @@
 <?php
 
-//$DH_output_path= '/srv/v/';
-//$DH_input_path= '/srv/php/';
-//$DH_dh_path= '/srv/dh/';
-//$DH_home_url= 'http://v.movie002.com';
+$DH_output_path= '/srv/v/';
+$DH_input_path= '/srv/php/';
+$DH_home_url= 'http://v.movie002.com';
 
-$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/x/';
-$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-$DH_home_url= 'http://v.x2y4.com/';
+//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/x/';
+//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
+//$DH_home_url= 'http://v.x2y4.com/';
 
 $DH_src_path= $DH_input_path. 'genx/';
 $DH_html_path= $DH_src_path . 'html/';
