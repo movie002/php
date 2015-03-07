@@ -1,0 +1,329 @@
+#title
+{
+	margin:5px 0 0px 0px;
+	position:relative;	
+}
+#comment
+{
+	border: 1px solid #ccc;
+	padding:5px;
+	margin:5px;
+	position:relative;
+}
+.titlecontent
+{
+	font-size:16px;
+	font-weight:900;
+	padding: 10px 0 5px 10px;
+	border-top: 2px solid #576d74; 
+	border-bottom: 1px solid #576d74;
+	color: #555;	
+	position: relative;	
+}
+h1
+{
+	font-weight:700;
+	font-size:20px;
+	line-height:120%;
+}
+
+h2
+{
+	color:#999;
+	font-size:13px;
+    font-weight: normal;
+	margin:5px 0;
+	max-width:50%;
+}
+
+.postmeta {
+margin:5px 1px 0;
+padding:0 0 0 5px
+}
+
+.postmeta a {
+color:#000
+}
+
+.entry {
+padding:2px 8px;
+}
+
+.entry p {
+padding:2px 0;
+text-indent:2em;
+}
+
+.entry strong {
+font-weight:700
+}
+
+.entry h1 {
+font-size:18px;
+font-weight:700;
+padding:0 0 7px
+}
+
+.entry h2 {
+font-size:16px;
+color:#000;
+font-weight:700;
+margin:0 0 5px 0!important;
+padding:0!important;
+}
+
+.entry h3 {
+	margin:20px 0 5px 0;
+	font-size:14px;
+    font-weight: 700;
+	position:relative;
+}
+
+.entry h4 {
+	font-size:12px;
+	font-weight:700;
+	padding:5px 0 5px 5px;
+	border-bottom: 1px solid #999;
+	position:relative;
+	color: purple;
+	background: lightblue;	
+}
+
+.entry h5 {
+font-size:10px;
+font-weight:700;
+padding:0 0 7px
+}
+
+.entry h6 {
+font-size:10px;
+font-weight:700;
+padding:0 0 7px
+}
+
+.entry a {
+color:#144F78
+}
+
+.entry a:hover {
+text-decoration:underline
+}
+
+.entry img {
+
+}
+
+.entry a img {
+border:none
+}
+
+.entry ul {
+padding-bottom:10px;
+list-style:square inside
+}
+
+.entry ol {
+padding-bottom:10px;
+list-style:decimal inside
+}
+
+.entry  .single_content{
+z-index:1;
+overflow:hidden;
+}
+
+#entry_content
+{
+	position:relative;
+}
+
+blockquote {
+background:#F6F5F5;
+color:#333;
+clear:both;
+border-left:3px solid #BFBBBB;
+margin:0 0 10px;
+padding:2px 10px
+}
+
+blockquote p {
+font-size:11px;
+line-height:15px;
+margin:5px 0;
+padding:5px 0
+}
+
+blockquote li {
+font-size:11px;
+line-height:15px;
+color:#369;
+padding:2px 0 2px 10px
+}
+
+blockquote a {
+color:#0080CA;
+text-decoration:underline
+}
+
+blockquote a:hover {
+color:#039
+}
+
+.tag {
+line-height:15px;
+padding:10px
+}
+
+.related_post {
+margin:5px 0 0;
+padding:0
+}
+
+.related_post h3 {
+font-size:14px;
+padding:0;
+margin: 0 0 5px 0;
+}
+
+.related_post ul {
+margin:0;
+padding:0
+}
+
+img.centered {
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:10px;
+padding:0
+}
+
+img.alignnone {
+display:inline;
+margin:0 0 10px;
+padding:0
+}
+
+img.alignright {
+display:inline;
+margin:0 0 10px 10px;
+padding:0
+}
+
+img.alignleft {
+display:inline;
+margin:0 10px 10px 0;
+padding:0
+}
+
+.aligncenter {
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:10px
+}
+
+.alignright {
+float:right;
+margin:0 0 10px 10px
+}
+
+.alignleft {
+float:left;
+margin:0 10px 10px 0
+}
+
+.wp-caption {
+background:#f7f7f7;
+text-align:center;
+border:1px solid #e6e6e6;
+padding:4px 0 5px
+}
+
+.wp-caption img {
+border:0;
+margin:0 0 5px;
+padding:0
+}
+
+.wp-caption p.wp-caption-text {
+font-size:11px;
+font-weight:400;
+line-height:12px;
+margin:0;
+padding:0
+}
+
+.navigation {
+margin:5px 0;
+padding:0
+}
+
+.listtitle 
+{
+	line-height:220%;
+	font-weight:700;
+	font-size:14px;
+}
+
+.listall
+{
+	position:relative;	
+	margin: 0 0 3px 5px;
+	padding: 0 0 3px 0;
+	border-bottom: 1px solid #CCC;
+	list-style-position:outside;
+}
+
+.listnum
+{
+	position:absolute;
+	left:5px;
+}
+
+.listlink
+{
+	width:68%;
+	margin:0 0 0 5px;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+
+.listmeta
+{
+	position:absolute;
+	right:0px;
+	top:0px;
+	color:#888;
+}
+.showhide
+{
+	text-align:center;
+	color: #888;
+	width:200px;
+	margin:0 auto;
+}
+.showhide_more
+{
+	border-top:1px solid #bbb;	
+}
+.downloadlist
+{
+	padding:2px 0;
+	border-top:1px solid #bbb;
+	position: relative;
+}
+.borderside
+{
+	border-right: 1px solid #759CC2;
+	border-left: 1px solid #759CC2;
+}
+.eh4
+{
+	font-weight:700;
+	border-left: 2px solid #000;
+	padding-left: 5px;
+}

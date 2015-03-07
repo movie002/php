@@ -1,0 +1,169 @@
+.post {
+border:1px solid #f7f3ed;
+margin:10px 0
+}
+
+.post:hover {
+border:1px solid #898f8f;
+margin:10px 0
+}
+
+.postbox {
+border:1px solid #898f8f;
+color:#444;
+position:relative;
+padding:0
+}
+
+.meta a {
+color:#898f8f
+}
+
+.meta a:hover {
+text-decoration:none;
+color:#000
+}
+
+.postbox .postdate_top {
+position:absolute;
+left:5px;
+top:5px;
+height:23px;
+width:50px;
+border:1px solid #aaa;
+border-bottom:none;
+border-radius:6px 6px 0 0;
+-webkit-border-radius:6px 6px 0 0;
+-khtml-border-radius:6px 6px 0 0;
+-moz-border-radius:6px 6px 0 0;
+background:#52686f;
+color:#fff;
+text-align:center;
+font-family:trebuchet ms, Verdana, Arial, Sans-Serif;
+font-size:16px;
+font-weight:400;
+padding:0
+}
+
+.postbox .postdate_bottom {
+position:absolute;
+left:5px;
+top:30px;
+height:23px;
+width:50px;
+border:1px solid #aaa;
+border-top:none;
+border-radius:0 0 6px 6px;
+-webkit-border-radius:0 0 6px 6px;
+-khtml-border-radius:0 0 6px 6px;
+-moz-border-radius:0 0 6px 6px;
+text-align:center;
+font-family:trebuchet ms, Verdana, Arial, Sans-Serif;
+padding:0
+}
+
+.postbox .postdate_bottom .DateD {
+font-size:17px;
+font-weight:700
+}
+
+.postbox .postdate_bottom .DateW {
+font-size:12px;
+font-weight:400
+}
+
+.postbox .header {
+height:30px;
+border-bottom:1px dashed #898f8f;
+margin:0 0 0 65px;
+padding:0
+}
+
+.postbox .title {
+font-weight:700;
+line-height:30px;
+font-size:16px;
+}
+
+.postbox .title a {
+-webkit-transition:all .2s ease-out;
+-moz-transition:all .2s ease-out;
+color:#333
+}
+
+.postbox  .title a:hover {
+text-decoration:none;
+color:#660a11;
+margin-left:10px
+}
+
+.postbox .comment {
+position:absolute;
+right:5px;
+top:0px;
+font-size:12px;
+}
+
+.postbox .comment a {
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-webkit-transition: all .25s linear;
+transition: all .25s linear;
+background:#bbb;
+padding:3px 5px;
+color:#000;
+font-size:14px;
+line-height:30px;
+}
+
+.postbox .comment a:hover{
+text-decoration:none;
+background:#d54e21;
+}
+
+.postbox .meta span {
+font-size:12px;
+line-height:23px;
+height:23px
+}
+
+.postbox .info {
+text-indent:2em;
+line-height:1.8em;
+margin:10px 5px 10px 10px;
+padding:0
+}
+
+.postbox .views {
+position:absolute;
+right:5px
+}
+
+.postbox .meta {
+border-bottom:1px solid #898f8f;
+position:relative;
+height:23px;
+margin:0 0 0 65px;
+padding:0
+}
+
+.postbox .tags {
+float:left;
+background:url(../images/postmeta.png) no-repeat 0 3px;
+margin:0 20px 0 0;
+padding:0 0 0 20px
+}
+
+.postbox .category {
+float:left;
+background:url(../images/postmeta.png) no-repeat 0 -17px;
+margin:0 15px 0 0;
+padding:0 0 0 20px
+}
+
+.postbox .author {
+float:left;
+background:url(../images/postmeta.png) no-repeat 0 -37px;
+margin:0 15px 0 0;
+padding:0 0 0 20px
+}

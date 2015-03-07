@@ -1,0 +1,73 @@
+.page_navi {
+width:100%;
+text-align:left;
+overflow:hidden;
+margin:10px 0;
+padding:10px 0
+}
+
+.page_navi a {
+text-decoration:none;
+color:#888;
+border:1px solid #ccf;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+margin:2px;
+padding:3px 8px
+}
+
+.page_navi a:hover,.page_navi a.current {
+border:1px solid #3c8266;
+background:#dddddd;
+text-decoration:none;
+-webkit-transition: all .25s linear;
+transition: all .25s linear;
+}
+
+.page_navi .current {
+border:1px solid #356aa0;
+color:#356aa0;
+font-weight:bolder;
+margin:2px;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+padding:3px 8px
+}
+
+.pagesNav
+{
+	padding:0 0 5px 15px;
+	z-index:1;
+	overflow:hidden;
+	margin: 5px 0 0 0;
+}
+
+.pagesNav ul
+{
+	padding:0 10px;
+	z-index:1;
+	overflow:hidden;
+	max-width:80%;
+}
+.pagesNav li
+{
+	border: 1px solid #ccc;
+	cursor: pointer;
+	margin: 2px 5px 0 0;
+	float: left;
+	width: 20px;
+	text-align: center;
+	line-height: 1.1;	
+}
+
+.pagesNav li:hover
+{
+	border:1px solid #f90;
+	color: red;
+}
+
+.pagesNav .cur
+ {
+	border:1px solid #f90;
+	color: red;
+}

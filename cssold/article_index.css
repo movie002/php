@@ -1,0 +1,56 @@
+#article_index {
+font-size: 12px;
+position: absolute;
+right: 0;
+top:10px;
+margin:0;
+width:90px;
+border-radius: 6px;
+-webkit-border-radius:6px;
+-khtml_border-radius:6px;
+-moz_border-radius:6px;
+border: 1px solid #aaa;
+background: wheat;
+}
+#index_title{
+border-radius: 4px 4px 0 0;
+padding:0;
+border-bottom: 1px solid #aaa;
+line-height: 20px;
+text-align:center;
+}
+#the_index_title {
+line-height: 1.0;
+color: #019858;
+font-weight: bold
+}
+#show_index{
+cursor: pointer;
+margin-left:5px;
+}
+#index_ul {
+list-style: none;
+margin:2px 0;
+border:none;
+}
+
+#index_ul ul
+{
+margin:0;
+padding:0;
+border:none;
+list-style-position:outside;
+}
+
+#index_ul li
+{
+white-space:normal;
+word-break:break-all;
+word-wrap:break-word;
+margin:0;
+padding:0;
+line-height:18px;
+}
+#index_ul .level2 a{
+padding-left: 6px;
+}
