@@ -51,7 +51,7 @@ padding:3px 8px
 }
 .pagesNav li
 {
-	border: 1px solid #ccc;
+	border: 1px solid;
 	cursor: pointer;
 	margin: 2px 5px 0 0;
 	float: left;

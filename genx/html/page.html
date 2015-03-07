@@ -10,8 +10,8 @@
 	if(!window.console||!console.firebug){var names=["log","debug","info","warn","error","assert","dir","dirxml","group","groupEnd","time","timeEnd","count","trace","profile","profileEnd"];window.console={};for(var i=0;i<names.length;++i){window.console[names[i]]=function(){}}}function nextPage(j){var b=document.getElementById(j.pagesMain);var f=document.getElementById(j.pagesNav);var c=document.getElementById(j.prevBtn);var h=document.getElementById(j.nextBtn);var l=j.curNum;var a=Math.ceil(b.children.length/l);var d="";var g=0;for(var e=0;e<a;e++){d+="<li>"+parseInt(e+1)+"</li>"}f.innerHTML=d;f.children[0].className=j.activeClass;for(var e=0;e<f.children.length;e++){f.children[e].index=e;f.children[e].onclick=function(){for(var m=0;m<f.children.length;m++){f.children[m].className=""}this.className=j.activeClass;g=this.index;k(g)}}c.onclick=function(){if(g==0){return false}else{console.log(g);for(var m=0;m<f.children.length;m++){f.children[m].className=""}f.children[g-1].className=j.activeClass;k(g-1);return g--}};h.onclick=function(){if(g==a-1){return false}else{console.log(a);for(var m=0;m<f.children.length;m++){f.children[m].className=""}f.children[g+1].className=j.activeClass;k(g+1);return g++}};function k(n){var n=n;for(var m=0;m<a;m++){for(var o=0;o<l;o++){if(b.children[(m*l)+o]==undefined){continue}b.children[(m*l)+o].style.display="none"}}for(var o=0;o<l;o++){if(b.children[(n*l)+o]==undefined){continue}b.children[(n*l)+o].style.display="block"}}k(j.ini)};
 	</script>
 </head>
-<body>
-	<div id="wrapper" class="width_1">
+<body class="bg_a c_a">
+	<div id="wrapper" class="width_1  b1 bg_m">
 		<div id="header">
 			%head%
 		</div>
@@ -28,7 +28,7 @@
 					<div class="bdsharebuttonbox" style="position:relative;left:10px;top:-28px"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a></div>
 					</span>
 				</div>
-				<div class="titlecontent">
+				<div class="titlecontent bt2 bb1 c_a bc_c">
 					<h1>%title% (%pubyear%)
 						<span style="font-size:14px;font-weight:normal">资源汇总,级别%way%</span>
 					</h1>
@@ -42,14 +42,14 @@
 					<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>	-->
 				</div>				
 			</div>
-			<a href="#title_6" title="下载" class="gotop_btn bt2" style="top:198px">下载</a>
-			<a href="#title_1" title="影讯" class="gotop_btn bt2" style="top:232px">影讯</a>
-			<a href="#title_2" title="影评" class="gotop_btn bt2" style="top:266px">影评</a>
-			<a href="#title_3" title="预告" class="gotop_btn bt2" style="top:300px">预告</a>
-			<a href="#title_4" title="购票" class="gotop_btn bt2" style="top:334px">购票</a>
-			<a href="#title_7" title="在线" class="gotop_btn bt2" style="top:368px">在线</a>
-			<a href="#title_c" title="评论" class="gotop_btn bt2" style="top:402px">评论</a>
-			<div id="content" class="width_3">
+			<a href="#title_6" title="下载" class="gotop_btn bt2 bg_top" style="top:198px">下载</a>
+			<a href="#title_1" title="影讯" class="gotop_btn bt2 bg_top" style="top:232px">影讯</a>
+			<a href="#title_2" title="影评" class="gotop_btn bt2 bg_top" style="top:266px">影评</a>
+			<a href="#title_3" title="预告" class="gotop_btn bt2 bg_top" style="top:300px">预告</a>
+			<a href="#title_4" title="购票" class="gotop_btn bt2 bg_top" style="top:334px">购票</a>
+			<a href="#title_7" title="在线" class="gotop_btn bt2 bg_top" style="top:368px">在线</a>
+			<a href="#title_c" title="评论" class="gotop_btn bt2 bg_top" style="top:402px">评论</a>
+			<div id="content" class="width_3 b1 bc_a">
 				<div class="entry f12px">
 					<div class="movie_meta h154px">
 						%imgposter%
@@ -66,10 +66,10 @@
 						<span id="summaryi" style="display:none"><p>%summary%，%more%。</p>
 						<p>感谢持续关注%catkeyword%的各类资源更新情况,由于资源全部由计算机自动完成收集和匹配,%DH_name%无法保证链接的真实性、正确性以及合法性，如果出现此类情况，希望广大影视爱好者协助纠正！<a onclick="hide('summarya','summaryi','>>>')"><<<</a> </p></span>
 					</div>
-					<div id="entry_content" style="border-top:1px solid #999">
+					<div id="entry_content" class="bt1 bc_a">
                         %page_download%
 
-						<div class="eh4" style="position:relative;margin:15px 0 0 0">资源列表，不断更新中 ... <span class="rt0v0 f500"> %thisupdatetime%</span></div>
+						<div class="eh4 bl2 bc_a" style="position:relative;margin:15px 0 0 0">资源列表，不断更新中 ... <span class="rt0v0 f500"> %thisupdatetime%</span></div>
 						<div style="margin:5px 0 0 0">									
 							<span>我是影视爱好者:我要<!--[<a href="javascript:showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>]--> [<a href="javascript:AddFavorite('《%title_key%》资源链接(在线下载等)-%DH_name%',location.href)">收藏此页</a>] || 我有资源:我要[<a href="javascript:showmiddle('srcsub')">提交资源</a>]</span>
 						</div>
@@ -93,30 +93,30 @@
 							    <h4>在线观看 资源数(%num7x%)
                                     <span class="f500">点击视频搜索:<a href="http://video.soso.com/v?query=%codetitle%" target="_blank" rel="nofollow">[soso]</a><a href="https://www.google.com.hk/search?tbm=vid&hl=zh-CN&source=hp&q=%codetitle%" target="_blank" rel="nofollow">[google]</a><a href="http://www.soku.com/v?keyword=%codetitle%" target="_blank" rel="nofollow">[soku]</a><a href="http://v.sogou.com/v?query=%codetitle%" target="_blank" rel="nofollow">[sogou]</a> 搜索视频网站: <a href="http://so.v.360.cn/index.php?kw=%codetitle%" target="_blank" rel="nofollow">[v360]</a><a href="http://v.baidu.com/v?word=%codetitlegbk%" target="_blank" rel="nofollow">[vbaidu]</a><a href="http://so.v.2345.com/search_%codetitle%" target="_blank" rel="nofollow">[v2345]</a></span>
                                 </h4>
-                                <div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div>
+                                <div style="height:25px;" class="bb1 bc_a">&nbsp;</div>
 							    <div class="linksmall">%online%</div>
                             </div>
                             <div id="ol_Content1" class="none" style="overflow:hidden;z-index:2;">
 							    <h4>在线观看 资源数(%num7x%)
                                     <span class="f500">点击视频搜索:<a href="http://video.soso.com/v?query=%codetitle%" target="_blank" rel="nofollow">[soso]</a><a href="https://www.google.com.hk/search?tbm=vid&hl=zh-CN&source=hp&q=%codetitle%" target="_blank" rel="nofollow">[google]</a><a href="http://www.soku.com/v?keyword=%codetitle%" target="_blank" rel="nofollow">[soku]</a><a href="http://v.sogou.com/v?query=%codetitle%" target="_blank" rel="nofollow">[sogou]</a> 搜索视频网站: <a href="http://so.v.360.cn/index.php?kw=%codetitle%" target="_blank" rel="nofollow">[v360]</a><a href="http://v.baidu.com/v?word=%codetitlegbk%" target="_blank" rel="nofollow">[vbaidu]</a><a href="http://so.v.2345.com/search_%codetitle%" target="_blank" rel="nofollow">[v2345]</a></span>
                                 </h4>
-                                <div style="height:25px;border-bottom:1px solid #CCC;">&nbsp;</div>
+                                <div style="height:25px;" class="bb1 bc_a">&nbsp;</div>
 							    <div class="linksmall">%online0%</div>
                             </div>
 						</div>
 						
-						<div class="eh4" style="position:relative;margin:30px 0 0 0">影视剧照：<span class="f500">更多在 [%photos%]</span><div class="anchor"><a name="title_p" id="title_p">&nbsp;</a></div></div>
+						<div class="eh4 bl2 bc_a" style="position:relative;margin:30px 0 0 0">影视剧照：<span class="f500">更多在 [%photos%]</span><div class="anchor"><a name="title_p" id="title_p">&nbsp;</a></div></div>
 						<div style="margin:10px 0 0 0">%simgs%&nbsp;</div>
 						
-						<div class="eh4" style="position:relative;margin:20px 0 0 0">影视人物：<div class="anchor"><a name="title_a" id="title_a">&nbsp;</a></div></div>
+						<div class="eh4 bl2 bc_a" style="position:relative;margin:20px 0 0 0">影视人物：<div class="anchor"><a name="title_a" id="title_a">&nbsp;</a></div></div>
 						<div style="margin:10px 0 0 0">%cpics%</div>
 						
-						<div class="eh4" style="margin:20px 0 0 0">左邻右舍：</div>
+						<div class="eh4 bl2 bc_a" style="margin:20px 0 0 0">左邻右舍：</div>
 						<div style="z-index:1;overflow:hidden;margin:10px 0 0 0">%others%</div>
 						</br>
 					</div>
 				</div>
-				<div id="comment">
+				<div id="comment" class="b1 bc_a">
 					<div class="anchor"><a name="title_c" id="title_c">&nbsp;</a></div>
 					<div class="ds-thread" data-thread-key="%id%" data-title="%title%"></div>
 				</div>
@@ -205,7 +205,7 @@
 				</div>				
 			</div>
 			<!-- content -->
-			<div id="sidebar">
+			<div id="sidebar" class="border_inner">
 				%side%
 			</div>
 			<!--end: sidebar-->

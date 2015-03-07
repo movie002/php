@@ -1,20 +1,9 @@
-.topic_list ul li,.topic_list ol li
-{
-	overflow:hidden;
-	position:relative;
-	margin:5px 0 0 0; 
-	line-height:1.6;
-	border-bottom: 1px solid #bbb; 
-	padding: 0 0 5px 0;	
-}
-
 .title_list ul li,.title_list ol li
 {
 	overflow:hidden;
 	position:relative;
 	margin:9px 0 0 0;
 	height:27px;
-	border-bottom: 1px solid #bbb; 
 }
 
 .link_list ul li,.link_list ol li
@@ -23,7 +12,6 @@
 	position:relative;
 	margin:5px 0 0 0;
 	height:23px;
-	border-bottom: 1px solid #bbb; 
 }
 
 .topic_title
@@ -32,15 +20,11 @@
 	position:relative;
 	margin:0 0 0px 1px; 
 	line-height:200%;	
-	border-bottom: 1px solid #3377aa; 
 }
 .post-topic-area {
 	font-size:16px;
 	font-weight:900;
 	padding: 8px 10px;
-	border-top: 2px solid #576d74; 
-	border-bottom: 1px solid #576d74;
-	color: #555;	
 	position: relative;
 }
    
@@ -55,9 +39,6 @@
     
 .topics-wrapper {
     padding: 0;
-    border-left: 1px solid #bbb;
-    border-right: 1px solid #bbb;
-    border-bottom: 1px solid #bbb;
 	margin: 0 1px 10px 1px;
 }
 	
@@ -72,30 +53,14 @@
 .movie_meta_cover{
 	height:127px;
 }
-.movie_meta_cover:hover{
-	border:1px solid #3377aa;
-}
-.need_cover:hover{
-	border:1px solid #3377aa;
-}
-
-.br
-{
-	border-right:1px solid #ccc;
-	-moz-border-radius:0px;
-	border-radius:0px;	
-}
 
 .topic_each
 {
 	position:relative;
-	border:1px solid transparent;
 	width:48%;
 	float:left;
 	margin:6px 0 5px 8px;
 	padding:0 5px 0 2px;
-	-moz-border-radius:6px;
-	border-radius:6px;
 }
 
 .topic-detail{
@@ -107,16 +72,7 @@ padding: 0px;
 	padding-bottom: 0;
 	border-bottom-style: none;
 }
-    
-.topic-detail, .reader-detail { 
-/*border-bottom: 1px solid #ddd;*/ 
-}	
 	
-.topic-detail-inner, .comment-detail-inner, .reader-detail-inner { overflow: hidden;border-right: 1px solid #ddd; padding-right:80px;}
-.topic-detail-inner { width:49%; float:left; margin:0 0 0px 1px; }
-.topic-detail-inner ul ,.topic-detail-inner ol{ margin:5px 0; padding-left:50px;}
-.topic-detail-inner ul li ,.topic-detail-inner ol li{margin:5px 0; line-height:150%; border-bottom: 1px solid #bbb; overflow:hidden;position:relative;}
-
 .topic-add-comment
  {
 	position:absolute; 
@@ -155,8 +111,6 @@ padding: 0px;
 }
 .TabTitle .active
 {
-	background:#52686f;
-	color:#fff;
 	display:block;
 	text-decoration:none;
 	border:none;

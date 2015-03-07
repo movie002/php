@@ -1,0 +1,190 @@
+.color555
+{
+	color:#555;
+}
+
+.color777
+{
+	color:#777;
+}
+
+.cred
+{
+	color:#a01200;
+}
+
+.c1
+{
+	color:#8f012c;
+}
+.c2
+{
+	color:#f5041d;
+}
+.c3
+{
+	color:#376a77;
+}
+.c4
+{
+	color:#e3236d;
+}
+.c5
+{
+	color:#cc1e5c;
+}
+.c6
+{
+	color:#044c82;
+}
+.c7
+{
+	color:#8f012c;
+}
+
+.lqc0
+{
+	color:#bbb;
+}
+.lqc1
+{
+	color:#aaa;
+}
+.lqc2
+{
+	color:#888;
+}
+.lqc3
+{
+	color:#666;
+}
+.lqc4
+{
+	color:#444;
+}
+.lqc5
+{
+	color:#222;
+}
+.lqc6
+{
+	color:#000;
+}
+
+.color_all
+{
+	color: #000000
+}
+
+.color_top
+{
+    color:#ddd
+}
+
+.colora a, .colora a:link, .colora a:visited, .colora a:hover, .colora a:active{
+    color: #ddd;
+}
+.border_inner
+{
+	border: 1px solid #ccc;
+}
+
+.border1
+{
+	border: 1px solid #759CC2;
+}
+
+.bb1, .bbli1 ul li, .bbli1 ol li
+{
+	border-bottom:1px solid #ddd;
+}
+
+.bbx1
+{
+	border-bottom:1px solid #576d74;
+}
+.bbx2
+{
+	border-bottom:2px solid #576d74;
+}
+.bby1
+{
+	border-bottom:1px solid #3377aa;
+}
+
+.bt1
+{
+	border-top:1px solid #ddd;
+}
+
+.bt2
+{
+    border-top:2px solid #444;
+}
+
+.btx2
+{
+	border-top:2px solid #576d74;
+}
+.btx1
+{
+	border-top:1px solid #576d74;
+}
+
+.br1
+{
+	border-right:1px solid #ddd;
+	-moz-border-radius:0px;
+	border-radius:0px;	
+}
+
+.bl2
+{
+	border-left:2px solid #000;
+}
+.bl1
+{
+	border-left:1px solid #ddd;
+}
+
+.need_cover:hover{
+	border:1px solid #3377aa;
+}
+
+.border_all
+{
+    border:none
+}
+
+.border_inner_all
+{
+    border:none
+}
+
+.bg_all
+{
+	background:#8f8f8f
+}
+
+.bg_middle
+{
+	background:#eeeeee
+}
+
+.TabTitle .active
+{
+	background:#52686f;
+    color:#fff
+}
+.bg_top
+{
+    background: #576d74
+}
+.color_bg
+{
+    color: #576d74
+}
+a.bg_top:hover
+{
+	background: #374d54;
+}

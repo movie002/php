@@ -1,0 +1,37 @@
+a { color: #2a2a2a; } 
+a:visited { color: #841a75; }
+a:hover { color:#F60; }
+.c555 { color:#555 }
+.c777 { color:#777 }
+.cred { color:#a01200 }
+.c1 { color:#8f012c }
+.c2 { color:#f5041d }
+.c3 { color:#376a77 }
+.c4 { color:#e3236d }
+.c5 { color:#cc1e5c }
+.c6 { color:#044c82 }
+.c7 { color:#8f012c }
+.lqc0 { color:#bbb }
+.lqc1 { color:#aaa }
+.lqc2 { color:#888 }
+.lqc3 { color:#666 }
+.lqc4 { color:#444 }
+.lqc5 { color:#222 }
+.lqc6 { color:#000 }
+
+.c_a { color:#000}
+.c_top { color:#ddd} 
+.c_aa a, .c_aa a:link, .c_aa a:visited, .c_aa a:hover, .c_aa a:active{ color: #ddd; }
+.c_b{ color: #576d74}
+
+.bc_a { border-color:#ddd }
+.bc_b { border-color:#759CC2 }
+.bc_c { border-color:#576d74 }
+.bc_d { border-color:#3377aa }
+.bc_hover:hover { border-color:#576d74 }
+
+.bg_a { background:#8f8f8f }
+.bg_m { background:#eeeeee }
+.bg_top { background: #576d74 }
+a.bg_top:hover { background: #374d54 }
+.TabTitle .active { background:#52686f; color:#fff }

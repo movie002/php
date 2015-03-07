@@ -35,6 +35,8 @@ if( isset($_REQUEST['id']))
 	$pageid = $_REQUEST['id'];
 }
 
+dh_gen_share($DH_home_url);
+dh_gen_side($DH_home_url);
 dh_gen_page($days,$pageid);
 
 //echo output_page_path(63);

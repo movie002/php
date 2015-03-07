@@ -1,16 +1,11 @@
 #service_list {
-    color: #ddd;
     padding-top: 1px;
-    background: #576d74;
 }
-#service_list a,#service_list a:link,#service_list a:visited{
-    color: #ddd;
+
+#service_list a,#service_list a:link,#service_list a:visited,#service_list a:hover,#service_list a:active{
     text-decoration: none;		
 }
-#service_list a:hover,#service_list a:active{
-    color:#fff;
-    text-decoration: none;		
-}
+
 #service_list_inner {
     margin: 0 auto; 
 	position: relative;
@@ -33,12 +28,6 @@
 #service_list_inner ul {
 	margin-left: -10px;
 	
-}
-
-#global_nav {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ccc;
-    background: #fafafa; /*opacity:0.9;*/
 }
 
 #global_nav_inner {
@@ -146,13 +135,4 @@ position:static;
 .topnav .left a {
 margin:0;
 padding:0 5px;
-}
-
-.menunav {
-border-bottom:2px solid #252525;
-margin:0 0 10px;
-}
-
-.menunav li {
-font-weight:400;
 }

@@ -40,26 +40,6 @@
 	text-decoration: none;
 }
 
-.celeimg_title
-{
-	font-size:14px;
-	color:#fff;
-	line-height:1.8;
-	text-align:center;
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	background:#333;
-	-moz-opacity:.5;
-	opacity:.5
-}
-
-.celeimg_name
-{
-	font-size:12px;
-	text-align:center;
-}
-
 .tprev
 {
 	position:absolute; 

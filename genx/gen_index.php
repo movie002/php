@@ -208,7 +208,7 @@ function dh_get_new($DH_index_cat,$movietype_index)
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=6 order by l.updatetime desc limit 0,8";
 	$list = dh_get_movie_type_onlylink($sql);	
-	$topic_list = "\n<div class=\"title_list f12px\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"title_list bbli1 bc_a f12px\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_download/1.html';
 
 	$more='';
@@ -221,13 +221,13 @@ function dh_get_new($DH_index_cat,$movietype_index)
 		}
 	}
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title">最新下载</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';	
+	$topic_title = "\n".'<div class="topic_title bb1 bc_a"><div class="f700 color_bg">最新下载</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';	
 	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=7 order by l.updatetime desc limit 0,8";	
 	$list = dh_get_movie_type_onlylink($sql);
 	
-	$topic_list = "\n<div class=\"title_list f12px\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"title_list bbli1 bc_a f12px\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_online/1.html';
 	
 	$more='';
@@ -240,7 +240,7 @@ function dh_get_new($DH_index_cat,$movietype_index)
 		}
 	}	
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title">最新在线</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';		
+	$topic_title = "\n".'<div class="topic_title bb1 bc_a"><div class="f700 color_bg">最新在线</div><div class="topic-add-comment f12px">'.$more.'<a href="'.$link.'">全部</a></div></div>';		
 	$result2 = "\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
 	$DH_index_cat_eachs=$result2.$result1;	
@@ -321,7 +321,7 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=2 order by l.updatetime desc limit 0,10";
 	$list = dh_get_movie_type_onlylink($sql);	
-	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"link_list bbli1 bc_a\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_yp/1.html';
 
 	$more='';
@@ -336,12 +336,12 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	}	
 	$more.='<a href="'.$DH_index_url.$movietype_index.'_yp/1.html">全部</a> ';
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新影评</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
+	$topic_title = "\n".'<div class="topic_title bb1 bc_a"><div class="f700 color_bg f14px">最新影评</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
 	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=1 order by l.updatetime desc limit 0,10";
 	$list = dh_get_movie_type_onlylink($sql);	
-	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"link_list bbli1 bc_a\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_zx/1.html';
 	
 	$more='';
@@ -356,7 +356,7 @@ function dh_get_link2($DH_index_cat,$movietype_index)
 	}
 	$more.='<a href="'.$DH_index_url.$movietype_index.'_zx/1.html">全部</a> ';
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">最新资讯</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
+	$topic_title = "\n".'<div class="topic_title bb1 bc_a"><div class="f700 c_bg f14px">最新资讯</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
 	$result2 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";	
 
 	$DH_index_cat_eachs=$result1.$result2;	
@@ -371,7 +371,7 @@ function dh_get_link($DH_index_cat,$movietype_index)
 	global $DH_html_path,$DH_index_url,$DH_html_url,$conn,$linkway,$movietype,$moviecountry,$linktype,$index_list_count;
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and l.linkway=3 order by l.updatetime desc limit 0,10";
 	$list = dh_get_movie_type_onlylink($sql);
-	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"link_list bbli1 bc_a\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_yg/1.html';
 	
 	$more='';
@@ -382,15 +382,15 @@ function dh_get_link($DH_index_cat,$movietype_index)
 	}
 	$more.='<a href="'.$DH_index_url.$movietype_index.'_yg/1.html">全部</a> ';	
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">预告·花絮</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
+	$topic_title = "\n".'<div class="topic_title bb1 bc_a"><div class="f700 color_bg f14px">预告·花絮</div><div class="topic-add-comment f12px">'.$more.'</div></div>';	
 	$result1 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";
 	
 	$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkway from link l,page p where l.pageid=p.id and p.cattype = $movietype_index and (l.linkway=4 or l.linkway=5) order by l.updatetime desc limit 0,10";
 	$list = dh_get_movie_type_onlylink($sql);	
-	$topic_list = "\n<div class=\"link_list\">\n $list \n</div>";
+	$topic_list = "\n<div class=\"link_list bbli1 bc_a\">\n $list \n</div>";
 	$link = $DH_index_url.$movietype_index.'_gp/1.html';
 	
-	$topic_title = "\n".'<div class="topic_title"><div class="second_title f14px">活动·购票</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
+	$topic_title = "\n".'<div class="topic_title bb1 bc_a"><div class="f700 color_bg f14px">活动·购票</div><div class="topic-add-comment f12px">'.'<a href="'.$link.'">全部</a></div></div>';	
 	$result2 ="\n<div class=\"topic_each\">".$topic_title.$topic_list."\n</div>";	
 
 	$DH_index_cat_eachs=$result1.$result2;	
@@ -419,7 +419,7 @@ function dh_get_movie_type_onlylink($sql)
 				$titlea='title="'.$title.'"';
 				$title=mb_substr($title,0,20,'UTF-8').'...';
 			}
-			$lieach = "\n".'<li><span class="line1"><span class="f12px">['.$linkway[$row['linkway']].']</span> <a href="'.$row['link'].'" target="_blank" '.$titlea.' rel="nofollow" >'.$title.'['.$row['author'].']</a><span class="f12px"> (<a href="'.$htmlpath.'"target="_blank">汇总页面</a>)</span></span><span class="rt5v2">'.$update.'</span></li>';
+			$lieach = "\n".'<li><span class="line1"><span class="f12px">['.$linkway[$row['linkway']].']</span> <a href="'.$row['link'].'" target="_blank" '.$titlea.' rel="nofollow" >'.$title.'['.$row['author'].']</a><span class="f12px"> (<a href="'.$htmlpath.'"target="_blank">汇总</a>)</span></span><span class="rt5v2">'.$update.'</span></li>';
 			$liout.= $lieach;
 		}
 		$liout.= "\n</ol>";	
@@ -496,6 +496,8 @@ function dh_get_movie_type_block($sql,$i)
 			if(!empty($match[1]))
 			{	
 				$country = $match[1];
+                #删除/之后的内容
+                $country = preg_replace('/(\/.*?$)/is','',$country);
 			}
 			$type="";
 			preg_match('/<t>(.*?)<\/t>/',$row['meta'],$match);
@@ -506,7 +508,8 @@ function dh_get_movie_type_block($sql,$i)
 			$linkqualitymeta = '';
 			if($row['quality']>=1)
 				$linkqualitymeta = '['.$linkquality[$row['quality']].'] ';
-			$lieach = "\n".'<li><div><span class="line1 w100pre">'.$i.' <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a> <span class="hotmeta1">'.$linkqualitymeta.$update.'</span></span></div><div class="hotmeta1">['.$country.':'.$type.'] <span class="cred">'.$row['hot'].'</span></div></li>';
+			#$lieach = "\n".'<li><div><span class="line1 w100pre">'.$i.' <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a> <span class="hotmeta1">'.$linkqualitymeta.$update.'</span></span></div><div class="hotmeta1">['.$country.':'.$type.'] <span class="cred">'.$row['hot'].'</span></div></li>';
+			$lieach = "\n".'<li><div><span class="line1 w100pre">'.$i.' <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a> <span class="hotmeta1">'.$linkqualitymeta.$update.'</span></span></div><div class="hotmeta1">['.$country.'][资源('.$row['ziyuan'].')/评('.$row['yingping'].')/讯('.$row['zixun'].')] <span class="cred">'.$row['hot'].'</span></div></li>';
 			$liout.= $lieach;
 			$i++;
 		}
@@ -531,7 +534,11 @@ function dh_get_movie_type_list($sql,$list_html,$type)
 		$liout='<ol class="f12px">';
 		while($row = mysql_fetch_array($recs))
 		{			
-			$DH_output_content_page = dh_replace_snapshot($type,$row,$DH_output_content,false);
+            $yugao='';
+            if($row['cattype']==1)
+                $yugao = "预告:%num2%";
+			$DH_output_content_page = str_replace("%yugao%",$yugao,$DH_output_content);
+			$DH_output_content_page = dh_replace_snapshot($type,$row,$DH_output_content_page,false);
 			$DH_output_content_page = dh_replace_content(1,$row,$DH_output_content_page);
 			$liout.= $DH_output_content_page;
 		}
