@@ -33,11 +33,13 @@ if(movie002_day=='desert')
 	style_need +='.bg_a{background:#91877E}';
 	style_need +='.bg_m{background:#f7f3ed}';
 	//style_need +='.bg_top{background:#a00}';
-	style_need +='.bg_top{background:#B69668}';
+	style_need +='.bg_top{background:#44423E}';
+	style_need +='.bc_c{border-color:#a00}';
 	style_need +='.c_b{color:#a00}';
-	style_need +='a.bg_top:hover{background:#c00}';
-	style_need +='.TabTitle .active{background:#c00}';
-	style_need +='.topnav li a:hover,.topnav li li a:hover{background:#B69668}';
+	style_need +='a.bg_top:hover{background:#A85353}';
+	style_need +='.TabTitle .active{background:#A85353}';
+	//style_need +='.topnav li a:hover,.topnav li li a:hover{background:#B69668}';
+	style_need +='.topnav li a:hover,.topnav li li a:hover{background:#A85353}';
 	style_need +='#movie002_day_3{font-weight:700}';
 	style_need +='#movie002_day_2{font-weight:normal}';
 	style_need +='#movie002_day_1{font-weight:normal}';
@@ -45,9 +47,9 @@ if(movie002_day=='desert')
 if(movie002_day=='night')
 {
 	style_need +='.bc_a{border-color:#ddd}';
-	style_need +='.bc_b{border:1px solid #355C82}';
-	style_need +='.bc_c{border:1px solid #555}';
-	style_need +='.bc_d{border:1px solid #888}';
+	style_need +='.bc_b{border-color:#355C82}';
+	style_need +='.bc_c{border-color:#555}';
+	style_need +='.bc_d{border-color:#888}';
 	style_need +='.bg_top,.bg_a,.bg_m{background:#383838}';
 	style_need +='.c_a{color:#B6AA7B}';
 	style_need +='.lqc0{color:#000}.lqc1{color:#222}.lqc2{color:#444}.lqc3{color:#666}.lqc4{color:#888}.lqc5{color:#aaa}.lqc6{color:#bbb}';

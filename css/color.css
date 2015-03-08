@@ -28,6 +28,7 @@ a:hover { color:#F60; }
 .bc_b { border-color:#759CC2 }
 .bc_c { border-color:#576d74 }
 .bc_d { border-color:#3377aa }
+.bc_e { border-color:#bbb }
 .bc_hover:hover { border-color:#576d74 }
 
 .bg_a { background:#8f8f8f }
