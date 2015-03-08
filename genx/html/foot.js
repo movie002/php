@@ -89,7 +89,7 @@ function cnzz()
 	(function() {
 		var cnzz = document.createElement('script');
 		cnzz.type = 'text/javascript';
-		cnzz.src = 'http://s22.cnzz.com/z_stat.php?id=1253404551&web_id=1253404551';
+		cnzz.src = 'http://s22.cnzz.com/z_stat.php?id=1254506267&web_id=1254506267';
 		(document.getElementsByTagName('body')[0]
 		||document.getElementsByTagName('head')[0]).appendChild(cnzz);
 	})();

@@ -32,11 +32,12 @@ if(movie002_day=='desert')
 //	style_need +='.bg_all{background:#C1B7AE}';
 	style_need +='.bg_a{background:#91877E}';
 	style_need +='.bg_m{background:#f7f3ed}';
-	style_need +='.bg_top{background:#a00}';
+	//style_need +='.bg_top{background:#a00}';
+	style_need +='.bg_top{background:#B69668}';
 	style_need +='.c_b{color:#a00}';
 	style_need +='a.bg_top:hover{background:#c00}';
 	style_need +='.TabTitle .active{background:#c00}';
-	style_need +='.topnav li a:hover,.topnav li li a:hover{background:#a00;}';
+	style_need +='.topnav li a:hover,.topnav li li a:hover{background:#B69668}';
 	style_need +='#movie002_day_3{font-weight:700}';
 	style_need +='#movie002_day_2{font-weight:normal}';
 	style_need +='#movie002_day_1{font-weight:normal}';
