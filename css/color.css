@@ -20,8 +20,7 @@ a:hover { color:#F60; }
 .lqc6 { color:#000 }
 
 .c_a { color:#000}
-.c_top { color:#ddd} 
-.c_aa a, .c_aa a:link, .c_aa a:visited, .c_aa a:hover, .c_aa a:active{ color: #ddd; }
+.c_top,.c_aa a, .c_aa a:link, .c_aa a:visited, .c_aa a:hover, .c_aa a:active{ color: #ddd; }
 .c_b{ color: #576d74}
 
 .bc_a { border-color:#ddd }

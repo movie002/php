@@ -36,6 +36,7 @@ if(movie002_day=='desert')
 	style_need +='.bg_top{background:#44423E}';
 	style_need +='.bc_c{border-color:#a00}';
 	style_need +='.c_b{color:#a00}';
+	style_need +='.c_top, .c_aa a, .c_aa a:link, .c_aa a:visited, .c_aa a:hover, .c_aa a:active{color:#DFD097;}';
 	style_need +='a.bg_top:hover{background:#A85353}';
 	style_need +='.TabTitle .active{background:#A85353}';
 	//style_need +='.topnav li a:hover,.topnav li li a:hover{background:#B69668}';
