@@ -10,6 +10,7 @@ header('Content-Type:text/html;charset= UTF-8');
 date_default_timezone_set("Asia/Shanghai");//设定时区东八区
 
 require("../config.php");
+require("config.php");
 #需要使用的基础函数
 require("../common/base.php");
 require("share.php");

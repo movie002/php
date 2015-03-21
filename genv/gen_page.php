@@ -8,6 +8,7 @@
 
 header('Content-Type:text/html;charset= UTF-8'); 
 require_once("../config.php");
+require_once("config.php");
 #需要使用的基础函数
 
 require_once("../common/dbaction.php");
