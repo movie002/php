@@ -9,6 +9,7 @@ header('Content-Type:text/html;charset= UTF-8');
 
 //导出数据库设置
 require("../../config.php");
+require("../config.php");
 require("../../common/base.php");
 require("../../common/dbaction.php");
 require("page_navi.php");
