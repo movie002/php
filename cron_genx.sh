@@ -10,5 +10,8 @@ echo $(date) > $logfile
 /srv/php/timeexc.sh curl http://127.0.0.1/php/genx/gen_page.php?d=30 -o /srv/php/log/genpage.log
 ## 3.3 生成list
 /srv/php/timeexc.sh curl http://127.0.0.1/php/genx/gen_list.php -o /srv/php/log/genlist.log
+## 3.5 生成辅助页面，友情链接之类的
+/srv/php/timeexc.sh curl http://127.0.0.1/php/genx/gen_author.php -o /srv/php/log/genauthor.log
+/srv/php/timeexc.sh curl http://127.0.0.1/php/genx/static/gen.php -o /srv/php/log/genstatic.log
 ## 3.6 生成sitemap
 /srv/php/timeexc.sh curl http://127.0.0.1/php/genx/sitemap/gen.php -o /srv/php/log/gensitemap.log
