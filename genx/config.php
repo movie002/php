@@ -6,7 +6,6 @@ $DH_home_url= 'http://v.x2y4.com/';
 
 //$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/x/';
 //$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-//$DH_home_url= 'http://v.x2y4.com/';
 //$DH_home_url= 'http://127.0.0.1/x/';
 
 $DH_src_path= $DH_input_path. 'genx/';
@@ -20,6 +19,7 @@ $DH_name_des= '小二影视网_影视资源(电影/电视剧/动漫/综艺/纪�
 
 function dh_get_title($type,$title)
 {
+    $cat = '';
 	if($type==1)
 		$cat ='电影《'.$title.'(%pubyear%)》下载等资源链接汇总';
 	if($type==2)

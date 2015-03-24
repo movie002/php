@@ -6,7 +6,7 @@ $DH_home_url= 'http://v.movie002.com/';
 
 //$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/x/';
 //$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-//$DH_home_url= 'http://v.x2y4.com/';
+//$DH_home_url= 'http://127.0.0.1/v/';
 
 $DH_src_path= $DH_input_path. 'genv/';
 $DH_html_path= $DH_src_path . 'html/';
@@ -19,6 +19,7 @@ $DH_name_des= '电影大全_电视剧大全_影视大全导航';
 
 function dh_get_title($type,$title)
 {
+    $cat = '';
 	if($type==1)
 		$cat =$title.'电影(%pubyear%)下载地址等资源汇总';
 	if($type==2)
