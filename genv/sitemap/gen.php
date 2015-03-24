@@ -117,8 +117,14 @@ function gen_sitemap($sql,$date,$cycle,$name,$times)
 				
 		$sitemap_baidu_each = str_replace("%url%",$htmlpath,$DH_sitemap_baidu_each);
 		$sitemap_baidu_each = str_replace("%updatetime%",$row['updatetime'],$sitemap_baidu_each);	
-		$title = dh_get_title($row['cattype'],$row['title'])."_资源汇总-".$DH_name;
-		$sitemap_baidu_each = str_replace("%title%",$title,$sitemap_baidu_each);		
+		$title = dh_get_title($row['cattype'],$row['title'])."-".$DH_name;
+		//提取年份
+		if($row['pubdate']=='0000-00-00' || $row['pubdate']=='1970-01-01')
+			$pubyear = '';	
+		else
+			$pubyear =date("Y",strtotime($row['pubdate']));			
+		$title = str_replace("%pubyear%",$pubyear,$title);
+		$sitemap_baidu_each = str_replace("%title%",$title,$sitemap_baidu_each);	
 		$sitemap_baidu_all.=$sitemap_baidu_each;
 	}
 	$DH_sitemap = str_replace("%sitemaps%",$sitemap_all,$DH_sitemap);
@@ -167,6 +173,12 @@ function genhtml($sql,$i,$times)
 			//$liout.='<li> '.$row['id'].' ['.$updatetime.']['.$movietype[$row['cattype']].']['.$moviecountry[$row['catcountry']].':'.$type.'] <a href="'.$htmlpath.'" target="_blank">'.$row['title']."</a></li>\n";
 			$title =$movietype2[$row['cattype']]. "《".$row['title']."》在线下载资源汇总";
 			$title2 = dh_get_title($row['cattype'],$row['title'])."-".$DH_name;
+			//提取年份
+			if($row['pubdate']=='0000-00-00' || $row['pubdate']=='1970-01-01')
+				$pubyear = '';	
+			else
+				$pubyear =date("Y",strtotime($row['pubdate']));			
+			$title2 = str_replace("%pubyear%",$pubyear,$title2);			
 			$liout.='<li>['.$updatetime.'] <a href="'.$htmlpath.'" target="_blank" title="'.$title2.'">'.$title."</a></li>\n";	
 		}
 		$sitemaphtml = str_replace("%num%",'第 '.$i.' 页',$DH_output_content);
