@@ -36,6 +36,7 @@ function dh_gen_static($name)
 	$DH_output_content = setshare($DH_output_content,'');
 	
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
+	$DH_output_content = str_replace("%permalink%",$DH_home_url.'static/'.$name.'.html',$DH_output_content);
 	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);	
 	$DH_output_file = $DH_author_path.$name.'.html';
 	dh_file_put_contents($DH_output_file,$DH_output_content);
