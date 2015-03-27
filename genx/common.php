@@ -584,8 +584,4 @@ function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
 	$tmplinks = str_replace("%cat%",$searchcat,$tmplinks);
 	return $tmplinks;
 }
-function dh_pagenum_link($link,$page)
-{
-	return $link.$page.'html';
-}
 ?>

@@ -1,24 +1,25 @@
 <?php
 	//require_once('360safe/360webscan.php'); // 注意文件路径
-	if(is_file('360safe/360webscan.php'))
-	{
-		require_once('360safe/360webscan.php');
-	}
-	
-	$active='';
+	//if(is_file('360safe/360webscan.php'))
+	//{
+	//	require_once('360safe/360webscan.php');
+	//}
+  $pagenum = 10;
 	$q='';
-	$aid='';
-	if( isset($_REQUEST['q']))
+	$p=1;
+	if( isset($_GET['q']))
 	{
-		$q = htmlspecialchars($_REQUEST['q']);
-		$active=$q;
+		$q = htmlspecialchars($_GET['q']);
 	}
-	if( isset($_REQUEST['aid']))
-	{
-		$aid = htmlspecialchars($_REQUEST['aid']);
-		$active='资源网站 '.$aid.' 的最新资源列表';
-	}
+ if( isset($_GET['p']))
+ {
+   	$p = $_GET['p'];
+ }	
 
+ function dh_pagenum_link($link,$page)
+ {
+ 	return $link.$page;
+ }
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -38,12 +39,12 @@
 		<!-- header -->
 		<div id="middle" class="width_2">
 			<div id="title">
-				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <span class="cred">"<?php echo $active ?>"</span> 的搜索结果</div>				
+				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <span class="cred">"<?php echo $q ?>"</span> 的搜索结果</div>	
 			</div>		
 			<div id="content"  class="width_3 listcontent">
 				<ul class="f12px">
 					<?php
-						if($active=='')
+						if($q=='')
 						{
 							echo "</br>".'  <div style="text-align:center">关键词不可以没有哦！请更换关键词重新搜索，谢谢！</div>'."</br>";
 						}
@@ -53,7 +54,8 @@
 							require("../php/common/base.php");
 							require("../php/common/dbaction.php");
 							require("../php/config.php");
-							require("../php/common/config.php");
+							require("../php/genv/config.php");
+							require("../php/common/page_navi.php");
 							$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 							mysql_select_db($dbname, $conn) or die('选择数据库失败');
 							mysql_query("set names utf8;");
@@ -61,10 +63,9 @@
 							$DH_input_html  = $DH_html_path . 'list_each.html';
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
 							
-							if($aid!='')
-								$sql="select l.link,l.title,l.updatetime,l.author,l.pageid,l.linkquality ,l.linkway,p.hot,p.catcountry,p.cattype from link l,page p where l.pageid=p.id and l.author like '$aid' order by l.updatetime desc  limit 0,60";
-							if($q!='')
-								$sql="select * from page where title like '%$q%' or aka like '%$q%' order by updatetime desc  limit 0,15";
+              $beginnum=($p-1)*$pagenum;
+							$sql="select * from page where title like '%$q%' or aka like '%$q%' order by updatetime desc  limit $beginnum , $pagenum";
+							$sqlcount="select count(*) from page where title like '%$q%' or aka like '%$q%'";
 							
 							$results=dh_mysql_query($sql);
 							$count=0;
@@ -74,7 +75,7 @@
 								while($row = mysql_fetch_array($results))
 								{	
 									$count ++;
-									$page_path = output_page_path($DH_html_url,$row['pageid']);
+									$page_path = output_page_path($DH_html_url,$row['id']);
 									if($q!='')
 									{
 										$DH_output_content_page = dh_replace_snapshot('list',$row,$DH_output_content,true);
@@ -82,14 +83,17 @@
 										$DH_output_content_page = str_replace("%title_link%",$page_path,$DH_output_content_page);	
 										echo $DH_output_content_page;
 									}
-									else
-									{
-										$updatef = date("m-d",strtotime($row['updatetime']));
-										$lieach = '<li><span>'.$countrymeta.'</span> <span class="width90pre">【'.$linkway[$row['linkway']].'】<a href="'.$row['link'].'" target="_blank">'.$row['title'].'['.$row['author'].']</a></span> <span class="rt100v2"><a href="'.$page_path.'" target="_blank" rel="nofollow">汇总页面</a></span><span class="rt60v2">'.$row['hot'].' </span> <span class="rt5v2" > '.$updatef.'</span></li>';
-										echo $lieach;
-									}
 								}
 							}
+              
+						  $results=dh_mysql_query($sqlcount);
+							$counts = mysql_fetch_array($results);
+							$count = $counts[0];
+
+              $DH_search_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?q='.$_GET['q'].'&p=';
+              $pages=ceil($count/$pagenum);
+              $pagenavi = dh_pagenavi(5,$pages,$DH_search_url,$p);
+              echo '<div class="page_navi">'.$pagenavi.'</div>';
 							mysql_close($conn);
 							if($count==0)
 								echo "</br>".'  <div style="text-align:center">好像没有相关资源哦！请更换关键词重新搜索，或者耐心等待，只要不断关注电影小二网，就会第一时间得到资源，您不会失望哦！</div>'."</br>";
