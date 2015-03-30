@@ -91,11 +91,11 @@
 					<div style="text-align:center;font-size:12px;margin:0 0 5px 0">
 						<div class="search-tabs">
 							<form name=websearch onsubmit=return(search4())>
-							<Input type=checkbox CHECKED value=movie002 name=movie002> 
-							电影小二
-							<Input type=checkbox CHECKED value=qihu name=qihu> 
+							<Input type=checkbox CHECKED value=yfsoso name=yfsoso> 
+							影粉搜搜
+							<Input type=checkbox value=qihu name=qihu> 
 							360影视 
-							<Input type=checkbox CHECKED value=v2345 name=v2345> 
+							<Input type=checkbox value=v2345 name=v2345> 
 							2345影视
 							</br></br>
 							<Input size=90 name=key id="submittext" class="searchinput" value="请输入资源名"> 
@@ -398,12 +398,12 @@
 	<script type="text/javascript">
 		function search4()
 		{
-			if(websearch.movie002.checked)
-			openwin("http://v.movie002.com/search.php?q="+websearch.key.value,"mspg9");
+			if(websearch.yfsoso.checked)
+				openwin("http://s.yfsoso.com/s.php?q="+websearch.key.value,"mspg9");
 			if(websearch.qihu.checked)
-			openwin("http://so.v.360.cn/index.php?kw="+websearch.key.value,"mspg0");
+				openwin("http://so.v.360.cn/index.php?kw="+websearch.key.value,"mspg0");
 			if(websearch.v2345.checked)
-			openwin("http://so.v.2345.com/search_"+websearch.key.value,"mspg1");
+				openwin("http://so.v.2345.com/search_"+websearch.key.value,"mspg1");
 			return false; 
 		}
 		function openwin(url,id)
