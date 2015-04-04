@@ -22,7 +22,7 @@ require("share.php");
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败'.mysql_error());
 mysql_query("set names utf8;");
-
+set_time_limit(300);
 readerdirect();
 dh_gen_share($DH_home_url);
 dh_gen_side($DH_home_url);

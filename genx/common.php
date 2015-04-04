@@ -14,7 +14,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	$download = '';$num6=0;	
 	$download0 = '';$num60=0;	
 	$zimu = '';$num8=0;	
-    $ticket = '';$num4=0;$num5=0;
+    	$ticket = '';$num4=0;$num5=0;
 	
 	global $DH_html_path;
 	$DH_input_html  = $DH_html_path . 'page_inner_navi.html';
@@ -22,7 +22,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	
 	$linkstop1 = '<div class="listall"><div class="listlink">&nbsp;&nbsp;清晰度 资源地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
 	$linkstop2 = '<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;资源地址</div><div class="rt0v5">来源网站 更新时间</div></div>';
-    $searchcat='';	
+    	$searchcat='';	
 	$reslinks=dh_mysql_query($sql);	
 	while($rowlinks = mysql_fetch_array($reslinks))
 	{
@@ -60,20 +60,20 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				break;
 			case 4://活动购票
 			case 5://
-                $num4++;    
+                		$num4++;    
 				if($num4<=$maxnum)
 				    $ticket .= str_replace('%num%',$num4,$linkseach2);
 				break;
 			case 6://下载
-                $num6++;    
-                if($num6<=$maxnum)
+                		$num6++;    
+                		if($num6<=$maxnum)
 			    	$download .= str_replace('%num%',$num6,$linkseach1);
-                if($rowlinks['linkquality']>=5)
-                {
-                   $num60++;
-                   if($num60<=$maxnum)
-			           $download0 .= str_replace('%num%',$num60,$linkseach1);
-                } 
+                		if($rowlinks['linkquality']>=5)
+                		{
+                  			$num60++;
+                   			if($num60<=$maxnum)
+			           	$download0 .= str_replace('%num%',$num60,$linkseach1);
+               			} 
 				break;
 			case 7://在线
 				$num7++;

@@ -3,6 +3,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 {
 	global $linktype,$linkway,$linkquality,$linkdownway;
 	$num = 5;//内部分页的分页内条数
+	$maxnum = 25;//最多显示的条目
 	$DH_output_content_page ='';
 	$downloadlinks = '';
 	$downloadlinks0 = '';$num00=0;
@@ -21,7 +22,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	
 	$linkstop1 = '<div class="listall"><div class="listlink">&nbsp;&nbsp;清晰度 原文地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
 	$linkstop2 = '<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;原文地址</div><div class="rt0v5">来源网站 更新时间</div></div>';
-	
+    	$searchcat='';	
 	$reslinks=dh_mysql_query($sql);	
 	while($rowlinks = mysql_fetch_array($reslinks))
 	{
@@ -44,15 +45,18 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		{
 			case 1://资讯
 				$num3++;
-				$zixun .= str_replace('%num%',$num3,$linkseach2);
+				if($num3<=$maxnum)
+					$zixun .= str_replace('%num%',$num3,$linkseach2);
 				break;
 			case 2://评论
 				$num4++;
-				$yingping .= str_replace('%num%',$num4,$linkseach2);		
+				if($num4<=$maxnum)
+					$yingping .= str_replace('%num%',$num4,$linkseach2);		
 				break;
 			case 3://预告花絮
 				$num2++;
-				$tailer .= str_replace('%num%',$num2,$linkseach1);
+				if($num2<=$maxnum)
+					$tailer .= str_replace('%num%',$num2,$linkseach1);
 				break;
 			case 6://下载
 				{
@@ -60,19 +64,23 @@ function dh_replace_link($sql,$row,$DH_output_content)
 					{
 						case 0:
 							$num00++;
-							$downloadlinks0 .= str_replace('%num%',$num00,$linkseach1);
+							if($num00<=$maxnum)
+								$downloadlinks0 .= str_replace('%num%',$num00,$linkseach1);
 							break;
 						case 1:
 							$num01++;
-							$downloadlinks1 .= str_replace('%num%',$num01,$linkseach1);
+							if($num01<=$maxnum)							
+								$downloadlinks1 .= str_replace('%num%',$num01,$linkseach1);
 							break;
 						case 2:
 							$num02++;
-							$downloadlinks2 .= str_replace('%num%',$num02,$linkseach1);
+							if($num02<=$maxnum)							
+								$downloadlinks2 .= str_replace('%num%',$num02,$linkseach1);
 							break;
 						case 3:
 							$num03++;
-							$downloadlinks3 .= str_replace('%num%',$num03,$linkseach1);
+							if($num03<=$maxnum)							
+								$downloadlinks3 .= str_replace('%num%',$num03,$linkseach1);
 							break;								
 						default:
 							echo $rowlinks['title']."-->".$rowlinks['link']."-->".$way."</br>\n";
@@ -82,7 +90,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				}
 			case 7://在线
 				$num1++;
-				$onlinelinks .= str_replace('%num%',$num1,$linkseach1);
+				if($num1<=$maxnum)
+					$onlinelinks .= str_replace('%num%',$num1,$linkseach1);
 				break;
 			case 8://影片信息
 			//	$jhblinks .= '<a href = "'. $rowlinks['link'] . '" target = "_blank" title="'.$rowlinks['title'].'的链接" rel="nofollow">['.$rowlinks['author']. ']</a>';
