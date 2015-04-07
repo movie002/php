@@ -24,9 +24,7 @@ $DH_static_input_html  = $DH_input_path . 'static/';
 dh_gen_static('aboutus');
 dh_gen_static('coperation');
 dh_gen_static('help');
-dh_gen_static('opinion');
 dh_gen_static('mianze');
-dh_gen_static('links');
 
 function dh_gen_static($name)
 {
