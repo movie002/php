@@ -1,19 +1,12 @@
 <?php
 
 include("../config.php");
-include("../genv/config.php");
 include("../common/base.php");
 include("../common/compressJS.class.php");
 require("../genv/share.php");
+require("config.php");
 
 
-
-$DH_name='影迷导航网';
-$DH_name_des='YingMi123,影迷的专业导航';
-$DH_dh_title=$DH_name."-".$DH_name_des;
-$DH_dh_url="http://www.yingmi123.com/";
-//$DH_dh_url="http://127.0.0.1/dh/";
-$DH_dh_path= $_SERVER['DOCUMENT_ROOT'] . '/dh/';
 
 //利用本url建立share文件
 dh_gen_share($DH_dh_url);
