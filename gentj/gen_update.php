@@ -13,7 +13,7 @@ require("../config.php");
 require("config.php");
 #需要使用的基础函数
 require("../common/base.php");
-require("share.php");
+require("../genv/share.php");
 require("../common/dbaction.php");
 require("../mail/mail.php");
 require("../common/compressJS.class.php");
@@ -58,7 +58,7 @@ function dh_gen_update($cycle)
 	{	
 		$DH_input_html  = $DH_html_path . 'update.html';
 		$DH_output_content = dh_file_get_contents("$DH_input_html");
-		$DH_output_content = setshare($DH_output_content,'');
+		$DH_output_content = setshare($DH_output_content,'static.js');
 		$DH_output_content = str_replace("%date%",date('Y-m-d',time()),$DH_output_content);
 		$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
 		$DH_output_content = setshare($DH_output_content,'');
