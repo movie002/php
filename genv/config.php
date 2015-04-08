@@ -30,3 +30,5 @@ function dh_get_title($type,$title)
 		$cat =$title.'动画(动漫)全集_在线观看等资源汇总';
 	return $cat;
 }
+
+?>
