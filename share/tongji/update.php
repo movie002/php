@@ -9,7 +9,7 @@
 
 function dh_gen_update($cycle)
 {
-	global $movietype,$DH_html_url,$DH_html_path,$DH_author_path,$DH_home_url;
+	global $movietype,$DH_html_url,$DH_input_path,$DH_output_path,$DH_home_url;
 	$updatenew='';
 	$upnew='<li><b>新资源</b> </li>';
 	$upold='<li><b>增加资源(无更高质量)</b></li>';
@@ -22,7 +22,7 @@ function dh_gen_update($cycle)
 	$results=dh_mysql_query($sql);
 	if($results)
 	{	
-		$DH_input_html  = $DH_html_path . 'update.html';
+		$DH_input_html  = $DH_input_path . 'share/tongji/update.html';
 		$DH_output_content = dh_file_get_contents("$DH_input_html");
 		$DH_output_content = setshare($DH_output_content,'static.js');
 		$DH_output_content = str_replace("%date%",date('Y-m-d',time()),$DH_output_content);
@@ -77,7 +77,7 @@ function dh_gen_update($cycle)
 		//print_r($up);
 		$listhtml .= $upnew.$upnewq.$upold;
 		$DH_output_content = str_replace("%newlist%",$listhtml,$DH_output_content);
-		$DH_output_file = $DH_author_path . 'update.html';
+		$DH_output_file = $DH_output_path . 'update.html';
 		dh_file_put_contents($DH_output_file,$DH_output_content);
 		
 		if($updatenew!='')
