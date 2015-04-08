@@ -7,23 +7,25 @@
 /////////////////////////////////////////////////////
 
 header('Content-Type:text/html;charset= UTF-8'); 
-set_time_limit(1200);
+set_time_limit(120);
 
 #需要使用的基础函数
 include("../config.php");
 include("config.php");
-include("share.php");
 include("../common/base.php");
 include("../common/compressJS.class.php");
-include("../common/dbaction.php");
-include("../share/tongji/author.php");
-$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-mysql_select_db($dbname, $conn) or die('选择数据库失败');
-mysql_query("set names utf8;");
+include("share.php");
 
-$DH_author_path=$DH_output_path;
+$DH_author_path=$DH_output_path.'/static/';
+if (!file_exists($DH_author_path))  
+	mkdir($DH_author_path,0777);
+$DH_static_input_html  = $DH_input_path . 'static/';
 
-dh_gen_author();
+dh_gen_static('aboutus');
+dh_gen_static('coperation');
+dh_gen_static('help');
+dh_gen_static('opinion');
+dh_gen_static('mianze');
+dh_gen_static('links');
 
-mysql_close($conn);
 ?>

@@ -6,32 +6,12 @@
 /// 作者地址: http://dhblog.org
 /////////////////////////////////////////////////////
 
-header('Content-Type:text/html;charset= UTF-8'); 
-set_time_limit(1200);
-
-#需要使用的基础函数
-include("../config.php");
-include("config.php");
-include("../common/base.php");
-include("../common/compressJS.class.php");
-include("../common/dbaction.php");
-include("../genv/share.php");
-$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-mysql_select_db($dbname, $conn) or die('选择数据库失败');
-mysql_query("set names utf8;");
-
-$DH_author_path=$DH_output_path;
-
-dh_gen_author();
-
-mysql_close($conn);
-
 function dh_gen_author()
 {
 	global $DH_home_url,$DH_src_path,$DH_html_path,$DH_name,$DH_output_path,$DH_input_path;
 	if (!file_exists($DH_output_path))  
 		mkdir($DH_output_path,0777);
-	$DH_input_html  = $DH_input_path . 'gentj/author.html';
+	$DH_input_html  = $DH_input_path . 'share/tongji/author.html';
 	$DH_output_content = dh_file_get_contents("$DH_input_html");
 	$DH_output_content = setshare($DH_output_content,'static.js');
 	$DH_output_content = str_replace("%home%",$DH_home_url,$DH_output_content);
