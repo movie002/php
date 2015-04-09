@@ -182,19 +182,18 @@ function dh_gen_side($DH_home_url)
 	
 }
 
-function dh_gen_search($DH_home_url)
+function dh_gen_search($DH_home_url,$searchname)
 {
-	global $DH_html_path,$DH_index_url,$DH_output_path,$DH_input_path;
-	$DH_input_html = $DH_html_path. 'search.php';
+	global $DH_search_output_path,$DH_search_intput_path;
+	$DH_input_html = $DH_search_input_path. 'search.php';
 	$DH_output = dh_file_get_contents($DH_input_html);
 	$DH_output = setshare($DH_output,'');
 	$DH_output = str_replace("输入影视名...",'<?php echo $q ?>',$DH_output);
 	$DH_output = str_replace('<form name="f1"  target="_blank"','<form name="f1"', $DH_output);
 	
 	$DH_output = str_replace("%home%",$DH_home_url,$DH_output);	
-	$DH_output_file = $DH_output_path. 'search.php';
+	$DH_output_file = $DH_search_output_path. $searchname;
 	dh_file_put_contents($DH_output_file,$DH_output);
-	
 	echo "gen search success !</br>\n";		
 }
 

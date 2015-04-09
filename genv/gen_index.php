@@ -26,7 +26,6 @@ set_time_limit(300);
 readerdirect();
 dh_gen_share($DH_home_url);
 dh_gen_side($DH_home_url);
-dh_gen_search($DH_home_url);
 dh_gen_index();
 
 function dh_gen_index()
