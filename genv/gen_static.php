@@ -15,11 +15,13 @@ include("config.php");
 include("../common/base.php");
 include("../common/compressJS.class.php");
 include("share.php");
+include("../share/static/function.php");
 
-$DH_author_path=$DH_output_path.'/static/';
-if (!file_exists($DH_author_path))  
-	mkdir($DH_author_path,0777);
-$DH_static_input_html  = $DH_input_path . 'static/';
+$DH_static_output_path=$DH_output_path.'static/';
+$DH_static_url=$DH_home_url. 'static/';
+if (!file_exists($DH_static_output_path))  
+	mkdir($DH_static_output_path,0777);
+$DH_static_input_path  = $DH_input_path . 'share/static/';
 
 dh_gen_static('aboutus');
 dh_gen_static('coperation');
