@@ -23,4 +23,5 @@ mysql_query("set names utf8;");
 
 dh_gen_share($DH_home_url);
 dh_gen_side($DH_home_url);
+dh_gen_search($DH_home_url);
 ?>
