@@ -15,7 +15,7 @@ require("config.php");
 require("common.php");
 require("../common/base.php");
 require("../common/dbaction.php");
-require("share.php");
+require("../share/share.php");
 require("../common/page_navi.php");
 require("../common/compressJS.class.php");
 

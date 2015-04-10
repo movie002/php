@@ -13,7 +13,7 @@ require_once("config.php");
 
 require_once("../common/dbaction.php");
 require_once("../common/base.php");
-require_once("share.php");
+require_once("../share/share.php");
 require_once("../common/compressJS.class.php");
 require_once("common.php");
 require_once("../share/queue.php");

@@ -13,7 +13,7 @@ require("../config.php");
 require("config.php");
 #需要使用的基础函数
 require("../common/base.php");
-require("../genv/share.php");
+require("../share/share.php");
 require("../common/dbaction.php");
 require("../mail/mail.php");
 require("../common/compressJS.class.php");

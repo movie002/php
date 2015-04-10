@@ -14,7 +14,7 @@ include("../config.php");
 include("config.php");
 include("../common/base.php");
 include("../common/compressJS.class.php");
-include("share.php");
+include("../share/share.php");
 include("../share/static/function.php");
 
 $DH_static_output_path=$DH_output_path.'static/';
