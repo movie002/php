@@ -36,8 +36,8 @@ echo 'todaydate:'.$todaydate."\n";
 if($dodate>=$todaydate)
 	return;
 	
-dh_gen_update(150);
-dh_save(150);
+dh_gen_update(1);
+dh_save(1);
 
 //echo output_page_path(63);
 
