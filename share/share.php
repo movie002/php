@@ -184,7 +184,7 @@ function dh_gen_side($DH_home_url)
 
 function dh_gen_search($DH_home_url,$searchname)
 {
-	global $DH_search_output_path,$DH_search_intput_path;
+	global $DH_search_output_path,$DH_search_input_path;
 	$DH_input_html = $DH_search_input_path. 'search.php';
 	$DH_output = dh_file_get_contents($DH_input_html);
 	$DH_output = setshare($DH_output,'');

@@ -11,7 +11,6 @@ header('Content-Type:text/html;charset= UTF-8');
 #需要使用的基础函数
 require("../config.php");
 require("config.php");
-require("../common/curl.php");
 require("../common/base.php");
 require("../common/dbaction.php");
 require("../common/compressJS.class.php");
