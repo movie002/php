@@ -18,6 +18,7 @@ require("common.php");
 require("../common/compressJS.class.php");
 require("movie.mtime.com.boxoffice.php");
 require("../share/share.php");
+set_time_limit(600);
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败');

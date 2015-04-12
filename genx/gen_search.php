@@ -20,10 +20,11 @@ $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
-#$DH_search_input_path=$_SERVER['DOCUMENT_ROOT']."/php/share/";
 $DH_search_input_path="/srv/php/share/";
-#$DH_search_output_path=$_SERVER['DOCUMENT_ROOT'] . '/s/';
 $DH_search_output_path="/srv/s/";
 
-dh_gen_search($DH_home_url,"sm.php");
+#$DH_search_input_path=$_SERVER['DOCUMENT_ROOT']."/php/share/";
+#$DH_search_output_path=$_SERVER['DOCUMENT_ROOT'] . '/s/';
+
+dh_gen_search($DH_home_url,"sx.php");
 ?>

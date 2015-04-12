@@ -142,7 +142,7 @@ a:hover
 }
 
 .searchinput {
-width:250px;
+width:200px;
 //background:#fff;
 margin:0;
 padding:4px;
@@ -154,7 +154,7 @@ color:#000;
 }
 
 .searchsubmit {
-width:50px;
+width:70px;
 font-weight:700;
 margin:0;
 padding:4px 0;
