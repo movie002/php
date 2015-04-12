@@ -102,6 +102,21 @@ function dhsay()
 	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="95%" height="16px" src="http://s.yfsoso.com/dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
 }
 
+function search()
+{
+    openwin("http://s.yfsoso.com/s.php?q="+f1.submittext.value,"mspg9");
+}
+
+function openwin(url,id)
+{
+	var a = document.createElement("a");
+	a.setAttribute("href", url);
+	a.setAttribute("target", "_blank");
+	a.setAttribute("id", id);
+	document.body.appendChild(a);
+	a.click();
+}
+
 window.onscroll = function()
 {
 	var h =document.body.scrollTop;

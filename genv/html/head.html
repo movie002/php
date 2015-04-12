@@ -226,8 +226,9 @@
 		<div id = "searchmiddle">
 			<form name="f1"  target="_blank" action="http://s.yfsoso.com/search.php" method="get">
 				<div id="search">				
-					<input id="submittext" class="searchinput"  name="q" type="text" value="输入影视名..." onclick="this.value='';"  onblur="if (this.value == &#39;&#39;) {this.value = &#39;输入影视名...&#39;;}" />					
-					<input type="submit" class="searchsubmit" value="搜索" />
+					<input id="submittext" style="cursor: pointer;" class="searchinput"  name="q" type="text" value="输入影视名..." />					
+					<input type="submit" style="cursor: pointer;" class="searchsubmit" value="本站搜索" />
+					<input class="searchsubmit" style="cursor: pointer;" value="影粉搜搜" onclick="return search();"/>
 				</div>
 			</form>			
 		</div>	
