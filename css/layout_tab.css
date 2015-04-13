@@ -242,7 +242,8 @@ padding: 0px;
 
 .list20px li
 {
-	height:20px;
+	height:27px;
+	position: relative;	
 }
 
 .siteall img

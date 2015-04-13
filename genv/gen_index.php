@@ -10,19 +10,20 @@ header('Content-Type:text/html;charset= UTF-8');
 
 #需要使用的基础函数
 require("../config.php");
+require("config.php");
 require("../common/curl.php");
 require("../common/base.php");
 require("../common/dbaction.php");
-require("config.php");
 require("common.php");
 require("../common/compressJS.class.php");
 require("movie.mtime.com.boxoffice.php");
 require("../share/share.php");
+set_time_limit(600);
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 mysql_select_db($dbname, $conn) or die('选择数据库失败'.mysql_error());
 mysql_query("set names utf8;");
-set_time_limit(300);
+
 readerdirect();
 dh_gen_share($DH_home_url);
 dh_gen_side($DH_home_url);

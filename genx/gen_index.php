@@ -21,12 +21,12 @@ require("../share/share.php");
 set_time_limit(600);
 
 $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-mysql_select_db($dbname, $conn) or die('选择数据库失败');
+mysql_select_db($dbname, $conn) or die('选择数据库失败'.mysql_error());
 mysql_query("set names utf8;");
 
+readerdirect();
 dh_gen_share($DH_home_url);
 dh_gen_side($DH_home_url);
-//readerdirect();
 dh_gen_index();
 
 function dh_gen_index()
@@ -71,7 +71,7 @@ function dh_get_index_cats()
 	$DH_index_cat_each = dh_file_get_contents($DH_input_html);
 	
 	//整理动态链接的文章
-	//$DH_index_cats .= dh_gen_top($DH_index_cat,$DH_index_cat_each);	
+	$DH_index_cats .= dh_gen_top($DH_index_cat,$DH_index_cat_each);	
 	//整理影视的类别
 	$DH_index_cats .= dh_gen_movie($DH_index_cat);
 	return $DH_index_cats;
@@ -509,7 +509,7 @@ function dh_get_movie_type_block($sql,$i)
 			$linkqualitymeta = '';
 			if($row['quality']>=1)
 				$linkqualitymeta = '['.$linkquality[$row['quality']].'] ';
-			#$lieach = "\n".'<li><div><span class="line1 w100pre">'.$i.' <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a> <span class="hotmeta1">'.$linkqualitymeta.$update.'</span></span></div><div class="hotmeta1">['.$country.':'.$type.'] <span class="cred">'.$row['hot'].'</span></div></li>';
+			//$lieach = "\n".'<li><div><span class="line1 w100pre">'.$i.' <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a> <span class="hotmeta1">'.$linkqualitymeta.$update.'</span></span></div><div class="hotmeta1">['.$country.':'.$type.'] <span class="cred">'.$row['hot'].'</span></div></li>';
 			$lieach = "\n".'<li><div><span class="line1 w100pre">'.$i.' <a href="'.$htmlpath.'" target="_blank" '.$titlea.'>'.$title.'</a> <span class="hotmeta1">'.$linkqualitymeta.$update.'</span></span></div><div class="hotmeta1">['.$country.'][资源('.$row['ziyuan'].')/评('.$row['yingping'].')/讯('.$row['zixun'].')] <span class="cred">'.$row['hot'].'</span></div></li>';
 			$liout.= $lieach;
 			$i++;

@@ -63,7 +63,7 @@ function readrssfile($buff)
 		preg_match_all("/<li[^>]*+>([^<]*+(?:(?!<\/?+li)<[^<]*+)*+)<\/li>/i",$div,$match3);
 		//print_r($match3);	
 		
-		$outputPlace = "<ol class=\"list20px\">\n"; 
+		$outputPlace = "<ol class=\"list20px bb1 bbli1\">\n"; 
 		$outputPlace .= "\t<li><span class=\"list\">排名</span><span class=\"name\">片名</span><span class=\"week\">周末票房</span><span class=\"allaum\">累计票房</span>\t</li>\n"; 		
 		foreach ($match3[1] as $key=>$eachmovie)
 		{

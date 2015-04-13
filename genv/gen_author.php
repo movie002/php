@@ -12,7 +12,7 @@ set_time_limit(1200);
 #需要使用的基础函数
 include("../config.php");
 include("config.php");
-include("share.php");
+include("../share/share.php");
 include("../common/base.php");
 include("../common/compressJS.class.php");
 include("../common/dbaction.php");
