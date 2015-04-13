@@ -26,8 +26,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>搜索结果-%DH_name%</title>
-	<meta name="keywords" content="%DH_name%中包含 <?php echo $active ?> 搜索结果" />
-	<meta name="description" content="%DH_name%中包含 <?php echo $active ?> 的搜索结果的展示" />
+	<meta name="keywords" content="%DH_name%中包含 <?php echo $q ?> 搜索结果" />
+	<meta name="description" content="%DH_name%中包含 <?php echo $q ?> 的搜索结果的展示" />
 	%meta%		
 </head>
 
