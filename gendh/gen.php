@@ -3,7 +3,7 @@
 include("../config.php");
 include("../common/base.php");
 include("../common/compressJS.class.php");
-require("../genv/share.php");
+require("../share/share.php");
 require("config.php");
 
 
