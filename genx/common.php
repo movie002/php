@@ -39,8 +39,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 		$title = str_replace("\"","`",$title);
 		//echo $title."\n";
 		
-		$linkseach1 = '<li class="listall"><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> <a title="点击删除" href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></li>';
-		$linkseach2 = '<li class="listall"><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <a title="点击删除"  href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></li>';			
+		$linkseach1 = '<li><div class="listlink">%num% <span class="lqc'.$quality.'">['.$linkquality[$quality].']</span> <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <span class="c'.$type.'">'.$linktype[$type].'</span> <a title="点击删除" href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></li>';
+		$linkseach2 = '<li><div class="listlink">%num% <a href = "'. $rowlinks['link'] . '" target = "_blank" title="点击访问链接:'.$title.'('.$rowlinks['author'].')" rel="nofollow">'.$title. '</a></div><div class="lqc3 rt0v5"> '.$rowlinks['author'].' <a title="点击删除"  href="javascript:deleteurl(\''.$title.'\',\''.$rowlinks['link'].'\')">'.$updatetime.'</a></div></li>';			
 		switch ($way)
 		{
 			case 1://资讯
@@ -561,7 +561,7 @@ function getcele($patten,&$celeimg,&$celes,$meta,$title)
 
 function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
 {
-	$tmplinks='<div id="'.$id.'">'.$content.'</div>';
+	$tmplinks='<div id="'.$id.'" class="listall bbli1">'.$content.'</div>';
     if($num0 != 0)
     {
 	    $tmplinks=$linktop.$tmplinks;
