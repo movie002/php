@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> %cat% 类文章列表的第%page%页 (DH博客)</title>
+	<link rel='canonical' href='%titleurl%'/>
+	<meta name="keywords" content="%name%,%cat%,类别,索引,列表" />
+	<meta name="description" content="%name% %cat% 类别文章的 列表的第%page%页" />
+	%meta%
+</head>
+<body>
+<div id="wrapper">
+	%head%
+	<div id="content">
+		<div class="browse">你的位置：<a href="%home%">首页</a> >>  <a href="%caturl%" title="查看 %cat% 下的所有文章">%cat%</a> </div>
+		<div id="contendlist">
+				%list_each%
+			<div class="page_navi">%pagenavi%</div>	
+		</div>
+	</div>	
+	<div id="sidebar">
+		%side%
+	</div>		
+	<!--end: sidebar-->
+	<div id="footer">
+		<div style="text-align:left;padding:0 20px">
+			友情链接：
+			<a href="http://startwmlife.com" target="_blank">飞鱼的声纳</a> |   
+			<a href="http://www.doosolar.com/" target="_blank">动手乐园</a> |   
+			<a href="http://www.lcblog.info/" target="_blank">有多远走多远</a> |   
+			<a href="http://www.jiangmin80.com" target="_blank">姜敏的博客</a> |   
+			<a href="http://www.letuknowit.com/" target="_blank">知蚁博客</a> |  
+			<a href="http://movie002.com" target="_blank">电影小二</a> |			
+			<a href="http://isayme.com/" target="_blank">自说Me话</a> |   
+			<a href="http://imluren.com/" target="_blank">IM路人</a> |   
+			<a href="http://feifeii.com" target="_blank">狒狒博客</a> |  
+			<a href="http://blog.30c.org/" target="_blank">三十岁</a>	
+		</div>		
+		%foot%
+	</div>
+	<!--end: bottom-->
+</div>
+<!--end: wrapper-->
+<script type="text/javascript">
+%footjs%
+var duoshuoQuery = {short_name:"dhblog"};
+</script>
+</body>
+</html>

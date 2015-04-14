@@ -1,0 +1,97 @@
+<div id="top" style="height:30px;border-top: 1px solid #898f8f;border-bottom: 1px solid #898f8f;position:relative;">
+  <div class="topnav">
+    <div class="left">
+        <div>
+			<ul class="menu">
+			<li><a href="%home%" title="灯火部落">灯火部落</a></li>
+			<li><a href="%home%html/0/73.html">常用工具</a></li> 
+			<li><a href="%home%html/links.html">友情链接</a></li> 
+			<li><a href="%home%html/0/1.html">给我留言</a></li> 
+			</ul>
+        </div> 
+    </div>
+    <!--end: left-->
+		<script type="text/javascript">
+			function showWarning() //显示系统日期   
+			{   
+				var now = new Date();
+				var hour = now.getHours();
+				if(hour>=22||hour<=6)
+				{
+					var message='<div style="border:2px solid #FF3300;font-size:12px;margin:2px 20px 0 440px;background:#FFFFDF;padding:2px;">提醒: 已经是夜里 ';
+					message +=hour;
+					message +=' 点多了，为了您和家人的健康，请注意按时作息减少熬夜。</div>';
+					return message;
+				}
+				else 
+				{			
+				   return ''; 
+				}
+			}
+			document.write(showWarning());
+		</script>
+    <!--end: right-->
+  </div>
+</div>
+<!--end: top-->
+<div id="header"> 
+  <div  class="toplink">
+    <ul>
+	  <li><a href="%home%rss.xml" target="_blank">文章RSS</a></li>
+	  <li>
+	  	<script type="text/javascript">
+		function showdate() //显示系统日期   
+		{   
+			var now = new Date();
+			var year = now.getFullYear();
+			var month = now.getMonth()+1; 
+			var day = now.getDate();
+			return year+"年"+month+"月"+day+"日";   
+		}
+		document.write(showdate());
+		</script>	
+	  </li>
+   </ul>
+  </div>
+  <div style="position:absolute;top:5px;left:35px;">
+   <object type="application/x-shockwave-flash" data="%home%images/relog.swf" WIDTH=80 HEIGHT=80>
+    <param name="movie" value="%home%images/relog.swf" />
+    <param name="WMode" value="Transparent" />
+   </object>
+  </div>
+  <div class="logo">
+    <h1 ><a href="%home%">
+      %name%
+      </a></h1>
+    <h2 class="description">
+      %name_des%
+    </h2>
+  </div>
+</div>
+<!--end: header-->
+<div style="height:32px;position:relative;border-bottom: 1px solid #252525;border-top: 1px solid #252525;">
+	<div style="position:absolute;top:5px;left:10px;">类别导航：</div>
+	<div style="position:absolute;top:0;left:90px;">
+		<div class="topnav">
+			<div class="left">
+				<ul>
+					<li><a href="%home%">IT 技术</a>
+						<ul>
+							<li><a href="%home%/index/cE5BBBAE7AB99E68A80E69CAF/1.html">建站技术</a></li>
+							<li><a href="%home%/index/cE7BD91E7BB9CE68EA8E5B9BF/1.html">编程技术</a></li>
+						</ul>
+					</li>
+					<li><a href="%home%/index/cE7BD91E7BB9CE68EA8E5B9BF/1.html">网络推广</a></li>
+					<li><a href="%home%/index/cE7BD91E7AB99E79B88E588A9/1.html">网站盈利</a></li>
+					<li><a href="%home%/index/cE585B6E4BB96E4BAA4E6B581/1.html">其他交流</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end: menunav-->
+<div class="top_content" style="position:relative">
+<img width="24px" height="24px" style="border:none;float:left;" src="images/audio.png">
+	<span style="float:left;margin:4px 0 0 5px;">通知：目前网站正常哦！</span>
+	<span id="dhsay" style="float:right;margin:4px 5px 0 0;color:chocolate;"></span>
+</div>

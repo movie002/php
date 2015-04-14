@@ -1,0 +1,4541 @@
+<_e><_d>2011010000</_d><_T>为我留言和友情链接页面</_T><_c>网络推广</_c><_t>友情推荐</_t><_a>DH</_a>
+<_b><!--
+<pre style="width:100%;white-space: pre-wrap;word-wrap: break-word;" class="pre">
+	首页链接标准：
+	1.  网站符合国家法律规定，不存在法律禁止内容
+	2.　一级域名，并正确解析
+	3.　网站PR值、权重相同
+	4.　链接页没有木马病毒、自动弹窗等
+	5.　每日更新，且内容符合国家相关规定
+	6.　没有伪造ALEXA流量、堆积关键词等作弊行为
+	7.　链接页各种链接不超过50个,我的首页链接也会控制在20个以内
+	9.  建站3个月以上
+	10. 最后，也是最重要的一点，就是志同道合,这不仅仅是对pr本义的诠释，也是以后交流的基础
+	 
+	链接说明：
+	1、本站为了美观考虑，现在只进行文字连接连接。	2、本网站会不定期整理链接，如果发现常时间打不开或别的的问题时，我们将暂时取消链接。对于连续5天无法登陆的死链接，我们保留清除的权利，请诸位站长理解。
+	3、希望贵站在各大搜索引擎收录正常。
+	4、希望贵站拥有一定的会员数量和人气, 保证链接的意义和利益。
+	5、请先链接本站后，再提出申请。我们也会以最快的速度(不超过5个工作日）核对您的网站并完成链接。
+</pre>
+--></_b>
+</_e>
+<_b><!--
+就是预告，附件没有了，请见谅
+--></_b>
+</_e>
+<_e><_d>2011010921</_d><_T>JavaScript:加入收藏代码</_T><_c>建站技术</_c><_t>javascript</_t><_a>DH</_a>
+<_b><!--
+<pre lang="javascript" line="1">
+<script type="text/javascript">
+function addBookmark(title,url) {
+if (window.sidebar)
+    {
+     window.sidebar.addPanel(title, url,"");
+    }
+else if( document.all )
+    {
+     window.external.AddFavorite( url, title);
+    }
+else if( window.opera &amp;&amp; window.print )
+    {
+       return true;
+    }
+}
+</script>
+引用：
+<a href=javascript:addBookmark("Rosa",<a href="http://dh.eyesay.org">http://dhblog.org</a>)>加入收藏</a>
+</pre>
+或者：
+<pre lang="javascript" line="1">
+<script type="text/javascript">;
+function bookmarksite(title, url){
+if (document.all)
+window.external.AddFavorite(url, title);
+else if (window.sidebar)
+window.sidebar.addPanel(title, url, "")
+}
+</script>
+引用：
+<a href="#" onclick=" bookmarksite('百度','http://www.baidu.com')">收藏百度</a>
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011011420</_d><_T>javascript:博客分享控件JiaThis</_T><_c>建站技术</_c><_t>javascript</_t><_a>DH</_a>
+<_b><!--
+JiaThis是一个提供网页地址收藏、分享及发送的WEB2.0按钮工具，网站的浏览者可以方便的分享到人人网、分享到开心网、分享到QQ空间、分享到新浪微博等一系列社会化关系网络站点。 
+网站主可以在这里获得标准按钮JS代码，嵌入到自己的网站...让网站链接分享到互联网各个角落！
+个人用户可以在这里给浏览器添加分享快捷方式，下次在浏览其他网站时，直接点击收藏的这个链接即可调入Jiathis“分享到...”功能！越来越多的网站, 正在使用Jiathis服务
+
+网站地址：<a href="http://www.jiathis.com" target=“_blank”>JiaThis</a>
+
+--></_b>
+</_e>
+<_e><_d>2011012814</_d><_T>闲钱过节好去处--“南方现金宝”</_T><_c>其他交流</_c><_t>友情推荐</_t><_a>DH</_a>
+<_b><!--
+闲钱过节好去处--“南方现金宝”
+
+  春节假期临近，银行卡里有“闲钱”或是轻仓过节的投资者，如何运作闲置资金，让钱生钱？南方基金网上直销推出基金投资好工具——“现金宝”，为投资者提供了闲钱过节的好去处。
+
+  买入“现金宝”的实质是买入了货币基金，但“现金宝”除了具有现金管理功能外，兼备基金投资功能，而且交易费率更低、操作更为简便。
+
+  作为现金管理工具，投资货币基金的收益，一般会高于活期存款利率，申购赎回手续费为零，赎回资金正常情况T+1日到账，还可以设定自动充值业务，方便快捷。作为基金投资工具，投资者可以通过“现金宝”买入南方旗下股票型基金，仅收取0.6%的基金转换费用，比直接用现金申购费率更低。另外，投资者还可以开通“现金宝”到南方旗下股票基金的定期定额转换业务。
+
+  大部分货币基金在长假节日前都会提前2-3天暂停申购，想要投资最好提前几天关注。通过南方e站通网上交易系统可使用工行、建行、农行、招行、交行、广发、兴业、浦发、中信、民生、天天盈等二十多家银行卡进行开户及购买，敬请关注。
+
+  点此查看近期“南方现金宝”收益率 
+
+  如何买入现金宝、如何发挥现金宝的优势，点此全面了解买基好工具——现金宝 
+
+  推荐阅读：工行卡申购定投 全面5折优惠! 
+
+--></_b>
+</_e>
+<_e><_d>2011020801</_d><_T>修改css中加入float之后夫div不能自适应问题</_T><_c>编程技术</_c><_t>css</_t><_a>DH</_a>
+<_b><!--
+在父div中加入
+	z-index:1;
+	overflow:hidden;
+即可
+--></_b>
+</_e>
+<_e><_d>2011020823</_d><_T>WordPress每页文章数个性修改</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+如果需要自己制作和修改主题，在Wordpress的使用过程中，难免会遇到不同的页面中文章个数显示的尴尬。
+比如我的主题，在显示首页和page页的时候，列出了文章的前面的部分，在显示某个分类时，只是显示题目。这样就发生了因为WP后台统一设置显示文章条数而引起的不美观。那有什么方法可以设置不同的页显示不同的文章数吗？当然。
+给出两种方法：
+第一种：直接修改主题里的代码
+增加query_posts设定，设定中有两种情况
+(1)不需要代码判断，就设定其显示个数，在页面的顶部加入代码为：
+<pre lang="html" line="1"> 
+<?php
+  $posts = query_posts($query_string . '&orderby=date&showposts=5');
+?>
+</pre>
+上面代码的意思是在页面加载之前，修改文章每页显示的个数和排序的方式。
+(2)根据不同的情况判断，设定显示个数
+<pre lang="html" line="1"> 
+<?php
+ if (is_archive()) {
+  $posts = query_posts($query_string . '&orderby=date&showposts=20');
+ }
+ if (is_category()) {
+  $posts = query_posts($query_string . '&orderby=date&showposts=15');
+ }
+?>
+//上例意思是：存档页和分类在后台是由一个页面中显示的
+//如果是存档页，就显示20篇文章记录，如果是分类显示，就显示15页。
+//这里是其他的代码文章列表
+<?php wp_reset_query(); ?>
+//在最后reset一下
+</pre>
+我们需要修改的只是 is_ 后面的和showposts=条数。当然如果你想倒序、随机等方法排列，就修改orderby=后面的就行了。
+增加query_posts设定，发现它会引起诸如is_home()、is_paged()、is_single()、is_category()、is_tag()等WP内至函数失效，最好在最后加上reset即可
+
+第二种方法：使用插件
+我们在这里介绍一款名为Different Posts Per Page的插件，此插件适合入门级WP选手，使用也比较简单。但目前的版本就是需要通过邮箱激活，这点也许作者有他的想法，只是我个人不是很喜欢，所以我选择了第一种方式。
+原文出处：http://www.ctusky.com/archives/show-number-of-wordpress-article.html
+--></_b>
+</_e>
+<_e><_d>2011021513</_d><_T>我的博客被别人引用了哦</_T><_c>网络推广</_c><_t>友情链接</_t><_a>DH</_a>
+<_b><!--
+前一段时间要过年，闲钱不知道哪里可以升值，就到南方基金的页面转载了一篇文章，
+今天经过百度流量，看到自己竟然被引用了哦，嘻嘻
+引用地址：<a href="http://www.caibangzi.com/monetary_fund/202301">http://www.caibangzi.com/monetary_fund/202301</a>
+贴图：
+
+<a href="http://www.dhblog.org/wp-content/uploads/2011/02/nanfjj.png"><img title="nanfjj" src="http://www.dhblog.org/wp-content/uploads/2011/02/nanfjj.png" alt="" width="392" height="292" /></a>
+--></_b>
+</_e>
+<_e><_d>2011021612</_d><_T>中国联通WLAN免费友好体验活动火热进行中</_T><_c>其他交流</_c><_t>友情推荐</_t><_a>DH</_a>
+<_b><!--
+<strong>中国联通WLAN免费友好体验活动火热进行中</strong>  
+尊敬的客户： 
+    中国联通为满足广大用户对WiFi网络的使用需求，将于即日起至2011年3月31日面向中国联通后付费手机用户开展WLAN友好体验活动。活动期间，后付费手机用户可在中国联通全国WLAN公共热点覆盖区域，通过具有WiFi无线网络功能的手机、笔记本电脑等终端设备，不限时、不限流量地免费登录使用WLAN网络，体验媲美固定宽带和WCDMA 3G网络的接入速率，畅游互联网世界。 
+    联通后付费手机用户可直接发送短信“TYWLAN”至10010自助开通免费套餐，获取WLAN业务登录密码。该套餐即刻申请，即刻生效，并将于2011年3月31日24时自动关闭。成功开通后，您可在公共热点覆盖区域搜索并连接“ChinaUnicom”无线网络，在浏览器中输入任意网址将能打开中国联通WLAN业务门户页面，依据提示输入您的手机号码和登录密码即可完成登录。 
+    现阶段中国联通WLAN网络正在火热建设中，在热点暂未覆盖的地区，您也可选择使用中国联通全球领先的WCDMA 3G网络，率先享受无线数据业务带给您的便捷。 
+    （详情请咨询当地10010） 
+
+中国联合网络通信有限公司     
+2010年12月31日
+
+可惜上班的地方没有WIFI，悲剧啊！
+--></_b>
+</_e>
+<_e><_d>2011022616</_d><_T>wordpress提高速度之一(数据库清理)</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+在使用wordpress的时候，新手往往不会关注数据库，但是如果使用时间长了，不免会因为速度的问题会去优化数据库，需要提高数据库的效率。这里介绍两种类型的数据库优化：
+一种是删除wordpress的无用数据或者不重要的数据，这里叫做数据库清理，需要对wordpress的数据库有一定的了解，这样减少数据量，可以使得数据库查找快。
+另一种是不删除数据库数据，只是将数据库的结构优化一下，就像整理电脑磁盘一样，这样让数据库结构合理，增加数据库查询效率。这里先说第一种，文章  中说明第二种方式。
+
+<h2>1 wordpress数据库表</h2>
+首先我们需要了解wordpress各个数据库表（3.0以上）的作用，这样删除的时候心里有底。
+(1)wp_commentmeta: 用于保存评论的元信息，在将评论放入回收站等操作时会将数据放入此表，Akismet等插件也会生成此表的数据。此表不太重要。
+(2)wp_comments: 用于保存评论信息的表。
+(3)wp_links: 用于保存用户输入到Wordpress中的链接(通过Link Manager)的表。
+(4)wp_options: 用于保存Wordpress相关设置、参数的表，里面包括了大量的重要信息。
+(5)wp_postmeta: 用于保存文章的元信息(meta)的表。此表不太重要。
+(6)wp_posts: 用于保存你所有的文章相关信息的表，非常的重要。一般它存储的数据是最多的。
+(7)wp_terms: 文章和链接分类以及文章的tag分类可以在表里找到。
+(8)wp_term_relationships: 日志与wp_terms中的类别与标签联合起来共同存储在wp_terms_relationships表中。类别相关链接也存储在wp_terms_relationships中。
+(9)wp_term_taxonomy: 该表格对wp_terms表中的条目分类（类别、链接以及标签）进行说明。
+(10)wp_usermeta : 用于保存用户元信息(meta)的表。
+(11)wp_users:用于保存Wordpress使用者的相关信息的表。
+
+<h2>2. wordpress数据库清理涉及到的表</h2>
+更换主题，删除插件会在将数据留在数据库中，在卸载后无法被清理。除此之外，在由于一些操作，会导致数据库的冗余，比如已经没有的评论，不应该在评论元数据表中有记录，由于没有外键的约束，这些记录没有被删除，会造成数据的冗余。本文的宗旨是删除掉不必要的数据库内容，提高wordpress的效率，在此，主要涉及到一下几张表：wp_options， wp_posts， wp_postmeta，wp_commentmeta。注意清理之前进行备份。
+
+<h2>3. wp_options的清理</h2>
+wp_options 这个数据表是wordpress设置的全局数据，这个表会经常有数据膨胀。主要原因是：
+(1)以前用过的一些插件、主题在删除之后没有进行设置的清理，造成残留数据。
+(2)占用数据的大户--RSS缓存，后台的数据调用竟然会放到数据库里面。
+处理方法：
+(1)网上对RSS处理方法有两种一个是修改后台的文件直接不去调用，这个是我不喜欢的毕竟修改了程序，其实这个很容
+易忘记WP升级是太频繁的哪次更新覆盖了新文件还是照样缓存.另外一种就是在配置文件里面填写define('MAGPIE_CACHE_ON', '0'); 这个是管用的,添加以后后台首页的调用明显变慢。
+(2)使用插件clean options
+(3)费力但是简单的清除方法：删除wp_options表，会删除一些设置，需要重新设置wordpress，推荐新手使用
+<pre lang="sql" line="1"> 
+truncate table wp_options;
+</pre>
+
+<h2>4.wp_posts清理</h2>
+wordpress的文章有好多：wp_posts表中包括
+文章种类：文章、修订版本、页面、文章的附件、菜单。
+其中每种文章又会有很多状态：继承、发布、私有、草稿、自动草稿、回收站中。
+
+冗余原因：
+(1)在博主写文章的时候，系统会保存很多的中间状态，在文章发布之后其很多的中间状态没有被删除。
+
+解决办法：
+(1)使用插件：WP Cleaner，使用插件的好处就是有保护机制，无论怎么操作都无法影响已发布的贴子，请放心使用^^
+(2)自己动手删除，数据库中的标志删除文章，注意备份。
+说明：wp_posts的重要字段含义：
+post_type：文章类型，post表示为文章，revision表示为修订版本，page为页面，attachment是文章的附件信息，nav_menu_item是菜单。这里我们需要的是文章、页面、和菜单。
+post_status：文章状态，inherit是继承的附件和文章的附带信息，publish是已经发布、private是私有的，draft是草稿，auto-draft是自动草稿，trash是在回收站。这里我们需要的是publish的状态的。
+这里我们主要是要 已经发布的文章、页面和菜单，除此之外的都可以删除，当然可以根据自己的需求选择删除哪些
+<pre lang="sql" line="1"> 
+DELETE FROM  wp_posts 
+WHERE not(post_status = 'publish' and post_type in('post','nav_menu_item','page'));
+</pre>
+
+<h2>5.wp_postmeta清理</h2>
+wp_postmeta是文章的元信息表，其数据是系统或者插件使用。
+冗余原因：
+(1)文章被删除之后，其在wp_postmeta中的数据理应被删除，在系统中多数情况是系统自动删除，但是由于人为删除文章，系统不知道被删除，就不会删除wp_postmeta表中的数据，造成冗余。
+(2)很多主题、插件没有做好及时清除的工作。
+
+解决办法：
+(1) 手动删除
+(1.1)规矩删除
+删除文章中不存在文章的元信息，这种删除比较安全，文章不存在了，其meta也肯定没有作用了。
+<pre lang="sql" line="1"> 
+DELETE FROM wp_postmeta WHERE post_id NOT IN (SELECT post_id FROM wp_posts);
+</pre>
+(1.1)安全删除
+删除_edit_lock和_edit_last条目是安全的，所以这里给出SQL语句
+<pre lang="sql" line="1"> 
+DELETE FROM wp_postmeta WHERE meta_key = '_edit_lock';
+DELETE FROM wp_postmeta WHERE meta_key = '_edit_last';
+</pre>
+(1.2)风险删除
+除了这两条还执行了一些其他语句由于有些风险：自己酌情考虑
+<pre lang="sql" line="1"> 
+DELETE FROM wp_postmeta WHERE meta_key = '_wp_old_slug';
+DELETE FROM wp_postmeta WHERE meta_key = '_revision-control';
+DELETE FROM wp_postmeta WHERE meta_value = '{{unknown}}';
+</pre>
+(1.3)特殊插件删除
+postnav插件会记录每个文章的访问数，如果不需要，可以删除
+<pre lang="sql" line="1"> 
+DELETE FROM wp_postmeta WHERE meta_key = 'views';
+</pre>
+(1.4)特殊操作删除
+在WordPress的后台上传图片或者附件后会在wp_postmeta中生成_wp_attached_file和_wp_attachment_metadata两个项，wp_posts也会记录附件的信息。如果使用FTP工具上传文件，表中就不会有这些信息。
+<pre lang="sql" line="1"> 
+DELETE FROM wp_postmeta WHERE meta_key = '_wp_attached_file';
+DELETE FROM wp_postmeta WHERE meta_key = '_wp_attachment_metadata';
+</pre>
+(1.5)洁癖删除
+这几条条语句执行完毕能够删除掉95%以上的数据，算的上是极限优化了，最后考虑到这个数据表并不是很重要，有洁
+净癖的人可以尝试清空这个表，当然我测试清空表会让一些原本的数据丢失。
+<pre lang="sql" line="1"> 
+TRUNCATE TABLE wp_postmeta;
+</pre>
+(2)插件
+尚未发现比较好用的插件，希望读者推荐
+
+<h2>6. wp_commentmeta清理</h2>
+冗余原因：
+(1)评论被删除之后，其在wp_commentmeta中的数据理应被删除，在系统中多数情况是系统自动删除，但是由于人为删除文章，系统不知道被删除，就不会删除wp_commentmeta表中的数据，造成冗余。
+(2)很多主题、插件没有做好及时清除的工作。比如akismet插件会生成记录，评论被移到回收站中有记录生成。
+解决办法：
+一下语句去除没有用的数据，如果评论中没有此条评论，那么在wp_commentmeta也没有意义，好像wordpress在清空回收站的时候会删除wp_commentmeta相应的数据。如果不出意外，下面的操作我们应该不需要做。
+<pre lang="sql" line="1"> 
+DELETE  FROM wp_comments WHERE comment_approved = 'trash';
+DELETE  FROM wp_comments WHERE comment_approved = 'spam';
+DELETE FROM wp_commentmeta WHERE comment_id NOT IN (SELECT comment_id FROM wp_comments);
+</pre>
+
+插件和回收站的记录删除，因为akismet插件本身就是在线拦截垃圾评论的，所以直接清空应该也是没有什么问题的。
+<pre lang="sql" line="1"> 
+DELETE  FROM wp_commentmeta WHERE meta_key like '%trash%' or  meta_key like '%akismet%' ;
+</pre>
+
+如果直接全部删除wp_commentmeta，影响不会太大，这里面不会涉及重要的数据
+<pre lang="sql" line="1"> 
+TRUNCATE TABLE wp_commentmeta
+</pre>
+
+<h2>7. 总结</h2>
+其实大部分无用的数据均在这几张表中，清理过后应该不会又太多的冗余数据了。但这里没有针对特殊插件或主题做数据库清理，有时这些插件和主题会悄悄动了一些数据库表，这样给清理带来很大难度，需要看代码才知道哦
+--></_b>
+</_e>
+<_e><_d>2011032822</_d><_T>li之间添加分隔线(横排、竖排)</_T><_c>编程技术</_c><_t>css</_t><_a>DH</_a>
+<_b><!--
+li之间添加一些间隔，显示比较美观，本文展示分割的几种方法：
+
+<b>示例：</b>
+横排示例：本网站的footer中的友情链接
+竖排示例：本网站的侧边栏和分类显示的列表 <a href="http://dh.eyesay.org/?cat=3" target="_blank">http://dh.eyesay.org/?cat=3</a>
+
+在这里运行有问题，将它保存为html文件，在看看，就可以了。
+这里的vss是兼容ie和firefox，chrome的。
+
+节选的代码如：
+<b>一、横排</b> 
+[runcode height="200" width="600"]
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>example</title>  
+<style type="text/css">
+#footer
+{
+  width:600px;
+  padding:0px;
+}
+#footer ul{ 
+        overflow:hidden;
+	list-style-type: none;
+	list-style-position: inside;
+	line-height: 20px;
+	width:100%; 
+	padding:0px;
+}
+#footer ul li{ 
+        float:left;
+	margin:0 0 0 -1px;
+	padding:0 8px 0 8px;
+	border-left:1px solid #000;
+}
+</style>  
+</head>  
+<body>
+
+<div id="footer">
+<ul>
+	<li><a href="#">111</a></li>
+	<li><a href="#" target="_top">222</a></li>
+	<li><a href="#" target="_blank">333</a></li>
+	<li><a href="#" target="_blank">444</a></li>
+</ul>
+</div>
+</body>
+</html>
+[/runcode]
+
+<b>一、竖排</b> 
+
+[runcode height="200" width="600"]
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>example</title>  
+<style type="text/css">
+#footer ul{ 
+	border: 1px solid #898f8f;
+	margin: 5px 1px 0 1px;
+	padding: 0;
+	overflow:hidden;
+	width:100px;
+}
+#footer li{ 
+	margin: 0 0 -1px 0;
+    padding:5px 5px 5px 7px;
+	border-bottom:1px dashed #aaa;
+	z-index:1;
+	position:relative;
+}
+#footer li.odd{
+    background: #f0ece6;
+	z-index:0;
+	position:relative;
+}
+</style>  
+</head>  
+<body>
+<div id="footer">
+<ul>
+	<li><a href="#">111111</a></li>
+	<li class= "odd"><a href="#" target="_top">222222</a></li>
+	<li><a href="#" target="_blank">333333</a></li>
+	<li class= "odd"><a href="#" target="_blank">444444</a></li>
+	<li><a href="#" target="_blank">555555</a></li>
+	<li class= "odd"><a href="#" target="_blank">666666</a></li>
+</ul>
+</div>
+</body>
+</html>
+[/runcode]
+--></_b>
+</_e>
+<_e><_d>2011040817</_d><_T>wordpress:文章的最后更新时间或修改时间</_T><_c>建站技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+wordpress默认的文章的显示是按照发表的时间排序的，
+而有些时候，有些博主需要对以前的文章做一些修改，这样需要将修改的文章显示到第一个位置，
+
+就需要按照修改的时间排序。
+
+一、按照修改时间倒叙排序
+在页面的开始处添加
+
+<pre lang="php" line="1"> 
+<?php  $posts = query_posts($query_string . '&orderby=modified');?>
+</pre>
+
+这个需要在
+<pre lang="php" line="1"> 
+  <?php while (have_posts()) : the_post(); ?>
+   .....
+  <?php endwhile; ?>、
+</pre>
+
+的前面哦
+
+
+二、显示修改时间
+
+代码需要在 
+
+<pre lang="php" line="1"> 
+  <?php while (have_posts()) : the_post(); ?>
+   .....
+  <?php endwhile; ?>
+</pre>
+
+的省略号部分哦
+
+2.1 全部显示
+<pre lang="php" line="1"> 
+<div>最后更改的: <?php the_modified_time('F j, Y'); ?></div>
+</pre>
+
+结果会显示：
+最后更改的: 2011年04月09日
+
+<pre lang="xml" line="1"> 
+关于什么样子的日期参数显示什么样子的内容，可以到网上查哦。
+</pre>
+
+2.2 分开显示
+<pre lang="php" line="1"> 
+ <?php $u_time = get_the_modified_time('U'); 
+    echo date("y-m",$u_time); 
+    echo date("d",$u_time);
+    echo date("D",$u_time); 
+ ?>
+</pre>
+
+这样就可以根据需要将年月日显示在不同的地方，就像我的博客一样
+--></_b>
+</_e>
+<_e><_d>2011041822</_d><_T>wordpress安全:登录邮件提醒(防止攻击)</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+自己的博客被别人反复尝试登陆怎么办？有没有办法知道呢？
+本文介绍两种方法：
+前提是空间有邮件功能，测试有无邮件功能的方法：登录界面点击“忘记密码”，有邮件发到你邮箱就有邮件功能。
+一、登录成功提醒
+这种方法就像银行的登录提醒一样，如果有人登录了系统，就会发一封邮件到邮箱，提醒你有人登录了，如果当时不是你登录，就要引起警惕了。将以下代码放入主题的functions.php中：
+<pre lang="php" line="1">
+/*****************************************************
+ 函数名称：wp_login_notify v1.0 by DH.huahua. 
+ 函数作用：有登录wp后台就会email通知博主
+******************************************************/
+function wp_login_notify()
+{
+    date_default_timezone_set('PRC');
+    $admin_email = get_bloginfo ('admin_email');
+    $to = $admin_email;
+	$subject = '你的博客空间登录提醒';
+	$message = '<p>你好！你的博客空间(' . get_option("blogname") . ')有登录！</p>' . 
+	'<p>请确定是您自己的登录，以防别人攻击！登录信息如下：</p>' . 
+	'<p>登录名：' . $_POST['log'] . '<p>' .
+	'<p>登录密码：' . $_POST['pwd'] .  '<p>' .
+	'<p>登录时间：' . date("Y-m-d H:i:s") .  '<p>' .
+	'<p>登录IP：' . $_SERVER['REMOTE_ADDR'] . '<p>';	
+	$wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+	$from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
+	$headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
+	wp_mail( $to, $subject, $message, $headers );
+}
+
+add_action('wp_login', 'wp_login_notify');
+</pre>
+
+二、登录失败提醒
+第二种方法我就得比较有效，有人尝试登陆你的系统，但是没有成功，这种反复尝试的动作本身就需要被记录下来，发给博主，这样，只要有错误的登录，就会发一封邮件到自己的邮箱，将对方尝试的登录名和登录密码发送到你邮箱。将以下代码放入主题的functions.php中：
+<pre lang="php" line="1">
+/*****************************************************
+ 函数名称：wp_login_failed_notify v1.0 by DH.huahua. 
+ 函数作用：有错误登录wp后台就会email通知博主
+******************************************************/
+function wp_login_failed_notify()
+{
+    date_default_timezone_set('PRC');
+    $admin_email = get_bloginfo ('admin_email');
+    $to = $admin_email;
+	$subject = '你的博客空间登录错误警告';
+	$message = '<p>你好！你的博客空间(' . get_option("blogname") . ')有登录错误！</p>' . 
+	'<p>请确定是您自己的登录失误，以防别人攻击！登录信息如下：</p>' . 
+	'<p>登录名：' . $_POST['log'] . '<p>' .
+	'<p>登录密码：' . $_POST['pwd'] .  '<p>' .
+	'<p>登录时间：' . date("Y-m-d H:i:s") .  '<p>' .
+	'<p>登录IP：' . $_SERVER['REMOTE_ADDR'] . '<p>';	
+	$wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+	$from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
+	$headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
+	wp_mail( $to, $subject, $message, $headers );
+}
+
+add_action('wp_login_failed', 'wp_login_failed_notify');
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011050320</_d><_T>域名申请攻略(以godaddy+支付宝为例)</_T><_c>建站技术</_c><_t>域名</_t><_a>DH</_a>
+<_b><!--
+域名申请攻略(以godaddy+支付宝为例)
+
+前一阵子想申请一个域名，听大家说godaddy比较好，就尝试着申请一下。费了不少劲走完了整个流程，有些经验希望能给需要域名的朋友们一些帮助，少走一些弯路：
+
+<strong>1. 挑选合适的域名</strong>
+
+(1) 域名的后缀
+当然是com和net比较好了，实在没有了这两个了，而且我是给自己用的，不考虑升值，就用了一个org的域名，<a href="http://www.dhblog.org">www.dhblog.org</a>。
+如果要便宜，可以考虑info的域名(国内卖的贵，国外便宜)。但是！！！不要考虑免费的域名，不考虑中文域名，更不要考虑的是cn域名，这个域名解析的可信度和可靠度。我不说了。
+
+(2) 域名的意义
+能记忆，能显示你的网站的风格。我的定位就是博客，我的别人叫DH，那么就叫<a href="http://www.dhblog.org">dhblog.org</a> 好了，也没有多想。
+
+(3) 域名的由来
+翻字典，找出一些能组合的词；当然这个每个人有自己的独特意义的域名，最终能申请到自己喜欢又比较好记的域名最好了。
+
+<strong>2. 查看域名是否被注册</strong>
+这个随便找个域名商就可以查出来
+
+<strong>3. 价比三家</strong>
+总之，国外比国内好，国外的我比较了一下org域名，godaddy还是比较便宜一点。下表是我申请时候的价格比较结果：
+<table border="1" cellspacing="0" cellpadding="0" width="650">
+<tbody>
+<tr>
+<td>域名后缀</td>
+<td>国内万网</td>
+<td>美橙</td>
+<td>国外name/domainsite</td>
+<td>国外godaddy</td>
+</tr>
+<tr>
+<td>org</td>
+<td>￥139</td>
+<td>￥68/￥78</td>
+<td>$9.99</td>
+<td>第一年$9.99</td>
+</tr>
+<tr>
+<td>com</td>
+<td>￥139</td>
+<td>￥68/￥78</td>
+<td>$9.99</td>
+<td>第一年$11.99</td>
+</tr>
+<tr>
+<td>net</td>
+<td>￥139</td>
+<td>￥68/￥78</td>
+<td>$9.99</td>
+<td>第一年$12.99</td>
+</tr>
+<tr>
+<td>info</td>
+<td>￥220</td>
+<td>￥200</td>
+<td>$4.99/$9.99</td>
+<td>第一年$1.99</td>
+</tr>
+</tbody>
+</table>
+ps：
+1. 现在RMB升值快，相对来说国外的域名越来越便宜
+2. 以上表格只做参考，请参考相关网址查看最新的价格
+3. 表中只是一个参考，其中有很多优惠的，比如Godaddy的域名计算很复杂，加上其有优惠，不用的需求使用特定的优惠码可以得到比较好的优惠。
+4. 对自己喜欢的域名，要比较一下，再下手，看看有什么优惠活动，可以省一点是一点。
+5. 注意买第一年的付费和买几年的付费时不一样的，以后续费的价格也是不一样的，所以要计算好之后再决定哪个更便宜。
+
+<strong>4. 到所选的域名商注册</strong>
+填写信息的时候要注意填写自己的真实信息。
+
+<strong>5. 利用优惠</strong>
+由于Godaddy在会给出一些优惠码，可以打折，比如org域名可以卖到7.5美元，在一些特殊的时候会有更低价格的域名出来，比如说1美元域名、优惠35%等。所以要及时关注域名情况，介绍一下一个网站，<a href="http://www.usaidc.com.cn/blog/tag/godaddy">http://www.usaidc.com.cn/blog/tag/godaddy</a> 里面有很多的优惠码信息，我利用的是cjctld749码买到了7.67美元的org域名，这个码好像长久有效。
+<a href="http://www.dhblog.org/wp-content/uploads/2011/05/1.png"><img class="aligncenter size-full wp-image-890" title="godaddy-youhuima" src="http://www.dhblog.org/wp-content/uploads/2011/05/1.png" alt="" width="484" height="138" /></a>
+其他域名商肯定也有优惠措施，这个一个要看信誉，看做的大不大，不要到时候像国内的域名商，说不解析就不解析，没的商量，这样不好，很不好。
+
+<strong>6. PayPal or 支付宝</strong>
+对于国外的域名，大都支持Paypal支付，需要申请一个PayPal账号，按步骤完成即可。
+有些国外的域名商支持支付宝，比如Godaddy是支持支付宝支付的，这样，我们国内的就可以采用支付宝支付。按照步骤就可以操作完成
+
+<strong>7. 设置域名转向</strong>
+新的界面的Godaddy的域名转向设置还真的比较麻烦，辛辛苦苦终于找到了。路径是：MyAcount--&gt;MYPRODUCTS-Domains-Domain Manager--&gt;点击所选域名--&gt;在信息中选择DNS Manager部分，点击Launch--&gt;自己设置。
+
+<strong>8. 关于退款</strong>
+在Godaddy买到域名5天之内，可以退款。我发信billing@godaddy.com去问了一下，下面是邮件原文：
+去信：
+<pre lang="xml">Dear,sir
+    Due to some mistake,I registered a domain name of *** for x years ,(the reason to cancel...)
+    Please help me apply a refund to my Alipay account, which is ***
+    My id is *** , and i registered  the domian on ***.
+    The Reciept is:
+     ...</pre>
+解释一下中文的意思：就是我不小心以种种原因买错了域名(本来想买x，现在买了y;本来想买2年，现在买了5年)，我已经把域名删除了，希望能从我的支付宝账户拿到钱。
+回信：
+<pre lang="xml">Thank you for contacting Online Support.
+    We would be happy to request a refund for your order.
+    However, we will need you to first cancel the item(s) in question within 5 days (120 hours)
+    of the purchase or renewal date.
+    Once canceled, please reply to this email and we will submit your refund request.
+    ...</pre>
+解释一下中文的意思：需要在5天120小时内删除域名，并发信给billing@godaddy.com即可
+--></_b>
+</_e>
+<_e><_d>2011051122</_d><_T>wordpress定时任务之一:利用wp-crontrol控制WP-Cron任务</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+<strong>1. WP-Cron简介</strong>
+我要定时发邮件！我要定时清理数据库！我要定时备份！我们怎么在wordpress之中执行定时任务呢？
+本文介绍第一种方法，实用WP-Cron，用插件wp-crontrol来控制WP-Cron。
+Scott Merrill 曾在2005年开发过一个插件叫做 wp-cron 的插件。在 WordPress 2.0 发布之后，在 wp-hachers 邮件列表有个关于在 WordPress 核心代码中添加 cron 类型的时序安排特性的讨论，最后这个特性在 2.1 版本中成形,被WordPress采用。wp-cron并不是打算去取代 Linux 操作系统内建的真正的 Cron 特性，也达不到那种精确。它所提供的是允许插件开发者能够定义事件发生在特定的时间内通过页面被导入的时候，检测当前的时间是否在安排任务的时间上来实现这个功能。如果一个设定的时间刚好通过，一个任务（一个回调函数）就会被完成。用户可以在主题和插件中利用 actions 等定时实现自己定义的函数。
+
+开始使用安排任务需要你拥有关于 WordPress 的 hooks, actions 和 filters 的相关知识。<a href="http://www.dhblog.org/?p=892">WP-Cron插件化定义任务</a> 就简单介绍如何使用插件来使用wp-cron。对于初学者，不需要对此了解太多，比较容易上手。
+
+<strong>2. 用插件使用WP-cron</strong>
+很多插件可以查找wp-cron，我遇到的是WP-Cron Dashboard和wp-crontrol。WP-Cron Dashboard只能查看和删除WP-Cron hook，推荐使用wp-crontrol，可以添加、查看、删除，很容易控制WP-Cron。
+
+<strong>3. wp-crontrol安装</strong>
+1. 可以使用wordpress自定义的搜索插件的功能，搜索关键字:wp-crontrol
+2. 也可下载后上传安装，下载地址：<a href="http://wordpress.org/extend/plugins/wp-crontrol/">http://wordpress.org/extend/plugins/wp-crontrol/</a>
+
+<strong>4. 添加schedule(定义多长时间执行一次)</strong>
+点击 设置--&gt;Crontrol。主要是添加一个定时执行的时间间隔。
+<a href="http://www.dhblog.org/wp-content/uploads/2011/05/wp-crontrol1.png"><img class="aligncenter size-full wp-image-893" title="wp-crontrol1" src="http://www.dhblog.org/wp-content/uploads/2011/05/wp-crontrol11.png" alt="" width="629" height="384" /></a>
+<strong>5. 添加Entry(定义hook,基于上面的schedule)</strong>
+点击 工具--&gt;Crontrol。主要是添加一个hook，利用schedule中定义的间隔、每次执行的时间、执行时的参数来初始化。
+<a href="http://www.dhblog.org/wp-content/uploads/2011/05/wp-crontrol2.png"><img class="aligncenter size-full wp-image-894" title="wp-crontrol2" src="http://dhblog.org/wp-content/uploads/2011/05/wp-crontrol2.png" alt="" width="586" height="408" /></a>
+<strong>6. 添加定时任务</strong>
+对于以上定义的hook,利用add_action将自己要执行的函数，绑定上，到时候就能够定期执行。
+<pre lang="php">
+add_action( 'dh_task_weekly', 'dh_task_function' );
+//函数dh_task_function可以中添加自己要执行东西,这里给自己的邮箱发一封邮件
+function dh_task_function()
+{
+    wp_mail('aa@bb.cc', 'Automatic email', 'Hello, mail weekly');
+}</pre>
+<strong>7. 删除Entry</strong>
+由于系统不会自动删除hook，所以需要手动删除，利用插件wp-Crontrol在 工具–>Crontrol 即可删除自己定义hook<a href="http://www.dhblog.org/wp-content/uploads/2011/05/wp-crontrol3.png"><img class="aligncenter size-full wp-image-895" title="wp-crontrol3" src="http://www.dhblog.org/wp-content/uploads/2011/05/wp-crontrol3.png" alt="" width="650" height="160" /></a>
+<strong>8. 删除schedule</strong>
+同理可以在 点击 设置--&gt;Crontrol 中删除自己定义的schedule。
+<a href="http://www.dhblog.org/wp-content/uploads/2011/05/wp-crontrol4.png"><img class="aligncenter size-full wp-image-896" title="wp-crontrol4" src="http://www.dhblog.org/wp-content/uploads/2011/05/wp-crontrol4.png" alt="" width="598" height="138" /></a>
+--></_b>
+</_e>
+<_e><_d>2011051615</_d><_T>wordpress定时任务之二:插件中控制WP-Cron任务</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+上一篇文章讲到如何<a href="http://dhblog.org/archives/892.html">利用插件wp-crontrol来控制WP-Cron任务</a>，利用wp-crontrol的好处是比较直观，但是对于手动写插件的wordpressers来说，不方便，不可能叫用户安装wp-crontrol来手动添加定时任务吧，就需要在代码里面自己使用WP-Cron。
+利用插件使用的时候主要有以下几个要点要解决：
+(1)如何定义时间间隔
+(2)如何在插件启动的时候创建hook
+(3)如何在插件停止的时候删除hook
+本文用以下的代码举例，说明如何在插件使用WP-Cron，希望高手能做出更强大的插件，起到抛砖引玉的作用。
+将以下代码保存为一个php，打包成一个插件就可以直接安装在wp中运行。但是需要修改dh_task_function中wp_mail函数参数中的邮件名。
+使用时注意使用 wp-crontrol来查看是否已经成功添加hook和schedule。
+<pre lang='php'>
+<?php
+/*
+Plugin Name: DH Plugin Example
+Plugin URI: http://www.dhblog.org
+Description: a example for loop timing task
+Version: 1.0
+Author: DH.huahua
+Author URI: http://www.dhblog.org
+*/
+
+//声明插件启用时候的动作
+register_activation_hook( __FILE__, 'dh_plugin_activate' );
+//声明插件停用时候的动作
+register_deactivation_hook( __FILE__, 'dh_plugin_deactivate' );
+
+//增加schedule,自定义的时间间隔循环的时间间隔 每周一次和每两周一次
+function dh_more_reccurences() 
+{
+	return array(
+		'weekly' => array('interval' => 604800, 'display' => 'Once Weekly'),
+		'fortnightly' => array('interval' => 1209600, 'display' => 'Once Fortnightly'),
+	);
+}
+add_filter('cron_schedules', 'dh_more_reccurences');
+
+//插件启用时候定义hook
+function dh_plugin_activate()
+{
+    if (!wp_next_scheduled('dh_task_weekly'))
+	   wp_schedule_event( time(), 'fortnightly', 'dh_task_weekly' );
+}
+
+//插件停用时候删除hook
+function dh_plugin_deactivate()
+{    
+    if (wp_next_scheduled('dh_task_weekly'))
+	   wp_clear_scheduled_hook('dh_task_weekly');
+    //由于在dh_task_function更新，这里需要删除
+    delete_option('dh_last_check');
+}
+
+//函数dh_task_function向某个邮箱发个信，其内容可以中添加自己要执行东西
+function dh_task_function() {
+	//这里运行你定时执行的代码，我这里将option里面dh_last_check更改为执行此操作的时间
+	update_option('dh_last_check', $now);
+}
+add_action( 'dh_task_weekly', 'dh_task_function' );
+?>
+
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011052116</_d><_T>wordpress定时任务之三:主题中控制WP-Cron任务</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+上一篇文章讲到如何<a href="http://www.dhblog.org/archives/897.html">插件中控制WP-Cron任务</a>，在插件代码里面自己使用WP-Cron。但是代码中的register_activation_hook无法在主题中，使用
+使用WP-Cron要解决的几个要点：
+(1)如何定义时间间隔
+(2)如何在插件启动的时候创建hook
+(3)如何在插件停止的时候删除hook
+如何在主题中实现的呢？
+本文用以下的代码举例，说明如何在主题中使用WP-Cron，希望给在主题中直接使用定时功能的coder起到抛砖引玉的作用。
+
+将以下代码添加到主题中的functions.php中即可，但是需要修改dh_task_function中wp_mail函数参数中的邮件名。
+使用时注意使用 wp-crontrol来查看是否已经成功添加hook和schedule。
+<pre lang='php'>
+//增加schedule,自定义的时间间隔循环的时间间隔 每周一次和每两周一次
+function dh_more_reccurences() 
+{
+	return array(
+		'weekly' => array('interval' => 604800, 'display' => 'Once Weekly'),
+		'fortnightly' => array('interval' => 1209600, 'display' => 'Once Fortnightly'),
+	);
+}
+add_filter('cron_schedules', 'dh_more_reccurences');
+
+//看有没有定义hook，没有就定义
+if (!wp_next_scheduled('dh_task_hook')) {
+	wp_schedule_event( time(), 'fortnightly', 'dh_task_hook' );
+}
+//在主题被切换的时候，清除hook
+function dh_theme_switch(){
+    if (wp_next_scheduled('dh_task_hook'))
+	wp_clear_scheduled_hook('dh_task_hook');
+    //由于在dh_task_function更新，这里需要删除
+    delete_option('dh_last_check');
+}
+add_action('switch_theme',dh_theme_switch);
+
+//函数dh_task_function向某个邮箱发个信，其内容可以中添加自己要执行东西
+function dh_task_function() {
+	//这里运行你定时执行的代码，我这里将option里面dh_last_check更改为执行此操作的时间
+	update_option('dh_last_check', $now);
+}
+add_action( 'dh_task_weekly', 'dh_task_function' );
+</pre>
+注：如果在使用的过程中发现任何bug，真心希望您能留言告诉我，谢谢你的试用和分享！让我们更加熟悉wordpress！
+--></_b>
+</_e>
+<_e><_d>2011052420</_d><_T>wordpress定时任务之四:页面访问触发执行(插件篇)</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+我要定时发邮件！我要定时清理数据库！我要定时备份！我们怎么在wordpress之中执行定时任务呢？
+<a href="http://www.dhblog.org/?p=892">wordpress定时任务一</a>、<a href="http://dhblog.org/?p=897">wordpress定时任务二</a>、<a href="http://dhblog.org/?p=898">wordpress定时任务三</a>介绍利用WP-Cron来控制定时任务，本文介绍另外一种方法，利用访客访问页面的触发来执行定时任务。
+页面触发定时任务的大体思想是：将定时信息存储在数据库中，的当访客访问页面时，如果已经等于或者过了应该定时执行的时间，就执行定时任务。
+这个方法的优点是不需要wp_cron，不占用太多的资源，缺点是不准确，在有访客访问的时候错发，不能再一个没有访问访问的深夜做，使得执行时可能访客的体验不好。
+这里介绍如何在插件中使用，将以下代码保存为一个php，打包成一个插件就可以直接安装在wp中运行。
+<pre lang='php'>
+<?php
+/*
+Plugin Name: DH Recycle Example
+Plugin URI: http://dhblog.org
+Description: a example for loop timing task
+Version: 1.0
+Author: DH.huahua
+Author URI: http://dhblog.org
+*/
+
+//声明插件启用时候的动作
+register_activation_hook( __FILE__, 'dh_recycle_activate' );
+//声明插件停用时候的动作
+register_deactivation_hook( __FILE__, 'dh_recycle_deactivate' );
+
+//插件启用时候定义hook
+function dh_recycle_activate()
+{
+	$interal = 3600*24*7; //定义一个礼拜执行一次
+	//执行的时间按照第一次执行的时间为基础，因为无法精确，所以不定义具体执行的时间点
+	$options = array($interal,time());//0:多长时间执行一次，以秒为单位。1:最后一次执行的日期
+	update_option('dh_recycle', $options);
+}
+
+//插件停用时候擦屁股
+function dh_recycle_deactivate()
+{    
+	delete_option('dh_recycle');
+}
+
+$options = get_option('dh_recycle');
+$now = time(); // 现在
+$last_check = $options[1];
+$interal = $options[0];
+$next_check = $last_check + $interal;
+
+//如果到了时间执行的时间
+if ($next_check <= $now) 
+{
+	//这里运行你定时执行的代码，我这里将option里面dh_last_check更改为执行此操作的时间
+	$options[1]=$now;
+	update_option('dh_recycle', $options);
+}
+?>
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011052710</_d><_T>wordpress定时任务之五:页面访问触发执行(主题篇)</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+上一篇文章 讲到 <a href="http://dhblog.org/archives/899.html">利用访客访问页面的触发来执行定时任务的插件时间</a>，这篇将使用在主题中定义定时任务的方法。
+将以下代码添加到主题中的functions.php中即可
+<pre lang="php">$options = get_option('dh_recycle');
+//如果没有定义options就定义
+if (!$options) {
+	$interal = 3600*24*7; //定义一个礼拜执行一次
+	//执行的时间按照第一次执行的时间为基础，因为无法精确，所以不定义具体执行的时间点
+	$options = array($interal,time());//0:多长时间执行一次，以秒为单位。1:最后一次执行的日期
+	update_option('dh_recycle', $options);
+}
+
+//在主题被切换的时候，清除hook
+function dh_theme_switch(){
+	delete_option('dh_recycle');
+}
+
+add_action('switch_theme',dh_theme_switch);
+
+$now = time(); // 现在
+$last_check = $options[1];
+$interal = $options[0];
+$next_check = $last_check + $interal;
+
+//如果到了时间执行的时间
+if ($next_check &lt;= $now)
+{
+	//这里运行你定时执行的代码，我这里将option里面dh_last_check更改为执行此操作的时间
+	$options[1]=$now;
+	update_option('dh_recycle', $options);
+}</pre>
+--></_b>
+</_e>
+<_e><_d>2011052717</_d><_T>首次接触拿福能(感受篇)</_T><_c>网站盈利</_c><_t>友情推荐</_t><_a>DH</_a>
+<_b><!--
+最近，我爱水煮鱼、万戈、卢松松的博客上几乎同一时间出现了 拿福能 的字样，也就不可避免地让我点击了拿福能的网站。
+出于向大牛们看齐，或者学习的态度，我也申请了 拿福能 账号，申请之后，发现还是比较适合我这样的博主的，下面说说感受吧：
+<h2>1. 线下活动很丰富</h2>
+从各个博主贴出的照片可以看出，线下的活动很多，而且参与度非常高。
+
+<h2>2. 广告个性选项</h2>
+博主可以选择广告的类别、适合人群、年龄段等，还可以设计问答统计功能。
+
+<h2>3. 不需要备案</h2>
+不知道我没有备案的网站能不能申请，希望能通过。
+
+<h2>4. 加入有奖</h2>
+这要加入就有50块。
+
+<h2>5. 只针对博主</h2>
+比较适合我这种只写文章的人。
+
+<h2>6. 附带统计功能</h2>
+虽然还没有使用，希望这个统计能提供我需要的数据，比如说访问人群特征等...
+
+还有很多其他的特征，需要日后慢慢体会了
+
+<strong>申请要求：</strong>
+1、参加活动的博客建立时间不可少于六个月，且博主最后一次发布博文时间不超过两周。
+这个我的域名虽然没有6个月，但是网站存在已经快一个月了，今年一月一号开博的，至少每个星期更新一篇，所以应该能满足要求。
+2、要注册。已经注册账号，并添加域名。
+3、要贴广告。侧栏第一个就是
+4、要发文章。就是这篇文章，并说明点击 <a href="http://www.nuffnang.com.cn/blog/2011/05/23/challenge-1000">http://www.nuffnang.com.cn/blog/2011/05/23/challenge-1000</a>参加活动过
+--></_b>
+</_e>
+<_e><_d>2011053010</_d><_T>wordpress提高速度之二:数据库定时优化插件(WP_Cron篇)</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+点击下载：<a href="http://dhblog.org/wp-content/uploads/2011/05/dh-optimize-db1.zip">dh-optimize-db1</a>
+
+作用：定期优化数据库
+描述：使用中 <a href="http://dhblog.org/archives/897.html">wordpress 定时任务之二:插件中控制WP-Cron任务</a> 的方法定期优化数据库
+设置：只能手动改代码设置时间，默认是两个礼拜
+
+以下是代码分析：
+<pre lang='php'>
+<?php
+/*
+Plugin Name: DH Optimize DB 1
+Plugin URI: http://www.dhblog.org
+Description: Loop Optimize DB using WP-Cron
+Version: 1.0
+Author: DH.huahua
+Author URI: http://www.dhblog.org
+*/
+
+//声明插件启用时候的动作
+register_activation_hook( __FILE__, 'dh_optimize_db1_activate' );
+//声明插件停用时候的动作
+register_deactivation_hook( __FILE__, 'dh_optimize_db1_deactivate' );
+
+//增加schedule,自定义的时间间隔循环的时间间隔 每周一次和每两周一次
+function dh_more_reccurences() 
+{
+	return array(
+		'fortnightly' => array('interval' => 1209600, 'display' => 'Once Fortnightly'),
+	);
+}
+add_filter('cron_schedules', 'dh_more_reccurences');
+
+//插件启用时候定义hook
+function dh_optimize_db1_activate()
+{
+	if (!wp_next_scheduled('dh_task_fortnightly'))
+	   wp_schedule_event( time(), 'fortnightly', 'dh_task_fortnightly' );
+}
+
+//插件停用时候删除hook
+function dh_optimize_db1_deactivate()
+{    
+    if (wp_next_scheduled('dh_task_fortnightly'))
+	   wp_clear_scheduled_hook('dh_task_fortnightly');
+}
+
+//函数dh_optimize_db优化数据库
+ function dh_optimize_db1()
+{
+    global $wpdb;
+  	$sql = 'SHOW TABLE STATUS FROM ' . DB_NAME . ' WHERE Data_free > 0';
+	$res = $wpdb->get_results($sql);
+	foreach($res as $r) 
+	{
+		$sql = 'OPTIMIZE TABLE '.$r->Name;
+		$res2 = $wpdb->query($sql);
+	}  
+} 
+add_action( 'dh_task_fortnightly', 'dh_optimize_db1' );
+?>
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011060210</_d><_T>wordpress提高速度之三:数据库定时优化插件(访问触发篇)</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+点击下载：<a href='http://dhblog.org/wp-content/uploads/2011/06/dh-optimize-db2.zip'>dh-optimize-db2</a>
+作用：定期优化数据库
+描述：使用中 <a href="http://dhblog.org/archives/899.html">wordpress 定时任务之四:页面访问触发执行(插件篇)</a> 中的方法定期优化数据库
+设置：只能手动改代码设置时间，默认是一个礼拜
+
+以下是代码分析：
+<pre lang='php'>
+<?php
+/*
+Plugin Name: DH Optimize DB 2
+Plugin URI: http://www.dhblog.org
+Description: Loop Optimize DB using visitor
+Version: 1.0
+Author: DH.huahua
+Author URI: http://www.dhblog.org
+*/
+
+//声明插件启用时候的动作
+register_activation_hook( __FILE__, 'dh_optimize_db2_activate' );
+//声明插件停用时候的动作
+register_deactivation_hook( __FILE__, 'dh_optimize_db2_deactivate' );
+
+//插件启用时候定义hook
+function dh_optimize_db2_activate()
+{
+	$interal = 3600*24*7; //定义一个礼拜执行一次
+	//执行的时间按照第一次执行的时间为基础，因为无法精确，所以不定义具体执行的时间点
+	$options = array($interal,time());//0:多长时间执行一次，以秒为单位。1:最后一次执行的日期
+	update_option('dh_optimize_db', $options);
+}
+
+//插件停用时候擦屁股
+function dh_optimize_db2_deactivate()
+{    
+	delete_option('dh_optimize_db');
+}
+
+$options = get_option('dh_optimize_db');
+$now = time(); // 當天日期
+$last_check = $options[1];
+$interal = $options[0];
+$next_check = $last_check + $interal;
+
+//如果到了时间执行的时间
+if ($next_check <= $now) 
+{
+	//这里运行你定时执行的代码，我这里将option里面dh_last_check更改为执行此操作的时间
+	//优化数据库
+	global $wpdb;
+  	$sql = 'SHOW TABLE STATUS FROM ' . DB_NAME . ' WHERE Data_free > 0';
+	$res = $wpdb->get_results($sql);
+	foreach($res as $r) 
+	{
+		$sql = 'OPTIMIZE TABLE '.$r->Name;
+		$res2 = $wpdb->query($sql);
+	}  	
+	$options[1]=$now;
+	update_option('dh_optimize_db', $options);
+}
+?>
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011060511</_d><_T>wordpress提高速度之四:数据库优化总结</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+当删除一个表的一部分记录时,这些记录仍然保持在一个类似于一个链表的存储空间中，当插入新数据时会再次使用这些老纪录的位置。所以删除纪录会闲置一些空间造成这里的“多余”。  
+ 我这个截图多余的空间还很小，但是时间一长“多余”的数量还是挺大的，于是很多同学开始看他不顺眼了，想把他清理掉。其实这个多余是没有什么害处的，他不会占用你的空间，他指的是那些已经分配给当前表但是却没有使用的空间，但优化一下呢，会不会使得速度加快，我这里并没有测试，但是总归是好不是坏。至少我认为磁盘空间少占用了一些。
+
+wordpress数据库优化的方法：
+<h2>1. 利用phpMyAdmin</h2>
+<a href="http://dhblog.org/wp-content/uploads/2011/06/optimize-hands.png"><img src="http://www.dhblog.org/wp-content/uploads/2011/06/optimize-hands.png" alt="" title="optimize-hands" width="647" height="326" class="aligncenter size-full wp-image-904" /></a>
+
+<h2>2. 利用插件Optimize DB</h2>
+<a href="http://dhblog.org/wp-content/uploads/2011/06/optimize-plugin.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/optimize-plugin.png" alt="" title="optimize-plugin" width="605" height="256" class="aligncenter size-full wp-image-905" /></a>
+
+<h2>3. 直接SQL语句</h2>
+<pre lang='sql'>
+OPTIMIZE TABLE wp_commentmeta;
+OPTIMIZE TABLE wp_comments;
+OPTIMIZE TABLE wp_links;
+OPTIMIZE TABLE wp_options;
+OPTIMIZE TABLE wp_postmeta;
+OPTIMIZE TABLE wp_posts;
+OPTIMIZE TABLE wp_terms;
+OPTIMIZE TABLE wp_term_relationships;
+OPTIMIZE TABLE wp_term_taxonomy;
+OPTIMIZE TABLE wp_usermeta;
+OPTIMIZE TABLE wp_users;
+</pre>
+<a href="http://dhblog.org/wp-content/uploads/2011/06/optimize-sql.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/optimize-sql.png" alt="" title="optimize-sql" width="581" height="355" class="aligncenter size-full wp-image-906" /></a>
+
+<h2>4. 代码定期优化</h2>
+方法见：
+<a href="http://dhblog.org/archives/902.html">wordpress提高速度之三:数据库定时优化(访问触发篇)</a>
+<a href="http://dhblog.org/archives/901.html">wordpress提高速度之二:数据库定时优化(WP_Cron篇)</a>
+--></_b>
+</_e>
+<_e><_d>2011060713</_d><_T>javascript 熬夜提醒</_T><_c>编程技术</_c><_t>javascript</_t><_a>DH</_a>
+<_b><!--
+最近弄博客比较晚，就看到51.la上面给出了提醒，觉得非常的有心，决定我的博客也需要一个，所以就写了一个js，来提醒晚上23点以后还在看我的博客的博友，快快去睡觉哦！
+将一下代码贴在你需要的设置提醒的地方。
+<pre lang='javascript'>
+<script type="text/javascript">
+  function showWarning() //判断并显示提醒 
+   {   
+	var now = new Date();
+	var hour = now.getHours();
+	if(hour>=23||hour<=6)
+	{
+	 return '<div style="border:2px solid #FF3300;
+                  font-size:12px;margin:2px 200px 0 270px;
+                  background:#FFFFDF;padding:2px;">
+                  提醒: 已经是夜里 23 点多了，为了您和家人的健康，请注意按时作息减少熬夜。
+                  </div>';
+	}
+	return '';   
+  }
+ document.write(showWarning());
+</script>
+</pre>
+实例图：这个需要晚上23:00之后和凌晨6:00之前才能看到，呵呵
+<a href="http://dhblog.org/wp-content/uploads/2011/06/jsaoye.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/jsaoye.png" alt="" title="jsaoye" width="648" height="316" class="aligncenter size-full wp-image-913" /></a>
+
+
+--></_b>
+</_e>
+<_e><_d>2011061012</_d><_T>wordpress安全:博客被攻击</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h1>历史回顾</h1>
+2011年04月18日：发表文章<a href="http://dhblog.org/archives/888.html" target="_blank">wordpress登录邮件提醒(防止攻击)</a>，只是觉得这个功能还可以。
+2011年05月01日：<a href="http://awy.me/2011/05/prevent-attacks-wordpress-login-e-mail-alert/" target="_blank">防止攻击 - WordPress登录邮件提醒</a>，被人转载，感觉很好。
+2011年06月01日: <a href="http://awy.me/2011/06/six-person-sending-a-gift/" target="_blank">某人送的六一“礼物”</a>，感觉这种攻击很少，有名的博客才会有这种攻击。
+2011年06月07日: 我的博客被攻击了。。。
+<h1>攻击详情</h1>
+<a href="http://dhblog.org/wp-content/uploads/2011/06/attack.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/attack.png" alt="" title="attack" width="620" height="493" class="aligncenter size-full wp-image-914" /></a>
+<h1>应对策略</h1>
+在输入次数过多之后，不允许这个ip访问，解决方法在研究中。。。
+--></_b>
+</_e>
+<_e><_d>2011061312</_d><_T>网页中显示当前日期(php/jsp/javascript/flash)</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+上次发了文章<a href="http://dhblog.org/archives/907.html">javascript 熬夜提醒</a>，用的不是服务器计算当前时间的方法，是用的浏览器在本地运行javascript的方法，这里说明一下各种方法和区别吧。
+我的网站上的时间就是用js方法显示的。
+<h2>1. php的服务器端方法</h2>
+<pre lang="php" line="1">
+<?php
+	$hourdiff = "15"; /* 这是服务器时区和客户本地时区差 */
+	$timeadjust = ($hourdiff * 60 * 60);
+	$melbdate = date("Y年m月d日 H:i",time() + $timeadjust);
+	print ("$melbdate");
+?>
+</pre>
+详细使用方法见：
+<a href="http://php.net/manual/en/function.date.php">http://php.net/manual/en/function.date.php</a>
+
+<h2>2. jsp的服务器端方法</h2>
+<pre lang="jsp" line="1">
+<%@ page import="java.util.Date"%>
+<%
+    Date myDate = new Date();
+    out.println(myDate.toLocaleString());
+%>
+</pre>
+详细使用方法见：
+<a href="http://bbs.blueidea.com/viewthread.php?tid=989464&page=">jsp中的日期问题及其它</a>
+
+<h2>3. 服务器端方法的缺点</h2>
+缺点：
+1 不是客户端的时间，是服务器的时间，服务器可能在美国，这个时间对在不同时区的客户端是一样的，对每个客户端需要单独计算。而且换了不同时区的服务器，需要更改这些时区设置。
+2 服务器端计算，需要占用服务器的时间。
+所以，给出使用js的方法:
+
+<h2>4. js方法</h2>
+<pre lang='javascript' line="1">
+<script type="text/javascript">
+function showdate() //显示系统日期   
+{   
+	var now = new Date();
+	var year = now.getFullYear();
+	var month = now.getMonth()+1; 
+	var day = now.getDate();
+	return year+"年"+month+"月"+day+"日";   
+}
+document.write(showdate());
+</script>	
+</pre>
+详细使用方法见：
+<a href="http://www.w3school.com.cn/js/jsref_obj_date.asp">JavaScript Date 对象参考手册</a>
+优点：
+1 客户端的时间，是准确的客户时间，除非客户电脑不准
+2 客户端计算，减少服务器压力
+3 不同地区的客户能拿到他们的自己的当前时间，符合他们的需求
+4 js代码可以在任何环境中使用，不管是php、jsp还是asp
+
+<h2>5. flash方法</h2>
+最后介绍的，当然是最厉害的，但这个方法最简单，也最有效果。就和我的网页上top上的圆形时钟和数字时钟一样，这些flash网上有，只要加入到html中就可以了。有需要可以在我的网站下载，找到我网站代码里面的flash地址，下载即可。
+<pre lang='html' line="1">
+<div style="position:absolute;top:30px;right:10px;">
+<object type="application/x-shockwave-flash" data="<?php bloginfo('template_directory'); ?>/images/flash-clock.swf" WIDTH=100 HEIGHT=30>
+<param name="movie" value="<?php bloginfo('template_directory'); ?>/images/flash-clock.swf"/>
+<param name="WMode" value="Transparent" />
+</object>   
+</div>
+</pre>
+优点：
+1. 实时的，变化的
+2. 好看的。
+3. 互动的。
+
+--></_b>
+</_e>
+<_e><_d>2011061907</_d><_T>wordpress安全:应对尝试密码的攻击</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>序</h2>
+前一段时间<a href="http://dhblog.org/archives/915.html">博客被攻击</a>了，自从发了文章之后，得到了很多人得关心，也得到了有史以来的最多的评论数目：>50。很多博友提出了很多有方法，这里特别感谢：
+<a href="http://blog.30c.org/">Clove</a>，<a href="http://014.cc/">Dianso</a>，<a href="http://ixwebhosting.us">ixwebhosting</a>,根据他们的建议，我总结了一下，应对这类攻击的方法：
+<h2>1. 删除admin用户</h2> 
+针对前两次的攻击：<a href="http://dhblog.org/archives/915.html">博客被攻击</a>和<a href="http://awy.me/2011/06/six-person-sending-a-gift/">某人送的六一“礼物”</a>，攻击者都是使用admin为用户名尝试密码的，如果将admin用户删除，用自己设置的用户名访问，那么攻击者再怎么尝试都是无效的。博主可以在 wp后台的用户-->用户 里面删除。删除之前要注意新建另一个自己的管理员用户哦。
+
+<h2>2. 最好不要暴露你的用户名</h2>
+虽然没有了admin用户，但是攻击者如果聪明，就可以从你网站的信息中得到你的用户名，一样尝试密码，比如说下面的将用户名直接暴露在外面的做法是极为不妥的。
+除了这点，还要注意，可以把自己的用户名设置复杂一点，这样攻击者还需要知道你的用户名，增加难度。
+<a href="http://dhblog.org/wp-content/uploads/2011/06/selfuser.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/selfuser.png" alt="" title="selfuser" width="516" height="217" class="aligncenter size-full wp-image-925" /></a>
+
+<h2>3. 将密码设置复杂</h2>
+这个不用说，是对付这种尝试密码的最有效的屏障，也是最好的关卡。
+密码设置的复杂至少包括：
+有：大小写、数字、特殊字符、长度不小于6等。
+没有：太多相同的字符、字典词汇、生日等。
+
+<h2>4. 得到尝试密码的痕迹</h2>
+但有人在尝试登陆的时候，给你的邮箱发一封信。这里使用 <a href="http://dhblog.org/archives/888.html">wordpress登录邮件提醒(防止攻击)</a>可以通知。同时kan.willin的 <a href="http://kan.willin.org/?p=1335">my_visitor</a>也有此功能。
+
+<h2>5. 安装 Login LockDown 插件</h2>
+虽然知道别人在尝试登陆你的后台，但是比较麻烦的是他一直在登陆，这很可能是利用机器人在登录，如果没有防护措施，就会一直收到登陆登陆错误提醒，这样不免会心急如焚，如果组织这种行径呢？这里推荐使用Login LockDown ，插件可以设定登陆错误的次数，超过这个次数，就不允许登陆。这样可以很好阻止这样的机器人攻击。
+<a href="http://dhblog.org/wp-content/uploads/2011/06/lockdown.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/lockdown.png" alt="" title="lockdown" width="326" height="248" class="aligncenter size-full wp-image-928" /></a>
+
+<h2>6. 更改登录地址，并不要在你的网页中显示这些地址</h2>
+管理目录永远都是wp- admin，所以对于攻击者来说，省了个步骤来搞定一个WordPress博客，不管博主是不是觉得有必要更改这个地址，文章<a href="http://www.54wuhen.com/post-1323.html">【转载】WordPress后台登录地址更改方法（更改wp-admin目录名）</a>已经讲述了更改这个地址的方法，更改之后，那就不要在页面中显示这个地址，这样就白改了，呵呵。所以，自己需要记住这个地址很有必要，这样就觉得使用不方便了吧，是的。还有一个方法：<a href="http://imluren.com/2011/07/hidden-manage.html">http://imluren.com/2011/07/hidden-manage.html</a> 安全和方便总是对立的。
+
+<h2>7. 唯一浏览器、唯一ip地址登录</h2>
+kan.willin对此有独特的研究，并给出了很好的解决方法，具体使用方法见：<a href="http://kan.willin.org/?p=1336">WordPress 最安全登入</a>。使用登入检查和独一无二的user agent，使用这种方法是绝对安全了，但是如果想在其他电脑登陆，或者IP经常变化的使用比较不方便。 
+
+<h2>8. 定期备份</h2>
+这个方法就是留一手，即使在被攻击得逞之后，也不会丢失数据，等恢复之后，又是一条好汉。备份的插件很多，这里推荐的还是kan.willin的 <a href="http://kan.willin.org/?p=1335">my_visitor</a>等
+<a href="http://dhblog.org/wp-content/uploads/2011/06/beifeng.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/beifeng.png" alt="" title="beifeng" width="494" height="196" class="aligncenter size-full wp-image-926" /></a>
+
+<h2>9. 结束语</h2>
+尝试密码的攻击，只要密码设置比较复杂，是不会造成什么伤害的，基本上不会攻击成功，但是不排除有小孩喜欢这样尝试，尝试多了也会对服务器造成伤害，所以，在博客出名之后，适当防止也是必要的。
+--></_b>
+</_e>
+<_e><_d>2011062213</_d><_T>wordpress提高速度之五:主题中数据库定时优化(访问触发篇)</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+之前讲到 <a href="http://dhblog.org/archives/902.html">利用访客访问页面的触发来执行优化数据库的插件</a>，这篇将使用定期优化集成到主题中的方法。
+将以下代码添加到主题中的functions.php中即可
+<pre lang='php'>
+<?php
+$options = get_option('dh_optimize_db');
+//如果没有定义options就定义
+if (!$options) {
+	$interal = 3600*24*7; //定义一个礼拜执行一次
+	//执行的时间按照第一次执行的时间为基础，因为无法精确，所以不定义具体执行的时间点
+	$options = array($interal,time());//0:多长时间执行一次，以秒为单位。1:最后一次执行的日期
+	update_option('dh_optimize_db', $options);	
+}
+ 
+//在主题被切换的时候，清除hook
+function dh_theme_switch(){
+	delete_option('dh_optimize_db');
+}
+ 
+add_action('switch_theme',dh_theme_switch);
+ 
+$now = time(); // 现在
+$last_check = $options[1];
+$interal = $options[0];
+$next_check = $last_check + $interal;
+ 
+//如果到了时间执行的时间
+if ($next_check <= $now) 
+{
+	//优化数据库
+	global $wpdb;
+  	$sql = 'SHOW TABLE STATUS FROM ' . DB_NAME . ' WHERE Data_free > 0';
+	$res = $wpdb->get_results($sql);
+	foreach($res as $r) 
+	{
+		$sql = 'OPTIMIZE TABLE '.$r->Name;
+		$res2 = $wpdb->query($sql);
+	}  	
+	$options[1]=$now;
+	update_option('dh_optimize_db', $options);
+}
+?>
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011062513</_d><_T>wordpress提高速度之六:主题中数据库定时优化(WP_Cron篇)</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+上一篇文章讲到<a href="http://dhblog.org/archives/901.html">如何用插件实现数据库定时优化</a>，在插件代码里面自己使用WP-Cron。这篇文章将如何集成到主题中来。
+
+<pre lang='php'>
+//增加schedule,自定义的时间间隔循环的时间间隔 每周一次和每两周一次
+function dh_more_reccurences() 
+{
+	return array(
+		'fortnightly' => array('interval' => 1209600, 'display' => 'Once Fortnightly'),
+	);
+}
+add_filter('cron_schedules', 'dh_more_reccurences');
+
+//看有没有定义hook，没有就定义
+if (!wp_next_scheduled('dh_task_fortnightly')) {
+	wp_schedule_event( time(), 'fortnightly', 'dh_task_fortnightly' );
+}
+//在主题被切换的时候，清除hook
+function dh_theme_switch(){
+    if (wp_next_scheduled('dh_task_fortnightly'))
+	wp_clear_scheduled_hook('dh_task_fortnightly');
+}
+add_action('switch_theme',dh_theme_switch);
+
+//函数dh_optimize_db优化数据库
+ function dh_optimize_db()
+{
+    global $wpdb;
+  	$sql = 'SHOW TABLE STATUS FROM ' . DB_NAME . ' WHERE Data_free > 0';
+	$res = $wpdb->get_results($sql);
+	foreach($res as $r) 
+	{
+		$sql = 'OPTIMIZE TABLE '.$r->Name;
+		$res2 = $wpdb->query($sql);
+	}  
+} 
+add_action( 'dh_task_fortnightly', 'dh_optimize_db' );
+</pre>
+注：如果在使用的过程中发现任何bug，真心希望您能留言告诉我，谢谢你的试用和分享！让我们更加熟悉wordpress！
+--></_b>
+</_e>
+<_e><_d>2011062808</_d><_T>wordpress安全:被垃圾评论搞的很烦</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>缘起</h2>
+wordpress默认的处理垃圾评论一直不是很理想，加上我想我的博客不会有人来留言，特别是垃圾评论，少之又少，所以就没有对垃圾评论做处理。
+不过这几天，情况就不一样了。如图所示：
+<a href="http://dhblog.org/wp-content/uploads/2011/06/spam.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/spam.png" alt="" title="spam" width="606" height="521" class="aligncenter size-full wp-image-929" /></a>
+
+由于垃圾评论没有标记为spam，开始手动删除这些垃圾评论，后来越来越多，没有办法，手动累的要死。下图就是我手动删除的悲惨情况：
+<a href="http://dhblog.org/wp-content/uploads/2011/06/spamdel.png"><img src="http://dhblog.org/wp-content/uploads/2011/06/spamdel.png" alt="" title="spamdel" width="487" height="424" class="aligncenter size-full wp-image-930" /></a>
+后来想到一个办法，用我的sql知识，批量删除，我知道这段时间没有博友们的正式评论，所以干脆删除了所有的被攻击时段的评论，使用下面的sql语句。
+<pre lang='sql'>
+update `wp_comments` set comment_approved='spm' WHERE comment_date> '2011-06-16 22:22:22';
+delete from `wp_comments` where comment_approved='spm';
+</pre>
+
+如果博友们觉得运行delete 很危险，就先运行
+<pre lang='sql'>
+update `wp_comments` set comment_approved='spm' WHERE comment_date> '2011-06-16 22:22:22';
+</pre>
+然后在后台查看是否真的是垃圾评论，删除垃圾评论即可。
+--></_b>
+</_e>
+<_e><_d>2011070105</_d><_T>wordpress安全:处理垃圾评论</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<div style="color: #f00; font-size: 16px; font-weight: 700;">以此文献给 中国共产党建党90周年！</div>
+最近看到很多电视剧、电影都给党的生日献礼，我也不例外，献礼一篇文章吧！本来呢，以我的风格，肯定是之一、之二之类的。像这篇文章，会分为四个篇章。但是既然是献礼文章，就不能马虎，一气呵成，不拖泥带水。
+上一篇文章讲到<a href="http://dhblog.org/archives/932.html"> wordpress安全:被垃圾评论搞的很烦</a>，不少博友提出了很多的解决方法，在此表示非常的感谢，也知道大部分博友也遇到这个非常烦人的问题，垃圾评论就像前面的一坨屎一样，恶习却只能视而不见。彻底阻止它们来访问你，并试图利用wp_comment.php是不可能的，只能屏蔽掉，视而不见。如果不断有垃圾评论，利用很多的ip访问你，就等于一种DOS攻击，从这个角度讲，是威胁到博客的安全。所以tag就是wordpress安全。
+上一篇中给出了暂时应对垃圾评论的方法，老是这样应对，绝对不是办法，所以给出了我总结了对付垃圾评论的办法：
+<h2>1 前台客户端验证</h2>
+<h3>1.1 验证码验证</h3>
+输入验证码的方法是最常用的，我接触的wordpress博客使用验证码验证的不多，我没有使用验证码方法，觉得这个会影响博友们的体验，打击大家的评论激情，但是这里给出willin大师的搞笑验证码总结：
+<a href="http://kan.willin.org/?p=1063">網上千奇百怪的驗証碼設計</a>
+<h3>1.2 算术验证</h3>
+这个输入的数字不多，用户体验比较好。
+这里推荐可以见<a href="http://www.ninthday.net/">星期九</a>的博客，同时他的一篇文章 ：<a href="http://www.ninthday.net/2010/11/adding-calculation-checking.html">继续折腾之添加代码实现评论算术验证</a>很具有参考价值。
+<h3>1.3 js动作验证</h3>
+js动作验证好处就是用户体验，不用输入难以辨别的数字，通过鼠标动作验证即可。坏处就是加载js比较大。速度会慢一点。
+a. QapTcha：只要拉一下即可，这种用户的体验比较好，只要动一动鼠标即可，这里推荐示例：<a href="http://www.iceray.net/">空空裤兜的博客</a>，<a href="http://blog.30c.org/">三十岁</a>
+b. 除了QapTcha还有很多其他的js方法见：<a href="http://www.iwanpc.com/8505.html">精选10种用户友好验证码—帮您实现更好的用户验证体验</a>
+<h2>2. 后台wordpress验证</h2>
+<h3>2.1 Akismet插件</h3>
+wordpress自带的发垃圾插件，需要到wordpress.com注册一个激活码后才能使用。如果博客碰到垃圾评论的时候，建议不要立即删除，而是把它评为垃圾评论。这样Akismet会自动学习去辨认更多的垃圾评论，直到把所有的垃圾评论都干掉为止。
+由于智能，但是还是不够智能，Akismet对于spam的辨别能力还不是很好，很有可能把正常的留言拦截成spam。
+<h3>2.2 WP Anti Spam</h3>
+我现在使用的就是这个，这个虽然没有前面的能挡住所有的垃圾评论，但是已经去除了绝大数的自动评论，而且不需要用户做任何的动作，比较友好。这里给出链接，willin大师使用代码解决的，安装难度其实不大。<a href="http://kan.willin.org/?p=1324">WP Anti Spam 小牆</a>
+<h2>3. 挥刀自宫wordpress功能</h2>
+<h3>3.1 去除评论功能</h3>
+如果你觉得垃圾评论实在太烦，甚至很厌恶了，不妨可以考虑把评论功能去除，去除的方法右轻到重有三种：
+a. 关闭时间比较长久的评论，时间按比较长的文章，很少有人关注了。呵呵，这种文章绝大多数情况下只有垃圾评论才能光顾，所以关掉这些评论功能，就给垃圾评论减少了很多的空间。
+b. 关闭每个文章的评论，这个在wp后台文章选项里面有。
+c. 删除wp-comments-post.php 和 wp-trackback.php，这个太狠了。呵呵
+<h3>3.2 关闭Pingbacks and trackbacks</h3>
+Pingbacks and trackbacks 最容易招来垃圾评论，可以把这个选项勾掉。
+<h3>3.3 先注册再评论</h3>
+注册才有资格评论，这样最容易挡掉垃圾评论，但是用户体验很不好，特别是小博客，很少有人会为了给你评论而注册。
+<h2>4. 服务器级别限制</h2>
+<h3>4.1 屏蔽IP地址</h3>
+过滤垃圾评论实在wordpress级别的过滤，这种屏蔽不能使垃圾评论源停止对你博客的攻击，这样就必须通过服务器级别的ip屏蔽来屏蔽此地址的访问来达到不影响博客性能的目的。如果有某个IP发了大量的垃圾评论，你可以屏蔽某个ip地址，如果你的空间是cpanel的话，在面板里面就有选项直接屏蔽，如果没有的话，也可以修改.htaccess文件来实现，这个文件不能随便修改，最好是有经验的人来做，否则网站可能就打不开了哦
+<pre lang="txt">
+Order allow,deny
+Deny from 123.123.123.123
+Allow from all
+</pre>
+你可以把123.123.123.123改成你想屏蔽的地址
+<h3>4.2 自定义屏蔽IP</h3>
+但是很多垃圾评论就比较麻烦了，这里说说我的方法了，仍然是数据库，仍然是SQL，大家不要害怕。
+用了willin的小墙之后，小墙会将垃圾评论标记为 spam，然后我们利用下面的sql语句选出有哪些ip盯上你了。
+<pre lang="sql">
+SELECT comment_author_IP, COUNT( * )
+FROM  `wp_comments`
+WHERE comment_approved =  'spam'
+GROUP BY comment_author_IP
+ORDER BY COUNT( * ) DESC
+</pre>
+我选出来的如图：总共选出了141个(太恐怖了)，不能全部禁掉，只能将几个比较活跃的干掉！
+<a href="http://dhblog.org/wp-content/uploads/2011/07/spam_sql.png"><img class="aligncenter size-full wp-image-934" title="spam_sql" src="http://dhblog.org/wp-content/uploads/2011/07/spam_sql.png" alt="" width="254" height="441" /></a>
+将这些大于5的拷贝添加到.htaccess即可
+<h3>4.3 利用别人提供的攻击ip列表</h3>
+一个一个屏蔽垃圾评论，当遇到大规模的垃圾评论的时候，可以用这个<a href="http://perishablepress.com/" target="_blank">Perishable Press</a>。jeff从很多垃圾评论里面总结出了一个黑名单。你可以从中选择你想要的来加入到你的.htaccess文件中去。下面是三个记录这些IP的网址：
+a. <a href="http://perishablepress.com/press/2009/03/16/the-perishable-press-4g-blacklist/">The Perishable Press 4G Blacklist</a>
+b. <a title="Permalink for this article" href="http://perishablepress.com/press/2009/04/21/4g-ultimate-referrer-blacklist/">4G Series: The Ultimate Referrer Blacklist, Featuring Over 8000 Banned Referrers</a>
+c. <a href="http://perishablepress.com/press/2009/03/29/4g-ultimate-user-agent-blacklist/">4G Series: The Ultimate User-Agent Blacklist, Featuring Over 1200 Bad Bots</a>
+<h3>4.4 拒绝没有上线的IP的评论</h3>
+这个方法还是 .htaccess 文件有关，在 .htaccess 文件里面。换句话说如果评论并没有到你的博客，而是用机器人来发表垃圾评论的话，把他的链接给为你的博客的URL。所用代码如下：
+<pre lang='txt'>
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_URI} .wp-comments-post\.php*
+RewriteCond %{HTTP_REFERER} !.*yourblog.com.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]
+</pre>
+这篇文章到此结束，太长了，希望能读完，呵呵。并选择适合于自己的方法
+--></_b>
+</_e>
+<_e><_d>2011070507</_d><_T>IT求职知识:基础知识1(c++代码篇)</_T><_c>编程技术</_c><_t>c++</_t><_a>DH</_a>
+<_b><!--
+<p>又是一个暑假的到来了，虽然现在工作了，已经体验不要暑假的味道了，但是过了这个暑假，很多同学就要准备找工作了。<p>
+<p>找工作既是一个自己努力的过程，又是一个考验自己的经历，还有一些不懂得运气。<p>
+<p>对于一个it的求职者来说，现在的这个阶段，大家应该在看基础的计算机理论知识。<p>
+<p>前段时间有个兄弟问我，你找工作时候的资料，我叫他到墨鱼的博客找，他说很难找，那我就帮他整理一下，希望他能看到，并找到称心的工作。一来可以把一些觉得还有些意思的题分享给大家，同时也给自己做个备忘。<p>
+<strong>1.宏定义</strong>
+<pre lang="c"  line="1">
+#define product(x) (x*x)
+int main()
+{
+int i=3, j, k;
+j=product(i++);
+k=product(++i);
+printf("j=%d,k=%d",j,k);
+return 0;
+}
+</pre>
+Answer: 9, 49
+Explanation: 注意此处使用的是宏定义，宏定义的展开是简单的替换，所以每次i都会增2.
+
+<strong>2. 类型转换</strong>
+<pre lang="c"  line="1">
+char foo(void)
+{
+  unsigned int a = 6;
+  int  b= -20;
+  char c;
+  (a+b>6)?(c=1):(c=0);
+  return c;
+}
+</pre>
+Answer: 1
+Explanation: 类型转换在int遇到unsigned int是转换为unsigned int。
+
+<strong>3. 不适用中间变量的a,b值交换</strong>
+<pre lang="c"  line="1">
+a=a+b;b=a-b;a=a-b; 
+a=a^b;b=a^b;a=a^b;
+</pre>
+第一种解法不需要解释，但要说明的是有一个缺点就是当a,b很大时会溢出。
+关于第二个解法首先要了解异或运算满足交换律和结合律，从这个角度来看解法二可以这么理解：
+b = (a^b)^b = a^(b^b) = a^0=a;  
+a=(a^b)^a = a^(b^a)=a^(a^b)=(a^a)^b = 0^b = b;
+
+
+<strong>4. atexit函数</strong>
+<pre lang="c"  line="1">
+void fn(void);
+int main(void)
+{
+   atexit(fn);
+   printf("Hi,");
+}
+
+void fun(void)
+{
+   printf("Jack!\n");
+}
+</pre>
+
+Answer: 输出 Hi, Jack!
+Explanation:这个函数可以再main函数执行结束的时候执行指定的过程。很想消息注册的机制。下面给出个简单例子。
+注：这是程序员面试宝典37页的例子，dev c++中测试失败。
+
+<strong>5. sizeof</strong>
+<pre lang="c"  line="1">
+char ss2[] = "0123456789";
+char ss3[100]="0123456789";
+int  ss4[100]=;
+printf("%d,%d,%d\n",sizeof(ss2),sizeof(ss3),sizeof(ss4));
+</pre>
+Answer: 11,100,400
+Explanation: 11,100,4*100=400(int的大小是4个字节)
+
+<strong>6. 关于虚继承</strong>
+<pre lang="c"  line="1">
+class A
+{
+	int x;
+	......
+}
+class B: public A;
+class C: public A;
+class D: public B, public C;
+</pre>
+对于上述代码类D将拥有两个x成员，B::x和C::x。在很多情况下我们需要把两个x合并成一个，这时候就需要虚基类的帮忙。
+class A;
+class B:virtual public A;
+class C:virtual public A;
+class D:public B, public C;
+
+这而有个二义性和优先级的问题需要考虑：
+a. 如果在继承路径中最终的子类继承的是同一虚基类的成员，则无二义性
+b. 如果在继承路径中某条路径中是虚基类的成员，另一条路径中是派生类的同名成员，则派生类的优先级高于虚基类。
+c. 如果每条继承路径中出现非虚基类的同名成员，则有二义性。
+例子：
+<pre lang="c"  line="1">
+#include <iostream> 
+class B
+{ 
+   public: 
+   void print()
+  { 
+     std::cout << "B" << std::endl; 
+   } 
+}; 
+
+class D1: public virtual B
+{
+}; 
+
+class D2: public virtual B
+{ 
+   public: 
+   void print()
+  { 
+    std::cout << "D2" << std::endl; 
+   } 
+}; 
+
+class DD: public D1, public D2
+{
+}; 
+
+int main ()
+{ 
+   DD d; 
+   d.print();// 注意此处：ok: call D2::print，这是上面分析的第二种情况 
+   return 0; 
+}
+</pre>
+
+<strong>7.从M进制转换为N进制（宝典中的例子有严重错误）</strong>
+先从简单的例子着手：
+(1) M进制转换到十进制
+a1a2a3…ak(M) = a1*M^(k-1)+a2*M^(k-2) + … ak*M^0 = a1a2…a(k-1)(M)*M + ak = f(k-1)*M + ak（这一步是递归表达）
+(2)十进制转换M进制  仿照上述转换，同样得到 
+f(Num/M)*10 + Num%M(递归表示)
+(3)泛化：任意进制数转换N进制，假设Num/N结果是10进制，Num用自身的进制表示当然对于大于10的进制需要要引入其他符号表示
+f(Num/N)*10 + Num%N
+简单的例子：
+<pre lang="c"  line="1">
+int ToRadix(int num, int toRadix) 
+{ 
+    if(num/toRadix==0) 
+       return num; 
+    else 
+       return ToRadix(num/toRadix, toRadix)*10 + num%toRadix; 
+}
+int main(void) 
+{ 
+    printf("%d\n",ToRadix(0x12,4)); //注意此处的参数表示 
+    return 0; 
+}
+</pre>
+
+<strong>8.地址的类型</strong>
+<pre lang="c"  line="1">
+float a = 1.0f;
+cout << (int)a << endl;
+cout << (int&)a << endl;
+cout << boolalpha << ( (int)a == (int&)a ) << endl;
+float b = 0.0f;
+cout << (int)b << endl;
+cout << (int&)b << endl;
+cout << boolalpha << ( (int)b == (int&)b ) << endl;</pre>
+Answer: false true
+Explanation: (int&)a 和 *((int*)&a)是一样的,把&a这个地址上32位数看作int型
+--></_b>
+</_e>
+<_e><_d>2011070708</_d><_T>IT求职知识:基础知识2(c++理论篇)</_T><_c>编程技术</_c><_t>c++</_t><_a>DH</_a>
+<_b><!--
+上一篇文章给大家分享了<a href="http://dhblog.org/archives/3.html">涉及C++代码的有趣的题目</a>，这一章节给出遇到的一些理论性的C++问题，给大家分享一下。
+
+<strong>1. #include <> 和#include " "的区别？</strong>
+Answer: 前者从标准库路径开始搜索头文件，后者从用户工作目录开始。
+
+<strong>2. 如何判断一段程序是由C编译程序还是由C++编译程序编译的？</strong>
+Answer: C++编译时定义了_cplusplus，C编译时定义了_STDC_
+
+<strong>3. 关于结构体的sizeof计算</strong>
+当结构体的元素的长度都小于处理器的位数的时候，便以结构体里面最长的数据元素为对齐单位。如果结构体内存在长度大于处理器位数的元素，那么就以处理器的位数为对齐单位。
+更具体的解释参考：http://blog.csdn.net/jimmy_w/archive/2007/10/14/1824176.aspx
+
+<strong>4. 八皇后问题 </strong>
+http://lolorosa.blogbus.com/logs/45693335.html
+
+<strong>5. 0 1背包</strong>
+输入两个数m,n, 从数列1，2，3，。。。，n中随意去几个数使其和等于m，求出所有组合。
+（0 1背包的原型是，容积为m的箱子，有1，2，3.。。。n体积的物品，请问将箱子装满有多少种组合，不考虑物品放置空隙）
+分析：
+	a. 对于n>m的情况m+1...n之间的数都不考虑，也就是将n换成m考虑
+    b. 对于（n+1)n/2<m的情况无解
+    c. 递归分析，1. 将最大的n填入箱子，然后求解（m-n,n-1)
+                 2.最大的n不填入箱子，求解 （m,n-1)
+    注：在求解过程中需要设置一个掩码数组来标记选择了那些数放入箱子
+
+<strong>6. 析构函数可以是虚函数，构造函数为什么不可以是虚函数呢？</strong>
+Answer:析构函数是虚函数主要考虑的是多态的问题，当用父类指针指向子类对象的时候，如果析构函数不是虚函数的话，那么从指针删除对象的时候子类的资源就不能自动得到释放。所以这也是大多数编译器在创建新类时的默认行为：将析构函数置为虚函数。
+在包含虚函数的类中，都维持一个虚函数表vTable，而类本身还包含一个隐藏变量vPointer来指向虚表。这个vPointer的赋值是在构造函数中隐式完成的。也就是说构造函数调用前是无法使用虚表的。所以如果构造函数本身都是虚函数的话，无法产生正确调用。另一个考虑是构造函数本身没有任何多态的需求，这也就没必要让其成为虚函数。虚函数的出现是有开销的，一个无任何虚函数的类不需要虚表也不需要虚表指针。而有了虚函数这两个就都需要了。
+
+<strong>7. override 和overload</strong>
+override是用来重写虚函数的，overload是同名函数参数表不同。
+
+<strong>8. 悬浮指针和空指针</strong>
+当用delete删除一个对象时，删除的知识对象的内容而非指针的内容，指针的指向仍未改变，只是指向的地址处的对象已经不存在了。这种指针称为悬浮指针。
+当把指针显示的赋值为0或NULL时指针变为空指针。
+
+<strong>9. 关于public, protected, private继承</strong>
+(1) public继承
+    基类的public成员， 在派生类中成为public成员。
+    基类的protected成员，在派生类中成为protected成员。
+    基类的private成员，在派生类中成为不可直接使用的成员。
+(2) private继承
+    基类的public成员， 在派生类中成为private成员。
+    基类的protected成员，在派生类中成为private成员。
+    基类的private成员，在派生类中成为不可直接使用的成员。
+(3) protected继承
+    基类的public成员， 在派生类中成为protected成员。
+    基类的protected成员，在派生类中成为protected成员。
+    基类的private成员，在派生类中成为不可直接使用的成员。
+关于集中继承方式，所谓的宝典中有很多处解释都不很确切。尤其值得关注的是任何继承中父类的私有成员在子类中都不可使用，而其他两种成员在子类都可以使用，只是继承后这些成员的可访问性会由于类继承的修饰符而修改。
+另外个人的理解protected变量是为了给子类继承用的，所以如果一个类有被继承的可能那么应该把会被子类用的变量都设置成protected，而那些一定不会有子类的类中的属性应该都设置成private的，比如java中的String类。
+
+<strong>10. 一般在什么时候构造函数被声明称private呢</strong>
+宝典中解释是：比如要阻止编译器生成默认的copy constructor的时候。
+个人观点：构造函数被声明成private不能阻止编译器生成copy constructor，除非你也写一个private的copy constructor。我觉得使用private构造函数至少有两种情况
+a.单例模式，在这种模式下所有的构造函数（初始化构造函数，拷贝构造函数，包括operator=）都要声明为private的，否则这些操作会破坏单例性。
+b.工具类，有些工具类只提供静态函数调用，并且没有非静态类变量，比如Java中Math类，对于这种情况，构造函数也都要声明为private，因为不需要出现类的实例。
+
+<strong>11. volatile</strong>
+一个定义为volatile的变量是说这变量可能会被意想不到地改变，这样，编译器就不会去假设这个变量的值了。精确地说就是，优化器在用到这个变量时必须每次都小心地重新读取这个变量的值，而不是使用保存在寄存器里的备份。下面是volatile变量的几个例子： 
+1). 并行设备的硬件寄存器（如：状态寄存器） 
+2). 多线程应用中被几个任务共享的变量
+
+<strong>12. 使用内部类的若干原因</strong>
+内部类对象能够访问创建它的对象的实现
+内部类能够隐藏起来，不为同一包中的其他类所见
+匿名内部类可以方便地定义运行时回调
+内部类在编写事件驱动的程序时很方便
+--></_b>
+</_e>
+<_e><_d>2011071120</_d><_T>wordperss和zblog的一个区别，求解</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<p>我喜欢在每个看到了博客的评论中留言，特别是可以填自己网站的博客，具体原因大家都懂的。在留言的博客中，两类博客占了主流：wordpress和zblog。对于用哪种博客，我没有任何偏向，但是在zblog中留言有个很不方便的地方，情况大概是这样的：</p>
+
+在填写 用户名、邮箱和自己的博客网站的时候，如果此博客你之前从未留言，或者其没有记录你的浏览记录，那么：
+(1) wordpress可以通过双击就可以提示你在以前类似博客填写的用户名等
+(2) zblog需要手动再输入一遍
+
+朋友们都知道，虽然用户名、邮箱、网站输入了很多次，但是输入一次还是有点费力的。
+不知道 大家都是怎么解决这么问题的呢？
+--></_b>
+</_e>
+<_e><_d>2011071506</_d><_T>wordpress主题:增加帅哥认证标识</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+<h2>1 起源</h2>
+首先感谢自说me话：<a href="http://isayme.com/2011/06/handsome-in-my-blog/">http://isayme.com/2011/06/handsome-in-my-blog/</a>
+这篇文章讲了它弄了个帅哥认证，虽然我没有被评为帅哥，但是这不妨碍我学习并定义我这里的帅哥。
+<h2>2 方法</h2>
+方法很简单,在functions.php中添加如下语句
+<pre lang="php">
+function comment_g_title($email = '')
+{
+	if(empty($email))return;
+	$handsome=array(
+	'1'=>'aa@bb.com', 
+	'2'=>'cc@dd.com');
+
+	$adminEmail = get_option('admin_email');
+	if($email==$adminEmail)
+	echo " <div class='admin' title='博主'>博主</div>";
+	elseif(in_array($email,$handsome))
+	echo " <div class='handsome' title='帅哥'>帅哥</div>";
+}
+</pre>
+aa@bb.com 为需要添加帅哥的人的邮件。另外需要在评论的显示评论者名字的地方加上一句
+<pre lang="php">
+<?php comment_g_title($comment->comment_author_email); ?>
+</pre>
+
+<h2>3 帅哥评选原则</h2>
+在我这里评论不小于10条的为帅哥，iSayMe虽然只有9个，但是用了他的东西，所以给他例外。
+这里给出评选的SQL语句：
+<pre lang="sql">
+SELECT comment_author, comment_author_email, COUNT( * ) 
+FROM `wp_comments` 
+where comment_approved = '1'
+GROUP BY comment_author
+ORDER BY COUNT( * ) DESC 
+LIMIT 0 , 30
+</pre>
+SQL语句执行结果图：
+<a href="http://dhblog.org/wp-content/uploads/2011/08/handsome1.png"><img src="http://dhblog.org/wp-content/uploads/2011/08/handsome1.png" alt="" title="handsome" width="372" height="443" class="aligncenter size-full wp-image-941" /></a>
+很激动 松哥在我这里的留言超过10条了。
+<h2>4 效果图</h2>
+以iSayMe为例：
+<a href="http://dhblog.org/wp-content/uploads/2011/08/handsome2.png"><img src="http://dhblog.org/wp-content/uploads/2011/08/handsome2.png" alt="" title="handsome2" width="632" height="359" class="aligncenter size-full wp-image-942" /></a>
+
+--></_b>
+</_e>
+<_e><_d>2011071807</_d><_T>博客总结(2011年上半年总结篇)</_T><_c>建站技术</_c><_t>总结</_t><_a>DH</_a>
+<_b><!--
+<h2>1 开场白</h2>
+做学生，半年要一次期中考试；开公司，半年要举行一次活动；做职工，半年要做一次年中总结；同样，写博客，半年要做一次半年总结；博客已经6各月大了，需要对这段时间的点点滴滴重新回顾一下，不仅为了纪念过去，还需要给博友分享经验，少走冤枉路，共同提高
+
+<h2>2 立足点</h2>
+一般做SEO的都需要博客专一注意，但是我的博客很难在主题上有专业。这里先做个大概吧：
+博客的内容：如何做好一个博客，如何推广一个博客，如何盈利一个博客。
+博客的目标：都是经验分享，做好一个博客从技术层面探讨如何搞好基于wordpress博客的应用性的解决方案，目前博客出于第一个阶段。推广一个博客向通过对seo等知识的学习，想将自己的博客弄的让知道的人多一点。盈利博客主要想实践一下如何利用这个博客赚一点点钱。
+博客的风格：技术为王，推广为皇。
+博客的宗旨：交流为主，友情唯尚。
+
+目前博客出于第一个阶段。主要做了三个系列：
+1. wordpress 提高速度 (系列1-5)
+2. wordpress 定时任务 (系列1-4)
+3. wordpress 安全 (4篇文章)
+4. 程序员it求职 (刚刚做了两篇文章)
+这些还没有做完，以后逐渐完善。
+
+<h2>3 博客数据</h2>
+<h5>1 google PR: 2</h5>
+<h5>2 alera数据</h5>
+<a href="http://dhblog.org/wp-content/uploads/2011/07/alera.png"><img src="http://dhblog.org/wp-content/uploads/2011/07/alera.png" alt="" title="alera" width="534" height="132" class="aligncenter size-full wp-image-944" /></a>
+
+<h2>4 总结的好的地方</h2>
+博客经过了风风雨雨，也让我有了一些提高，特别是以下几个方便：
+1. 认识了领域的大牛。
+2. 找到了很多志同道合的博友。
+3. 学习了关于做博客的很多方面的知识。
+4. 了解了一个wordpress系统的基本方面，能写出一个主题。
+
+<h2>5 犯的错误</h2>
+但是在博客建立推广的过程中，遇到了很多的挫折，包括：
+1. 域名申请的晚了，开始在别人的二级域名下，后来换成了自己的域名，不仅以前的成果泡汤，而且还影响到后来的域名的
+2. 域名更换频繁，从dh.eyesay.org 到 www.dhblog.org 到 dhblog.org，每次更换域名几乎就是重新来过。
+3. 功夫花的不少，成绩太低。pr值太低，看到别人是3，我才是2，不知道还要2到什么时候。这个就需要向各位seo大哥们学习，争取在推广方面能给力点。
+
+<h2>6 需要警示的</h2>
+虽然博客现在运行很好，但是还是内忧外患，未雨绸缪以下吧：
+1. 域名是国外的，空间是国外的，在白名单制度的黑暗之前，没有做好充足的准备
+2. 域名没有备案。备案，比较麻烦，说错了话要喝茶。不备案，白名单下必死无疑。备，难；不备，更难！
+--></_b>
+</_e>
+<_e><_d>2011072107</_d><_T>友情推荐:知蚁博客站长助手软件</_T><_c>网络推广</_c><_t>友情推荐</_t><_a>DH</_a>
+<_b><!--
+最近看到知蚁博客的一个小工具，觉得很有意思，作为一个it认识，看到这个觉得很不错，就给大家推荐一下，再给知蚁推广一下。
+<h2>1 软件主要解决的问题</h2>
+评论推广的时候都是怎么寻找博客,够记录下经常互访的博客地址， 并且能够一次性的打开所有博客，然后一个个的评论就好了，省去了找博客地址以及一个个打开的时间。
+主要的功能：
+1、可以添加并管理经常访问的博客地址
+2、可以批量打开这些博客地址
+3、可以自主选择浏览器，至少要支持IE、Firefox和Chrome
+4、可以查询博客的PR值（支持批量查询功能）
+
+<h2>2 软件的预览</h2>
+<img alt="" src="http://www.letuknowit.com/images/assistv10.png" title="知蚁博客站长助手软件" class="alignnone" width="600" height="300" />
+
+<h2>3 软件的详细信息</h2>
+访问地址：<a href="http://www.letuknowit.com/archives/112">http://www.letuknowit.com/archives/112</a>
+
+<h2>4 软件的优点</h2>
+作为一个C++的程序，想法很不错的，使用者主要可以体验：
+1. 一键打开很多网站，省去时间。
+2. 添加自己关心的博客，设置简单。
+3. 自动生成PR值，有的放矢。
+
+<h2>5 软件的缺点</h2>
+不是缺点，就是提一点建议吧：
+1. 博客没有更新，去评论用处也不大，需要在博客有更新的时候提醒使用者去评论。就类似于订阅一样。
+2. 要有分页功能，博客多了好管理
+3. 有分类功能，把各个类型的网站分类，技术类、seo类、情感类等
+4. 最好有好人能过整理出博客列表，让博主不用那么辛苦找博客，也很根据分类信息找到自己的博客，因为同类型的博主关心你的博客多一点。
+5. 开源吧，激起大家一起搞的乐趣，呵呵。
+--></_b>
+</_e>
+<_e><_d>2011072406</_d><_T>域名空间:域名被劫持,恐怖啊</_T><_c>建站技术</_c><_t>域名</_t><_a>DH</_a>
+<_b><!--
+<h2>1 可怕的现象</h2>
+今天访问我的博客，发现老是无法访问，弹出上海电信的114 网址纠错，第一个就是我的博客，但是继续点击这个，还是不行。我就知道出问题了。
+<a href="http://dhblog.org/wp-content/uploads/2011/07/wufafagnwen.png"><img src="http://dhblog.org/wp-content/uploads/2011/07/wufafagnwen.png" alt="" title="wufafagnwen" width="600" height="400" class="aligncenter size-full wp-image-946" /></a>
+但是我访问内页就不会出错。
+
+<h2>2 原因：</h2>
+114劫持
+
+<h2>3 解决方法</h2>
+硬着头皮找资料，找了几个方法解决这个问题。
+<h3>3.1 最简单的办法，改DNS设置。</h3>
+这个比较好使： 208.67.222.222
+另外还有：61.152.82.18 8.8.8.8 8.8.4.4等
+<h3>3.2 改Hosts文件</h3>
+在文件位置：C:\WINDOWS\system32\drivers\etc 中添加：
+<pre lang="txt">
+204.74.210.128 dhblog.org
+</pre>
+<h3>3.3 屏蔽掉上海电信 </h3>
+这个方法我没有试过。
+直接到Internet选项——安全——受限制的站点（最后那个红色的）——站点——添加——vnet.cn，继续添加218.30.64.193（121），222.68.193.81。然后把自定义级别中所有项目禁用。
+再打开Internet选项——隐私——站点——输入vnet.cn——拒绝，继续拒绝218.30.64.193（121），222.68.193.81。 
+
+<h3>3.4 注意点</h3>
+第一，但这些办法只能对自己使用，别人还是被劫持，还是不能访问我的网站。第二，我用的是360极速浏览器，这个会记录dns的，所以要清楚缓存之后这些方法才能有效。
+
+<h2>4 我无奈和害怕</h2>
+还是要备案啊，要不然，迟早要被消灭掉的。
+
+--></_b>
+</_e>
+<_b><!--
+<h2>序言</h2>
+我右边的侧边栏广告是拿福能的。本来不想写这篇文章的，免得有做广告的嫌疑，看了知蚁博客的<a href="http://www.letuknowit.com/archives/114">拿福能观影之《变形金刚3》归来</a>，还是觉得要写一下感受吧，要不然对不起那电影，还发了T-shirt。我在<a href="http://dhblog.org/archives/908.html">首次接触拿福能(感受篇)</a>中说，活动多，希望在上海举办一点，这个终于来了。
+<h2>发起</h2>
+<p>知晓：本来不知道有这个活动，是rachel到我这里留言才知道了。</p>
+<p>登记：到拿福能的页面登记你的信息。</p>
+<p>确认：然后给我短信确认，我忘记回了，又打电话给我确认，感动的我不得不答应。</p>
+<p>通知：短信通知观影时间和地点。</p>
+<h2>高潮</h2>
+就这样，来看电影，虽然摸了很长时间猜到新天地，但是还是按时找到了。找到rachel比较简单，就在门口，电影的剧情 不说...
+<h2>尾声</h2>
+看完就回家了...
+--></_b>
+</_e>
+<_e><_d>2011080107</_d><_T>wordpress主题:增加最多评论功能</_T><_c>编程技术</_c><_t>wordpress</_t><_t>php</_t><_a>DH</_a>
+<_b><!--
+<h2>1 源起</h2>
+终于搞完了这个功能，现在上线了。这几天非常忙，在休息的时候，看看自说Me话的代码，自己随便搞搞，终于成功了。
+最初版：<a href="http://www.daqianduan.com/css3-wordpress-wall/">CSS3动画-wordpress读者墙</a>
+改进版：<a href="http://isayme.com/2011/07/css3-readerwall-sourcecode/">css3读者墙 源代码</a>
+我盗用版：<a href="http://dhblog.org/archives/9.html">本文描述</a>
+功能看点：
+a.css3效果 
+b. 激起评论者的兴趣 
+c.数字显示评论者数量，血条显示评论者生命力，简单明了。
+<h2>2 预览</h2>
+在我的<a href="http://dhblog.org">右边侧侧边栏</a>的最多评论，提醒浏览器的支持情况为：
+<a href="http://dhblog.org/wp-content/uploads/2011/07/incompatible_firefox.gif"><img src="http://dhblog.org/wp-content/uploads/2011/07/incompatible_firefox.gif" alt="" title="incompatible_firefox" width="173" height="33" class="aligncenter size-full wp-image-951" /></a>
+<h2>3 源码</h2>
+3.1 php代码
+<pre lang="php" line="1">
+<?php
+function comment_sort()
+{
+    global $wpdb;
+    $query="SELECT COUNT(comment_ID) AS cnt, comment_author, comment_author_url, comment_author_email FROM $wpdb->comments WHERE comment_author_email != 'aa@bb.com' AND comment_approved='1' GROUP BY comment_author_email ORDER BY cnt DESC LIMIT 15";
+//大家把管理员的邮箱aa@bb.com改成你的,最后的这个15是选取多少个头像，大家可以按照自己的主题进行修改,来适合主题宽度
+    $wall = $wpdb->get_results($query);	
+    $maxNum = $wall[0]->cnt;
+    foreach ($wall as $comment)
+    {
+        $width = round(36 / ($maxNum / $comment->cnt),2);//此处是对应的血条的宽度
+        if( $comment->comment_author_url )
+        $url = $comment->comment_author_url;
+        else $url="#";
+        $tmp = '<li><a target="_blank" href="'.$comment->comment_author_url.'"><span class="pic" style="background: url(http://www.gravatar.com/avatar/'.md5(strtolower($comment->comment_author_email)).'?s=36&d=monsterid&r=G) no-repeat;">pic</span><span class="num">'.$comment->cnt.'</span><span class="name">'.$comment->comment_author.'</span></a><div class="active-bg"><div class="active-degree" style="width:'.$width.'px"></div></div></li>';
+        $output .= $tmp;
+     }
+    $output = '<div class="readerwall">'.$output.'<div class="clear"></div></div>';
+    echo $output ;
+}
+?>
+</pre>
+3.2 css代码
+<pre lang="css"  line="1">
+body{overflow-x: hidden;}
+
+.readerwall{
+padding:5px 0 5px 5px;
+font-size:12px;
+overflow:visible;
+}
+
+.readerwall li{
+margin:0;
+padding:3px;
+float:left;
+list-style:none;
+border: 1px solid #DFDFDF;
+-moz-border-radius:2px;
+-khtml-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+}
+
+.readerwall .active-bg{
+height:2px;
+font-size:0;
+margin:2px 0 2px 0px;
+background:#DFDFDF; 
+}
+
+.readerwall .active-degree{
+background:red;
+height:2px;
+font-size:0;
+}
+
+.readerwall a{
+display:inline-block;
+width:36px;
+height:36px;
+position:relative;
+padding:0;
+text-decoration:none
+}
+
+.readerwall .pic{
+position:absolute;
+top:0;
+left:0;
+z-index:100;
+width:36px;
+height:36px;
+display:block;
+-webkit-transform-style:preserve-3d;
+-webkit-backface-visibility:hidden;
+-webkit-transition:all .4s ease-in-out;
+-moz-transition:all .4s ease-in-out;
+-o-transition:all .4s ease-in-out;
+border-radius:4px; 
+text-indent:-9999px
+}
+
+.readerwall .num{
+position:absolute;
+top:0;
+left:0;
+z-index:99;
+width:35px;
+height:35px;
+line-height:36px;
+color:#E02523;
+font-size:18px;
+font-weight:bold;
+display:block;
+background:#fff;
+text-align:center;
+border:#bbb 1px solid;
+box-shadow:0 0 4px #ccc;
+-webkit-transform:rotateY(-180deg);
+-webkit-transform-style:preserve-3d;
+-webkit-backface-visibility:hidden;
+transition:all .4s ease-in-out;
+-webkit-transition:all .4s ease-in-out;
+-moz-transition:all .4s ease-in-out;
+-o-transition:all .4s ease-in-out;
+border-radius:4px
+}
+
+.readerwall .name{
+position:absolute;
+top:0;
+left:0;
+color:#333;
+display:block;
+width:1px;
+height:1px;
+overflow:hidden;
+-webkit-transform-style:preserve-3d;
+-webkit-backface-visibility:hidden;
+-webkit-transition:all .2s ease-in-out;
+-moz-transition:all .2s ease-in-out;
+-o-transition:all .2s ease-in-out;
+text-align:center
+}
+
+.readerwall a:hover .pic{
+z-index:100;
+border-color:#eee;
+-webkit-transform:rotateY(180deg);
+-moz-transform:rotateY(180deg);
+-ms-transform:rotateY(180deg)
+}
+
+.readerwall a:hover .num{
+z-index:101;
+-webkit-transform:rotateY(0deg);
+-moz-transform:rotateY(0deg);
+-ms-transform:rotateY(0deg);
+opacity:.8
+}
+
+.readerwall a:hover .name{
+top:-28px;
+left:-38px;
+z-index:101;
+padding:4px 6px;
+height:20px;
+line-height:20px;
+overflow:hidden;
+background:#fff;
+border-radius:2px;
+box-shadow:0 0 3px #000;
+min-width:100px;
+opacity:.8
+}
+</pre>
+
+<h2>4 使用注意点</h2>
+1. 将psp代码部分放入到functions.php中(注意前面的php代码的前后标记符，有时候需要去掉的)，css部分添加到style.css中。
+2. 在需要显示的地方 输入<pre lang='php'><?php comment_sort(); ?></pre>
+
+<h2>5 我和自说Me话的不同点</h2>
+5.1 php改为函数调用
+5.2 修改了SQL语句，为所有评论中的排序 vs 自说Me话的 近30天的评论
+5.3 修改了大小，使能适应我的侧边栏的大小
+5.4  修改了图像的个数为15个
+--></_b>
+</_e>
+<_e><_d>2011080807</_d><_T>wordpress ajax之一:一个简单的例子</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>序言</h2>
+今天是星期一，是我发文章的日子。最近在搞一个东西，就是将ajax运用到wordpress中，大家可以看我的博客，里面有很多的ajax的东西，包括：
+1.首页的分页的ajax
+2.评论分页的ajax
+3.侧边栏评论的最近评论ajax
+4.评论ajax提交
+后面的文章将逐步介绍如何实现上面的ajax功能，这篇文章的主要目的是让大家了解ajax的用法，用一个简单的例子说明ajax的使用，让大家能很快上手ajax，写出自己需要的ajax程序。
+
+<h2>ajax的优缺点</h2>
+缺点：
+1. 各个浏览器对XMLHttpRequest对象的支持度不足(兼容性问题)
+2. 破坏浏览器的前进,后退功能。
+3. 对搜索引擎支持不足。
+4. 调试工具支持不足。
+5. 编程比较复杂
+6. 需要多加载jquery.js和自定义的js,第一次加载会影响速度
+优点：
+1. 加载需要的页面，避免重复加载
+2. 使用使用时的体验较好
+3. 可以装一下，毕竟主题支持动态加载，nb啊，呵呵
+
+<h2>ajax的需要的元素</h2>
+元素包括：
+1. 一个html页面，这里包含了有css标记的元素，比如a，可以供js来寻找，在用户点击的时候发出ajax请求
+2. jquery.js，下载地址为:http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js
+3. 定义的js文件，规定请求的动作，和接受数据之后的动作
+4. 后台模板中的functions.php定义一个函数，用了规定接受到ajax请求之后后台要做的动作。
+
+元素的位置：
+1. html就在文章中写即可
+2. jquery.js在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+</pre>
+3.把自己定义的js保存为 test.js,同样在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/functions/test.js"></script>
+</pre>
+4.functions.php中添加行数即可
+
+<h2>例子的运行情况</h2>
+<div class="test_response">
+<div> 返回结果的位置 </div>
+<div class="test_navi">
+<a href="http://dhblog.org/?navi=1">第一页</a> <a href="http://dhblog.org/?navi=2">第二页</a> <a href="http://dhblog.org/?navi=3">第三页</a>
+</div>
+</div>
+请点击上面的“第一页”等，后台会返回你的请求之后的处理结果
+
+<h2>html部分</h2>
+你随便写一个文章，用html模式，把下面的代码贴进去就可以了。注意将
+http://dhblog.org/?navi=2 换成你的http://自己域名/?navi=2
+<pre lang="html" line="1">
+<div class="test_response">
+<div> 返回结果的位置 </div>
+<div class="test_navi">
+<a href="http://127.0.0.1/dhblog/?navi=1">第一页</a> <a href="http://dhblog.org/?navi=2">第二页</a> <a href="http://127.0.0.1/dhblog/?navi=3">第三页</a>
+</div>
+</div>
+</pre>
+
+<h2>js部分</h2>
+下面的代码保存为 test.js文件，放到模板里面，记得在header.php中包含哦
+<pre lang="js" line="1">
+var tnavi='.test_navi';
+var tnavi_a='.test_navi a';
+var tresponse='.test_response';
+
+$(document).ready(function test_navi(){
+	$(tnavi_a).click(function() {
+		var z = $(this).attr("href");
+		$.ajax({
+			url: z,
+			type:"POST",
+			data:"action=test_action",
+			beforeSend:function()
+			{
+				document.body.style.cursor = 'wait';
+				var C=0.7;
+				$(tresponse).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});				
+				$(tnavi).html('<a>载入中...</a>');
+			},
+			error:function (xhr, textStatus, thrownError){ 
+				alert("readyState: " + xhr.readyState + " status:" + xhr.status + " statusText:" + xhr.statusText +" responseText:" +xhr.responseText + " responseXML:" + xhr.responseXML + " onreadystatechange" +xhr.onreadystatechange); 		
+				alert(thrownError); 
+			},	
+			success: function (data)
+			{
+				//alert(data);
+				$(tresponse).html(data);				
+				document.body.style.cursor = 'auto';
+				test_navi();//翻页后DOM变化了,需要重新绑定函数
+			}
+		});
+		return false;
+		});
+})
+</pre>
+
+<h2>后台php部分</h2>
+下面的代码放到functiongs.php中，http://dhblog.org/?navi=2 换成你的http://自己域名/?navi=2
+<pre lang="php" line="1">
+/*****************************************************
+ 函数名称：test_action_do
+ 函数作用：简单的ajax的例子
+ 行数作者：dhblog
+******************************************************/
+
+function test_action_do(){
+	if( isset($_POST['action'])&& $_POST['action'] == 'test_action'){
+		$navi=$_GET['navi'];
+		echo '<div class="test_response">';
+		echo '<div> 我是ajax返回的结果哦！您选择的第'. $navi .'页</div>';
+		echo '<div class="test_navi">';
+		echo '<a href="http://127.0.0.1/dhblog/?navi=1">第一页</a> ';
+		echo '<a href="http://127.0.0.1/dhblog/?navi=2">第二页</a> ';
+		echo '<a href="http://127.0.0.1/dhblog/?navi=3">第三页</a>';
+		echo '</div>';
+		echo '</div>';		
+		die();
+	}else{
+		return;
+	}
+}
+add_action('template_redirect', 'test_action_do');
+</pre>
+
+希望大家通过上面的例子能够理解ajax的工作过程，能做好ajax学习的第一步！
+--></_b>
+</_e>
+<_e><_d>2011081507</_d><_T>wordpress主题:增加帅哥认证标识(续)</_T><_c>编程技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+自从上次推出<a href="http://dhblog.org/archives/1.html">帅哥认证</a>以来，<a href="http://www.initers.com/">IT圈中人</a>便锲而不舍地在我这里留言，希望能得到一个帅哥认证。但是就是没有看到自己的头像有帅哥标识，原因是我上次的全部是手动填的，这次把这个修改成自动的了，只要评论超过10条就有帅哥标识，于是乎，IT圈中人现在终于可以有了帅哥标识了。
+
+<h2>2 方法</h2>
+将下面的代码保存为comment_g_title.php文件，并在functions.php中引用之。
+<pre lang="php" line="1">
+<?php
+/// 函数名称：dcomment_g_title
+/// 函数作用：帅哥认证标识
+/// 函数作者: DH
+/// 作者地址: http://dhblog.org/ 
+function comment_g_title($email = '')
+{
+	if(empty($email))return;
+	$handsome = get_option('dh_comment_g_title');
+	if(!$handsome)
+	{
+		$handsome = get_comment_g_title();
+	}
+	$adminEmail = get_option('admin_email');
+	if($email==$adminEmail)
+	echo " <div class='admin' title='博主'>博主</div>";
+	elseif(in_array($email,$handsome))
+	echo " <div class='handsome' title='帅哥'>帅哥</div>";
+}
+
+function get_comment_g_title()
+{
+	global $wpdb;
+	$adminEmail = get_option('admin_email');
+	$request="SELECT comment_author_email FROM $wpdb->comments WHERE comment_author_email != '$adminEmail' AND comment_approved='1' GROUP BY comment_author_email having count(*) > 10";
+	$handsomes=$wpdb->get_results($request);
+	$handsome = array();
+	foreach ($handsomes as $handsomei)
+	{
+		array_push($handsome,$handsomei->comment_author_email);
+	}		
+	update_option('dh_comment_g_title', $handsome);
+	return $handsome;
+}
+
+add_action('comment_post', 'get_comment_g_title');
+?>
+</pre>
+在functions.php中引用
+<pre lang="php" line="1">
+include("comment_g_title.php");
+</pre>
+<h2>3 几点说明</h2>
+1. 使用了将帅哥保存到option表中的技巧。减少数据库的读写。
+2. 帅哥评选原则是 累计评论超过10条，系统自动评出帅哥
+3. 需要在显示图像的下面引用这个函数comment_g_title($comment->comment_author_email)，一般在wp_list_comments的callback函数中，关于wp_list_comments的callback函数如何写，就要google了。
+--></_b>
+</_e>
+<_e><_d>2011082207</_d><_T>wordpress ajax之二:首页ajax分页</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+上一遍讲到利用一个简单的例子说明了如何<a href="http://dhblog.org/archives/9.html">使用简单的ajax</a>。这里说明一个应用：首页的ajax分页应用。关于首页ajax分页的文章：
+(1)<a href="http://isayme.com/2011/05/w1s-new-ajax-page/">W1s 首页Ajax翻页新效果</a>，
+(2)<a href="http://philna.com/2009/03/my-plugin-ajax-home-page/">我做的插件: Ajax home page</a>
+(3)<a href="http://jixiangac.com/ajax-page.orz">AJAX文章翻页</a>
+这些可以参考一下哦。
+
+<h2>2 需要的元素</h2>
+和上篇讲到的一样，元素包括：
+1. 一个客户端页面，这里包含了有css标记的元素，比如a，可以供js来寻找，在用户点击的时候发出ajax请求
+2. jquery.js，下载地址为:http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js
+3. 定义的js文件，规定请求的动作，和接受数据之后的动作
+4. 后台模板中的functions.php定义一个函数，用了规定接受到ajax请求之后后台要做的动作。
+
+元素的位置：
+1. 对于wordpress，首页的客户端页面就是index.php
+2. jquery.js在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+</pre>
+3.把自己定义的js保存为index_ajax_navi.js,同样在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/index_ajax_navi.js"></script>
+</pre>
+4.functions.php中添加行数即可
+
+<h2>3 例子的运行情况</h2>
+具体可以参考<a href="http://dhblog.org">我的博客</a>的首页的分页ajax情况。
+
+<h2>4 index部分</h2>
+把index.php写成两个文件，一个是框架文件，一个是index_list.php。是ajax请求需要重新加载的页面。这里要注意，并不是要写成这个样子，这是一种思想。就是index_list.php是需要被重新加载的，每个人把自己的index.php需要在点击页面之后重新加载的东西提出来，写到index_list.php之中即可。
+index写成：
+<pre lang="php" line="1">
+<?php get_header(); ?>
+<?php
+  $posts = query_posts($query_string . '&orderby=date&showposts=8');
+  pre_next();
+?>
+<div id="content">
+<?php include_once TEMPLATEPATH.'/index_list.php'; ?>
+</div>
+
+<!--end: content-->
+<?php wp_reset_query(); ?>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
+</pre>
+index_list.php写成这个样子：
+<pre lang="php" line="1">
+<p class="browse">你的位置：查看全部文章（共有文章<?php $count_posts = wp_count_posts();echo $published_posts = $count_posts->publish;?>篇）</p>
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
+<div class="post">
+<div class="postbox">
+  <?php $u_time = get_the_time('U'); ?>
+  <div class="postdate_top"><?php echo date("y-m",$u_time); ?></div>
+   <div class="postdate_bottom">
+	 <span class="DateD"><?php echo date("d",$u_time); ?></span>
+	 <span class="DateW"><?php echo date("D",$u_time); ?></span>
+  </div>	
+  <div class="header">
+	<span class="title">
+	<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"> <?php the_title(); ?> </a>
+	</span>
+	<span class="comment" >评论：<?php comments_popup_link('<span class="smaller">抢沙发</span>', '1', '%'); ?></span>			
+  </div>
+  <div class="meta">
+	<span class="category">
+	分类：<?php the_category(',') ?> 
+	</span>
+	<span class="tags">
+	标签：<?php the_tags(' ', ', ', ' '); ?>
+	</span>
+	<span>
+	<?php edit_post_link('编辑', '[ ', ' ]'); ?>
+	</span>
+	<span class="views">
+	阅读：<?php post_views(' ', ' 次'); ?>
+	</span>		
+  </div>
+	<div class="info">
+	<?php the_content_limit('515'); ?>
+  </div>
+</div>
+<!--end: postbox-->
+</div>
+<!--end: post-->
+<?php endwhile; ?>
+<div class="clear"></div>
+<div class="page_navi"><?php dh_pagenavi(9); ?></div>
+<?php else : ?>
+<p>No posts found.</p>
+<?php endif; ?>
+</pre>
+
+<h2>5 js部分</h2>
+下面的代码保存为 index_ajax_navi.js文件，放到模板里面，记得在header.php中包含哦
+<pre lang="js" line="1">
+var navi='.page_navi';
+var navi_a='.page_navi a';
+var content='#content';
+
+$(document).ready(function index_ajax_navi (){
+	$(navi_a).click(function() {
+		var z = $(this).attr("href");
+		$.ajax({
+			url: z,
+			type:"POST",
+			data:"action=index_ajax_navi",
+			beforeSend:function()
+			{
+				document.body.style.cursor = 'wait';
+				var C=0.7;
+				$(content).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});				
+				$(navi).html('<a>载入中...</a>');
+			},
+			error: function(request) 
+			{
+				alert(request.responseText);
+			},			
+			success: function (data)
+			{
+				$(content).html(data);					
+				document.body.style.cursor = 'auto';
+				var C=1; 
+				$(content).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});
+				//$body.animate({ scrollTop: '0px'}, 1000);
+				index_ajax_navi();//翻页后DOM变化了,需要重新绑定函数
+				//$body.animate( { scrollTop: $(content).offset().top - 150}, 1000);
+				//$body.animate({ scrollTop: '0px'}, 1000);
+				jQuery('html, body').animate({scrollTop:$(content).offset().top - 100}, 'slow');
+			}
+		});
+		return false;
+		});
+})
+</pre>
+
+<h2>6 后台php部分</h2>
+下面的代码放到functiongs.php中，
+<pre lang="php" line="1">
+<?php
+function index_ajax_navi(){
+	if( isset($_POST['action'])&& $_POST['action'] == 'index_ajax_navi'){
+	include_once TEMPLATEPATH.'/index_list.php';  //注意修改为你自己的文件的位置
+		die();
+	}else{
+		return;
+	}
+}
+add_action('template_redirect', 'index_ajax_navi');
+# 分页
+function dh_pagenavi($range = 9)
+{
+	global $paged, $wp_query;
+	if ( !$max_page ) {$max_page = $wp_query->max_num_pages;}
+	if($max_page > 1){if(!$paged){$paged = 1;}
+	if($paged != 1){echo "<a href='" . get_pagenum_link(1) . "' class='extend' title='跳转到首页'> 返回首页 </a>";}
+	previous_posts_link(' 上一页 ');
+    if($max_page > $range){
+		if($paged < $range){for($i = 1; $i <= ($range + 1); $i++){echo "<a href='" . get_pagenum_link($i) ."'";
+		if($i==$paged)echo " class='current'";echo ">$i</a>";}}
+    elseif($paged >= ($max_page - ceil(($range/2)))){
+		for($i = $max_page - $range; $i <= $max_page; $i++){echo "<a href='" . get_pagenum_link($i) ."'";
+		if($i==$paged)echo " class='current'";echo ">$i</a>";}}
+	elseif($paged >= $range && $paged < ($max_page - ceil(($range/2)))){
+		for($i = ($paged - ceil($range/2)); $i <= ($paged + ceil(($range/2))); $i++){echo "<a href='" . get_pagenum_link($i) ."'";if($i==$paged) echo " class='current'";echo ">$i</a>";}}}
+    else{for($i = 1; $i <= $max_page; $i++){echo "<a href='" . get_pagenum_link($i) ."'";
+    if($i==$paged)echo " class='current'";echo ">$i</a>";}}
+	next_posts_link(' 下一页 ');
+    if($paged != $max_page){echo "<a href='" . get_pagenum_link($max_page) . "' class='extend' title='跳转到最后一页'> 最后一页 </a>";}}
+}
+?>
+</pre>
+
+<h2>7 寄语</h2>
+希望大家通过上面的例子能够成功实现首页的ajax翻页效果。每个人的主题设置不同，需要根据自己的主题设置自己的参数。特别是包含分页链接的div的class。我这里是.page_navi。还有就是包含index_list.php的 div id="content"，需要在js中填入这两个关键的div
+--></_b>
+</_e>
+<_e><_d>2011082907</_d><_T>wordpress ajax之三:评论ajax分页</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+上一遍讲到利用一个简单的例子说明了如何<a href="http://dhblog.org/archives/9.html">使用简单的ajax</a>。这里说明一个应用：评论页的ajax分页应用。关于这方面的文章：
+(1)<a href="http://winysky.com/wordpress-plug-ins-to-achieve-non-ajax-flip-comment">WordPress评论非插件实现ajax翻页</a>，我在测试的时候，发现里面虽然有一些地方有一点问题，但是这些可以参考一下哦。
+(2)<a href="http://www.ninthday.net/2011/08/comment-pages-ajax.html">非插件实现评论AJAX翻页</a>,这个是Harid的方法。
+各种方法基于的原理基本上一样，大家可以多多参考，希望能给自己折腾主题，又需要实现ajax效果的童鞋有一些帮助。
+如果要评论ajax分页，必须首先评论分页，代码中包含了评论分页的内容，大家参考即可。
+
+<h2>2 需要的元素</h2>
+和上篇讲到的一样，元素包括：
+1. 一个客户端页面，这里包含了有css标记的元素，比如a，可以供js来寻找，在用户点击的时候发出ajax请求
+2. jquery.js，下载地址为:http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js
+3. 定义的js文件，规定请求的动作，和接受数据之后的动作
+4. 后台模板中的functions.php定义一个函数，用了规定接受到ajax请求之后后台要做的动作。
+
+元素的位置：
+1. 对于wordpress，评论页面的就是comments.php
+2. jquery.js在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+</pre>
+3.把自己定义的js保存为index_ajax_navi.js,同样在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/comment_ajax_navi.js"></script>
+</pre>
+4.functions.php中添加行数即可
+
+<h2>3 例子的运行情况</h2>
+具体可以参考<a href="http://dhblog.org">我的博客</a>的评论的分页ajax情况。
+
+<h2>4 comments.php部分</h2>
+把comments.php写成两个文件，把comments.php中列出评论的部分分出成一个文件，实际上就是wp_list_comments函数和分页的函数。分出来为comment_list.php。是ajax请求需要重新加载的页面。
+index里面需要用到wp_list_comments和分页的地方写成：
+<pre lang="php" line="1">
+...
+<div id="comment_list">
+<?php include_once TEMPLATEPATH.'/comment_list.php'; ?>
+</div>
+...
+</pre>
+comment_list.php写成这个样子：
+<pre lang="php" line="1">
+<?php
+$page = get_query_var('cpage');
+
+global $post,$wp_query;
+$comments = get_comments(array('post_id' => $post->ID, 'status' => 'approve', 'order' => 'ASC'));
+if ( $comments )
+{ 
+?>
+<div class="comments-box">
+	<div class="comments-title">
+		<span>
+			<?php comments_number('0', '1', '%' );?>条评论
+		</span>
+		<span>
+			<a href="<?php the_permalink() ?>#comment">我要发表评论!</a>
+		</span> 
+	</div>		
+	<ol class="commentlist">
+		<?php 
+			wp_list_comments('avatar_size=48&page='. $page, $comments); 
+		?>
+	</ol> 
+</div>   
+<?php
+}
+else
+{
+
+}
+dh_commentnavi();
+
+function dh_commentnavi()
+{
+    // 如果用户在后台选择要显示评论分页
+    if (get_option('page_comments')) 
+	{
+        // 获取评论分页的 html
+      //$comment_pages = paginate_comments_links('echo=0');
+	 	$baseLink = '';  	
+		$baseLink = '&base=' . add_query_arg('cpage','%#%');
+		$page = get_query_var('cpage');
+		$comment_pages=paginate_comments_links('current=' . $page . $baseLink . '&echo=0');
+       // 如果评论分页的 html 不为空, 显示导航式分页
+       if ($comment_pages)
+	   {
+	       echo "<div class='page_navi'>";
+           echo $comment_pages;
+		   echo "</div>";
+       }
+    }
+ }
+?>
+</pre>
+
+<h2>5 js部分</h2>
+下面的代码保存为comment_ajax_navi.js文件，放到模板里面，记得在header.php中包含哦
+<pre lang="js" line="1">
+var navi='.page_navi';
+var navi_a='.page_navi a';
+var content='#comment_list';
+
+$(document).ready(function comment_ajax_navi (){
+	$(navi_a).click(function() {
+		var z = $(this).attr("href");
+		$.ajax({
+			url: z,
+			type:"POST",
+			data:"action=comment_ajax_navi",
+			beforeSend:function()
+			{
+				document.body.style.cursor = 'wait';
+				var C=0.7;
+				$(content).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});				
+				$(navi).html('<a>载入中...</a>');
+			},
+			//error: function(request) 
+			//{
+			//	alert(request.responseText);
+			//},
+			error:function (xhr, textStatus, thrownError){ 
+				alert("readyState: " + xhr.readyState + " status:" + xhr.status + " statusText:" + xhr.statusText +" responseText:" +xhr.responseText + " responseXML:" + xhr.responseXML + " onreadystatechange" +xhr.onreadystatechange); 		
+				alert(thrownError); 
+			},	
+			success: function (data)
+			{
+				//alert(data);
+				$(content).html(data);				
+				document.body.style.cursor = 'auto';
+				var C=1; 
+				$(content).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});
+				comment_ajax_navi();//翻页后DOM变化了,需要重新绑定函数
+				jQuery('html, body').animate({scrollTop:$(content).offset().top - 100}, 'slow');
+			}
+		});
+		return false;
+		});
+})
+</pre>
+
+<h2>6 后台php部分</h2>
+下面的代码放到functiongs.php中，
+<pre lang="php" line="1">
+<?php
+function comment_ajax_navi(){
+	if( isset($_POST['action'])&& $_POST['action'] == 'comment_ajax_navi'){
+		include_once TEMPLATEPATH.'/comment_list.php';  //注意修改为你自己的文件的位置
+		die();
+	}else{
+		return;
+	}
+}
+add_action('template_redirect', 'comment_ajax_navi');
+?>
+</pre>
+
+<h2>7 寄语</h2>
+希望大家通过上面的例子能够成功实现评论的ajax翻页效果。有几个注意点：
+(1)每个人的主题设置不同，需要根据自己的主题设置自己的参数。特别是包含分页链接的div的class。我这里是.page_navi。还有就是包含index_list.php的 div id="comment_list"，需要在js中填入这两个关键的div。
+(2)喜欢折腾的主题中wp_list_comments一般都有callback函数，来重新写评论列表的部分，这时需要在comment_list.php中的wp_list_comments参数有所调整哦。
+本文提供一个思想，要想学好这个，还需要自己摸索一下下。
+--></_b>
+</_e>
+<_e><_d>2011090507</_d><_T>wordpress ajax之四:archive页面ajax分页</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+上一遍讲到利用一个简单的例子说明了如何<a href="http://dhblog.org/archives/9.html">使用简单的ajax</a>。这里说明一个应用：archive页面的ajax分页应用。用户可以点击 信息应用 标签来体验这个archive页面的分页。如图：
+<a href="http://dhblog.org/wp-content/uploads/2011/09/archive.png"><img class="aligncenter" src="http://dhblog.org/wp-content/uploads/2011/09/archive.png" alt="archive 分页" title="archive" width="600" height="400" class="alignnone size-full wp-image-55" /></a>
+点击分页页码就会出现ajax分页效果哦
+<h2>2 需要的元素</h2>
+和上篇讲到的一样，元素包括：
+1. 一个客户端页面，这里包含了有css标记的元素，比如a，可以供js来寻找，在用户点击的时候发出ajax请求
+2. jquery.js，下载地址为:http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js
+3. 定义的js文件，规定请求的动作，和接受数据之后的动作
+4. 后台模板中的functions.php定义一个函数，用了规定接受到ajax请求之后后台要做的动作。
+
+元素的位置：
+1. 对于wordpress，首页的客户端页面就是archive.php
+2. jquery.js在header.php中包含
+<pre lang="php"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js" type="text/javascript"></script></pre>
+3.把自己定义的js保存为index_ajax_navi.js,同样在header.php中包含
+<pre lang="php"><script src="&lt;?php bloginfo('template_directory'); ?" type="text/javascript"></script></pre>
+4.functions.php中添加行数即可
+<h2>3 例子的运行情况</h2>
+具体可以参考<a href="http://dhblog.org">我的博客</a>的分类也的分页ajax情况。
+<h2>4 archive.php页面</h2>
+把archive.php写成两个文件，把原来主题中的list分类页面的的部分提出来，组成另一个页面：是list.php页面。
+archive.php用到list的地方写成：
+<pre lang="php">
+<div id="contend_list">
+  <?php include(TEMPLATEPATH . '/list.php'); ?></div>
+</pre>
+list.php写成这个样子：(自己写成什么样子就是什么样子，没有必要和这里一样)
+<pre lang="php">
+<div class="list">
+<ul>
+  <?php      global $paged; 	 if(!$paged){ $paged = 1; } 	 $count=0;   ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<li> 
+	   <span class="left_number"><?php $count++; echo ($paged -1)*10 + $count?></span>
+       <span class="middle_title"><a title="Permanent Link to &lt;?php the_title_attribute(); ?&gt;" rel="bookmark" href="&lt;?php the_permalink() ?&gt;"> <?php the_title(); ?></a>(<?php comments_popup_link('0', '1', '%'); ?>)</span>
+	   <span class="right_time"><?php the_time('Y/m/d H:i') ?></span></li>
+<?php if(have_posts()): the_post();?>
+	<li class="odd"> 
+	   <span class="left_number"><?php $count++; echo ($paged -1)*10 + $count?></span>
+       <span class="middle_title"><a title="Permanent Link to &lt;?php the_title_attribute(); ?&gt;" rel="bookmark" href="&lt;?php the_permalink() ?&gt;"> <?php the_title(); ?></a>(<?php comments_popup_link('0', '1', '%'); ?>)</span>
+	   <span class="right_time"><?php the_time('Y/m/d H:i') ?></span></li>
+<?php else: break; endif;?>
+	<?php endwhile; else: ?>
+<h3 class="center">搜索不到结果</h3>
+对不起，没找到您感兴趣的内容，请再试试看。。。。
+
+  <?php endif; ?>
+</ul>
+</div>
+<div class="page_navi"><?php dh_pagenavi(9); ?></div>
+</pre>
+<h2>5 js部分</h2>
+下面的代码保存为 index_ajax_navi.js文件，放到模板里面，记得在header.php中包含哦
+<pre lang="js">var navi='.page_navi';
+var navi_a='.page_navi a';
+var content='#contend_list';
+
+$(document).ready(function archive_ajax_navi(){
+	$(navi_a).click(function() {
+		var z = $(this).attr("href");
+		$.ajax({
+			url: z,
+			type:"POST",
+			data:"action=archive_ajax_navi",
+			beforeSend:function()
+			{
+				document.body.style.cursor = 'wait';
+				var C=0.7;
+				$(content).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});
+				$(navi).html('<a>载入中...</a>');
+			},
+			error: function(request)
+			{
+				alert(request.responseText);
+			},
+			success: function (data)
+			{
+				$(content).html(data);
+				document.body.style.cursor = 'auto';
+				var C=1;
+				$(content).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});
+				archive_ajax_navi();//翻页后DOM变化了,需要重新绑定函数
+				jQuery('html, body').animate({scrollTop:$(content).offset().top - 100}, 'slow');
+			}
+		});
+		return false;
+		});
+})</pre>
+<h2>6 后台php部分</h2>
+下面的代码放到functiongs.php中，
+<pre lang="php">
+function archive_ajax_navi()
+{ 
+	if( isset($_POST['action'])&& $_POST['action'] == 'archive_ajax_navi')
+	{ 
+		include_once TEMPLATEPATH.'/list.php';  
+		//注意修改为你自己的文件的位置 		die(); 
+	}
+	else
+	{
+		return;
+	} 
+}
+add_action('template_redirect', 'archive_ajax_navi'); 
+</pre>
+<h2>7 寄语</h2>
+希望大家通过上面的例子能够成功实现archive页面的ajax翻页效果。每个人的主题设置不同，需要根据自己的主题设置自己的参数。特别是包含分页链接的div的class。我这里是.page_navi。还有就是包含index_list.php的 div id="content_list"，需要在js中填入这两个关键的div
+--></_b>
+</_e>
+<_e><_d>2011091207</_d><_T>wordpress ajax之五:最近评论ajax分页</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+上一遍讲到利用一个简单的例子说明了如何<a href="http://dhblog.org/archives/9.html">使用简单的ajax</a>。这里说明一个应用：最近评论的ajax分页应用。其效果就是右边的最近评论框，点击下一页和上一页可以不刷新整体页面而查看以前的评论。效果如图：
+<a href="http://dhblog.org/wp-content/uploads/2011/09/zuijpl.jpg"><img class="aligncenter" src="http://dhblog.org/wp-content/uploads/2011/09/zuijpl.jpg" alt="最近评论" title="zuijpl" width="251" height="356" class="size-full wp-image-56" /></a>
+这个例子不经讲诉的是ajax分页的问题，代码中还告诉大家dhchannel主题如何写出最近评论以及其css代码。
+
+<h2>2 需要的元素</h2>
+和上篇讲到的一样，元素包括：
+1. 最近评论的设计页面，和引用其的地方
+2. jquery.js，下载地址为:http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js
+3. 定义的js文件，规定请求的动作，和接受数据之后的动作
+4. css页面
+
+元素的位置：
+1. 最近评论的设计页面，我封装了一下，为comment_recent_cache.php
+2. jquery.js在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+</pre>
+3.把自己定义的js保存为index_ajax_navi.js,同样在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/comment_recent_cache.js"></script>
+</pre>
+4.css页面，在header.php中也必须要这个
+<pre lang="php">
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/comment_recent_cache.css" />
+</pre>
+
+<h2>3 例子的运行情况</h2>
+具体可以参考<a href="http://dhblog.org">我的博客</a>的侧边栏的最近评论。
+
+<h2>4 comment_recent_cache.php</h2>
+将一下保存为comment_recent_cache.php文件
+<pre lang="php" line="1">
+<?php
+/*****************************************************
+ 文件名称：comment_recent_cache
+ 文件作用：最新评论、留言，并使用ajax效果
+******************************************************/
+
+//ajax后台执行的函数
+function comment_recent_navi(){
+	if( isset($_POST['action'])&& $_POST['action'] == 'comment_recent_navi'){
+		//$comment_recent_navi = get_query_var('comment_recent_navi');
+		$comment_recent_navi=$_GET['comment_recent_navi'];
+		//echo $comment_recent_navi;
+		echo get_comment_recent($comment_recent_navi);
+		die();
+	}else{
+		return;
+	}
+}
+add_action('template_redirect', 'comment_recent_navi');
+
+
+//显示缓存后的最新留言
+function dh_comment_recent(){
+ $cached = get_option('dh_comment_recent');//从options表中获取已缓存的最新留言
+  $cached = get_comment_recent();
+     if($cached){    //如果最新留言已缓存，直接显示，否则获取最新留言并缓存到options表中。
+         echo $cached; 
+     }else{
+         $cached = set_comment_recent();
+         echo $cached;
+     }
+ }
+
+ //获取最新留言
+ function get_comment_recent($page=1) {
+    $comment_post_ID=0; 
+	$get_total=5; 
+	$show_author_url=1;
+	$limit_b = ($page-1)*$get_total;
+	global $wpdb;
+	$request="SELECT comment_ID,comment_post_ID, comment_content, comment_author_email, comment_author, comment_author_url, comment_date FROM $wpdb->comments where comment_approved = '1' and comment_author <> 'DH' ORDER BY comment_ID DESC LIMIT $limit_b,$get_total";
+	$comments=$wpdb->get_results($request);
+	$before='<li>';
+	$after='</li>';
+    $output .= '<ul>'."\n";	
+	if ($comments) {
+		foreach ($comments as $comment) {
+			$email=$comment->comment_author_email;
+			$grav_url="http://www.gravatar.com/avatar/".md5($email)."?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2fad516503a11cd5ca435acc9bb6523536%3fs%3D32";
+			$comment_author=stripslashes(strip_tags($comment->comment_author));
+			$comment_content=utf8Substr(stripslashes(strip_tags($comment->comment_content)),0,150);
+			$comment_content = str_replace("\"", "'", $comment_content);
+			if ($show_author_url == 1 && strlen($comment->comment_author_url) > 12) $comment_author='<a target="_blank" rel="nofollow" title="访问 '.$comment_author. '的网站" href="' . $comment->comment_author_url . '">' . $comment_author . '</a>';
+			$comment_date=date("m-d H:i",strtotime($comment->comment_date));
+			$permalink=get_permalink($comment->comment_post_ID)."#comment-".$comment->comment_ID;
+               
+			$output .= $before."\n";
+			$output .= '<span class="avatar"><img src="'.$grav_url.'" alt="" /></span>'."\n";
+			$output .= '<span class="fn">'.$comment_author.'</span>'."\n";
+			$output .= '<span class="date">'.$comment_date.'</span>'."\n";
+			$output .= '<span class="txt"><a href="'.$permalink.'" title="'.$comment_content.'">'.$comment_content.'</a></span>'."\n";
+			$output .= $after."\n";
+		}
+	}	
+	$output .=  '<li class="last"><div class="comment_recent_navi">';
+	$url = get_option('siteurl');
+	$page_p = $page-1;
+	$page_n = $page+1;
+	if($page_p!=0)
+	{
+		$output .=  '<a class="left" href="'.$url.'/?comment_recent_navi=' .$page_p .'">上一页</a>';
+	}
+	$output .=  '<a class="right" href="'.$url.'/?comment_recent_navi=' .$page_n .'">下一页</a>';
+	$output .=  '</div> </li>';	
+	$output .=  '</ul>'."\n"; 
+    return $output;
+ }
+ 
+//中文工具箱的函数，用于砍掉汉字截断尾巴可能存在的乱码。
+function utf8Substr($str,$from,$len)
+{ 
+ return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'.'((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s','$1',$str); 
+}
+
+//缓存到options表中
+function set_comment_recent()
+{
+	$output = get_comment_recent();
+    update_option('dh_comment_recent', $output); //更新缓存在options表中的最新留言
+	return $output;
+}
+
+//通过此添加此Hook以保证最新留言能够被缓存到options表中。
+add_action('comment_post', 'set_comment_recent');
+?>
+</pre>
+在functions.php中需要引用这个文件
+<pre lang="php" line="1">
+#最近留言
+include("comment_recent_cache.php");
+</pre>
+sidebar.php中需要引用这个函数，各位可以视自己情况而定：
+<pre lang="php" line="1">
+  <div class="singlewidget">
+    <h3>
+      最近评论
+    </h3>
+    <div class="box">
+      <div class="lastest_comments"><?php if (function_exists('dh_comment_recent')) dh_comment_recent(); ?></div>
+    </div>
+  </div>
+</pre>
+
+<h2>5 js部分</h2>
+下面的代码保存为 comment_recent_cache.js文件，放到模板里面，记得在header.php中包含哦
+<pre lang="js" line="1">
+var cnavi='.comment_recent_navi';
+var cnavi_a='.comment_recent_navi a';
+var ccontent='.lastest_comments';
+
+$(document).ready(function comment_recent_navi (){
+	$(cnavi_a).click(function() {
+		var z = $(this).attr("href");
+		$.ajax({
+			url: z,
+			type:"POST",
+			data:"action=comment_recent_navi",
+			beforeSend:function()
+			{
+				document.body.style.cursor = 'wait';
+				var C=0.7;
+				$(ccontent).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});				
+				$(cnavi).html('<a class="left">载入中...</a>');
+			},
+			error:function (xhr, textStatus, thrownError){ 
+				alert("readyState: " + xhr.readyState + " status:" + xhr.status + " statusText:" + xhr.statusText +" responseText:" +xhr.responseText + " responseXML:" + xhr.responseXML + " onreadystatechange" +xhr.onreadystatechange); 		
+				alert(thrownError); 
+			},	
+			success: function (data)
+			{
+				//alert(data);
+				$(ccontent).html(data);				
+				document.body.style.cursor = 'auto';
+				var C=1; 
+				$(ccontent).css({opacity:C,MozOpacity:C,KhtmlOpacity:C,filter:'alpha(opacity=' + C * 100 + ')'});
+				comment_recent_navi();//翻页后DOM变化了,需要重新绑定函数
+			}
+		});
+		return false;
+		});
+})
+</pre>
+
+<h2>6 css部分</h2>
+以下保存为comment_recent_cache.css文件，记得在header.php中引用哦
+<pre lang="css" line="1">
+.lastest_comments {
+margin:0;
+padding:0
+}
+
+.lastest_comments ul {
+list-style-type:none;
+list-style-position:outside;
+margin:0;
+padding:0
+}
+
+.lastest_comments ul li {
+position:relative;
+height:47px;
+padding:5px 0
+}
+
+.lastest_comments ul .last {
+position:relative;
+height:25px;
+padding:5px 0
+}
+
+.comment_recent_navi {
+width:100%;
+text-align:left;
+overflow:hidden;
+margin:5px 0;
+padding:0
+}
+
+.comment_recent_navi a{
+text-decoration:none;
+color:#888;
+border:1px solid #ccf;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+margin:2px;
+padding:3px 8px
+}
+
+.comment_recent_navi a:hover {
+border:1px solid #3c8266;
+background:#dddddd;
+text-decoration:none;
+-webkit-transition: all .25s linear;
+transition: all .25s linear;
+}
+
+.lastest_comments li .avatar {
+position:absolute;
+left:0;
+background:#f7f3ed;
+border:1px solid #ddd;
+padding:2px
+}
+
+.lastest_comments li .avatar img {
+width:40px;
+height:40px;
+border:1px solid #ddd
+}
+
+.lastest_comments li .fn {
+position:absolute;
+left:47px;
+top:8px;
+overflow:hidden;
+white-space:nowrap;
+-o-text-overflow:ellipsis;
+text-overflow:ellipsis;
+width:100px;
+font-weight:700;
+color:#555;
+margin:0 0 0 5px
+}
+
+.lastest_comments li .fn a {
+color:#333
+}
+
+.lastest_comments li .date {
+position:absolute;
+right:5px;
+top:8px;
+text-align:right;
+color:#999;
+font-size:10px
+}
+
+.lastest_comments li .txt {
+position:absolute;
+left:47px;
+top:32px;
+width:180px;
+overflow:hidden;
+white-space:nowrap;
+-o-text-overflow:ellipsis;
+text-overflow:ellipsis;
+margin:0 0 0 5px
+}
+
+.lastest_comments li .txt a {
+color:#666
+}
+</pre>
+
+<h2>7 寄语</h2>
+希望大家成功
+--></_b>
+</_e>
+<_e><_d>2011091907</_d><_T>wordpress ajax之六:评论表情动态加载</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+上一遍讲到利用一个简单的例子说明了如何<a href="http://dhblog.org/archives/9.html">使用简单的ajax</a>。这里说明一个应用：评论表情动态加载。什么是表情动态加载呢?就是文章页面不加载表情，节省带宽，要知道加载很多表情符号，很费力的，在用户点击评论框之后，才动态加载表情，这样针对性更强，加快页面的转载速度。其效果就是点击评论框试试。效果如图：
+<a href="http://dhblog.org/wp-content/uploads/2011/09/biaoqing.png"><img src="http://dhblog.org/wp-content/uploads/2011/09/biaoqing.png" alt="表情动态加载" title="biaoqing" width="629" height="355" class="aligncenter size-full wp-image-59" /></a>
+这个例子不仅仅讲诉的是表情分页的问题，代码中还告诉大家dhchannel主题如何写出自定义表情符号。
+
+<h2>2 需要的元素</h2>
+和上篇讲到的一样，元素包括：
+1. jquery.js，下载地址为:http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js
+2. 定义的js文件，规定请求的动作，和接受数据之后的动作 smiley_ajax.js
+3. 定义点击评论框的操作smiley_ajax.php
+4. 表情显示和点击显示符号的页面 smiley.php
+5. 如果需要自己定义自己的表情，需要修改wp-includes\images\smilies的表情为自己的哦
+6. 表情符号定义的需要的页面 smiley_settings.php
+
+元素的位置：
+1. jquery.js在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+</pre>
+2.把自己定义的js保存为smiley_ajax.js,同样在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/smiley_ajax.js"></script>
+</pre>
+3. 定义点击评论框的操作smiley_ajax.php
+放在主题下面即可，我是放在自己建立的functions/目录下
+4. 表情显示和点击显示符号的页面 smiley.php
+放在主题下面即可，我是放在自己建立的functions/目录下
+5. 如果需要自己定义自己的表情，需要修改wp-includes\images\smilies的表情为自己的哦
+这个自己到网上去找一写主题的表情哦
+6. 表情符号定义的需要的页面 smiley_settings.php
+放在主题下面即可，我是放在自己建立的functions/目录下
+
+<h2>3 例子的运行情况</h2>
+具体可以参考<a href="http://dhblog.org">我的博客</a>的评论效果。
+
+<h2>4 smiley.php</h2>
+将一下保存为smiley.php文件
+<pre lang="php" line="1">
+<script type="text/javascript" language="javascript">
+/* <![CDATA[ */
+    function grin(tag) {
+    	var myField;
+    	tag = ' ' + tag + ' ';
+        if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
+    		myField = document.getElementById('comment');
+    	} else {
+    		return false;
+    	}
+    	if (document.selection) {
+    		myField.focus();
+    		sel = document.selection.createRange();
+    		sel.text = tag;
+    		myField.focus();
+    	}
+    	else if (myField.selectionStart || myField.selectionStart == '0') {
+    		var startPos = myField.selectionStart;
+    		var endPos = myField.selectionEnd;
+    		var cursorPos = endPos;
+    		myField.value = myField.value.substring(0, startPos)
+    					  + tag
+    					  + myField.value.substring(endPos, myField.value.length);
+    		cursorPos += tag.length;
+    		myField.focus();
+    		myField.selectionStart = cursorPos;
+    		myField.selectionEnd = cursorPos;
+    	}
+    	else {
+    		myField.value += tag;
+    		myField.focus();
+    	}
+    }
+/* ]]> */
+</script>
+<br/>
+<a href="javascript:grin('[渴望]')" title ="渴望"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_01kewan.gif" alt="" /></a>
+<a href="javascript:grin('[很酷]')" title ="很酷"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_02cool.gif" alt="" /></a>
+<a href="javascript:grin('[鄙视]')" title ="鄙视"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_03bishi.gif" alt="" /></a>
+<a href="javascript:grin('[囧囧]')" title ="囧囧"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_04jiong.gif" alt="" /></a>
+<a href="javascript:grin('[微笑]')" title ="微笑"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_05weixiao.gif" alt="" /></a>
+<a href="javascript:grin('[大笑]')" title ="大笑"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_06daxiao.gif" alt="" /></a>
+<a href="javascript:grin('[奸笑]')" title ="奸笑"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_07jianxiao.gif" alt="" /></a>
+<a href="javascript:grin('[伤心]')" title ="伤心"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_08shangxin.gif" alt="" /></a>
+<a href="javascript:grin('[大哭]')" title ="大哭"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_09cry.gif" alt="" /></a>
+<a href="javascript:grin('[大汗]')" title ="大汗"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_10han.gif" alt="" /></a>
+<a href="javascript:grin('[折磨]')" title ="折磨"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_11zhemo.gif" alt="" /></a>
+<a href="javascript:grin('[大怒]')" title ="大怒"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_12danu.gif" alt="" /></a>
+<a href="javascript:grin('[疑问]')" title ="疑问"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_13yiwen.gif" alt="" /></a>
+<a href="javascript:grin('[晕了]')" title ="晕了"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_14yunle.gif" alt="" /></a>
+<a href="javascript:grin('[害怕]')" title ="害怕"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_15haipa.gif" alt="" /></a>
+<a href="javascript:grin('[满意]')" title ="满意"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_16manyi.gif" alt="" /></a>
+<a href="javascript:grin('[努力]')" title ="努力"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_17nuli.gif" alt="" /></a>
+<a href="javascript:grin('[闭嘴]')" title ="闭嘴"><img src="<?php echo get_option('siteurl')?>/wp-includes/images/smilies/i_18bizui.gif" alt="" /></a>
+<br/>
+</pre>
+注意自己保存的表情文件需要和以上的同名！！
+
+<h2>5 smiley_settings.php</h2>
+此文件和上面的smiley.php对应，规定哪些表情使用wp-includes\images\smilies中的哪个文件
+<pre lang="php" line="1">
+<?php
+    global $wpsmiliestrans;
+	$wpsmiliestrans = array(
+	   '[渴望]' => 'i_01kewan.gif',
+	   '[很酷]' => 'i_02cool.gif',
+	   '[鄙视]' => 'i_03bishi.gif',
+	   '[囧囧]' => 'i_04jiong.gif',	   
+	   '[微笑]' => 'i_05weixiao.gif',
+	   '[大笑]' => 'i_06daxiao.gif',
+	   '[奸笑]' => 'i_07jianxiao.gif',	   
+	   '[伤心]' => 'i_0shangxin.gif',
+	   '[大哭]' => 'i_09cry.gif',	   
+	   '[大汗]' => 'i_10han.gif',
+	   '[折磨]' => 'i_11zhemo.gif',
+	   '[大怒]' => 'i_12danu.gif',
+	   '[疑问]' => 'i_13yiwen.gif',
+	   '[晕了]' => 'i_14yunle.gif',
+	   '[害怕]' => 'i_15haipa.gif',
+	   '[满意]' => 'i_16manyi.gif',
+	   '[努力]' => 'i_17nuli.gif',
+	   '[闭嘴]' => 'i_18bizui.gif',
+	);	
+?>
+</pre>
+在functions.php中需要引用这个文件
+<pre lang="php" line="1">
+include("smiley_settings.php");
+</pre>
+
+<h2>6 js部分</h2>
+下面的代码保存为 smiley_ajax.js文件，放到模板里面，记得在header.php中包含哦
+<pre lang="js" line="1">
+var sresponse='#smiley_ajax';
+$(document).ready(function smiley_ajax(){
+	$('textarea').focus(function() {
+		$.ajax({
+			url: "",
+			type:"POST",
+			data:"action=smiley_ajax_action",
+			beforeSend:function()
+			{
+			},
+			error:function (xhr, textStatus, thrownError){ 
+				alert("readyState: " + xhr.readyState + " status:" + xhr.status + " statusText:" + xhr.statusText +" responseText:" +xhr.responseText + " responseXML:" + xhr.responseXML + " onreadystatechange" +xhr.onreadystatechange); 		
+				alert(thrownError); 
+			},	
+			success: function (data)
+			{
+				$(sresponse).html(data);
+			}
+		});
+		return false;
+		});
+})
+</pre>
+
+<h2>7 smiley_ajax.php</h2>
+js调用后台的函数应该这样写
+<pre lang="css" line="1">
+<div id="smiley_ajax"></div>
+</pre>
+
+<h2>8 comment.php的小小改动</h2>
+comment.php需要告诉js，在哪个地方放表情哦。在合适的地方放上以下的代码，就会在哪里显示表情。
+<pre lang="css" line="1">
+<?php
+/*****************************************************
+ 函数名称：smiley_ajax_action_do
+ 函数作用：动态加载表情符号
+ 函数作者：DH
+ 作者地址：http://dhblog.org
+******************************************************/
+
+function smiley_ajax_action_do(){
+	if( isset($_POST['action'])&& $_POST['action'] == 'smiley_ajax_action'){
+		include_once TEMPLATEPATH.'/functions/smiley.php';
+		die();
+	}else{
+		return;
+	}
+}
+add_action('template_redirect', 'smiley_ajax_action_do');
+?>
+</pre>
+在functions.php中需要引用这个文件
+<pre lang="php" line="1">
+include("smiley_ajax.php");
+</pre>
+
+<h2>7 寄语</h2>
+希望大家成功
+--></_b>
+</_e>
+<_e><_d>2011092607</_d><_T>wordpress主题:博客主题新功能</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+很长时间没有在博客上面活动了，也不经常去大家的博客看看了。最近比较忙，前段时间搞了ajax基本上可以告一个段落了。ajax的文章其实早就写好了，压着一直没有发表，按照固定的频率，一周一篇地发表。现在主题又有一些新的功能，当然也是早就搞好了的。今天上线新功能了。
+<h2>2 哪些新功能</h2>
+功能的出发点就是使大家比较方便访问博客，增加友好度。主要有：
+1.  非插件实现postview
+2.  为每个文章添加目录。
+3.  前台手动一键删除垃圾评论
+4.  非插件实现备份邮寄数据库
+5.  实现纯静态的归档页面
+
+<h2>3 新功能在哪里</h2>
+我想大家只能去发现了，在访问博客的时候注意一下，有bug很希望大家能给我提示，这样我就会修改。
+如果觉得还可以，后续将会写教程，如何实现这些。
+<h2>4 后续</h2>
+由于这次文章很水，所以附录一个笑话，希望大家开心开心：
+
+一领导招聘秘书，考题是：女人上下两口的区别？1号答：一横一竖！2号：有牙无牙！3号：有舌无舌！4号：有毛无毛！5号：有话无话！6号：上面吃喝，下面玩乐！7号：上面谈情说爱，下面传宗接代！8号：上面歌颂三个代表，下面满足各位领导！——8号入选！
+--></_b>
+</_e>
+<_e><_d>2011100107</_d><_T>wordpress主题:非插件post_view</_T><_c>编程技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+首先祝大家国庆快乐！
+最近准备抛弃willian大师的my_visitor，因为占用数据库实在是太大，但是其很好用的三个功能：
+1. 简易post_view
+2. 定期备份
+3. 登录失败提醒
+还是很好用的，这里我自己参考他的代码，写了简易的post_view，用于统计，代码很少，希望能给大家帮助
+<h2>2 方法</h2>
+<h3>2.2 dh_post_views.php</h3>
+将下面的代码保存为dh_post_views.php
+<pre lang="php" line="1">
+<?php
+/// 函数名称：dh_post_views 
+/// 函数作用：记录文章读的次数
+/// 函数作者: DH
+/// 作者地址: http://dhblog.org/ 
+
+/* 访问计数 */
+function record_visitors()
+{
+	if (is_singular()) 
+	{
+	  global $post;
+	  $post_ID = $post->ID;
+	  if($post_ID) 
+	  {
+		  $post_views = (int)get_post_meta($post_ID, 'views', true);
+		  if(!update_post_meta($post_ID, 'views', ($post_views+1))) 
+		  {
+			add_post_meta($post_ID, 'views', 1, true);
+		  }
+	  }
+	}
+}
+add_action('wp_head', 'record_visitors');  
+
+/// 函数名称：post_views 
+/// 函数作用：取得文章的阅读次数
+function post_views($before = '(点击 ', $after = ' 次)', $echo = 1)
+{
+  global $post;
+  $post_ID = $post->ID;
+  $views = (int)get_post_meta($post_ID, 'views', true);
+  if ($echo) echo $before, number_format($views), $after;
+  else return $views;
+}
+
+/// get_most_viewed_format 
+/// 函数作用：取得阅读最多的文章
+function get_most_viewed_format($mode = '', $limit = 10, $show_date = 0, $term_id = 0, $beforetitle= '(', $aftertitle = ')', $beforedate= '(', $afterdate = ')', $beforecount= '(', $aftercount = ')') {
+  global $wpdb, $post;
+  $output = '';
+  $mode = ($mode == '') ? 'post' : $mode;
+  $type_sql = ($mode != 'both') ? "AND post_type='$mode'" : '';
+  $term_sql = (is_array($term_id)) ? "AND $wpdb->term_taxonomy.term_id IN (" . join(',', $term_id) . ')' : ($term_id != 0 ? "AND $wpdb->term_taxonomy.term_id = $term_id" : '');
+  $term_sql.= $term_id ? " AND $wpdb->term_taxonomy.taxonomy != 'link_category'" : '';
+  $inr_join = $term_id ? "INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)" : '';
+
+  // database query
+  $most_viewed = $wpdb->get_results("SELECT ID, post_date, post_title, (meta_value+0) AS views FROM $wpdb->posts LEFT JOIN $wpdb->postmeta ON ($wpdb->posts.ID = $wpdb->postmeta.post_id) $inr_join WHERE post_status = 'publish' AND post_password = '' $term_sql $type_sql AND meta_key = 'views' GROUP BY ID ORDER BY views DESC LIMIT $limit");
+  if ($most_viewed) {
+   foreach ($most_viewed as $viewed) {
+    $post_ID    = $viewed->ID;
+    $post_views = number_format($viewed->views);
+    $post_title = esc_attr($viewed->post_title);
+    $get_permalink = esc_attr(get_permalink($post_ID));
+    $output .= "<li>$beforetitle<a href='$get_permalink' title='$post_title'>$post_title</a>$aftertitle";
+    if ($show_date) {
+      $posted = date(get_option('date_format'), strtotime($viewed->post_date));
+      $output .= "$beforedate $posted $afterdate";
+    }
+    $output .= "$beforecount $post_views $aftercount</li>";
+   }   
+  } else {
+   $output = "<li>N/A</li>\n";
+  }
+  echo $output;
+}
+
+function get_totalviews($echo = 1) {
+  global $wpdb;
+  $total_views = $wpdb->get_var("SELECT SUM(meta_value+0) FROM $wpdb->postmeta WHERE meta_key = 'views'");
+  if ($echo) echo $total_views;
+  else return $total_views;
+ }
+?>
+</pre>
+<h3>2.2 引用位置</h3>
+在functions.php中引用
+<pre lang="php">
+include("dh_post_views.php");
+</pre>
+<h2>3 说明</h2>
+<h3>3.1 需要在要使用的地方使用函数</h3>
+<pre lang="php" >
+阅读：<?php post_views(' ', ' 次'); ?>
+</pre>
+<h3>3.2 这里还提供了两个函数</h3>
+(1)get_most_viewed_format 得到最多阅读的文章，列出5个。
+(2)get_totalviews 得到评论的总数
+--></_b>
+</_e>
+<_e><_d>2011100807</_d><_T>wordpress主题:添加文章目录</_T><_c>编程技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 缘起</h2>
+有一次，我在逛博客，看到有个博客(<a href="http://shieffan.me/">清水稀饭</a>)很有意思，竟然像百度百科一样，有标题！这种标题wiki也有，是一种有助于读者快速掌握文章内容，方便读者在篇幅较长的文章中找到他们想看的内容，这个也就相当于索引。作者也提供了方法，我学着做了一个，扩展了一些功能。支持双层的标题。参考文章有：
+<a href="http://www.ludou.org/wordpress-content-index-plugin.html">WordPress文章目录插件</a>
+<h2>2 示例</h2>
+看我的博客文章的右上角的目录索引，可以隐藏的那个。具体如图：
+<a href="http://dhblog.org/wp-content/uploads/2011/09/content.png"><img class="aligncenter size-full wp-image-60" title="content" src="http://dhblog.org/wp-content/uploads/2011/09/content.png" alt="" width="600" height="300" /></a>
+<h2>3 代码</h2>
+要完成这个功能，需要有前台的css支持和后台的代码。这里以我的为例说明，各位看官需要更具自己的情况修改代码和css。
+<h3>3.1 后台部分</h3>
+后台主要实现的是对content的过滤，需要替换字符和添加目录。代码是这样的。保存为article_index.php
+<pre lang="php" line='1'>
+<?php
+function article_index($content) 
+{
+    $matches = array();
+    $ul_li = '';
+    $r = "/<(h[2-5])>([^<]+)<\/(h[2-5])>/im";
+    if(preg_match_all($r, $content, $matches)) 
+	{
+        foreach($matches[2] as $num => $title) 
+		{
+			//if($num==0)
+			if(true)
+			{
+				$content = str_replace($matches[0][$num], '<'.$matches[1][$num].' id="title-'.$num.'">'.$title.'</'.$matches[3][$num].'>', $content);
+			}
+			else
+			{
+				$content = str_replace($matches[0][$num], '<div id="content_title"><'.$matches[1][$num].' id="title-'.$num.'">'.$title.'</'.$matches[3][$num].'><span id="article-index-top"><a href="#article-index">top</a></span></div>', $content);
+			}
+			if($matches[1][$num] == 'h2')
+				$ul_li .= '<li class="level2"><a href="#title-'.$num.'" title="'.$title.'">'.$title."</a></li>\n";
+			else if($matches[1][$num] == 'h3')
+				$ul_li .= '<li class="level3"><a href="#title-'.$num.'" title="'.$title.'">'.$title."</a></li>\n";
+        }
+        $content = '<div id="article-index">
+					<div id="index-title"><span id="the-index-title">正文索引</span><span id="show-index">[ 隐藏 ]</span></div>
+					<div id="index-ul"><ul>' . $ul_li . '</ul></div></div>' . $content;
+    }
+    return $content;
+}
+add_filter( "the_content", "article_index" );
+?>
+</pre>
+这个文件需要在functions.php中include一下哦
+<pre lang="php">#生成目录
+include("article_index.php");</pre>
+<h3>3.2 前台css部分</h3>
+css是调整显示的，让这个好看一点。保存为article_index.css。
+<pre lang="css"  line='1'>
+#article-index {
+float: right;
+position: relative;
+margin:0 0 10px 10px;
+width:180px;
+border-radius: 6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+-moz-border-radius:6px;
+border: 1px solid #aaa
+}
+#index-title{
+border-radius: 7px 7px 0 0;
+padding: 0 0 1px 8px;
+border-bottom: 1px solid #aaa;
+background-color: #EEE
+}
+#the-index-title {
+line-height: 1.6;
+color: #019858;
+font-weight: bold
+}
+#show-index{
+cursor: pointer;
+margin-left:8px;
+margin-right:8px
+}
+#index-ul {
+list-style: none;
+padding: 4px 5px 4px 7px;
+margin: 0
+}
+
+#level2{
+padding-left: 10px;
+}
+#level3{
+padding-left: 25px;
+}
+
+#content_title{
+position:relative
+}
+#article-index-top{
+position:absolute;
+top:5px;
+right:10px
+z-index: 111;
+}</pre>
+需要在header.php中包含
+<h3>3.2 前台js部分</h3>
+js是用来隐藏目录和显示目录使用的。保存为article_index.js。
+<pre lang="js"  line='1'>
+$(document).ready(function(){
+	$("#show-index").click(function()
+	{
+		if($("#show-index").html()=="[ 隐藏 ]")
+		{
+			$("#index-ul").fadeOut("normal");
+			$("#show-index").html("[ 展开 ]");
+		}else if($("#show-index").html()=="[ 展开 ]")
+		{
+			$("#index-ul").fadeIn("normal");
+			$("#show-index").html("[ 隐藏 ]");
+		}
+		else
+		{
+			return false;
+		}
+	});
+});</pre>
+需要在header.php中包含
+<pre lang="php"><script src="&lt;?php bloginfo('template_directory'); ?" type="text/javascript"></script></pre>
+<h2>4 注意点</h2>
+<h3>4.1 文章写法</h3>
+写文章需要有条理，需要用h2 作为二级标题，h3作为三级标题。在编辑文章的时候，切换到HTML模式，将需要添加到目录中的标题用&lt;h2&gt;和&lt;/h2&gt;括起来就可以了，如&lt;h2&gt;序言&lt;/h2&gt;。当然你也可以用其他标签，如&lt;h4&gt;&lt;/h4&gt;等，需要自己修改代码哦。
+<h3>4.2 与前人的不同</h3>
+我这里支持二级标题，但是支持二级标题需要有很多的限制，如果需要研究的读者可以读一下代码研究一下。
+--></_b>
+</_e>
+<_e><_d>2011101707</_d><_T>wordpress安全:处理垃圾评论(续)-前台管理评论</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+上次讲到<a href="http://dhblog.org/43.html">处理垃圾评论</a>，很多方法，但是没有办法处理手动录入的评论如：
+<a href="http://dhblog.org/wp-content/uploads/2011/09/lajipingl.png"><img src="http://dhblog.org/wp-content/uploads/2011/09/lajipingl.png" alt="" title="lajipingl" width="241" height="351" class="aligncenter size-full wp-image-62" /></a>
+先谈谈其他人的方法：
+1. 没有头像不给评论，这个willin的小墙的新功能。
+2. 制定策略，可以看看<a href="http://www.ninthday.net/2011/09/spam-comments-list.html">那些永远不会出现在评论里面的垃圾评论</a>
+3. 如果发现了，可以<a href="http://www.ninthday.net/2011/08/magement-comments-front.html">手动删除垃圾评论</a>
+这里我说说如何添加手动删除垃圾评论的功能，此方法从星期九那里学来，自己修改了一些，我觉得很好用，平常我用这个手动删除，我垃圾评论的鉴定方法比较宽容，所以基本上一个礼拜出现一条这样，所以我使用这个方法可以很快很轻松地管理评论。
+<h2>2 示例</h2>
+使用方法是这样的，在使用管理员账户登录之后，就会出现以下界面，点击“删除”，确认时候就可以删除垃圾评论了。点击“编辑”，可以到后台管理这个评论。
+<a href="http://dhblog.org/wp-content/uploads/2011/09/lajipl.png"><img src="http://dhblog.org/wp-content/uploads/2011/09/lajipl.png" alt="" title="lajipl" width="618" height="257" class="aligncenter size-full wp-image-63" /></a>
+<h2>3 代码</h2>
+<h3>3.1 评论显示需要有callback函数</h3>
+这个就是自定义评论的显示方法的函数，在函数wp_list_comments调用这个callback函数。这个函数的使用可以google一下。
+<h3>3.2 我的callback函数</h3>
+这里我给出我的callback函数，dh_commentnavi，在33-41行，就是这个代码，可以拷贝利用这个
+<pre lang='php' line='1'>
+<?php
+/*****************************************************
+ 函数名称：mytheme_comment 
+ 函数作用：重写wp_listcomment的输出，在中间加入楼层号
+******************************************************/
+function dhchannel_comment($comment, $args, $depth)
+{
+    $GLOBALS['comment'] = $comment;
+    //主评论计数器初始化 begin
+	global $commentcount;
+	if(!$commentcount) { //初始化楼层计数器
+		$page = get_query_var('cpage')-1;
+		if($page<0)
+		{
+		  	$page = abs(intval($_GET['page']))-1;
+		}
+		$cpp=get_option('comments_per_page');//获取每页评论数
+		$commentcount = $cpp * $page;
+	}
+    //主评论计数器初始化 end
+?>
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+	<div id="comment-<?php comment_ID(); ?>"  class="comment-body">
+		<div class="comment-author vcard">
+		<?php echo get_avatar($comment,$size='48',$default='<path_to_url>' ); ?>
+		<?php comment_g_title($comment->comment_author_email); ?>
+		<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+		</div>
+		<?php if ($comment->comment_approved == '0') : ?>
+			<em><?php _e('Your comment is awaiting moderation.') ?></em>
+			<br />
+		<?php endif; ?>		
+		<div class="comment-meta commentmetadata">
+			<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf('%1$s %2$s', get_comment_date(),  get_comment_time()) ?></a>
+			<?php edit_comment_link('[ 编辑 ]','  ','');
+			echo " ";
+			if ( is_user_logged_in() ) 
+			{
+				echo '[ <a href="'.wp_nonce_url(get_bloginfo('url').'/wp-admin/comment.php?action=deletecomment&amp;p='.$comment->comment_post_ID . '&amp;c=' . $comment->comment_ID, 'delete-comment_' . $comment->comment_ID) . '" onclick="return confirm(\'你真的想删除这个评论吗?\')" >删除</a> ]';
+			}?>	
+		</div>
+		<?php comment_text() ?>
+		<div class="reply">
+			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+		</div>
+		<div class="floor">
+			<?php if(!$parent_id = $comment->comment_parent) {printf('%1$s楼', ++$commentcount);} ?>
+		</div>
+	</div>
+<?php 
+}
+?>
+</pre>
+<h2>4 注意点</h2>
+基本上没有什么注意点。呵呵
+--></_b>
+</_e>
+<_e><_d>2011102407</_d><_T>wordpress数据库:定期备份邮寄数据库</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+最近准备抛弃willian大师的my_visitor，因为占用数据库实在是太大，但是其很好用的三个功能：
+1. 简易post_view
+2. 定期备份
+3. 登录失败提醒
+还是很好用的，这里我自己参考他的代码，写了简易的定期备份数据库，希望能给大家帮助
+<h2>2 方法</h2>
+将下面的代码保存为dh_backup_db.php
+<pre lang="php" line="1">
+<?php
+/// 函数名称：dh_backup_db 
+/// 函数作用：定时备份数据库
+/// 函数作者: DH
+/// 作者地址: http://dhblog.org/
+
+$dh_backup_db = get_option('dh_backup_db');
+$interal = 3600*24*2; //定义一个礼拜执行一次
+//如果没有定义options就定义
+if (!$dh_backup_db) {
+	//执行的时间按照第一次执行的时间为基础，因为无法精确，所以不定义具体执行的时间点
+	$dh_backup_db = time();//最后一次执行的日期
+	update_option('dh_backup_db', $dh_backup_db);	
+}
+ 
+//在主题被切换的时候，清除hook
+function dh_del_backup_db(){
+	delete_option('dh_backup_db');
+} 
+add_action('switch_theme',dh_del_backup_db);
+
+$now = time(); // 现在
+$next_check = (int)$dh_backup_db + $interal;
+
+//如果到了时间执行的时间
+if ($next_check <= $now) 
+{
+    // 备份路径
+    $key = substr(md5(DB_NAME), -10);
+    $file_dir = ABSPATH . "wp-content/themes/dhchannel/functions/backup_$key/";
+	if(!file_exists($file_dir))//判断文件夹是否存在
+	{
+		mkdir($file_dir,0777);
+		@chmod($file_dir,0777);
+	}
+    $filename = DB_NAME . '-' . gmdate('ymd', time() + get_option('gmt_offset')*3600) . '-'. time().'.sql';
+    if (@function_exists('gzencode')) $filename .= '.gz'; // gzip
+
+    if (!is_file($file_dir.$filename)) 
+	{    
+		// 导出数据库
+		$table_name_array = $wpdb->get_col('SHOW TABLES'); // 查询所有表名
+		include('dh_backup_db_sql-dump.php'); 
+
+		// 邮寄数据库备份
+		global $phpmailer; // 採用 phpmailer 方式
+		class_exists('PHPMailer') or require(ABSPATH . WPINC . '/class-phpmailer.php');
+		$phpmailer = new PHPMailer();
+		$phpmailer->AddAddress( get_option('admin_email') ); // 可改另一個郵箱
+		$phpmailer->AddAttachment("$file_dir$filename");
+		$phpmailer->Body = '这是由 dhchannel backup_db 功能自动生成的数据库备份.';
+		$phpmailer->CharSet = 'UTF-8';
+		$phpmailer->ContentType = 'text/plain';
+		$phpmailer->FromName = html_entity_decode(get_option('blogname'), ENT_QUOTES);
+		$phpmailer->From = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+		$phpmailer->Subject = "数据库备份- $filename";
+		; // 寄出
+		if($phpmailer->Send())
+		{
+			echo "糟糕，没有发送出去哦！";
+			unlink($file_dir.$filename);
+		}
+//unlink($file_dir.$filename);
+    }
+	update_option('dh_backup_db', $now);
+}
+?>
+?>
+</pre>
+在functions.php中引用
+<pre lang="php">
+include("dh_backup_db.php");
+</pre>
+<h2>3 数据备份操作文件</h2>
+讲一下文件保存为 dh_backup_db_sql-dump.php，此文件引用willian的my_visitor
+<pre lang="php" line="1">
+<?php
+/**
+ * 導出數據 -- 用於 my-visitors.php 和 option.php
+ * @param array  $table_name_array 導出的表名
+ * @param string $file_dir         備份路徑
+ * @param string $filename         備份文件名
+ * @return       $success          儲存數量
+ */
+defined('ABSPATH') or die('This file can not be loaded directly.');
+
+$fp = fopen($file_dir.$filename, 'w');
+
+/* write to file */
+function sql_dump($fp, $buffer) {
+ global $success;
+ if (@function_exists('gzencode')) $buffer = gzencode($buffer); // gzip
+ $success = fwrite($fp, $buffer);
+}
+
+$date_gmt  = gmdate('Y-m-d H:i:s', time() + get_option('gmt_offset')*3600);
+$gm_date   = gmdate('Y-m-d H:i:s', time());
+$mysql_ver = mysql_get_server_info();
+$php_ver   = PHP_VERSION;
+
+$max_limit = 49152; // 48KB
+
+$buffer = "-- My Visitors SQL Dump version 1.3
+-- Author: willin kan
+-- URI: http://kan.willin.org/\n--
+-- 主機: " . DB_HOST . "
+-- 生成日期: $date_gmt ($gm_date GMT)
+-- 服務器版本: $mysql_ver
+-- PHP 版本: $php_ver\n
+SET SQL_MODE=\"NO_AUTO_VALUE_ON_ZERO\";\n
+--\n-- 數據庫: `" . DB_NAME . "`
+--\n\n-- " . str_repeat('-', 56);
+sql_dump($fp, $buffer);
+
+foreach ($table_name_array as $table) {
+$buffer = "\n
+# 表的結構: `$table`\n
+DROP TABLE IF EXISTS `$table`;\n";
+$row = $wpdb->get_row("SHOW CREATE TABLE $table");
+$buffer.= $row->{'Create Table'}.";\n
+# 導出表中的數據 `$table`\n";
+sql_dump($fp, $buffer);
+
+$limit_start = 0;
+$status = $wpdb->get_row("SHOW TABLE STATUS LIKE '$table'");
+$limit = (int)(($max_limit / (($status->Data_length + 1) / ($status->Rows + 1)))); // 以 max_limit 切割長度 (ROWS_PER_SEGMENT)
+
+ do {
+   $buffer = '';
+   $dbs = $wpdb->get_results("SELECT * FROM $table LIMIT $limit_start, $limit", ARRAY_A);
+   if (count($dbs)) {
+     $buffer .= "\nINSERT INTO `$table` VALUES";
+     foreach ($dbs as $db) {
+       foreach ($db as $str) {
+         $str = strtr($str, array("'" => "''", "\\" => "\\\\", "\x00" => "\\0", "\x0a" => "\\n", "\x0d" => "\\r", "\x1a" => "\\Z")); // 修改版 mysql_real_escape_string()
+         $fild[] = is_numeric($str) ? $str : "'" . $str . "'";
+       }
+       $fild = implode(", ", $fild);
+       $buffer .= "\n($fild),";
+       unset($fild);
+     }
+   $buffer = rtrim($buffer, ',') . ";";
+  }
+  sql_dump($fp, $buffer);
+  $limit_start += $limit;
+ } while (count($dbs));
+
+ $buffer = "\n
+# `$table` 結束
+\n-- " . str_repeat('-', 56);
+sql_dump($fp, $buffer);
+}
+
+fclose($fp);
+
+ $dump_peak_usage = round(memory_get_peak_usage()/1024/1024, 2);
+?>
+</pre>
+--></_b>
+</_e>
+<_e><_d>2011110707</_d><_T>wordpress主题:纯静态文件文章归档</_T><_c>编程技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>功能宣言</h2>
+<font color="red">我要给读者一个纯净的空间，因为你们有权利要求！</font>
+为什么要这么说呢？现在我的博客，已经很臃肿了，功能是不少，但是加载速度确实很慢，不仅仅对读者，对搜索引擎也不是很合理。冗余的广告代码、统计代码、第三方推广代码、客户登陆cookit、每页都有相关的统计频繁访问数据库、加载用户的评论。这些已经让读者的浏览器不堪重负！
+于是，就诞生了这个功能和这篇文章！如果你访问了<a href="http://dhblog.org/archivers">这个链接</a>，你会感觉不一样！对吧，不但快、日常分类、分页功能也有！就连评论也有！有木有！
+最重要的是！丢失了3个月的百度搜索来了！不行你看看，都是archivers里面的链接！<a href="http://www.baidu.com/s?wd=site%3Adhblog.org&pn=0&tn=baiduhome_pg">http://www.baidu.com/s?wd=site%3Adhblog.org&pn=0&tn=baiduhome_pg</a>
+<h2>1 缘起</h2>
+无意中逛博客，看到别人的博客有归档页面。这个归档页面和wordpress的归档页面不一样，是存静态的归档页面。大家可以在WordPress插件发布<a href="http://liucheng.name/947/">:Lc.Archivers(WP博客的无图版、简洁版)</a>这篇文章中看到，这个利用插件实现页面的静态归档。
+静态归档有哪些好处呢？简单列举3、4条吧：
+1. 是博客的站点地图，也是文章存档，方便搜索引擎查找。
+2. 访问速度很快，这样对用户和搜索引擎体验较好，如果遇到网络不好，访问静态页面也是不错的选择。
+3. 定期备份静态页面，可以不用备份数据库。
+4. 页面简单，下载制作成册方便，以后可以自己在没有安装网站服务器和数据库的情况下浏览自己的文章哦。
+
+后来我参考了这个插件，简化了代码，并把这个功能集成到我的主题里面。这样出于几点考虑：
+1. 自己的主题有这个功能，到时候有人用我的主题的时候，不需要安装插件，做到零插件
+2. 自己的主题可以配置成自己喜欢的风格。
+3. 可以了解原理，增加自己细化的元素。
+<h2>2 预览</h2>
+大家可以访问这个链接访问哦  <a href="http://dhblog.org/archivers">http://dhblog.org/archivers</a>
+<h2>3 实现方法</h2>
+实现方法的文件比较大，包含了很多的文件，我就打了一个包。<a href='http://dhblog.org/wp-content/uploads/2011/12/archivers.zip'>点此下载 archivers</a>。安装需要做的事情是；
+1. 下载之后，将archivers文件夹放到自己的主题下面。我的是房子我自己建的目录functions下面。
+2. 在functions.php中添加
+<pre lang="php">#生成静态文件
+include("functions/archivers/dh_archivers_gen.php");</pre>
+其中注意自己放置archivers的目录哦
+3. 在解压之后，修改文件中的配置哦
+<pre lang="php">//这个是访问静态页面生成之后的静态文件的绝对路径位置，我的就是子目录archivers
+$Lc_archivers_path= ABSPATH . 'archivers/';
+//这个是解压的archivers的目录
+$Lc_archivers_src_path= ABSPATH . 'wp-content/themes/dhchannel/functions/archivers/';
+//这个是访问静态页面生成之后的地址，我的是我的网站域名/archivers/
+$Lc_archivers_url= get_bloginfo('url'). '/archivers/';</pre>
+4.里面的额style都是我配置的和我的网站类似的，需要配置成自己喜欢的。
+--></_b>
+</_e>
+<_e><_d>2011111407</_d><_T>wordpress数据库:表posts清理和整理</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 缘起</h2>
+wordpress的posts表是非常重要的表，所有的文章都放在里面，但是有时候内容很多，仔细检查表发现，还有很多的重复的内容，让人看起来非常不爽，而且数据量的增多会导致维护麻烦，而且会是数据库访问变慢。
+<h2>2 原因</h2>
+wp默认的配置会写草稿和修订版，这样会导致文章很多，占用数据空间。
+<h2>3 方法</h2>
+1. 清理posts表,清理掉草稿和修订版本 文章wordpress提高速度之一(数据库清理)已经提及了。http://dhblog.org/18.html
+2. 禁止草稿、修订,这样就不会生成多余的内容了
+3. 重新排序，删除之后会导致序号缺失，洁癖者需要重新整理数据，这样使得文章的序号非常整齐。
+
+<h2>4 清理posts表</h2>
+wordpress的文章有好多：wp_posts表中包括
+文章种类：文章、修订版本、页面、文章的附件、菜单。
+其中每种文章又会有很多状态：继承、发布、私有、草稿、自动草稿、回收站中。
+
+冗余原因：
+(1)在博主写文章的时候，系统会保存很多的中间状态，在文章发布之后其很多的中间状态没有被删除。
+
+解决办法：
+(1)使用插件：WP Cleaner，使用插件的好处就是有保护机制，无论怎么操作都无法影响已发布的贴子，请放心使用^^
+(2)自己动手删除，数据库中的标志删除文章，注意备份。
+说明：wp_posts的重要字段含义：
+post_type：文章类型，post表示为文章，revision表示为修订版本，page为页面，attachment是文章的附件信息，nav_menu_item是菜单。这里我们需要的是文章、页面、和菜单。
+post_status：文章状态，inherit是继承的附件和文章的附带信息，publish是已经发布、private是私有的，draft是草稿，auto-draft是自动草稿，trash是在回收站。这里我们需要的是publish的状态的。
+这里我们主要是要 已经发布的文章、页面和菜单，除此之外的都可以删除，当然可以根据自己的需求选择删除哪些
+
+<pre lang="sql" line="1">
+DELETE FROM  wp_posts 
+WHERE NOT(post_status = 'publish' AND post_type IN('post','nav_menu_item','page'));
+</pre>
+
+<h2>5 禁止草稿、修订</h2>
+在 网站根目录下的 wp-config.php中添加：
+<pre lang="php" line="1">
+/** 不会生成历史版本 */
+#define('WP_POST_REVISIONS',false);
+
+/** 不会自动保存 */
+#define('AUTOSAVE_INTERVAL', false);
+</pre>
+或者在function.php中添加
+<pre  lang="php" line="1">
+/* 移除自动保存和修订版本 */
+remove_action('pre_post_update', 'wp_save_post_revision' );
+add_action( 'wp_print_scripts', 'disable_autosave' );
+function disable_autosave() {
+	wp_deregister_script('autosave');
+}
+</pre>
+这样就不会保存草稿和自动修订版了。
+<h2>6 重新排序</h2>
+清理之后，还有很多重要的问题没有解决：
+1. 就是新文章的序号很大，还不能设置过小，因为已经有很大的文章号出现了。
+2. 旧文章的序号空缺很大，让人很不舒服。
+下面就是解决这个问题的，这是Lee的代码，我使用了一下，没有问题。
+将一下代码保存为config.php,放在网站的根目录。执行即可。注意：
+1. 在执行之前需要备份好数据库
+2. 需要将http://dhblog.org/archives/修改为你需要的固定文章的地址。
+3. 推荐方法，建议在本机安装php环境和数据库，把网站数据导入到本地数据库之后，用执行完之后的数据恢复网上的数据。
+
+<pre lang="php" line="1">
+<?php
+/**
+ * WordPress重新排列不连续的文章ID
+ * 作者 ：小拼(Lee)
+ * Email：xpsem2010@gmail.com
+ * Blog ：http://www.xp-sem.com/
+ * 文章出处：http://www.xp-sem.com/wordpress-clear-post-id-continuity/
+ * 最后修改：2010年11月08日 14：47
+ * post_id作为固定链接或是使用投票等关联文章的插件勿用
+ * 3.0.1版本亲测，理论上其它版本也适用，操作前请备份好数据库，放心去干吧！
+ */
+
+/** 引入网站配置文件，这里主要获得数据库连接信息及常规操作类 */
+require_once( './wp-config.php' );
+
+function change_post_id($id)
+{
+ global $convertedrows, $wpdb;
+ /** 修改文章ID关联的类别、标签、自定义字段、评论各表，prefix是您安装时设置的数据库表前缀 */
+ $wpdb->query( 'update ' . $wpdb->prefix .'posts set ID = ' . $convertedrows . ' where ID = ' . $id );
+ $wpdb->query( 'update ' . $wpdb->prefix .'posts set guid = "http://dhblog.org/archives/' . $id . '.html" where ID = ' . $id);
+ $wpdb->query( 'update ' . $wpdb->prefix .'term_relationships set object_id = ' . $convertedrows . ' where object_id = ' . $id );
+ $wpdb->query( 'update ' . $wpdb->prefix .'postmeta set post_id = ' . $convertedrows . ' where post_id = ' . $id );
+ $wpdb->query( 'update ' . $wpdb->prefix .'comments set comment_post_ID = ' . $convertedrows . ' where comment_post_ID = ' . $id); 
+ $convertedrows++;
+}
+/** ID默认由1开始 */
+$convertedrows = 1;
+
+/** 查询数据库文章表所有记录 */
+$sql_query = 'SELECT ID FROM ' . $table_prefix . 'posts ORDER BY ID ASC';
+$all_post_ids = $wpdb->get_results( $sql_query );
+
+/** 有返回值时则执行循环 */
+if ( is_array( $all_post_ids ) ) {
+ foreach ( $all_post_ids as $post_id ) {
+  change_post_id( $post_id->ID );
+ }
+}
+
+/** 重新设置文章ID自动增加的起点 */
+$wpdb->query('alter table ' . $table_prefix .'posts AUTO_INCREMENT = ' . $convertedrows);
+echo 'Total:'. $convertedrows .', It\'s ok! ';
+?>
+</pre>
+
+但是这样很危险：如果执行了"重新排序"之后，后果还是很严重的，主要有：
+1. 会导致搜索引擎的不友好，不收录新的网页，被认为是抄袭。
+2. 会导致你以前网页的链接没有了，应为改名字了。
+3. 会让收藏你以前网页的网友不知道新的地址了。
+总之要慎重。不管你们慎重不慎重，反正我是做了，而且收录下降了，但是我的主要流量不是搜索引擎，而且我不出名，所以删了就删了，无所谓。呵呵。
+--></_b>
+</_e>
+<_b><!--
+<h2>1 缘起</h2>
+知蚁博客看了之后，写了观后感，<a href="http://www.letuknowit.com/archives/152">《猩球崛起》观后感</a>， 但是不给种子，这样不好，我来给！而且给出满足各种要求的下载。
+<h2>2 剧情简介</h2>
+本片是《决战猩球》的前传，讲述智力大大发展的猿人与人类之间爆发战争。詹姆斯·弗兰科饰演一位年轻且不屈不挠的科学家，他引发了猩猩的智慧，在之后人类与猩猩的战斗中也起主要的作用。印度小姑娘芙蕾达·平托饰演灵长类学家、她一直在帮助弗兰科。布莱恩·考克斯则是科研所的管理者，他对动物毫无同情心。安迪·瑟金斯通过动作捕捉技术扮演猩猩反叛军领袖凯撒 ... ...
+<h2>3 影片其他信息</h2>
+【译名】猿族崛起 | 猩凶革命 | 猩球崛起
+【片名】Rise of the Planet of the Apes
+【年代】2011
+【国家】美国
+【类型】动作 | 科幻 | 剧情 | 惊悚
+【视频】720 x 320
+【音频】英语
+【体积】1CD
+【时间】97 Mins
+【字幕】中字
+【IMDB评分】7.8/10 (1,966 votes)
+【导演】鲁伯特·瓦耶特
+【演员】詹姆斯·弗兰科 | 芙蕾达·平托 | 安迪·瑟金斯 | 汤姆·费尔顿 | 布莱恩·考克斯
+<h2>4 剧照</h2>
+<br/>
+<img alt="猩球崛起" src="http://img.album.pchome.net/54/83/23/24/a1e0930a1f888f60632058d791cd46a4.of" title="m1" class="aligncenter" width="600" height="350" />
+<img alt="猩球崛起" src="http://img.album.pchome.net/54/83/23/24/eb59f2be6f6a56c43b4dbbd5fb8b375c.of" title="m2" class="aligncenter" width="600" height="350" />
+<h2>5 下载地址</h2>
+<a href="thunder://QUFmdHA6Ly82djo2dkBmdHAua2FuNjYuY29tOjQxMjEv44CQNnbnlLXlvbF3d3cuZHkxMzEuY29t44CR54y/5peP5bSb6LW3RFZE5Lit5a2XLnJtdmJaWg==">点击 迅雷下载 猿族崛起_DVD中字.rmvb(483M)</a>
+<a href="thunder://QUFmdHA6Ly9keWdvZDE6ZHlnb2QxQGQzMTcuZHlnb2Qub3JnOjYwMTAvW+eUteW9seWkqeWggi13d3cuZHkyMDE4Lm5ldF3njKnnkIPltJvotbcuMTAyNHg1NzYu5Zu96Iux5Y+M6K+tLuS4reaWh+Wtl+W5lS5ta3ZaWg==">点击 迅雷下载 猿族崛起_1024x576.国英双语.中文字幕.mkv(999M)</a>
+<a href="thunder://QUFmdHA6Ly82djo2dkBmdHAxLmthbjY2LmNvbToxMjYzL1s2dueUteW9sXd3dy5keTEzMS5jb21d54y/5peP5bSb6LW3QkTkuK3lrZcxMjgw6auY5riFLnJtdmJaWg==">点击 迅雷下载 猿族崛起_BD中字1280高清.rmvb(1.1G)</a>
+--></_b>
+</_e>
+<_e><_d>2011112807</_d><_T>经验总结:丢失的百度收录回来了</_T><_c>网络推广</_c><_t>经验分享</_t><_t>搜索引擎</_t><_a>DH</_a>
+<_b><!--
+<h2>1 前言</h2>
+前面好几个月，我的百度经历了由多变少，最后变成3个，最后又突然回来的过程。我想和博友分享一下我的经历和教训，给大家一点启示。
+<h2>2 如何丢失了百度收录</h2>
+我只能回想一下，大概有这些原因导致百度搜索减少，甚至把我剔除了。
+1. 更改域名，原来的域名没有丢弃，转到新域名，原域名被搜索的文章和新域名一样。这个不是主要原因。
+2. 去除域名前面的www标识，这个也不是主要原因，应为去除之后，收录也是越来越多的。
+3. 更改固定连接，由于洁癖，把文章的id统统改掉了，为了使序号连续并去除很大的id号。这个影响很大。
+4. 主题更改频繁，由于频繁上线主题，主题虽然不变，但是有更改。
+5. baidu sitemap插件使用，后来停用了。
+<h2>3 如何拿回百度收录</h2>
+1. 投诉，这个作用没有
+2. 使用百度统计，这个作用也没有
+3. 生成静态文件，这个有作用，但只是静态文件被收录，主页没有被收录。
+<a href="http://dhblog.org/wp-content/uploads/2011/11/baidusite.jpg"><img src="http://dhblog.org/wp-content/uploads/2011/11/baidusite.jpg" alt="" title="baidusite" width="600" height="400" class="aligncenter size-full wp-image-77" /></a>
+<h2>4 附录:百度收录历史</h2>
+2011-11-15 43
+2011-11-07 35
+2011-10-21 36  自从我使用了我的静态文件归档之后，所有的归档文件都被收录
+2011-10-12 4
+2011-09-23 5
+2011-09-12 3
+2011-08-23 4
+2011-08-18 7
+2011-08-17 6
+2011-08-06 7
+2011-07-29 10
+2011-07-25 16
+2011-07-18 30
+2011-07-15 32
+2011-07-14 42
+2011-07-12 46
+2011-07-11 44
+2011-07-08 60
+2011-07-07 63
+2011-07-05 193
+2011-06-28 150
+2011-06-27 60
+2011-06-24 40
+<h2>5 进一步分析</h2>
+由于只是收录了我的静态页面，所以我估计我的主页面还是被全部灭掉了，所以需要进一步分析主页面为什么被灭？以下是我想到的几个原因，希望博友给点经验，让主页面回来！
+1. keyword和describtion不对？
+2. 网页中有大量广告和统计代码等杂乱代码？
+3. 主题对搜索百度支持不好？
+4. 主机在国外？访问速度慢？
+--></_b>
+</_e>
+<_b><!--
+<h2>1 缘起</h2>
+知蚁博客看了之后，写了观后感，<a href="http://www.letuknowit.com/archives/152">《猩球崛起》观后感</a>， 但是不给种子，这样不好，我来给！而且给出满足各种要求的下载。
+<h2>2 剧情简介</h2>
+本片是《决战猩球》的前传，讲述智力大大发展的猿人与人类之间爆发战争。詹姆斯·弗兰科饰演一位年轻且不屈不挠的科学家，他引发了猩猩的智慧，在之后人类与猩猩的战斗中也起主要的作用。印度小姑娘芙蕾达·平托饰演灵长类学家、她一直在帮助弗兰科。布莱恩·考克斯则是科研所的管理者，他对动物毫无同情心。安迪·瑟金斯通过动作捕捉技术扮演猩猩反叛军领袖凯撒 ... ...
+<h2>3 影片其他信息</h2>
+【译名】猿族崛起 | 猩凶革命 | 猩球崛起
+【片名】Rise of the Planet of the Apes
+【年代】2011
+【国家】美国
+【类型】动作 | 科幻 | 剧情 | 惊悚
+【视频】720 x 320
+【音频】英语
+【体积】1CD
+【时间】97 Mins
+【字幕】中字
+【IMDB评分】7.8/10 (1,966 votes)
+【导演】鲁伯特·瓦耶特
+【演员】詹姆斯·弗兰科 | 芙蕾达·平托 | 安迪·瑟金斯 | 汤姆·费尔顿 | 布莱恩·考克斯
+<h2>4 剧照</h2>
+<br/>
+<img alt="猩球崛起" src="http://img.album.pchome.net/54/83/23/24/a1e0930a1f888f60632058d791cd46a4.of" title="m1" class="aligncenter" width="600" height="350" />
+<img alt="猩球崛起" src="http://img.album.pchome.net/54/83/23/24/eb59f2be6f6a56c43b4dbbd5fb8b375c.of" title="m2" class="aligncenter" width="600" height="350" />
+<h2>5 下载地址</h2>
+<a href="thunder://QUFmdHA6Ly82djo2dkBmdHAua2FuNjYuY29tOjQxMjEv44CQNnbnlLXlvbF3d3cuZHkxMzEuY29t44CR54y/5peP5bSb6LW3RFZE5Lit5a2XLnJtdmJaWg==">点击 迅雷下载 猿族崛起_DVD中字.rmvb(483M)</a>
+<a href="thunder://QUFmdHA6Ly9keWdvZDE6ZHlnb2QxQGQzMTcuZHlnb2Qub3JnOjYwMTAvW+eUteW9seWkqeWggi13d3cuZHkyMDE4Lm5ldF3njKnnkIPltJvotbcuMTAyNHg1NzYu5Zu96Iux5Y+M6K+tLuS4reaWh+Wtl+W5lS5ta3ZaWg==">点击 迅雷下载 猿族崛起_1024x576.国英双语.中文字幕.mkv(999M)</a>
+<a href="thunder://QUFmdHA6Ly82djo2dkBmdHAxLmthbjY2LmNvbToxMjYzL1s2dueUteW9sXd3dy5keTEzMS5jb21d54y/5peP5bSb6LW3QkTkuK3lrZcxMjgw6auY5riFLnJtdmJaWg==">点击 迅雷下载 猿族崛起_BD中字1280高清.rmvb(1.1G)</a>
+--></_b>
+</_e>
+<_e><_d>2011121307</_d><_T>网络赚钱:91问问调查网(1000积分换10元)</_T><_c>网站盈利</_c><_t>友情推荐</_t><_a>DH</_a>
+<_b><!--
+<h2>1 前言</h2>
+是搏友<a href="http://www.letuknowit.com/archives/133">知蚁博客</a>推荐的91问问调查网，自己就试了一下。而且顺利地花了3个月拿到了9.85元了，虽然少了点，但是苍蝇虽小，也是肉！
+还不错，就推荐给大家了。为了证明真实性，我贴图说明。
+先说说这是个什么吧,就是回答问题，积分，积分换钱。
+总结优点和缺点吧：
+优点：
+ 1. 可以赚小钱。
+ 2. 可以知道世界上发生什么事情。
+ 3. 可以知道大家对事情都是什么想法。
+缺点：
+ 1. 钱太少了。
+ 2. 50分的问卷会泄露隐私。
+ 3. 会花时间在上面。
+
+<h2>2 方法</h2>
+回答一个快速问答（一条选择题），得1分
+回答一个问卷（好多条选择题），得50分
+回答一个奇怪的问卷（分很多的），的很多分，这个我从来没有得成功过
+每天手机登陆，得1分
+安装手机软件，的50分
+安装桌面软件，得50分
+每天桌面登陆，得1分
+邀请别人注册成功，100积分。好像只有活动期间才有积分
+
+积满1000分可以兑换，1000分兑换10块钱，15%的手续费。
+
+点击 <a href="http://www.91wenwen.net/lp/?c=invitation&prf=63224" target="_blank">http://www.91wenwen.net/lp/?c=invitation&prf=63224</a> 就可以使用我给的链接注册。
+<h2>3 取钱过程</h2>
+<h3>3.1 积满1000分</h3>
+<a href="http://dhblog.org/wp-content/uploads/2011/12/91wenwen03.png"><img src="http://dhblog.org/wp-content/uploads/2011/12/91wenwen03.png" alt="" title="91wenwen03" width="498" height="183" class="aligncenter size-full wp-image-84" /></a>
+<h3>3.2 申请到支付宝</h3>
+<a href="http://dhblog.org/wp-content/uploads/2011/12/91wenwen02.png"><img src="http://dhblog.org/wp-content/uploads/2011/12/91wenwen02.png" alt="" title="91wenwen02" width="599" height="210" class="aligncenter size-full wp-image-83" /></a>
+<h3>3.3 付手续费和等</h3>
+大概等10个工作日，我的好像是5个工作日
+91问问的付款消息：
+<a href="http://dhblog.org/wp-content/uploads/2011/12/91wenwen01.png"><img src="http://dhblog.org/wp-content/uploads/2011/12/91wenwen01.png" alt="" title="91wenwen01" width="600" height="250" class="aligncenter size-full wp-image-82" /></a>
+我的支付宝收入：
+<a href="http://dhblog.org/wp-content/uploads/2011/12/91wenwen04.png"><img src="http://dhblog.org/wp-content/uploads/2011/12/91wenwen04.png" alt="" title="91wenwen04" width="638" height="39" class="aligncenter size-full wp-image-85" /></a>
+<h3>3.4 花掉这个钱</h3>
+这个随便你。呵呵
+--></_b>
+</_e>
+<_e><_d>2011121907</_d><_T>友情推荐:BOX国外高速免费网盘服务</_T><_c>建站技术</_c><_t>友情推荐</_t><_t>空间</_t><_a>DH</_a>
+<_b><!--
+<h2>1 起因</h2>
+需要一个网盘服务，要求：
+1.稳定，要有强大的注明的公司支撑、业界有好评。
+2.方便下载，提供连接就可以下载，不要登录等等，比较麻烦。
+3.功能强大，空间不能太小。速度不能太慢。
+4.主要保护隐私，不要有什么不合法的文件，就封账号（国内比较危险）。
+<h2>2 选择</h2>
+卢松松的文章：<a href="http://lusongsong.com/reed/392.html" target="_blank">5大网盘使用感受</a>，里面可以选择比较多：爱同步、金山快盘、115同
+
+步盘、酷盘和Q盘（需安装QQ电脑管家）。但是没有提到BOX。这里就说一下BOX吧。
+<h2>3 介绍</h2>
+3.1 BOX网盘
+这个网盘的资料可以存放很久，好象服务器不关的话就可以永久存放，单个文件10M，而且上传者只要给出下载链接，其他人就可以用那个链接直接下载，（意思就是上传资料的人要注册，下载的不用注册）在众多的网盘中是很不错的。Box个人用户现在
+可以获得5GB免费网盘空间，商业用户（15美刀/人/月）可获得500GB空间，企业级用户可获得无限存储空间。Box.net今年年初刚刚获得1500万美元投资。目前已有400万个人用户和数万家公司用户。目前TechCrunch中文站的IT每周简报的下载文件就放在Box.net上。网盘的网址是<a href="http://www.box.net" target="_blank">http://www.box.net </a>或者<a href="http://www.boxcn.net" target="_blank">http://www.boxcn.net</a>
+<h2>4 注册教程</h2>
+BOX的注册教程：
+<a href="http://bbs.hcbbs.com/thread-287284-1-1.html" target="_blank">http://bbs.hcbbs.com/thread-287284-1-1.html</a>
+
+<h2>5 小技巧</h2>
+找到了一个将box.net变成本地硬盘的小方法：
+1. 进入网上邻居，单击左边栏中的“添加一个网络邻居”
+2. 在“添加网上邻居向导”中选择“选择另一个网络位置”
+3. 在输入框中输入 https://www.box.net/dav
+4. 在弹出的对话框中输入box.net的用户名和密码
+5. 自定义一个名称
+6. 进入网上邻居，就可以看到刚才设置的网络磁盘文件夹了
+7. 双击进入文件夹，就可以自由上传和下载文件
+--></_b>
+</_e>
+<_e><_d>2011122607</_d><_T>友情推荐:box wordpress展示</_T><_c>编程技术</_c><_t>友情推荐</_t><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 来源</h2>
+  看到林木木的文章<a href="http://immmmm.com/tag/box-net" target="_blank">利用 Google Feed API 制作 Box.net 网盘页面</a>，于是想做一个共享我的资料的页面，但是林木木提供的是普遍性的使用，需要改造一下。于是就动手小改了一下。
+<h2>2 展示与体验</h2>
+点击 我博客上面的 我的共享 就可以看到效果
+<a href="http://dhblog.org/wp-content/uploads/2011/12/box.jpg"><img src="http://dhblog.org/wp-content/uploads/2011/12/box.jpg" alt="" title="box" width="600" height="271" class="aligncenter size-full wp-image-88" /></a>
+我修改的结果就是把这个放到我的博客里面。
+<h2>3 我的修改</h2>
+1. 修改box.php为合适和主题的；
+2. 把我的共享修改为 box模板；
+3. 修改css文件，为适合我的主题；
+4. 集成到我的主题中，发布。
+<h2>1 下载链接</h2>
+我的修改下载，到林木木的博客里面有原版的下载。
+<a href="http://www.boxcn.net/s/gre0cf6cl57aogel9c1e">http://www.boxcn.net/s/gre0cf6cl57aogel9c1e</a>
+--></_b>
+</_e>
+<_b><!--
+<h2>序言</h2>
+祝大家新年快乐！谢谢大家在2011年对我博客的关注，并祝大家在2012年这新的一年里事事顺利！
+
+<h2>1 相关链接</h2>
+麦子博客：
+1. <a href="http://www.kakata.com/the-longmen-fly-the-armor-hd-thunderbolt-download.html">《龙门飞甲》高清迅雷下载</a>
+2. <a href="http://www.kakata.com/marquette-13-earth-hd-thunderbolt-download.html">《金陵十三钗》高清迅雷下载</a>
+
+观影楼阁：
+1.<a href="http://www.dgnn.org/archives/6628.html">《龙门飞甲》高清迅雷下载-2011李连杰最新3D动作片1280清晰和DVD版</a>
+2.<a href="http://www.dgnn.org/archives/6814.html">《金陵十三钗》迅雷下载-2011张艺谋最新战争史诗片1280清晰和DVD版</a>
+
+电影首发站 ：
+1. <a href="http://movie.qjwm.com/down_1642539.html">【金陵十三钗】【真正声音同步完美版DVD-RMVB.中英双字】【2011最新张艺谋战争大片】</a>
+2. <a href="http://movie.qjwm.com/down_1638642.html">【龙men飞甲】【高清完整版HD-RMVB.国语】【2011最新李连杰、周迅、陈坤动作大片】</a>
+
+attime.net：
+1.<a href="http://www.attime.net/?p=4479">[推荐指数8.2]《金陵十三钗》更新完整版.艺术气息浓郁的商业作品！720P高清版全兼容MP4+RMVB！</a>
+
+《龙门飞甲》高清迅雷下载-2011李连杰最新3D动作片1280清晰和DVD版
+<h2>2 《龙门飞甲》下载地址</h2>
+点击以下地址，或者复制到迅雷中下载。
+<a href="thunder://QUFmdHA6Ly9keTpkeUB4bGEueHVuYm8uY2M6NDAxNjMvW9G4wNfPwtTYd3d3Llh1bkJvLkNjXcH6w8W3ybzXLkhEMTI4MMflzvq5+tPv1tDX1i5ybXZiWlo=">点击 迅雷下载 《龙门飞甲》清晰版国语中字[rmvb/694.7M]</a>
+<h2>3 《金陵十三钗》下载地址</h2>
+点击以下地址，或者复制到迅雷中下载。
+<a href="thunder://QUFmdHA6Ly9keTpkeUB4bGEueHVuYm8uY2M6NDAxNjMvW9G4wNfPwtTYd3d3Llh1bkJvLkNjXb3wwerKrsj97s4uSEQxMjgwx+XO+rn60+/W0NOiy6vX1i5ybXZiWlo=">点击 迅雷下载《金陵十三钗》清晰国语中字[rmvb/833.5M]</a>
+--></_b>
+</_e>
+<_e><_d>2012010907</_d><_T>友情推荐:体验电信免费WiFi宽带</_T><_c>其他交流</_c><_t>友情推荐</_t><_a>DH</_a>
+<_b><!--
+<h2>1 消息主体</h2>
+　　9月20日消息，中国电信天翼宽带WiFi推出免费上网体验活动，从即日起至12月31日，天翼手机用户每月赠送10小时免费WiFi上网，而中国移动和中国联通用户每月也可申请2小时连续WiFi免费上网体验。
+　　据悉，中国电信用户如原来享受一定时长的免费WiFi上网，本次免费时长可叠加，即另外赠送10小时。中国移动和联通用户每月可在电信WiFi网络上网Portal认证页面中，输入手机号码获取用于WiFi临时上网的数字密码，密码连续2小时内有效，密码有效期内可多次登录并免费使用。
+　　据了解，中国电信天翼宽带WiFi在全国范围内的有10万个热点，覆盖率居同行业之首，其中覆盖高级酒店14233个，商务中心6562个，大型商场321个，这使得消费者在全国大部分城市和地区都能随时接入天翼宽带的无线网络，体验无线上网的便捷和乐趣。
+　　除了在热点地区广泛覆盖之外，中国电信天翼宽带WiFi同时也注重高速网上冲浪的体验。据相关人员实地测试，天翼宽带WiFi的速率已经提高到2兆到3兆，在重点地区速率最高达到10兆以上。使用天翼宽带WiFi上网看高清视频无需缓冲，下载一首5M的音乐只需8秒钟。尤其网速完全可以和有线宽带相媲美，甚至超过有线宽带的速度。
+　　此次中国电信适时推出的免费WiFi体验活动，不仅方便了假期出行的消费者，在深层意义上更是推动了消费者对移动互联网的认识和利用，对中国的移动互联网行业的发展具有深远的影响。
+<h2>2 现在还可以用</h2>
+很早之前就可以体验了，就是没有时间去体验，有wifi的地方可以试用哦。速度还是可以的哦。学校里面现在估计有很多地方都可以使用，还有，现在100块钱可以买100个小时，这样也比较划算，比3G划算，就是不能3G的覆盖面广。
+<h2>3 使用方法</h2>
+连接上之后，用浏览器访问：
+https://wlan.ct10000.com/portal2/Login.do?logintype=3，直接有链接可以跳转到这里的
+注意要去除代理等
+使用手机获取密码（不一定要是天翼的手机用户哦，其他的都可以）登陆即可，每个月5个小时。
+具体见图：
+<a href="http://dhblog.org/wp-content/uploads/2012/01/dianxin.jpg"><img src="http://dhblog.org/wp-content/uploads/2012/01/dianxin.jpg" alt="" title="dianxin" width="623" height="396" class="aligncenter size-full wp-image-90" /></a>
+
+--></_b>
+</_e>
+<_b><!--
+接花献佛了，祝大家新年快乐！
+　“春晚节目单”制作精美，图文并茂，节目单上既有龙年春晚的标识，也有所有亮相春晚表演的节目和演员。这张中央电视台龙年春晚节目单，将刊登在1月21日出版的《人民日报》《光明日报》《经济日报》《解放军报》《中国日报英文版》及全国众多都市报。全国观众也可以在新浪网及中央电视台春晚官方网站上下载节目单。
+[caption id="" align="aligncenter" width="389" caption="春晚节目单"]<img alt="" src="http://photocdn.sohu.com/20120120/Img332779988.jpg" title="春晚节目单" width="389" height="550" />[/caption]
+　　节目单如下：
+
+　　1.开场童谣(表演者：邓鸣贺)
+　　2.《东西南北大拜年》
+　　(1)《欢乐中国年》(表演者：李谷一、王珞丹、冯绍峰、蔡卓妍、主持人)
+　　(2)《闹秧歌》(表演者：胡宝善、胡军一家)
+　　(3)《小拜年》(表演者：胡海泉一家、陈羽凡、白百何夫妇)
+　　(4)《采茶舞曲》(表演者：沙溢、胡可夫妇)
+　　(5)《祝福你》(表演者：张卫健、张茜夫妇)
+　　3.绛州鼓乐《鼓韵龙腾》(表演者：山西绛州鼓乐团、河南登封少林塔沟武术学校)
+　　4.群口相声《小合唱》(表演者：周炜、佟铁鑫、吕继宏、王宏伟、刘和刚)
+　　5.创意钢琴《金蛇狂舞》+ 歌曲《龙的传人》(表演者：王力宏、李云迪)
+　　6.创意儿童节目《除夕的传说》(表演者：韩庚)
+　　7.歌曲《万物生》(表演者：萨顶顶)
+　　8.小品《天网恢恢》(表演者：蔡明、王宁、常远、郭丰周)
+　　9.舞蹈《龙凤呈祥》(领舞：李倩、张傲月)
+　　10.短片《回家过年》
+　　11.歌曲《好久没回家》(表演者：陈坤)
+　　12.歌曲《叫一声爸妈》(表演者：宋祖英)
+　　13.小品《荆轲刺秦》(表演者：黄宏、邵峰、沙溢)
+　　14.杂技《空山竹语》(表演者：李振宇、左朝峰、袁飞)
+　　15.民族歌舞《追爱》(表演者：雷佳、沙呷俊男、湖南魅力湘西歌舞团、中国邮政艺术团)
+　　16.小品《今天的幸福》(表演者：沈腾、黄杨、艾伦)
+　　17.歌曲《因为爱情》(表演者：王菲、陈奕迅)
+　　18.《魔术》(表演者：刘谦)
+　　19.现代芭蕾《天鹅湖》(表演者：俄罗斯TODES舞团)
+　　20.相声剧《爱的代驾》(表演者：冯巩、牛莉、闫学晶)
+　　21.歌曲《把幸福给你》(表演者：孙楠)
+　　22.小品《面试》 (表演者：郭冬临、魏积安、傅浚琪、何军)
+　　23.儿童节目《玩具总动员》(哈尔滨工业大学机器人创新基地)
+　　24.戏曲节目《戏迷一家亲》(表演者：刘佩琦、李明启、高长志、张杰、李沛泽、李泽林)
+　　25.相声《奋斗》(表演者：曹云金、刘云天)
+　　26.歌曲《新贵妃醉酒》(表演者：李玉刚）
+　　27.短片《春晚记忆》
+　　28.歌曲《致敬30年》
+　　(1)《冬天里的一把火》(表演者：金美儿)
+　　(2)《故乡的云》(表演者：费翔)
+　　(3)《爱的奉献》(表演者：韦唯、吴秀波)
+　　(4)《常回家看看》(表演者：蔡国庆、王珞丹)
+　　(5)《前门情思大碗茶》(表演者：李谷一)
+　　(6)《我的中国心》(表演者：张明敏)
+　　29.舞蹈《雀之恋》(表演者：杨丽萍、王迪)
+　　30.歌曲《大爱》(表演者：刘欢)
+　　31.歌曲《我要回家》(表演者：朱之文)
+　　32.舞蹈《老妈妈》(表演者：四川广元老妈妈艺术团)
+　　33.歌曲《好人就在身边》(表演者：谭晶)
+　　34.舞蹈《舞动冰凌》(表演者：吉林省歌舞团)
+　　35.歌曲《思乡曲》(表演者：蒋大为)
+　　36.歌曲《远方的家》(表演者：张也)
+　　37.歌舞《中国美》(表演者：玖月奇迹、玉米提、万玛尖措、薛一村子、赛娜、柴森森、李杨、苏宁)
+　　38.舞蹈《眷恋》(表演者：胡启志)
+　　39.歌曲《天下一家》(表演者：王莉、廖昌永)
+　　中央电视台祝全国电视观众
+　　新春快乐，龙年大吉！
+　　节目如有变化，以除夕当天直播为准。
+
+注：2012央视春节联欢晚会:【春晚特讯】近期赵本山带病坚持排练、积极备战春晚，因身体极度疲惫、状态欠佳，最终赵本山还是决定惜别2012年的春晚舞台，我们感到特别的遗憾。对于赵本山的全心投入和真诚付出，我们由衷感谢，期待赵本山早日康复，再登春晚舞台，继续为全国观众带来欢笑。
+--></_b>
+</_e>
+<_e><_d>2012013107</_d><_T>wordpress安全:处理垃圾评论(续2)-Trackback攻击</_T><_c>编程技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 什么是Trackback评论攻击</h2>
+现在的垃圾评论很多，<a href="http://dhblog.org">我的博客</a>深受其害，前面有好几篇文章介绍怎么对付垃圾评论：
+<a href="http://dhblog.org/44.html">wordpress安全:被垃圾评论搞的很烦</a>
+<a href="http://dhblog.org/43.html">wordpress安全:处理垃圾评论</a>
+<a href="http://dhblog.org/64.html">wordpress安全:处理垃圾评论(续)-前台管理评论</a>
+但是忽略了利用Trackback的垃圾评论，Spam 经常会通过 Trackback 这一漏洞，频繁发布 Trackback ，不仅不利于SEO，还会给博客的美观带来不雅，同时还增加了评论的数据库内容，增加数据库的负担。以下就是我的利用Trackback的垃圾评论的其中一条：
+<pre lang='php' line='1'>
+wordpress:文章的最后更新时间或修改时间 # 上的 Trackback
+electronic cigarettes
+there after but the consequences are devastating.... tobacco is a drug. if we ...
+驳回 | 回复 | 编辑 | 垃圾评论 | 回收站
+</pre>
+<h2>2 处理Trackback评论攻击</h2>
+<h3>2.1 willian kan 方法</h3>
+willian kan 有两个版本，记得要用功能多的版本哦，地址是：<a href="kan.willin.org/?p=1324">多樣變化的WP Anti Spam 小牆</a>，好像这个也无法对付Trackback攻击，用下面的办法会好点。
+<h3>2.2 需要中文的插件</h3>
+由于基本上这种评论都是英文的，所以使用some chinese please 插件效果很不错
+安装地址：<a href="http://wordpress.org/extend/plugins/some-chinese-please/">http://wordpress.org/extend/plugins/some-chinese-please/</a>
+<h3>2.3 禁用Trackback</h3>
+<strong>a. 禁用以后的文章的Trackback：</strong>
+你可以到 WordPress 后台 > 设置 > 评论设置 中，把 Allow link notifications from other blogs (pingbacks and trackbacks.) （允许接受来自其它 Blog 的链接通告（包括引用和通告） ）关闭，这一项取消。但是这样的设置只能关闭新日志的 Trackbacks 功能，那以前写的日志不是不能关闭了。
+<strong>b. 禁用以前文章的Trackback功能：</strong>
+a方法能使之后的文章没有后顾之忧，但如果你需要关闭以前日志的Trackbacks功能，就需要
+进入数据库，并运行：
+<pre lang='sql' line='1'>
+UPDATE wp_posts SET ping_status = ‘closed’;
+</pre>
+<h3>2.4 手动删除垃圾评论</h3>
+如果你不想安装上面的内容，又不想关闭Trackback功能，也可以在垃圾评论有的时候，手动删除即可。
+--></_b>
+</_e>
+<_e><_d>2012021307</_d><_T>wordpress:wordpress升级到3.3</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1 序言</h2>
+升级wordpress是个非常难搞的事情，，所以我的博客是能不升级就不升级，为什么呢？主要是：
+1. 涉及的事情太多,步骤太多。
+2. 因为主题是自己的wordpress的升级很少影响对访问者的界面，影响的是自己的后台。
+3. 不知道主题、插件是否支持新的主题。
+4. 有可能会丢失资料等。
+5. 原来的正对wp的程序本身的设置会失效。
+但是，我为什么要升级呢？主要是以下的原因：
+1. 版本太低了。才是3.0
+2. 百度搜索引擎对我的网站支持不好，看看换个版本是不是有新的变化。
+3. 试验新的事物，看看3.3是不是好用。
+4. 让主题适应最新的版本。
+下面详细说明一下过程，我的过程非常偏技术，这种做法比较繁琐，其实点击wp自带的自动升级就可以了。
+为什么要这样做呢，因为我希望对wp弄的比较懂。这个艰苦而冗长的过程，记录一下过程，以便不会忘记。
+
+<h2>2 备份</h2>
+<h3>2.1 备份数据库</h3>
+备份数据库很简单，大家可以参考文章，这个也是为了以防万一。如果有每日备份的，可以选择不备份。
+<h3>2.2 备份WP目录</h3>
+这个备份比较重要，如果觉得不需要备份整个目录的话，需要备份两个：
+1.需要备份\wp-content\uploads里面的东西。这个是你上传东西的目录。如果你设置的其他的上次目录，需要备份那个目录。
+2.需要记录原来的数据库的链接信息，在一下的数据库重新设置中会使用，文件wp-config.php很重要。
+<h3>2.3 备份主题</h3>
+主题一般有备份的，但是主题的设置也要备份哦。
+有些主题的设置，比如设置的：
+1.特别是流量监控代码的设置
+2.google、百度等的广告设置
+3.无觅文章
+4.JiraThis等
+等等
+<h3>2.4 备份插件</h3>
+插件都有下载，一般不需要背包，但是需要记住了安装了哪些插件，便于以后能安装回来。还需要备份插件的设置。
+<h2>3 删除</h2>
+<h3>3.1 删除插件</h3>
+如果不删除，新的wordpress可能会出错，给后来安装插件造成影响。
+<h3>3.2 删除主题</h3>
+如果不删除，新的wordpress可能会出错，给后来安装主题造成影响。
+<h3>3.3 删除文件</h3>
+就是删除原来的wordpress的版本，需要换成新的版本，这个就是在服务器上面删除这个文件夹就可以了
+<h2>4 部署</h2>
+<h3>4.1 部署新WP</h3>
+拷贝压缩包上去，然后解压即可。
+<h3>4.2 设置数据库</h3>
+数据库的设置是需要http://dhblog.org/wp_admin，安装要求，利用2.2中的备份的wp-config.php设置数据库连接信息。
+<h3>4.3 安装插件</h3>
+安装并启动插件，要注意，利用备份的插件选项恢复插件的设置
+<h3>4.4 安装主题</h3>
+安装并启动主题，要注意，利用备份的注意选项恢复主题的设置
+<h3>4.5 恢复upload</h3>
+打包备份\wp-content\uploads里面的东西，上传到服务器，解压即可。
+<h3>4.6 固定链接</h3>
+不知什么原因，对固定链接的设置需要到设置页面保存一下才能生效。
+<h3>4.7 上传网站设置</h3>
+对已经删除的.htaccess robots.txt需要重新上传。当然，其他有什么设置的话，也要上传一下。
+<h2>5 等待</h2>
+等待
+1. 百度的收录会不会有什么变化
+2. 主题在3.3下面会不会有什么bug
+3. 博友的反应。。。
+--></_b>
+</_e>
+<_e><_d>2012022007</_d><_T>wordpress ajax之七:随机动态显示名言</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>1. 序言</h2>
+对于如何使用ajax写主题请参考：
+1. <a href="http://dhblog.org/9.html" target="_blank">wordpress ajax之一:一个简单的例子</a>
+2. <a href="http://dhblog.org/46.html" title="wordpress ajax之二:首页ajax分页" target="_blank">wordpress ajax之二:首页ajax分页</a>
+3. <a href="http://dhblog.org/47.html" title="wordpress ajax之三:评论ajax分页" target="_blank">wordpress ajax之三:评论ajax分页</a>
+4. <a href="http://dhblog.org/48.html" title="wordpress ajax之四:archive页面ajax分页" target="_blank">wordpress ajax之四:archive页面ajax分页</a>
+5. <a href="http://dhblog.org/49.html" title="wordpress ajax之五:最近评论ajax分页" target="_blank">wordpress ajax之五:最近评论ajax分页</a>
+6. <a href="http://dhblog.org/57.html" title="wordpress ajax之六:评论表情动态加载" target="_blank">wordpress ajax之六:评论表情动态加载</a>
+这里再弄一个有趣的实例：动态的名言显示，点击显示下一个名言。
+效果如本博客，可以看到在博客的右上部分有名言的显示，点击，等一会儿就可以看到下一个随机名言。
+<h2>2. 需要的元素</h2>
+和上篇讲到的一样，元素包括：
+1. jquery.js，下载地址为:http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js
+2. 定义的js文件，规定请求的动作，和接受数据之后的动作 dh_say_ajax.js
+3. 定义点击评论框的操作dh_say_ajax.php
+4. 放名言的页面 header.php
+<h2>3. 元素的位置</h2>
+1. jquery.js在header.php中包含,结算比较好的加载方法
+<pre lang="php">
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/functions/jquery.min.js">\x3C/script>')</script>
+</pre>
+注意
+<pre lang="php">
+ <?php bloginfo('template_directory'); ?>/functions/jquery.min.js 
+</pre>
+是自己的路径，注意填写自己的路径哦。
+2. 把自己定义的js保存为 dh_say_ajax.js,同样在header.php中包含
+<pre lang="php">
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/dh_say_ajax.js"></script>
+</pre>
+3. 定义点击评论框的操作dh_say_ajax.php
+放在主题下面即可，我是放在自己建立的functions/目录下
+4. header.php里面写入调用代码
+<h2>4. dh_say_ajax.js</h2>
+将一下保存为dh_say_ajax.js文件
+<pre lang="js" line="1">
+var dh_say_click='#dh_say';
+var dh_say_content='#dh_say_content';
+$(document).ready(function dh_say_ajax(){
+	$(dh_say_click).click(function() {
+		var z = $(this).attr("href");
+		$.ajax({
+			url: "",
+			type:"POST",
+			data:"action=dh_say_ajax",
+			beforeSend:function()
+			{
+				document.body.style.cursor = 'wait';	
+				//$(dh_say_content).html('<a>载入中...</a>');
+				//$("#dh_say").animate({right:"300px"});
+				//$("#dh_say").hide('slow');
+				$("#dh_say").fadeTo("slow",0.00);
+			},
+			error: function(request) 
+			{
+				alert(request.responseText);
+			},			
+			success: function (data)
+			{
+				//$(dh_say_content).hide('slow');
+				//alert(data);
+				$("#dh_say").html(data);
+				$("#dh_say").fadeTo("slow",1);
+				document.body.style.cursor = 'auto';
+				//dh_say_ajax();//翻页后DOM变化了,需要重新绑定函数
+				//$(dh_say_content).show('fast');
+			}
+		});
+		return false;
+		});
+})
+</pre>
+js需要根据自己的网页中的css元素变化的哦。
+<h2>5. dh_say_ajax.php</h2>
+下面的代码保存为 dh_say_ajax.php文件，需要在functions.php中需要引用这个文件
+<pre lang="php" line="1">
+<?php
+/*****************************************************
+ 函数名称：dh_say_ajax_action_do
+ 函数作用：动态加载随机名人名言
+ 函数作者：DH
+ 作者地址：http://dhblog.org
+******************************************************/
+
+function dh_say_ajax_action_do(){
+	if( isset($_POST['action'])&& $_POST['action'] == 'dh_say_ajax'){
+		echo dh_say();
+		die();
+	}else{
+		return;
+	}
+}
+add_action('template_redirect', 'dh_say_ajax_action_do');
+
+function dh_say(){
+	$words = explode("\n",stripslashes(get_theme_mod('dh_say_content')));
+	$word = $words[ mt_rand(0, count($words) - 1) ];
+	echo $word;
+}
+?>
+</pre>
+functions.php中的代码
+<pre lang="php" line="1">
+include("dh_say_ajax.php");
+</pre>
+<h2>6 header.php的引用</h2>
+这个看君的爱好选择放的位置，也可以不再header.php中。
+<pre lang="php" line="1">
+	<div id="dh_say_content" class="right" style="margin:4px 0 2px 0">
+		<p id="dh_say" title="点击可查看下一条"><?php dh_say();?></p>
+	</div>
+</pre>
+<h2>7 寄语</h2>
+希望大家成功
+--></_b>
+</_e>
+<_e><_d>2012022701</_d><_T>wordpress安全:处理垃圾评论(续3)-未经评论表格</_T><_c>编程技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1. 原因</h2>
+垃圾评论一直是我们独立博客主讨厌的，因为这个需要浪费很多的数据库空间，造成不必要的浪费，而且，这个就像脚气一样，很难根除，实属讨厌之极!下面有几个规则：
+规则1：如果你的博客可以留下垃圾评论, 那这个垃圾评论还会再來, 而且越来越多.不仅spam如此, 人肉AD也是如此。这样，即使屏蔽掉这个垃圾评论，也没有办法，因为它们仍然回来。
+规则2：大多数垃圾评论是经过 wp-comments-post.php 注入的。小墙在报垃圾评论的时候会报送这个：
+<a href="http://dhblog.org/wp-content/uploads/2012/02/lajipinglu.jpg"><img src="http://dhblog.org/wp-content/uploads/2012/02/lajipinglu.jpg" alt="" title="lajipinglu" width="606" height="271" class="aligncenter size-full wp-image-101" /></a>
+根据这些规则，看来必须屏蔽wp-comments-post.php是比较好的选择，让这些垃圾留言没有切入点。
+<h2>2. 解决方法1</h2>
+这个方法比较单纯，在没有使用任何其他评论提交方法的情况下，比较适用。
+操作手法：<a href="http://linhun.com/1290.html" target="_blank">修改wp-comments-post.php来防垃圾评论的方法</a>
+<h2>3. 解决方法2</h2>
+我使用的 Ajax comments 评论提交方法，这个比较简单了，不需要wp-comments-post.php提交评论，所以只要去除wp-comments-post.php即可。
+操作手法：进入wordpress的目录，手动将wp-comments-post.php改名字即可
+<h2>4. 升级探讨</h2>
+在3的方法中，使用了
+<h3>4.1 修改一个</h3>
+如果使用 Ajax comments, 可以将 comments-ajax.php 修改为 my-comments.php, 然后在 comments-ajaxjs 头部的ajax_php_url = js_url.replace('-ajax.js','-ajax.php'),
+也改成
+ajax_php_url = js_url.replace('comments-ajax.js','my-comments.php'),
+上面的 my-comments.php 只是举例, 你也可以改成 abc.php 或 xyz.php 反正你看得懂就行.
+<h3>4.2 修改两个</h3>
+4.1的修改会造成comments-ajax的两个文件不一样，我们也可以修改comments-ajax的文件名为同一个名字。这时候需要在4.2的基础上修改：
+1. 将comments-ajax.js 更名为 my-comments-ajax.js
+2. 将header.php中调用comments-ajax.js的地方修改为调用my-comments-ajax.js
+3. 在my-comments-ajax.js内部，将comments-ajax.js 修改 my-comments-ajax.js，位置在第九行左右
+
+<h2>5. 结果</h2>
+果然，小墙不会报wp-comments-post.php注入的垃圾评论了。
+--></_b>
+</_e>
+<_e><_d>2012030507</_d><_T>wordpress ajax之七:随机动态显示名言(续)</_T><_c>编程技术</_c><_t>wordpress</_t><_t>ajax</_t><_a>DH</_a>
+<_b><!--
+<h2>就是序言</h2>
+由于是随机动态显示，很难看到所有的名言，这里把这些都贴出来，
+一来看看这些陶冶情操。
+二来我也可以发发文章。
+<h2>核心内容</h2>
+民主制度的特点是公开性，专制制度的特点是神秘性。
+快乐，不在繁华热闹中，而在内心宁静里。
+穷则独善其身，富则妻妾成群。
+政治人物都是为了国家，不同的是，有人为国，有人为家。
+自己选择的路跪着也要走完。
+自己不勇敢就没人替你坚强。
+宁愿跑起来被绊倒无数次，也不愿规规矩矩走一辈子。
+久利之事勿为，众争之地勿往。
+食能止饥，饮能止渴，畏能止祸，足能止贪。
+好便宜不可与共财，狐疑者不可与共事。
+快乐与贫富无关，与内心相连。
+忍辱负重，顺其自然。
+贱不谋贵，外不谋内，疏不谋亲。
+君子与小人斗，小人必胜。
+在有些政治体制下，敢于承认错误能得分。有些政治体制下，承认错误就要下台。
+我们可以爱一个人爱到不要命，但是我们绝不能爱一个人爱到不要脸。
+--></_b>
+</_e>
+<_e><_d>2012042607</_d><_T>经验总结:没有备案，成功加入百度联盟</_T><_c>网站盈利</_c><_t>经验分享</_t><_t>联盟</_t><_a>DH</_a>
+<_b><!--
+*，您好：   
+         恭喜您成功注册为百度联盟会员。您可以使用以下业务或服务：   
+         网盟推广合作 在页面上投放与内容相关的百度网盟推广合作业务，将流量转化为点击收入。
+　　      新业务合作 加入百度联盟新业务合作业务，分享更多产品为您带来的收入。　　   
+         请访问http://union.baidu.com，使用您注册时的ID和密码登录到自己的帐户。
+--></_b>
+</_e>
+<_e><_d>2012050313</_d><_T>经验总结:没有备案，成功加入百度联盟(2)</_T><_c>网站盈利</_c><_t>经验分享</_t><_t>联盟</_t><_a>DH</_a>
+<_b><!--
+<h2>道歉</h2>
+前面一篇文章是 <a href="http://dhblog.org/105.html" title="经验总结:没有备案，成功加入百度联盟">《经验总结:没有备案，成功加入百度联盟》</a>，只写了成功了，但是没有写问什么能加入，不是为了钓大家的胃口，是因为比较忙，本来想写好再发表的，但是由于自动发布的原因，就这样稀里糊涂发布了一个没有写完的文章。
+<h2>经验</h2>
+经验不是填写假的备案号，这样会被惩罚的。
+经验是写你的真实现状：我的域名是国外的，空间也是国外的，无法申请备案号，但是希望能加入百度联盟。
+<a href="http://dhblog.org/wp-content/uploads/2012/05/baiduuoin.png"><img src="http://dhblog.org/wp-content/uploads/2012/05/baiduuoin.png" alt="" title="baiduuoin" width="525" height="120" class="aligncenter size-full wp-image-108" /></a>
+经验还有：你的网站的建站时间、访问量、百度收录量、网站的风格、网站的主题等可能在百度联盟的工作人员眼里有一个标准，这也可能决定能否让你通过的一个指标。希望大家运气好，能通过！
+我这样写了之后，通过之后百度联盟的工作人员还给我打了电话，通知我已经通过了。
+<h2>加油</h2>
+希望大家按照我的方法，能够成功！
+--></_b>
+</_e>
+<_e><_d>2012052307</_d><_T>wordpress:wordpress博客我面临的两个问题</_T><_c>建站技术</_c><_t>wordpress</_t><_a>DH</_a>
+<_b><!--
+<h2>1. 速度</h2>
+这个问题很多博主都提过了，wordpress功能越来越多的同时，带来的问题就是臃肿，随着插件和主题的增加，还有文章数据的增多，特别是评论数目的增多，不得不提的就是速度变慢了。
+
+<h2>2. 安全</h2>
+这个问题很多博主都提过了，wordpress使用者越来越多的同时，带来的问题就是安全，因为很多人关注，很多别有用心的人也在关注，所以我的邮件几乎天天收到“你的博客空间登录错误警告”的邮件，这个虽然他们暴力破解的几率很低，但是天天看到这么多邮件，实在令人心烦！同时也警告这些乱试密码的人，不要这样，这样不好！
+
+<h2>3. 解决方案</h2>
+这两个问题花了我很长时间去解决，虽然没有彻底解决，但是也有几种折中的方案，也在寻找各种方案，等我成功了，给大家分享。
+--></_b>
+</_e>
+<_e><_d>2012112007</_d><_T>经验总结:建一个网站，需要懂得很多(不断更新中...)</_T><_c>建站技术</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+<h2>1. 建站技术</h2>
+1.1 购买域名</br>
+godday、万网、美橙、空间商提供的 需要50元/年</br>
+1.2 购买空间</br>
+blogbus、godday、vps、ramhost、sina app、阿里云等 100元/年 -> 50元/月 -> ？</br>
+1.3 备案</br>
+国外空间商无需备案、国内空间商需要，这个就是麻烦、太麻烦</br>
+<h2>2. 建站程序</h2>
+2.1 建站语言</br>
+需要懂得 css、javascript、php/asp/jsp、html布局、数据库SQL语言</br>
+2.2 建站程序</br>
+wordpress、zblog、dizcuss、wiki等根据自己的需要有免费的、有收费的</br>
+2.3 辅助程序</br>
+dreamweam、editplus、notepad++、js调试器、css调试、浏览器、程序加载检测器、gimp、photoshop、素材设计</br>
+2.4 第三方应用</br>
+统计：51啦、百度统计、站长统计。</br>
+分享：百度分享、JiaThis、bshare。</br>
+评论：多说、评论啦、友言</br>
+插件：天气插件、微博插件、无觅相关文章推荐</br>
+<h2>3. 网站优化</h2>
+3.1 页面美工</br>
+专业啊，这个需要有细胞的，主要就是图片、css、flash等</br>
+3.2 访问速度</br>
+精简css和javascript、减少数据库访问、减少图片的数量大小、选择好的网速、好的主机等</br>
+<h2>4. 推广SEO</h2>
+4.1 搜索引擎</br>
+百度竞价排名、google推广、提高搜索引擎收录量、提高搜索排名、提高PR值、提高alex排名、交换友情链接、做链接联盟。</br>
+4.2 分享</br>
+方法：无觅分享、Jiathis、百度分享</br>
+4.3 统计分析</br>
+google分析、百度分析、51.la、淘宝分析</br>
+4.4 抓住读者</br>
+写文章、做线下活动、推广文章、合适读者口味文章;更新周期合适；主题合适</br>
+4.5 博客圈子</br>
+关注论坛：28推、wordpres.org.cn、站长论坛</br>
+关注名博：卢松松、willian</br>
+关注同类博客：google订阅、抓虾订阅，九点订阅、freebrun订阅。</br>
+互动：博客留言、论坛留言、参加活动
+<h2>5. 网站盈利</h2>
+广告联盟(淘宝阿里妈妈、google adsence、拿福能、博客联盟、百度联盟)</br>
+返佣（cps返佣、淘宝客返佣）</br>
+用户主动广告</br>
+搜索收入（百度、google）</br>
+阿里云推广</br>
+pr值赚钱等</br>
+
+不断
+--></_b>
+</_e>
+<_e><_d>2013011607</_d><_T>经验总结:PR值终于熬到3了</_T><_c>网络推广</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+<h2>1. PR的追求</h2>
+时间太有限，我的博客没有在pr上面太多的关注，知识寻找一些志同道合的博友链接一下，偶尔在wordoress.org.cn上面贴贴我的文章，但是这样对pr值的贡献太小了，所以pr值一直很低。
+<h2>2. 技术的追求</h2>
+纯粹技术的追求是没有止境的，而且是孤单的，所以很少有人会知道你，没有推广，很少有人知道你博客的存在，我的博客上的技术文章基本上是我尝试过之后才发出来的，里面我的经验和分享，但是我知道，这样没有前途。可是，我依然会做下去。。。。
+<a href="http://dhblog.org/wp-content/uploads/2011/11/PR.jpg"><img src="http://dhblog.org/wp-content/uploads/2011/11/PR.jpg" alt="" title="PR" width="249" height="300" class="aligncenter size-full wp-image-75" /></a>
+<h2>3. 我的办法</h2>
+我的办法就是一个字： 熬！
+<h2>4. PR历史</h2>
+2011-11-08 3
+2011-08-07 2
+2011-08-06 0
+2011-06-28 2
+2011-04-11 0
+--></_b>
+</_e>
+<_e><_d>2015111407</_d><_T>经验总结:我的推广方法</_T><_c>网络推广</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+1. 评论推广
+
+2. 导航推广
+   页面导航、程序导航、权威网站导航 
+
+3. 搜索引擎优化
+   发文频率
+   使用其的工具：统计、站长帮助等
+   des title
+   css的规则话的网页
+   选择好的主题
+
+4. 软文推广
+
+4.1 论坛推广
+
+4.2 无觅文章推广
+
+4.3 JiaThis社交化网络推广
+  微博、校内、开心、googlereader、豆瓣等
+--></_b>
+</_e>
+<_e><_d>2015112107</_d><_T>经验总结:寻找博客的方法</_T><_c>网络推广</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+博客来源：
+
+导航系列：
+
+卢松松的博客大全
+genrenboke
+知蚁站长助手的博客
+流氓兔
+的个人博客页面
+http://blog.zbole.com/
+http://www.blogdq.com/
+
+
+
+博客的留言者
+
+wordpress论坛 新手上路
+
+
+博客访问方法：
+1. googlereader
+2. 知蚁站长助手的更新
+3. 不断巡检
+--></_b>
+</_e>
+<_e><_d>2015120507</_d><_T>经验总结:我的文章的发表频率</_T><_c>网络推广</_c><_t>经验分享</_t><_a>DH</_a>
+<_b><!--
+<h2>缘起</h2>
+很多做seo的人总会
+<h2></h2>
+<h2></h2>
+<h2></h2>
+--></_b>
+</_e>

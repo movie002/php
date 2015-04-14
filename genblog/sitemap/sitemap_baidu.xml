@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document xmlns:bbs="http://www.baidu.com/search/bbs_sitemap.xsd">
+<!-- generated-on="%lastdate%" -->
+<webSite>http://dhblog.org</webSite>
+<webMaster>x@mail.com</webMaster>
+<updatePeri>48</updatePeri>
+<updatetime>%lastdate%</updatetime>
+<version>dhblog.org</version>%sitemaps%
+</document>

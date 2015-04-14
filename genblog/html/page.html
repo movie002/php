@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>%title%-%name%</title>
+	<link rel='canonical' href='%titleurl%'/>
+	<meta name="keywords" content="%keywords%,%name%,%cat%%tags_key%"/>
+	<meta name="description" content="%keywords%的详细页面信息,作者是%name%,分类是%cat%%tags_key%" />
+	%meta%
+</head>
+<body>
+<div id="wrapper">
+	%head%
+	<div id="content">
+		<div class="browse">你的位置：<a href="%home%">首页</a> >>  <a href="%caturl%" title="查看分类 %cat% 下的所有文章">%cat%</a> >> %title% </div>
+		<div class="entry">
+			<h1>%title%</h1>
+			<div style="height:35px">%metas%</div>
+			<div style="height:40px">
+				<!-- Baidu Button BEGIN -->
+				<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享">一键分享</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧">百度贴吧</a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">豆瓣网</a><a href="#" class="bds_hi" data-cmd="hi" title="分享到百度空间">百度空间</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a></div>
+				<!-- Baidu Button END -->
+			</div>
+			<div>
+			%entry%
+			</br></br>除非注明，文章均为<a href="%home%">%name%</a>原创，转载请注明出处：<a href="%titleurl%">%title%-%name%</a>
+			</div>
+			<div style="border-top:1px solid #bbb;margin-top:10px;padding:10px 0 0 0">
+				相关文章：</br>
+				%xiangguan%
+			</div>
+		</div>
+		<div style="height:30px"> <a href="#top" style="float:right"> ∧回到顶部∧ </a></div>
+		<div id="comment">
+			<!-- Duoshuo Comment BEGIN -->
+			<div class="ds-thread" data-thread-key="%id%" data-title="%title%"></div>
+			<!-- Duoshuo Comment END -->		
+		</div>		
+	</div>
+	<div id="sidebar">
+		%side%
+	</div>
+	<!--end: sidebar-->
+	<div id="footer">
+	%foot%
+	</div>
+	<!--end: bottom-->
+</div>
+<!--end: wrapper-->
+<script type="text/javascript">
+%page.js%
+%footjs%
+var duoshuoQuery = {short_name:"dhblog"};
+</script>
+</body>
+</html>

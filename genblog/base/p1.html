@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>%title%(DH博客)</title>
+	<meta name="keywords" content="wordpress主题:增加帅哥认证标识" />
+	<meta name="description" content="DH博客,wordpress主题:增加帅哥认证标识,静态页面" />
+	%meta%
+</head>
+<body>
+<div id="wrapper">
+%head%
+<div id="content">
+	<div class="browse">你的位置：首页 >>  <a href="http://127.0.0.1/dhblog/static/cat125.html" title="查看分类wordpress下的所有文章">wordpress</a> </div>
+	<div class="entry">
+		<h1>wordpress主题:增加帅哥认证标识</h1>
+		<div class="postmeta">发表时间: 2011-07-15 06:00:46| 标签: <a href="http://127.0.0.1/dhblog/static/tag133.html" title="查看标签wordpress应用下的所有文章">wordpress应用</a> </div>
+		<div id="article-index">
+					<div id="index-title"><span id="the-index-title">正文索引</span><span id="show-index">[ 隐藏 ]</span></div>
+					<div id="index-ul"><ul><li class="level2"><a href="#title-0" title="1 起源">1 起源</a></li>
+<li class="level2"><a href="#title-1" title="2 方法">2 方法</a></li>
+<li class="level2"><a href="#title-2" title="3 帅哥评选原则">3 帅哥评选原则</a></li>
+<li class="level2"><a href="#title-3" title="4 效果图">4 效果图</a></li>
+</ul></div></div><p>ddd</p><h2 id="title-0">1 起源</h2>
+<p>首先感谢自说me话：<a href="http://isayme.com/2011/06/handsome-in-my-blog/">http://isayme.com/2011/06/handsome-in-my-blog/</a><br />
+这篇文章讲了它弄了个帅哥认证，虽然我没有被评为帅哥，但是这不妨碍我学习并定义我这里的帅哥。</p>
+<h2 id="title-1">2 方法</h2>
+<p>方法很简单,在functions.php中添加如下语句</p>
+<pre lang="php">
+function comment_g_title($email = '')
+{
+	if(empty($email))return;
+	$handsome=array(
+	'1'=>'aa@bb.com',
+	'2'=>'cc@dd.com');
+
+	$adminEmail = get_option('admin_email');
+	if($email==$adminEmail)
+	echo "
+<div class='admin' title='博主'>博主</div>
+
+";
+	elseif(in_array($email,$handsome))
+	echo "
+<div class='handsome' title='帅哥'>帅哥</div>
+
+";
+}
+</pre>
+<p>aa@bb.com 为需要添加帅哥的人的邮件。另外需要在评论的显示评论者名字的地方加上一句</p>
+<pre lang="php">
+<?php comment_g_title($comment->comment_author_email); ?>
+</pre>
+<h2 id="title-2">3 帅哥评选原则</h2>
+<p>在我这里评论不小于10条的为帅哥，iSayMe虽然只有9个，但是用了他的东西，所以给他例外。<br />
+这里给出评选的SQL语句：</p>
+<pre lang="sql">
+SELECT comment_author, comment_author_email, COUNT( * )
+FROM `wp_comments`
+where comment_approved = '1'
+GROUP BY comment_author
+ORDER BY COUNT( * ) DESC
+LIMIT 0 , 30
+</pre>
+<p>SQL语句执行结果图：<br />
+<a href="http://dhblog.org/wp-content/uploads/2011/08/handsome1.png"><img src="http://dhblog.org/wp-content/uploads/2011/08/handsome1.png" alt="" title="handsome" width="372" height="443" class="aligncenter size-full wp-image-941" /></a><br />
+很激动 松哥在我这里的留言超过10条了。</p>
+<h2 id="title-3">4 效果图</h2>
+<p>以iSayMe为例：<br />
+<a href="http://dhblog.org/wp-content/uploads/2011/08/handsome2.png"><img src="http://dhblog.org/wp-content/uploads/2011/08/handsome2.png" alt="" title="handsome2" width="632" height="359" class="aligncenter size-full wp-image-942" /></a></p>
+
+		<!-- UY BEGIN -->
+		<div class='nav-below'><div class='nav-previous'></div><div class='nav-next'><a href="p2.html" title="博客总结(2011年上半年总结篇)">博客总结(2011年上半年总结篇) ►</a></div></div>
+	</div>
+	<div id="uyan_frame"></div>
+	<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1520887" async=""></script>
+	<!-- UY END -->
+	<!-- PingLun.La Begin -->
+	<div id="pinglunla_here"></div><a href="http://www.pinglunla.com/" id="logo-pinglunla">评论啦</a><script type="text/javascript" src="http://s2.pinglun.la/md/pinglun.la.js" charset="utf-8"></script>
+	<!-- PingLun.La End -->	
+</div>
+<div id="sidebar">
+
+  <div class="singlewidget">
+    <h3>
+      %DH_side_single1%
+    </h3>
+    <div class="box">
+      <ul>%DH_side_single1_content%</ul>
+    </div>
+  </div>
+ 
+  <div class="singlewidget">
+    <h3>
+      最热文章
+    </h3>
+    <div class="box">
+      <ul><li><span class="title"><span class="smaller">►</span> <a href='http://127.0.0.1/dhblog/25.html' title='wordpress安全:登录邮件提醒(防止攻击)'>wordpress安全:登录邮件提醒(防止攻击)</a></span>&nbsp; <span class="right_count"> 5,113 </span></li><li><span class="title"><span class="smaller">►</span> <a href='http://127.0.0.1/dhblog/40.html' title='wordpress提高速度之五:主题中数据库定时优化(访问触发篇)'>wordpress提高速度之五:主题中数据库定时优化(访问触发篇)</a></span>&nbsp; <span class="right_count"> 5,066 </span></li><li><span class="title"><span class="smaller">►</span> <a href='http://127.0.0.1/dhblog/26.html' title='域名申请攻略(以godaddy+支付宝为例)'>域名申请攻略(以godaddy+支付宝为例)</a></span>&nbsp; <span class="right_count"> 5,059 </span></li><li><span class="title"><span class="smaller">►</span> <a href='http://127.0.0.1/dhblog/10.html' title='2011大片全预告'>2011大片全预告</a></span>&nbsp; <span class="right_count"> 4,764 </span></li><li><span class="title"><span class="smaller">►</span> <a href='http://127.0.0.1/dhblog/14.html' title='修改css中加入float之后夫div不能自适应问题'>修改css中加入float之后夫div不能自适应问题</a></span>&nbsp; <span class="right_count"> 4,032 </span></li></ul>
+    </div>
+  </div>
+  <div class="doublewidget">
+    <h3>
+      统计信息
+    </h3>
+    <div class="box">
+      <ul><ul><li>运行时间: <span style="font-size:12px;color:#555;">569天</span></li><li>最近更新: <span style="font-size:12px;color:#555;">05-21</span></li><li>日志总数: <span style="font-size:12px;color:#555;">65篇</span></li><li>标签总数: <span style="font-size:12px;color:#555;">18个</span></li><li>分类总数: <span style="font-size:12px;color:#555;">18个</span></li></ul></ul>
+    </div>
+  </div>
+  <div class="tag_widget">
+	<h3>
+		标签
+	</h3>
+    <div class="tag_widget_box">
+      <a href="http://127.0.0.1/dhblog/static/tag130.html" title="共有文章2篇">wordpress 定时任务</a><a href="http://127.0.0.1/dhblog/static/tag131.html" title="共有文章7篇">wordpress安全</a><a href="http://127.0.0.1/dhblog/static/tag123.html" title="共有文章3篇">javascript</a><a href="http://127.0.0.1/dhblog/static/tag132.html" title="共有文章6篇">wordpress提高速度</a><a href="http://127.0.0.1/dhblog/static/tag133.html" title="共有文章4篇">wordpress应用</a><a href="http://127.0.0.1/dhblog/static/tag134.html" title="共有文章3篇">IT求职知识</a><a href="http://127.0.0.1/dhblog/static/tag135.html" title="共有文章5篇">wordpress定时任务</a><a href="http://127.0.0.1/dhblog/static/tag136.html" title="共有文章2篇">经验总结</a><a href="http://127.0.0.1/dhblog/static/tag137.html" title="共有文章5篇">友情推荐</a><a href="http://127.0.0.1/dhblog/static/tag138.html" title="共有文章1篇">域名空间</a><a href="http://127.0.0.1/dhblog/static/tag139.html" title="共有文章2篇">拿福能</a><a href="http://127.0.0.1/dhblog/static/tag140.html" title="共有文章7篇">wordpress主题</a><a href="http://127.0.0.1/dhblog/static/tag141.html" title="共有文章6篇">wordpress ajax</a><a href="http://127.0.0.1/dhblog/static/tag143.html" title="共有文章1篇">wordpress数据库</a><a href="http://127.0.0.1/dhblog/static/tag145.html" title="共有文章3篇">迅雷下载</a><a href="http://127.0.0.1/dhblog/static/tag147.html" title="共有文章1篇">BT下载</a><a href="http://127.0.0.1/dhblog/static/tag148.html" title="共有文章1篇">数据库</a><a href="http://127.0.0.1/dhblog/static/tag149.html" title="共有文章1篇">网络赚钱</a>
+    </div>
+  </div>   
+</div>
+<!--end: sidebar-->
+<div id="bottom">
+%foot%
+</div>
+<!--end: bottom-->
+</div>
+<!--end: wrapper-->
+</body>
+</html>
