@@ -20,8 +20,8 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	$DH_input_html  = $DH_html_path . 'page_inner_navi.html';
 	$innerpage = dh_file_get_contents($DH_input_html);
 	
-	$linkstop1 = '<div class="listall"><div class="listlink">&nbsp;&nbsp;清晰度 资源地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></div>';	
-	$linkstop2 = '<div class="listall"><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;资源地址</div><div class="rt0v5">来源网站 更新时间</div></div>';
+	$linkstop1 = '<div class="listall bbli1 bc_f" style="margin-top:5px"><li><div class="listlink">&nbsp;&nbsp;清晰度 资源地址</div><div class="rt0v5">来源网站 资源类型 更新时间</div></li></div>';	
+	$linkstop2 = '<div class="listall bbli1 bc_f" style="margin-top:5px"><li><div class="listnum"></div> <div class="listlink">&nbsp;&nbsp;&nbsp;资源地址</div><div class="rt0v5">来源网站 更新时间</div></li></div>';
     	$searchcat='';	
 	$reslinks=dh_mysql_query($sql);	
 	while($rowlinks = mysql_fetch_array($reslinks))
@@ -561,7 +561,7 @@ function getcele($patten,&$celeimg,&$celes,$meta,$title)
 
 function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
 {
-	$tmplinks='<div id="'.$id.'" class="listall bbli1">'.$content.'</div>';
+	$tmplinks='<div id="'.$id.'" class="listall bbli1 bc_f">'.$content.'</div>';
     if($num0 != 0)
     {
 	    $tmplinks=$linktop.$tmplinks;

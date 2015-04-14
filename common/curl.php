@@ -29,7 +29,7 @@ function get_file_curl($url)
 	//超时时间为10秒钟
 	$timeout = 30;
 	
-//	curl_setopt($ch, CURLOPT_PROXY,"http://172.28.89.1:8080");	
+	curl_setopt($ch, CURLOPT_PROXY,"http://172.28.89.1:8080");	
 	//爬取网站时需要的cookie
 	//$cookie_jar = tempnam('./tmp','JSESSIONID');
 //	$cookie_jar = $_SERVER['DOCUMENT_ROOT'].'/cookie.jar';

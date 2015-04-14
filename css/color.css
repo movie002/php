@@ -20,7 +20,7 @@ a:hover { color:#F60; }
 .lqc6 { color:#000 }
 
 .c_a { color:#000}
-.c_top,.c_aa a, .c_aa a:link, .c_aa a:visited, .c_aa a:hover, .c_aa a:active{ color: #ddd; }
+.c_top, .c_aa a, .c_aa a:link, .c_aa a:visited, .c_aa a:hover, .c_aa a:active{ color: #ddd; }
 .c_b{ color: #576d74}
 
 .bc_a { border-color:#ddd }
@@ -28,10 +28,15 @@ a:hover { color:#F60; }
 .bc_c { border-color:#576d74 }
 .bc_d { border-color:#3377aa }
 .bc_e { border-color:#bbb }
-.bc_hover:hover { border-color:#576d74 }
+.bc_f  li{ border-color:#bbb }
+.bc_t { border-color:transparent }
+
+.bc_hover {border:1px solid transparent;border-bottom:1px solid #ccc}
+.bc_hover:hover { border:1px solid #576d74 }
 
 .bg_a { background:#8f8f8f }
 .bg_m { background:#eeeeee }
+.bg_h { background:#ADD8E6 }
 .bg_top { background: #576d74 }
 a.bg_top:hover { background: #374d54 }
 .TabTitle .active { background:#52686f; color:#fff }
