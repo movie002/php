@@ -7,7 +7,7 @@ require("../../common/dbaction.php");
 require("news.mtime.com.php");
 require("www.mtime.com.review.php");
 require("www.mtime.com.trailer.php");
-require("www.hunantv.com.php");
+//require("www.hunantv.com.php");
 require("ent.ifeng.com.php");
 require("ent.163.com.php");
 require("ent.sina.com.cn.review.php");
@@ -31,7 +31,7 @@ if(isset($_REQUEST['id']))
 if($id==0||$id==1){echo "id: 1   ";news_mtime_com_php();}
 if($id==0||$id==2){echo "id: 2   ";www_mtime_com_review_php();}
 if($id==0||$id==3){echo "id: 3   ";www_mtime_com_trailer_php();}
-if($id==0||$id==4){echo "id: 4   ";www_hunantv_com_php();}
+//if($id==0||$id==4){echo "id: 4   ";www_hunantv_com_php();}
 if($id==0||$id==5){echo "id: 5   ";ent_ifeng_com_php();}
 if($id==0||$id==6){echo "id: 6   ";ent_163_com_php();}
 if($id==0||$id==7){echo "id: 7   ";ent_sina_com_cn_review_php();}
