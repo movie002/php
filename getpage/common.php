@@ -59,7 +59,7 @@ function testneed($need,$link,$title,$cat)
 	{
 		foreach ($match[1] as $contain)
 		{
-			list($case,$pat,$ret) = split('[%]', $contain);
+			list($case,$pat,$ret) = explode('[%]', $contain);
 			//echo $case.' ' .$pat.' '.$ret ." </br> \n";
 			$match1 = array();
 			switch ($case)
@@ -112,7 +112,7 @@ function testtitle($ctitle,$title)
 		foreach ($match[1] as $pattern)
 		{
 			//list($case,$pat) = split('[%]',$pattern);
-			list($case,$pat,$ret) = split('[%]',$pattern);
+			list($case,$pat,$ret) = explode('[%]',$pattern);
 			//echo $case.' ' .$pat ." </br> \n";
 			switch ($case)
 			{
