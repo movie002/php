@@ -33,10 +33,10 @@ function www_icili_com_php()
 			if(!$buff)
 				continue;				
 
-				echo "crawl ".$trueurl." </br>\n";
+			echo "crawl ".$trueurl." </br>\n";
 			//print_r($buff);
-			preg_match_all('/title="精华资源"><a href="(.*?)" title="(.*?)">(.*?)<\/a><\/h4>/s',$buff,$match0);				
-			preg_match_all('/<p>发布时间：(.*?) 更新时间：(.*?)<\/p>/s',$buff,$match1);	
+			preg_match_all('/<a href="(\/emule\/download\/[0-9]+)" title="(.*?)">(.*?)<\/a>/s',$buff,$match0);				
+			preg_match_all('/发布时间：([0-9\-\s\:]+)/s',$buff,$match1);	
 			//print_r($match0);
 			//print_r($match1);
 
@@ -51,7 +51,8 @@ function www_icili_com_php()
 			foreach ($match0[2] as $key2=>$div)			
 			{	
 				//$rssinfo->update =date("Y-m-d H:i:s",strtotime($match1[1][$key2].':00'));
-				$rssinfo->update = getrealtime($match1[1][$key2].':00');
+				$datestring = trim($match1[1][$key2]).':00';
+				$rssinfo->update = getrealtime($datestring);
 				if($rssinfo->update<$updatetime[$key])
 				{
 					///由于置顶和推荐导致时间小的放在前面，这里固定爬取2页,保证爬到

@@ -1,12 +1,12 @@
 <?php
-function www_mtime_com_review_php()
+function www_mtime_com_peoplereview_php()
 {
-	$authorname='时光网评论';
-	$authorurl='http://www.mtime.com/review';
+	$authorname='时光网特约评论';
+	$authorurl='http://www.mtime.com/review/column/';
 	print_r($authorname);
 
-	$url = array('http://www.mtime.com/top/blog/hot_24h/');
-	$urlcat= array('热体评论');	
+	$url = array('http://www.mtime.com/review/column/');
+	$urlcat= array('影评人专栏');	
 	print_r($url);
 	$updatetime = getupdatetime($urlcat,$authorname);
 	
@@ -32,11 +32,8 @@ function www_mtime_com_review_php()
 			$rssinfo->author = $authorname;
 			echo "crawl ".$trueurl." </br>\n";
 			//print_r($buff);	
-			preg_match_all('/<a class="[^\"]+" href="(http:\/\/i.mtime.com\/[^\"]+)" target="\_blank">(.*?)<\/a>/is',$buff,$match);	
-			preg_match_all('/<em class="mlr10">([0-9\s\-\:]+)<\/em>/is',$buff,$match1);	
+			preg_match_all('/<h2 class="px14"><a href="(.*?)" title=".*?" target="_blank">(.*?)<\/a><\/h2>		<div class="fix">	<span class="fr">(.*?)<\/span>	<span class="c_666">评<\/span><a href=".*?" title="(.*?)" target="_blank">.*?<\/a>.*?<\/div>/s',$buff,$match);
 			//print_r($match);
-			//print_r($match1);
-
 			if(empty($match[2]))
 			{
 				echo 'preg buff error no result!';
@@ -44,7 +41,15 @@ function www_mtime_com_review_php()
 			}
 			foreach ($match[2] as $key2=>$div)			
 			{
-				$strpubdate=$match1[1][$key2];
+				if($key==0)
+				{
+					$strpubdate=$match[3][$key2];					
+				}
+				else
+				{
+					$strpubdate=$match[5][$key2];
+				}	
+				$strpubdate=str_replace('：',':',$strpubdate);				
 				$rssinfo->update = getrealtime($strpubdate);			
 			
 				if($rssinfo->update<$updatetime[$key])
@@ -57,7 +62,7 @@ function www_mtime_com_review_php()
 				
 				$rssinfo->cat =trim($urlcat[$key]);
 				$rssinfo->link =$authorurl.trim($match[1][$key2]);
-				$rssinfo->title = $match[2][$key2];		
+				$rssinfo->title = $rssinfo->cat.'评《'.$match[4][$key2].'》:'.$match[2][$key2];
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
 			}

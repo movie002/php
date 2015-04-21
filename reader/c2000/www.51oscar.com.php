@@ -4,10 +4,11 @@ function www_51oscar_com_php()
 	$authorname='大众影评网';
 
 	print_r($authorname);
-	$authorurl='http://www.51oscar.com';
-	$url = array('http://news.51oscar.com/',
-				 'http://review.51oscar.com/');				
-	$urlcat= array('资讯','影评');
+	$authorurl='http://www.51oscar.com/';
+	$url = array('http://www.51oscar.com/news/movie/p/',
+	             'http://www.51oscar.com/news/tv/p/',
+                 'http://www.51oscar.com/review/table/p/');
+	$urlcat= array('电影资讯','电视资讯','影评');
 		
 	print_r($url);
 	//寻找各自的updatetime	
@@ -21,7 +22,7 @@ function www_51oscar_com_php()
 		{
 			sleep(2);
 			$i++;
-			$trueurl = $eachurl.'?&p='.$i;
+			$trueurl = $eachurl.$i.'.html';
 				
 			$buff = geturl($trueurl,$authorname);
 			//如果失败，就使用就标记失败次数
@@ -29,16 +30,9 @@ function www_51oscar_com_php()
 				break;
 
 			echo "crawl ".$trueurl." </br>\n";
-			//print_r($buff);
-			if($key==1)
-				preg_match_all('/<a href="\/detail\/([^>]+)"[^>]+title="([^>]+)">([^>]+)<\/a>/s',$buff,$match);
-			else
-				preg_match_all('/<a href="\/detail\/([^>]+) class="romance_title" +title="([^>]+)">([^>]+)<\/a>/s',$buff,$match);
-			preg_match_all('/<em style="margin-left:20px;">(.*?)<\/em><\/p>/s',$buff,$match1);
-			if(empty($match1[1]))
-			{
-				preg_match_all('/发表于：(.*?)<\/dd>/s',$buff,$match1);
-			}
+		//	print_r($buff);
+			preg_match_all('/<p class="t"><a href="([^>^\+^"]+)".*?>(.*?)<\/a><\/p>/si',$buff,$match);
+			preg_match_all('/<time>([0-9\-\s\:]+)<\/time>/s',$buff,$match1);
 			//print_r($match);
 			//print_r($match1);
 			
@@ -60,8 +54,8 @@ function www_51oscar_com_php()
 					continue;
 				}
 				$rssinfo->cat =trim($urlcat[$key]);
-				$rssinfo->link =$eachurl.'/detail/'.trim($match[1][$key2]);
-				$rssinfo->title = trim($match[3][$key2]);
+				$rssinfo->link =$authorurl.trim($match[1][$key2]);
+				$rssinfo->title = trim($match[2][$key2]);
 				//print_r($rssinfo);
 				insertonlylink($rssinfo);
 			}

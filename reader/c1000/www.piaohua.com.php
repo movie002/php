@@ -15,6 +15,7 @@ function www_piaohua_com_php()
 	
 	foreach ($url as $key=>$eachurl)
 	{
+        $trueurl = $eachurl;
 		$buff = geturl($trueurl,$authorname);
 		//如果失败，就使用就标记失败次数
 		if(!$buff)
