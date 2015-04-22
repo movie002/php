@@ -33,11 +33,11 @@ $dodate=date('Y-m-d 00:00:00',strtotime($row[0]));
 $todaydate=date('Y-m-d 00:00:00',time());
 echo 'dodate:'.$dodate."\n";
 echo 'todaydate:'.$todaydate."\n";
-#if($dodate>=$todaydate)
-#	return;
+if($dodate>=$todaydate)
+	return;
 	
 dh_gen_update(1);
-//dh_save(1);
+dh_save(1);
 
 //echo output_page_path(63);
 

@@ -12,10 +12,10 @@ function postmail($to,$sub,$zipfile,$body)
     $mail->SMTPDebug  = 1; // 启用SMTP调试功能 1 = errors and messages  2 = messages only
     $mail->SMTPAuth   = true;                  // 启用 SMTP 验证功能
     $mail->SMTPSecure = "ssl";                 // 安全协议
-    $mail->Host       = "smtp.gmail.com";      // SMTP 服务器
+    $mail->Host       = "smtp.zoho.com";      // SMTP 服务器
     $mail->Port       = 465;                   // SMTP服务器的端口号
-    $mail->Username   = "xzhh0747";  // SMTP服务器用户名
-    $mail->Password   = "19850523";            // SMTP服务器密码
+    $mail->Username   = "a@movie002.com";  // SMTP服务器用户名
+    $mail->Password   = "vina125114";        // SMTP服务器密码
     $mail->SetFrom('a@movie002.com', 'movie002.com');
     $mail->AddReplyTo("a@movie002.com","movie002.com");
     $mail->Subject    = $sub;

@@ -9,7 +9,7 @@
 //$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 //mysql_select_db($dbname, $conn) or die('选择数据库失败');
 //dh_mysql_query("set names utf8;");
-//get_m1905('超级笑星','名侦探柯南/铁甲奇侠/Iron Man',3,'2000-05-05 00:00:00',4);
+//get_m1905('一万年以后','Ever Since We Love',1,'2015-05-05 00:00:00',4);
 //mysql_close($conn);
 
 //处理电影名  
@@ -45,34 +45,31 @@ function get_m1905($title,$aka,$type,$updatetime,$ids,$pageid=-1)
 		$ids .= '<2>'.$m1905id.'</2>';
 	}
 	
-	$buffer= get_file_curl('http://www.1905.com/mdb/film/'.$m1905id.'/');
+    $m1905url = 'http://www.1905.com/mdb/film/'.$m1905id.'/';
+    echo $m1905url."</br>";
+	$buffer= get_file_curl($m1905url);
 	//echo $buffer;
 	
-	preg_match('/<a href="([^>]+)" target="\_blank" class="white\_f">立即观看<\/a>/s',$buffer,$match);
+	preg_match_all('/<a href="(http:\/\/www.1905.com\/video\/play\/[0-9]+.shtml)".*?>(.*?)<\/a>/s',$buffer,$match);
 	//print_r($match);
 	if(!empty($match[1]))
 	{
-		$xtitle = '《'.$title.'》m1905 在线观看';
-		$xurl = $match[1];
-		addorupdatelink($pageid,'m1905在线',$xtitle,$xurl,'',4,7,7,0,0,$updatetime,1);
-	}
-	preg_match('/<a class="[^>]+" href="([^>]+)" style="cursor\: pointer\;">预告片([^>]+)<\/a>/s',$buffer,$match);
-	//print_r($match);
-	if(!empty($match[1]))
-	{
-		$xtitle = '《'.$title.'》m1905 预告 '.'('.$match[2].')';
-		$xurl = 'http://www.1905.com'.$match[1];
-		addorupdatelink($pageid,'m1905预告',$xtitle,$xurl,'',4,3,7,0,0,$updatetime,1);
+        foreach($match[1] as $key=>$eachurl)
+        {
+		    $xtitle = $match[2][$key];
+		    addnoupdatelink($pageid,'m1905预告花絮',$xtitle,$eachurl,'',4,3,7,0,0,$updatetime);
+        }
 	}
 	
-	preg_match('/<a class="[^>]+" href="([^>]+)" style="cursor: pointer;">新闻视频([^>]+)<\/a>/s',$buffer,$match);
-	//print_r($match);
-	if(!empty($match[1]))
+	preg_match('/http:\/\/www.1905.com\/yx\/film\/.*?.html/s',$buffer,$match1);
+	//print_r($match1);
+	if(!empty($match1[0]))
 	{
-		$xtitle =  '《'.$title.'》m1905 新闻视频'.'('.$match[2].')';
-		$xurl = 'http://www.1905.com'.$match[1];
-		addorupdatelink($pageid,'m1905新闻视频',$xtitle,$xurl,'',4,3,7,0,0,$updatetime,1);
+		$xtitle =  '《'.$title.'》m1905 购票链接';
+		$xurl = $match1[0];
+		addnoupdatelink($pageid,'m1905购票',$xtitle,$xurl,'',4,5,7,0,0,$updatetime);
 	}
+
 	//评分
 	preg_match('/<span class="score">(.*?)<\/span>[\s]+<span class="nop">\(<q id="rating_num">(.*?)<\/q>人评分\)<\/span>/s',$buffer,$match);
 	//print_r($match);

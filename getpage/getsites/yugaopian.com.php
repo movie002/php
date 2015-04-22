@@ -4,12 +4,13 @@
 //header('Content-Type:text/html;charset= UTF-8');
 //require("../../config.php");
 //require("../../common/curl.php");
+//require("../../common/base.php");
 //require("../../common/dbaction.php");
 //
 //$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 //mysql_select_db($dbname, $conn) or die('选择数据库失败');
 //dh_mysql_query("set names utf8;");
-//get_yugaopian('超级笑星','名侦探柯南/铁甲奇侠/Iron Man',3,'2000-05-05 00:00:00',4);
+//get_yugaopian('何以笙箫默','',1,'2000-05-05 00:00:00',4);
 //mysql_close($conn);
 
 
@@ -59,6 +60,7 @@ function get_yugaopian($title,$aka,$type,$updatetime,$pageid=-1)
 		$ytitle ="《".$title."》".$xtitle;
 		$updatetime = date("Y-m-d H:i:s");
 		$url='http://www.yugaopian.com/movie/'.$match0[1][$key];	
+        //echo   $ytitle."-->".$url."-->".$updatetime;
 		addorupdatelink($pageid,'预告片世界',$ytitle,$url,'',4,3,7,0,0,$updatetime,1);
 	}
 }

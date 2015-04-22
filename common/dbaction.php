@@ -101,8 +101,18 @@ function addorupdatelink($pageid,$author,$title,$link,$cat,$linkquality,$linkway
 		echo $sql."\n";
 	}
 	else
+    {
 		$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,linkvalue,updatetime,input) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,'$updatetime','$input')ON DUPLICATE KEY UPDATE pageid=$pageid,author='$author',title='$title',cat='$cat',linkquality=$linkquality,linkway=$linkway,linktype=$linktype,linkdownway=$linkdownway,linkvalue=$linkvalue,updatetime='$updatetime',input='$input',remove=null";
+		echo $sql."\n";
+    }
 
+	$sqlresult=dh_mysql_query($sql);
+}
+
+function addnoupdatelink($pageid,$author,$title,$link,$cat,$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,$updatetime)
+{
+	$sql="insert into link(pageid,author,title,link,cat,linkquality,linkway,linktype,linkdownway,linkvalue,updatetime) values($pageid,'$author','$title','$link','$cat',$linkquality,$linkway,$linktype,$linkdownway,$linkvalue,'$updatetime')ON DUPLICATE KEY UPDATE author='$author'";
+	echo $sql."\n";
 	$sqlresult=dh_mysql_query($sql);
 }
 
@@ -250,7 +260,7 @@ function getupdatetime($urlcat,$authorname)
 	return $updatetime;
 }
 
-function geturl($trueurl,$authorname)
+function geturl($trueurl,$authorname=null)
 {
 	$buff = get_file_curl($trueurl);
 	//如果失败，就使用就标记失败次数
@@ -261,8 +271,11 @@ function geturl($trueurl,$authorname)
 		if(!$buff)
 		{
 			echo 'error: fail to get file '.$trueurl."!</br>\n";	
-			$sql="update author set failtimes=failtimes+1 where name='$authorname';";
-			$result=dh_mysql_query($sql);
+            if($authorname!=null)
+            {
+			    $sql="update author set failtimes=failtimes+1 where name='$authorname';";
+			    $result=dh_mysql_query($sql);
+            }
 			return false;
 		}
 	}

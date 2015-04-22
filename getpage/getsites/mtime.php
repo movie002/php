@@ -4,12 +4,13 @@
 //header('Content-Type:text/html;charset= UTF-8');
 //require("../../config.php");
 //require("../../common/curl.php");
+//require("../../common/base.php");
 //require("../../common/dbaction.php");
 //
 //$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 //mysql_select_db($dbname, $conn) or die('选择数据库失败');
 //dh_mysql_query("set names utf8;");
-//get_mtime('超级笑星','名侦探柯南/铁甲奇侠/Iron Man',3,'2000-05-05 00:00:00',4);
+//get_mtime('何以笙箫默','何以笙箫默电影版/You Are My Sunshine',1,'<i>107分钟</i><g>中国大陆</g><p>2015-04-30(中国大陆)</p><l>汉语普通话</l><t>爱情</t>','2015-04-21 15:33:09','<1>26259634</1>',22170);
 //mysql_close($conn);
 
 
@@ -18,14 +19,14 @@ function get_mtime($title,$aka,$type,$meta,$updatetime,$ids,$pageid=-1)
 { 
 	echo " \n begin to get from mtime:\n";
 	$name = rawurlencode($title);    
-	$buffer = get_file_curl('https://www.google.com.hk/search?hl=en&q='.$name.'+site:mtime.com');
+	$buffer = get_file_curl('http://www.haosou.com/s?q='.$name.'+site%3Amtime.com');
 	if(false===$buffer)
 	{
 		echo $title."搜索失败 </br>\n";
 		return;
 	}
 	//echo $buffer;
-	preg_match('/href="\/url\?q=http:\/\/movie\.mtime\.com\/(.*?)\//s',$buffer,$match);
+	preg_match('/<a href="http:\/\/movie\.mtime\.com\/(.*?)\//s',$buffer,$match);
 	//print_r($match);
 	$mtimeid=$match[1];
 	
