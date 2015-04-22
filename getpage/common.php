@@ -35,16 +35,16 @@ function getmoviemeta($row,&$mtitle,&$moviecountry,&$movieyear,&$movietype,$link
 function getlinkmeta($row,&$linkway,&$linktype,&$linkquality,&$linkdownway,&$linkvalue,$link,$title,$cat)
 {
 	$linkway = testneed($row['clinkway'],$link,$title,$cat);
-	if($linkway<0)
+	$linktype = testneed($row['clinktype'],$link,$title,$cat);
+	$linkquality = testneed($row['clinkquality'],$link,$title,$cat);
+	$linkdownway = testneed($row['clinkdownway'],$link,$title,$cat);
+	$linkvalue = testneed($row['clinkvalue'],$link,$title,$cat);
+	if($linkway<0||$linktype<0||$linkquality<0||$linkvalue<0)
 	{
 		//linktype 不对，说明有问题不大
 		echo "linkway=$linkway % title=$title link=$link cat=$cat -> linkway error 失败，请查明原因！</br> \n";
 		return -1;
 	}
-	$linktype = testneed($row['clinktype'],$link,$title,$cat);
-	$linkquality = testneed($row['clinkquality'],$link,$title,$cat);
-	$linkdownway = testneed($row['clinkdownway'],$link,$title,$cat);
-	$linkvalue = testneed($row['clinkvalue'],$link,$title,$cat);
 	return 0;
 }
 

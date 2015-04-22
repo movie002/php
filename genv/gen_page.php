@@ -131,7 +131,7 @@ function dh_gen_each_page_file($days,$pageid,$table,$path,$DH_output_content)
 			$DH_output_content_page = str_replace("%akas%",$akas,$DH_output_content_page);
 			$DH_output_content_page = str_replace("%id%",$row['id'],$DH_output_content_page);
 			$DH_output_content_page = str_replace("%permalink%",output_page_path($DH_html_url,$row['id']),$DH_output_content_page);
-			$DH_output_content_page = str_replace("%x2y4%",output_page_path("http://v.x2y4.com/",$row['id']),$DH_output_content_page);
+			$DH_output_content_page = str_replace("%x2y4%",output_page_path("http://v.x2y4.com/html/",$row['id']),$DH_output_content_page);
 			
 //			//新浪微博控件
 //			$weibotitle=rawurlencode($row['title']).'|'.rawurlencode($row['title']);

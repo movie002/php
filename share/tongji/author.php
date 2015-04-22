@@ -18,9 +18,10 @@ function dh_gen_author()
 	$DH_output_content = str_replace("%DH_name%",$DH_name,$DH_output_content);	
 	
 	$sql="select * from author where rss>0 order by updatetime desc";
-	dh_update_author($sql);
+	$count = dh_update_author($sql);
 	$authorlist=dh_get_author($sql);
 	
+	$DH_output_content = str_replace("%num%",$count,$DH_output_content);
 	$DH_output_content = str_replace("%list_each%",$authorlist,$DH_output_content);
 	
 	$DH_output_file = $DH_output_path.'author.html';
@@ -30,10 +31,12 @@ function dh_gen_author()
 function dh_update_author($sql)
 {
 	$results=dh_mysql_query($sql);
+    $count=0;
 	if($results)
 	{			
 		while($row = mysql_fetch_array($results))
 		{
+            $count++;
 			echo "\n".'updateauthor:'.$row['name'];			
 			//先处理updatetime
 			$authorname=$row['name'];
@@ -45,6 +48,7 @@ function dh_update_author($sql)
 			$lres=dh_mysql_query($sqlup);
 		}
 	}
+    return $count;
 }
 
 function dh_get_author($sql)

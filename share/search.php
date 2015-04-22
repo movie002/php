@@ -39,7 +39,7 @@
 		<!-- header -->
 		<div id="middle" class="width_2">
 			<div id="title">
-				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <span class="cred">"<?php echo $q ?>"</span> 的搜索结果</div>	
+				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <span class="cred">"<?php echo $q ?>"</span> 的搜索结果 尝试更精确的 <a href="http://s.yfsoso.com/s.php?q=<?php echo $q ?>">影粉搜搜的搜索结果</a> </div>	
 			</div>		
 			<div id="content"  class="width_3 listcontent">
 				<ul class="f12px">
@@ -86,14 +86,14 @@
 								}
 							}
               
-						  $results=dh_mysql_query($sqlcount);
+						    $results=dh_mysql_query($sqlcount);
 							$counts = mysql_fetch_array($results);
 							$count = $counts[0];
 
-              $DH_search_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?q='.$_GET['q'].'&p=';
-              $pages=ceil($count/$pagenum);
-              $pagenavi = dh_pagenavi(5,$pages,$DH_search_url,$p);
-              echo '<div class="page_navi">'.$pagenavi.'</div>';
+                            $DH_search_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?q='.$_GET['q'].'&p=';
+                            $pages=ceil($count/$pagenum);
+                            $pagenavi = dh_pagenavi(5,$pages,$DH_search_url,$p);
+                            echo '<div class="page_navi">'.$pagenavi.'</div>';
 							mysql_close($conn);
 							if($count==0)
 								echo "</br>".'  <div style="text-align:center">好像没有相关资源哦！请更换关键词重新搜索，或者耐心等待，只要不断关注电影小二网，就会第一时间得到资源，您不会失望哦！</div>'."</br>";
