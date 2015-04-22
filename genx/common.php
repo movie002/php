@@ -8,13 +8,13 @@ function dh_replace_link($sql,$row,$DH_output_content)
 
 	$zixun='';$num1=0;
 	$yingping='';$num2=0;
-	$tailer = '';$num3=0;
-	$online = '';$num7=0;	
-	$online0 = '';$num70=0;	
-	$download = '';$num6=0;	
-	$download0 = '';$num60=0;	
-	$zimu = '';$num8=0;	
-    	$ticket = '';$num4=0;$num5=0;
+	$tailer='';$num3=0;
+	$online='';$num7=0;	
+	$online0='';$num70=0;	
+	$download='';$num6=0;	
+	$download0='';$num60=0;	
+	$zimu='';$num8=0;	
+   	$ticket='';$num4=0;$num5=0;
 	
 	global $DH_html_path;
 	$DH_input_html  = $DH_html_path . 'page_inner_navi.html';
@@ -60,20 +60,20 @@ function dh_replace_link($sql,$row,$DH_output_content)
 				break;
 			case 4://活动购票
 			case 5://
-                		$num4++;    
+               	$num4++;    
 				if($num4<=$maxnum)
 				    $ticket .= str_replace('%num%',$num4,$linkseach2);
 				break;
 			case 6://下载
-                		$num6++;    
-                		if($num6<=$maxnum)
+               	$num6++;    
+               	if($num6<=$maxnum)
 			    	$download .= str_replace('%num%',$num6,$linkseach1);
-                		if($rowlinks['linkquality']>=5)
-                		{
-                  			$num60++;
-                   			if($num60<=$maxnum)
-			           	$download0 .= str_replace('%num%',$num60,$linkseach1);
-               			} 
+               	if($rowlinks['linkquality']>=5)
+                {
+                	$num60++;
+                	if($num60<=$maxnum)
+			        $download0 .= str_replace('%num%',$num60,$linkseach1);
+               	} 
 				break;
 			case 7://在线
 				$num7++;
@@ -105,7 +105,7 @@ function dh_replace_link($sql,$row,$DH_output_content)
 	$download0=getlinksmore('cb&b6',$linkstop1,$num60,$num,'download0',$download0,$innerpage);
 	$online=getlinksmore('cb&b7',$linkstop1,$num7,$num,'online',$online,$innerpage);
 	$online0=getlinksmore('cb&b7',$linkstop1,$num70,$num,'online0',$online0,$innerpage);
-	$zimu=getlinksmore('cb&b8',$linkstop1,$num70,$num,'zimu',$zimu,$innerpage);
+	$zimu=getlinksmore('cb&b8',$linkstop1,$num8,$num,'zimu',$zimu,$innerpage);
 
 	$DH_output_content_page = str_replace('%zixun%',$zixun,$DH_output_content);
 	$DH_output_content_page = str_replace('%tailer%',$tailer,$DH_output_content_page);		
@@ -566,10 +566,6 @@ function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
     {
 	    $tmplinks=$linktop.$tmplinks;
     }
-    else
-    {
-	    $tmplinks = '<div class="listall" style="text-align:center;padding:3px 0 1px 0">暂无此类资源，本站会及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
-    }
 	if($num0 > $num)
 	{
 		$innerpagetmp = str_replace("%pagesNav%",$id.'p1',$innerpage);
@@ -580,6 +576,10 @@ function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
 		$innerpagetmp = str_replace("%num%",$num,$innerpagetmp);
 		$tmplinks.=$innerpagetmp;
 	}
+    else if($num0==0)
+    {
+	    $tmplinks = '<div class="listall" style="text-align:center;padding:3px 0 1px 0">暂无此类资源，本站会及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
+    }
     else
     {
         $tmplinks.= '<div class="listall" style="text-align:center;padding:3px 0 1px 0">如果本站没有及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
