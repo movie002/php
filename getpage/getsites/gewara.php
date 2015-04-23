@@ -14,7 +14,7 @@
 //mysql_close($conn);
 
 //处理电影名  
-function get_gewara($title,$aka,$type,$updatetime,$ids,$pageid=-1)
+function get_gewara($title,$aka,$type,$updatetime,$pageid=-1)
 { 
 	echo " \n begin to get from gewara:\n";	
 	//if($type!=1)
@@ -31,6 +31,9 @@ function get_gewara($title,$aka,$type,$updatetime,$ids,$pageid=-1)
 	preg_match('/href="\/movie\/([0-9]+)/s',$buffer,$match);
 	//print_r($match);
 	
+	if(empty($match[1]))
+        return;
+        
     $xtitle='《'.$title.'》的格瓦拉预告花絮';
     $xurl = "http://www.gewara.com/movie/v5/pv.xhtml?mid=".$match[1]."&type=videos";
     $ytitle='《'.$title.'》的格瓦拉购票';

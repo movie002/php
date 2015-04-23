@@ -83,7 +83,7 @@ function get_v2345($title,$aka,$type,$updatetime,$pageid=-1)
 		if(empty($match3[0]))
 		{
 			preg_match('/<span class="sTxt"><em class="right">(.*?)<\/em><\/span>/s',$each,$match3);
-			print_r($match3);
+			//print_r($match3);
 			if(empty($match3[0]))
 				continue;
 			else

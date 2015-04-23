@@ -35,7 +35,7 @@ function updatepageother()
 		$count++;
 		if($count!=1)
 			sleep(10);
-		echo "\n".$count.": ".$row['id'].': '.$row['title'].' --> '.$row['cattype'].'/'.$row['catcountry'].'/'.$row['updatetime'];
+		echo "\n</br>".$count.": ".$row['id'].': '.$row['title'].' --> '.$row['cattype'].'/'.$row['catcountry'].'/'.$row['updatetime']."\n</br>";
 		getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['ids'],$row['id']);
 	}
 }

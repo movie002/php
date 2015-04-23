@@ -6,7 +6,7 @@
 //require("../../common/base.php");
 //require("../../common/dbaction.php");
 
-$getsiteurl=$DH_input_path.'/getpage/getsites';
+$getsiteurl='./getsites';
 require("$getsiteurl/v360.php");
 require("$getsiteurl/v2345.php");
 require("$getsiteurl/vbaidu.php");
