@@ -1,37 +1,45 @@
 <?php 
 /* 使用示例 */   
 
-//header('Content-Type:text/html;charset= UTF-8'); 
-//require("../../config.php");
-//require("../../curl.php");
-//require("../common.php");
-//
-//$douban_result = new MovieResult();
-//$douban_result->title='致我们终将逝去的青春';
-//get_wangpiao($douban_result);
-//print_r($douban_result);
+header('Content-Type:text/html;charset= UTF-8');
+require("../../config.php");
+require("../../common/curl.php");
+require("../../common/base.php");
+require("../../common/dbaction.php");
 
-function get_wangpiao(&$resultlast)  
+$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
+mysql_select_db($dbname, $conn) or die('选择数据库失败');
+dh_mysql_query("set names utf8;");
+get_wangpiao('一万年以后','Ever Since We Love',1,'2015-05-05 00:00:00',4);
+mysql_close($conn);
+
+//处理电影名  
+function get_wangpiao($title,$aka,$type,$updatetime,$pageid=-1)
 { 
-	//如果有则不需要搜索了
-	preg_match('/<5>(.*?)<\/5>/s',$resultlast->ids,$match);
-	if(!empty($match[1]))
-	{
-		return;
-	}
-	$name = rawurlencode($resultlast->title);        
-	$buffer = get_file_curl('https://www.google.com.hk/search?hl=en&q='.$name.'+site:wangpiao.com%2Fmovie%2F');
-	if(false===$buffer)
-	{
-		echo $eachtitlesearch."搜索失败 </br>\n";
-		continue;
-	}
+	echo " \n begin to get from wangpiao:\n";	
+	//if($type!=1)
+	//	return;
+	$name = rawurlencode($title);
+	$url='http://www.gewara.com/newSearchKey.xhtml?skey='.$name.'&channel=movie';
+	echo $url."\n";
+	$buffer = geturl($url);
 	//echo $buffer;
-	preg_match('/www\.wangpiao\.com\/Movie\/([0-9]+)\//s',$buffer,$match);
+	
+	if(false==$buffer)
+        return;
+
+	preg_match('/href="\/movie\/([0-9]+)/s',$buffer,$match);
 	//print_r($match);
-	if(!empty($match[1]))
-	{
-		$resultlast->ids .='<5>'.$match[1].'</5>';
-	}
+	
+	if(empty($match[1]))
+        return;
+        
+    $xtitle='《'.$title.'》的格瓦拉预告花絮';
+    $xurl = "http://www.gewara.com/movie/v5/pv.xhtml?mid=".$match[1]."&type=videos";
+    $ytitle='《'.$title.'》的格瓦拉购票';
+    $yurl = "http://www.gewara.com/movie/".$match[1];
+	
+    addnoupdatelink($pageid,'格瓦拉预告花絮',$xtitle,$xurl,'',4,3,7,0,0,$updatetime);
+	addnoupdatelink($pageid,'格瓦拉购票',$ytitle,$yurl,'',4,5,7,0,0,$updatetime);
 }
 ?>  
