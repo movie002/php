@@ -5,9 +5,9 @@ function ent_ifeng_com_php()
 
 	print_r($authorname);
 	$authorurl='http://ent.ifeng.com';
-	$url = array('http://ent.ifeng.com/listpage/14584/',
-				 'http://ent.ifeng.com/listpage/476/');				
-	$urlcat= array('资讯','评论');
+	$url = array('http://ent.ifeng.com/listpage/44169/',
+				 'http://ent.ifeng.com/listpage/44168/');				
+	$urlcat= array('电影资讯','电视资讯');
 		
 	print_r($url);
 	//寻找各自的updatetime	
@@ -30,18 +30,20 @@ function ent_ifeng_com_php()
 
 			echo "crawl ".$trueurl." </br>\n";
 			//print_r($buff);
-			preg_match_all('/<li><h4>(.*?)<\/h4><a href="(.*?)" target="_blank">(.*?)<\/a><\/li>/s',$buff,$match);
+			preg_match_all('/<h2><a href="([^"]+)" target="_blank" title="([^"]+)">[^>]+<\/a><\/h2>/s',$buff,$match);
+			preg_match_all('/<span>([0-9\-\s\:]+)<\/span>/s',$buff,$match1);
 			//print_r($match);
+			//print_r($match1);
 			if(empty($match[2]))
 			{			
 				echo 'preg buff error no result!';
 				continue;
 			}	
 			$rssinfo = new rssinfo();
-			$rssinfo->author = $authorname;			
+			$rssinfo->author = $authorname;	
 			foreach ($match[1] as $key2=>$div)			
 			{
-				$rssinfo->update = getrealtime($match[1][$key2]);
+				$rssinfo->update = getrealtime($match1[1][$key2]);
 				if($rssinfo->update<$updatetime[$key])
 				{
 					echo "爬取到已经爬取文章，爬取结束! </br>\n";
@@ -50,10 +52,10 @@ function ent_ifeng_com_php()
 					//continue;
 				}
 				$rssinfo->cat =trim($urlcat[$key]);
-				$rssinfo->link =trim($match[2][$key2]);
-				$rssinfo->title = trim($match[3][$key2]);
-				//print_r($rssinfo);
-				insertonlylink($rssinfo);
+				$rssinfo->link =trim($match[1][$key2]);
+				$rssinfo->title = trim($match[2][$key2]);
+				print_r($rssinfo);
+				//insertonlylink($rssinfo);
 			}
 		}
 	}

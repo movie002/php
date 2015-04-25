@@ -42,6 +42,7 @@ if($id==0||$id==10){echo "</br>id: 10   ";www_gewara_com_activity_php();}
 if($id==0||$id==11){echo "</br>id: 11   ";www_sfscn_com_php();}
 if($id==0||$id==12){echo "</br>id: 12   ";www_51oscar_com_php();}
 if($id==0||$id==13){echo "</br>id: 13   ";www_mtime_com_peoplereview_php();}
+if($id==0||$id==14){echo "</br>id: 14   ";ent_ifeng_com_php();}
 
 mysql_close($conn);
 ?>
