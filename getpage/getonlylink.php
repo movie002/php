@@ -46,7 +46,7 @@ function getonlylink()
 		//print_r($row);
 		echo "\n".$i.":";
 		$i++;
-		if(getlinkmeta($rowauthor,$linkway,$linktype,$linkquality,$linkdownway,$linkvalue,$row['link'],$row['title'],$row['cat'])==-1)
+		if(getlinkmeta($row,$linkway,$linktype,$linkquality,$linkdownway,$linkvalue,$row['link'],$row['title'],$row['cat'])==-1)
         {
             echo 'get linkmeta error!</br>';
             setfail($row);
