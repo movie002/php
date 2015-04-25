@@ -1,4 +1,16 @@
-00 0 * * * /srv/php/cron.sh
-00 6 * * * /srv/php/cron.sh
-00 12 * * * /srv/php/cron.sh
-00 18 * * * /srv/php/cron.sh
+00 0 * * * /srv/php/cron_reader.sh
+30 0 * * * /srv/php/cron_genx.sh
+35 0 * * * /srv/php/cron_genv.sh
+
+00 6 * * * /srv/php/cron_reader.sh
+30 6 * * * /srv/php/cron_genx.sh
+35 6 * * * /srv/php/cron_genv.sh
+
+
+00 12 * * * /srv/php/cron_reader.sh
+30 12 * * * /srv/php/cron_genx.sh
+35 12 * * * /srv/php/cron_genv.sh
+
+00 18 * * * /srv/php/cron_reader.sh
+30 18 * * * /srv/php/cron_genx.sh
+35 18 * * * /srv/php/cron_genv.sh
