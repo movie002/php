@@ -16,12 +16,18 @@ mysql_close($conn);
 
 function all()
 {
-	$sql="select * from author where rss = 1";
+	$sql="select * from author where rss = 1;";
 	
 	if(isset($_REQUEST['id']))
 	{
 		$id = $_REQUEST['id'];
-		$sql="select * from author where rss = 1 and id=$id";	
+		$sql="select * from author where rss = 1 and id=$id;";	
+	}
+	if(isset($_REQUEST['bid']))
+	{
+		$fid = $_REQUEST['fid'];
+		$lid = $_REQUEST['lid'];
+		$sql="select * from author where rss = 1 and id between $fid and $lid;";	
 	}
 	echo $sql."</br>\n";
 	$results=dh_mysql_query($sql);

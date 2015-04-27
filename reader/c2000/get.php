@@ -15,7 +15,7 @@ require("ent.163.com.php");
 require("ent.sina.com.cn.review.php");
 require("yule.sohu.com.php");
 //require("www.gewara.com.news.php");
-require("www.gewara.com.activity.php");
+//require("www.gewara.com.activity.php");
 require("www.sfs-cn.com.php");
 require("www.51oscar.com.php");
 
@@ -35,7 +35,7 @@ if($id==0||$id==1){echo "</br>id: 1   ";news_mtime_com_php();}
 if($id==0||$id==2){echo "</br>id: 2   ";www_mtime_com_review_php();}
 if($id==0||$id==3){echo "</br>id: 3   ";www_mtime_com_trailer_php();}
 //if($id==0||$id==4){echo "</br>id: 4   ";www_hunantv_com_php();}
-if($id==0||$id==5){echo "</br>id: 5   ";ent_ifeng_com_php();}
+//if($id==0||$id==5){echo "</br>id: 5   ";ent_ifeng_com_php();}
 //if($id==0||$id==6){echo "</br>id: 6   ";ent_163_com_php();}
 if($id==0||$id==7){echo "</br>id: 7   ";ent_sina_com_cn_review_php();}
 if($id==0||$id==8){echo "</br>id: 8   ";yule_sohu_com_php();}
@@ -43,7 +43,7 @@ if($id==0||$id==8){echo "</br>id: 8   ";yule_sohu_com_php();}
 
 if($id==0||$id==9)
 {
-    echo "</br>id: 14   ";
+    echo "</br>id: 9   ";
 	$authorname='格瓦拉影讯'; 
     $authorurl='http://www.gewara.com';
 	$url = array('http://www.gewara.com/activity/ajax/sns/getCommentNewsList.xhtml?pageNo=');
@@ -54,7 +54,20 @@ if($id==0||$id==9)
     c_common_read($authorname,$authorurl,$url,$urlcat,$preg1,$preg2,$eachurlp);
 }
 
-if($id==0||$id==10){echo "</br>id: 10   ";www_gewara_com_activity_php();}
+if($id==0||$id==10)
+{
+    echo "</br>id: 10   ";
+	$authorname='格瓦拉活动'; 
+    $authorurl='http://www.gewara.com';
+	$url = array('http://www.gewara.com/activity/activityList.xhtml?tag=cinema');
+	$urlcat= array('电影活动');
+    $eachurlp='%eachurl%';
+    $preg1='/<a href="([^>]+)" title="([^>]+)" target="_blank">(.*?)<\/a>/s';
+    $preg2='/([0-9]+月[0-9]+日)/s';
+    c_common_read($authorname,$authorurl,$url,$urlcat,$preg1,$preg2,$eachurlp,1);
+}
+
+//if($id==0||$id==10){echo "</br>id: 10   ";www_gewara_com_activity_php();}
 if($id==0||$id==11){echo "</br>id: 11   ";www_sfscn_com_php();}
 if($id==0||$id==12){echo "</br>id: 12   ";www_51oscar_com_php();}
 if($id==0||$id==13){echo "</br>id: 13   ";www_mtime_com_peoplereview_php();}

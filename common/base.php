@@ -148,22 +148,78 @@ function iconvbuffgbk($buff)
 	//print_r($buff);
 	return $buff;
 }
+
 function getrealtime($timebuf)
 {
-    preg_match('/(20[0-9]{2})年([0-9]{2})月([0-9]{2})日/s',$timebuf,$match12);
-    if(!empty($match12[2]))
+	$timetobe = date("Y-m-d H:i:s",strtotime($timereal));
+    if($timetobe="1970-00-01 00:00:00")
     {
-       $timereal = $match12[1]."-".$match12[2]."-".$match12[3]; 
+        $timerealyear = formatyear($timebuf);
+        $timerealdate = formatdate($timebuf);
+        $timerealtime = formattime($timebuf);
+        $timereal = $timerealyear."-".$timerealdate." ".$timerealtime;
+
+	    //echo $timereal;
+	    $timetobe = date("Y-m-d H:i:s",strtotime($timereal));
     }
-	else if(strstr($timebuf,'月'))
+
+	$datenow = date("Y-m-d H:i:s",strtotime("+1 day"));
+	//$datenow = date("Y-m-d H:i:s");
+	if($timetobe > $datenow)
+		return $datenow;
+	return $timetobe;
+}
+
+function formatyear($timebuf)
+{
+	preg_match('/(20[0-9]{2})[\-年]/s',$timebuf,$match);
+	//print_r($match);
+    if(!empty($match[1]))
+    {
+        $timerealyear=$match[1];
+    } 
+    else
+    {
+	    $dateYnow = date("Y",strtotime());
+        $timerealyear = $dateYnow;
+    }
+    return $timerealyear;
+}
+
+function formattime($timebuf)
+{
+	preg_match('/([0-9]{2}:[0-9]{2}:[0-9]{2})/s',$timebuf,$match);
+	//print_r($match);
+    if(!empty($match[1]))
+    {
+       return $match[1]; 
+    }
+
+	$dateYnow = date("H:i:s",strtotime());
+    return $dateYnow;
+}
+
+function formatdate($timebuf)
+{
+    preg_match('/([0-9]{2}\-[0-9]{2})/s',$timebuf,$match);
+    if(!empty($match[1]))
+    {
+        return $match[1];
+    }
+
+    preg_match('/([0-9]{2})月([0-9]{2})日/s',$timebuf,$match1);
+    if(!empty($match1[1]))
+    {
+        $timereal = .$match1[2]."-".$match1[3]; 
+        return $timereal;
+    }
+
+	$mouthcn=array("三","四","五","六","七","八","九","十一","十二","一","二","十");
+	$mouthnum=array(3,4,5,6,7,8,9,11,12,1,2,10);
+
+    preg_match('/([一二三四五六七八九十]{2})月/s',$timebuf,$match2);
+    if(!empty($match1[1]))
 	{
-		preg_match('/(20[0-9]{2})/s',$timebuf,$match);
-		//print_r($match);
-		$timereal = $match[1].'';
-
-
-		$mouthcn=array("三月","四月","五月","六月","七月","八月","九月","十一月","十二月","一月","二月","十月");
-		$mouthnum=array(3,4,5,6,7,8,9,11,12,1,2,10);
 		foreach($mouthcn as $key=>$eachmouth)
 		{
 			if(strstr($timebuf,$eachmouth))
@@ -181,16 +237,7 @@ function getrealtime($timebuf)
 		//print_r($match);
 		$timereal .= ' '.$match2[1];
 	}
-	else
-		$timereal = $timebuf;
-	//echo $timereal;
-
-	$timetobe=date("Y-m-d H:i:s",strtotime($timereal));
-	$datenow = date("Y-m-d H:i:s",strtotime("+1 day"));
-	//$datenow = date("Y-m-d H:i:s");
-	if($timetobe > $datenow)
-		return $datenow;
-	return $timetobe;
+    preg_match('/([一二三四五六七八九十]{2})月([一二三四五六七八九十]{2})日/s',$timebuf,$match2);
 }
 
 function ftrim2($str)

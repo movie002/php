@@ -32,7 +32,8 @@ function c_common_read($authorname,$authorurl,$url,$urlcat,$preg1,$preg2,$eachur
 				break;
 
 			echo "crawl ".$trueurl." </br>\n";
-			//print_r($buff);
+			print_r($buff);
+            return;
 			preg_match_all($preg1,$buff,$match1);
 			preg_match_all($preg2,$buff,$match2);
 			//print_r($match1);
