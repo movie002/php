@@ -3,9 +3,9 @@ rm -rf $logfile
 echo $(date) > $logfile
 ## 1 资源获取
 ## 1.1从rss获取的资源
-/srv/php/timeexc.sh curl 'http://127.0.0.1/php/reader/getrss.php?fid=1&lid=40' -o /srv/php/log/getrss.log
-/srv/php/timeexc.sh curl 'http://127.0.0.1/php/reader/getrss.php?fid=41&lid=80' -o /srv/php/log/getrss.log
-/srv/php/timeexc.sh curl 'http://127.0.0.1/php/reader/getrss.php?fid=81&lid=1000' -o /srv/php/log/getrss.log
+/srv/php/timeexc.sh curl 'http://127.0.0.1/php/reader/getrss.php?fid=1&lid=40' -o /srv/php/log/getrss1.log
+/srv/php/timeexc.sh curl 'http://127.0.0.1/php/reader/getrss.php?fid=41&lid=80' -o /srv/php/log/getrss2.log
+/srv/php/timeexc.sh curl 'http://127.0.0.1/php/reader/getrss.php?fid=81&lid=1000' -o /srv/php/log/getrss3.log
 ## 1.2使用代码从(资源)获取的资源
 /srv/php/timeexc.sh curl http://127.0.0.1/php/reader/c1000/get.php -o /srv/php/log/c1000.log
 ## 1.3使用代码从(纯链接)获取的资源

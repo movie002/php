@@ -23,7 +23,7 @@ function all()
 		$id = $_REQUEST['id'];
 		$sql="select * from author where rss = 1 and id=$id;";	
 	}
-	if(isset($_REQUEST['bid']))
+	if(isset($_REQUEST['fid']))
 	{
 		$fid = $_REQUEST['fid'];
 		$lid = $_REQUEST['lid'];
