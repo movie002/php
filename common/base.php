@@ -149,17 +149,28 @@ function iconvbuffgbk($buff)
 	return $buff;
 }
 
+
+//echo getrealtime("2013年6月21日 4:56:39")."</br>\n";
+//echo getrealtime("2013年 6-21 4:56:39")."</br>\n";
+//echo getrealtime("2013-6-21 4:56:39")."</br>\n";
+//echo getrealtime("2013年 六月21日 4:56:39")."</br>\n";
+//echo getrealtime("六月21日 4:56:39")."</br>\n";
+//echo getrealtime("6月二十一日")."</br>\n";
+
+
 function getrealtime($timebuf)
 {
-	$timetobe = date("Y-m-d H:i:s",strtotime($timereal));
-    if($timetobe="1970-00-01 00:00:00")
+	$timetobe = date("Y-m-d H:i:s",strtotime($timebuf));
+	$basetime = date("Y-m-d H:i:s",strtotime("1970-01-01 08:00:00"));
+	//echo $timetobe;
+    if($timetobe==$basetime)
     {
         $timerealyear = formatyear($timebuf);
         $timerealdate = formatdate($timebuf);
         $timerealtime = formattime($timebuf);
         $timereal = $timerealyear."-".$timerealdate." ".$timerealtime;
 
-	    //echo $timereal;
+	    echo $timereal;
 	    $timetobe = date("Y-m-d H:i:s",strtotime($timereal));
     }
 
@@ -172,72 +183,81 @@ function getrealtime($timebuf)
 
 function formatyear($timebuf)
 {
-	preg_match('/(20[0-9]{2})[\-年]/s',$timebuf,$match);
+	preg_match('/(20[0-9]{2})[\-年]/us',$timebuf,$match);
 	//print_r($match);
     if(!empty($match[1]))
-    {
-        $timerealyear=$match[1];
-    } 
-    else
-    {
-	    $dateYnow = date("Y",strtotime());
-        $timerealyear = $dateYnow;
-    }
-    return $timerealyear;
+        return $match[1];
+    return date("Y",time());
 }
 
 function formattime($timebuf)
 {
-	preg_match('/([0-9]{2}:[0-9]{2}:[0-9]{2})/s',$timebuf,$match);
+	preg_match('/([0-9]+:[0-9]+:[0-9]+)/s',$timebuf,$match);
 	//print_r($match);
     if(!empty($match[1]))
-    {
        return $match[1]; 
-    }
 
-	$dateYnow = date("H:i:s",strtotime());
-    return $dateYnow;
+    return date("H:i:s",time());
 }
 
 function formatdate($timebuf)
 {
-    preg_match('/([0-9]{2}\-[0-9]{2})/s',$timebuf,$match);
+    preg_match('/([0-9]+\-[0-9]+)/s',$timebuf,$match);
+	//print_r($match);
     if(!empty($match[1]))
     {
         return $match[1];
     }
 
-    preg_match('/([0-9]{2})月([0-9]{2})日/s',$timebuf,$match1);
+    preg_match('/([0-9]+)月([0-9]+)日/us',$timebuf,$match1);
+	//print_r($match1);
     if(!empty($match1[1]))
     {
-        $timereal = .$match1[2]."-".$match1[3]; 
+        $timereal = $match1[1]."-".$match1[2]; 
         return $timereal;
     }
 
-	$mouthcn=array("三","四","五","六","七","八","九","十一","十二","一","二","十");
-	$mouthnum=array(3,4,5,6,7,8,9,11,12,1,2,10);
+	$cn=array("一","二","三","四","五","六","七","八","九","十",
+	          "十一","十二","十三","十四","十五","十六","十七","十八","十九","二十",
+	          "二十一","二十二","二十三","二十四","二十五","二十六","二十七","二十八","二十九","三十","三十一");
+	$num=array(1,2,3,4,5,6,7,8,9,10,
+                    11,12,13,14,15,16,17,18,19,20,
+                    21,22,23,24,25,26,27,28,29,30,31);
 
-    preg_match('/([一二三四五六七八九十]{2})月/s',$timebuf,$match2);
-    if(!empty($match1[1]))
+    preg_match('/([一二三四五六七八九十0-9]+)月([一二三四五六七八九十0-9]+)日/us',$timebuf,$match2);
+	//print_r($match2);
+    if(!empty($match2[1]))
 	{
-		foreach($mouthcn as $key=>$eachmouth)
-		{
-			if(strstr($timebuf,$eachmouth))
-			{
-				$timereal .= '-'.$mouthnum[$key];	
-				break;
-			}
-		}
+        if($match2[1]>0 && $match2[1]<13)
+            $mouth=$match2[1];
+        else
+        {
+		    foreach($cn as $key=>$eachmouth)
+		    {
+		    	if($match2[1]==$eachmouth)
+		    	{
+		    		$mouth = $num[$key];	
+		    		break;
+		    	}
+		    }
+        }    
 
-		preg_match('/([0-9]{2})日/s',$timebuf,$match1);
-		//print_r($match);
-		$timereal .= '-'.$match1[1];
-		
-		preg_match('/([0-9]{2}\:[0-9]{2}:[0-9]{2})/s',$timebuf,$match2);
-		//print_r($match);
-		$timereal .= ' '.$match2[1];
+        if($match2[2]>0 && $match2[2]<32)
+            $dated=$match2[2];
+        else
+        {
+		    foreach($cn as $key=>$eachdate)
+		    {
+		    	if($match2[2]==$eachdate)
+		    	{
+		    		$dated = $num[$key];
+		    		break;
+		    	}
+		    }
+        }    
+       return $mouth."-".$dated;
 	}
-    preg_match('/([一二三四五六七八九十]{2})月([一二三四五六七八九十]{2})日/s',$timebuf,$match2);
+    return date("m-d",time());
 }
 
 function ftrim2($str)
