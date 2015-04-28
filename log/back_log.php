@@ -10,6 +10,7 @@ header('Content-Type:text/html;charset= UTF-8');
 
 #需要使用的基础函数
 include("../config.php");
+include("../common/base.php");
 require("../mail/mail.php");
 
 //phpinfo();
