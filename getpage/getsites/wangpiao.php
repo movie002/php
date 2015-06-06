@@ -1,17 +1,17 @@
 <?php 
 /* 使用示例 */   
 
-header('Content-Type:text/html;charset= UTF-8');
-require("../../config.php");
-require("../../common/curl.php");
-require("../../common/base.php");
-require("../../common/dbaction.php");
-
-$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
-mysql_select_db($dbname, $conn) or die('选择数据库失败');
-dh_mysql_query("set names utf8;");
-get_wangpiao('一万年以后','Ever Since We Love',1,'2015-05-05 00:00:00',4);
-mysql_close($conn);
+//header('Content-Type:text/html;charset= UTF-8');
+//require("../../config.php");
+//require("../../common/curl.php");
+//require("../../common/base.php");
+//require("../../common/dbaction.php");
+//
+//$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
+//mysql_select_db($dbname, $conn) or die('选择数据库失败');
+//dh_mysql_query("set names utf8;");
+//get_wangpiao('一万年以后','Ever Since We Love',1,'2015-05-05 00:00:00',4);
+//mysql_close($conn);
 
 //处理电影名  
 function get_wangpiao($title,$aka,$type,$updatetime,$pageid=-1)
