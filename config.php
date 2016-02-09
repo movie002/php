@@ -1,5 +1,5 @@
 <?php
-$dbip='23.244.180.254';
+$dbip='movie002.com';
 #$dbip='127.0.0.1';
 $dbuser='root';
 $dbpasswd='qazxsw';
