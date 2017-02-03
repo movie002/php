@@ -578,11 +578,11 @@ function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
 	}
     else if($num0==0)
     {
-	    $tmplinks = '<div class="listall" style="text-align:center;padding:3px 0 1px 0">暂无此类资源，本站会及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
+	    $tmplinks = '<div class="listall" style="text-align:center;padding:3px 0 1px 0">暂无此类资源，本站会及时更新最新资源，请试试 <a href="http://s.yingsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
     }
     else
     {
-        $tmplinks.= '<div class="listall" style="text-align:center;padding:3px 0 1px 0">如果本站没有及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
+        $tmplinks.= '<div class="listall" style="text-align:center;padding:3px 0 1px 0">如果本站没有及时更新最新资源，请试试 <a href="http://s.yingsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
     }
     //替换各个搜搜类别
 	$tmplinks = str_replace("%cat%",$searchcat,$tmplinks);

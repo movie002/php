@@ -89,7 +89,7 @@ function dh_get_author($sql)
 			//$numlink = $linkcount1[0]+$linkcount2[0];
 			
 			$name = rawurlencode($row['name']);
-			$lieach = '<li> <span class="moviemeta">['.$row['id'].']</span> <span class="lefttop40v2"> <a href="'.$row['url'].'" target="_blank">'.$row['name'].'</a> (<a href="http://s.yfsoso.com/s.php?aid='.$name.'" target="_blank">资源列表</a>)</span><span class="rt500v2">'.$linkcount3[0].'</span><span class="rt420v2">'.$linkcount4[0].'</span><span class="rt340v2">'.$linkcount1[0].'</span><span class="rt260v2">'.$linkcount2[0].'</span> <span class="rt180v2">'.$row['failtimes'].'</span><span class="rt5v2" > '.$updatef.'</span></li>';			
+			$lieach = '<li> <span class="moviemeta">['.$row['id'].']</span> <span class="lefttop40v2"> <a href="'.$row['url'].'" target="_blank">'.$row['name'].'</a> (<a href="http://s.yingsoso.com/s.php?aid='.$name.'" target="_blank">资源列表</a>)</span><span class="rt500v2">'.$linkcount3[0].'</span><span class="rt420v2">'.$linkcount4[0].'</span><span class="rt340v2">'.$linkcount1[0].'</span><span class="rt260v2">'.$linkcount2[0].'</span> <span class="rt180v2">'.$row['failtimes'].'</span><span class="rt5v2" > '.$updatef.'</span></li>';			
 			$liout.= $lieach;
 		}
 	}

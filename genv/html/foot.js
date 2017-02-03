@@ -99,12 +99,12 @@ function dhsay()
 {
 	//延时调用 dh_say.php 节省时间
 	var iframe_say = document.getElementById('iframe_say');
-	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="95%" height="16px" src="http://s.yfsoso.com/dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
+	iframe_say.innerHTML = '<iframe id="iframe_say" allowtransparency="true" width="95%" height="16px" src="http://s.yingsoso.com/dh_say.php" frameBorder="0" scrolling="no" ></iframe>';
 }
 
 function search()
 {
-    openwin("http://s.yfsoso.com/s.php?q="+f1.submittext.value,"mspg9");
+    openwin("http://s.yingsoso.com/s.php?q="+f1.submittext.value,"mspg9");
 }
 
 function openwin(url,id)

@@ -1,4 +1,4 @@
-﻿# Host: yfsoso.com  (Version: 5.5.37-log)
+﻿# Host: yingsoso.com  (Version: 5.5.37-log)
 # Date: 2015-04-28 10:35:16
 # Generator: MySQL-Front 5.3  (Build 4.120)
 

@@ -39,7 +39,7 @@
 		<!-- header -->
 		<div id="middle" class="width_2">
 			<div id="title">
-				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <span class="cred">"<?php echo $q ?>"</span> 的搜索结果 尝试更精确的 <a href="http://s.yfsoso.com/s.php?q=<?php echo $q ?>">影粉搜搜的搜索结果</a> </div>	
+				<div style="border-bottom:1px solid #ccc;padding:0 0 10px 5px;font-weight:500">您的位置： <a href="%home%" title="回到首页"> 首页</a> >> <span class="cred">"<?php echo $q ?>"</span> 的搜索结果 尝试更精确的 <a href="http://s.yingsoso.com/s.php?q=<?php echo $q ?>">影粉搜搜的搜索结果</a> </div>	
 			</div>		
 			<div id="content"  class="width_3 listcontent">
 				<ul class="f12px">
