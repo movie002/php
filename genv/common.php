@@ -197,7 +197,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	{		
 		if($simgurl=='')
 			continue;
-		$replacediv .= '<imgdao style="margin:5px" link_src="http://movie.douban.com/photos/photo/'.$simgurl.'/" img_src="http://img3.douban.com/view/photo/albumicon/public/p'.$simgurl.'.jpg" style="width:100px;height:100px" src_width="100px" src_height="100px" alt="'.$row['title'].'的剧照"><span></span></imgdao>';
+		$replacediv .= '<imgdao style="margin:5px" link_src="http://movie.douban.com/photos/photo/'.$simgurl.'/" img_src="http://img3.doubanio.com/view/photo/albumicon/public/p'.$simgurl.'.jpg" style="width:100px;height:100px" src_width="100px" src_height="100px" alt="'.$row['title'].'的剧照"><span></span></imgdao>';
 	}	
 	$DH_output_content_page = str_replace("%simgs%",$replacediv,$DH_output_content);
 	
@@ -231,7 +231,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	foreach ($celeimg_array as $key=>$celeimg_each)
 	{
 		if(empty($celeimg_each[2]))
-			$imgeach='http://img3.douban.com/pics/celebrity-default-medium.gif';
+			$imgeach='http://img3.doubanio.com/pics/celebrity-default-medium.gif';
 		else
 			$imgeach='http://img3.douban.com/img/celebrity/medium/'.$celeimg_each[2];
 		$celeimg_all.=	'<li style="width:'.$width.'; height:'.$height.'"><a href="http://movie.douban.com/celebrity/'.$celeimg_each[0].'/" target="_blank" rel="nofollow"><img style="width:'.$width.'; height:'.$height.'" data-src="'.$imgeach.'" alt="'.$celeimg_each[1].'的影人图片" width="'.$width.'" height="'.$height.'"/><span class="celeimg_title">'.$celeimg_each[3].'</span></a><div class="celeimg_name">'.$celeimg_each[1].'</div></li>';
@@ -459,7 +459,7 @@ function dh_replace_snapshot($type='middle',$row,$DH_output_content,$needcountry
 	}
 	else
 	{
-		$imgposter = '<imgdao link_src="'.$page_path.'" img_src="http://img3.douban.com/view/photo/thumb/public/p'.$simgurl.'.jpg" style="width:'.$width.';height:'.$height.'" src_width="'.$width.'" src_height="'.$height.'" alt="'.$row['title'].'的海报"><span></span></imgdao>';
+		$imgposter = '<imgdao link_src="'.$page_path.'" img_src="http://img3.doubanio.com/view/photo/thumb/public/p'.$simgurl.'.jpg" style="width:'.$width.';height:'.$height.'" src_width="'.$width.'" src_height="'.$height.'" alt="'.$row['title'].'的海报"><span></span></imgdao>';
 	}	
 	$DH_output_content_page = str_replace("%imgposter%",$imgposter,$DH_output_content_page);
 	

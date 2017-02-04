@@ -453,12 +453,12 @@ function dh_get_movie_type_img($sql)
 			
 			$simgurl = $row['imgurl'];
 			$src=$htmlpath;
-			$img_src='http://img3.douban.com/view/photo/thumb/public/p'.$simgurl.'.jpg';
+			$img_src='http://img3.doubanio.com/view/photo/thumb/public/p'.$simgurl.'.jpg';
 			
 			if(!empty($simgurl[0])&&$simgurl[0]=='s')
 			{			
 				$src=$htmlpath;
-				$img_src='http://img3.douban.com/mpic/'.$simgurl;			
+				$img_src='http://img3.doubanio.com/mpic/'.$simgurl;			
 			}
 			
 			$imgeach = '<imgdao link_src="'.$src.'" img_src="'.$img_src.'" style="width:108px;height:215px;margin:4px" src_width="108px" src_height="180px" alt="'.$title.'的海报" frm_height="220px" name="'.$title.'"><span></span></imgdao>';
